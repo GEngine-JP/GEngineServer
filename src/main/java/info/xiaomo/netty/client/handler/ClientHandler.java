@@ -22,7 +22,6 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-
         ctx.channel().writeAndFlush("Hello");
     }
 
