@@ -1,7 +1,7 @@
 package info.xiaomo.netty.client.handler;
 
-import io.netty.buffer.ByteBuf;
-import io.netty.channel.*;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -36,7 +36,6 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println(String.valueOf(msg));
     }
-
 
 
 }
