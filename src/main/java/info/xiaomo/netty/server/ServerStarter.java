@@ -34,7 +34,7 @@ public class ServerStarter {
         this.port = port;
     }
 
-    public void run() throws Exception {
+    public void start() throws Exception {
         EventLoopGroup bossGroup = new NioEventLoopGroup(); // (1)
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
@@ -71,6 +71,6 @@ public class ServerStarter {
         } else {
             port = 8080;
         }
-        new ServerStarter(port).run();
+        new ServerStarter(port).start();
     }
 }
