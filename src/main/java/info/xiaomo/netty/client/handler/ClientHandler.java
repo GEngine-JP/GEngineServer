@@ -33,17 +33,8 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     }
 
     @Override
-    public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
-        super.channelRegistered(ctx);
-    }
-
-    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        ByteBuf buf = (ByteBuf) msg;
-        byte[] bytes = new byte[((ByteBuf) msg).readableBytes()];
-        buf.readBytes(bytes);
-        System.out.println(new String(bytes));
-
+        System.out.println(String.valueOf(msg));
     }
 
 
