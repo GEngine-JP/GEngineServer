@@ -42,7 +42,7 @@ public class ServerStarter {
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ChannelInitializer<SocketChannel>() {
-                        Override
+                        @Override
                         public void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast(new StringDecoder());
                             ch.pipeline().addLast(new StringEncoder());

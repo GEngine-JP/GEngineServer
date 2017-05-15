@@ -23,7 +23,7 @@ import io.netty.channel.ChannelPromise;
 
 public class EncodeHandler extends ChannelOutboundHandlerAdapter {
 
-    Override
+    @Override
     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
         byte[] bytes = ((String) msg).getBytes("utf-8");
         ByteBuf buf = ByteBufAllocator.DEFAULT.buffer(bytes.length);
