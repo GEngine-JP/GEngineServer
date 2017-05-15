@@ -1,14 +1,17 @@
 package info.xiaomo.netty.client.handler;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.util.CharsetUtil;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
  * いま 最高の表現 として 明日最新の始発．．～
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
- *
+ * <p>
  * author: xiaomo
  * github: https://github.com/xiaomoinfo
  * email: xiaomo@xiaomo.info
@@ -17,12 +20,12 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * Copyright(©) 2015 by xiaomo.
  **/
 
-public class ClientHandler extends ChannelInboundHandlerAdapter {
+public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        ctx.channel().writeAndFlush("Hello");
+        ctx.channel().writeAndFlush(Unpooled.copiedBuffer("你好", CharsetUtil.UTF_8));
     }
 
     @Override
@@ -31,9 +34,16 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
         super.exceptionCaught(ctx, cause);
     }
 
-    @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println(String.valueOf(msg));
+
+    /**
+     * 需要注 意的是,由服务器发送的消息可能会被分块接收。也就是说,如果服务器发送了 5 字节,那么不 能保证这 5 字节会被一次性接收
+     * @param ctx
+     * @param msg
+     * @throws Exception
+     */
+    protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
+        System.out.println(
+                "Client received: " + msg.toString(CharsetUtil.UTF_8));
     }
 
 

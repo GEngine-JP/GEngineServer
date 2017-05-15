@@ -34,8 +34,8 @@ public class ClientStarter {
                     .option(ChannelOption.TCP_NODELAY, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
-                            socketChannel.pipeline().addLast(new StringDecoder());
-                            socketChannel.pipeline().addLast(new StringEncoder());
+//                            socketChannel.pipeline().addLast(new StringDecoder());
+//                            socketChannel.pipeline().addLast(new StringEncoder());
                             socketChannel.pipeline().addLast(new ClientHandler());
                         }
                     });
