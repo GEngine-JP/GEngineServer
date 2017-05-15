@@ -9,12 +9,12 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  *
- * @author: xiaomo
- * @github: https://github.com/qq83387856
- * @email: hupengbest@163.com
- * @QQ_NO: 83387856
- * @Date: 2016/11/24 10:16
- * @Copyright(©) 2015 by xiaomo.
+ * author: xiaomo
+ * github: https://github.com/xiaomoinfo
+ * email: xiaomo@xiaomo.info
+ * QQ_NO: 83387856
+ * Date: 2016/11/24 10:16
+ * Copyright(©) 2015 by xiaomo.
  **/
 
 public class ServerHandler extends ChannelInboundHandlerAdapter {
@@ -22,8 +22,8 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
 
     /**
      * 出错的时候会调用这个方法
-     * @param ctx ctx
-     * @param cause cause
+     * param ctx ctx
+     * param cause cause
      */
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) { // (4)
@@ -35,9 +35,9 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
 
     /**
      * 接收客户端传来的消息
-     * @param ctx ctx
-     * @param msg 消息内容
-     * @throws Exception Exception
+     * param ctx ctx
+     * param msg 消息内容
+     * throws Exception Exception
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
@@ -47,8 +47,8 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
 
     /**
      * 每次创建链接的时候都会调用这个方法
-     * @param ctx ctx
-     * @throws Exception Exception
+     * param ctx ctx
+     * throws Exception Exception
      */
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {

@@ -18,12 +18,12 @@ import io.netty.handler.codec.string.StringEncoder;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  *
- * @author: xiaomo
- * @github: https://github.com/qq83387856
- * @email: hupengbest@163.com
- * @QQ_NO: 83387856
- * @Date: 2016/11/24 10:11
- * @Copyright(©) 2015 by xiaomo.
+ * author: xiaomo
+ * github: https://github.com/xiaomoinfo
+ * email: xiaomo@xiaomo.info
+ * QQ_NO: 83387856
+ * Date: 2016/11/24 10:11
+ * Copyright(©) 2015 by xiaomo.
  **/
 
 public class ServerStarter {
@@ -42,7 +42,7 @@ public class ServerStarter {
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ChannelInitializer<SocketChannel>() {
-                        @Override
+                        Override
                         public void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast(new StringDecoder());
                             ch.pipeline().addLast(new StringEncoder());

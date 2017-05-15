@@ -14,18 +14,18 @@ import io.netty.handler.codec.string.StringEncoder;
  * いま 最高の表現 として 明日最新の始発．．～
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
- *
- * @author: xiaomo
- * @github: https://github.com/qq83387856
- * @email: hupengbest@163.com
- * @QQ_NO: 83387856
- * @Date: 2016/11/24 17:31
- * @Copyright(©) 2015 by xiaomo.
+ * <p>
+ * author: xiaomo
+ * github: https://github.com/xiaomoinfo
+ * mail: hupengbest@163.com
+ * QQ_NO: 83387856
+ * Date: 2016/11/24 17:31
+ * Copyright(©) 2015 by xiaomo.
  **/
 
 public class ClientStarter {
 
-    public Channel connect(int port, String host) {
+    private Channel connect(int port, String host) {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             Bootstrap bootstrap = new Bootstrap();
@@ -55,7 +55,9 @@ public class ClientStarter {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         String input = scanner.nextLine();
         while (input != null) {
-            channel.writeAndFlush(input);
+            if (channel != null) {
+                channel.writeAndFlush(input);
+            }
             input = scanner.nextLine();
         }
 

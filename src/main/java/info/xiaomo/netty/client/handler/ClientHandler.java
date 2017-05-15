@@ -9,12 +9,12 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  *
- * @author: xiaomo
- * @github: https://github.com/qq83387856
- * @email: hupengbest@163.com
- * @QQ_NO: 83387856
- * @Date: 2016/11/24 17:35
- * @Copyright(©) 2015 by xiaomo.
+ * author: xiaomo
+ * github: https://github.com/xiaomoinfo
+ * email: xiaomo@xiaomo.info
+ * QQ_NO: 83387856
+ * Date: 2016/11/24 17:35
+ * Copyright(©) 2015 by xiaomo.
  **/
 
 public class ClientHandler extends ChannelInboundHandlerAdapter {
