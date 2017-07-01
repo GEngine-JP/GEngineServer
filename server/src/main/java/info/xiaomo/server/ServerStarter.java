@@ -1,4 +1,4 @@
-package info.xiaomo.netty.server;
+package info.xiaomo.server;
 
 import info.xiaomo.netty.server.handler.ServerHandler;
 import io.netty.bootstrap.ServerBootstrap;

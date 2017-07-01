@@ -1,4 +1,4 @@
-package info.xiaomo.netty.client.handler;
+package info.xiaomo.client.handler;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

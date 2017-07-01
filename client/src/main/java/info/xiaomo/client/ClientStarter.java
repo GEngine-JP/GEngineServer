@@ -1,13 +1,11 @@
-package info.xiaomo.netty.client;
+package info.xiaomo.client;
 
-import info.xiaomo.netty.client.handler.ClientHandler;
+import info.xiaomo.client.handler.ClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
