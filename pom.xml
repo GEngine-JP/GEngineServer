@@ -15,6 +15,17 @@
         <module>client</module>
     </modules>
 
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://192.168.1.62:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://192.168.1.62:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <repositories>
         <repository>
             <id>inner-release</id>
@@ -36,6 +47,7 @@
         </repository>
     </repositories>
 
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -45,7 +57,8 @@
         <kryo.version>2.24.0</kryo.version>
         <fastjson.version>1.2.29</fastjson.version>
         <httpclient.version>4.5.2</httpclient.version>
-        <slf4j.version>1.8.0-alpha2</slf4j.version>
+        <slf4j.version>1.8.0</slf4j.version>
+        <dom4j.version>1.6.1</dom4j.version>
     </properties>
 
 
@@ -83,7 +96,11 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
