@@ -1,6 +1,5 @@
 package info.xiaomo.server;
 
-import info.xiaomo.netty.server.handler.ServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -55,7 +54,7 @@ public class ServerStarter {
 
     class Initializer extends ChannelInitializer<SocketChannel> {
         protected void initChannel(SocketChannel ch) throws Exception {
-            ch.pipeline().addLast(new ServerHandler());
+//            ch.pipeline().addLast(new ServerHandler());
         }
     }
 
