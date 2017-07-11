@@ -1,5 +1,10 @@
 package info.xiaomo.tool;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 /**
  * 把今天最好的表现当作明天最新的起点．．～
  * いま 最高の表現 として 明日最新の始発．．～
@@ -15,7 +20,25 @@ package info.xiaomo.tool;
  * Copyright(©) 2017 by xiaomo.
  */
 public class ToolMain {
-    public static void main(String[] args) {
-        System.out.println("消息生成工具");
+    private static String input;
+    private static String output;
+    public static void main(String[] args) throws IOException {
+        InputStream in = null;
+            try {
+                in = new FileInputStream(args[0]);
+                Properties properties = new Properties();
+                properties.load(in);
+                input = (String) properties.get("input");
+                output = (String) properties.get("output");
+                System.out.println(input);
+                System.out.println(output);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }finally {
+                if (in!= null){
+                    in.close();
+                }
+            }
+        }
     }
-}
+
