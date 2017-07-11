@@ -20,12 +20,15 @@ import java.util.Properties;
  * Copyright(©) 2017 by xiaomo.
  */
 public class ToolMain {
+    private static final String CONFIG_URL = "F:\\ChessGame\\tool\\src\\main\\resources\\tool.properties";
+
     private static String input;
     private static String output;
+
     public static void main(String[] args) throws IOException {
         InputStream in = null;
             try {
-                in = new FileInputStream(args[0]);
+                in = new FileInputStream(CONFIG_URL);
                 Properties properties = new Properties();
                 properties.load(in);
                 input = (String) properties.get("input");
