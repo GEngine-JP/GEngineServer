@@ -1,4 +1,4 @@
-package info.xiaomo.core.queue;
+package info.xiaomo.core.concurrent.queue;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

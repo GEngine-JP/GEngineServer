@@ -1,4 +1,4 @@
-package info.xiaomo.core.queue;
+package info.xiaomo.core.concurrent;
 
 /**
  * 定时事件

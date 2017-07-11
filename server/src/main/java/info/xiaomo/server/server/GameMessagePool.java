@@ -1,7 +1,8 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.net.message.Message;
-import info.xiaomo.core.net.message.MessagePool;
+
+import info.xiaomo.core.net.Message;
+import info.xiaomo.core.net.MessagePool;
 
 import java.util.HashMap;
 import java.util.Map;

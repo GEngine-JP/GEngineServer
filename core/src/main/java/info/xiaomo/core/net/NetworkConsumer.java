@@ -1,6 +1,6 @@
-package info.xiaomo.core.net.message;
+package info.xiaomo.core.net;
 
-import info.xiaomo.core.queue.IQueueDriverCommand;
+import io.netty.channel.Channel;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -12,10 +12,10 @@ import info.xiaomo.core.queue.IQueueDriverCommand;
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
- * Date  : 2017/7/11 16:57
- * desc  :
+ * Date  : 2017/7/11 15:36
+ * desc  : 消费者接口
  * Copyright(©) 2017 by xiaomo.
  */
-public interface MessageProcessor {
-    void process(IQueueDriverCommand message);
+public interface NetworkConsumer {
+	void consume(Channel channel, Message msg);
 }

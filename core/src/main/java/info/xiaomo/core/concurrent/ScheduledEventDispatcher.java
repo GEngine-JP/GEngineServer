@@ -1,4 +1,4 @@
-package info.xiaomo.core.queue;
+package info.xiaomo.core.concurrent;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

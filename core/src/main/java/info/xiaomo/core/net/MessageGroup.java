@@ -1,7 +1,7 @@
-package info.xiaomo.core.net.message;
+package info.xiaomo.core.net;
 
-import info.xiaomo.core.queue.ICommandQueue;
-import info.xiaomo.core.queue.IQueueDriverCommand;
+import info.xiaomo.core.concurrent.IQueueDriverCommand;
+import info.xiaomo.core.concurrent.queue.ICommandQueue;
 import io.netty.buffer.ByteBuf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

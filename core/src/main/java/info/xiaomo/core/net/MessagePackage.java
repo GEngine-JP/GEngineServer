@@ -1,4 +1,4 @@
-package info.xiaomo.core.net.message;
+package info.xiaomo.core.net;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;

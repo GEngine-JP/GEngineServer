@@ -1,6 +1,7 @@
-package info.xiaomo.core.queue;
+package info.xiaomo.core.concurrent;
 
 
+import info.xiaomo.core.concurrent.queue.ICommandQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +28,7 @@ public abstract class AbstractCommand implements IQueueDriverCommand {
 			doAction();
 			long exeTime = System.currentTimeMillis() - time;
 			if(exeTime > 2) {
-				LOGGER.debug(this.getClass().getSimpleName() + "执行耗时:" + exeTime);
+				//LOGGER.error(this.getClass().getSimpleName() + "执行耗时:" + exeTime);
 			}
 				
 		} catch (Throwable e) {

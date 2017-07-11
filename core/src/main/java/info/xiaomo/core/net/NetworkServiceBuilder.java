@@ -1,6 +1,5 @@
-package info.xiaomo.core.net.network;
+package info.xiaomo.core.net;
 
-import info.xiaomo.core.net.message.MessagePool;
 import io.netty.channel.ChannelHandler;
 
 import java.util.ArrayList;
@@ -114,4 +113,5 @@ public class NetworkServiceBuilder {
 	public void setNetworkEventListener(NetworkEventListener networkEventListener) {
 		this.networkEventListener = networkEventListener;
 	}
+
 }

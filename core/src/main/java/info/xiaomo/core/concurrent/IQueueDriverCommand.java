@@ -1,5 +1,7 @@
-package info.xiaomo.core.queue;
+package info.xiaomo.core.concurrent;
 
+
+import info.xiaomo.core.concurrent.queue.ICommandQueue;
 
 /**
  * 拥有一个队列的命令.</br>
@@ -11,39 +13,39 @@ package info.xiaomo.core.queue;
 public interface IQueueDriverCommand extends ICommand {
 
 	/**
-	 * 获取队列id
-	 * @return int
+	 * 后去队列id
+	 * @return
 	 */
-	int getQueueId();
+	public int getQueueId();
 
 	/**
 	 * 设置队列id
-	 * @param queueId queueId
+	 * @param queueId
 	 */
-	void setQueueId(int queueId);
+	public void setQueueId(int queueId);
 
 	/**
 	 * 获取所在队列
-	 * @return ICommandQueue
+	 * @return
 	 */
-	ICommandQueue<IQueueDriverCommand> getCommandQueue();
+	public ICommandQueue<IQueueDriverCommand> getCommandQueue();
 
 	/**
 	 * 设置所在队列
-	 * @param commandQueue commandQueue
+	 * @param commandQueue
 	 */
-	void setCommandQueue(ICommandQueue<IQueueDriverCommand> commandQueue);
+	public void setCommandQueue(ICommandQueue<IQueueDriverCommand> commandQueue);
 	
 	/**
 	 * 获取一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
-	 * @return Object
+	 * @return
 	 */
-	Object getParam();
+	public Object getParam();
 	
 	/**
 	 * 设置一个额外的参数,随便存什么，具体逻辑具体使用，可以不使用该参数
-	 * @param param param
+	 * @param param
 	 */
-	void setParam(Object param);
+	public void setParam(Object param);
 
 }

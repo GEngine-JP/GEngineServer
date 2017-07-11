@@ -1,7 +1,8 @@
 package info.xiaomo.server.util;
 
 
-import info.xiaomo.core.queue.QueueExecutor;
+
+import info.xiaomo.core.concurrent.QueueExecutor;
 
 import java.util.Map;
 import java.util.concurrent.*;

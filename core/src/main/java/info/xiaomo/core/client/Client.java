@@ -1,9 +1,9 @@
 package info.xiaomo.core.client;
 
-import info.xiaomo.core.net.message.Message;
-import info.xiaomo.core.net.message.MessageDecoder;
-import info.xiaomo.core.net.message.MessageEncoder;
-import info.xiaomo.core.net.message.MessageGroup;
+import info.xiaomo.core.net.Message;
+import info.xiaomo.core.net.MessageDecoder;
+import info.xiaomo.core.net.MessageEncoder;
+import info.xiaomo.core.net.MessageGroup;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

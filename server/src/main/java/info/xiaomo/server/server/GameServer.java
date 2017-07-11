@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
 import info.xiaomo.core.config.ConfigDataManager;
-import info.xiaomo.core.net.network.NetworkService;
-import info.xiaomo.core.net.network.NetworkServiceBuilder;
+import info.xiaomo.core.net.NetworkService;
+import info.xiaomo.core.net.NetworkServiceBuilder;
 import info.xiaomo.server.event.EventRegister;
 import info.xiaomo.server.processor.LoginAndLogoutProcessor;
 import info.xiaomo.server.system.schedule.ScheduleManager;

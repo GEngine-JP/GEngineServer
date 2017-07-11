@@ -1,8 +1,5 @@
-package info.xiaomo.core.net.network;
+package info.xiaomo.core.net;
 
-import info.xiaomo.core.net.message.MessageDecoder;
-import info.xiaomo.core.net.message.MessageEncoder;
-import info.xiaomo.core.net.message.MessageExecutor;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

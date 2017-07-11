@@ -1,9 +1,9 @@
 package info.xiaomo.core.client;
 
-import info.xiaomo.core.net.message.Message;
-import info.xiaomo.core.net.message.MessageExecutor;
-import info.xiaomo.core.net.network.NetworkConsumer;
-import info.xiaomo.core.net.network.NetworkEventListener;
+import info.xiaomo.core.net.Message;
+import info.xiaomo.core.net.MessageExecutor;
+import info.xiaomo.core.net.NetworkConsumer;
+import info.xiaomo.core.net.NetworkEventListener;
 import io.netty.channel.ChannelHandlerContext;
 
 import java.util.Map;

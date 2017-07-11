@@ -1,8 +1,9 @@
 package info.xiaomo.core.client;
 
-import info.xiaomo.core.net.message.MessagePool;
-import info.xiaomo.core.net.network.NetworkConsumer;
-import info.xiaomo.core.net.network.NetworkEventListener;
+
+import info.xiaomo.core.net.MessagePool;
+import info.xiaomo.core.net.NetworkConsumer;
+import info.xiaomo.core.net.NetworkEventListener;
 
 public class ClientBuilder {
 

@@ -1,6 +1,8 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.net.network.NetworkEventListener;
+
+import info.xiaomo.core.net.NetworkEventListener;
+import io.netty.channel.ChannelHandlerContext;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -17,4 +19,18 @@ import info.xiaomo.core.net.network.NetworkEventListener;
  * Copyright(©) 2017 by xiaomo.
  */
 public class EventListener implements NetworkEventListener {
+    @Override
+    public void onConnected(ChannelHandlerContext ctx) {
+
+    }
+
+    @Override
+    public void onDisconnected(ChannelHandlerContext ctx) {
+
+    }
+
+    @Override
+    public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {
+
+    }
 }

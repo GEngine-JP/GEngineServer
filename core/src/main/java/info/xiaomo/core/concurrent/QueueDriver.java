@@ -1,5 +1,7 @@
-package info.xiaomo.core.queue;
+package info.xiaomo.core.concurrent;
 
+import info.xiaomo.core.concurrent.queue.ICommandQueue;
+import info.xiaomo.core.concurrent.queue.UnlockedCommandQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
