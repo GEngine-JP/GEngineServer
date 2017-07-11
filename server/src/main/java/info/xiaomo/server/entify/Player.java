@@ -1,6 +1,6 @@
 package info.xiaomo.server.entify;
 
-import info.xiaomo.core.persist.Persistable;
+import info.xiaomo.core.db.persist.Persistable;
 import info.xiaomo.server.constant.DataType;
 import io.protostuff.Exclude;
 import io.protostuff.Tag;

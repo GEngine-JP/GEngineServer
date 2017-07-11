@@ -68,6 +68,7 @@
         <mysql.version>5.1.37</mysql.version>
         <protostuff.version>1.3.7</protostuff.version>
         <druid.version>1.0.16</druid.version>
+        <concurrentlinkedhashmap.version>1.4.2</concurrentlinkedhashmap.version>
     </properties>
 
 
@@ -170,6 +171,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.googlecode.concurrentlinkedhashmap</groupId>
+                <artifactId>concurrentlinkedhashmap-lru</artifactId>
+                <version>${concurrentlinkedhashmap.version}</version>
             </dependency>
 
         </dependencies>
