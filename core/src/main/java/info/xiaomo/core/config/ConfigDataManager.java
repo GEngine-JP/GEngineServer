@@ -39,13 +39,13 @@ public class ConfigDataManager {
     }
 
 
-    public void init(String path) {
+    public void init(String configDataPath) {
         String xmlPath = "data_config.xml";
         try {
             List<ConfigDataContainer<?>> configDatas = ConfigDataXmlParser.parse(xmlPath);
             LOGGER.info("配置条数：" + configDatas.size());
             for (ConfigDataContainer<?> container : configDatas) {
-                container.load(path);
+                container.load(configDataPath);
                 configContainers.put(container.getClazz(), container);
             }
         } catch (Exception e) {
