@@ -109,6 +109,10 @@ public class ConfigDataContainer<T extends IConfigData> {
     }
 
 
+    public List<T> getList(){
+        return this.list;
+    }
+
     /**
      * 加载后执行的操作
      */

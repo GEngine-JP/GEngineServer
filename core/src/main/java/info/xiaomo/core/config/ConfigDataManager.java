@@ -84,5 +84,14 @@ public class ConfigDataManager {
         return this.getByIdAndCacheName(clazz, ConfigDataContainer.DEFAULT_CACHE, id);
     }
 
+    @SuppressWarnings("unchecked")
+    public <T extends AbstractConfigData> List<T> getList(Class<T> clazz){
+        ConfigDataContainer<T> configDataContainer = (ConfigDataContainer<T>) this.configContainers.get(clazz);
+        if (configDataContainer == null) {
+            return null;
+        }
+        return configDataContainer.getList();
+    }
+
 
 }
