@@ -1,4 +1,4 @@
-package info.xiaomo.core.encode;
+package info.xiaomo.core;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;

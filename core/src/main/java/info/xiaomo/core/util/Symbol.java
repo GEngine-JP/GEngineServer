@@ -1,4 +1,4 @@
-package info.xiaomo.core.encode.util;
+package info.xiaomo.core.util;
 
 public class Symbol {
     public static final String JINHAO = "#";

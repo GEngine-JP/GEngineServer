@@ -1,9 +1,9 @@
-package info.xiaomo.core.encode.config.xml;
+package info.xiaomo.core.config.xml;
 
-import info.xiaomo.core.encode.config.ConfigDataContainer;
-import info.xiaomo.core.encode.config.IConfigCache;
-import info.xiaomo.core.encode.config.IConverter;
-import info.xiaomo.core.encode.util.FileLoaderUtil;
+import info.xiaomo.core.config.ConfigDataContainer;
+import info.xiaomo.core.config.IConfigCache;
+import info.xiaomo.core.config.IConverter;
+import info.xiaomo.core.util.FileLoaderUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -25,22 +25,25 @@ import java.util.*;
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
  * Date  : 17/7/10 13:41
- * desc  :
+ * desc  : xml文件读取
  * Copyright(©) 2017 by xiaomo.
  */
 public class ConfigDataXmlParser {
-    private static final String CONFIG = "config";
-    private static final String CLAZZ = "class";
-    private static final String FILE = "file";
-    private static final String KEY = "key";
+
+    // 一条config的字段
+    private static final String CONFIG = "config"; //单个文件
+    private static final String CLAZZ = "class"; //对应的实体类名
+    private static final String FILE = "file"; // csv文件名（不包含后缀)
+    private static final String KEY = "key"; // 主键
+
     private static final String CONVERT = "convert";
     private static final String CONVERTER = "converter";
     private static final String FIELD = "field";
     private static final String CACHES = "caches";
     private static final String MAP = "map";
-    private static final String CONFIGCACHES = "configCaches";
-    private static final String CONFIGCACHE = "configCache";
-    private static final String CONFIGDATA = "configData";
+    private static final String CONFIG_CACHES = "configCaches";
+    private static final String CONFIG_CACHE = "configCache";
+    private static final String CONFIG_DATA = "configData";
 
 
     @SuppressWarnings("unchecked")
@@ -49,35 +52,20 @@ public class ConfigDataXmlParser {
             ClassNotFoundException, InstantiationException,
             IllegalAccessException {
         SAXReader saxReader = new SAXReader();
-        // InputStream inputStream = new FileInputStream(path);
-        /*saxReader.setEntityResolver(new EntityResolver() {
-            public InputSource resolveEntity(String publicId, String systemId)
-					throws SAXException, IOException {
-				// 指定DTD校验
-				InputSource inputSource = new InputSource(ConfigDataXmlParser.class
-						.getResourceAsStream("data_config.dtd"));
-				return inputSource;
-			}
-		});*/
-        //saxReader.setValidation(true);
-        // 如果path不以"/"开头，则从当前类所在包下的资源，如果以"/"开头则从ClassPath根下获取
-        /*InputStream inputStream = ConfigDataXmlParser.class
-				.getResourceAsStream(path);*/
         InputStream inputStream = FileLoaderUtil.findInputStreamByFileName(path);
         Document document = saxReader.read(inputStream);
         Element root = document.getRootElement();
 
         List<ConfigDataContainer<?>> ret = new ArrayList<>();
-        Iterator<Element> data = root.elementIterator(CONFIGDATA);
+        Iterator<Element> data = root.elementIterator(CONFIG_DATA);
         while (data.hasNext()) {
-            Element configdata = data.next();
-            Iterator<Element> it = configdata.elementIterator(CONFIG);
+            Element configData = data.next();
+            Iterator<Element> it = configData.elementIterator(CONFIG);
             while (it.hasNext()) {
                 Element config = it.next();
                 String className = config.attributeValue(CLAZZ);
                 String file = config.attributeValue(FILE);
                 String key = config.attributeValue(KEY);
-                // String desc = config.attributeValue(DESC);
 
                 IConverter globalConverter = parseGlobalConverter(config);
 
@@ -87,7 +75,6 @@ public class ConfigDataXmlParser {
 
                 Class<?> clazz = Class.forName(className);
 
-                @SuppressWarnings("rawtypes")
                 ConfigDataContainer<?> container = new ConfigDataContainer(
                         clazz, file, key, converterMap, cacheList,
                         globalConverter);
@@ -108,10 +95,10 @@ public class ConfigDataXmlParser {
         Element root = document.getRootElement();
 
         List<IConfigCache> ret = new ArrayList<>();
-        Iterator<Element> data = root.elementIterator(CONFIGCACHES);
+        Iterator<Element> data = root.elementIterator(CONFIG_CACHES);
         while (data.hasNext()) {
             Element configCaches = data.next();
-            Iterator<Element> it = configCaches.elementIterator(CONFIGCACHE);
+            Iterator<Element> it = configCaches.elementIterator(CONFIG_CACHE);
             while (it.hasNext()) {
                 Element config = it.next();
                 String className = config.attributeValue(CLAZZ);
@@ -119,7 +106,7 @@ public class ConfigDataXmlParser {
                 int size = clazz.getInterfaces().length;
                 for (int i = 0; i < size; i++) {
                     if (clazz.getInterfaces()[i].getName().equals(
-                            "com.sh.common.config.IConfigCache")) {
+                            "info.xiaomo.core.config.IConfigCache")) {
                         IConfigCache cache = (IConfigCache) clazz.newInstance();
                         ret.add(cache);
                     }
@@ -186,7 +173,7 @@ public class ConfigDataXmlParser {
         Document document = saxReader.read(inputStream);
         Element root = document.getRootElement();
         Class<?> ret = null;
-        Iterator<Element> data = root.elementIterator(CONFIGDATA);
+        Iterator<Element> data = root.elementIterator(CONFIG_DATA);
         while (data.hasNext()) {
             Element configData = data.next();
             Iterator<Element> it = configData.elementIterator(CONFIG);

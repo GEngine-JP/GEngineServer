@@ -1,7 +1,11 @@
-package info.xiaomo.core.encode.config;
+package info.xiaomo.core.config;
 
-import info.xiaomo.core.encode.util.ReflectUtil.PropertyDesc;
+import info.xiaomo.core.util.Cast;
+import info.xiaomo.core.util.ReflectUtil;
+import info.xiaomo.core.util.ReflectUtil.PropertyDesc;
 import info.xiaomo.core.encode.util.*;
+import info.xiaomo.core.util.CSVUtil;
+import info.xiaomo.core.util.Symbol;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

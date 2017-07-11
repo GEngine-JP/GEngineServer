@@ -1,4 +1,4 @@
-package info.xiaomo.core.encode.util;
+package info.xiaomo.core.util;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang3.StringUtils;

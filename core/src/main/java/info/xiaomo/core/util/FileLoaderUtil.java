@@ -1,4 +1,4 @@
-package info.xiaomo.core.encode.util;
+package info.xiaomo.core.util;
 
 import java.io.IOException;
 import java.io.InputStream;

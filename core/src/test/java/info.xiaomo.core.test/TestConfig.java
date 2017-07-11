@@ -1,6 +1,6 @@
 package info.xiaomo.core.test;
 
-import info.xiaomo.core.encode.config.AbstractConfigData;
+import info.xiaomo.core.config.AbstractConfigData;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～

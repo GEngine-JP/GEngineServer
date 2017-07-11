@@ -1,4 +1,4 @@
-package info.xiaomo.core.encode.config;
+package info.xiaomo.tool;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -10,14 +10,12 @@ package info.xiaomo.core.encode.config;
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
- * Date  : 17/7/10 13:19
- * desc  : 配置文件抽象类
+ * Date  : 2017/7/11 13:17
+ * desc  : 消息生成工具
  * Copyright(©) 2017 by xiaomo.
  */
-public abstract class AbstractConfigData implements IConfigData {
-
-    @Override
-    public void afterLoad() {
-
+public class ToolMain {
+    public static void main(String[] args) {
+        System.out.println("消息生成工具");
     }
 }

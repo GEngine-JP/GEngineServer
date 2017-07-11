@@ -1,4 +1,4 @@
-package info.xiaomo.core.encode.util;
+package info.xiaomo.core.util;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

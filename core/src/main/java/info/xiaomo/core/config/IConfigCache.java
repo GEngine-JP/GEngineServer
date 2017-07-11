@@ -1,4 +1,4 @@
-package info.xiaomo.core.encode.config;
+package info.xiaomo.core.config;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -10,10 +10,11 @@ package info.xiaomo.core.encode.config;
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
- * Date  : 17/7/10 13:28
- * desc  : 转换器
+ * Date  : 17/7/10 16:54
+ * desc  : 配置缓存接口
  * Copyright(©) 2017 by xiaomo.
  */
-public interface IConverter {
-    Object convert(Object var1);
+public interface IConfigCache {
+
+    void build();
 }
