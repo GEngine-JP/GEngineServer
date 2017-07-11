@@ -322,7 +322,7 @@ public class RandomUtil {
     /**
      * 根据每个几率返回随机的一个索引
      * 
-     * @param probs
+     * @param array
      * @return -1失败or随机的索引
      */
     public static int randomIndexByProb(int[] array) {
