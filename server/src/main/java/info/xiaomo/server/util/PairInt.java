@@ -1,4 +1,4 @@
-package com.sh.game.util;
+package info.xiaomo.server.util;
 
 public class PairInt {
 	

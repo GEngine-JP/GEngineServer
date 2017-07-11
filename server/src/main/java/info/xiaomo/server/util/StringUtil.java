@@ -1,4 +1,8 @@
-package com.sh.game.util;
+package info.xiaomo.server.util;
+
+
+import info.xiaomo.core.util.Cast;
+import info.xiaomo.core.util.Symbol;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,9 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.sh.commons.util.Cast;
-import com.sh.commons.util.Symbol;
 
 public class StringUtil {
 	/**

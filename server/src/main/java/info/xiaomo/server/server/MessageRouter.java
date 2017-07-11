@@ -1,4 +1,4 @@
-package info.xiaomo.server;
+package info.xiaomo.server.server;
 
 import info.xiaomo.core.net.message.Message;
 import info.xiaomo.core.net.message.MessageProcessor;

@@ -11,8 +11,14 @@ package info.xiaomo.server.event;
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
  * Date  : 2017/7/11 19:24
- * desc  :
+ * desc  : 事件类型
  * Copyright(©) 2017 by xiaomo.
  */
 public enum EventType {
+    LOGIN,
+    LOGOUT,
+    SERVER_MINUTE_HEART,
+    SERVER_MIDNIGHT,
+    SERVER_SECOND_HEART;
+
 }

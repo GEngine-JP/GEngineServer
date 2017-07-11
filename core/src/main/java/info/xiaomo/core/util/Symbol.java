@@ -9,4 +9,5 @@ public class Symbol {
     public static final String HENGXIAN = "-";
     public static final String DOUHAO = ",";
     public static final String DIAN = ".";
+    public static final String MAOHAO = ":";
 }

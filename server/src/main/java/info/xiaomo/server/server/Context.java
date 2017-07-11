@@ -1,4 +1,4 @@
-package info.xiaomo.server;
+package info.xiaomo.server.server;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～

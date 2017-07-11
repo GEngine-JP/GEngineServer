@@ -1,22 +1,20 @@
-package com.sh.net;
+package info.xiaomo.core.net.network;
 
-import java.util.concurrent.TimeUnit;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import info.xiaomo.core.net.message.MessageDecoder;
+import info.xiaomo.core.net.message.MessageEncoder;
+import info.xiaomo.core.net.message.MessageExecutor;
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelHandler;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.ChannelPipeline;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.util.concurrent.Future;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * 网络服务,负责以下几个事情:</br>
@@ -83,7 +81,7 @@ public class NetworkService {
 				ChannelPipeline pip = ch.pipeline();
 				pip.addLast("NettyMessageDecoder", new MessageDecoder(builder.getMsgPool()));
 				pip.addLast("NettyMessageEncoder", new MessageEncoder());
-				MessageExecutor executor = new MessageExecutor(builder.getConsumer(), builder.getNetworkEventlistener());
+				MessageExecutor executor = new MessageExecutor(builder.getConsumer(), builder.getNetworkEventListener());
 				pip.addLast("NettyMessageExecutor", executor);
 				for (ChannelHandler handler : builder.getChannelHandlerList()) {
 					pip.addLast(handler);

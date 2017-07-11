@@ -1,5 +1,11 @@
 package info.xiaomo.server.event;
 
+import info.xiaomo.server.listener.LoginListener;
+import info.xiaomo.server.listener.MinuteListener;
+import info.xiaomo.server.listener.SecondListener;
+
+import static info.xiaomo.server.event.EventUtil.addListener;
+
 /**
  * 把今天最好的表现当作明天最新的起点．．～
  * いま 最高の表現 として 明日最新の始発．．～
@@ -11,8 +17,30 @@ package info.xiaomo.server.event;
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
  * Date  : 2017/7/11 19:23
- * desc  :
+ * desc  : 事件注册类
  * Copyright(©) 2017 by xiaomo.
  */
 public class EventRegister {
+
+    public static void registerPreparedListeners(){
+       addLoginListener(); // 登录监听器
+       addServerSecondListener(); // 1秒钟一次的事件
+       addServerMinuteListener(); // 1分钟一次的事件
+
+    }
+
+    private static void addServerMinuteListener() {
+        addListener(new MinuteListener(),EventType.SERVER_MINUTE_HEART);
+    }
+
+    private static void addServerSecondListener() {
+        addListener(new SecondListener(),EventType.SERVER_SECOND_HEART);
+    }
+
+    /**
+     * 登录事件监听器
+     */
+    private static void addLoginListener(){
+        addListener(new LoginListener(),EventType.LOGIN);
+    }
 }

@@ -1,14 +1,13 @@
-package com.sh.game.system.schedule;
+package info.xiaomo.server.system.schedule;
 
-import java.util.Calendar;
-
+import info.xiaomo.server.event.EventType;
+import info.xiaomo.server.event.EventUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sh.game.event.EventType;
-import com.sh.game.event.EventUtil;
+import java.util.Calendar;
 
-public class ServerHeartTask implements Runnable{
+public class ServerHeartTask implements Runnable {
 	
 	private static Logger LOGGER = LoggerFactory.getLogger(ServerHeartTask.class);
 	
@@ -39,16 +38,16 @@ public class ServerHeartTask implements Runnable{
 			int second = calendar.get(Calendar.SECOND);
 			if(minute != lastMinute) { //每分 一次
 				lastMinute = minute;
-				EventUtil.fireEvent(EventType.SERVER_MINUTE_HEART);
+				EventUtil.executeEvent(EventType.SERVER_MINUTE_HEART,null);
 			}
 			
 			if(day != lastDay && second > 20) { //每天一次(零点过后至少20秒才执行)
 				lastDay = day;
-				EventUtil.fireEvent(EventType.SERVER_MIDNIGHT);
+				EventUtil.executeEvent(EventType.SERVER_MIDNIGHT,null);
 			}
 			
 			//每秒 一次
-			EventUtil.fireEvent(EventType.SERVER_SECOND_HEART);
+			EventUtil.executeEvent(EventType.SERVER_SECOND_HEART,null);
 			
 		} catch (Throwable e) {
 			LOGGER.error("服务器心跳事件发生错误.", e);

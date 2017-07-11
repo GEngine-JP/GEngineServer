@@ -1,9 +1,10 @@
-package com.sh.net;
+package info.xiaomo.core.net.network;
+
+import info.xiaomo.core.net.message.MessagePool;
+import io.netty.channel.ChannelHandler;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import io.netty.channel.ChannelHandler;
 
 public class NetworkServiceBuilder {
 
@@ -33,7 +34,7 @@ public class NetworkServiceBuilder {
 	/**
 	 * 事件监听器
 	 */
-	private NetworkEventlistener networkEventlistener;
+	private NetworkEventListener networkEventListener;
 
 	/**
 	 * 额外的handler
@@ -106,12 +107,11 @@ public class NetworkServiceBuilder {
 		this.consumer = consumer;
 	}
 
-	public NetworkEventlistener getNetworkEventlistener() {
-		return networkEventlistener;
+	public NetworkEventListener getNetworkEventListener() {
+		return networkEventListener;
 	}
 
-	public void setNetworkEventlistener(NetworkEventlistener networkEventlistener) {
-		this.networkEventlistener = networkEventlistener;
+	public void setNetworkEventListener(NetworkEventListener networkEventListener) {
+		this.networkEventListener = networkEventListener;
 	}
-
 }

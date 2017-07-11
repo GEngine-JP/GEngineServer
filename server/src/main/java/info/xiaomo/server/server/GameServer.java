@@ -1,8 +1,8 @@
-package info.xiaomo.server;
+package info.xiaomo.server.server;
 
 import info.xiaomo.core.config.ConfigDataManager;
-import info.xiaomo.core.net.network.NetWorkService;
-import info.xiaomo.core.net.network.NetWorkServiceBuilder;
+import info.xiaomo.core.net.network.NetworkService;
+import info.xiaomo.core.net.network.NetworkServiceBuilder;
 import info.xiaomo.server.event.EventRegister;
 import info.xiaomo.server.processor.LoginAndLogoutProcessor;
 import info.xiaomo.server.system.schedule.ScheduleManager;
@@ -23,7 +23,7 @@ import info.xiaomo.server.system.schedule.ScheduleManager;
  */
 public class GameServer {
 
-    NetWorkService netWork;
+    NetworkService netWork;
 
     private boolean state = false;
 
@@ -33,7 +33,7 @@ public class GameServer {
         int bossLoopGroupCount = 4;
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
-        NetWorkServiceBuilder builder = new NetWorkServiceBuilder();
+        NetworkServiceBuilder builder = new NetworkServiceBuilder();
         builder.setMsgPool(new GameMessagePool());
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);

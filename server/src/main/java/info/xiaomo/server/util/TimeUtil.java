@@ -1,15 +1,14 @@
-package com.sh.game.util;
+package info.xiaomo.server.util;
+
+import info.xiaomo.server.server.Context;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.sh.game.GameContext;
 
 public class TimeUtil {
 	private static final Logger LOGGER = LoggerFactory.getLogger(TimeUtil.class);
@@ -218,7 +217,7 @@ public class TimeUtil {
 	 * @return
 	 */
 	public static int getOpenServerDay() {
-		return getLogicIntervalDays(System.currentTimeMillis(), GameContext.getOpenDayZeroTime()) + 1;
+		return getLogicIntervalDays(System.currentTimeMillis(), Context.getOpenDayZeroTime()) + 1;
 	}
 
 	/**
@@ -227,10 +226,10 @@ public class TimeUtil {
 	 * @return
 	 */
 	public static int getCombineServerDay() {
-		if (!GameContext.isCombined()) {
+		if (!Context.isCombined()) {
 			return 0;
 		}
-		return getLogicIntervalDays(System.currentTimeMillis(), GameContext.getCombineDayZeroTime()) + 1;
+		return getLogicIntervalDays(System.currentTimeMillis(), Context.getCombineDayZeroTime()) + 1;
 	}
 
 	/**

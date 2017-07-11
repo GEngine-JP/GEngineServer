@@ -1,7 +1,20 @@
-package com.sh.game.util;
+package info.xiaomo.server.util;
+
+import info.xiaomo.core.util.Symbol;
 
 /**
- * Created by 张力 on 2017/6/28.
+ * 把今天最好的表现当作明天最新的起点．．～
+ * いま 最高の表現 として 明日最新の始発．．～
+ * Today the best performance  as tomorrow newest starter!
+ * Created by IntelliJ IDEA.
+ *
+ * author: xiaomo
+ * github: https://github.com/xiaomoinfo
+ * email : xiaomo@xiaomo.info
+ * QQ    : 83387856
+ * Date  : 2017/6/28 19:56
+ * desc  : 堆栈信息
+ * Copyright(©) 2017 by xiaomo.
  */
 public class Utils {
     public static String getStackTrace() {
@@ -28,11 +41,11 @@ public class Utils {
     private static void appendElement(StringBuilder builder, StackTraceElement element) {
         String className = element.getClassName();
         String methodName = element.getMethodName();
-        int index = className.lastIndexOf('.');
+        int index = className.lastIndexOf(Symbol.DIAN);
         builder.append(className.substring(index + 1))
-                .append('.')
+                .append(Symbol.DIAN)
                 .append(methodName)
-                .append(':')
+                .append(Symbol.MAOHAO)
                 .append(element.getLineNumber());
     }
 }

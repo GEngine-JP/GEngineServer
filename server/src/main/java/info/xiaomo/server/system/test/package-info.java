@@ -12,4 +12,4 @@
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-package info.xiaomo.server.system.user.test;
+package info.xiaomo.server.system.test;

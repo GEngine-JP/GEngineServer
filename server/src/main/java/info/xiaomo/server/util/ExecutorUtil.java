@@ -1,16 +1,11 @@
-package com.sh.game.util;
+package info.xiaomo.server.util;
+
+
+import info.xiaomo.core.queue.QueueExecutor;
 
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import com.sh.concurrent.QueueExecutor;
 
 public class ExecutorUtil {
 
@@ -42,8 +37,8 @@ public class ExecutorUtil {
 	public static final QueueExecutor COMMON_DRIVER_EXECUTOR = new QueueExecutor("游戏公共驱动线程",
 			(int) (Runtime.getRuntime().availableProcessors() * 1.5) < 12 ? 12
 					: (int) (Runtime.getRuntime().availableProcessors() * 1.5),
-			(int) (Runtime.getRuntime().availableProcessors() * 2) < 16 ? 16
-					: (int) (Runtime.getRuntime().availableProcessors() * 2));
+			Runtime.getRuntime().availableProcessors() * 2 < 16 ? 16
+					: Runtime.getRuntime().availableProcessors() * 2);
 
 	/**
 	 * 单独针对单独场景的驱动线程
@@ -61,12 +56,12 @@ public class ExecutorUtil {
 	//===============对Executor的方法包装==========================================
 	
 	public static ScheduledFuture<?> scheduleAtFixedRate(Runnable command, long initialDelay, long period,
-			TimeUnit unit) {
+                                                         TimeUnit unit) {
 		return COMMON_LOGIC_EXECUTOR.scheduleAtFixedRate(command, initialDelay, period, unit);
 	}
 
 	public static ScheduledFuture<?> scheduleWithFixedDelay(Runnable command, long initialDelay, long period,
-			TimeUnit unit) {
+                                                            TimeUnit unit) {
 		return COMMON_LOGIC_EXECUTOR.scheduleWithFixedDelay(command, initialDelay, period, unit);
 	}
 

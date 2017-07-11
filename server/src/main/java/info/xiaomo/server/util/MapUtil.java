@@ -1,4 +1,4 @@
-package com.sh.game.util;
+package info.xiaomo.server.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

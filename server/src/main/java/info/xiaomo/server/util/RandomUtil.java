@@ -4,7 +4,7 @@
  * 创建日期：  2015年2月5日 下午2:38:48
  * 创建作者：  杨  强 <281455776@qq.com>
  */
-package com.sh.game.util;
+package info.xiaomo.server.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -223,7 +223,7 @@ public class RandomUtil {
      * @param max
      * @return
      */
-    public static Double randomDouble(Double min,Double max){
+    public static Double randomDouble(Double min, Double max){
         if (min > max) {
             throw new IllegalArgumentException("传入的范围不合法!最小值不能大于最大值！");
         }

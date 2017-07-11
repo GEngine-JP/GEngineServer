@@ -21,14 +21,8 @@ import java.util.concurrent.ThreadFactory;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class LoginProcessor implements MessageProcessor{
-    Executor executor = Executors.newSingleThreadExecutor(new ThreadFactory() {
-
-        @Override
-        public Thread newThread(Runnable r) {
-            return new Thread(r, "Login");
-        }
-    });
+public class LoginAndLogoutProcessor implements MessageProcessor{
+    private Executor executor = Executors.newSingleThreadExecutor(r -> new Thread(r, "Login"));
 
     @Override
     public void process(IQueueDriverCommand message) {

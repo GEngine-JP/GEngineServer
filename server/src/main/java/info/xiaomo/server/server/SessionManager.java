@@ -1,4 +1,4 @@
-package info.xiaomo.server;
+package info.xiaomo.server.server;
 
 import io.netty.channel.Channel;
 

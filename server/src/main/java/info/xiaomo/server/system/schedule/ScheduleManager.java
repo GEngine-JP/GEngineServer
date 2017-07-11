@@ -1,13 +1,12 @@
-package com.sh.game.system.schedule;
+package info.xiaomo.server.system.schedule;
 
-import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
-
+import info.xiaomo.server.util.ExecutorUtil;
+import info.xiaomo.server.util.TimeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sh.game.util.ExecutorUtil;
-import com.sh.game.util.TimeUtil;
+import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public class ScheduleManager {
 
@@ -22,10 +21,7 @@ public class ScheduleManager {
 	}
 
 
-
 	public void start(){
-
-
 
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -34,12 +30,7 @@ public class ScheduleManager {
 		calendar.set(Calendar.MILLISECOND, 0);
 		long dayDelay = calendar.getTimeInMillis() + TimeUtil.ONE_DAY_IN_MILLISECONDS - TimeUtil.getNowOfMills();
 
-
-
-
-
 		LOGGER.info("距离零点剩余：{}MS", dayDelay);
-
 
 		Calendar c = Calendar.getInstance();
 		c.setTimeInMillis(TimeUtil.getNowOfMills());

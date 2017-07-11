@@ -1,8 +1,8 @@
-package com.sh.game.util;
+package info.xiaomo.server.util;
+
+import info.xiaomo.server.server.Context;
 
 import java.util.concurrent.atomic.AtomicInteger;
-
-import com.sh.game.GameContext;
 
 /**
  * 服务器配置
@@ -69,7 +69,7 @@ public class IDUtil {
 				nowCurSec = curSec;
 			}
 		}
-		return ((long) (GameContext.getServerId() & 0xFFFF)) << 48 | (nowCurSec) << 16 | nowId & 0xFFFF;
+		return ((long) (Context.getServerOption().getServerId() & 0xFFFF)) << 48 | (nowCurSec) << 16 | nowId & 0xFFFF;
 	}
 
 	public static long getNewId() {
@@ -88,7 +88,7 @@ public class IDUtil {
 				now = nowSec;
 			}
 		}
-		return ((GameContext.getServerId() & 0x7_FFFFL) << 45) | ((now & 0x1FFF_FFFF) << 16) | (nowId & 0xFFFF);
+		return ((Context.getServerOption().getServerId() & 0x7_FFFFL) << 45) | ((now & 0x1FFF_FFFF) << 16) | (nowId & 0xFFFF);
 	}
 
 	private static long getNowSec() {
