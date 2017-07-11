@@ -16,30 +16,30 @@ public class StringFormat
   
 //        StringBuffer result = new StringBuffer();
         
-        String result = "";
+        StringBuilder result = new StringBuilder();
         //这里的作用是只匹配{}里面是数字的子字符串  
         final java.util.regex.Pattern p = java.util.regex.Pattern.compile("\\{(\\d+)\\}");  
         final java.util.regex.Matcher m = p.matcher(str);  
   
-        int lastend = 0;
+        int lastEnd = 0;
         
         while(m.find())  
         {  
             //获取{}里面的数字作为匹配组的下标取值  
         	final int index= Integer.parseInt(m.group(1));
         	int start = m.start();
-        	if(start>lastend)
-        		result += str.substring(lastend,start);
+        	if(start>lastEnd)
+        		result.append(str.substring(lastEnd, start));
         	 if(index<args.length)  
              {  
         		 if(args[index]!=null)
-        			 result += args[index].toString();
+        			 result.append(args[index].toString());
         		 else
-        			 result += "NULL";
+        			 result.append("NULL");
              }
-        	lastend = m.end();
+        	lastEnd = m.end();
         }  
-        return result;  
+        return result.toString();
     }  
     public static String format(String str, Object... args)
     {  
@@ -54,7 +54,7 @@ public class StringFormat
             return str;  
         }  
   
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         
         //这里的作用是只匹配{}里面是数字的子字符串  
         final java.util.regex.Pattern p = java.util.regex.Pattern.compile("\\{(\\d+)\\}");  

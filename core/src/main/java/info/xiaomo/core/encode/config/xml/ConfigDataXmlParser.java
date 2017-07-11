@@ -4,6 +4,7 @@ import info.xiaomo.core.encode.config.ConfigDataContainer;
 import info.xiaomo.core.encode.config.IConfigCache;
 import info.xiaomo.core.encode.config.IConverter;
 import info.xiaomo.core.encode.util.FileLoaderUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -60,7 +61,7 @@ public class ConfigDataXmlParser {
 		});*/
         //saxReader.setValidation(true);
         // 如果path不以"/"开头，则从当前类所在包下的资源，如果以"/"开头则从ClassPath根下获取
-		/*InputStream inputStream = ConfigDataXmlParser.class
+        /*InputStream inputStream = ConfigDataXmlParser.class
 				.getResourceAsStream(path);*/
         InputStream inputStream = FileLoaderUtil.findInputStreamByFileName(path);
         Document document = saxReader.read(inputStream);
@@ -102,20 +103,6 @@ public class ConfigDataXmlParser {
             ClassNotFoundException, InstantiationException,
             IllegalAccessException {
         SAXReader saxReader = new SAXReader();
-		/*saxReader.setEntityResolver(new EntityResolver() {
-			public InputSource resolveEntity(String publicId, String systemId)
-					throws SAXException, IOException {
-				// 指定DTD校验
-				InputSource inputSource = new InputSource(ConfigDataXmlParser.class
-						.getResourceAsStream("data_config.dtd"));
-				return inputSource;
-			}
-		});*/
-        // InputStream inputStream = new FileInputStream(path);
-
-        // 如果path不以"/"开头，则从当前类所在包下的资源，如果以"/"开头则从ClassPath根下获取
-		/*InputStream inputStream = ConfigDataXmlParser.class
-				.getResourceAsStream(path);*/
         InputStream inputStream = FileLoaderUtil.findInputStreamByFileName(path);
         Document document = saxReader.read(inputStream);
         Element root = document.getRootElement();
@@ -179,12 +166,12 @@ public class ConfigDataXmlParser {
     private static IConverter parseGlobalConverter(Element config)
             throws ClassNotFoundException, InstantiationException,
             IllegalAccessException {
-        String globalConverterClasssName = config.attributeValue(CONVERTER);
+        String globalConverterClassName = config.attributeValue(CONVERTER);
         IConverter globalConverter = null;
-        if (!StringUtils.isEmpty(globalConverterClasssName)) {
-            Class<?> globalConverterClasss = Class
-                    .forName(globalConverterClasssName);
-            globalConverter = (IConverter) globalConverterClasss.newInstance();
+        if (!StringUtils.isEmpty(globalConverterClassName)) {
+            Class<?> globalConverterClass = Class
+                    .forName(globalConverterClassName);
+            globalConverter = (IConverter) globalConverterClass.newInstance();
         }
         return globalConverter;
     }
@@ -195,39 +182,20 @@ public class ConfigDataXmlParser {
             ClassNotFoundException, InstantiationException,
             IllegalAccessException {
         SAXReader saxReader = new SAXReader();
-        // InputStream inputStream = new FileInputStream(path);
-		/*saxReader.setEntityResolver(new EntityResolver() {
-			public InputSource resolveEntity(String publicId, String systemId)
-					throws SAXException, IOException {
-				// 指定DTD校验
-				InputSource inputSource = new InputSource(
-						ConfigDataXmlParser.class
-								.getResourceAsStream("data_config.dtd"));
-				return inputSource;
-			}
-		});
-		//saxReader.setValidation(true);
-		// 如果path不以"/"开头，则从当前类所在包下的资源，如果以"/"开头则从ClassPath根下获取
-		InputStream inputStream = ConfigDataXmlParser.class
-				.getResourceAsStream(path);
-		Document document = saxReader.read(inputStream);
-		Element root = document.getRootElement();*/
         InputStream inputStream = FileLoaderUtil.findInputStreamByFileName(path);
         Document document = saxReader.read(inputStream);
         Element root = document.getRootElement();
         Class<?> ret = null;
         Iterator<Element> data = root.elementIterator(CONFIGDATA);
         while (data.hasNext()) {
-            Element configdata = data.next();
-            Iterator<Element> it = configdata.elementIterator(CONFIG);
+            Element configData = data.next();
+            Iterator<Element> it = configData.elementIterator(CONFIG);
             while (it.hasNext()) {
                 Element config = it.next();
                 String className = config.attributeValue(CLAZZ);
                 String file = config.attributeValue(FILE);
-                // String desc = config.attributeValue(DESC);
                 if (fileName.equals(file)) {
-                    Class<?> clazz = Class.forName(className);
-                    ret = clazz;
+                    ret = Class.forName(className);
                     break;
                 }
             }

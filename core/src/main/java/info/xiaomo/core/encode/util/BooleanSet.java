@@ -17,10 +17,10 @@ public class BooleanSet {
 	public synchronized void set(int key,boolean value){
 		int len = (key>>3);
 		if(data == null || (data.length<=len && value)){//扩展data或者初始化data
-			byte[] newdata = new byte[len+1];
+			byte[] newData = new byte[len+1];
 			if(data != null)
-				System.arraycopy(data, 0, newdata, 0, data.length);
-			this.data = newdata;
+				System.arraycopy(data, 0, newData, 0, data.length);
+			this.data = newData;
 		}
 		int index = (key&7);
 		byte v;
@@ -30,27 +30,24 @@ public class BooleanSet {
 		}
 		else if(data.length>len)
 		{
-			v = (byte) ((1<<index)^-1);
+			v = (byte) (~(1 << index));
 			data[len] = (byte) (data[len]&v);
 			int newlen = data.length;
 			while(data[newlen-1] == 0){
 				newlen--;
 			}
 			if(data.length!=newlen){
-				byte[] newdata = new byte[newlen];
-				System.arraycopy(data, 0, newdata, 0, newlen);
-				this.data = newdata;
+				byte[] newData = new byte[newlen];
+				System.arraycopy(data, 0, newData, 0, newlen);
+				this.data = newData;
 			}
 		}
 	}
 	
-	public synchronized boolean get(int key){
-		int len = (key>>3);
-		int index = (key&7);
-		if(this.data.length<=len){
-			return false;
-		}
-		return (data[len]&(1<<index))>0;
+	public synchronized boolean get(int key) {
+		int len = (key >> 3);
+		int index = (key & 7);
+		return this.data.length > len && (data[len] & (1 << index)) > 0;
 	}
 	
 	public static void main(String[] args) {

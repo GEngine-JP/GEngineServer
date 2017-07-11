@@ -6,22 +6,14 @@ import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
 public class Compress {
-	private static int cachesize = 1024*8; 
+	private static int cacheSize = 1024*8;
 	
-	protected static ThreadLocal<Inflater> cacheInflaters = new ThreadLocal<Inflater>(){
-		protected Inflater initialValue() {
-            return new Inflater();
-        }
-	};
+	protected static ThreadLocal<Inflater> cacheInflaters = ThreadLocal.withInitial(Inflater::new);
 	public static Inflater getInflater() {
 		return cacheInflaters.get();
 	}
 	
-	protected static ThreadLocal<Deflater> cacheDeflaters = new ThreadLocal<Deflater>(){
-		protected Deflater initialValue() {
-            return new Deflater();
-        }
-	};
+	protected static ThreadLocal<Deflater> cacheDeflaters = ThreadLocal.withInitial(Deflater::new);
 	public static Deflater getDeflater() {
 		return cacheDeflaters.get();
 	}
@@ -35,14 +27,13 @@ public class Compress {
 	public static byte[] compress(byte[] input){
 		Deflater compresser = getDeflater();
 		compresser.reset(); 
-//		compresser.setStrategy(Deflater.DEFAULT_STRATEGY);
-		compresser.setInput(input); 
+		compresser.setInput(input);
 		compresser.finish(); 
 		byte output[] = new byte[0]; 
 		ByteArrayOutputStream o = new ByteArrayOutputStream(input.length);
 		try 
 		{ 
-			byte[] buf = new byte[cachesize]; 
+			byte[] buf = new byte[cacheSize];
 			int got; 
 			while (!compresser.finished()) 
 			{ 
@@ -77,7 +68,7 @@ public class Compress {
 		ByteArrayOutputStream o = new ByteArrayOutputStream(input.length);
 		try 
 		{ 
-			byte[] buf = new byte[cachesize];
+			byte[] buf = new byte[cacheSize];
 			int got; 
 			while (!decompresser.finished()) 
 			{ 

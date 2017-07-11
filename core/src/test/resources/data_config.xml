@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+    <configData>
+        <config class="info.xiaomo.core.test.TestConfig" file="cfg_test" key="id" desc="测试读取配置"/>
+    </configData>
+
+    <configCaches>
+
+    </configCaches>
+</configs>

@@ -1,6 +1,6 @@
 package info.xiaomo.core.encode.config;
 
-
+import info.xiaomo.core.encode.util.ReflectUtil.PropertyDesc;
 import info.xiaomo.core.encode.util.*;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -67,8 +67,12 @@ public class ConfigDataContainer<T extends IConfigData> {
     private IConverter globalConverter;
 
 
-    public ConfigDataContainer(Class<T> clazz, String fileName, String key, Map<String, IConverter> converterMap,
-                               List<String> extraKeyList, IConverter globalConverter) {
+    public ConfigDataContainer(Class<T> clazz,
+                               String fileName,
+                               String key,
+                               Map<String, IConverter> converterMap,
+                               List<String> extraKeyList,
+                               IConverter globalConverter) {
         this.clazz = clazz;
         this.fileName = fileName;
         this.key = key;
@@ -79,7 +83,8 @@ public class ConfigDataContainer<T extends IConfigData> {
     }
 
     /**
-     *  构造函数
+     * 构造函数
+     *
      * @param clazz clazz
      */
     public ConfigDataContainer(Class<T> clazz) {
@@ -88,9 +93,9 @@ public class ConfigDataContainer<T extends IConfigData> {
 
 
     /**
-     *
+     * 通过id和缓存名字获取一个实体
      * @param cacheName cacheName
-     * @param key key
+     * @param key       key
      * @return T
      */
     public T getByIdAndCacheName(String cacheName, Object key) {
@@ -100,6 +105,7 @@ public class ConfigDataContainer<T extends IConfigData> {
 
     /**
      * 获取class
+     *
      * @return Class
      */
     public Class<T> getClazz() {
@@ -128,7 +134,7 @@ public class ConfigDataContainer<T extends IConfigData> {
     public void load(String filePath) throws InstantiationException, IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
         String file = filePath + fileName + ".csv";
-        CSVData data = CSVUtil.read(file, 3);
+        CSVUtil.CSVData data = CSVUtil.read(file, 3);
         if (data == null) {
             return;
         }
@@ -228,7 +234,7 @@ public class ConfigDataContainer<T extends IConfigData> {
             IllegalArgumentException, InvocationTargetException {
 
         String[] keys = key.split(Symbol.JINHAO);
-        PropertyDesc propertyDesc[] = new PropertyDesc[keys.length];
+        ReflectUtil.PropertyDesc propertyDesc[] = new PropertyDesc[keys.length];
 
         for (int i = 0; i < keys.length; i++) {
             String keyField = keys[i];
@@ -261,7 +267,7 @@ public class ConfigDataContainer<T extends IConfigData> {
      * @throws IllegalArgumentException  IllegalArgumentException
      * @throws InvocationTargetException InvocationTargetException
      */
-    public Object buildKey(T value, PropertyDesc propertyDesc[]) throws IllegalAccessException, IllegalArgumentException,
+    public Object buildKey(T value, ReflectUtil.PropertyDesc propertyDesc[]) throws IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
         if (propertyDesc.length == 1) {// 单个key
             return propertyDesc[0].getReadMethod().invoke(value);

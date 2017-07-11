@@ -6,4 +6,5 @@ public class Symbol {
     public static final String SHUXIAN = "\\|";
     public static final String JINHAO_TWO = "##";
     public static final String FENHAO = ";";
+    public static final String HENGXIAN = "-";
 }

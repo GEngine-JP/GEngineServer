@@ -1,5 +1,7 @@
 package info.xiaomo.core.encode.config;
 
+import info.xiaomo.core.encode.config.xml.ConfigDataXmlParser;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

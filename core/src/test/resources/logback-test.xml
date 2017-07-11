@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="5 seconds" debug="true">
+
+	<!-- 控制台 -->
+	<appender name="consoleInfoAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS} %.-5level]%C{0}:%L %msg%n</pattern>
+		</encoder>
+		<target>System.out</target>
+
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+	
+	
+	<appender name="consoleDebugAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS} %.-5level]%C{0}:%L %msg%n</pattern>
+		</encoder>
+		<target>System.out</target>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+	<appender name="consoleErrAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS} %.-5level]%C{0}:%L %msg%n</pattern>
+		</encoder>
+		<target>System.err</target>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>debug</level>
+		</filter>
+	</appender>
+
+
+	<!-- 系统文本日志Appender -->
+	<!--<appender name="FileAppender"-->
+		<!--class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+		<!--<file>logs/MainServer.log</file>-->
+		<!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+			<!--&lt;!&ndash; 每小时回滚一次 &ndash;&gt;-->
+			<!--<fileNamePattern>logs/MainServer-%d{yyyyMMddHH}.log</fileNamePattern>-->
+		<!--</rollingPolicy>-->
+		<!--<encoder>-->
+			<!--<pattern>[%d{yyyy-MM-dd HH:mm:ss} %.-5level]%C{0}:%L %msg%n</pattern>-->
+		<!--</encoder>-->
+		<!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+			<!--<level>debug</level>-->
+		<!--</filter>-->
+	<!--</appender>-->
+	
+	<!-- 360标准化日志 -->
+	<!--<appender name="PlatformStandardLog"-->
+		<!--class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+		<!--<file>logs/std/PlatformStandard.log</file>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+          	<!--&lt;!&ndash; 每小时回滚一次 &ndash;&gt;-->
+        	<!--<fileNamePattern>logs/std/PlatformStandard.log.%d{yyyyMMdd}</fileNamePattern>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder>-->
+        	<!--<pattern>%msg%n</pattern>-->
+        <!--</encoder>-->
+        <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+        	<!--<level>debug</level>-->
+       <!--</filter>-->
+    <!--</appender>-->
+    
+    <logger name="PlatformStandardLog" level="info" additivity="false">
+      	<appender-ref ref="PlatformStandardLog" />
+    </logger>
+
+	<root level="debug">
+		<appender-ref ref="consoleInfoAppender" />
+		<appender-ref ref="consoleDebugAppender" />
+    	<appender-ref ref="consoleErrAppender" />
+		<!--<appender-ref ref="FileAppender" />-->
+	</root>
+</configuration>

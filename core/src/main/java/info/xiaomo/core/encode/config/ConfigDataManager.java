@@ -1,6 +1,8 @@
 package info.xiaomo.core.encode.config;
 
 import info.xiaomo.core.encode.config.xml.ConfigDataXmlParser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +23,9 @@ import java.util.Map;
  * Copyright(©) 2017 by xiaomo.
  */
 public class ConfigDataManager {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ConfigDataManager.class);
+
     private static ConfigDataManager INSTANCE = new ConfigDataManager();
 
 
@@ -31,6 +36,24 @@ public class ConfigDataManager {
     }
 
     private ConfigDataManager() {
+    }
+
+
+    public void init(String path) {
+        String xmlPath = "data_config.xml";
+        try {
+            List<ConfigDataContainer<?>> configDatas = ConfigDataXmlParser.parse(xmlPath);
+            LOGGER.info("配置条数：" + configDatas.size());
+            for (ConfigDataContainer<?> container : configDatas) {
+                container.load(path);
+                configContainers.put(container.getClazz(), container);
+            }
+        } catch (Exception e) {
+            LOGGER.error("加载配置文件失败...",e);
+            throw new RuntimeException(e);
+        }
+        //全局缓存
+        ConfigCacheManager.getInstance().init(xmlPath);
     }
 
     public void init(String path, List<Class<?>> configList, List<Class<?>> cacheList) {

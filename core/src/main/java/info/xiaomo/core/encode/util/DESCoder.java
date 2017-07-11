@@ -21,9 +21,7 @@ public class DESCoder
         SecretKey key = keyFactory.generateSecret(dks);
         Cipher cipher = Cipher.getInstance("DES");
         cipher.init(Cipher.ENCRYPT_MODE, key, sr);
-        byte data[] = plainText;  
-        byte encryptedData[] = cipher.doFinal(data);  
-        return encryptedData;  
+        return cipher.doFinal(plainText);
     }  
       
     public static byte[] desDecrypt(byte[] encryptText) throws Exception
@@ -34,9 +32,7 @@ public class DESCoder
         SecretKey key = keyFactory.generateSecret(dks);
         Cipher cipher = Cipher.getInstance("DES");
         cipher.init(Cipher.DECRYPT_MODE, key, sr);
-        byte encryptedData[] = encryptText;  
-        byte decryptedData[] = cipher.doFinal(encryptedData);  
-        return decryptedData;  
+        return cipher.doFinal(encryptText);
     }  
       
     public static String encrypt(String input) throws Exception
@@ -65,8 +61,7 @@ public class DESCoder
            return null;  
         }  
         BASE64Decoder decoder = new BASE64Decoder();
-        byte[] b = decoder.decodeBuffer(s);  
-        return b;  
+        return decoder.decodeBuffer(s);
     }
 
 	public static void setKey(String key) {

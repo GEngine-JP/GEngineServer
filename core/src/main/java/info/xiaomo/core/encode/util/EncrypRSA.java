@@ -58,8 +58,7 @@ public class EncrypRSA {
 			Cipher cipher = Cipher.getInstance("RSA");
 			//根据公钥，对Cipher对象进行初始化
 			cipher.init(Cipher.DECRYPT_MODE, privateKey);
-			byte[] resultBytes = cipher.doFinal(srcBytes);
-			return resultBytes;
+			return cipher.doFinal(srcBytes);
 		}
 		return null;
 	}
