@@ -31,13 +31,15 @@ public class ConfigDataContainer<T extends IConfigData> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ConfigDataContainer.class);
 
-    public static final String DEFAULT_CACHE = "default";
+    static final String DEFAULT_CACHE = "default";
+    private static final String CSV_SUFFIX = ".csv";
+    private static final int SKIP_LINE = 3;
 
     private Map<String, Map<Object, T>> mapCaches;
 
     private List<T> list;
 
-    public static Set<String> errKey = new HashSet<>();
+    private static Set<String> errKey = new HashSet<>();
 
     /**
      * 该配置对应的Class
@@ -86,16 +88,6 @@ public class ConfigDataContainer<T extends IConfigData> {
     }
 
     /**
-     * 构造函数
-     *
-     * @param clazz clazz
-     */
-    public ConfigDataContainer(Class<T> clazz) {
-        this.clazz = clazz;
-    }
-
-
-    /**
      * 通过id和缓存名字获取一个实体
      *
      * @param cacheName cacheName
@@ -135,10 +127,15 @@ public class ConfigDataContainer<T extends IConfigData> {
      * @throws IllegalArgumentException  IllegalArgumentException
      * @throws InvocationTargetException InvocationTargetException
      */
-    public void load(String filePath) throws InstantiationException, IllegalAccessException, IllegalArgumentException,
+    public void load(String filePath) throws
+            InstantiationException,
+            IllegalAccessException,
+            IllegalArgumentException,
             InvocationTargetException {
-        String file = filePath + fileName + ".csv";
-        CSVUtil.CSVData data = CSVUtil.read(file, 3);
+
+
+        String file = filePath + fileName + CSV_SUFFIX;
+        CSVUtil.CSVData data = CSVUtil.read(file, SKIP_LINE);
         if (data == null) {
             return;
         }
@@ -200,6 +197,7 @@ public class ConfigDataContainer<T extends IConfigData> {
         if (isNull) {
             LOGGER.error("配置表：" + fileName + "存在空数据，用EM检查一下，防止getList时候出BUG！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！");
         }
+
         for (String key : data.keySet()) {
             String value = data.get(key);
             PropertyDesc desc = ReflectUtil.getPropertyDesc(clazz, key);

@@ -7,6 +7,9 @@ import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * 根据己知的方法名，反射调用类
+ */
 public class ReflectUtil
 {
 	
@@ -14,22 +17,22 @@ public class ReflectUtil
     /**
      * 所有属性缓存 Class->PropertyDesc数组
      */
-    private static final ConcurrentHashMap<Class<?>, PropertyDesc[]> propertyDescCache = new ConcurrentHashMap<Class<?>, PropertyDesc[]>();
+    private static final ConcurrentHashMap<Class<?>, PropertyDesc[]> propertyDescCache = new ConcurrentHashMap<>();
 
     /**
      * 缓存单个属性信息 class.name->PropertyDesc
      */
-    private static final ConcurrentHashMap<String, PropertyDesc> propertyDescSingleCache = new ConcurrentHashMap<String, PropertyDesc>();
+    private static final ConcurrentHashMap<String, PropertyDesc> propertyDescSingleCache = new ConcurrentHashMap<>();
 
     /**
      * 缓存单个方法信息class.name.parameter...-> Method
      */
-    private static final ConcurrentHashMap<String, Method> methodCache = new ConcurrentHashMap<String, Method>();
+    private static final ConcurrentHashMap<String, Method> methodCache = new ConcurrentHashMap<>();
 
     /**
      * 获取指定类的所有属性列表
-     * @param clazz
-     * @return
+     * @param clazz clazz
+     * @return PropertyDesc[]
      */
     public static PropertyDesc[] getPropertyDescs(Class<?> clazz)
     {
@@ -60,13 +63,13 @@ public class ReflectUtil
      * 获取指定类的指定属性信息
      * @param clazz 类
      * @param name 属性名称
-     * @return
+     * @return PropertyDesc
      */
     public static PropertyDesc getPropertyDesc(Class<?> clazz, String name)
     {
     	//由于PropertyUtils的getPropertyDescriptors方法，会将所有属性的首写字母转换为小写返回，所以此处为保持一致强制将name首字母小写
     	String nameKey = StringUtils.uncapitalize(name);
-        String key = clazz.getName() + "." + nameKey;
+        String key = clazz.getName() + Symbol.DIAN + nameKey;
         PropertyDesc pd = propertyDescSingleCache.get(key);
         if (pd == null)
         {
@@ -97,22 +100,22 @@ public class ReflectUtil
 
     /**
      * 获取指定Class的方法
-     * @param clazz 
+     * @param clazz  clazz
      * @param methodName 方法名称
      * @param parameterTypes 参数类型里列表，不定参数
-     * @return
+     * @return Method
      * @throws SecurityException
      * @throws NoSuchMethodException
      */
     public static Method getMethod(Class<?> clazz, String methodName, Class<?>... parameterTypes) throws SecurityException, NoSuchMethodException
     {
         StringBuilder sb = new StringBuilder();
-        sb.append(clazz.getName()).append(".").append(methodName);
+        sb.append(clazz.getName()).append(Symbol.DIAN).append(methodName);
         if (parameterTypes != null)
         {
             for (Class<?> pcls : parameterTypes)
             {
-                sb.append(".").append(pcls.getName());
+                sb.append(Symbol.DIAN).append(pcls.getName());
             }
         }
         String key = sb.toString();

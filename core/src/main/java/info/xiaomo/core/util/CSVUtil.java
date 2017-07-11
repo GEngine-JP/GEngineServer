@@ -9,6 +9,12 @@ import java.util.*;
 
 public class CSVUtil {
 
+    /**
+     * 网络地址
+     * @param str str
+     * @param skipLine skipLine
+     * @return CSVData
+     */
 	public static CSVData readConfigDataFromUrl(String str, int skipLine) {
 		BufferedReader reader = null;
 		try {
@@ -29,19 +35,25 @@ public class CSVUtil {
 			try {
 				if (reader != null)
 					reader.close();
-			} catch (IOException e1) {
+			} catch (IOException ignored) {
 			}
 		}
 	}
 
+    /**
+     * 本地文件
+     * @param filepath filepath
+     * @param skipLine skipLine
+     * @return CSVData
+     */
 	public static CSVData read(String filepath, int skipLine) {
 		BufferedReader br = null;
 		try {
 
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(filepath), "UTF-8"));
 
-			String line = null;
-			ArrayList<String> lines = new ArrayList<String>();
+			String line;
+			ArrayList<String> lines = new ArrayList<>();
 			while ((line = br.readLine()) != null) {
 				lines.add(line);
 			}
@@ -97,7 +109,7 @@ public class CSVUtil {
 
 		public void readTH(List<String> lines) {
 			String line = lines.remove(0);
-			tableHead = line.trim().split(",");
+			tableHead = line.trim().split(Symbol.DOUHAO);
 		}
 
 		public void readTR(List<String> lines) {
@@ -108,7 +120,7 @@ public class CSVUtil {
 			for (String line1 : lines) {
 				Map<String, String> tr = new HashMap<>();
 				line = line1;
-				lineArray = line.split(",");
+				lineArray = line.split(Symbol.DOUHAO);
 				for (int j = 0; j < lineArray.length; j++) {
 					if (j >= tableHead.length) {
 						continue;
