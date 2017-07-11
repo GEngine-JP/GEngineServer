@@ -1,4 +1,4 @@
-package info.xiaomo.core.net.network;
+package info.xiaomo.server.event;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -10,9 +10,9 @@ package info.xiaomo.core.net.network;
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
- * Date  : 2017/7/11 16:59
+ * Date  : 2017/7/11 19:24
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class Session {
+public interface IListener {
 }

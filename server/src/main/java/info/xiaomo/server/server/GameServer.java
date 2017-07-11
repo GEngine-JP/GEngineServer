@@ -1,9 +1,11 @@
 package info.xiaomo.server;
 
 import info.xiaomo.core.config.ConfigDataManager;
-import info.xiaomo.core.net.message.MessageRouter;
 import info.xiaomo.core.net.network.NetWorkService;
 import info.xiaomo.core.net.network.NetWorkServiceBuilder;
+import info.xiaomo.server.event.EventRegister;
+import info.xiaomo.server.processor.LoginAndLogoutProcessor;
+import info.xiaomo.server.system.schedule.ScheduleManager;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -38,12 +40,20 @@ public class GameServer {
         builder.setNetworkEventListener(new EventListener());
         builder.setPort(option.getGameServerPort());
 
+        router = new MessageRouter();
+        router.registerProcessor(1,new LoginAndLogoutProcessor());
 
         builder.setConsumer(router);
         // 创建网络服务
         netWork = builder.createService();
 
         ConfigDataManager.getInstance().init(option.getConfigDataPath());
+
+        // 注册事件
+        EventRegister.registerPreparedListeners();
+
+        //开启定时任务
+        ScheduleManager.getInstance().start();
     }
 
     /**

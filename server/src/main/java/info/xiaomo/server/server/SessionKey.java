@@ -1,4 +1,4 @@
-package info.xiaomo.core.net.network;
+package info.xiaomo.server;
 
 import io.netty.util.AttributeKey;
 
