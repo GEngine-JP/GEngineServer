@@ -1,4 +1,4 @@
-package info.xiaomo.server;
+package info.xiaomo.server.back;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -24,11 +24,11 @@ import java.net.InetSocketAddress;
  * Copyright(©) 2015 by xiaomo.
  **/
 
-public class ServerStarter {
+public class BackServerStarter {
 
     private final int port;
 
-    private ServerStarter(int port) {
+    private BackServerStarter(int port) {
         this.port = port;
     }
 
@@ -36,15 +36,15 @@ public class ServerStarter {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
-            ServerBootstrap b = new ServerBootstrap();
-            b.group(bossGroup, workerGroup)
+            ServerBootstrap serverBootstrap = new ServerBootstrap();
+            serverBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .localAddress(new InetSocketAddress(port))
                     .childHandler(new Initializer());
 
             // 绑定端口，接收进来的连接
-            ChannelFuture f = b.bind(port).sync();
-            f.channel().closeFuture().sync();
+            ChannelFuture channelFuture = serverBootstrap.bind(port).sync();
+            channelFuture.channel().closeFuture().sync();
             
         } finally {
             workerGroup.shutdownGracefully();
@@ -63,8 +63,8 @@ public class ServerStarter {
         if (args.length == 1) {
             port = Integer.parseInt(args[0]);
         } else {
-            port = 8080;
+            port = 8081;
         }
-        new ServerStarter(port).start();
+        new BackServerStarter(port).start();
     }
 }
