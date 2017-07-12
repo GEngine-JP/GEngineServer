@@ -1,5 +1,8 @@
 package info.xiaomo.tool;
 
+import info.xiaomo.tool.util.FileGenerator;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,26 +25,37 @@ import java.util.Properties;
 public class ToolMain {
     private static final String CONFIG_URL = "F:\\ChessGame\\tool\\src\\main\\resources\\tool.properties";
 
-    private static String input;
-    private static String output;
-
     public static void main(String[] args) throws IOException {
         InputStream in = null;
-            try {
-                in = new FileInputStream(CONFIG_URL);
-                Properties properties = new Properties();
-                properties.load(in);
-                input = (String) properties.get("input");
-                output = (String) properties.get("output");
-                System.out.println(input);
-                System.out.println(output);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally {
-                if (in!= null){
-                    in.close();
+        try {
+            in = new FileInputStream(CONFIG_URL);
+            Properties properties = new Properties();
+            properties.load(in);
+            String input = (String) properties.get("input");
+            String output = (String) properties.get("output");
+
+
+
+            File file = new File(input);
+            if (file.isDirectory()) {
+                String[] fileList = file.list((dir, name) -> name.endsWith(".xml"));
+                if (fileList == null) {
+                    return;
                 }
+                for (String fileName : fileList) {
+                    System.out.println("处理：" + fileName + "...");
+                    FileGenerator.generator(output);
+                }
+
+            } else {
+                FileGenerator.generator(output);
+            }
+            System.out.println("生成完毕.");
+        } finally {
+            if (in != null) {
+                in.close();
             }
         }
     }
+}
 
