@@ -31,6 +31,6 @@ public class GameServerBootstrap {
         Context.init(option);
         GameServer server = Context.createServer();
         server.start();
-        LOGGER.info("游戏服务器启动成功...");
+        LOGGER.warn("游戏服务器启动成功...");
     }
 }

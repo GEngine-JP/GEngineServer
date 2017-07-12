@@ -43,7 +43,7 @@ public class ConfigDataManager {
         String xmlPath = "data_config.xml";
         try {
             List<ConfigDataContainer<?>> configDatas = ConfigDataXmlParser.parse(xmlPath);
-            LOGGER.info("配置条数：" + configDatas.size());
+            LOGGER.warn("配置条数：" + configDatas.size());
             for (ConfigDataContainer<?> container : configDatas) {
                 container.load(configDataPath);
                 configContainers.put(container.getClazz(), container);
