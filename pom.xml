@@ -12,8 +12,6 @@
         <module>core</module>
         <module>server</module>
         <module>log</module>
-        <module>client</module>
-        <module>tool</module>
     </modules>
 
     <distributionManagement>
