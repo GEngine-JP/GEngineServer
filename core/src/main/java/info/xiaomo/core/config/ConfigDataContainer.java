@@ -109,7 +109,7 @@ public class ConfigDataContainer<T extends IConfigData> {
     }
 
 
-    public List<T> getList(){
+    public List<T> getList() {
         return this.list;
     }
 
@@ -138,7 +138,7 @@ public class ConfigDataContainer<T extends IConfigData> {
             InvocationTargetException {
 
 
-        String file = filePath + fileName + CSV_SUFFIX;
+        String file = filePath + "/" + fileName + CSV_SUFFIX;
         CSVUtil.CSVData data = CSVUtil.read(file, SKIP_LINE);
         if (data == null) {
             return;
