@@ -4,7 +4,6 @@ import info.xiaomo.core.db.persist.Persistable;
 import info.xiaomo.server.constant.DataType;
 import io.protostuff.Exclude;
 import io.protostuff.Tag;
-import lombok.Data;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -20,7 +19,6 @@ import lombok.Data;
  * desc  : 玩家
  * Copyright(©) 2017 by xiaomo.
  */
-@Data
 public class Player implements Persistable {
 
     @Exclude
