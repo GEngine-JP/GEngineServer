@@ -25,136 +25,10 @@ public class RandomUtil {
 	private static final Map<String, Double> curPrivateRate = new ConcurrentHashMap<>();
 	private static final Map<String, Integer> lastPrivateRate = new ConcurrentHashMap<>();
 	
-	public static final byte PRIVATE_TYPE_SHENDUN= 1; //神盾
-	public static final byte PRIVATE_TYPE_CRITICAL= 2; //暴击
-	public static final byte PRIVATE_TYPE_QAINGHUA= 3; //强化
-	public static final byte PRIVATE_TYPE_DODGE= 4; //闪避
-	public static final byte PRIVATE_TYPE_EMS = 5; //镖车
-	
-
     private static final Logger LOGGER = LoggerFactory.getLogger(RandomUtil.class);
     
     private static final Map<Integer, Double> PRIVATE_RATE_INIT_MAP = new HashMap<>();
     
-    static {
-    	
-    	PRIVATE_RATE_INIT_MAP.put(0, 0.0);
-    	
-    	for(int i = 1; i <= 100 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000000000000000000000000000000528);
-    	}
-    	
-    	for(int i = 101; i <= 200 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000000000000000594000000000000000);
-    	}
-    	
-    	for(int i = 201; i <= 300 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000000000061100000000000000000000);
-    	}
-    	
-    	for(int i = 301; i <= 400 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000000019940000000000000000000000);
-    	}
-    	
-    	for(int i = 401; i <= 500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000000637900000000000000000000000);
-    	}
-    	
-    	for(int i = 501; i <= 600 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000006389400000000000000000000000);
-    	}
-    	
-    	for(int i = 601; i <= 700 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000033190000000000000000000000000);
-    	}
-    	
-    	for(int i = 701; i <= 800 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000114055000000000000000000000000);
-    	}
-    	for(int i = 801; i <= 900 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000302707000000000000000000000000);
-    	}
-    	
-    	for(int i = 901; i <= 1000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.000656500000000000000000000000000);
-    	}
-    	
-    	for(int i = 1001; i <= 1250 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.002656510000000000000000000000000);
-    	}
-    	
-    	for(int i = 1251; i <= 1500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.006767750000000000000000000000000);
-    	}
-    	
-    	for(int i = 1501; i <= 1750 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.013452300000000000000000000000000);
-    	}
-    	
-    	for(int i = 1751; i <= 2000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.02296035);
-    	}
-    	
-    	for(int i = 2001; i <= 2500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.04931000);
-    	}
-    	
-    	for(int i = 2501; i <= 3000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.08520000);
-    	}
-    	
-    	for(int i = 3001; i <= 3500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.12531000);
-    	}
-    	
-    	for(int i = 3501; i <= 4000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.17863200);
-    	}
-    	
-    	for(int i = 4001; i <= 4500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.2293580);
-    	}
-    	for(int i = 4501; i <= 5000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.2929000);
-    	}
-    	for(int i = 5001; i <= 5500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.3603980);
-    	}
-    	for(int i = 5501; i <= 6000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.4226500);
-    	}
-    	for(int i = 6001; i <= 6500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.4811260);
-    	}
-    	
-    	for(int i = 6501; i <= 7000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.5714400);
-    	}
-    	
-    	for(int i = 7001; i <= 7500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.6666680);
-    	}
-    	for(int i = 7501; i <= 8000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.7500000);
-    	}
-    	for(int i = 8001; i <= 8500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.8235300);
-    	}
-    	for(int i = 8501; i <= 9000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.8889000);
-    	}
-    	for(int i = 9001; i <= 9500 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 0.947369);
-    	}
-    	
-    	for(int i = 9501; i <= 10000 ; i++) {
-    		PRIVATE_RATE_INIT_MAP.put(i, 1.0);
-    	} 
-    	
-
-
-    }
-
     /**
      * 随机产生min到max之间的一个小数值，包含min和不包含max
      * 
@@ -167,8 +41,7 @@ public class RandomUtil {
         if (min > max) {
             throw new IllegalArgumentException("传入的范围不合法!最小值不能大于最大值！");
         }
-        double num = ThreadLocalRandom.current().nextDouble(min, max);
-        return num;
+		return ThreadLocalRandom.current().nextDouble(min, max);
     }
 
     /**
@@ -182,8 +55,7 @@ public class RandomUtil {
         if (min > max) {
             throw new IllegalArgumentException("传入的范围不合法!最小值不能大于最大值！");
         }
-        int num = ThreadLocalRandom.current().nextInt(max - min + 1) + min;
-        return num;
+		return ThreadLocalRandom.current().nextInt(max - min + 1) + min;
     }
 
 	public static boolean randomBooleanByType(long rid, int type, int rate) {
@@ -242,14 +114,8 @@ public class RandomUtil {
      * @return 成功true失败false
      */
     public static boolean isGenerate(int maxRange, int sucRange) {
-        if (maxRange == sucRange) {
-            return true;
-        }
-        if (sucRange <= 0) {
-            return false;
-        }
-        return random(1, maxRange) <= sucRange;
-    }
+		return maxRange == sucRange || sucRange > 0 && random(1, maxRange) <= sucRange;
+	}
 
     /**
      * 从指定的的元素集中随机一个元素
@@ -278,7 +144,7 @@ public class RandomUtil {
      * 
      * @param array
      *            元素数组
-     * @return
+     * @return T
      */
     public static <T> T randomElement(T[] array) {
         if (array == null || array.length == 0) {
@@ -296,11 +162,11 @@ public class RandomUtil {
     public static int randomIndexByProb(List<Integer> probs) {
         LinkedList<Integer> newProbs = new LinkedList<Integer>();
         int lastTotalProb = 0;
-        for (int i = 0; i < probs.size(); i++) {
-            int currentTotalProb = lastTotalProb + probs.get(i);
-            newProbs.add(currentTotalProb);
-            lastTotalProb = currentTotalProb;
-        }
+		for (Integer prob : probs) {
+			int currentTotalProb = lastTotalProb + prob;
+			newProbs.add(currentTotalProb);
+			lastTotalProb = currentTotalProb;
+		}
         if (newProbs.isEmpty()) {
             return -1;
         }
@@ -310,8 +176,8 @@ public class RandomUtil {
         }
         int random = random(0, totalProb - 1);
         for (int i = 0; i < newProbs.size(); i++) {
-            int cuttentTotalProb = newProbs.get(i);
-            if (cuttentTotalProb > random) {
+            int currentTotalProb = newProbs.get(i);
+            if (currentTotalProb > random) {
                 return i;
             }
         }
@@ -335,5 +201,124 @@ public class RandomUtil {
         }
         return randomIndexByProb(list);
     }
+
+	static {
+
+		PRIVATE_RATE_INIT_MAP.put(0, 0.0);
+
+		for(int i = 1; i <= 100 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000000000000000000000000000000528);
+		}
+
+		for(int i = 101; i <= 200 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000000000000000594000000000000000);
+		}
+
+		for(int i = 201; i <= 300 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000000000061100000000000000000000);
+		}
+
+		for(int i = 301; i <= 400 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000000019940000000000000000000000);
+		}
+
+		for(int i = 401; i <= 500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000000637900000000000000000000000);
+		}
+
+		for(int i = 501; i <= 600 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000006389400000000000000000000000);
+		}
+
+		for(int i = 601; i <= 700 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000033190000000000000000000000000);
+		}
+
+		for(int i = 701; i <= 800 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000114055000000000000000000000000);
+		}
+		for(int i = 801; i <= 900 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000302707000000000000000000000000);
+		}
+
+		for(int i = 901; i <= 1000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.000656500000000000000000000000000);
+		}
+
+		for(int i = 1001; i <= 1250 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.002656510000000000000000000000000);
+		}
+
+		for(int i = 1251; i <= 1500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.006767750000000000000000000000000);
+		}
+
+		for(int i = 1501; i <= 1750 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.013452300000000000000000000000000);
+		}
+
+		for(int i = 1751; i <= 2000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.02296035);
+		}
+
+		for(int i = 2001; i <= 2500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.04931000);
+		}
+
+		for(int i = 2501; i <= 3000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.08520000);
+		}
+
+		for(int i = 3001; i <= 3500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.12531000);
+		}
+
+		for(int i = 3501; i <= 4000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.17863200);
+		}
+
+		for(int i = 4001; i <= 4500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.2293580);
+		}
+		for(int i = 4501; i <= 5000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.2929000);
+		}
+		for(int i = 5001; i <= 5500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.3603980);
+		}
+		for(int i = 5501; i <= 6000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.4226500);
+		}
+		for(int i = 6001; i <= 6500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.4811260);
+		}
+
+		for(int i = 6501; i <= 7000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.5714400);
+		}
+
+		for(int i = 7001; i <= 7500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.6666680);
+		}
+		for(int i = 7501; i <= 8000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.7500000);
+		}
+		for(int i = 8001; i <= 8500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.8235300);
+		}
+		for(int i = 8501; i <= 9000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.8889000);
+		}
+		for(int i = 9001; i <= 9500 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 0.947369);
+		}
+
+		for(int i = 9501; i <= 10000 ; i++) {
+			PRIVATE_RATE_INIT_MAP.put(i, 1.0);
+		}
+
+
+
+	}
 
 }
