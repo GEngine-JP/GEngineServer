@@ -1,6 +1,6 @@
 package info.xiaomo.server.listener;
 
-import info.xiaomo.server.entify.Player;
+import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.IListener;
 
@@ -21,7 +21,7 @@ import info.xiaomo.server.event.IListener;
 public class LoginListener implements IListener {
     @Override
     public void update(EventType type, Object param) {
-        Player player = (Player)param;
+        User user = (User)param;
         System.out.println("登录时执行。。。。。");
     }
 }

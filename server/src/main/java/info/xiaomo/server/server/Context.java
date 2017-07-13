@@ -1,5 +1,7 @@
 package info.xiaomo.server.server;
 
+import info.xiaomo.server.back.BackServer;
+
 /**
  * 把今天最好的表现当作明天最新的起点．．～
  * いま 最高の表現 として 明日最新の始発．．～
@@ -34,12 +36,32 @@ public class Context {
 
     private static boolean combined = false;
 
-    public static void init(ServerOption serverOption){
+    private static GameServer gameServer;
+
+    private static BackServer backServer;
+
+    /**
+     * 服务器关闭逻辑已经是否已经执行
+     */
+    public static boolean serverCloseLogicExecuted;
+
+    /**
+     * 游戏服务器关闭
+     */
+    private static boolean closed;
+
+    public static void init(ServerOption serverOption) {
         Context.serverOption = serverOption;
     }
 
-    public static GameServer createServer(){
-        return new GameServer(serverOption);
+    public static GameServer createServer() {
+        gameServer = new GameServer(serverOption);
+        return gameServer;
+    }
+
+    public static BackServer createBackServer() {
+        backServer = new BackServer(serverOption);
+        return backServer;
     }
 
     public static ServerOption getServerOption() {
@@ -72,5 +94,37 @@ public class Context {
 
     public void setCombined(boolean combined) {
         this.combined = combined;
+    }
+
+    public static GameServer getGameServer() {
+        return gameServer;
+    }
+
+    public static void setGameServer(GameServer gameServer) {
+        Context.gameServer = gameServer;
+    }
+
+    public static boolean isServerCloseLogicExecuted() {
+        return serverCloseLogicExecuted;
+    }
+
+    public static void setServerCloseLogicExecuted(boolean serverCloseLogicExecuted) {
+        Context.serverCloseLogicExecuted = serverCloseLogicExecuted;
+    }
+
+    public static boolean isClosed() {
+        return closed;
+    }
+
+    public static void setClosed(boolean closed) {
+        Context.closed = closed;
+    }
+
+    public static BackServer getBackServer() {
+        return backServer;
+    }
+
+    public static void setBackServer(BackServer backServer) {
+        Context.backServer = backServer;
     }
 }

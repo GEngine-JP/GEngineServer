@@ -1,6 +1,6 @@
 package info.xiaomo.server.listener;
 
-import info.xiaomo.server.entify.Player;
+import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.IListener;
 import org.slf4j.Logger;
@@ -24,7 +24,7 @@ public class SecondListener implements IListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(MinuteListener.class);
     @Override
     public void update(EventType type, Object param) {
-        Player player = (Player)param;
+        User user = (User)param;
         LOGGER.info("一秒钟执行一次。。。。。");
     }
 }

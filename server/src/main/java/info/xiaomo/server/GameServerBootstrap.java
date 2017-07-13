@@ -1,7 +1,9 @@
 package info.xiaomo.server;
 
+import info.xiaomo.server.back.BackServer;
 import info.xiaomo.server.server.Context;
 import info.xiaomo.server.server.GameServer;
+import info.xiaomo.server.server.JVMCloseHook;
 import info.xiaomo.server.server.ServerOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,8 +31,15 @@ public class GameServerBootstrap {
     public static void main(String[] args) throws IOException, ParseException {
         ServerOption option = new ServerOption(args[0]);
         Context.init(option);
+
         GameServer server = Context.createServer();
         server.start();
         LOGGER.warn("游戏服务器启动成功...");
+
+        BackServer backServer = Context.createBackServer();
+        backServer.start();
+        LOGGER.warn("后台服务器启动成功...");
+
+        Runtime.getRuntime().addShutdownHook(new JVMCloseHook());
     }
 }

@@ -1,7 +1,7 @@
 package info.xiaomo.server.server;
 
 import info.xiaomo.core.net.Message;
-import info.xiaomo.server.entify.Player;
+import info.xiaomo.server.entify.User;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 
@@ -23,7 +23,7 @@ public class Session {
 
     private Channel channel;
 
-    private Player player;
+    private User user;
 
     public ChannelFuture close() {
         return channel.close();
@@ -43,11 +43,11 @@ public class Session {
     }
 
 
-    public Player getPlayer() {
-        return player;
+    public User getUser() {
+        return user;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

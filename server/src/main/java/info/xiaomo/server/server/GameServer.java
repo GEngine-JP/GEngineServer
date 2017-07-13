@@ -65,4 +65,33 @@ public class GameServer {
             state = true;
         }
     }
+
+    public void stop(){
+        netWork.stop();
+        state = false;
+    }
+
+    public NetworkService getNetWork() {
+        return netWork;
+    }
+
+    public void setNetWork(NetworkService netWork) {
+        this.netWork = netWork;
+    }
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+
+    public MessageRouter getRouter() {
+        return router;
+    }
+
+    public void setRouter(MessageRouter router) {
+        this.router = router;
+    }
 }

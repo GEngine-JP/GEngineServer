@@ -1,3 +1,5 @@
+package info.xiaomo.server.system.gm;
+
 /**
  * 把今天最好的表现当作明天最新的起点．．～
  * いま 最高の表現 として 明日最新の始発．．～
@@ -8,8 +10,19 @@
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
- * Date  : 2017/7/11 19:26
+ * Date  : 2017/7/13 15:05
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-package info.xiaomo.server.system.user;
+public class GMManager {
+    private static GMManager ourInstance = new GMManager();
+
+    public static GMManager getInstance() {
+        return ourInstance;
+    }
+
+    private GMManager() {
+    }
+
+
+}

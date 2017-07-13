@@ -19,7 +19,7 @@ import io.protostuff.Tag;
  * desc  : 玩家
  * Copyright(©) 2017 by xiaomo.
  */
-public class Player implements Persistable {
+public class User implements Persistable {
 
     @Exclude
     private boolean dirty;

@@ -62,7 +62,7 @@ public class MessageUtil {
 //	}
 //
 //	public static void sendMapMessage(Message msg, GameMap map) {
-//		Map<Long, Player> players = map.getPlayerMap();
+//		Map<Long, User> players = map.getPlayerMap();
 //		sendMsgToRids(msg, players.keySet());
 //	}
 
