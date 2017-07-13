@@ -8,9 +8,6 @@ import info.xiaomo.server.server.ServerOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.text.ParseException;
-
 /**
  * 把今天最好的表现当作明天最新的起点．．～
  * いま 最高の表現 として 明日最新の始発．．～
@@ -28,7 +25,7 @@ import java.text.ParseException;
 public class GameServerBootstrap {
     public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
 
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) throws Exception {
         ServerOption option = new ServerOption(args[0]);
         Context.init(option);
 

@@ -1,9 +1,10 @@
 package info.xiaomo.server.entify;
 
 import info.xiaomo.core.db.persist.Persistable;
-import info.xiaomo.server.constant.DataType;
+import info.xiaomo.server.db.DbDataType;
 import io.protostuff.Exclude;
 import io.protostuff.Tag;
+import lombok.Data;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -19,6 +20,7 @@ import io.protostuff.Tag;
  * desc  : 玩家
  * Copyright(©) 2017 by xiaomo.
  */
+@Data
 public class User implements Persistable {
 
     @Exclude
@@ -28,13 +30,28 @@ public class User implements Persistable {
     private long id;
 
     @Tag(2)
-    private String name;
+    private String nickName;
 
     /**
      * 0为普通玩家
      */
     @Tag(3)
     private int gmLevel;
+
+    @Tag(4)
+    private String loginName;
+
+    @Tag(5)
+    private int serverId;
+
+    @Tag(6)
+    private int platformId;
+
+    @Tag(7)
+    private String idNumber;
+
+    @Tag(8)
+    private int registerTime;
 
 
     @Override
@@ -44,7 +61,7 @@ public class User implements Persistable {
 
     @Override
     public int dataType() {
-        return DataType.PLAYER;
+        return DbDataType.USER;
     }
 
     @Override
@@ -61,19 +78,4 @@ public class User implements Persistable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getGmLevel() {
-        return gmLevel;
-    }
-
-    public void setGmLevel(int gmLevel) {
-        this.gmLevel = gmLevel;
-    }
 }

@@ -1,4 +1,4 @@
-package info.xiaomo.server.constant;
+package info.xiaomo.server.db;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -10,11 +10,10 @@ package info.xiaomo.server.constant;
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
- * Date  : 2017/7/11 13:53
- * desc  :
+ * Date  : 2017/7/13 17:18
+ * desc  : 数据类型
  * Copyright(©) 2017 by xiaomo.
  */
-public interface DataType {
-    int PLAYER = 1;
-
+public interface DbDataType {
+    int USER = 1;
 }

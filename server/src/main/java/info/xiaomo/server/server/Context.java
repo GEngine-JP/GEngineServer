@@ -54,7 +54,7 @@ public class Context {
         Context.serverOption = serverOption;
     }
 
-    public static GameServer createServer() {
+    public static GameServer createServer() throws Exception {
         gameServer = new GameServer(serverOption);
         return gameServer;
     }

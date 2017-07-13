@@ -44,7 +44,7 @@ public class GMManager {
 
         int gmLevel = user.getGmLevel();
 
-        LOGGER.warn("玩家:{} 执行gm命令: {}", session.getUser().getName(), command);
+        LOGGER.warn("玩家:{} 执行gm命令: {}", session.getUser().getNickName(), command);
         String ret = execGmCmd(session, command, gmLevel);
         if (ret != null) {
             //发送到聊天频道

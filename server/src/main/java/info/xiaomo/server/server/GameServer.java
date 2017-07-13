@@ -3,6 +3,7 @@ package info.xiaomo.server.server;
 import info.xiaomo.core.config.ConfigDataManager;
 import info.xiaomo.core.net.NetworkService;
 import info.xiaomo.core.net.NetworkServiceBuilder;
+import info.xiaomo.server.db.DbData;
 import info.xiaomo.server.event.EventRegister;
 import info.xiaomo.server.processor.LoginAndLogoutProcessor;
 import info.xiaomo.server.system.schedule.ScheduleManager;
@@ -23,13 +24,13 @@ import info.xiaomo.server.system.schedule.ScheduleManager;
  */
 public class GameServer {
 
-    NetworkService netWork;
+    private NetworkService netWork;
 
     private boolean state = false;
 
-    MessageRouter router;
+    private MessageRouter router;
 
-    public GameServer(ServerOption option) {
+    public GameServer(ServerOption option) throws Exception {
         int bossLoopGroupCount = 4;
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
@@ -41,11 +42,14 @@ public class GameServer {
         builder.setPort(option.getGameServerPort());
 
         router = new MessageRouter();
-        router.registerProcessor(1,new LoginAndLogoutProcessor());
+        router.registerProcessor(1, new LoginAndLogoutProcessor());
 
         builder.setConsumer(router);
         // 创建网络服务
         netWork = builder.createService();
+
+        // 初始化数据库
+        DbData.init(option);
 
         ConfigDataManager.getInstance().init(option.getConfigDataPath());
 
@@ -61,12 +65,12 @@ public class GameServer {
      */
     public void start() {
         netWork.start();
-        if(netWork.isRunning()){
+        if (netWork.isRunning()) {
             state = true;
         }
     }
 
-    public void stop(){
+    public void stop() {
         netWork.stop();
         state = false;
     }

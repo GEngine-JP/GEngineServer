@@ -268,7 +268,7 @@ public class GameCloseThread extends Thread {
 //        for (GameMap map : maps) {
 //            QueueDriver driver = map.getDriver();
 //            while (totalTime > 0 && driver.getQueueSize() > 0) {
-//                LOGGER.info("{}的队列剩余：{}" ,map.getName() ,driver.getQueueSize());
+//                LOGGER.info("{}的队列剩余：{}" ,map.getNickName() ,driver.getQueueSize());
 //                try {
 //                    Thread.sleep(100);
 //                } catch (InterruptedException e) {
