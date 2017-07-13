@@ -63,6 +63,9 @@ public class GameCloseThread extends Thread {
         session.sendMessage(msg);
     }
 
+    /**
+     * 关闭所有链接
+     */
     private void closeAllConnection() {
 
         if (source == COMMAND_LINE) {
@@ -139,6 +142,9 @@ public class GameCloseThread extends Thread {
         }
     }
 
+    /**
+     * 执行关服事件
+     */
     private void fireCloseEvent() {
         try {
             EventUtil.executeEvent(EventType.SERVER_SHUTDOWN, null);

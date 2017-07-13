@@ -12,7 +12,7 @@ public class JVMCloseHook extends Thread {
 		//3、关闭所有线程池
 		//4、退出
 		if(!Context.isServerCloseLogicExecuted()){
-			new GameCloseThread((short) 0, 4, null).run();
+			new GameCloseThread((short) 0, GameCloseThread.SourceType.JVM_HOKE, null).run();
 		}
 		
 	}

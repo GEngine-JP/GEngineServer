@@ -30,6 +30,12 @@ public class User implements Persistable {
     @Tag(2)
     private String name;
 
+    /**
+     * 0为普通玩家
+     */
+    @Tag(3)
+    private int gmLevel;
+
 
     @Override
     public long getId() {
@@ -61,5 +67,13 @@ public class User implements Persistable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getGmLevel() {
+        return gmLevel;
+    }
+
+    public void setGmLevel(int gmLevel) {
+        this.gmLevel = gmLevel;
     }
 }
