@@ -19,34 +19,34 @@ public interface UserField {
     /**
      * 唯一id
      */
-    String ID = "ID";
+    String ID = "id";
     /**
      * 登录名
      */
-    String LOGIN_NAME = "LOGIN_NAME";
+    String LOGIN_NAME = "login_name";
 
     /**
      * 服务器id
      */
-    String SERVER_ID = "SERVER_ID";
+    String SERVER_ID = "server_id";
 
     /**
      * 平台id
      */
-    String PLATFORM_ID = "PLATFORM_ID";
+    String PLATFORM_ID = "platform_id";
 
     /**
      * GM等级
      */
-    String GM_LEVEL = "GM_LEVEL";
+    String GM_LEVEL = "gm_level";
 
     /**
      * 身份证号
      */
-    String ID_NUMBER = "ID_NUMBER";
+    String ID_NUMBER = "id_number";
 
     /**
      * 注册时间
      */
-    String REGISTER_TIME = "REGISTER_TIME";
+    String REGISTER_TIME = "register_time";
 }

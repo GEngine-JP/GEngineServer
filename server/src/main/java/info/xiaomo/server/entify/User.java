@@ -28,29 +28,25 @@ public class User implements Persistable {
 
     @Tag(1)
     private long id;
-
-    @Tag(2)
-    private String nickName;
-
     /**
      * 0为普通玩家
      */
-    @Tag(3)
+    @Tag(2)
     private int gmLevel;
 
-    @Tag(4)
+    @Tag(3)
     private String loginName;
 
-    @Tag(5)
+    @Tag(4)
     private int serverId;
 
-    @Tag(6)
+    @Tag(5)
     private int platformId;
 
-    @Tag(7)
+    @Tag(6)
     private String idNumber;
 
-    @Tag(8)
+    @Tag(7)
     private int registerTime;
 
 
