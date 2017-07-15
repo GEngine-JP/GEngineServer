@@ -1,4 +1,4 @@
-package info.xiaomo.server.back;
+package info.xiaomo.server;
 
 import info.xiaomo.core.client.Client;
 import info.xiaomo.core.client.ClientBuilder;
