@@ -9,20 +9,20 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>server</module>
-        <module>log</module>
+        <module>gameServer</module>
+        <module>gameLog</module>
     </modules>
 
-    <distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <url>http://192.168.1.62:8081/nexus/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <url>http://192.168.1.62:8081/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>nexus-releases</id>-->
+            <!--<url>http://192.168.1.62:8081/nexus/content/repositories/releases</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>nexus-snapshots</id>-->
+            <!--<url>http://192.168.1.62:8081/nexus/content/repositories/snapshots</url>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
 
     <repositories>
         <repository>
@@ -71,6 +71,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>info.xiaomo</groupId>
+                <artifactId>gameCore</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
             <dependency>
                 <!--netty-->
                 <groupId>io.netty</groupId>
