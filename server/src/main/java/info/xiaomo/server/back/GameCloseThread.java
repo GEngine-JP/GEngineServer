@@ -2,6 +2,7 @@ package info.xiaomo.server.back;
 
 import info.xiaomo.core.concurrent.QueueExecutor;
 import info.xiaomo.server.back.msg.ResCloseServerMessage;
+import info.xiaomo.server.db.DbData;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
 import info.xiaomo.server.server.Context;
@@ -71,7 +72,8 @@ public class GameCloseThread extends Thread {
         if (source == COMMAND_LINE) {
             sendMsg(1, "断开所有连接....");
         }
-        LOGGER.info("断开所有连接....");
+        LOGGER.info("关闭数据保存线程(保存服务器缓存数据)....");
+        DbData.store();
 
 
         Session[] sessions = SessionManager.getInstance().sessionArray();

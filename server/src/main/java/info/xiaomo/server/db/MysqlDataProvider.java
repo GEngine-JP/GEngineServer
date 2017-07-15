@@ -41,7 +41,7 @@ public class MysqlDataProvider {
 	/**
 	 * 持久化线程池
 	 */
-	ScheduledThreadPoolExecutor executor;
+	private ScheduledThreadPoolExecutor executor;
 
 
 	public void init(JdbcTemplate template) {
