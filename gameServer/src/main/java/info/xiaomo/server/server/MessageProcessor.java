@@ -5,6 +5,6 @@ import info.xiaomo.core.concurrent.IQueueDriverCommand;
 
 public interface MessageProcessor {
 	
-	public void process(IQueueDriverCommand message);
+	void process(IQueueDriverCommand message);
 
 }
