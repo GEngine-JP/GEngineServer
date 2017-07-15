@@ -4,6 +4,7 @@ import info.xiaomo.core.concurrent.AbstractCommand;
 import info.xiaomo.core.util.AttributeUtil;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionKey;
+import info.xiaomo.server.system.user.UserManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,8 +31,8 @@ public class LogoutCommand extends AbstractCommand {
 		}
 		AttributeUtil.set(session.getChannel(), SessionKey.LOGOUT_HANDLED, true);
 		//登出
-//		UserManager.getInstance().logout(session);
-//		LOGGER.error("网络连接断开，处理玩家下线逻辑->{}", session.getUser().toString());
+		UserManager.getInstance().logout(session.getUser());
+		LOGGER.error("网络连接断开，处理玩家下线逻辑->{}", session.getUser().toString());
 	}
 
 	

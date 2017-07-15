@@ -1,5 +1,7 @@
 package info.xiaomo.server.system.user;
 
+import info.xiaomo.server.db.DbData;
+import info.xiaomo.server.db.DbDataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
@@ -33,6 +35,8 @@ public class UserManager {
     }
 
     public void logout(User user) {
+        DbData.updateData(user.getId(), DbDataType.USER, false);
+
         EventUtil.executeEvent(EventType.LOGOUT, user);
     }
 }
