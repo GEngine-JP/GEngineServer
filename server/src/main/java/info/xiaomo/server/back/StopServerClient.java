@@ -8,6 +8,7 @@ import info.xiaomo.core.net.NetworkConsumer;
 import info.xiaomo.core.net.NetworkEventListener;
 import info.xiaomo.server.back.msg.ReqCloseServerMessage;
 import info.xiaomo.server.back.msg.ResCloseServerMessage;
+import info.xiaomo.server.server.ServerOption;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
@@ -22,9 +23,16 @@ public class StopServerClient {
     public static void main(String[] args) throws Exception {
 
         try {
+            String optionPath = args[0];
+
+            ServerOption option = new ServerOption(optionPath);
+
+
             ClientBuilder builder = new ClientBuilder();
+
+
             builder.setHost("localhost");//只关本机的服务器
-            builder.setPort(Integer.parseInt(args[0]));
+            builder.setPort(option.getBackServerPort());
             builder.setListener(new Listener());
             builder.setConsumer(new Consumer());
             builder.setMessagePool(new Pool());
