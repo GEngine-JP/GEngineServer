@@ -186,7 +186,7 @@ public class GameCloseThread extends Thread {
     }
 
 
-    public void closeLogicThread() {
+    private void closeLogicThread() {
         if (source == COMMAND_LINE) {
             sendMsg(COMMAND_LINE, "关闭业务逻辑线程....");
         }
@@ -211,7 +211,7 @@ public class GameCloseThread extends Thread {
             sendMsg(2, "关闭数据保存线程(保存服务器缓存数据)....");
         }
         LOGGER.info("关闭数据保存线程(保存服务器缓存数据)....");
-//        DataCenter.store();
+        DbData.store();
 
         // 持久化排行榜
         if (source == COMMAND_LINE) {
@@ -231,12 +231,6 @@ public class GameCloseThread extends Thread {
         if (source == COMMAND_LINE) {
             sendMsg(4, "关闭延迟入库线程(保存未入库的数据)....");
         }
-        /*LOGGER.error("关闭延迟入库线程(保存未入库的数据)....");
-        try {
-			DelayQueryThread.stop();
-		} catch (InterruptedException e) {
-			LOGGER.error("", e);
-		}*/
     }
 
     private void closeEventDispatchThread() {
@@ -258,13 +252,13 @@ public class GameCloseThread extends Thread {
     }
 
 
-    public void closeStageDriverThread() {
+    private void closeStageDriverThread() {
         if (source == COMMAND_LINE) {
             sendMsg(1, "等待所有场景中的命令执行完毕....");
         }
         LOGGER.info("等待所有场景中的命令执行完毕....");
         // 等待所有场景中的命令执行完毕
-        int totalTime = 5000;
+//        int totalTime = 5000;
 
 //        GameMap[] maps = MapManager.getInstance().getMaps().values().toArray(new GameMap[0]);
 //        for (GameMap map : maps) {
