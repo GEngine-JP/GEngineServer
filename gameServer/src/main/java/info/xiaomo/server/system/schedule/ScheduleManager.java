@@ -44,7 +44,7 @@ public class ScheduleManager {
 
 		LOGGER.info("距离整秒剩余：{}MS", secondDelay);
 		//每秒
-		ExecutorUtil.scheduleAtFixedRate(new ServerHeartTask(), secondDelay, TimeUtil.ONE_MILLS, TimeUnit.MILLISECONDS);
+//		ExecutorUtil.scheduleAtFixedRate(new ServerHeartTask(), secondDelay, TimeUtil.ONE_MILLS, TimeUnit.MILLISECONDS);
 	}
 
 }

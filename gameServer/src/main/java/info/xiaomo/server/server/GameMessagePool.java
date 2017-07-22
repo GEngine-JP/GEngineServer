@@ -3,6 +3,7 @@ package info.xiaomo.server.server;
 
 import info.xiaomo.core.net.Message;
 import info.xiaomo.core.net.MessagePool;
+import info.xiaomo.server.back.msg.ReqCloseServerMessage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +38,7 @@ public class GameMessagePool implements MessagePool {
      * 注册用户
      */
     private void registerUser() {
-//        register(messageId,xxx.class);
+        register(1001,ReqCloseServerMessage.class);
     }
 
 
