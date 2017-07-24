@@ -95,4 +95,18 @@ public class DbData {
     public static User getUser(long id) {
         return provider.getUser(id);
     }
+
+    /**
+     * 获取用户数据
+     *
+     * @param loginName
+     * @return
+     */
+    public static User getUser(String loginName) {
+        return provider.getUser(loginName);
+    }
+
+    public static void registerUser(User user) {
+        provider.registerUser(user);
+    }
 }

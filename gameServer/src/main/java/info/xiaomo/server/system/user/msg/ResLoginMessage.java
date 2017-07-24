@@ -1,53 +1,53 @@
-package info.xiaomo.server.back.msg;
+package info.xiaomo.server.system.user.msg;
 
 
 import info.xiaomo.server.server.AbstractMessage;
 import io.netty.buffer.ByteBuf;
 
 /**
- * 返回后台请求的结果信息
+ * 通知登录成功
  */
-public class ResBackRetMessage extends AbstractMessage {
+public class ResLoginMessage extends AbstractMessage {
 
     @Override
     public void doAction() {
 
     }
 
-    public ResBackRetMessage() {
+    public ResLoginMessage() {
         this.queueId = 1;
     }
 
     @Override
     public int getId() {
-        return 1004;
+        return 1008;
     }
 
     /**
-     * 返回信息
+     * 玩家id
      */
-    private String ret;
+    private long uid;
 
 
-    public String getRet() {
-        return ret;
+    public long getUid() {
+        return uid;
     }
 
-    public void setRet(String ret) {
-        this.ret = ret;
+    public void setUid(long uid) {
+        this.uid = uid;
     }
 
 
     @Override
     public boolean read(ByteBuf buf) {
-        this.ret = readString(buf);
+        this.uid = readLong(buf);
 
         return true;
     }
 
     @Override
     public boolean write(ByteBuf buf) {
-        this.writeString(buf, ret);
+        this.writeLong(buf, uid);
 
         return true;
     }

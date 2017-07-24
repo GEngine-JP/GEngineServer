@@ -1,6 +1,8 @@
 package info.xiaomo.server.back;
 
 import info.xiaomo.server.server.Session;
+import info.xiaomo.server.system.gm.msg.ResGMMessage;
+import info.xiaomo.server.util.MessageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,7 +40,10 @@ public class BackManager {
     }
 
     public void exeGM(short sequence, Session session, String command) {
-        System.out.println("execute gm command");
+        ResGMMessage msg = new ResGMMessage();
+        msg.setSequence(sequence);
+        msg.setContent(command);
+        MessageUtil.sendMsg(msg, session.getUser().getId());
 
     }
 

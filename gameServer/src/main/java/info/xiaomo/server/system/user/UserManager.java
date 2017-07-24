@@ -5,6 +5,12 @@ import info.xiaomo.server.db.DbDataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
+import info.xiaomo.server.server.Session;
+import info.xiaomo.server.server.SessionManager;
+import info.xiaomo.server.system.user.msg.ResLoginMessage;
+import info.xiaomo.server.util.IDUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -21,6 +27,7 @@ import info.xiaomo.server.event.EventUtil;
  * Copyright(©) 2017 by xiaomo.
  */
 public class UserManager {
+    public static final Logger LOGGER = LoggerFactory.getLogger(UserManager.class);
     private static UserManager ourInstance = new UserManager();
 
     public static UserManager getInstance() {
@@ -30,8 +37,37 @@ public class UserManager {
     private UserManager() {
     }
 
-    public void login(User user) {
+    public void login(Session session, String loginName) {
+        User user = DbData.getUser(loginName);
+        if (user == null) {
+            // 新建用户
+            user = createUser(loginName);
+            if (user == null) {
+                LOGGER.error("用户创建失败:{},{},{}", loginName);
+                session.close();
+                return;
+            }
+        }
+
+        session.setUser(user); // 注册账户
+        SessionManager.getInstance().register(user.getId(), session);// 注册session
+
+        ResLoginMessage res = new ResLoginMessage();
+        res.setUid(user.getId());
+        session.sendMessage(res);
+
         EventUtil.executeEvent(EventType.LOGIN, user);
+    }
+
+
+    private User createUser(String loginName) {
+        User user = new User();
+        long id = IDUtil.getId();
+        user.setId(id);
+        user.setLoginName(loginName);
+        DbData.insertData(user, true);
+        DbData.registerUser(user);
+        return user;
     }
 
     public void logout(User user) {

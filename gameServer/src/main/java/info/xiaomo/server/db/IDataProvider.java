@@ -62,6 +62,8 @@ public interface IDataProvider {
      */
     User getUser(long id);
 
+    User getUser(String loginName);
+
 
     void registerUser(User user);
 

@@ -3,10 +3,8 @@ package info.xiaomo.server.server;
 import info.xiaomo.core.concurrent.IQueueDriverCommand;
 import info.xiaomo.core.concurrent.queue.ICommandQueue;
 import info.xiaomo.core.net.Message;
-import info.xiaomo.core.net.kryo.KryoBean;
-import info.xiaomo.core.net.kryo.KryoInput;
-import info.xiaomo.core.net.kryo.KryoOutput;
-import info.xiaomo.core.net.kryo.KryoUtil;
+import info.xiaomo.core.net.MessageBean;
+import io.netty.buffer.ByteBuf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +13,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author xiaomo
  */
-public abstract class AbstractMessage extends KryoBean implements Message {
+public abstract class AbstractMessage extends MessageBean implements Message {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AbstractMessage.class);
 
@@ -56,17 +54,13 @@ public abstract class AbstractMessage extends KryoBean implements Message {
     }
 
     @Override
-    public void decode(byte[] bytes) {
-        KryoInput input = KryoUtil.getInput();
-        input.setBuffer(bytes);
-        read(input);
+    public void decode(ByteBuf buf) {
+        read(buf);
     }
 
     @Override
     public byte[] encode() {
-        KryoOutput output = KryoUtil.getOutput();
-        write(output);
-        return output.toBytesAndClear();
+        return null;
     }
 
     @Override

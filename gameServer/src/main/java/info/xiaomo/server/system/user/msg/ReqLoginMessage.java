@@ -1,33 +1,35 @@
-package info.xiaomo.server.back.msg;
+package info.xiaomo.server.system.user.msg;
 
 
-import info.xiaomo.server.back.BackManager;
 import info.xiaomo.server.server.AbstractMessage;
+import info.xiaomo.server.system.user.UserManager;
 import io.netty.buffer.ByteBuf;
 
 /**
  * 请求关服
  */
-public class ReqCloseServerMessage extends AbstractMessage {
+public class ReqLoginMessage extends AbstractMessage {
 
     @Override
     public void doAction() {
-        BackManager.getInstance().closeServer(sequence, session);
+        UserManager.getInstance().login(session, loginName);
     }
 
-    public ReqCloseServerMessage() {
+    public ReqLoginMessage() {
         this.queueId = 1;
     }
 
+    private String loginName;
+
     @Override
     public int getId() {
-        return 1001;
+        return 1007;
     }
 
 
     @Override
     public boolean read(ByteBuf buf) {
-
+        this.loginName = readString(buf);
         return true;
     }
 
