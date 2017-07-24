@@ -4,6 +4,8 @@ package info.xiaomo.server.server;
 import info.xiaomo.core.net.Message;
 import info.xiaomo.core.net.MessagePool;
 import info.xiaomo.server.back.msg.ReqCloseServerMessage;
+import info.xiaomo.server.back.msg.ReqExecGMMessage;
+import info.xiaomo.server.back.msg.ReqReloadCfgMessage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +41,8 @@ public class GameMessagePool implements MessagePool {
      */
     private void registerUser() {
         register(1001,ReqCloseServerMessage.class);
+        register(1003, ReqExecGMMessage.class);
+        register(1005, ReqReloadCfgMessage.class);
     }
 
 
