@@ -38,7 +38,7 @@ public class BackManager {
     }
 
     public void exeGM(short sequence, Session session, String command) {
-
+        System.out.println("execute gm command");
 
     }
 
