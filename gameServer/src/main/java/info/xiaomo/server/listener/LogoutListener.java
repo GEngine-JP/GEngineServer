@@ -20,12 +20,11 @@ import org.slf4j.LoggerFactory;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class LoginListener implements IListener {
-    public static final Logger LOGGER = LoggerFactory.getLogger(LoginListener.class);
-
+public class LogoutListener implements IListener {
+    public static final Logger LOGGER = LoggerFactory.getLogger(LogoutListener.class);
     @Override
     public void update(EventType type, Object param) {
-        User user = (User) param;
-        LOGGER.warn("用户 {} 登录游戏", user.getLoginName());
+        User user = (User)param;
+        LOGGER.warn("用户 {} 退出登录", user.getLoginName());
     }
 }
