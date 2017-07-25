@@ -158,7 +158,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
 
     @Override
     public User getUser(String loginName) {
-        return template.query("select * from p_user where login_name = ?", new UserMapper(), loginName);
+        return template.query("select * from p_user where loginName = ?", new UserMapper(), loginName);
     }
 
     @Override
