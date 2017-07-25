@@ -25,16 +25,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MysqlDataProviderProxy implements IDataProvider {
 
     private static final Object NULL = new Object();
-    private static final String SELECT_USER = "select " +
-            "id," +
-            " login_name," +
-            " server_id," +
-            " platform_id," +
-            " gm_level," +
-            " id_number," +
-            " register_time" +
-            " from p_user";
-    private static final String selectByLoginName = "select * from p_user where login_name = ?";
+    private static final String SELECT_USER = "select  * from p_user";
+    private static final String SELECT_BY_LOGIN_NAME = "select * from p_user where login_name = ?";
 
     private Map<String, Long> nameSidPid2Uid = new ConcurrentHashMap<>();
 
@@ -157,7 +149,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
 
     @Override
     public User getUser(String loginName) {
-        return template.query(selectByLoginName, new UserMapper(), loginName);
+        return template.query(SELECT_BY_LOGIN_NAME, new UserMapper(), loginName);
     }
 
     @Override
