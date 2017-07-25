@@ -9,6 +9,7 @@ import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionManager;
 import info.xiaomo.server.system.user.msg.ResLoginMessage;
 import info.xiaomo.server.util.IDUtil;
+import info.xiaomo.server.util.TimeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,6 +66,10 @@ public class UserManager {
         long id = IDUtil.getId();
         user.setId(id);
         user.setLoginName(loginName);
+        user.setServerId(1);
+        user.setGmLevel(1);
+        user.setPlatformId(1);
+        user.setRegisterTime(TimeUtil.getNowOfSeconds());
         DbData.insertData(user, true);
         DbData.registerUser(user);
         return user;
