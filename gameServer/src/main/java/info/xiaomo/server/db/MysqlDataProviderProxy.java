@@ -34,6 +34,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
             " id_number," +
             " register_time" +
             " from p_user";
+    private static final String selectByLoginName = "select * from p_user where login_name = ?";
 
     private Map<String, Long> nameSidPid2Uid = new ConcurrentHashMap<>();
 
@@ -126,9 +127,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
         User user = provider.get(id, DbDataType.USER);
         if (user == null) {
             // 从数据库中查询
-            user = this.template.query("select id, loginName, sid, pid, client, type, IDNumber, regTime from p_user " +
-                            "where id = ?",
-                    new UserMapper(), id);
+            user = this.template.query(SELECT_USER, new UserMapper(), id);
             return user;
         }
         return user;
@@ -158,7 +157,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
 
     @Override
     public User getUser(String loginName) {
-        return template.query("select * from p_user where loginName = ?", new UserMapper(), loginName);
+        return template.query(selectByLoginName, new UserMapper(), loginName);
     }
 
     @Override
