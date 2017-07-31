@@ -38,7 +38,16 @@ public class UserManager {
     private UserManager() {
     }
 
+
+    /**
+     * 登录游戏
+     * @param session session
+     * @param loginName loginName
+     */
     public void login(Session session, String loginName) {
+        if (loginName.isEmpty()){
+            return;
+        }
         User user = DbData.getUser(loginName);
         if (user == null) {
             // 新建用户
@@ -53,14 +62,19 @@ public class UserManager {
         session.setUser(user); // 注册账户
         SessionManager.getInstance().register(user.getId(), session);// 注册session
 
-        ResLoginMessage res = new ResLoginMessage();
-        res.setUid(user.getId());
-        session.sendMessage(res);
+        ResLoginMessage msg = new ResLoginMessage();
+        msg.setUid(user.getId());
+        session.sendMessage(msg);
 
         EventUtil.executeEvent(EventType.LOGIN, user);
     }
 
 
+    /**
+     * 创建角色
+     * @param loginName loginName
+     * @return User
+     */
     private User createUser(String loginName) {
         User user = new User();
         long id = IDUtil.getId();
@@ -75,6 +89,11 @@ public class UserManager {
         return user;
     }
 
+
+    /**
+     * 退出
+     * @param user user
+     */
     public void logout(User user) {
         DbData.updateData(user.getId(), DbDataType.USER, false);
 

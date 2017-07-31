@@ -2,6 +2,7 @@ package info.xiaomo.server.server;
 
 import info.xiaomo.core.concurrent.IQueueDriverCommand;
 import info.xiaomo.core.concurrent.queue.ICommandQueue;
+import info.xiaomo.core.net.KryoUtil;
 import info.xiaomo.core.net.Message;
 import info.xiaomo.core.net.MessageBean;
 import io.netty.buffer.ByteBuf;
@@ -60,7 +61,12 @@ public abstract class AbstractMessage extends MessageBean implements Message {
 
     @Override
     public byte[] encode() {
-        return null;
+		ByteBuf output = KryoUtil.getOutput();
+		write(output);
+		byte[] content = new byte[output.writerIndex()];
+		output.readBytes(content);
+		output.clear();
+		return content;
     }
 
     @Override
