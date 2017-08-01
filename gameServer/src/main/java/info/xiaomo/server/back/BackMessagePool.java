@@ -3,8 +3,8 @@ package info.xiaomo.server.back;
 import info.xiaomo.core.net.Message;
 import info.xiaomo.core.net.MessagePool;
 import info.xiaomo.server.back.msg.ReqCloseServerMessage;
-import info.xiaomo.server.back.msg.ReqExecGMMessage;
 import info.xiaomo.server.back.msg.ReqReloadCfgMessage;
+import info.xiaomo.server.system.gm.msg.ReqGMMessage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,8 +19,8 @@ public class BackMessagePool implements MessagePool {
      */
     public BackMessagePool() {
     	register(1001, ReqCloseServerMessage.class);
-    	register(1003, ReqExecGMMessage.class);
     	register(1005, ReqReloadCfgMessage.class);
+        register(2001, ReqGMMessage.class);
     }
 
 

@@ -1,9 +1,9 @@
 package info.xiaomo.server.system.gm.msg;
 
-
 import info.xiaomo.server.server.AbstractMessage;
 import info.xiaomo.server.system.gm.GMManager;
 import io.netty.buffer.ByteBuf;
+
 
 /**
  * 请求GM命令
@@ -21,7 +21,7 @@ public class ReqGMMessage extends AbstractMessage {
 
     @Override
     public int getId() {
-        return 6001;
+        return 2001;
     }
 
     /**

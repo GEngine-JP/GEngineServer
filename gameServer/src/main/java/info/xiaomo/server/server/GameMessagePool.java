@@ -6,6 +6,7 @@ import info.xiaomo.core.net.MessagePool;
 import info.xiaomo.server.back.msg.ReqCloseServerMessage;
 import info.xiaomo.server.back.msg.ReqExecGMMessage;
 import info.xiaomo.server.back.msg.ReqReloadCfgMessage;
+import info.xiaomo.server.system.gm.msg.ReqGMMessage;
 import info.xiaomo.server.system.user.msg.ReqLoginMessage;
 
 import java.util.HashMap;
@@ -34,6 +35,14 @@ public class GameMessagePool implements MessagePool {
      */
     public GameMessagePool() {
         registerUser();
+        registerGM();
+    }
+
+    /**
+     * 注册gm
+     */
+    private void registerGM() {
+        register(2001, ReqGMMessage.class);
     }
 
 
@@ -41,7 +50,7 @@ public class GameMessagePool implements MessagePool {
      * 注册用户
      */
     private void registerUser() {
-        register(1001,ReqCloseServerMessage.class);
+        register(1001, ReqCloseServerMessage.class);
         register(1003, ReqExecGMMessage.class);
         register(1005, ReqReloadCfgMessage.class);
         register(1007, ReqLoginMessage.class);
