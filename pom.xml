@@ -13,23 +13,12 @@
         <module>gameLog</module>
     </modules>
 
-    <!--<distributionManagement>-->
-        <!--<repository>-->
-            <!--<id>nexus-releases</id>-->
-            <!--<url>http://192.168.1.62:8081/nexus/content/repositories/releases</url>-->
-        <!--</repository>-->
-        <!--<snapshotRepository>-->
-            <!--<id>nexus-snapshots</id>-->
-            <!--<url>http://192.168.1.62:8081/nexus/content/repositories/snapshots</url>-->
-        <!--</snapshotRepository>-->
-    <!--</distributionManagement>-->
-
     <repositories>
         <repository>
-            <id>inner-release</id>
+            <id>releases</id>
             <name>inner-release</name>
             <layout>default</layout>
-            <url>http://192.168.1.62:8081/nexus/content/repositories/releases/</url>
+            <url>http://xiaomo.info:8081/repository/releases/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -74,7 +63,7 @@
             <dependency>
                 <groupId>info.xiaomo</groupId>
                 <artifactId>gameCore</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <!--netty-->
