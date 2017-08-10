@@ -1,9 +1,10 @@
 package info.xiaomo.server.system.user.msg;
 
+
+import info.xiaomo.core.net.kryo.KryoInput;
+import info.xiaomo.core.net.kryo.KryoOutput;
 import info.xiaomo.server.server.AbstractMessage;
 import info.xiaomo.server.system.user.UserManager;
-import io.netty.buffer.ByteBuf;
-
 
 /**
  * 请求登录
@@ -29,6 +30,31 @@ public class ReqLoginMessage extends AbstractMessage {
      */
     private String loginName;
 
+    /**
+     * 服务器id
+     */
+    private int sid;
+
+    /**
+     * 平台id
+     */
+    private int pid;
+
+    /**
+     * 登录方式（1、网页，2、微端
+     */
+    private int client;
+
+    /**
+     * 身份证号码
+     */
+    private String IDNumber;
+
+    /**
+     * ip地址
+     */
+    private String ip;
+
 
     public String getLoginName() {
         return loginName;
@@ -39,17 +65,16 @@ public class ReqLoginMessage extends AbstractMessage {
     }
 
 
-    @Override
-    public boolean read(ByteBuf buf) {
-        this.loginName = readString(buf);
 
+    @Override
+    public boolean read(KryoInput buf) {
+        this.loginName = readString(buf);
         return true;
     }
 
     @Override
-    public boolean write(ByteBuf buf) {
+    public boolean write(KryoOutput buf) {
         this.writeString(buf, loginName);
-
         return true;
     }
 }

@@ -1,12 +1,12 @@
 package info.xiaomo.server.system.gm.msg;
 
+
+import info.xiaomo.core.net.kryo.KryoInput;
+import info.xiaomo.core.net.kryo.KryoOutput;
 import info.xiaomo.server.server.AbstractMessage;
-import io.netty.buffer.ByteBuf;
-
-
 
 /**
- * 返回gm
+ * 返回GM命令执行结果
  */
 public class ResGMMessage extends AbstractMessage {
 
@@ -21,7 +21,7 @@ public class ResGMMessage extends AbstractMessage {
 	
 	@Override
 	public int getId() {
-		return 2002;
+		return 6002;
 	}
 	
 	/**
@@ -41,14 +41,15 @@ public class ResGMMessage extends AbstractMessage {
 	
 
 	@Override
-	public boolean read(ByteBuf buf) {
+	public boolean read(KryoInput buf) {
+
 		this.content = readString(buf);
 
 		return true;
 	}
 
 	@Override
-	public boolean write(ByteBuf buf) {
+	public boolean write(KryoOutput buf) {
 		this.writeString(buf, content);
 
 		return true;

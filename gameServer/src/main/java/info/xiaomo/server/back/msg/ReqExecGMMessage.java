@@ -1,32 +1,32 @@
-package info.xiaomo.server.system.gm.msg;
-
+package info.xiaomo.server.back.msg;
 
 import info.xiaomo.core.net.kryo.KryoInput;
 import info.xiaomo.core.net.kryo.KryoOutput;
+import info.xiaomo.server.back.BackManager;
 import info.xiaomo.server.server.AbstractMessage;
-import info.xiaomo.server.system.gm.GMManager;
+
 
 /**
- * 请求GM命令
+ * 请求执行GM命令
  */
-public class ReqGMMessage extends AbstractMessage {
+public class ReqExecGMMessage extends AbstractMessage {
 
 	@Override
 	public void doAction() {
-		GMManager.getInstance().execGMCmdFromGame(session, command);
+		BackManager.getInstance().exeGM(sequence, session, command);
 	}
 	
-	public ReqGMMessage() {
-		this.queueId = 2;
+	public ReqExecGMMessage() {
+		this.queueId = 1;
 	}
 	
 	@Override
 	public int getId() {
-		return 6001;
+		return 1003;
 	}
 	
 	/**
-	 * gm命令
+	 * 命令
 	 */
 	private String command;
 
