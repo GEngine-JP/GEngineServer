@@ -63,7 +63,7 @@
             <dependency>
                 <groupId>info.xiaomo</groupId>
                 <artifactId>gameCore</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.1</version>
             </dependency>
             <dependency>
                 <!--netty-->
