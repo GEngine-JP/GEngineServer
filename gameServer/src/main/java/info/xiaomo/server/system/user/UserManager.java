@@ -1,6 +1,6 @@
 package info.xiaomo.server.system.user;
 
-import info.xiaomo.server.db.DbData;
+import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.db.DbDataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
@@ -48,7 +48,7 @@ public class UserManager {
         if (loginName.isEmpty()){
             return;
         }
-        User user = DbData.getUser(loginName);
+        User user = DataCenter.getUser(loginName);
         if (user == null) {
             // 新建用户
             user = createUser(loginName);
@@ -84,8 +84,8 @@ public class UserManager {
         user.setGmLevel(1);
         user.setPlatformId(1);
         user.setRegisterTime(TimeUtil.getNowOfSeconds());
-        DbData.insertData(user, true);
-        DbData.registerUser(user);
+        DataCenter.insertData(user, true);
+        DataCenter.registerUser(user);
         return user;
     }
 
@@ -95,7 +95,7 @@ public class UserManager {
      * @param user user
      */
     public void logout(User user) {
-        DbData.updateData(user.getId(), DbDataType.USER, false);
+        DataCenter.updateData(user.getId(), DbDataType.USER, false);
 
         EventUtil.executeEvent(EventType.LOGOUT, user);
     }

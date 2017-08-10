@@ -3,7 +3,7 @@ package info.xiaomo.server.server;
 import info.xiaomo.core.config.ConfigDataManager;
 import info.xiaomo.core.net.NetworkService;
 import info.xiaomo.core.net.NetworkServiceBuilder;
-import info.xiaomo.server.db.DbData;
+import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventRegister;
 import info.xiaomo.server.processor.LoginAndLogoutProcessor;
 import info.xiaomo.server.system.schedule.ScheduleManager;
@@ -49,7 +49,7 @@ public class GameServer {
         netWork = builder.createService();
 
         // 初始化数据库
-        DbData.init(option);
+        DataCenter.init(option);
 
         ConfigDataManager.getInstance().init(option.getConfigDataPath());
 

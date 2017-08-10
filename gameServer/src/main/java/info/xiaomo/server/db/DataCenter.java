@@ -18,7 +18,7 @@ import info.xiaomo.server.server.ServerOption;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class DbData {
+public class DataCenter {
 
     private static IDataProvider provider;
 
