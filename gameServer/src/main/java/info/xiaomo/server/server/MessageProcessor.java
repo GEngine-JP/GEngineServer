@@ -1,10 +1,10 @@
 package info.xiaomo.server.server;
 
 
-import info.xiaomo.core.concurrent.IQueueDriverCommand;
+import info.xiaomo.core.concurrent.IQueueCommand;
 
 public interface MessageProcessor {
 	
-	void process(IQueueDriverCommand message);
+	void process(IQueueCommand message);
 
 }

@@ -36,6 +36,7 @@
 
 
     <properties>
+        <core.version>1.0.2</core.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -63,7 +64,7 @@
             <dependency>
                 <groupId>info.xiaomo</groupId>
                 <artifactId>gameCore</artifactId>
-                <version>1.0.1</version>
+                <version>${core.version}</version>
             </dependency>
             <dependency>
                 <!--netty-->
