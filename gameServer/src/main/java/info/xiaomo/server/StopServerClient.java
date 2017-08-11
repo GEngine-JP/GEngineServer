@@ -1,13 +1,11 @@
 package info.xiaomo.server;
 
-import info.xiaomo.core.client.Client;
-import info.xiaomo.core.client.ClientBuilder;
-import info.xiaomo.core.net.Message;
-import info.xiaomo.core.net.MessagePool;
-import info.xiaomo.core.net.NetworkConsumer;
-import info.xiaomo.core.net.NetworkEventListener;
-import info.xiaomo.server.back.msg.ReqCloseServerMessage;
-import info.xiaomo.server.back.msg.ResCloseServerMessage;
+import info.xiaomo.gameCore.protocol.Message;
+import info.xiaomo.gameCore.protocol.MessagePool;
+import info.xiaomo.gameCore.protocol.NetworkConsumer;
+import info.xiaomo.gameCore.protocol.NetworkEventListener;
+import info.xiaomo.gameCore.protocol.client.Client;
+import info.xiaomo.gameCore.protocol.client.ClientBuilder;
 import info.xiaomo.server.server.ServerOption;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
@@ -40,9 +38,9 @@ public class StopServerClient {
             Client client = builder.build();
             client.connect();
 
-            ReqCloseServerMessage req = new ReqCloseServerMessage();
-
-            client.sendMsg(req);
+//            ReqCloseServerMessage req = new ReqCloseServerMessage();
+//
+//            client.sendMsg(req);
             int count = 10;
             while (count > 0) {
                 Thread.sleep(10 * 1000);
@@ -79,12 +77,12 @@ public class StopServerClient {
 
         @Override
         public void consume(Channel channel, Message msg) {
-            ResCloseServerMessage res = (ResCloseServerMessage) msg;
-            LOGGER.info(res.getInfo());
-            if (res.getCode() == -1) {
-                LOGGER.info("local exit...");
-                System.exit(0);
-            }
+//            ResCloseServerMessage res = (ResCloseServerMessage) msg;
+//            LOGGER.info(res.getInfo());
+//            if (res.getCode() == -1) {
+//                LOGGER.info("local exit...");
+//                System.exit(0);
+//            }
         }
 
     }
@@ -94,7 +92,6 @@ public class StopServerClient {
         private Map<Integer, Class<? extends Message>> pool = new HashMap<>();
 
         public Pool() {
-            register(1002, ResCloseServerMessage.class);
         }
 
 
