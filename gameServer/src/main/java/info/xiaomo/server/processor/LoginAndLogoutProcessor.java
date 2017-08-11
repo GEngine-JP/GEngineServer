@@ -1,11 +1,12 @@
 package info.xiaomo.server.processor;
 
 
-import info.xiaomo.core.concurrent.IQueueCommand;
+import info.xiaomo.core.concurrent.IQueueDriverCommand;
 import info.xiaomo.server.server.MessageProcessor;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -25,7 +26,7 @@ public class LoginAndLogoutProcessor implements MessageProcessor {
     private Executor executor = Executors.newSingleThreadExecutor(r -> new Thread(r, "Login"));
 
     @Override
-    public void process(IQueueCommand message) {
+    public void process(IQueueDriverCommand message) {
 
         this.executor.execute(message);
 

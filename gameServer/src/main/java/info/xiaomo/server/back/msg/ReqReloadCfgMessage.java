@@ -12,7 +12,7 @@ import info.xiaomo.server.server.AbstractMessage;
 public class ReqReloadCfgMessage extends AbstractMessage {
 
 	@Override
-	public void action() {
+	public void doAction() {
 		BackManager.getInstance().reloadCfg(sequence, session, type, cfgName, cacheName);
 	}
 	

@@ -12,7 +12,7 @@ import info.xiaomo.server.server.AbstractMessage;
 public class ReqCloseServerMessage extends AbstractMessage {
 
 	@Override
-	public void action() {
+	public void doAction() {
 		BackManager.getInstance().closeServer(sequence, session);
 	}
 	

@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
 
 
 public class LogoutCommand extends AbstractCommand {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(LogoutCommand.class);
+	
 	private Session session;
 	
 	
@@ -19,7 +22,7 @@ public class LogoutCommand extends AbstractCommand {
 
 
 	@Override
-	public void action() {
+	public void doAction() {
 		
 		Boolean logoutHandled =  AttributeUtil.get(session.getChannel(), SessionKey.LOGOUT_HANDLED);
 		if(Boolean.TRUE.equals(logoutHandled)) {

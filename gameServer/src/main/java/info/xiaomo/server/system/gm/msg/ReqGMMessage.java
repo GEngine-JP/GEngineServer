@@ -12,7 +12,7 @@ import info.xiaomo.server.system.gm.GMManager;
 public class ReqGMMessage extends AbstractMessage {
 
 	@Override
-	public void action() {
+	public void doAction() {
 		GMManager.getInstance().execGMCmdFromGame(session, command);
 	}
 	

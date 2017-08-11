@@ -1,6 +1,6 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.concurrent.IQueueCommand;
+import info.xiaomo.core.concurrent.IQueueDriverCommand;
 import info.xiaomo.core.concurrent.queue.ICommandQueue;
 import info.xiaomo.core.net.Message;
 import info.xiaomo.core.net.kryo.KryoBean;
@@ -23,7 +23,7 @@ public abstract class AbstractMessage extends KryoBean implements Message {
 	/**
 	 * 命令队列
 	 */
-	private ICommandQueue<IQueueCommand> commandQueue;
+	private ICommandQueue<IQueueDriverCommand> commandQueue;
 	
 	/**
 	 * 消息长度
@@ -76,19 +76,19 @@ public abstract class AbstractMessage extends KryoBean implements Message {
 			if(filter != null && !filter.before(this)){
 				return;
 			}
-			action();
+			doAction();
 		} catch (Throwable e) {
 			LOGGER.error("命令执行错误", e);
 		}
 	}
 	
 	@Override
-	public ICommandQueue<IQueueCommand> getCommandQueue() {
+	public ICommandQueue<IQueueDriverCommand> getCommandQueue() {
 		return commandQueue;
 	}
 
 	@Override
-	public void setCommandQueue(ICommandQueue<IQueueCommand> commandQueue) {
+	public void setCommandQueue(ICommandQueue<IQueueDriverCommand> commandQueue) {
 		this.commandQueue = commandQueue;
 	}
 	

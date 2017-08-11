@@ -11,7 +11,7 @@ import info.xiaomo.server.server.AbstractMessage;
 public class ResCloseServerMessage extends AbstractMessage {
 
 	@Override
-	public void action() {
+	public void doAction() {
 		
 	}
 	

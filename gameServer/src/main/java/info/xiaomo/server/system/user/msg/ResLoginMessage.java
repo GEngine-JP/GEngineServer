@@ -11,7 +11,7 @@ import info.xiaomo.server.server.AbstractMessage;
 public class ResLoginMessage extends AbstractMessage {
 
 	@Override
-	public void action() {
+	public void doAction() {
 		
 	}
 	

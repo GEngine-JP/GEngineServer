@@ -1,6 +1,6 @@
 package info.xiaomo.server.back;
 
-import info.xiaomo.core.concurrent.CommandQueueExecutor;
+import info.xiaomo.core.concurrent.QueueExecutor;
 import info.xiaomo.server.back.msg.ResCloseServerMessage;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventType;
@@ -292,7 +292,7 @@ public class GameCloseThread extends Thread {
         }
 
         // 关闭独立场景驱动线程
-        for (CommandQueueExecutor executor : ExecutorUtil.SPECIAL_DRIVER_EXECUTOR_MAP.values()) {
+        for (QueueExecutor executor : ExecutorUtil.SPECIAL_DRIVER_EXECUTOR_MAP.values()) {
             if (source == COMMAND_LINE) {
                 sendMsg(1, "关闭" + executor.getName() + "....");
             }
