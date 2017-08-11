@@ -7,7 +7,6 @@ import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionManager;
-import info.xiaomo.server.system.user.msg.ResLoginMessage;
 import info.xiaomo.server.util.IDUtil;
 import info.xiaomo.server.util.TimeUtil;
 import org.slf4j.Logger;
@@ -62,9 +61,9 @@ public class UserManager {
         session.setUser(user); // 注册账户
         SessionManager.getInstance().register(user.getId(), session);// 注册session
 
-        ResLoginMessage msg = new ResLoginMessage();
-        msg.setUid(user.getId());
-        session.sendMessage(msg);
+//        ResLoginMessage msg = new ResLoginMessage();
+//        msg.setUid(user.getId());
+//        session.sendMessage(msg);
 
         EventUtil.executeEvent(EventType.LOGIN, user);
     }

@@ -1,7 +1,7 @@
 package info.xiaomo.server.back;
 
-import info.xiaomo.core.net.NetworkService;
-import info.xiaomo.core.net.NetworkServiceBuilder;
+import info.xiaomo.gameCore.protocol.NetworkService;
+import info.xiaomo.gameCore.protocol.NetworkServiceBuilder;
 import info.xiaomo.server.server.ServerOption;
 
 /**

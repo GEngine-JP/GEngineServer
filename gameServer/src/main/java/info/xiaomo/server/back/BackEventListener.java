@@ -1,6 +1,6 @@
 package info.xiaomo.server.back;
 
-import info.xiaomo.core.net.NetworkEventListener;
+import info.xiaomo.gameCore.protocol.NetworkEventListener;
 import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

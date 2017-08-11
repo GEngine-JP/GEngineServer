@@ -1,7 +1,7 @@
 package info.xiaomo.server.util;
 
 
-import info.xiaomo.core.net.Message;
+import info.xiaomo.gameCore.protocol.Message;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionManager;
 

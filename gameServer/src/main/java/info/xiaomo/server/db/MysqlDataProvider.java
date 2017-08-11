@@ -1,7 +1,7 @@
 package info.xiaomo.server.db;
 
-import info.xiaomo.core.db.jdbc.JdbcTemplate;
-import info.xiaomo.core.db.persist.*;
+import info.xiaomo.gameCore.persist.jdbc.JdbcTemplate;
+import info.xiaomo.gameCore.persist.persist.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

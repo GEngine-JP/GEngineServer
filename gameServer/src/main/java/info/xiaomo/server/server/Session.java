@@ -1,6 +1,6 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.net.Message;
+import info.xiaomo.gameCore.protocol.Message;
 import info.xiaomo.server.entify.User;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;

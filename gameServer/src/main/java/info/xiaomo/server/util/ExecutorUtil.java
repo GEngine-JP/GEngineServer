@@ -1,7 +1,8 @@
 package info.xiaomo.server.util;
 
 
-import info.xiaomo.core.concurrent.QueueExecutor;
+
+import info.xiaomo.gameCore.base.concurrent.CommandQueueExecutor;
 
 import java.util.Map;
 import java.util.concurrent.*;
@@ -34,7 +35,7 @@ public class ExecutorUtil {
     /**
      * 游戏驱动主线程池
      */
-    public static final QueueExecutor COMMON_DRIVER_EXECUTOR = new QueueExecutor("游戏公共驱动线程",
+    public static final CommandQueueExecutor COMMON_DRIVER_EXECUTOR = new CommandQueueExecutor("游戏公共驱动线程",
             (int) (Runtime.getRuntime().availableProcessors() * 1.5) < 12 ? 12
                     : (int) (Runtime.getRuntime().availableProcessors() * 1.5),
             Runtime.getRuntime().availableProcessors() * 2 < 16 ? 16
@@ -43,12 +44,12 @@ public class ExecutorUtil {
     /**
      * 单独针对单独场景的驱动线程
      */
-    public static final Map<Integer, QueueExecutor> SPECIAL_DRIVER_EXECUTOR_MAP = new ConcurrentHashMap<>();
+    public static final Map<Integer, CommandQueueExecutor> SPECIAL_DRIVER_EXECUTOR_MAP = new ConcurrentHashMap<>();
 
     /**
      * 游戏登录线程池
      */
-    public static final QueueExecutor LOGIN_EXECUTOR = new QueueExecutor("登录线程", 1, 5000);
+    public static final CommandQueueExecutor LOGIN_EXECUTOR = new CommandQueueExecutor("登录线程", 1, 5000);
 
 
     //===============对Executor的方法包装==========================================

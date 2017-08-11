@@ -1,7 +1,7 @@
 package info.xiaomo.server.command;
 
-import info.xiaomo.core.concurrent.AbstractCommand;
-import info.xiaomo.core.util.AttributeUtil;
+import info.xiaomo.gameCore.base.common.AttributeUtil;
+import info.xiaomo.gameCore.base.concurrent.AbstractCommand;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionKey;
 import info.xiaomo.server.system.user.UserManager;
@@ -22,7 +22,7 @@ public class LogoutCommand extends AbstractCommand {
 
 
 	@Override
-	public void doAction() {
+	public void action() {
 		
 		Boolean logoutHandled =  AttributeUtil.get(session.getChannel(), SessionKey.LOGOUT_HANDLED);
 		if(Boolean.TRUE.equals(logoutHandled)) {

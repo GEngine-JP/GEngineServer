@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.net.Message;
-import info.xiaomo.core.net.NetworkConsumer;
-import info.xiaomo.core.util.AttributeUtil;
+import info.xiaomo.gameCore.base.common.AttributeUtil;
+import info.xiaomo.gameCore.protocol.Message;
+import info.xiaomo.gameCore.protocol.NetworkConsumer;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

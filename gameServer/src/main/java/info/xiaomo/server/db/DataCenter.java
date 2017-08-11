@@ -1,6 +1,6 @@
 package info.xiaomo.server.db;
 
-import info.xiaomo.core.db.persist.CacheAble;
+import info.xiaomo.gameCore.persist.persist.CacheAble;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.server.ServerOption;
 

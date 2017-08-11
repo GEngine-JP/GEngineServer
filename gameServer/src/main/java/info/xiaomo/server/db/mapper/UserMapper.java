@@ -1,6 +1,6 @@
 package info.xiaomo.server.db.mapper;
 
-import info.xiaomo.core.db.jdbc.RowMapper;
+import info.xiaomo.gameCore.persist.jdbc.RowMapper;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.system.user.field.UserField;
 

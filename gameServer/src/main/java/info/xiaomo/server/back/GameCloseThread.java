@@ -1,7 +1,6 @@
 package info.xiaomo.server.back;
 
-import info.xiaomo.core.concurrent.QueueExecutor;
-import info.xiaomo.server.back.msg.ResCloseServerMessage;
+import info.xiaomo.gameCore.base.concurrent.CommandQueueExecutor;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
@@ -57,11 +56,11 @@ public class GameCloseThread extends Thread {
         if (session == null) {
             return;
         }
-        ResCloseServerMessage msg = new ResCloseServerMessage();
-        msg.setSequence(sequence);
-        msg.setCode(code);
-        msg.setInfo(text);
-        session.sendMessage(msg);
+//        ResCloseServerMessage msg = new ResCloseServerMessage();
+//        msg.setSequence(sequence);
+//        msg.setCode(code);
+//        msg.setInfo(text);
+//        session.sendMessage(msg);
     }
 
     /**
@@ -126,13 +125,13 @@ public class GameCloseThread extends Thread {
         LOGGER.info("服务器已关闭...");
 
         if (session != null) {
-            ResCloseServerMessage msg = new ResCloseServerMessage();
-            msg.setSequence(sequence);
-            msg.setCode(-1);
-            msg.setInfo("服务器已关闭...");
+//            ResCloseServerMessage msg = new ResCloseServerMessage();
+//            msg.setSequence(sequence);
+//            msg.setCode(-1);
+//            msg.setInfo("服务器已关闭...");
             try {
-                ChannelFuture fu = session.getChannel().writeAndFlush(msg).sync();
-                fu.get();
+//                ChannelFuture fu = session.getChannel().writeAndFlush(msg).sync();
+//                fu.get();
             } catch (Exception e) {
                 LOGGER.error("发送服务器关闭消息出错.", e);
             }
@@ -292,7 +291,7 @@ public class GameCloseThread extends Thread {
         }
 
         // 关闭独立场景驱动线程
-        for (QueueExecutor executor : ExecutorUtil.SPECIAL_DRIVER_EXECUTOR_MAP.values()) {
+        for (CommandQueueExecutor executor : ExecutorUtil.SPECIAL_DRIVER_EXECUTOR_MAP.values()) {
             if (source == COMMAND_LINE) {
                 sendMsg(1, "关闭" + executor.getName() + "....");
             }

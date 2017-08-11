@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.config.ConfigDataManager;
-import info.xiaomo.core.net.NetworkService;
-import info.xiaomo.core.net.NetworkServiceBuilder;
+import info.xiaomo.gameCore.config.ConfigDataManager;
+import info.xiaomo.gameCore.protocol.NetworkService;
+import info.xiaomo.gameCore.protocol.NetworkServiceBuilder;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventRegister;
 import info.xiaomo.server.processor.LoginAndLogoutProcessor;

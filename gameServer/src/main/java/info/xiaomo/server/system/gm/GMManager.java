@@ -3,7 +3,6 @@ package info.xiaomo.server.system.gm;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.system.gm.command.GM;
-import info.xiaomo.server.system.gm.msg.ResGMMessage;
 import info.xiaomo.server.util.MessageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,9 +47,9 @@ public class GMManager {
         String ret = execGmCmd(session, command, gmLevel);
         if (ret != null) {
             //发送到聊天频道
-            ResGMMessage msg = new ResGMMessage();
-            msg.setContent(ret);
-            MessageUtil.sendMsg(msg, session.getUser().getId());
+//            ResGMMessage msg = new ResGMMessage();
+//            msg.setContent(ret);
+//            MessageUtil.sendMsg(msg, session.getUser().getId());
         }
     }
 

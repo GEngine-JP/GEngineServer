@@ -1,6 +1,7 @@
 package info.xiaomo.server.config;
 
-import info.xiaomo.core.config.AbstractConfigData;
+
+import info.xiaomo.gameCore.config.AbstractConfigData;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～

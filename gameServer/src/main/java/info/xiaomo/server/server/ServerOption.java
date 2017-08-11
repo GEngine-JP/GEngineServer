@@ -1,6 +1,7 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.util.Cast;
+
+import info.xiaomo.gameCore.base.common.Cast;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,6 +1,7 @@
 package info.xiaomo.server.util;
 
-import info.xiaomo.core.util.Symbol;
+
+import info.xiaomo.gameCore.base.common.Symbol;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～

@@ -1,12 +1,12 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.concurrent.IQueueDriverCommand;
-import info.xiaomo.core.concurrent.queue.ICommandQueue;
-import info.xiaomo.core.net.Message;
-import info.xiaomo.core.net.kryo.KryoBean;
-import info.xiaomo.core.net.kryo.KryoInput;
-import info.xiaomo.core.net.kryo.KryoOutput;
-import info.xiaomo.core.net.kryo.KryoUtil;
+import info.xiaomo.gameCore.base.concurrent.IQueueCommand;
+import info.xiaomo.gameCore.base.concurrent.queue.ICommandQueue;
+import info.xiaomo.gameCore.protocol.Message;
+import info.xiaomo.gameCore.protocol.kryo.KryoBean;
+import info.xiaomo.gameCore.protocol.kryo.KryoInput;
+import info.xiaomo.gameCore.protocol.kryo.KryoOutput;
+import info.xiaomo.gameCore.protocol.kryo.KryoUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +23,7 @@ public abstract class AbstractMessage extends KryoBean implements Message {
 	/**
 	 * 命令队列
 	 */
-	private ICommandQueue<IQueueDriverCommand> commandQueue;
+	private ICommandQueue<IQueueCommand> commandQueue;
 	
 	/**
 	 * 消息长度
@@ -76,19 +76,19 @@ public abstract class AbstractMessage extends KryoBean implements Message {
 			if(filter != null && !filter.before(this)){
 				return;
 			}
-			doAction();
+			action();
 		} catch (Throwable e) {
 			LOGGER.error("命令执行错误", e);
 		}
 	}
 	
 	@Override
-	public ICommandQueue<IQueueDriverCommand> getCommandQueue() {
+	public ICommandQueue<IQueueCommand> getCommandQueue() {
 		return commandQueue;
 	}
 
 	@Override
-	public void setCommandQueue(ICommandQueue<IQueueDriverCommand> commandQueue) {
+	public void setCommandQueue(ICommandQueue<IQueueCommand> commandQueue) {
 		this.commandQueue = commandQueue;
 	}
 	

@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
 
-import info.xiaomo.core.net.NetworkEventListener;
-import info.xiaomo.core.util.AttributeUtil;
+import info.xiaomo.gameCore.base.common.AttributeUtil;
+import info.xiaomo.gameCore.protocol.NetworkEventListener;
 import info.xiaomo.server.command.LogoutCommand;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
