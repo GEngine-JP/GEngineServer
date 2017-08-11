@@ -13,10 +13,24 @@
 
 
     <dependencies>
+        <!--核心包start-->
         <dependency>
             <groupId>info.xiaomo</groupId>
-            <artifactId>gameCore</artifactId>
+            <artifactId>Base</artifactId>
         </dependency>
+        <dependency>
+            <groupId>info.xiaomo</groupId>
+            <artifactId>Config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>info.xiaomo</groupId>
+            <artifactId>Persist</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>info.xiaomo</groupId>
+            <artifactId>Protocol</artifactId>
+        </dependency>
+        <!--核心包end-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

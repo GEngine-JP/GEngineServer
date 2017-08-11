@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>info.xiaomo</groupId>
-            <artifactId>gameCore</artifactId>
+            <artifactId>Logger</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>

@@ -18,7 +18,7 @@
             <id>releases</id>
             <name>inner-release</name>
             <layout>default</layout>
-            <url>http://xiaomo.info:8081/repository/maven-public/</url>
+            <url>http://xiaomo.info:8081/nexus/content/groups/public</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -39,6 +39,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <!--核心包start-->
+        <base.version>1.0.2</base.version>
+        <config.version>1.0.2</config.version>
+        <protocol.version>1.0.2</protocol.version>
+        <logger.version>1.0.2</logger.version>
+        <persist.version>1.0.2</persist.version>
+        <!--核心包end-->
         <netty.version>4.1.12.Final</netty.version>
         <apache-commons-codec.version>1.10</apache-commons-codec.version>
         <kryo.version>3.0.3</kryo.version>
@@ -60,11 +67,33 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--核心包start-->
             <dependency>
                 <groupId>info.xiaomo</groupId>
-                <artifactId>gameCore</artifactId>
-                <version>1.0.1</version>
+                <artifactId>Base</artifactId>
+                <version>${base.version}</version>
             </dependency>
+            <dependency>
+                <groupId>info.xiaomo</groupId>
+                <artifactId>Config</artifactId>
+                <version>${config.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.xiaomo</groupId>
+                <artifactId>Persist</artifactId>
+                <version>${persist.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.xiaomo</groupId>
+                <artifactId>Logger</artifactId>
+                <version>${logger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.xiaomo</groupId>
+                <artifactId>Protocol</artifactId>
+                <version>${protocol.version}</version>
+            </dependency>
+            <!--核心包end-->
             <dependency>
                 <!--netty-->
                 <groupId>io.netty</groupId>
