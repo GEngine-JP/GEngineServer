@@ -12,7 +12,7 @@ import info.xiaomo.server.system.user.UserManager;
 public class ReqLoginMessage extends AbstractMessage {
 
     @Override
-    public void doAction() {
+    public void action() {
         UserManager.getInstance().login(session, loginName);
     }
 

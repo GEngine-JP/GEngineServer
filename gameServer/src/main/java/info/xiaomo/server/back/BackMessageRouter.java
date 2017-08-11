@@ -17,7 +17,7 @@ public class BackMessageRouter implements NetworkConsumer {
 		session.setChannel(channel);
 		msg.setParam(session);
 		try {
-			msg.doAction();
+			msg.action();
 		} catch (Exception e) {
 			LOGGER.error("back server 执行消息发生错误.", e);
 		}
