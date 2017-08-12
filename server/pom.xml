@@ -16,19 +16,7 @@
         <!--核心包start-->
         <dependency>
             <groupId>info.xiaomo</groupId>
-            <artifactId>Base</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>info.xiaomo</groupId>
-            <artifactId>Config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>info.xiaomo</groupId>
-            <artifactId>Persist</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>info.xiaomo</groupId>
-            <artifactId>Protocol</artifactId>
+            <artifactId>All</artifactId>
         </dependency>
         <!--核心包end-->
         <dependency>

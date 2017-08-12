@@ -14,7 +14,8 @@
     <dependencies>
         <dependency>
             <groupId>info.xiaomo</groupId>
-            <artifactId>Logger</artifactId>
+            <artifactId>logger</artifactId>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
