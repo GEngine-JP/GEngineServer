@@ -70,7 +70,7 @@
             <!--核心包start-->
             <dependency>
                 <groupId>info.xiaomo</groupId>
-                <artifactId>All</artifactId>
+                <artifactId>all</artifactId>
                 <version>${gameCore.version}</version>
             </dependency>
             <dependency>
