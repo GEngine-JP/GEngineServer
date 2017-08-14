@@ -1,8 +1,9 @@
 package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.protocol.Message;
-import info.xiaomo.gameCore.protocol.NetworkConsumer;
+import info.xiaomo.gameCore.protocol.Connection;
+import info.xiaomo.gameCore.protocol.handler.MessageExecutor;
+import info.xiaomo.server.command.LogoutCommand;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +25,7 @@ import java.util.Map;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class MessageRouter implements NetworkConsumer {
+public class MessageRouter implements MessageExecutor {
     private static Logger LOGGER = LoggerFactory.getLogger(MessageRouter.class);
 
     private Map<Integer, MessageProcessor> processors = new HashMap<>();
@@ -33,35 +34,49 @@ public class MessageRouter implements NetworkConsumer {
         processors.put(queueId, consumer);
     }
 
+
+    public MessageProcessor getProcessor(int queueId) {
+        return processors.get(queueId);
+    }
+
     @Override
-    public void consume(Channel channel, Message msg) {
-
-        //将消息分发到指定的队列中，该队列有可能在同一个进程，也有可能不在同一个进程
-
-        int queueId = msg.getQueueId();
-
-        MessageProcessor processor = processors.get(queueId);
-        if(processor == null){
-            LOGGER.error("找不到可用的消息处理器[{}]", queueId);
-            return;
-        }
-
-        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
-
-
-        if(session == null){
-            return;
-        }
-
-        msg.setParam(session);
-
-        LOGGER.debug("收到消息:" + msg);
-
-        processor.process(msg);
+    public void doCommand(Connection paramConnection, Object paramObject) throws Exception {
 
     }
 
-    public MessageProcessor getProcessor(int queueId){
-        return processors.get(queueId);
+    @Override
+    public void connected(Connection paramConnection) {
+        Channel channel = paramConnection();
+        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
+        if(session == null){
+            session = new Session();
+            session.setChannel(channel);
+            AttributeUtil.set(channel, SessionKey.SESSION, session);
+            LOGGER.error("接收到新的连接：" + channel.toString());
+        } else {
+            LOGGER.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
+        }
+    }
+
+    @Override
+    public void disconnected(Connection paramConnection) {
+        Channel channel = ctx.channel();
+        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
+        closeSession(session);
+    }
+
+    @Override
+    public void exceptionCaught(Connection paramConnection, Throwable paramThrowable) {
+
+    }
+
+    public static void closeSession(Session session){
+        if(session == null || session.getUser() == null) {
+            //下线
+            LOGGER.error("玩家断开连接[没有找到用户信息]");
+            return;
+        }
+        MessageProcessor processor = Context.getGameServer().getRouter().getProcessor(1);
+        processor.process(new LogoutCommand(session));
     }
 }

@@ -38,13 +38,11 @@ public class GameServer {
         builder.setMsgPool(new GameMessagePool());
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
-        builder.setNetworkEventListener(new EventListener());
         builder.setPort(option.getGameServerPort());
 
         router = new MessageRouter();
         router.registerProcessor(1, new LoginAndLogoutProcessor());
 
-        builder.setConsumer(router);
         // 创建网络服务
         netWork = builder.createService();
 
