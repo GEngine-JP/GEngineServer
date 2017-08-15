@@ -1,11 +1,8 @@
 package info.xiaomo.server.server;
 
 
-import info.xiaomo.gameCore.protocol.Message;
 import info.xiaomo.gameCore.protocol.MessagePool;
-
-import java.util.HashMap;
-import java.util.Map;
+import info.xiaomo.server.system.user.handler.LoginHandler;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -21,9 +18,7 @@ import java.util.Map;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class GameMessagePool implements MessagePool {
-
-    private Map<Integer, Class<? extends Message>> pool = new HashMap<>();
+public class GameMessagePool extends MessagePool {
 
     /**
      * 在这里注册消息
@@ -37,6 +32,7 @@ public class GameMessagePool implements MessagePool {
      * 注册gm
      */
     private void registerGM() {
+        register(1, LoginHandler.class);
     }
 
 
@@ -47,20 +43,4 @@ public class GameMessagePool implements MessagePool {
     }
 
 
-    @Override
-    public Message get(int messageId) {
-        Class<? extends Message> clazz = pool.get(messageId);
-        if (clazz != null) {
-            try {
-                return clazz.newInstance();
-            } catch (Exception e) {
-                return null;
-            }
-        }
-        return null;
-    }
-
-    private void register(int messageId, Class<? extends Message> clazz) {
-        pool.put(messageId, clazz);
-    }
 }
