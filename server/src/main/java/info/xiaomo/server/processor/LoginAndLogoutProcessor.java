@@ -25,9 +25,9 @@ public class LoginAndLogoutProcessor implements MessageProcessor {
     private Executor executor = Executors.newSingleThreadExecutor(r -> new Thread(r, "Login"));
 
     @Override
-    public void process(IQueueCommand message) {
+    public void process(IQueueCommand handler) {
 
-        this.executor.execute(message);
+        this.executor.execute(handler);
 
     }
 }

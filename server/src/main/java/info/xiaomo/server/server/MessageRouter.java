@@ -1,7 +1,7 @@
 package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.protocol.entity.BaseMsg;
+import info.xiaomo.gameCore.protocol.AbstractHandler;
 import info.xiaomo.gameCore.protocol.handler.MessageExecutor;
 import info.xiaomo.server.command.LogoutCommand;
 import io.netty.channel.Channel;
@@ -41,8 +41,10 @@ public class MessageRouter implements MessageExecutor {
     }
 
     @Override
-    public void doCommand(Channel channel, BaseMsg msg) throws Exception {
+    public void doCommand(Channel channel, AbstractHandler handler) throws Exception {
         //将消息分发到指定的队列中，该队列有可能在同一个进程，也有可能不在同一个进程
+        MessageProcessor messageProcessor = processors.get(1);
+        messageProcessor.process(handler);
     }
 
     @Override

@@ -5,6 +5,6 @@ import info.xiaomo.gameCore.base.concurrent.IQueueCommand;
 
 public interface MessageProcessor {
 	
-	void process(IQueueCommand message);
+	void process(IQueueCommand handler);
 
 }
