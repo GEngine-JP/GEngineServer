@@ -1,38 +1,45 @@
 package info.xiaomo.server.back;
 
-import info.xiaomo.gameCore.protocol.Message;
+
 import info.xiaomo.gameCore.protocol.MessagePool;
+import info.xiaomo.server.system.user.handler.LoginHandler;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class BackMessagePool implements MessagePool {
-
-    private Map<Integer, Class<? extends Message>> pool = new HashMap<>();
+/**
+ * 把今天最好的表现当作明天最新的起点．．～
+ * いま 最高の表現 として 明日最新の始発．．～
+ * Today the best performance  as tomorrow newest starter!
+ * Created by IntelliJ IDEA.
+ * <p>
+ * author: xiaomo
+ * github: https://github.com/xiaomoinfo
+ * email : xiaomo@xiaomo.info
+ * QQ    : 83387856
+ * Date  : 2017/7/11 16:00
+ * desc  :
+ * Copyright(©) 2017 by xiaomo.
+ */
+public class BackMessagePool extends MessagePool {
 
     /**
-     * 注册消息
-     * 如果新加模块 则添加一个新方法进来
+     * 在这里注册消息
      */
     public BackMessagePool() {
+        registerGM();
+    }
+
+    /**
+     * 注册gm
+     */
+    private void registerGM() {
+        register(1, LoginHandler.class);
     }
 
 
-    @Override
-    public Message get(int messageId) {
-        Class<? extends Message> clazz = pool.get(messageId);
-        if (clazz != null) {
-            try {
-                return clazz.newInstance();
-            } catch (Exception e) {
-                return null;
-            }
-        }
-        return null;
+    /**
+     * 注册用户
+     */
+    private void registerUser() {
     }
 
-    public void register(int messageId, Class<? extends Message> clazz) {
-        pool.put(messageId, clazz);
-    }
 
 }

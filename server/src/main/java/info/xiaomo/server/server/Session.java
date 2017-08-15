@@ -1,6 +1,5 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.gameCore.protocol.Message;
 import info.xiaomo.server.entify.User;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -30,9 +29,9 @@ public class Session {
     }
 
 
-    public void sendMessage(Message msg) {
-        channel.writeAndFlush(msg);
-    }
+//    public void sendMessage(Message msg) {
+//        channel.writeAndFlush(msg);
+//    }
 
     public Channel getChannel() {
         return channel;

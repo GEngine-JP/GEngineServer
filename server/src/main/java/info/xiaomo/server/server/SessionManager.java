@@ -13,7 +13,6 @@ public class SessionManager {
 
 	private Map<Channel, Session> channelSessionMap = new ConcurrentHashMap<>();
 
-	
 	public static SessionManager getInstance(){
 		return INSTANCE;
 	}

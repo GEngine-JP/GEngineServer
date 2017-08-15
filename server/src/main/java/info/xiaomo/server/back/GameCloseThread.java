@@ -5,7 +5,7 @@ import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
 import info.xiaomo.server.server.Context;
-import info.xiaomo.server.server.EventListener;
+import info.xiaomo.server.server.MessageRouter;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionManager;
 import info.xiaomo.server.util.ExecutorUtil;
@@ -88,7 +88,7 @@ public class GameCloseThread extends Thread {
             } catch (Exception e) {
                 LOGGER.error(session + ",停服关闭连接失败");
             }
-            EventListener.closeSession(session);
+            MessageRouter.closeSession(session);
         }
 
     }
