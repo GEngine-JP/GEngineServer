@@ -41,10 +41,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <!--核心包start-->
         <gameCore.version>1.0.2</gameCore.version>
-        <config.version>1.0.2</config.version>
-        <protocol.version>1.0.2</protocol.version>
-        <logger.version>1.0.2</logger.version>
-        <persist.version>1.0.2</persist.version>
         <!--核心包end-->
         <netty.version>4.1.12.Final</netty.version>
         <apache-commons-codec.version>1.10</apache-commons-codec.version>
