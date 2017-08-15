@@ -1,10 +1,11 @@
 package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.protocol.Connection;
+import info.xiaomo.gameCore.protocol.entity.BaseMsg;
 import info.xiaomo.gameCore.protocol.handler.MessageExecutor;
 import info.xiaomo.server.command.LogoutCommand;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,15 +41,15 @@ public class MessageRouter implements MessageExecutor {
     }
 
     @Override
-    public void doCommand(Connection paramConnection, Object paramObject) throws Exception {
-
+    public void doCommand(Channel channel, BaseMsg msg) throws Exception {
+        //将消息分发到指定的队列中，该队列有可能在同一个进程，也有可能不在同一个进程
     }
 
     @Override
-    public void connected(Connection paramConnection) {
-        Channel channel = paramConnection();
+    public void connected(ChannelHandlerContext ctx) {
+        Channel channel = ctx.channel();
         Session session = AttributeUtil.get(channel, SessionKey.SESSION);
-        if(session == null){
+        if (session == null) {
             session = new Session();
             session.setChannel(channel);
             AttributeUtil.set(channel, SessionKey.SESSION, session);
@@ -59,19 +60,19 @@ public class MessageRouter implements MessageExecutor {
     }
 
     @Override
-    public void disconnected(Connection paramConnection) {
+    public void disconnected(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
         Session session = AttributeUtil.get(channel, SessionKey.SESSION);
         closeSession(session);
     }
 
     @Override
-    public void exceptionCaught(Connection paramConnection, Throwable paramThrowable) {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable paramThrowable) {
 
     }
 
-    public static void closeSession(Session session){
-        if(session == null || session.getUser() == null) {
+    public static void closeSession(Session session) {
+        if (session == null || session.getUser() == null) {
             //下线
             LOGGER.error("玩家断开连接[没有找到用户信息]");
             return;
