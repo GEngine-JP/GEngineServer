@@ -3,8 +3,8 @@
 
 package info.xiaomo.server.message;
 
-public final class GM {
-  private GM() {}
+public final class GMProto {
+  private GMProto() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -98,12 +98,12 @@ public final class GM {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return GM.internal_static_ReqExecuteGMMessage_descriptor;
+      return GMProto.internal_static_ReqExecuteGMMessage_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return GM.internal_static_ReqExecuteGMMessage_fieldAccessorTable
+      return GMProto.internal_static_ReqExecuteGMMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ReqExecuteGMMessage.class, Builder.class);
     }
@@ -319,17 +319,17 @@ public final class GM {
         ReqExecuteGMMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return GM.internal_static_ReqExecuteGMMessage_descriptor;
+        return GMProto.internal_static_ReqExecuteGMMessage_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return GM.internal_static_ReqExecuteGMMessage_fieldAccessorTable
+        return GMProto.internal_static_ReqExecuteGMMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 ReqExecuteGMMessage.class, Builder.class);
       }
 
-      // Construct using info.xiaomo.server.message.GM.ReqExecuteGMMessage.newBuilder()
+      // Construct using info.xiaomo.server.message.GMProto.ReqExecuteGMMessage.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -355,7 +355,7 @@ public final class GM {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return GM.internal_static_ReqExecuteGMMessage_descriptor;
+        return GMProto.internal_static_ReqExecuteGMMessage_descriptor;
       }
 
       public ReqExecuteGMMessage getDefaultInstanceForType() {
@@ -675,12 +675,12 @@ public final class GM {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return GM.internal_static_ResExecuteGMMessage_descriptor;
+      return GMProto.internal_static_ResExecuteGMMessage_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return GM.internal_static_ResExecuteGMMessage_fieldAccessorTable
+      return GMProto.internal_static_ResExecuteGMMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ResExecuteGMMessage.class, Builder.class);
     }
@@ -896,17 +896,17 @@ public final class GM {
         ResExecuteGMMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return GM.internal_static_ResExecuteGMMessage_descriptor;
+        return GMProto.internal_static_ResExecuteGMMessage_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return GM.internal_static_ResExecuteGMMessage_fieldAccessorTable
+        return GMProto.internal_static_ResExecuteGMMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 ResExecuteGMMessage.class, Builder.class);
       }
 
-      // Construct using info.xiaomo.server.message.GM.ResExecuteGMMessage.newBuilder()
+      // Construct using info.xiaomo.server.message.GMProto.ResExecuteGMMessage.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -932,7 +932,7 @@ public final class GM {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return GM.internal_static_ResExecuteGMMessage_descriptor;
+        return GMProto.internal_static_ResExecuteGMMessage_descriptor;
       }
 
       public ResExecuteGMMessage getDefaultInstanceForType() {
@@ -1190,8 +1190,8 @@ public final class GM {
       "\n\016proto/GM.proto\"3\n\023ReqExecuteGMMessage\022" +
       "\013\n\003sex\030\002 \001(\005\022\017\n\007content\030\003 \001(\t\"3\n\023ResExec" +
       "uteGMMessage\022\013\n\003sex\030\002 \001(\005\022\017\n\007content\030\003 \001" +
-      "(\tB \n\032info.xiaomo.server.messageB\002GMb\006pr" +
-      "oto3"
+      "(\tB%\n\032info.xiaomo.server.messageB\007GMProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

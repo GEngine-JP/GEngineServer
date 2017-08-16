@@ -3,8 +3,8 @@
 
 package info.xiaomo.server.message;
 
-public final class User {
-  private User() {}
+public final class UserProto {
+  private UserProto() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -98,12 +98,12 @@ public final class User {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return User.internal_static_ReqLoginMessage_descriptor;
+      return UserProto.internal_static_ReqLoginMessage_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return User.internal_static_ReqLoginMessage_fieldAccessorTable
+      return UserProto.internal_static_ReqLoginMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ReqLoginMessage.class, Builder.class);
     }
@@ -319,17 +319,17 @@ public final class User {
         ReqLoginMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return User.internal_static_ReqLoginMessage_descriptor;
+        return UserProto.internal_static_ReqLoginMessage_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return User.internal_static_ReqLoginMessage_fieldAccessorTable
+        return UserProto.internal_static_ReqLoginMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 ReqLoginMessage.class, Builder.class);
       }
 
-      // Construct using info.xiaomo.server.message.User.ReqLoginMessage.newBuilder()
+      // Construct using info.xiaomo.server.message.UserProto.ReqLoginMessage.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -355,7 +355,7 @@ public final class User {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return User.internal_static_ReqLoginMessage_descriptor;
+        return UserProto.internal_static_ReqLoginMessage_descriptor;
       }
 
       public ReqLoginMessage getDefaultInstanceForType() {
@@ -675,12 +675,12 @@ public final class User {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return User.internal_static_ResLoginMessage_descriptor;
+      return UserProto.internal_static_ResLoginMessage_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return User.internal_static_ResLoginMessage_fieldAccessorTable
+      return UserProto.internal_static_ResLoginMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ResLoginMessage.class, Builder.class);
     }
@@ -896,17 +896,17 @@ public final class User {
         ResLoginMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return User.internal_static_ResLoginMessage_descriptor;
+        return UserProto.internal_static_ResLoginMessage_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return User.internal_static_ResLoginMessage_fieldAccessorTable
+        return UserProto.internal_static_ResLoginMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 ResLoginMessage.class, Builder.class);
       }
 
-      // Construct using info.xiaomo.server.message.User.ResLoginMessage.newBuilder()
+      // Construct using info.xiaomo.server.message.UserProto.ResLoginMessage.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -932,7 +932,7 @@ public final class User {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return User.internal_static_ResLoginMessage_descriptor;
+        return UserProto.internal_static_ResLoginMessage_descriptor;
       }
 
       public ResLoginMessage getDefaultInstanceForType() {
@@ -1190,8 +1190,8 @@ public final class User {
       "\n\020proto/user.proto\"1\n\017ReqLoginMessage\022\013\n" +
       "\003sex\030\002 \001(\005\022\021\n\tloginName\030\003 \001(\t\"1\n\017ResLogi" +
       "nMessage\022\013\n\003sex\030\002 \001(\005\022\021\n\tloginName\030\003 \001(\t" +
-      "B\"\n\032info.xiaomo.server.messageB\004Userb\006pr" +
-      "oto3"
+      "B\'\n\032info.xiaomo.server.messageB\tUserProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
