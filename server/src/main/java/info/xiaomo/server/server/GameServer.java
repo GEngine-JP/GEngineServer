@@ -3,10 +3,15 @@ package info.xiaomo.server.server;
 import info.xiaomo.gameCore.config.ConfigDataManager;
 import info.xiaomo.gameCore.protocol.NetworkService;
 import info.xiaomo.gameCore.protocol.NetworkServiceBuilder;
+import info.xiaomo.gameCore.protocol.protobuf.ProtoBufMessageDecoder;
+import info.xiaomo.gameCore.protocol.protobuf.ProtoBufMessageEncoder;
+import info.xiaomo.server.constant.GameConst;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventRegister;
+import info.xiaomo.server.processor.LogicProcessor;
 import info.xiaomo.server.processor.LoginAndLogoutProcessor;
 import info.xiaomo.server.system.schedule.ScheduleManager;
+import lombok.Data;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -22,6 +27,7 @@ import info.xiaomo.server.system.schedule.ScheduleManager;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
+@Data
 public class GameServer {
 
     private NetworkService netWork;
@@ -35,13 +41,16 @@ public class GameServer {
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
         NetworkServiceBuilder builder = new NetworkServiceBuilder();
-        builder.setMsgPool(new GameMessagePool());
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(option.getGameServerPort());
+        builder.setDecoder(new ProtoBufMessageDecoder(new GameMessagePool()));
+        builder.setEncoder(new ProtoBufMessageEncoder(new GameMessagePool()));
+        builder.setExecutor(new MessageRouter());
 
         router = new MessageRouter();
-        router.registerProcessor(1, new LoginAndLogoutProcessor());
+        router.registerProcessor(GameConst.QueueId.LoginOrLogout, new LoginAndLogoutProcessor());
+        router.registerProcessor(GameConst.QueueId.Logic, new LogicProcessor());
 
         // 创建网络服务
         netWork = builder.createService();
@@ -73,27 +82,4 @@ public class GameServer {
         state = false;
     }
 
-    public NetworkService getNetWork() {
-        return netWork;
-    }
-
-    public void setNetWork(NetworkService netWork) {
-        this.netWork = netWork;
-    }
-
-    public boolean isState() {
-        return state;
-    }
-
-    public void setState(boolean state) {
-        this.state = state;
-    }
-
-    public MessageRouter getRouter() {
-        return router;
-    }
-
-    public void setRouter(MessageRouter router) {
-        this.router = router;
-    }
 }

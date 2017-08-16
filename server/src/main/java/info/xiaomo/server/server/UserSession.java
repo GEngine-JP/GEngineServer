@@ -4,6 +4,7 @@ import com.google.protobuf.MessageOrBuilder;
 import info.xiaomo.gameCore.protocol.entity.Session;
 import info.xiaomo.server.entify.User;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -19,6 +20,7 @@ import lombok.Data;
  * desc  : session
  * Copyright(©) 2017 by xiaomo.
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class UserSession extends Session {
 
