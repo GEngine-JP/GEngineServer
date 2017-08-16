@@ -62,10 +62,6 @@ public class UserManager {
         session.setUser(user); // 注册账户
         SessionManager.getInstance().register(user.getId(), session);// 注册session
 
-//        ResLoginMessage msg = new ResLoginMessage();
-//        msg.setUid(user.getId());
-//        session.sendMessage(msg);
-
         ResLoginMessage.Builder builder = ResLoginMessage.newBuilder();
         builder.setLoginName(msg.getLoginName());
         builder.setSex(msg.getSex());
