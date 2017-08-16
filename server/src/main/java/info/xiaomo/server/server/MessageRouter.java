@@ -50,9 +50,9 @@ public class MessageRouter implements MessageExecutor {
     @Override
     public void connected(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
-        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
+        UserSession session = AttributeUtil.get(channel, SessionKey.SESSION);
         if (session == null) {
-            session = new Session();
+            session = new UserSession();
             session.setChannel(channel);
             AttributeUtil.set(channel, SessionKey.SESSION, session);
             LOGGER.error("接收到新的连接：" + channel.toString());
@@ -64,7 +64,7 @@ public class MessageRouter implements MessageExecutor {
     @Override
     public void disconnected(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
-        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
+        UserSession session = AttributeUtil.get(channel, SessionKey.SESSION);
         closeSession(session);
     }
 
@@ -73,7 +73,7 @@ public class MessageRouter implements MessageExecutor {
 
     }
 
-    public static void closeSession(Session session) {
+    public static void closeSession(UserSession session) {
         if (session == null || session.getUser() == null) {
             //下线
             LOGGER.error("玩家断开连接[没有找到用户信息]");

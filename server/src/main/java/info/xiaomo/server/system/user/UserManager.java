@@ -5,11 +5,13 @@ import info.xiaomo.server.db.DbDataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
-import info.xiaomo.server.server.Session;
+import info.xiaomo.server.server.UserSession;
 import info.xiaomo.server.server.SessionManager;
 import info.xiaomo.server.util.IDUtil;
+import info.xiaomo.server.util.MessageUtil;
 import info.xiaomo.server.util.TimeUtil;
 import org.slf4j.Logger;
+import info.xiaomo.server.message.User.*;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -41,18 +43,17 @@ public class UserManager {
     /**
      * 登录游戏
      * @param session session
-     * @param loginName loginName
      */
-    public void login(Session session, String loginName) {
-        if (loginName.isEmpty()){
+    public void login(UserSession session, ReqLoginMessage msg) {
+        if (msg.getLoginName().isEmpty()){
             return;
         }
-        User user = DataCenter.getUser(loginName);
+        User user = DataCenter.getUser(msg.getLoginName());
         if (user == null) {
             // 新建用户
-            user = createUser(loginName);
+            user = createUser(msg.getLoginName());
             if (user == null) {
-                LOGGER.error("用户创建失败:{},{},{}", loginName);
+                LOGGER.error("用户创建失败:{},{},{}", msg.getLoginName());
                 session.close();
                 return;
             }
@@ -64,6 +65,12 @@ public class UserManager {
 //        ResLoginMessage msg = new ResLoginMessage();
 //        msg.setUid(user.getId());
 //        session.sendMessage(msg);
+
+        ResLoginMessage.Builder builder = ResLoginMessage.newBuilder();
+        builder.setLoginName(msg.getLoginName());
+        builder.setSex(msg.getSex());
+        ResLoginMessage res = builder.build();
+        MessageUtil.sendMsg(session.getUser().getId(),res);
 
         EventUtil.executeEvent(EventType.LOGIN, user);
     }

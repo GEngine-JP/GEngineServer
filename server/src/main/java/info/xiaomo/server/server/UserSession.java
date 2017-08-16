@@ -1,8 +1,9 @@
 package info.xiaomo.server.server;
 
+import com.google.protobuf.MessageOrBuilder;
+import info.xiaomo.gameCore.protocol.entity.Session;
 import info.xiaomo.server.entify.User;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
+import lombok.Data;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -18,29 +19,14 @@ import io.netty.channel.ChannelFuture;
  * desc  : session
  * Copyright(©) 2017 by xiaomo.
  */
-public class Session {
-
-    private Channel channel;
+@Data
+public class UserSession extends Session {
 
     private User user;
 
-    public ChannelFuture close() {
-        return channel.close();
+    public void sendMessage(MessageOrBuilder msg) {
+        channel.writeAndFlush(msg);
     }
-
-
-//    public void sendMessage(Message msg) {
-//        channel.writeAndFlush(msg);
-//    }
-
-    public Channel getChannel() {
-        return channel;
-    }
-
-    public void setChannel(Channel channel) {
-        this.channel = channel;
-    }
-
 
     public User getUser() {
         return user;

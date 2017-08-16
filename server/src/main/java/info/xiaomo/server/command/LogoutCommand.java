@@ -2,7 +2,7 @@ package info.xiaomo.server.command;
 
 import info.xiaomo.gameCore.base.common.AttributeUtil;
 import info.xiaomo.gameCore.base.concurrent.AbstractCommand;
-import info.xiaomo.server.server.Session;
+import info.xiaomo.server.server.UserSession;
 import info.xiaomo.server.server.SessionKey;
 import info.xiaomo.server.system.user.UserManager;
 import org.slf4j.Logger;
@@ -13,10 +13,10 @@ public class LogoutCommand extends AbstractCommand {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(LogoutCommand.class);
 	
-	private Session session;
+	private UserSession session;
 	
 	
-	public LogoutCommand(Session session) {
+	public LogoutCommand(UserSession session) {
 		this.session = session;
 	}
 

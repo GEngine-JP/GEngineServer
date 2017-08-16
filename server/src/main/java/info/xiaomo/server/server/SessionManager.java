@@ -9,24 +9,24 @@ public class SessionManager {
 	
 	private static final SessionManager INSTANCE = new SessionManager();
 	
-	private Map<Long, Session> userSessionMap = new ConcurrentHashMap<>();
+	private Map<Long, UserSession> userSessionMap = new ConcurrentHashMap<>();
 
-	private Map<Channel, Session> channelSessionMap = new ConcurrentHashMap<>();
+	private Map<Channel, UserSession> channelSessionMap = new ConcurrentHashMap<>();
 
 	public static SessionManager getInstance(){
 		return INSTANCE;
 	}
 	
-	public Session getSession(long uid) {
+	public UserSession getSession(long uid) {
 		return userSessionMap.get(uid);
 	}
 	
-	public void register(long uid, Session session) {
+	public void register(long uid, UserSession session) {
 		userSessionMap.put(uid, session);
 	}
 	
-	public Session[] sessionArray(){
-		return userSessionMap.values().toArray(new Session[0]);
+	public UserSession[] sessionArray(){
+		return userSessionMap.values().toArray(new UserSession[0]);
 	}
 	
 	

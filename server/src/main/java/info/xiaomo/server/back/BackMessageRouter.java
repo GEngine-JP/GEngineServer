@@ -1,8 +1,9 @@
 package info.xiaomo.server.back;
 
+import info.xiaomo.gameCore.protocol.AbstractHandler;
 import info.xiaomo.gameCore.protocol.entity.BaseMsg;
 import info.xiaomo.gameCore.protocol.handler.MessageExecutor;
-import info.xiaomo.server.server.Session;
+import info.xiaomo.server.server.UserSession;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
@@ -14,15 +15,8 @@ public class BackMessageRouter implements MessageExecutor {
 
 
     @Override
-    public void doCommand(Channel channel, BaseMsg msg) throws Exception {
-        Session session = new Session();
-        session.setChannel(channel);
-//		msg.setParam(session);
-//		try {
-//			msg.action();
-//		} catch (Exception e) {
-//			LOGGER.error("back server 执行消息发生错误.", e);
-//		}
+    public void doCommand(Channel channel, AbstractHandler handler) throws Exception {
+
     }
 
     @Override

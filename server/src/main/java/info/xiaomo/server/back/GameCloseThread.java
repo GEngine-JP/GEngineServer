@@ -6,7 +6,7 @@ import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
 import info.xiaomo.server.server.Context;
 import info.xiaomo.server.server.MessageRouter;
-import info.xiaomo.server.server.Session;
+import info.xiaomo.server.server.UserSession;
 import info.xiaomo.server.server.SessionManager;
 import info.xiaomo.server.util.ExecutorUtil;
 import io.netty.channel.ChannelFuture;
@@ -43,9 +43,9 @@ public class GameCloseThread extends Thread {
      */
     private int source;
 
-    private Session session;
+    private UserSession session;
 
-    public GameCloseThread(short sequence, int source, Session session) {
+    public GameCloseThread(short sequence, int source, UserSession session) {
         super();
         this.sequence = sequence;
         this.source = source;
@@ -75,8 +75,8 @@ public class GameCloseThread extends Thread {
         DataCenter.store();
 
 
-        Session[] sessions = SessionManager.getInstance().sessionArray();
-        for (Session session : sessions) {
+        UserSession[] sessions = SessionManager.getInstance().sessionArray();
+        for (UserSession session : sessions) {
 
             ChannelFuture close = session.close();
             if (close == null) {

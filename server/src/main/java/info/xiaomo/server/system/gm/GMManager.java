@@ -1,9 +1,8 @@
 package info.xiaomo.server.system.gm;
 
 import info.xiaomo.server.entify.User;
-import info.xiaomo.server.server.Session;
+import info.xiaomo.server.server.UserSession;
 import info.xiaomo.server.system.gm.command.GM;
-import info.xiaomo.server.util.MessageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,7 +33,7 @@ public class GMManager {
     private GMManager() {
     }
 
-    public void execGMCmdFromGame(Session session, String command) {
+    public void execGMCmdFromGame(UserSession session, String command) {
 
         User user = session.getUser();
         if (user == null) {
@@ -53,7 +52,7 @@ public class GMManager {
         }
     }
 
-    private String execGmCmd(Session session, String gmStr, int gmLevel) {
+    private String execGmCmd(UserSession session, String gmStr, int gmLevel) {
 
 
         gmStr = gmStr.substring(1);
