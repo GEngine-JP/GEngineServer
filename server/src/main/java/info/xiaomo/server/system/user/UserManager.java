@@ -11,7 +11,7 @@ import info.xiaomo.server.util.IDUtil;
 import info.xiaomo.server.util.MessageUtil;
 import info.xiaomo.server.util.TimeUtil;
 import org.slf4j.Logger;
-import info.xiaomo.server.message.User.*;
+import info.xiaomo.server.message.UserProto.*;
 import org.slf4j.LoggerFactory;
 
 /**

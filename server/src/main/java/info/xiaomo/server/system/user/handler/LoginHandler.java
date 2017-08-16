@@ -2,11 +2,9 @@ package info.xiaomo.server.system.user.handler;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import info.xiaomo.gameCore.protocol.AbstractHandler;
-import info.xiaomo.server.message.User.ReqLoginMessage;
-import info.xiaomo.server.message.User.ResLoginMessage;
+import info.xiaomo.server.message.UserProto.ReqLoginMessage;
 import info.xiaomo.server.server.UserSession;
 import info.xiaomo.server.system.user.UserManager;
-import info.xiaomo.server.util.MessageUtil;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -31,6 +29,6 @@ public class LoginHandler extends AbstractHandler<ReqLoginMessage> {
 
     @Override
     protected void handMessage(ReqLoginMessage req) {
-        UserManager.getInstance().login((UserSession) session,req);
+        UserManager.getInstance().login((UserSession) session, req);
     }
 }
