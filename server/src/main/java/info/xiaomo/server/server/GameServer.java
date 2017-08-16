@@ -58,7 +58,8 @@ public class GameServer {
         // 初始化数据库
         DataCenter.init(option);
 
-        ConfigDataManager.getInstance().init(option.getConfigDataPath());
+        //初始化配置文件
+        //ConfigDataManager.getInstance().init(option.getConfigDataPath());
 
         // 注册事件
         EventRegister.registerPreparedListeners();

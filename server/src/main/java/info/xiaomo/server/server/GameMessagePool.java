@@ -32,7 +32,7 @@ public class GameMessagePool extends MessagePool {
      * 注册gm
      */
     private void registerGM() {
-        register(1, LoginHandler.class);
+
     }
 
 
@@ -40,6 +40,7 @@ public class GameMessagePool extends MessagePool {
      * 注册用户
      */
     private void registerUser() {
+        register(1, LoginHandler.class);
     }
 
 
