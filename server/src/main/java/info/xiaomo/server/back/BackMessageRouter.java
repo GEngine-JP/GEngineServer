@@ -1,34 +1,27 @@
 package info.xiaomo.server.back;
 
 import info.xiaomo.gameCore.protocol.AbstractHandler;
-import info.xiaomo.gameCore.protocol.handler.MessageExecutor;
+import info.xiaomo.gameCore.protocol.NetworkConsumer;
+import info.xiaomo.gameCore.protocol.entity.Session;
 import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BackMessageRouter implements MessageExecutor {
+public class BackMessageRouter implements NetworkConsumer {
+	
+	private static Logger LOGGER = LoggerFactory.getLogger(BackMessageRouter.class);
 
-    private static Logger LOGGER = LoggerFactory.getLogger(BackMessageRouter.class);
-
-
-    @Override
-    public void doCommand(Channel channel, AbstractHandler handler) throws Exception {
-
-    }
-
-    @Override
-    public void connected(ChannelHandlerContext ctx) {
-
-    }
-
-    @Override
-    public void disconnected(ChannelHandlerContext ctx) {
-
-    }
-
-    @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable paramThrowable) {
-
-    }
+	@Override
+	public void consume(Channel channel, AbstractHandler handler) {
+		Session session = new Session();
+		session.setChannel(channel);
+		handler.setParam(session);
+		try {
+			handler.action();
+		} catch (Exception e) {
+			LOGGER.error("back server 执行消息发生错误.", e);
+		}
+	}
+	
+	
 }

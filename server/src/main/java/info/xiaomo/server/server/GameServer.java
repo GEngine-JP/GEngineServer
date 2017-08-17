@@ -1,10 +1,7 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.gameCore.config.ConfigDataManager;
 import info.xiaomo.gameCore.protocol.NetworkService;
 import info.xiaomo.gameCore.protocol.NetworkServiceBuilder;
-import info.xiaomo.gameCore.protocol.protobuf.ProtoBufMessageDecoder;
-import info.xiaomo.gameCore.protocol.protobuf.ProtoBufMessageEncoder;
 import info.xiaomo.server.constant.GameConst;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventRegister;
@@ -40,17 +37,17 @@ public class GameServer {
         int bossLoopGroupCount = 4;
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
+        router = new MessageRouter();
+        router.registerProcessor(GameConst.QueueId.LoginOrLogout, new LoginAndLogoutProcessor());
+        router.registerProcessor(GameConst.QueueId.Logic, new LogicProcessor());
+
         NetworkServiceBuilder builder = new NetworkServiceBuilder();
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(option.getGameServerPort());
-        builder.setDecoder(new ProtoBufMessageDecoder(new GameMessagePool()));
-        builder.setEncoder(new ProtoBufMessageEncoder(new GameMessagePool()));
-        builder.setExecutor(new MessageRouter());
-
-        router = new MessageRouter();
-        router.registerProcessor(GameConst.QueueId.LoginOrLogout, new LoginAndLogoutProcessor());
-        router.registerProcessor(GameConst.QueueId.Logic, new LogicProcessor());
+        builder.setMessagePool(new GameMessagePool());
+        builder.setConsumer(router);
+        builder.setNetworkEventListener(new EventListener());
 
         // 创建网络服务
         netWork = builder.createService();
