@@ -46,7 +46,7 @@ public class StopServerClient {
     }
 
 
-    static class ClientMessagePool extends MessagePool {
+    private static class ClientMessagePool extends MessagePool {
 
 
     }
