@@ -30,6 +30,9 @@ public class BackServer {
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(option.getBackServerPort());
+        builder.setMessagePool(new BackMessagePool());
+        builder.setConsumer(new BackMessageRouter());
+        builder.setNetworkEventListener(new BackEventListener());
 
         service = builder.createService();
     }
