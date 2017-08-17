@@ -5,6 +5,7 @@ import info.xiaomo.server.server.Context;
 import info.xiaomo.server.server.GameServer;
 import info.xiaomo.server.server.JVMCloseHook;
 import info.xiaomo.server.server.ServerOption;
+import info.xiaomo.server.util.SystemUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +27,13 @@ public class GameServerBootstrap {
     public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
 
     public static void main(String[] args) throws Exception {
-        ServerOption option = new ServerOption(args[0]);
+        String configPath;
+        if (SystemUtil.isWindows()) {
+            configPath = GameServerBootstrap.class.getResource("/").getPath() + "config.properties";
+        } else {
+            configPath = args[0];
+        }
+        ServerOption option = new ServerOption(configPath);
         Context.init(option);
 
         GameServer server = Context.createServer();
