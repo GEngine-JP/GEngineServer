@@ -2,6 +2,7 @@ package info.xiaomo.server.server;
 
 
 import info.xiaomo.gameCore.protocol.MessagePool;
+import info.xiaomo.server.message.UserProto.ReqLoginMessage;
 import info.xiaomo.server.system.user.handler.LoginHandler;
 
 /**
@@ -40,7 +41,7 @@ public class GameMessagePool extends MessagePool {
      * 注册用户
      */
     private void registerUser() {
-        register(1, LoginHandler.class);
+        register(1, ReqLoginMessage.class, LoginHandler.class);
     }
 
 

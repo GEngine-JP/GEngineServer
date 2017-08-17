@@ -1,15 +1,12 @@
 package info.xiaomo.server;
 
-import com.google.protobuf.MessageOrBuilder;
 import info.xiaomo.gameCore.protocol.AbstractHandler;
 import info.xiaomo.gameCore.protocol.NetworkConsumer;
 import info.xiaomo.gameCore.protocol.NetworkEventListener;
 import info.xiaomo.gameCore.protocol.client.Client;
 import info.xiaomo.gameCore.protocol.client.ClientBuilder;
 import info.xiaomo.server.back.BackMessagePool;
-import info.xiaomo.server.back.BackMessageRouter;
-import info.xiaomo.server.server.EventListener;
-import info.xiaomo.server.server.MessageRouter;
+import info.xiaomo.server.message.BackProto.ReqCloseServerMessage;
 import info.xiaomo.server.server.ServerOption;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
@@ -34,11 +31,11 @@ public class StopServerClient {
 
             Client client = builder.build();
             client.start();
-//
-//            ReqCloseServerMessage.Builder newBuilder = ReqCloseServerMessage.newBuilder();
-//            newBuilder.setSex(1);
-//            ReqCloseServerMessage msg = newBuilder.build();
-//            client.sendMsg(msg);
+
+            ReqCloseServerMessage.Builder newBuilder = ReqCloseServerMessage.newBuilder();
+            newBuilder.setCommand("1");
+            ReqCloseServerMessage msg = newBuilder.build();
+            client.sendMsg(msg);
 
             int count = 10;
             while (count > 0) {
@@ -60,7 +57,7 @@ public class StopServerClient {
         @Override
         public void consume(Channel channel, AbstractHandler handler) {
 
-       }
+        }
     }
 
     static class Listener implements NetworkEventListener {

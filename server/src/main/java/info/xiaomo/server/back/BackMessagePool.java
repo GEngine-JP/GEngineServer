@@ -3,6 +3,7 @@ package info.xiaomo.server.back;
 
 import info.xiaomo.gameCore.protocol.MessagePool;
 import info.xiaomo.server.back.handler.CloseServerHandler;
+import info.xiaomo.server.message.BackProto.ReqCloseServerMessage;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -31,7 +32,7 @@ public class BackMessagePool extends MessagePool {
      * 注册gm
      */
     private void registerGM() {
-        register(1001, CloseServerHandler.class);
+        register(1001, ReqCloseServerMessage.class, CloseServerHandler.class);
     }
 
 
