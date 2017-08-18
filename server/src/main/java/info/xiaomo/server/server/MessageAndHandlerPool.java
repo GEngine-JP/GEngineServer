@@ -4,7 +4,8 @@ import info.xiaomo.gameCore.base.AbstractHandler;
 import info.xiaomo.gameCore.protocol.HandlerPool;
 import info.xiaomo.gameCore.protocol.MessagePool;
 import info.xiaomo.gameCore.protocol.message.AbstractMessage;
-
+import info.xiaomo.server.protocol.gm.handler.ReqCloseServerHandler;
+import info.xiaomo.server.protocol.gm.message.ReqCloseServerMessage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,8 +18,7 @@ public class MessageAndHandlerPool implements MessagePool, HandlerPool {
     private final Map<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>();
 
     public MessageAndHandlerPool() {
-        //心跳
-
+        register(2201, ReqCloseServerMessage.class, ReqCloseServerHandler.class);
     }
 
     @Override
