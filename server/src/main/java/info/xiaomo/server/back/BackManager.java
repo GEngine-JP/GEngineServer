@@ -1,6 +1,9 @@
 package info.xiaomo.server.back;
 
+import info.xiaomo.server.protocol.gm.message.ResCloseServerMessage;
+import info.xiaomo.server.protocol.proto.GMProto;
 import info.xiaomo.server.server.Session;
+import info.xiaomo.server.util.MessageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +36,11 @@ public class BackManager {
 
     public void closeServer() {
         LOGGER.error("通过后台命令关服");
+        ResCloseServerMessage msg = new ResCloseServerMessage();
+        GMProto.CloseServerResponse.Builder builder = GMProto.CloseServerResponse.newBuilder();
+        GMProto.CloseServerResponse closeServer = builder.setResMsg("closeServer").build();
+        msg.setCloseServerResponse(closeServer);
+        MessageUtil.sendMsg(msg);
         System.exit(0);
     }
 

@@ -5,8 +5,8 @@ import info.xiaomo.server.db.DbDataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
-import info.xiaomo.server.message.UserProto.ReqLoginMessage;
-import info.xiaomo.server.message.UserProto.ResLoginMessage;
+import info.xiaomo.server.protocol.proto.UserProto;
+import info.xiaomo.server.protocol.user.message.ResLoginMessage;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionManager;
 import info.xiaomo.server.util.IDUtil;
@@ -46,16 +46,16 @@ public class UserManager {
      *
      * @param session session
      */
-    public void login(Session session, ReqLoginMessage msg) {
-        if (msg.getLoginName().isEmpty()) {
+    public void login(Session session, String loginName) {
+        if (loginName.isEmpty()) {
             return;
         }
-        User user = DataCenter.getUser(msg.getLoginName());
+        User user = DataCenter.getUser(loginName);
         if (user == null) {
             // 新建用户
-            user = createUser(msg.getLoginName());
+            user = createUser(loginName);
             if (user == null) {
-                LOGGER.error("用户创建失败:{},{},{}", msg.getLoginName());
+                LOGGER.error("用户创建失败:{},{},{}", loginName);
                 session.close();
                 return;
             }
@@ -64,11 +64,11 @@ public class UserManager {
         session.setUser(user); // 注册账户
         SessionManager.getInstance().register(session);// 注册session
 
-        ResLoginMessage.Builder builder = ResLoginMessage.newBuilder();
-        builder.setLoginName(msg.getLoginName());
-        builder.setSex(msg.getSex());
-        ResLoginMessage res = builder.build();
-        MessageUtil.sendMsg(session.getUser().getId(), res);
+        ResLoginMessage msg = new ResLoginMessage();
+        UserProto.LoginResponse.Builder builder = UserProto.LoginResponse.newBuilder();
+        UserProto.LoginResponse build = builder.setUserId(user.getId()).build();
+        msg.setLoginResponse(build);
+        MessageUtil.sendMsg(msg, session.getUser().getId());
 
         EventUtil.executeEvent(EventType.LOGIN, user);
     }

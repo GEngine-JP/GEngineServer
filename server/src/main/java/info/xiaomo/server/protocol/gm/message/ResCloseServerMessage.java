@@ -24,7 +24,7 @@ public class ResCloseServerMessage extends AbstractMessage {
 
 	@Override
 	public int getId() {
-		return 201202;
+ 		return 2202;
 	}
 
 	public CloseServerResponse getCloseServerResponse() {

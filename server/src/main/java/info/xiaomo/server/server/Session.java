@@ -1,6 +1,7 @@
 package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.base.common.AttributeUtil;
+import info.xiaomo.gameCore.protocol.message.AbstractMessage;
 import info.xiaomo.server.entify.Player;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.util.Utils;
@@ -91,5 +92,9 @@ public class Session {
         } catch (InterruptedException e) {
             log.error("", e);
         }
+    }
+
+    public void sendMessage(AbstractMessage msg) {
+        channel.writeAndFlush(msg);
     }
 }
