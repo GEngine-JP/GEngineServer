@@ -62,7 +62,7 @@ public class UserManager {
         }
 
         session.setUser(user); // 注册账户
-        SessionManager.getInstance().register(user.getId(), session);// 注册session
+        SessionManager.getInstance().register(session);// 注册session
 
         ResLoginMessage.Builder builder = ResLoginMessage.newBuilder();
         builder.setLoginName(msg.getLoginName());

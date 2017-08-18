@@ -1,5 +1,6 @@
 package info.xiaomo.server.back;
 
+import info.xiaomo.server.server.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,21 +31,20 @@ public class BackManager {
     private BackManager() {
     }
 
-//    public void closeServer(short sequence, UserSession session) {
-//        LOGGER.error("通过后台命令关服");
-//        new GameCloseThread(sequence, GameCloseThread.SourceType.BACK_SERVER, session).start();
-//
-//    }
-//
-//    public void exeGM(short sequence, UserSession session, String command) {
-////        ResGMMessage msg = new ResGMMessage();
-////        msg.setSequence(sequence);
-////        msg.setContent(command);
-////        MessageUtil.sendMsg(msg, session.getUser().getId());
-//
-//    }
-//
-//    public void reloadCfg(short sequence, UserSession session, int type, String cfgName, String cacheName) {
-//
-//    }
+    public void closeServer() {
+        LOGGER.error("通过后台命令关服");
+        System.exit(0);
+    }
+
+    public void exeGM(short sequence, Session session, String command) {
+//        ResGMMessage msg = new ResGMMessage();
+//        msg.setSequence(sequence);
+//        msg.setContent(command);
+//        MessageUtil.sendMsg(msg, session.getUser().getId());
+
+    }
+
+    public void reloadCfg(short sequence, Session session, int type, String cfgName, String cacheName) {
+
+    }
 }
