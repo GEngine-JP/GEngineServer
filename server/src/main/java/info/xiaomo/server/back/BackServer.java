@@ -2,6 +2,7 @@ package info.xiaomo.server.back;
 
 import info.xiaomo.gameCore.protocol.NetworkService;
 import info.xiaomo.gameCore.protocol.NetworkServiceBuilder;
+import info.xiaomo.server.server.MessageAndHandlerPool;
 import info.xiaomo.server.server.ServerOption;
 
 /**
@@ -23,15 +24,15 @@ public class BackServer {
     private NetworkService service;
 
     public BackServer(ServerOption option) {
-
+        MessageAndHandlerPool pool = new MessageAndHandlerPool();
         int bossLoopGroupCount = 4;
         int workerLoopGroupCount = 4;
         NetworkServiceBuilder builder = new NetworkServiceBuilder();
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(option.getBackServerPort());
-        builder.setMessagePool(new BackMessagePool());
-        builder.setConsumer(new BackMessageRouter());
+        builder.setMessagePool(pool);
+        builder.setConsumer(new BackMessageRouter(pool));
 
         service = builder.createService();
     }

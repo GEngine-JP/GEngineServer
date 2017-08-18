@@ -41,13 +41,7 @@ public class Player implements Persistable {
     private int serverId;
 
     @Tag(5)
-    private int platformId;
-
-    @Tag(6)
-    private String idNumber;
-
-    @Tag(7)
-    private int registerTime;
+    private int name;
 
 
     @Override
