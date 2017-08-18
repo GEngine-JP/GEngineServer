@@ -3,18 +3,18 @@ package info.xiaomo.server.util;
 
 import com.google.protobuf.MessageOrBuilder;
 import info.xiaomo.server.server.SessionManager;
-import info.xiaomo.server.server.UserSession;
+import info.xiaomo.server.server.Session;
 
 import java.util.Collection;
 
 public class MessageUtil {
 
     public static void sendMsg(long id, MessageOrBuilder msg) {
-        UserSession session = SessionManager.getInstance().getSession(id);
+        Session session = SessionManager.getInstance().getSession(id);
         if (session == null) {
             return;
         }
-        session.sendMessage(msg);
+//        session.sendMessage(msg);
     }
 
     public static void sendMsg(MessageOrBuilder msg) {

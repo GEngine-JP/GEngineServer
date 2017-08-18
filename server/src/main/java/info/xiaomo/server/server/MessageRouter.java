@@ -1,71 +1,175 @@
 package info.xiaomo.server.server;
 
+import info.xiaomo.gameCore.base.AbstractHandler;
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.protocol.AbstractHandler;
+import info.xiaomo.gameCore.config.ConfigDataManager;
+import info.xiaomo.gameCore.persist.jdbc.ConnectionPool;
+import info.xiaomo.gameCore.persist.jdbc.DruidConnectionPool;
+import info.xiaomo.gameCore.persist.jdbc.JdbcTemplate;
+import info.xiaomo.gameCore.protocol.HandlerPool;
 import info.xiaomo.gameCore.protocol.NetworkConsumer;
-import info.xiaomo.gameCore.protocol.entity.Session;
-import info.xiaomo.gameCore.protocol.handler.MessageExecutor;
-import info.xiaomo.server.command.LogoutCommand;
+import info.xiaomo.gameCore.protocol.message.AbstractMessage;
+import info.xiaomo.server.cache.CacheManager;
+import info.xiaomo.server.db.msyql.UserPersistFactory;
+import info.xiaomo.server.http.HttpServer;
+import info.xiaomo.server.util.DruidDBPoolManager;
+import info.xiaomo.server.util.MsgExeTimeUtil;
+import info.xiaomo.server.util.ScheduleUtil;
 import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
+import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * 把今天最好的表现当作明天最新的起点．．～
- * いま 最高の表現 として 明日最新の始発．．～
- * Today the best performance  as tomorrow newest starter!
- * Created by IntelliJ IDEA.
- * <p>
- * author: xiaomo
- * github: https://github.com/xiaomoinfo
- * email : xiaomo@xiaomo.info
- * QQ    : 83387856
- * Date  : 2017/7/11 16:54
- * desc  :
- * Copyright(©) 2017 by xiaomo.
- */
 public class MessageRouter implements NetworkConsumer {
-    private static Logger LOGGER = LoggerFactory.getLogger(MessageRouter.class);
 
-    private Map<Integer, MessageProcessor> processors = new HashMap<>();
+    private static final Logger LOGGER = LoggerFactory.getLogger(MessageRouter.class);
+    private static final int[] MSG_IDS = {100101, 101101, 101116, 300103};
 
-    public void registerProcessor(int queueId, MessageProcessor consumer) {
-        processors.put(queueId, consumer);
+    private boolean open = false;
+
+    // 全局发包延迟
+    private static int sessionDelay = 0;
+
+    // 是否debug模式
+    private static boolean debug = false;
+
+    // 调试临时数据
+    public static long temp;
+
+    private HandlerPool pool;
+
+    public static int getSessionDelay() {
+        return sessionDelay;
+    }
+
+    public static void setSessionDelay(int sessionDelay) {
+        MessageRouter.sessionDelay = sessionDelay;
+    }
+
+    public static boolean isDebug() {
+        return debug;
+    }
+
+    public static void setDebug(boolean debug) {
+        MessageRouter.debug = debug;
+    }
+
+    public static long getTemp() {
+        return temp;
+    }
+
+    public static void setTemp(long temp) {
+        MessageRouter.temp = temp;
+    }
+
+    public HandlerPool getPool() {
+        return pool;
+    }
+
+    public MessageRouter(ServerOption option, HandlerPool pool) throws Exception {
+        this.pool = pool;
+        debug = option.isDebug();
+
+        // 创建数据库模板
+        ConnectionPool connectionPool = new DruidConnectionPool(option.getGameDbConfigPath());
+        JdbcTemplate template = new JdbcTemplate(connectionPool);
+        DruidDBPoolManager.add(option.getServerId(), template);
+
+
+        // 初始化缓存和数据持久化任务
+//        CacheManager.getInstance().init();
+//        CacheManager.getInstance().registerPersistTask(new UserPersistFactory());
+        HttpServer.start(option.getSpringConfigFile());
     }
 
     @Override
-    public void consume(Channel channel, AbstractHandler handler) {
+    public void consume(AbstractMessage message, Channel channel) {
 
-        //将消息分发到指定的队列中，该队列有可能在同一个进程，也有可能不在同一个进程
+        // 处理登录
+        // 处理创建角色、删除角色、
+        this.doCommand(message, channel);
+    }
 
-        int queueId = handler.getQueueId();
+    public void doCommand(AbstractMessage message, Channel channel) {
 
-        MessageProcessor processor = processors.get(queueId);
-        if(processor == null){
-            LOGGER.error("找不到可用的消息处理器[{}]", queueId);
+        Long uid = AttributeUtil.get(channel, SessionAttributeKey.UID);
+        Session session = null;
+        int id = message.getId();
+        if (uid != null) {
+            session = SessionManager.getInstance().getSession(uid);
+        } else if (ArrayUtils.contains(MSG_IDS, id)) {
+            session = new Session(channel);
+        }
+        if (session == null) {
+            //未登录
             return;
         }
 
-        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
+        //System.out.println(message.getClass());
 
+        // 处理登录
+        // 处理创建角色
 
-        if(session == null){
+        AbstractHandler handler = pool.getHandler(id);
+
+        if (handler == null) {
             return;
         }
 
-        handler.setSession(session);
+        // 方便设断点查看收到客户端的包
+        if (MsgExeTimeUtil.isOpen()) {
+            handler.setFilter(MsgExeTimeUtil.getFiler());
+        }
 
-        LOGGER.debug("收到消息:" + handler);
+        handler.setParam(session);
+        handler.setMessage(message);
+        if (id == 100101) {
+            ScheduleUtil.HEARTBEAT_EXECUTOR.addTask(0L, handler);
+            return;
+        }
 
-        processor.process(handler);
-
+        if (id / 1000 == 101 || id == 300103) {
+            ScheduleUtil.LOGIN_EXECUTOR.addTask(0L, handler);
+        } else {
+            LOGGER.error("player == null, user = {}, msgId = {}", session.getUser(), id);
+        }
     }
 
-    public MessageProcessor getProcessor(int queueId){
-        return processors.get(queueId);
+    @Override
+    public void connected(Channel channel) {
+        LOGGER.info("接收到连接请求：" + channel);
     }
+
+    @Override
+    public void disconnected(Channel channel) {
+        LOGGER.error("接受到断开连接：" + channel);
+        // 玩家掉线
+        Long uid = AttributeUtil.get(channel, SessionAttributeKey.UID);
+        if (uid == null) {
+            return;
+        }
+    }
+
+    @Override
+    public void exceptionOccurred(Channel channel, Throwable error) {
+        LOGGER.error("消息发生错误Connection:" + channel.toString(), error);
+    }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void open() {
+        this.open = true;
+    }
+
+    public void close() {
+        this.open = false;
+        ScheduleUtil.shutdown(ScheduleUtil.EVENT_DISPATCHER_EXECUTOR);
+        ScheduleUtil.shutdown(ScheduleUtil.STAGE_COMMON_DRIVER_EXECUTOR);
+    }
+
+    public void closeAllConnection() {
+    }
+
 }

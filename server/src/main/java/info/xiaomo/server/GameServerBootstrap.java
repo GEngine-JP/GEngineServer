@@ -1,9 +1,8 @@
 package info.xiaomo.server;
 
 import info.xiaomo.server.back.BackServer;
-import info.xiaomo.server.server.Context;
+import info.xiaomo.server.server.GameContext;
 import info.xiaomo.server.server.GameServer;
-import info.xiaomo.server.server.JVMCloseHook;
 import info.xiaomo.server.server.ServerOption;
 import info.xiaomo.server.util.SystemUtil;
 import org.slf4j.Logger;
@@ -34,16 +33,15 @@ public class GameServerBootstrap {
             configPath = args[0];
         }
         ServerOption option = new ServerOption(configPath);
-        Context.init(option);
+        GameContext.getInstance().init(option);
 
-        GameServer server = Context.createServer();
+        GameServer server = GameContext.getInstance().createServer();
         server.start();
         LOGGER.warn("游戏服务器启动成功...");
 
-        BackServer backServer = Context.createBackServer();
+        BackServer backServer = GameContext.getInstance().createBackServer();
         backServer.start();
         LOGGER.warn("后台服务器启动成功...");
 
-        Runtime.getRuntime().addShutdownHook(new JVMCloseHook());
     }
 }

@@ -32,16 +32,15 @@ public class BackServer {
         builder.setPort(option.getBackServerPort());
         builder.setMessagePool(new BackMessagePool());
         builder.setConsumer(new BackMessageRouter());
-        builder.setNetworkEventListener(new BackEventListener());
 
         service = builder.createService();
     }
 
     public void start() {
-        service.start();
+        service.open();
     }
 
     public void stop() {
-        service.stop();
+        service.close();
     }
 }

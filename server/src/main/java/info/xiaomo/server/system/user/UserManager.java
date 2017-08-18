@@ -5,13 +5,14 @@ import info.xiaomo.server.db.DbDataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
-import info.xiaomo.server.server.UserSession;
+import info.xiaomo.server.message.UserProto.ReqLoginMessage;
+import info.xiaomo.server.message.UserProto.ResLoginMessage;
+import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionManager;
 import info.xiaomo.server.util.IDUtil;
 import info.xiaomo.server.util.MessageUtil;
 import info.xiaomo.server.util.TimeUtil;
 import org.slf4j.Logger;
-import info.xiaomo.server.message.UserProto.*;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -42,10 +43,11 @@ public class UserManager {
 
     /**
      * 登录游戏
+     *
      * @param session session
      */
-    public void login(UserSession session, ReqLoginMessage msg) {
-        if (msg.getLoginName().isEmpty()){
+    public void login(Session session, ReqLoginMessage msg) {
+        if (msg.getLoginName().isEmpty()) {
             return;
         }
         User user = DataCenter.getUser(msg.getLoginName());
@@ -66,7 +68,7 @@ public class UserManager {
         builder.setLoginName(msg.getLoginName());
         builder.setSex(msg.getSex());
         ResLoginMessage res = builder.build();
-        MessageUtil.sendMsg(session.getUser().getId(),res);
+        MessageUtil.sendMsg(session.getUser().getId(), res);
 
         EventUtil.executeEvent(EventType.LOGIN, user);
     }
@@ -74,6 +76,7 @@ public class UserManager {
 
     /**
      * 创建角色
+     *
      * @param loginName loginName
      * @return User
      */
@@ -86,7 +89,7 @@ public class UserManager {
         user.setGmLevel(1);
         user.setPlatformId(1);
         user.setRegisterTime(TimeUtil.getNowOfSeconds());
-        DataCenter.insertData(user, true);
+//        DataCenter.insertData(user, true);
         DataCenter.registerUser(user);
         return user;
     }
@@ -94,6 +97,7 @@ public class UserManager {
 
     /**
      * 退出
+     *
      * @param user user
      */
     public void logout(User user) {

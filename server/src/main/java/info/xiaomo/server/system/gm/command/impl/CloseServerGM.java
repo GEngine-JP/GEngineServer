@@ -1,7 +1,6 @@
 package info.xiaomo.server.system.gm.command.impl;
 
-import info.xiaomo.server.back.GameCloseThread;
-import info.xiaomo.server.server.UserSession;
+import info.xiaomo.server.server.Session;
 import info.xiaomo.server.system.gm.command.GM;
 
 /**
@@ -18,11 +17,11 @@ import info.xiaomo.server.system.gm.command.GM;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class CloseServerGM implements GM{
+public class CloseServerGM implements GM {
+
 
     @Override
-    public String executeGM(UserSession session, String[] gmStr) {
-        new GameCloseThread((short) 1,GameCloseThread.SourceType.GM_COMMAND,session).run();
-        return "己执行";
+    public String executeGM(Session session, String[] gmStr) {
+        return null;
     }
 }

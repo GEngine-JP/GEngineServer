@@ -1,12 +1,10 @@
 package info.xiaomo.server.system.schedule;
 
-import info.xiaomo.server.util.ExecutorUtil;
 import info.xiaomo.server.util.TimeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
 
 public class ScheduleManager {
 

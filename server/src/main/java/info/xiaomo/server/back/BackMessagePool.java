@@ -1,9 +1,10 @@
 package info.xiaomo.server.back;
 
 
+import info.xiaomo.gameCore.base.AbstractHandler;
+import info.xiaomo.gameCore.protocol.HandlerPool;
 import info.xiaomo.gameCore.protocol.MessagePool;
-import info.xiaomo.server.back.handler.CloseServerHandler;
-import info.xiaomo.server.message.BackProto.ReqCloseServerMessage;
+import info.xiaomo.gameCore.protocol.message.AbstractMessage;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -19,28 +20,16 @@ import info.xiaomo.server.message.BackProto.ReqCloseServerMessage;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class BackMessagePool extends MessagePool {
+public class BackMessagePool implements MessagePool, HandlerPool {
 
-    /**
-     * 在这里注册消息
-     */
-    public BackMessagePool() {
-        registerGM();
+
+    @Override
+    public AbstractMessage getMessage(int messageId) {
+        return null;
     }
 
-    /**
-     * 注册gm
-     */
-    private void registerGM() {
-        register(1001, ReqCloseServerMessage.class, CloseServerHandler.class);
+    @Override
+    public AbstractHandler getHandler(int messageId) {
+        return null;
     }
-
-
-    /**
-     * 注册用户
-     */
-    private void registerUser() {
-    }
-
-
 }

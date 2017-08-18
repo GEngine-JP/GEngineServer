@@ -1,6 +1,6 @@
 package info.xiaomo.server.system.gm.command;
 
-import info.xiaomo.server.server.UserSession;
+import info.xiaomo.server.server.Session;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -18,6 +18,6 @@ import info.xiaomo.server.server.UserSession;
  */
 public interface GM {
 
-    String executeGM(UserSession session, String [] gmStr);
+    String executeGM(Session session, String[] gmStr);
 
 }
