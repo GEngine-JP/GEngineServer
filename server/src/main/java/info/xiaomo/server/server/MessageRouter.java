@@ -2,24 +2,23 @@ package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.base.AbstractHandler;
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.config.ConfigDataManager;
 import info.xiaomo.gameCore.persist.jdbc.ConnectionPool;
 import info.xiaomo.gameCore.persist.jdbc.DruidConnectionPool;
 import info.xiaomo.gameCore.persist.jdbc.JdbcTemplate;
 import info.xiaomo.gameCore.protocol.HandlerPool;
 import info.xiaomo.gameCore.protocol.NetworkConsumer;
 import info.xiaomo.gameCore.protocol.message.AbstractMessage;
-import info.xiaomo.server.cache.CacheManager;
-import info.xiaomo.server.db.msyql.UserPersistFactory;
 import info.xiaomo.server.http.HttpServer;
 import info.xiaomo.server.util.DruidDBPoolManager;
 import info.xiaomo.server.util.MsgExeTimeUtil;
 import info.xiaomo.server.util.ScheduleUtil;
 import io.netty.channel.Channel;
+import lombok.Data;
 import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Data
 public class MessageRouter implements NetworkConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageRouter.class);
@@ -71,7 +70,7 @@ public class MessageRouter implements NetworkConsumer {
         debug = option.isDebug();
 
         // 创建数据库模板
-        ConnectionPool connectionPool = new DruidConnectionPool(option.getGameDbConfigPath());
+        ConnectionPool connectionPool = new DruidConnectionPool(MessageRouter.class.getResource("/").getPath() + option.getGameDbConfigPath());
         JdbcTemplate template = new JdbcTemplate(connectionPool);
         DruidDBPoolManager.add(option.getServerId(), template);
 

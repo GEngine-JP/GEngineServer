@@ -50,7 +50,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
 
     MysqlDataProviderProxy(ServerOption option) throws Exception {
         // 创建数据库模板
-        ConnectionPool connectionPool = new DruidConnectionPool(option.getGameDbConfigPath());
+        ConnectionPool connectionPool = new DruidConnectionPool(MysqlDataProviderProxy.class.getResource("/").getPath() + option.getGameDbConfigPath());
         JdbcTemplate template = new JdbcTemplate(connectionPool);
         this.template = template;
         provider = new MysqlDataProvider();
