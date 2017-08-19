@@ -8,9 +8,8 @@
 [![GitHub followers](https://img.shields.io/github/followers/xiaomoinfo.svg?style=social&label=Follow)]()
 [![GitHub watchers](https://img.shields.io/github/watchers/ChessGame/GameServer.svg?style=social&label=Watch)]()
 
-server:游戏服        
-
-
+# 鸣谢
+[贝密游戏](http://git.oschina.net/beimigame/beimi): UI
 
 ![输入图片说明](screenshot/大厅.png "屏幕截图.png")
 ![输入图片说明](screenshot/大厅2.png "屏幕截图.png")
