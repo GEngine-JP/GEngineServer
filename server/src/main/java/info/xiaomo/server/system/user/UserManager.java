@@ -89,7 +89,7 @@ public class UserManager {
         user.setGmLevel(1);
         user.setPlatformId(1);
         user.setRegisterTime(TimeUtil.getNowOfSeconds());
-//        DataCenter.insertData(user, true);
+        DataCenter.insertData(user, true);
         DataCenter.registerUser(user);
         return user;
     }

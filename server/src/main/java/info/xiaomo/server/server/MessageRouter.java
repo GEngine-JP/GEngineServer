@@ -9,20 +9,17 @@ import info.xiaomo.gameCore.protocol.HandlerPool;
 import info.xiaomo.gameCore.protocol.NetworkConsumer;
 import info.xiaomo.gameCore.protocol.message.AbstractMessage;
 import info.xiaomo.server.http.HttpServer;
+import info.xiaomo.server.system.user.UserManager;
 import info.xiaomo.server.util.DruidDBPoolManager;
 import info.xiaomo.server.util.MsgExeTimeUtil;
 import info.xiaomo.server.util.ScheduleUtil;
 import io.netty.channel.Channel;
-import lombok.Data;
-import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Data
 public class MessageRouter implements NetworkConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageRouter.class);
-    private static final int[] MSG_IDS = {100101, 101101, 101116, 300103};
 
     private boolean open = false;
 
@@ -96,8 +93,6 @@ public class MessageRouter implements NetworkConsumer {
         int id = message.getId();
         if (uid != null) {
             session = SessionManager.getInstance().getSession(uid);
-        } else if (ArrayUtils.contains(MSG_IDS, id)) {
-            session = new Session(channel);
         }
         if (session == null) {
             //未登录
@@ -144,9 +139,11 @@ public class MessageRouter implements NetworkConsumer {
         LOGGER.error("接受到断开连接：" + channel);
         // 玩家掉线
         Long uid = AttributeUtil.get(channel, SessionAttributeKey.UID);
-        if (uid == null) {
+        Session session = SessionManager.getInstance().getSession(uid);
+        if (session == null) {
             return;
         }
+        UserManager.getInstance().logout(session.getUser());
     }
 
     @Override

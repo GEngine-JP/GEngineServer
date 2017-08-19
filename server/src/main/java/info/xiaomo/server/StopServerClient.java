@@ -32,6 +32,7 @@ public class StopServerClient {
             CloseServerRequest.Builder br = GMProto.CloseServerRequest.newBuilder();
             CloseServerRequest build = br.setFrom(1).build();
             msg.setCloseServerRequest(build);
+            Thread.sleep(1000);
             client.sendMsg(msg);
             int count = 10;
             while (count > 0) {
