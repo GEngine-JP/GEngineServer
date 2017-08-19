@@ -8,4 +8,16 @@
 [![GitHub followers](https://img.shields.io/github/followers/xiaomoinfo.svg?style=social&label=Follow)]()
 [![GitHub watchers](https://img.shields.io/github/watchers/ChessGame/GameServer.svg?style=social&label=Watch)]()
 
-server:游戏服              
+server:游戏服        
+
+
+
+![输入图片说明](screenshot/大厅.png "屏幕截图.png")
+![输入图片说明](screenshot/大厅2.png "屏幕截图.png")
+![输入图片说明](screenshot/majiang.jpeg "屏幕截图.png")
+![输入图片说明](screenshot/分享.png "屏幕截图.png")
+![输入图片说明](screenshot/反馈.png "屏幕截图.png")
+![输入图片说明](screenshot/房间号.png "屏幕截图.png")
+![输入图片说明](screenshot/加入房间.png "屏幕截图.png")
+![输入图片说明](screenshot/消息.png "屏幕截图.png")
+![输入图片说明](screenshot/设置.png "屏幕截图.png")      
