@@ -11,6 +11,9 @@
 # 鸣谢
 [贝密游戏](http://git.oschina.net/beimigame/beimi): 使用贝密游戏的开源UI
 
+
+# 项目预览
+
 ![输入图片说明](screenshot/大厅.png "屏幕截图.png")
 ![输入图片说明](screenshot/大厅2.png "屏幕截图.png")
 ![输入图片说明](screenshot/majiang.jpeg "屏幕截图.png")
