@@ -75,9 +75,9 @@
       	<appender-ref ref="PlatformStandardLog" />
     </logger>
 
-	<root level="debug">
+	<root level="info">
 		<appender-ref ref="consoleInfoAppender" />
-		<appender-ref ref="consoleDebugAppender" />
+		<!--<appender-ref ref="consoleDebugAppender" />-->
     	<appender-ref ref="consoleErrAppender" />
 		<!--<appender-ref ref="FileAppender" />-->
 	</root>

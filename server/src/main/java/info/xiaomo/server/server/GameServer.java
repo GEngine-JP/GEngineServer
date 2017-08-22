@@ -82,7 +82,7 @@ public class GameServer {
      * 开启服务器
      */
     public void start() {
-        netWork.isOpen();
+        netWork.open();
         if (netWork.isOpen()) {
             state = true;
         }

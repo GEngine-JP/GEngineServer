@@ -4,7 +4,6 @@ import info.xiaomo.server.back.BackServer;
 import info.xiaomo.server.server.GameContext;
 import info.xiaomo.server.server.GameServer;
 import info.xiaomo.server.server.ServerOption;
-import info.xiaomo.server.util.SystemUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,11 +26,7 @@ public class GameServerBootstrap {
 
     public static void main(String[] args) throws Exception {
         String configPath;
-        if (SystemUtil.isWindows()) {
-            configPath = GameServerBootstrap.class.getResource("/").getPath() + "config.properties";
-        } else {
-            configPath = args[0];
-        }
+        configPath = args[0];
         ServerOption option = new ServerOption(configPath);
         GameContext.getInstance().init(option);
 

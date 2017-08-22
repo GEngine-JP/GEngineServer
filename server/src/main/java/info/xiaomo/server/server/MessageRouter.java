@@ -8,7 +8,6 @@ import info.xiaomo.gameCore.persist.jdbc.JdbcTemplate;
 import info.xiaomo.gameCore.protocol.HandlerPool;
 import info.xiaomo.gameCore.protocol.NetworkConsumer;
 import info.xiaomo.gameCore.protocol.message.AbstractMessage;
-import info.xiaomo.server.http.HttpServer;
 import info.xiaomo.server.system.user.UserManager;
 import info.xiaomo.server.util.DruidDBPoolManager;
 import info.xiaomo.server.util.MsgExeTimeUtil;
@@ -67,7 +66,7 @@ public class MessageRouter implements NetworkConsumer {
         debug = option.isDebug();
 
         // 创建数据库模板
-        ConnectionPool connectionPool = new DruidConnectionPool(MessageRouter.class.getResource("/").getPath() + option.getGameDbConfigPath());
+        ConnectionPool connectionPool = new DruidConnectionPool(option.getGameDbConfigPath());
         JdbcTemplate template = new JdbcTemplate(connectionPool);
         DruidDBPoolManager.add(option.getServerId(), template);
 
@@ -75,18 +74,11 @@ public class MessageRouter implements NetworkConsumer {
         // 初始化缓存和数据持久化任务
 //        CacheManager.getInstance().init();
 //        CacheManager.getInstance().registerPersistTask(new UserPersistFactory());
-        HttpServer.start(option.getSpringConfigFile());
+//        HttpServer.start(option.getSpringConfigFile());
     }
 
     @Override
     public void consume(AbstractMessage message, Channel channel) {
-
-        // 处理登录
-        // 处理创建角色、删除角色、
-        this.doCommand(message, channel);
-    }
-
-    public void doCommand(AbstractMessage message, Channel channel) {
 
         Long uid = AttributeUtil.get(channel, SessionAttributeKey.UID);
         Session session = null;
@@ -99,7 +91,7 @@ public class MessageRouter implements NetworkConsumer {
             return;
         }
 
-        //System.out.println(message.getClass());
+        System.out.println(message.getClass());
 
         // 处理登录
         // 处理创建角色
@@ -128,6 +120,7 @@ public class MessageRouter implements NetworkConsumer {
             LOGGER.error("player == null, user = {}, msgId = {}", session.getUser(), id);
         }
     }
+
 
     @Override
     public void connected(Channel channel) {
