@@ -1,10 +1,12 @@
 package info.xiaomo.server.server;
 
 import com.google.protobuf.InvalidProtocolBufferException;
+import info.xiaomo.gameCore.base.common.EncryptUtil;
 import info.xiaomo.gameCore.base.concurrent.IQueueDriverCommand;
 import info.xiaomo.gameCore.base.concurrent.queue.ICommandQueue;
 import info.xiaomo.gameCore.protocol.Message;
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufAllocator;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,7 +59,9 @@ public abstract class AbstractMessage implements Message {
      *
      * @param bytes bytes
      */
-    public abstract void decode(byte[] bytes) throws InvalidProtocolBufferException;
+    public void decode(byte[] bytes) throws InvalidProtocolBufferException {
+
+    }
 
     public abstract int getId();
 
@@ -121,13 +125,41 @@ public abstract class AbstractMessage implements Message {
         return "[id->" + getId() + ",sequence->" + sequence + "]";
     }
 
-    @Override
     public ByteBuf encode() {
-        return null;
+        ByteBuf buf = null;
+        try {
+
+            byte[] content = getContent();
+            content = EncryptUtil.encrypt(content);
+
+            // 计算长度
+            int size = 8;
+            size += content.length;
+            setSize(size);
+
+            buf = ByteBufAllocator.DEFAULT.buffer(size);
+
+            buf.writeInt(size);
+            buf.writeInt(getId());
+            // 写入消息体   0001111111110111
+            buf.writeBytes(content);
+            return buf;
+        } catch (Exception e) {
+            LOGGER.error("构建消息字节数组出错,id:" + this.getId(), e);
+            if (buf != null) {
+                buf.release();
+            }
+            return null;
+        }
     }
 
     @Override
     public void doAction() {
-
     }
+
+    @Override
+    public byte[] getContent() {
+        return null;
+    }
+
 }

@@ -1,32 +1,29 @@
 package info.xiaomo.server.protocol.message.user;
 
-import com.google.protobuf.InvalidProtocolBufferException;
-import info.xiaomo.server.server.AbstractMessage;
 import info.xiaomo.server.protocol.proto.UserProto.LoginResponse;
+import info.xiaomo.server.server.AbstractMessage;
+
 /**
  * 登录返回
  */
 public class ResLoginMessage extends AbstractMessage {
 
-	private LoginResponse res;
+    private LoginResponse res;
 
-	@Override
-	public void decode(byte[] bytes) throws InvalidProtocolBufferException {
-		this.res = LoginResponse.parseFrom(bytes);
-	}
+    @Override
+    public int getId() {
+        return 101102;
+    }
 
-	@Override
-	public int getId() {
-		return 101102;
-	}
+    @Override
+    public byte[] getContent() {
+        return res.toByteArray();
+    }
 
-	public LoginResponse getLoginResponse() {
-		return res;
-	}
+    public void setLoginResponse(LoginResponse res) {
+        this.res = res;
+    }
 
-	public void setLoginResponse(LoginResponse res) {
-		this.res = res;
-	}
 
 }
 
