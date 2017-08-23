@@ -2,9 +2,9 @@ package info.xiaomo.server.server;
 
 
 import info.xiaomo.gameCore.base.common.Cast;
+import info.xiaomo.gameCore.base.common.FileLoaderUtil;
 import lombok.Data;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DateFormat;
@@ -78,7 +78,7 @@ public class ServerOption {
     private void build() throws IOException, ParseException {
         InputStream in = null;
         try {
-            in = new FileInputStream(configPath);
+            in = FileLoaderUtil.findInputStreamByFileName(configPath);
             DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Properties properties = new Properties();
             properties.load(in);

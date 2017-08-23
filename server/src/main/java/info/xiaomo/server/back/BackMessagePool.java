@@ -1,7 +1,6 @@
 package info.xiaomo.server.back;
 
 
-import info.xiaomo.gameCore.base.AbstractHandler;
 import info.xiaomo.gameCore.protocol.Message;
 import info.xiaomo.gameCore.protocol.MessagePool;
 
@@ -26,9 +25,6 @@ public class BackMessagePool implements MessagePool {
 
     // 消息类字典
     private final Map<Integer, Class<? extends Message>> messages = new HashMap<>();
-    // 处理类字典
-    private final Map<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>();
-
 
     public BackMessagePool() {
 
@@ -49,11 +45,7 @@ public class BackMessagePool implements MessagePool {
 
     @Override
     public void register(int messageId, Class<? extends Message> messageClazz) {
-        try {
-            messages.put(messageId, messageClazz);
-        } catch (Exception e) {
-            throw new RuntimeException("消息注册错误....");
-        }
+        messages.put(messageId, messageClazz);
     }
 
 }

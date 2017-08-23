@@ -25,8 +25,10 @@ public class GameServerBootstrap {
     public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
 
     public static void main(String[] args) throws Exception {
-        String configPath;
-        configPath = args[0];
+        String configPath = "config.properties";
+        if (args.length > 0) {
+            configPath = args[0];
+        }
         ServerOption option = new ServerOption(configPath);
         GameContext.init(option);
 

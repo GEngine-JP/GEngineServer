@@ -13,7 +13,7 @@ public class GameMessagePool implements MessagePool {
     private final Map<Integer, Class<? extends Message>> messages = new HashMap<>();
 
     public GameMessagePool() {
-        register(101101, ReqLoginMessage.class);
+        register(new ReqLoginMessage().getId(), ReqLoginMessage.class);
     }
 
     @Override
@@ -31,10 +31,6 @@ public class GameMessagePool implements MessagePool {
 
     @Override
     public void register(int messageId, Class<? extends Message> messageClazz) {
-        try {
-            messages.put(messageId, messageClazz);
-        } catch (Exception e) {
-            throw new RuntimeException("消息注册错误....");
-        }
+        messages.put(messageId, messageClazz);
     }
 }

@@ -17,10 +17,9 @@ public class MessageUtil {
         session.sendMessage(msg);
     }
 
-    public static void sendMsg(Message msg) {
-
+    public static void sendMsg(Session session, Message msg) {
+        session.sendMessage(msg);
     }
-
 
     public static void sendMsgToRids(Message msg, long... rids) {
         for (long rid : rids) {

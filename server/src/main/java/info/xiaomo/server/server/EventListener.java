@@ -3,6 +3,7 @@ package info.xiaomo.server.server;
 import info.xiaomo.gameCore.base.common.AttributeUtil;
 import info.xiaomo.gameCore.protocol.NetworkEventListener;
 import info.xiaomo.server.command.LogoutCommand;
+import info.xiaomo.server.constant.GameConst;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
@@ -11,8 +12,8 @@ import org.slf4j.LoggerFactory;
 /**
  * 网络事件监听器
  *
- * @author zhangli
- * 2017年6月6日 下午10:00:3
+ * @author 小莫
+ * 2017年6月6日 下午 5:00:11
  */
 public class EventListener implements NetworkEventListener {
 
@@ -49,7 +50,7 @@ public class EventListener implements NetworkEventListener {
             LOGGER.error("玩家断开连接[没有找到用户信息]");
             return;
         }
-        MessageProcessor processor = GameContext.getGameServer().getRouter().getProcessor(1);
+        MessageProcessor processor = GameContext.getGameServer().getRouter().getProcessor(GameConst.QueueId.LOGIN_LOGOUT);
         processor.process(new LogoutCommand(session));
     }
 

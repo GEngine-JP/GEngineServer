@@ -101,6 +101,6 @@ public class UserManager {
     public void logout(Session session) {
         DataCenter.updateData(session.getUser().getId(), DbDataType.USER, false);
 
-        EventUtil.fireEvent(EventType.LOGOUT, session.getPlayer());
+        EventUtil.fireEvent(EventType.LOGOUT, session.getUser());
     }
 }

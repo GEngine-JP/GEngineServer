@@ -21,12 +21,12 @@ public interface GameConst {
         /**
          * 登录和下线队列
          */
-        int ONE_LOGIN_LOGOUT = 1;
+        int LOGIN_LOGOUT = 1;
 
         /**
-         * 场景队列
+         * 业务队列
          */
-        int TWO_SCENE = 2;
+        int LOGIC = 2;
     }
 
 }
