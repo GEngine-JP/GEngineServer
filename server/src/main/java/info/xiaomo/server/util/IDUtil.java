@@ -69,7 +69,7 @@ public class IDUtil {
 				nowCurSec = curSec;
 			}
 		}
-		return ((long) (GameContext.getInstance().getServerOption().getServerId() & 0xFFFF)) << 48 | (nowCurSec) << 16 | nowId & 0xFFFF;
+		return ((long) (GameContext.getOption().getServerId() & 0xFFFF)) << 48 | (nowCurSec) << 16 | nowId & 0xFFFF;
 	}
 
 	public static long getNewId() {
@@ -88,7 +88,7 @@ public class IDUtil {
 				now = nowSec;
 			}
 		}
-		return ((GameContext.getInstance().getServerOption().getServerId() & 0x7_FFFFL) << 45) | ((now & 0x1FFF_FFFF) << 16) | (nowId & 0xFFFF);
+		return ((GameContext.getOption().getServerId() & 0x7_FFFFL) << 45) | ((now & 0x1FFF_FFFF) << 16) | (nowId & 0xFFFF);
 	}
 
 	private static long getNowSec() {

@@ -5,8 +5,8 @@ import info.xiaomo.server.db.DbDataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
+import info.xiaomo.server.protocol.message.user.ResLoginMessage;
 import info.xiaomo.server.protocol.proto.UserProto;
-import info.xiaomo.server.protocol.user.message.ResLoginMessage;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionManager;
 import info.xiaomo.server.util.IDUtil;
@@ -66,11 +66,11 @@ public class UserManager {
 
         ResLoginMessage msg = new ResLoginMessage();
         UserProto.LoginResponse.Builder builder = UserProto.LoginResponse.newBuilder();
-        UserProto.LoginResponse build = builder.setUserId(user.getId()).build();
-        msg.setLoginResponse(build);
-        MessageUtil.sendMsg(msg, session.getUser().getId());
+        UserProto.LoginResponse loginResponse = builder.setUserId(user.getId()).build();
+        msg.setLoginResponse(loginResponse);
+        MessageUtil.sendMsg(msg, user.getId());
 
-        EventUtil.executeEvent(EventType.LOGIN, user);
+        EventUtil.fireEvent(EventType.LOGIN, user);
     }
 
 
@@ -97,12 +97,10 @@ public class UserManager {
 
     /**
      * 退出
-     *
-     * @param user user
      */
-    public void logout(User user) {
-        DataCenter.updateData(user.getId(), DbDataType.USER, false);
+    public void logout(Session session) {
+        DataCenter.updateData(session.getUser().getId(), DbDataType.USER, false);
 
-        EventUtil.executeEvent(EventType.LOGOUT, user);
+        EventUtil.fireEvent(EventType.LOGOUT, session.getPlayer());
     }
 }

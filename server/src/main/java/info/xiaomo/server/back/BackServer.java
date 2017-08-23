@@ -31,16 +31,16 @@ public class BackServer {
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(option.getBackServerPort());
         builder.setMessagePool(pool);
-        builder.setConsumer(new BackMessageRouter(pool));
+        builder.setConsumer(new BackMessageRouter());
 
         service = builder.createService();
     }
 
     public void start() {
-        service.open();
+        service.start();
     }
 
     public void stop() {
-        service.close();
+        service.stop();
     }
 }

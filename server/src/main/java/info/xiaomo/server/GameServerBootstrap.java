@@ -28,13 +28,13 @@ public class GameServerBootstrap {
         String configPath;
         configPath = args[0];
         ServerOption option = new ServerOption(configPath);
-        GameContext.getInstance().init(option);
+        GameContext.init(option);
 
-        GameServer server = GameContext.getInstance().createServer();
+        GameServer server = GameContext.createGameServer();
         server.start();
         LOGGER.warn("游戏服务器启动成功...");
 
-        BackServer backServer = GameContext.getInstance().createBackServer();
+        BackServer backServer = GameContext.createBackServer();
         backServer.start();
         LOGGER.warn("后台服务器启动成功...");
 

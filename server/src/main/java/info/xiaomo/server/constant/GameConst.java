@@ -17,9 +17,16 @@ package info.xiaomo.server.constant;
 public interface GameConst {
 
     interface QueueId {
-        int LoginOrLogout = 1;
-        int Logic = 2;
 
+        /**
+         * 登录和下线队列
+         */
+        int ONE_LOGIN_LOGOUT = 1;
+
+        /**
+         * 场景队列
+         */
+        int TWO_SCENE = 2;
     }
 
 }

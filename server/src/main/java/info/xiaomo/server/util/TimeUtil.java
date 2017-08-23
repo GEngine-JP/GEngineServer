@@ -206,7 +206,7 @@ public class TimeUtil {
      * @return
      */
     public static int getOpenServerDay() {
-        return getLogicIntervalDays(System.currentTimeMillis(), GameContext.getInstance().getOpenDayZeroTime()) + 1;
+        return getLogicIntervalDays(System.currentTimeMillis(), GameContext.getOpenDayZeroTime()) + 1;
     }
 
     /**
@@ -215,10 +215,10 @@ public class TimeUtil {
      * @return
      */
     public static int getCombineServerDay() {
-        if (!GameContext.getInstance().isCombined()) {
+        if (!GameContext.isCombined()) {
             return 0;
         }
-        return getLogicIntervalDays(System.currentTimeMillis(), GameContext.getInstance().getCombineDayZeroTime()) + 1;
+        return getLogicIntervalDays(System.currentTimeMillis(), GameContext.getCombineDayZeroTime()) + 1;
     }
 
     /**

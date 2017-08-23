@@ -2,12 +2,13 @@ package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.protocol.NetworkService;
 import info.xiaomo.gameCore.protocol.NetworkServiceBuilder;
-import info.xiaomo.server.back.BackServer;
+import info.xiaomo.server.constant.GameConst;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventRegister;
+import info.xiaomo.server.processor.GameMapProcessor;
+import info.xiaomo.server.processor.LoginProcessor;
 import info.xiaomo.server.system.schedule.ScheduleManager;
 import info.xiaomo.server.util.MsgExeTimeUtil;
-import info.xiaomo.server.util.PackageCountUtil;
 import lombok.Data;
 
 /**
@@ -33,34 +34,27 @@ public class GameServer {
 
     private MessageRouter router;
 
-    BackServer backServer;
-
     public GameServer(ServerOption option) throws Exception {
         int bossLoopGroupCount = 4;
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
 
-        MessageAndHandlerPool pool = new MessageAndHandlerPool();
+        GameMessagePool pool = new GameMessagePool();
 
-        // 创建游戏世界
-        router = new MessageRouter(option, pool);
-
+        router = new MessageRouter();
         NetworkServiceBuilder builder = new NetworkServiceBuilder();
         builder.setMessagePool(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(option.getGameServerPort());
+        builder.setListener(new EventListener());
         builder.setConsumer(router);
-        if (option.isDebug()) {
-            builder.addChannelHandler(new PackageCountUtil.PackageCountHandler());
-            PackageCountUtil.open(true);
-        }
+
+        //登录和下线
+        router.registerProcessor(GameConst.QueueId.ONE_LOGIN_LOGOUT, new LoginProcessor());
+        //场景队列
+        router.registerProcessor(GameConst.QueueId.TWO_SCENE, new GameMapProcessor());
         MsgExeTimeUtil.setOpen(true);
-
-        // 创建网络服务
-        netWork = builder.createService();
-
-        backServer = new BackServer(option);
 
         // 创建网络服务
         netWork = builder.createService();
@@ -78,27 +72,26 @@ public class GameServer {
         ScheduleManager.getInstance().start();
     }
 
-    /**
-     * 开启服务器
-     */
+    public MessageRouter getRouter() {
+        return this.router;
+    }
+
+
     public void start() {
-        netWork.open();
-        if (netWork.isOpen()) {
+        netWork.start();
+        if (netWork.isRunning()) {
             state = true;
         }
     }
 
+    public boolean isOpen() {
+        return state;
+    }
+
     public void stop() {
-        netWork.close();
+        netWork.stop();
         state = false;
     }
 
-    public void closeNetWork() {
-        netWork.close();
-    }
-
-    public void closeBackServer() {
-        backServer.stop();
-    }
 
 }

@@ -3,9 +3,7 @@ package info.xiaomo.server.cache;
 import info.xiaomo.gameCore.persist.jdbc.JdbcTemplate;
 import info.xiaomo.gameCore.persist.persist.*;
 import info.xiaomo.server.server.GameContext;
-import info.xiaomo.server.server.MessageRouter;
 import info.xiaomo.server.util.DruidDBPoolManager;
-import info.xiaomo.server.util.ScheduleUtil;
 import info.xiaomo.server.util.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,7 +54,7 @@ public class CacheManager {
     }
 
     public void init() {
-        JdbcTemplate template = DruidDBPoolManager.get(GameContext.getInstance().getServerOption().getServerId());
+        JdbcTemplate template = DruidDBPoolManager.get(GameContext.getOption().getServerId());
         this.cache = new PersistableCache(template, 0);
 
         executor = new ScheduledThreadPoolExecutor(EXECUTOR_CORE_POOL_SIZE, new ThreadFactory() {
@@ -112,18 +110,7 @@ public class CacheManager {
      */
     public void store() {
         LOGGER.info("store() begin ...");
-        ScheduleUtil.shutdown(executor);
         try {
-//			if (!ApplicationContext.getInstance().isShareServer()) {
-//				WorldData data = SystemDataManager.getInstance().getSystemData(WorldData.class);
-//				if(data != null) {
-//					StringBuilder sb = new StringBuilder("DropCountData before shutdown:\n");
-//					for (Entry<Long, Integer> entry : data.getDropCount().entrySet()) {
-//						sb.append(entry.getKey()).append("=").append(entry.getValue()).append("\n");
-//					}
-//					LOGGER.error(sb.toString());
-//				}
-//			}
             LOGGER.info("persistTaskMap size()={}", persistTaskMap.size());
             int no = 0;
             for (PersistTask task : persistTaskMap.values()) {
@@ -235,12 +222,7 @@ public class CacheManager {
      * @return
      */
     public Persistable remove(long id) {
-        Persistable persistable = cache.remove(id);
-        if (!MessageRouter.isDebug()) {
-            LOGGER.info("Cache removed, id={}, class={}, stack={}", id,
-                    persistable == null ? "null" : persistable.getClass().getSimpleName(), Utils.getStackTrace());
-        }
-        return persistable;
+        return cache.remove(id);
     }
 
     /**
@@ -299,7 +281,7 @@ public class CacheManager {
      */
     private static String combineTableNameAndServerId(int dataType, long serverId) {
         if (serverId == 0) {
-            serverId = GameContext.getInstance().getServerOption().getServerId();
+            serverId = GameContext.getOption().getServerId();
         }
         return dataType + String.valueOf(serverId);
     }

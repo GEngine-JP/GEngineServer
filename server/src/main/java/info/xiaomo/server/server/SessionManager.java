@@ -72,4 +72,8 @@ public class SessionManager {
     public boolean isOnline(long roleId) {
         return ridSessionMap.containsKey(roleId);
     }
+
+    public Session[] sessionArray(){
+        return ridSessionMap.values().toArray(new Session[0]);
+    }
 }

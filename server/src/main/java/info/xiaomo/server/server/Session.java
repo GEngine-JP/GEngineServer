@@ -1,7 +1,7 @@
 package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.protocol.message.AbstractMessage;
+import info.xiaomo.gameCore.protocol.Message;
 import info.xiaomo.server.entify.Player;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.util.Utils;
@@ -94,7 +94,7 @@ public class Session {
         }
     }
 
-    public void sendMessage(AbstractMessage msg) {
+    public void sendMessage(Message msg) {
         channel.writeAndFlush(msg);
     }
 }

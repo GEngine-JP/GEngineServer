@@ -10,18 +10,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 把今天最好的表现当作明天最新的起点．．～
- * いま 最高の表現 として 明日最新の始発．．～
- * Today the best performance  as tomorrow newest starter!
- * Created by IntelliJ IDEA.
- * <p>
- * author: xiaomo
- * github: https://github.com/xiaomoinfo
- * email : xiaomo@xiaomo.info
- * QQ    : 83387856
- * Date  : 2017/7/11 19:24
- * desc  : 事件公共方法
- * Copyright(©) 2017 by xiaomo.
+ * 由于事件都是预先注册好的，所以这里不考虑多线程问题，不允许在游戏运行过成中动态添加观察者
+ *
+ * @author 张力
+ * @date 2014-12-6 上午11:19:00
  */
 public class EventUtil {
 
@@ -62,13 +54,7 @@ public class EventUtil {
         map.put(listener, null);
     }
 
-
-    /**
-     * 执行事件
-     * @param type type
-     * @param obj obj
-     */
-    public static void executeEvent(EventType type, Object obj) {
+    public static void fireEvent(EventType type, Object obj) {
 
         List<IListener> listenerList = preparedListeners.get(type);
         if (listenerList != null) {
@@ -94,4 +80,7 @@ public class EventUtil {
 
     }
 
+    public static void fireEvent(EventType type) {
+        fireEvent(type, null);
+    }
 }

@@ -1,7 +1,7 @@
 package info.xiaomo.server.util;
 
 import info.xiaomo.gameCore.base.tuple.TwoTuple;
-import info.xiaomo.gameCore.protocol.message.AbstractMessage;
+import info.xiaomo.gameCore.protocol.Message;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelOutboundHandlerAdapter;
@@ -100,7 +100,7 @@ public class PackageCountUtil {
         @Override
         public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
 
-            AbstractMessage amsg = (AbstractMessage) msg;
+            Message amsg = (Message) msg;
             if (amsg != null) {
                 count(amsg.getId());
             }

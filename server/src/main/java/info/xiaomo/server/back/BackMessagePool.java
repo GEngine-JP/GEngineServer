@@ -2,11 +2,8 @@ package info.xiaomo.server.back;
 
 
 import info.xiaomo.gameCore.base.AbstractHandler;
-import info.xiaomo.gameCore.protocol.HandlerPool;
+import info.xiaomo.gameCore.protocol.Message;
 import info.xiaomo.gameCore.protocol.MessagePool;
-import info.xiaomo.gameCore.protocol.message.AbstractMessage;
-import info.xiaomo.server.protocol.gm.handler.ReqCloseServerHandler;
-import info.xiaomo.server.protocol.gm.message.ReqCloseServerMessage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,26 +22,24 @@ import java.util.Map;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class BackMessagePool implements MessagePool, HandlerPool {
+public class BackMessagePool implements MessagePool {
 
     // 消息类字典
-    private final Map<Integer, Class<? extends AbstractMessage>> messages = new HashMap<>();
+    private final Map<Integer, Class<? extends Message>> messages = new HashMap<>();
     // 处理类字典
     private final Map<Integer, Class<? extends AbstractHandler>> handlers = new HashMap<>();
 
 
     public BackMessagePool() {
-        register(2201, ReqCloseServerMessage.class, ReqCloseServerHandler.class);
-
 
     }
 
     @Override
-    public AbstractMessage getMessage(int messageId) {
+    public Message getMessage(int messageId) {
         Class<?> clazz = messages.get(messageId);
         if (clazz != null) {
             try {
-                return (AbstractMessage) clazz.newInstance();
+                return (Message) clazz.newInstance();
             } catch (Exception e) {
                 return null;
             }
@@ -53,25 +48,12 @@ public class BackMessagePool implements MessagePool, HandlerPool {
     }
 
     @Override
-    public void register(int messageId, Class<? extends AbstractMessage> messageClazz, Class<? extends AbstractHandler> handlerClazz) {
+    public void register(int messageId, Class<? extends Message> messageClazz) {
         try {
             messages.put(messageId, messageClazz);
-            handlers.put(messageId, handlerClazz);
         } catch (Exception e) {
             throw new RuntimeException("消息注册错误....");
         }
     }
 
-    @Override
-    public AbstractHandler getHandler(int messageId) {
-        Class<?> clazz = handlers.get(messageId);
-        if (clazz != null) {
-            try {
-                return (AbstractHandler) clazz.newInstance();
-            } catch (Exception e) {
-                return null;
-            }
-        }
-        return null;
-    }
 }

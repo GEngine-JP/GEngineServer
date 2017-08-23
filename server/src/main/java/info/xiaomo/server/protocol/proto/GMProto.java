@@ -17,11 +17,6 @@ public final class GMProto {
   public interface CloseServerRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:CloseServerRequest)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 from = 1;</code>
-     */
-    int getFrom();
   }
   /**
    * Protobuf type {@code CloseServerRequest}
@@ -35,7 +30,6 @@ public final class GMProto {
       super(builder);
     }
     private CloseServerRequest() {
-      from_ = 0;
     }
 
     @Override
@@ -48,7 +42,6 @@ public final class GMProto {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -61,11 +54,6 @@ public final class GMProto {
               if (!input.skipField(tag)) {
                 done = true;
               }
-              break;
-            }
-            case 8: {
-
-              from_ = input.readInt32();
               break;
             }
           }
@@ -91,15 +79,6 @@ public final class GMProto {
               CloseServerRequest.class, Builder.class);
     }
 
-    public static final int FROM_FIELD_NUMBER = 1;
-    private int from_;
-    /**
-     * <code>int32 from = 1;</code>
-     */
-    public int getFrom() {
-      return from_;
-    }
-
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -112,9 +91,6 @@ public final class GMProto {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (from_ != 0) {
-        output.writeInt32(1, from_);
-      }
     }
 
     public int getSerializedSize() {
@@ -122,10 +98,6 @@ public final class GMProto {
       if (size != -1) return size;
 
       size = 0;
-      if (from_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, from_);
-      }
       memoizedSize = size;
       return size;
     }
@@ -142,8 +114,6 @@ public final class GMProto {
       CloseServerRequest other = (CloseServerRequest) obj;
 
       boolean result = true;
-      result = result && (getFrom()
-          == other.getFrom());
       return result;
     }
 
@@ -154,8 +124,6 @@ public final class GMProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FROM_FIELD_NUMBER;
-      hash = (53 * hash) + getFrom();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -285,8 +253,6 @@ public final class GMProto {
       }
       public Builder clear() {
         super.clear();
-        from_ = 0;
-
         return this;
       }
 
@@ -309,7 +275,6 @@ public final class GMProto {
 
       public CloseServerRequest buildPartial() {
         CloseServerRequest result = new CloseServerRequest(this);
-        result.from_ = from_;
         onBuilt();
         return result;
       }
@@ -351,9 +316,6 @@ public final class GMProto {
 
       public Builder mergeFrom(CloseServerRequest other) {
         if (other == CloseServerRequest.getDefaultInstance()) return this;
-        if (other.getFrom() != 0) {
-          setFrom(other.getFrom());
-        }
         onChanged();
         return this;
       }
@@ -377,32 +339,6 @@ public final class GMProto {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int from_ ;
-      /**
-       * <code>int32 from = 1;</code>
-       */
-      public int getFrom() {
-        return from_;
-      }
-      /**
-       * <code>int32 from = 1;</code>
-       */
-      public Builder setFrom(int value) {
-        
-        from_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 from = 1;</code>
-       */
-      public Builder clearFrom() {
-        
-        from_ = 0;
-        onChanged();
         return this;
       }
       public final Builder setUnknownFields(
@@ -987,10 +923,10 @@ public final class GMProto {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\016proto/GM.proto\"\"\n\022CloseServerRequest\022\014" +
-      "\n\004from\030\001 \001(\005\"%\n\023CloseServerResponse\022\016\n\006r" +
-      "esMsg\030\001 \001(\tB,\n!info.xiaomo.server.protoc" +
-      "ol.protoB\007GMProtob\006proto3"
+      "\n\016proto/GM.proto\"\024\n\022CloseServerRequest\"%" +
+      "\n\023CloseServerResponse\022\016\n\006resMsg\030\001 \001(\tB,\n" +
+      "!info.xiaomo.server.protocol.protoB\007GMPr" +
+      "otob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1009,7 +945,7 @@ public final class GMProto {
     internal_static_CloseServerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CloseServerRequest_descriptor,
-        new String[] { "From", });
+        new String[] { });
     internal_static_CloseServerResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_CloseServerResponse_fieldAccessorTable = new

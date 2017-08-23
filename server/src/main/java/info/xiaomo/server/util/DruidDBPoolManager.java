@@ -14,7 +14,7 @@ public class DruidDBPoolManager {
 
     public static JdbcTemplate get(int serverId) {
         if (serverId == 0) {
-            serverId = GameContext.getInstance().getServerOption().getServerId();
+            serverId = GameContext.getOption().getServerId();
         }
         return pools.get(serverId);
     }

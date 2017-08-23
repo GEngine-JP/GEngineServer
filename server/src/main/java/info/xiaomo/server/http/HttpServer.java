@@ -32,7 +32,7 @@ public class HttpServer {
     @PreAuthorize("permitAll")
     @RequestMapping("/")
     public int serverInfo() {
-        return GameContext.getInstance().getServerOption().getServerId();
+        return GameContext.getOption().getServerId();
     }
 
     @PreAuthorize("authentication")

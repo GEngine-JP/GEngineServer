@@ -1,8 +1,6 @@
 package info.xiaomo.server.util;
 
-import info.xiaomo.gameCore.base.concurrent.HandlerFilter;
 import info.xiaomo.gameCore.base.tuple.TwoTuple;
-import info.xiaomo.server.server.MessageExeTimeStatisticsHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,15 +22,10 @@ public class MsgExeTimeUtil {
 
     private static final MsgExeTimeUtil INSTANCE = new MsgExeTimeUtil();
 
-    private static final HandlerFilter filer = new MessageExeTimeStatisticsHandler();
 
     private static ConcurrentHashMap<Long, ThreadExeTime> timeMap = new ConcurrentHashMap<>();
 
     private static boolean open = false;
-
-    public static HandlerFilter getFiler() {
-        return filer;
-    }
 
     public static ConcurrentHashMap<Long, ThreadExeTime> getTimeMap() {
         return timeMap;
