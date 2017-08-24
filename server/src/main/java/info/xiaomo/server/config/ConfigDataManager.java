@@ -1,4 +1,4 @@
-package info.xiaomo.server.dataConfig;
+package info.xiaomo.server.config;
 
 import info.xiaomo.gameCore.config.IConfigDataManager;
 import info.xiaomo.gameCore.config.excel.ExcelConfigDataManager;

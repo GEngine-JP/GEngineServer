@@ -3,7 +3,7 @@ package info.xiaomo.server.server;
 import info.xiaomo.gameCore.protocol.NetworkService;
 import info.xiaomo.gameCore.protocol.NetworkServiceBuilder;
 import info.xiaomo.server.constant.GameConst;
-import info.xiaomo.server.dataConfig.ConfigDataManager;
+import info.xiaomo.server.config.ConfigDataManager;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventRegister;
 import info.xiaomo.server.processor.LogicProcessor;

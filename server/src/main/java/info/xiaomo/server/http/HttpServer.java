@@ -5,6 +5,7 @@ import info.xiaomo.server.server.GameContext;
 import info.xiaomo.server.util.Utils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.ApplicationContext;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,7 @@ public class HttpServer {
 
     public static final String API_KEY = "0I3EaVD2WfElnw3O";
 
-    private static org.springframework.context.ApplicationContext applicationContext;
+    private static ApplicationContext applicationContext;
 
     @PreAuthorize("permitAll")
     @RequestMapping("/")

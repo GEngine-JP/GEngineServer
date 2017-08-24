@@ -1,9 +1,7 @@
 package info.xiaomo.server.test;
 
 import info.xiaomo.server.config.beans.ItemConfig;
-import info.xiaomo.server.dataConfig.ConfigDataManager;
-
-import java.util.List;
+import info.xiaomo.server.config.ConfigDataManager;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～

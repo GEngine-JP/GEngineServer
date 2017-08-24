@@ -96,7 +96,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
 
     @Override
     public void addData(CacheAble cache) {
-//        provider.put((Persistable) cache);
+        provider.put((Persistable) cache);
     }
 
     @Override
