@@ -20,9 +20,9 @@ import java.util.List;
  * Copyright(©) 2017 by xiaomo.
  */
 public class ConfigDataManager implements IConfigDataManager {
-    private static ConfigDataManager ourInstance = new ConfigDataManager();
     private ExcelConfigDataManager manager = new ExcelConfigDataManager();
 
+    private static ConfigDataManager ourInstance = new ConfigDataManager();
     public static ConfigDataManager getInstance() {
         return ourInstance;
     }
