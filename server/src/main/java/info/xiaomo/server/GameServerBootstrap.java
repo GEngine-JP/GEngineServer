@@ -1,5 +1,7 @@
 package info.xiaomo.server;
 
+import info.xiaomo.gameCore.config.annotation.ConfigFileScan;
+import info.xiaomo.gameCore.config.annotation.PackageScan;
 import info.xiaomo.server.back.BackServer;
 import info.xiaomo.server.server.GameContext;
 import info.xiaomo.server.server.GameServer;
@@ -21,6 +23,8 @@ import org.slf4j.LoggerFactory;
  * Copyright(©) 2015 by xiaomo.
  **/
 
+@ConfigFileScan(value = "G:\\ChessGame\\ConfigData", suffix = ".xlsx")
+@PackageScan("info.xiaomo.server.config.beans")
 public class GameServerBootstrap {
     public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
 

@@ -1,10 +1,9 @@
 package info.xiaomo.server.config;
 
-import info.xiaomo.gameCore.config.FileConfigDataManager;
-import info.xiaomo.gameCore.config.IConfigDataManager;
+import info.xiaomo.gameCore.config.annotation.ConfigFileScan;
+import info.xiaomo.gameCore.config.annotation.PackageScan;
 import info.xiaomo.gameCore.config.excel.ExcelConfigDataManager;
-
-import java.util.List;
+import info.xiaomo.server.GameServerBootstrap;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -21,40 +20,14 @@ import java.util.List;
  * Copyright(©) 2017 by xiaomo.
  */
 
-public class ConfigDataManager implements IConfigDataManager {
-    private FileConfigDataManager manager = new ExcelConfigDataManager(new DataManagerConfig());
-    private static ConfigDataManager ourInstance = new ConfigDataManager();
-
-    public static ConfigDataManager getInstance() {
-        return ourInstance;
-    }
+public class ConfigDataManager extends ExcelConfigDataManager {
+    private static final ConfigDataManager INSTANCE = new ConfigDataManager();
 
     private ConfigDataManager() {
+        super(GameServerBootstrap.class);
     }
 
-    @Override
-    public <T> T getConfig(Class<T> clz, Object... primaryKey) {
-        return manager.getConfig(clz, primaryKey);
+    public static ConfigDataManager getInstance() {
+        return INSTANCE;
     }
-
-    @Override
-    public <T> List<T> getConfigs(Class<T> clz) {
-        return manager.getConfigs(clz);
-    }
-
-    @Override
-    public <T> T getConfigCache(Class<T> clz) {
-        return manager.getConfigCache(clz);
-    }
-
-    @Override
-    public void init() throws Exception {
-        manager.init();
-    }
-
-    public void setSubfix(String subfix) {
-        manager.setConfigFileSuffix(subfix);
-    }
-
-
 }
