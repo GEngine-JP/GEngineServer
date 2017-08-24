@@ -1,7 +1,9 @@
 package info.xiaomo.server.config;
 
 
-import info.xiaomo.gameCore.config.AbstractConfigData;
+import info.xiaomo.gameCore.config.annotation.Column;
+import info.xiaomo.gameCore.logger.annotation.Table;
+import lombok.Data;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -17,26 +19,14 @@ import info.xiaomo.gameCore.config.AbstractConfigData;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class TestConfig extends AbstractConfigData {
+@Data
+@Table(tableName = "test")
+public class TestConfig {
 
+    @Column(notNull = true)
     private int id;
 
+    @Column(name = "name")
     private String name;
 
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
