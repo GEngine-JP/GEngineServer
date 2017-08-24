@@ -1,7 +1,6 @@
 package info.xiaomo.server.config;
 
 import info.xiaomo.gameCore.config.FileConfigDataManager;
-import info.xiaomo.gameCore.config.FileDataManagerConfig;
 import info.xiaomo.gameCore.config.IConfigDataManager;
 import info.xiaomo.gameCore.config.excel.ExcelConfigDataManager;
 
@@ -22,7 +21,7 @@ import java.util.List;
  * Copyright(©) 2017 by xiaomo.
  */
 
-public class ConfigDataManager extends FileDataManagerConfig implements IConfigDataManager {
+public class ConfigDataManager implements IConfigDataManager {
     private FileConfigDataManager manager = new ExcelConfigDataManager(new DataManagerConfig());
     private static ConfigDataManager ourInstance = new ConfigDataManager();
 

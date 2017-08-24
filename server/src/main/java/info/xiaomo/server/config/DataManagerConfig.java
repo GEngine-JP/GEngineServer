@@ -4,7 +4,7 @@
  */
 package info.xiaomo.server.config;
 
-import info.xiaomo.gameCore.config.FileDataManagerConfig;
+import info.xiaomo.gameCore.config.FileConfigDataManagerConfig;
 import info.xiaomo.gameCore.config.annotation.ConfigFileScan;
 import info.xiaomo.gameCore.config.annotation.PackageScan;
 
@@ -13,5 +13,5 @@ import info.xiaomo.gameCore.config.annotation.PackageScan;
  */
 @ConfigFileScan(value = "G:\\ChessGame\\ConfigData", suffix = ".xlsx")
 @PackageScan("info.xiaomo.server.config.beans")
-public class DataManagerConfig extends FileDataManagerConfig {
+public class DataManagerConfig extends FileConfigDataManagerConfig {
 }
