@@ -139,7 +139,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
                 // 从数据库中查询
                 user = this.template.query(SELECT_USER, new UserMapper(), id);
                 if (user != null) {
-//                    provider.put(user);
+                    provider.put(user);
                 }
                 return user;
             }
