@@ -7,7 +7,7 @@
     <groupId>info.xiaomo</groupId>
     <artifactId>GameServer</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>2017.1</version>
     <modules>
         <module>server</module>
         <module>log</module>
@@ -40,7 +40,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!--核心包start-->
-        <gameCore.version>1.0.2</gameCore.version>
+        <gameCore.version>2017.1</gameCore.version>
         <!--核心包end-->
         <netty.version>4.1.12.Final</netty.version>
         <apache-commons-codec.version>1.10</apache-commons-codec.version>
