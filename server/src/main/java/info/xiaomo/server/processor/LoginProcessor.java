@@ -2,7 +2,7 @@ package info.xiaomo.server.processor;
 
 
 import info.xiaomo.gameCore.base.concurrent.IQueueDriverCommand;
-import info.xiaomo.server.server.MessageProcessor;
+import info.xiaomo.gameCore.protocol.MessageProcessor;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;

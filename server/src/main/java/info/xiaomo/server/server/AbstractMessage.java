@@ -5,6 +5,7 @@ import info.xiaomo.gameCore.base.common.EncryptUtil;
 import info.xiaomo.gameCore.base.concurrent.IQueueDriverCommand;
 import info.xiaomo.gameCore.base.concurrent.queue.ICommandQueue;
 import info.xiaomo.gameCore.protocol.Message;
+import info.xiaomo.gameCore.protocol.MessageFilter;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 import lombok.Data;
