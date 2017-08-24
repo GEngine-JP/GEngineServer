@@ -22,9 +22,7 @@ import java.util.List;
 public class TestExcelConfig {
 
     public static void main(String[] args) throws Exception {
-        ConfigDataManager.getInstance().setConfigPackagePath("info.xiaomo.server.config.beans");
-        ConfigDataManager.getInstance().setResourceRoot(TestExcelConfig.class.getClassLoader().getResource("").getPath());
-        ConfigDataManager.getInstance().init();
+        ConfigDataManager.getInstance().init(TestExcelConfig.class.getClassLoader().getResource("").getPath());
         ConfigDataManager.getInstance().getConfigs(ItemConfig.class).forEach(System.out::println);
     }
 
