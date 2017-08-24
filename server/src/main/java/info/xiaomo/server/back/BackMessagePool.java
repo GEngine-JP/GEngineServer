@@ -3,6 +3,7 @@ package info.xiaomo.server.back;
 
 import info.xiaomo.gameCore.protocol.Message;
 import info.xiaomo.gameCore.protocol.MessagePool;
+import info.xiaomo.server.protocol.message.gm.ReqCloseServerMessage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +28,7 @@ public class BackMessagePool implements MessagePool {
     private final Map<Integer, Class<? extends Message>> messages = new HashMap<>();
 
     public BackMessagePool() {
-
+        register(new ReqCloseServerMessage().getId(),ReqCloseServerMessage.class);
     }
 
     @Override

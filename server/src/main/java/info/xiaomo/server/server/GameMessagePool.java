@@ -2,6 +2,7 @@ package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.protocol.Message;
 import info.xiaomo.gameCore.protocol.MessagePool;
+import info.xiaomo.server.protocol.message.gm.ReqCloseServerMessage;
 import info.xiaomo.server.protocol.message.user.ReqLoginMessage;
 
 import java.util.HashMap;
@@ -14,6 +15,7 @@ public class GameMessagePool implements MessagePool {
 
     public GameMessagePool() {
         register(new ReqLoginMessage().getId(), ReqLoginMessage.class);
+        register(new ReqCloseServerMessage().getId(), ReqCloseServerMessage.class);
     }
 
     @Override
