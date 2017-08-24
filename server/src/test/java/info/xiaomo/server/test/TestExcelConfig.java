@@ -1,7 +1,8 @@
 package info.xiaomo.server.test;
 
-import info.xiaomo.server.config.beans.ItemConfig;
+import info.xiaomo.gameCore.config.FileDataManagerConfig;
 import info.xiaomo.server.config.ConfigDataManager;
+import info.xiaomo.server.config.beans.ItemConfig;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -17,10 +18,10 @@ import info.xiaomo.server.config.ConfigDataManager;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class TestExcelConfig {
+public class TestExcelConfig extends FileDataManagerConfig {
 
     public static void main(String[] args) throws Exception {
-        ConfigDataManager.getInstance().init(TestExcelConfig.class.getClassLoader().getResource("").getPath());
+        ConfigDataManager.getInstance().init();
         ConfigDataManager.getInstance().getConfigs(ItemConfig.class).forEach(System.out::println);
     }
 

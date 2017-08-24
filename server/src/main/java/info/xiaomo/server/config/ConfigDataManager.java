@@ -1,5 +1,7 @@
 package info.xiaomo.server.config;
 
+import info.xiaomo.gameCore.config.FileConfigDataManager;
+import info.xiaomo.gameCore.config.FileDataManagerConfig;
 import info.xiaomo.gameCore.config.IConfigDataManager;
 import info.xiaomo.gameCore.config.excel.ExcelConfigDataManager;
 
@@ -19,9 +21,9 @@ import java.util.List;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class ConfigDataManager implements IConfigDataManager {
-    private ExcelConfigDataManager manager = new ExcelConfigDataManager();
 
+public class ConfigDataManager extends FileDataManagerConfig implements IConfigDataManager {
+    private FileConfigDataManager manager = new ExcelConfigDataManager(new DataManagerConfig());
     private static ConfigDataManager ourInstance = new ConfigDataManager();
 
     public static ConfigDataManager getInstance() {
@@ -51,14 +53,8 @@ public class ConfigDataManager implements IConfigDataManager {
         manager.init();
     }
 
-    public void init(String configPath) throws Exception {
-        manager.setExcelFileDir(configPath);
-        manager.setConfigPackageName("info.xiaomo.server.config.beans");
-        init();
-    }
-
     public void setSubfix(String subfix) {
-        manager.setExcelFileSuffix(subfix);
+        manager.setConfigFileSuffix(subfix);
     }
 
 
