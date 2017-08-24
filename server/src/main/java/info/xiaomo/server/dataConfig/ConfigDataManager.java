@@ -50,5 +50,24 @@ public class ConfigDataManager implements IConfigDataManager {
         manager.init();
     }
 
+    public void init(String configPath) throws Exception {
+        manager.setExcelFileDir(configPath);
+        manager.setConfigPackageName("info.xiaomo.server.config.beans");
+        init();
+    }
+
+
+    public void setResourceRoot(String resourceRoot) {
+        manager.setExcelFileDir(resourceRoot);
+    }
+
+    public void setConfigPackagePath(String packagePath){
+        manager.setConfigPackageName(packagePath);
+    }
+
+    public void setSubfix(String subfix) {
+        manager.setExcelFileSuffix(subfix);
+    }
+
 
 }
