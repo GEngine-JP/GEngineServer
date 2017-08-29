@@ -4,7 +4,6 @@ import info.xiaomo.gameCore.protocol.client.Client;
 import info.xiaomo.gameCore.protocol.client.ClientBuilder;
 import info.xiaomo.server.back.BackMessagePool;
 import info.xiaomo.server.back.BackMessageRouter;
-import info.xiaomo.server.protocol.message.gm.ReqCloseServerMessage;
 import info.xiaomo.server.server.ServerOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,9 +25,8 @@ public class StopServerClient {
 
             Client client = builder.createClient();
             client.connect(false);
-            ReqCloseServerMessage msg = new ReqCloseServerMessage();
             Thread.sleep(1000);
-            client.sendMsg(msg);
+//            client.sendMsg(msg);
             int count = 10;
             while (count > 0) {
                 Thread.sleep(10 * 1000);

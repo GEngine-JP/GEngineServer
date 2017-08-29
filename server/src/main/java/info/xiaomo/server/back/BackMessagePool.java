@@ -1,9 +1,9 @@
 package info.xiaomo.server.back;
 
 
-import info.xiaomo.gameCore.protocol.Message;
+import com.google.protobuf.AbstractMessage;
+import info.xiaomo.gameCore.protocol.AbstractHandler;
 import info.xiaomo.gameCore.protocol.MessagePool;
-import info.xiaomo.server.protocol.message.gm.ReqCloseServerMessage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,29 +24,33 @@ import java.util.Map;
  */
 public class BackMessagePool implements MessagePool {
 
+
     // 消息类字典
-    private final Map<Integer, Class<? extends Message>> messages = new HashMap<>();
+    private final Map<Integer, AbstractMessage> messages = new HashMap<>();
+    private final Map<String, Integer> ids = new HashMap<>();
 
     public BackMessagePool() {
-        register(new ReqCloseServerMessage().getId(),ReqCloseServerMessage.class);
     }
 
     @Override
-    public Message getMessage(int messageId) {
-        Class<?> clazz = messages.get(messageId);
-        if (clazz != null) {
-            try {
-                return (Message) clazz.newInstance();
-            } catch (Exception e) {
-                return null;
-            }
-        }
+    public AbstractMessage getMessage(int messageId) {
+        return messages.get(messageId);
+    }
+
+    @Override
+    public int getMessageId(AbstractMessage message) {
+        return ids.get(message.getClass().getName());
+    }
+
+    @Override
+    public AbstractHandler getHandler(String handlerName) {
         return null;
     }
 
     @Override
-    public void register(int messageId, Class<? extends Message> messageClazz) {
-        messages.put(messageId, messageClazz);
+    public void register(int messageId, AbstractMessage messageClazz, Class<? extends AbstractHandler> handler) {
+
     }
+
 
 }

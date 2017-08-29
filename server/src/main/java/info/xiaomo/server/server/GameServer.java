@@ -2,9 +2,8 @@ package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.protocol.NetworkService;
 import info.xiaomo.gameCore.protocol.NetworkServiceBuilder;
-import info.xiaomo.server.config.beans.ItemConfig;
-import info.xiaomo.server.constant.GameConst;
 import info.xiaomo.server.config.ConfigDataManager;
+import info.xiaomo.server.constant.GameConst;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventRegister;
 import info.xiaomo.server.processor.LogicProcessor;
@@ -12,8 +11,6 @@ import info.xiaomo.server.processor.LoginProcessor;
 import info.xiaomo.server.system.schedule.ScheduleManager;
 import info.xiaomo.server.util.MsgExeTimeUtil;
 import lombok.Data;
-
-import java.util.List;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -45,7 +42,7 @@ public class GameServer {
 
         GameMessagePool pool = new GameMessagePool();
 
-        router = new MessageRouter();
+        router = new MessageRouter(pool);
         NetworkServiceBuilder builder = new NetworkServiceBuilder();
         builder.setMessagePool(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);

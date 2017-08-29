@@ -1,9 +1,10 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.gameCore.protocol.Message;
+import com.google.protobuf.AbstractMessage;
+import info.xiaomo.gameCore.protocol.AbstractHandler;
 import info.xiaomo.gameCore.protocol.MessagePool;
-import info.xiaomo.server.protocol.message.gm.ReqCloseServerMessage;
-import info.xiaomo.server.protocol.message.user.ReqLoginMessage;
+import info.xiaomo.server.protocol.UserProto.LoginRequest;
+import info.xiaomo.server.system.user.handler.LoginHandler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,19 +12,32 @@ import java.util.Map;
 public class GameMessagePool implements MessagePool {
 
     // 消息类字典
-    private final Map<Integer, Class<? extends Message>> messages = new HashMap<>();
+    private final Map<Integer, AbstractMessage> messages = new HashMap<>();
+    private final Map<String, Integer> ids = new HashMap<>();
+
+    private final Map<String, Class<? extends AbstractHandler>> handlers = new HashMap<>();
 
     public GameMessagePool() {
-        register(new ReqLoginMessage().getId(), ReqLoginMessage.class);
-        register(new ReqCloseServerMessage().getId(), ReqCloseServerMessage.class);
+        register(101101, LoginRequest.getDefaultInstance(), LoginHandler.class);
     }
 
     @Override
     public AbstractMessage getMessage(int messageId) {
-        Class<?> clazz = messages.get(messageId);
+        return messages.get(messageId);
+    }
+
+    @Override
+    public int getMessageId(AbstractMessage message) {
+        return ids.get(message.getClass().getName());
+    }
+
+
+    @Override
+    public AbstractHandler getHandler(String handlerName) {
+        Class<? extends AbstractHandler> clazz = handlers.get(handlerName);
         if (clazz != null) {
             try {
-                return (AbstractMessage) clazz.newInstance();
+                return clazz.newInstance();
             } catch (Exception e) {
                 return null;
             }
@@ -32,7 +46,9 @@ public class GameMessagePool implements MessagePool {
     }
 
     @Override
-    public void register(int messageId, Class<? extends Message> messageClazz) {
+    public void register(int messageId, AbstractMessage messageClazz, Class<? extends AbstractHandler> handler) {
         messages.put(messageId, messageClazz);
+        handlers.put(messageClazz.getClass().getName(), handler);
+        ids.put(messageClazz.getClass().getName(), messageId);
     }
 }

@@ -1,7 +1,9 @@
 package info.xiaomo.server.server;
 
+import com.google.protobuf.AbstractMessage;
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.protocol.Message;
+import info.xiaomo.gameCore.protocol.AbstractHandler;
+import info.xiaomo.gameCore.protocol.MessagePool;
 import info.xiaomo.gameCore.protocol.MessageProcessor;
 import info.xiaomo.gameCore.protocol.NetworkConsumer;
 import io.netty.channel.Channel;
@@ -17,16 +19,23 @@ public class MessageRouter implements NetworkConsumer {
 
     private Map<Integer, MessageProcessor> processors = new HashMap<>();
 
+    private MessagePool msgPool;
+
+    public MessageRouter(MessagePool msgPool) {
+        this.msgPool = msgPool;
+    }
+
     public void registerProcessor(int queueId, MessageProcessor consumer) {
         processors.put(queueId, consumer);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public void consume(Message msg, Channel channel) {
+    public void consume(AbstractMessage msg, Channel channel) {
 
         //将消息分发到指定的队列中，该队列有可能在同一个进程，也有可能不在同一个进程
 
-        int queueId = msg.getQueueId();
+        int queueId = 1;
 
         MessageProcessor processor = processors.get(queueId);
         if (processor == null) {
@@ -36,16 +45,16 @@ public class MessageRouter implements NetworkConsumer {
 
         Session session = AttributeUtil.get(channel, SessionKey.SESSION);
 
-
         if (session == null) {
             return;
         }
 
-        msg.setParam(session);
-
+        AbstractHandler handler = msgPool.getHandler(msg.getClass().getName());
+        handler.setMessage(msg);
+        handler.setParam(session);
         LOGGER.debug("收到消息:" + msg);
 
-        processor.process(msg);
+        processor.process(handler);
 
     }
 

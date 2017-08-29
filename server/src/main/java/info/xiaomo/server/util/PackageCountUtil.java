@@ -1,7 +1,7 @@
 package info.xiaomo.server.util;
 
+import com.google.protobuf.MessageLite;
 import info.xiaomo.gameCore.base.tuple.TwoTuple;
-import info.xiaomo.gameCore.protocol.Message;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelOutboundHandlerAdapter;
@@ -100,9 +100,9 @@ public class PackageCountUtil {
         @Override
         public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
 
-            Message amsg = (Message) msg;
+            MessageLite amsg = (MessageLite) msg;
             if (amsg != null) {
-                count(amsg.getId());
+//                count(amsg.getId());
             }
             super.write(ctx, msg, promise);
         }
