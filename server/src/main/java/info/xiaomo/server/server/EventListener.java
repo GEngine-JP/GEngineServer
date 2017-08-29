@@ -28,7 +28,7 @@ public class EventListener implements NetworkEventListener {
             session = new Session(channel);
             session.setChannel(channel);
             AttributeUtil.set(channel, SessionKey.SESSION, session);
-            LOGGER.error("接收到新的连接：" + channel.toString());
+            LOGGER.info("接收到新的连接：" + channel.toString());
         } else {
             LOGGER.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
         }
