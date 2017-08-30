@@ -4,6 +4,7 @@ import com.google.protobuf.AbstractMessage;
 import info.xiaomo.gameCore.protocol.AbstractHandler;
 import info.xiaomo.gameCore.protocol.MessagePool;
 import info.xiaomo.server.protocol.UserProto.LoginRequest;
+import info.xiaomo.server.protocol.UserProto.LoginResponse;
 import info.xiaomo.server.system.user.handler.LoginHandler;
 
 import java.util.HashMap;
@@ -19,6 +20,7 @@ public class GameMessagePool implements MessagePool {
 
     public GameMessagePool() {
         register(101101, LoginRequest.getDefaultInstance(), LoginHandler.class);
+        register(101102, LoginResponse.getDefaultInstance());
     }
 
     @Override
@@ -49,6 +51,12 @@ public class GameMessagePool implements MessagePool {
     public void register(int messageId, AbstractMessage messageClazz, Class<? extends AbstractHandler> handler) {
         messages.put(messageId, messageClazz);
         handlers.put(messageClazz.getClass().getName(), handler);
+        ids.put(messageClazz.getClass().getName(), messageId);
+    }
+
+    @Override
+    public void register(int messageId, AbstractMessage messageClazz) {
+        messages.put(messageId, messageClazz);
         ids.put(messageClazz.getClass().getName(), messageId);
     }
 }

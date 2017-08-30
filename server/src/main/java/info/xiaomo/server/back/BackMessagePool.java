@@ -52,5 +52,10 @@ public class BackMessagePool implements MessagePool {
 
     }
 
+    @Override
+    public void register(int messageId, AbstractMessage messageClazz) {
+
+    }
+
 
 }
