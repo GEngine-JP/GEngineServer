@@ -1,10 +1,5 @@
 package info.xiaomo.server.http;
 
-/**
- * Created on 2016/12/10 18:08.
- *
- * @author 周锟
- */
 public class HttpException extends RuntimeException {
 	private int status;
 

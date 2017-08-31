@@ -8,23 +8,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
 
-/**
- * Created on 2016/11/29 10:28.
- *
- * @author 周锟
- */
 @RestController
 @EnableAutoConfiguration
 public class HttpServer {
-    public static final int FAIL = -1; //失败
-    public static final int SUCCESS = 1; //成功
-
-    public static final String SALT = "k0RlsOyyWMoi";
-
-    public static final String API_KEY = "0I3EaVD2WfElnw3O";
 
     private static ApplicationContext applicationContext;
 
@@ -35,14 +22,8 @@ public class HttpServer {
     }
 
 
-    static Map<String, Object> resMap(int status, String message, Object data) {
-        Map<String, Object> res = new HashMap<>(3);
-        res.put("status", status);
-        res.put("message", message);
-        if (data != null) {
-            res.put("data", data);
-        }
-        return res;
+    static Result<Object> resMap(int status, String message, Object data) {
+        return new Result<>(status, message, data);
     }
 
     private void checkParams(String sign, Object... params) {
@@ -64,7 +45,7 @@ public class HttpServer {
     public static class HttpErrorHandler {
         @ResponseBody
         @ExceptionHandler(HttpException.class)
-        public Map<String, Object> httpError(HttpServletRequest req, HttpException exception) {
+        public Result<Object> httpError(HttpServletRequest req, HttpException exception) {
             return resMap(exception.getStatus(), exception.getMessage(), null);
         }
     }
