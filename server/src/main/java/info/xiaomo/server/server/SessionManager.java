@@ -1,6 +1,6 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.server.entify.Player;
+import info.xiaomo.server.entify.Role;
 import info.xiaomo.server.entify.User;
 import lombok.extern.slf4j.Slf4j;
 
@@ -53,16 +53,16 @@ public class SessionManager {
     }
 
     public void registerPlayer(Session session) {
-        Player player = session.getPlayer();
-        if (player != null) {
-            ridSessionMap.put(player.getId(), session);
+        Role role = session.getRole();
+        if (role != null) {
+            ridSessionMap.put(role.getId(), session);
         }
     }
 
     public void unregisterPlayer(Session session, boolean clearUid) {
-        Player player = session.getPlayer();
-        if (player != null) {
-            ridSessionMap.remove(player.getId(), session);
+        Role role = session.getRole();
+        if (role != null) {
+            ridSessionMap.remove(role.getId(), session);
         }
         if (clearUid) {
             session.clearAttribute();

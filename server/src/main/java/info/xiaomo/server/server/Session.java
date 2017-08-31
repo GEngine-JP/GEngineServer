@@ -1,10 +1,10 @@
 package info.xiaomo.server.server;
 
+import com.alibaba.druid.util.Utils;
 import com.google.protobuf.AbstractMessage;
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.server.entify.Player;
+import info.xiaomo.server.entify.Role;
 import info.xiaomo.server.entify.User;
-import info.xiaomo.server.util.Utils;
 import io.netty.channel.Channel;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,7 @@ public class Session {
 
     private int sendDelay;
 
-    private Player player;
+    private Role role;
 
     private volatile boolean offline = false;
 
@@ -69,7 +69,6 @@ public class Session {
     }
 
     public void close() {
-        log.info("close(), session={}, trace={}", this, Utils.getStackTrace());
         if (channel == null) {
             return;
         }

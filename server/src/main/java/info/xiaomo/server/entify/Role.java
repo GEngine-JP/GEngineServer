@@ -21,7 +21,7 @@ import lombok.Data;
  * Copyright(©) 2017 by xiaomo.
  */
 @Data
-public class Player implements Persistable {
+public class Role implements Persistable {
 
     @Exclude
     private boolean dirty;

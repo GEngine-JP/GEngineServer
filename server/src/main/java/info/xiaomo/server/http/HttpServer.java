@@ -1,8 +1,6 @@
 package info.xiaomo.server.http;
 
-import info.xiaomo.gameCore.base.concurrent.executor.QueueMonitor;
 import info.xiaomo.server.server.GameContext;
-import info.xiaomo.server.util.Utils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
@@ -36,25 +34,6 @@ public class HttpServer {
         return GameContext.getOption().getServerId();
     }
 
-    @PreAuthorize("authentication")
-    @RequestMapping("/dumpmonitor")
-    public Map<String, Object> dumpQueueMonitor(@RequestParam String queueName) {
-
-        if (queueName == null || queueName.equals("") || queueName.equals("all")) {
-            QueueMonitor.dump();
-        } else {
-            QueueMonitor.dump(queueName);
-        }
-        return resMap(200, "ok", true);
-    }
-
-    @PreAuthorize("authentication")
-    @RequestMapping("/openmonitor")
-    public Map<String, Object> openMonitor(@RequestParam boolean open) {
-        QueueMonitor.open = open;
-        return resMap(200, String.valueOf(QueueMonitor.open), true);
-    }
-
 
     static Map<String, Object> resMap(int status, String message, Object data) {
         Map<String, Object> res = new HashMap<>(3);
@@ -70,9 +49,6 @@ public class HttpServer {
         StringBuilder builder = new StringBuilder(256);
         for (Object param : params) {
             builder.append(String.valueOf(param));
-        }
-        if (!Utils.sha1(builder.toString()).equalsIgnoreCase(sign)) {
-            throw new HttpException("参数签名错误", 400);
         }
     }
 

@@ -17,8 +17,8 @@ public class LoginProcessor implements MessageProcessor {
     private Executor executor = Executors.newSingleThreadExecutor(r -> new Thread(r, "Login"));
 
     @Override
-    public void process(IQueueDriverCommand message) {
-        this.executor.execute(message);
+    public void process(IQueueDriverCommand handler) {
+        this.executor.execute(handler);
     }
 
 }

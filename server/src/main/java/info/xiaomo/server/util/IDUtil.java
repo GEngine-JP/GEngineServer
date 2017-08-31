@@ -4,11 +4,6 @@ import info.xiaomo.server.server.GameContext;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * 服务器配置
- *
- * @author Administrator
- */
 public class IDUtil {
 
 	/**

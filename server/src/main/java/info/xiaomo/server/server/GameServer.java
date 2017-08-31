@@ -9,7 +9,6 @@ import info.xiaomo.server.event.EventRegister;
 import info.xiaomo.server.processor.LogicProcessor;
 import info.xiaomo.server.processor.LoginProcessor;
 import info.xiaomo.server.system.schedule.ScheduleManager;
-import info.xiaomo.server.util.MsgExeTimeUtil;
 import lombok.Data;
 
 /**
@@ -55,7 +54,6 @@ public class GameServer {
         router.registerProcessor(GameConst.QueueId.LOGIN_LOGOUT, new LoginProcessor());
         //业务队列
         router.registerProcessor(GameConst.QueueId.LOGIC, new LogicProcessor());
-        MsgExeTimeUtil.setOpen(true);
 
         // 创建网络服务
         netWork = builder.createService();

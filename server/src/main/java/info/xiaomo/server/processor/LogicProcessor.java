@@ -3,7 +3,6 @@ package info.xiaomo.server.processor;
 
 import info.xiaomo.gameCore.base.concurrent.IQueueDriverCommand;
 import info.xiaomo.gameCore.protocol.MessageProcessor;
-import info.xiaomo.server.server.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,17 +18,11 @@ import java.util.concurrent.Executors;
 public class LogicProcessor implements MessageProcessor {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LogicProcessor.class);
-    private Executor executor = Executors.newSingleThreadExecutor(r -> new Thread(r, ""));
+    private Executor executor = Executors.newSingleThreadExecutor(r -> new Thread(r, "LOGIC"));
 
     @Override
-    public void process(IQueueDriverCommand message) {
-
-        Session session = (Session) message.getParam();
-        if (session == null) {
-            LOGGER.error("找不到session");
-            return;
-        }
-        this.executor.execute(message);
+    public void process(IQueueDriverCommand handler) {
+        this.executor.execute(handler);
     }
 
 }
