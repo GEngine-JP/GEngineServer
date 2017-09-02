@@ -14,7 +14,7 @@ package info.xiaomo.server.event;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public interface IListener {
+public interface IEventListener {
 
     void update(EventType type,Object param);
 

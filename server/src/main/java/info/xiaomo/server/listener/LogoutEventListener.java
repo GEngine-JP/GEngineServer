@@ -2,7 +2,7 @@ package info.xiaomo.server.listener;
 
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
-import info.xiaomo.server.event.IListener;
+import info.xiaomo.server.event.IEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,8 +20,8 @@ import org.slf4j.LoggerFactory;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class LogoutListener implements IListener {
-    public static final Logger LOGGER = LoggerFactory.getLogger(LogoutListener.class);
+public class LogoutEventListener implements IEventListener {
+    public static final Logger LOGGER = LoggerFactory.getLogger(LogoutEventListener.class);
     @Override
     public void update(EventType type, Object param) {
         User user = (User)param;

@@ -1,9 +1,9 @@
 package info.xiaomo.server.event;
 
-import info.xiaomo.server.listener.LoginListener;
-import info.xiaomo.server.listener.LogoutListener;
-import info.xiaomo.server.listener.MinuteListener;
-import info.xiaomo.server.listener.SecondListener;
+import info.xiaomo.server.listener.LoginEventListener;
+import info.xiaomo.server.listener.LogoutEventListener;
+import info.xiaomo.server.listener.MinuteEventListener;
+import info.xiaomo.server.listener.SecondEventListener;
 
 import static info.xiaomo.server.event.EventUtil.addListener;
 
@@ -32,21 +32,21 @@ public class EventRegister {
     }
 
     private static void addLogoutListener() {
-        addListener(new LogoutListener(), EventType.LOGOUT);
+        addListener(new LogoutEventListener(), EventType.LOGOUT);
     }
 
     private static void addServerMinuteListener() {
-        addListener(new MinuteListener(), EventType.SERVER_MINUTE_HEART);
+        addListener(new MinuteEventListener(), EventType.SERVER_MINUTE_HEART);
     }
 
     private static void addServerSecondListener() {
-        addListener(new SecondListener(), EventType.SERVER_SECOND_HEART);
+        addListener(new SecondEventListener(), EventType.SERVER_SECOND_HEART);
     }
 
     /**
      * 登录事件监听器
      */
     private static void addLoginListener() {
-        addListener(new LoginListener(), EventType.LOGIN);
+        addListener(new LoginEventListener(), EventType.LOGIN);
     }
 }

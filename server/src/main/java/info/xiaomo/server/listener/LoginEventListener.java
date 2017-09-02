@@ -2,7 +2,7 @@ package info.xiaomo.server.listener;
 
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
-import info.xiaomo.server.event.IListener;
+import info.xiaomo.server.event.IEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,11 +20,12 @@ import org.slf4j.LoggerFactory;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class MinuteListener implements IListener {
-    private static final Logger LOGGER = LoggerFactory.getLogger(MinuteListener.class);
+public class LoginEventListener implements IEventListener {
+    public static final Logger LOGGER = LoggerFactory.getLogger(LoginEventListener.class);
+
     @Override
     public void update(EventType type, Object param) {
-        User user = (User)param;
-        LOGGER.info("一分钟执行一次。。。。。");
+        User user = (User) param;
+        LOGGER.warn("用户 {} 登录游戏", user.getLoginName());
     }
 }
