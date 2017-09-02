@@ -1,6 +1,7 @@
 package info.xiaomo.server.db;
 
 
+import info.xiaomo.gameCore.persist.MysqlDataProvider;
 import info.xiaomo.gameCore.persist.jdbc.ConnectionPool;
 import info.xiaomo.gameCore.persist.jdbc.DruidConnectionPool;
 import info.xiaomo.gameCore.persist.jdbc.JdbcTemplate;
@@ -116,7 +117,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
         if (id == null) {
             return null;
         }
-        User user = provider.get(id, DbDataType.USER);
+        User user = provider.get(id, DataType.USER);
         if (user == null) {
             // 从数据库中查询
             user = this.template.query(SELECT_USER, new UserMapper(), id);
@@ -134,7 +135,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
     public User getUser(long id) {
 
         if (hasUser(id)) {
-            User user = provider.get(id, DbDataType.USER);
+            User user = provider.get(id, DataType.USER);
             if (user == null) {
                 // 从数据库中查询
                 user = this.template.query(SELECT_USER, new UserMapper(), id);
