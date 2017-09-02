@@ -47,7 +47,7 @@ public class GameServer {
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(option.getGameServerPort());
-        builder.setListener(new EventListenerI());
+        builder.setListener(new NetworkListener());
         builder.setConsumer(router);
 
         //登录和下线

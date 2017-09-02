@@ -34,7 +34,6 @@ public class SessionManager {
 
     public void register(Session session) {
         uidSessionMap.put(session.getUser().getId(), session);
-//        OffLineRoleManager.getInstance().playerOnline(session.getUser().getId());
     }
 
     public void unregister(Session session) {
@@ -43,7 +42,6 @@ public class SessionManager {
             boolean remove = uidSessionMap.remove(user.getId(), session);
             unregisterPlayer(session, true);
             log.info("Session unregister, userId={}, remove={}", user.getId(), remove);
-//            OffLineRoleManager.getInstance().playerOffline(user.getId());
         }
     }
 
@@ -73,7 +71,7 @@ public class SessionManager {
         return ridSessionMap.containsKey(roleId);
     }
 
-    public Session[] sessionArray(){
+    public Session[] sessionArray() {
         return ridSessionMap.values().toArray(new Session[0]);
     }
 }

@@ -16,9 +16,9 @@ import org.slf4j.LoggerFactory;
  * @author 小莫
  * 2017年6月6日 下午 5:00:11
  */
-public class EventListenerI implements INetworkEventListener {
+public class NetworkListener implements INetworkEventListener {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(EventListenerI.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(NetworkListener.class);
 
     @Override
     public void onConnected(ChannelHandlerContext ctx) {

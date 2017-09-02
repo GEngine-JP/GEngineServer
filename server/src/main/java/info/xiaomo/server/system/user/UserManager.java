@@ -11,8 +11,7 @@ import info.xiaomo.server.server.SessionManager;
 import info.xiaomo.server.util.IDUtil;
 import info.xiaomo.server.util.MessageUtil;
 import info.xiaomo.server.util.TimeUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -28,8 +27,8 @@ import org.slf4j.LoggerFactory;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
+@Slf4j
 public class UserManager {
-    public static final Logger LOGGER = LoggerFactory.getLogger(UserManager.class);
     private static UserManager ourInstance = new UserManager();
 
     public static UserManager getInstance() {
@@ -54,7 +53,7 @@ public class UserManager {
             // 新建用户
             user = createUser(loginName);
             if (user == null) {
-                LOGGER.error("用户创建失败:{},{},{}", loginName);
+                log.error("用户创建失败:{},{},{}", loginName);
                 session.close();
                 return;
             }
