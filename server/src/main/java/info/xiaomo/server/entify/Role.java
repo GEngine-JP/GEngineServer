@@ -1,7 +1,7 @@
 package info.xiaomo.server.entify;
 
 import info.xiaomo.gameCore.persist.persist.Persistable;
-import info.xiaomo.server.db.DbDataType;
+import info.xiaomo.server.db.DataType;
 import io.protostuff.Exclude;
 import io.protostuff.Tag;
 import lombok.Data;
@@ -51,7 +51,7 @@ public class Role implements Persistable {
 
     @Override
     public int dataType() {
-        return DbDataType.USER;
+        return DataType.USER;
     }
 
 

@@ -2,7 +2,7 @@ package info.xiaomo.server.db.msyql;
 
 import info.xiaomo.gameCore.persist.persist.PersistFactory;
 import info.xiaomo.gameCore.persist.persist.Persistable;
-import info.xiaomo.server.db.DbDataType;
+import info.xiaomo.server.db.DataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.util.JdbcUtil;
 import org.slf4j.Logger;
@@ -65,7 +65,7 @@ public class UserPersistFactory implements PersistFactory {
 
     @Override
     public int dataType() {
-        return DbDataType.USER;
+        return DataType.USER;
     }
 
     @Override

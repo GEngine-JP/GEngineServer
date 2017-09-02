@@ -1,7 +1,7 @@
 package info.xiaomo.server.system.user;
 
 import info.xiaomo.server.db.DataCenter;
-import info.xiaomo.server.db.DbDataType;
+import info.xiaomo.server.db.DataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
@@ -96,7 +96,7 @@ public class UserManager {
      * 退出
      */
     public void logout(Session session) {
-        DataCenter.updateData(session.getUser().getId(), DbDataType.USER, true);
+        DataCenter.updateData(session.getUser().getId(), DataType.USER, true);
         EventUtil.fireEvent(EventType.LOGOUT, session.getUser());
     }
 }

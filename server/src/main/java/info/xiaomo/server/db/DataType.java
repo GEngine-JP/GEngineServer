@@ -14,6 +14,6 @@ package info.xiaomo.server.db;
  * desc  : 数据类型
  * Copyright(©) 2017 by xiaomo.
  */
-public interface DbDataType {
+public interface DataType {
     int USER = 1;
 }
