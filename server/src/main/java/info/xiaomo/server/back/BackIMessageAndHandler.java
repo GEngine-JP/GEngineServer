@@ -2,8 +2,8 @@ package info.xiaomo.server.back;
 
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.gameCore.protocol.AbstractHandler;
-import info.xiaomo.gameCore.protocol.MessagePool;
+import info.xiaomo.gameCore.network.AbstractHandler;
+import info.xiaomo.gameCore.network.IMessageAndHandler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,14 +22,14 @@ import java.util.Map;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class BackMessagePool implements MessagePool {
+public class BackIMessageAndHandler implements IMessageAndHandler {
 
 
     // 消息类字典
     private final Map<Integer, AbstractMessage> messages = new HashMap<>();
     private final Map<String, Integer> ids = new HashMap<>();
 
-    public BackMessagePool() {
+    public BackIMessageAndHandler() {
     }
 
     @Override

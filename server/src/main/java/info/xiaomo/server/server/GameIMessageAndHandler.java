@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.gameCore.protocol.AbstractHandler;
-import info.xiaomo.gameCore.protocol.MessagePool;
+import info.xiaomo.gameCore.network.AbstractHandler;
+import info.xiaomo.gameCore.network.IMessageAndHandler;
 import info.xiaomo.server.protocol.UserProto.LoginRequest;
 import info.xiaomo.server.protocol.UserProto.LoginResponse;
 import info.xiaomo.server.system.user.handler.LoginHandler;
@@ -10,7 +10,7 @@ import info.xiaomo.server.system.user.handler.LoginHandler;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GameMessagePool implements MessagePool {
+public class GameIMessageAndHandler implements IMessageAndHandler {
 
     // 消息类字典
     private final Map<Integer, AbstractMessage> messages = new HashMap<>();
@@ -18,7 +18,7 @@ public class GameMessagePool implements MessagePool {
 
     private final Map<String, Class<? extends AbstractHandler>> handlers = new HashMap<>();
 
-    public GameMessagePool() {
+    public GameIMessageAndHandler() {
         register(101101, LoginRequest.getDefaultInstance(), LoginHandler.class);
         register(101102, LoginResponse.getDefaultInstance());
     }

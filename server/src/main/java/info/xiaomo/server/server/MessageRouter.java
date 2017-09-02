@@ -2,10 +2,10 @@ package info.xiaomo.server.server;
 
 import com.google.protobuf.AbstractMessage;
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.protocol.AbstractHandler;
-import info.xiaomo.gameCore.protocol.MessagePool;
-import info.xiaomo.gameCore.protocol.MessageProcessor;
-import info.xiaomo.gameCore.protocol.NetworkConsumer;
+import info.xiaomo.gameCore.network.AbstractHandler;
+import info.xiaomo.gameCore.network.IMessageAndHandler;
+import info.xiaomo.gameCore.network.IProcessor;
+import info.xiaomo.gameCore.network.INetworkConsumer;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,19 +13,19 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MessageRouter implements NetworkConsumer {
+public class MessageRouter implements INetworkConsumer {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MessageRouter.class);
 
-    private Map<Integer, MessageProcessor> processors = new HashMap<>();
+    private Map<Integer, IProcessor> processors = new HashMap<>();
 
-    private MessagePool msgPool;
+    private IMessageAndHandler msgPool;
 
-    public MessageRouter(MessagePool msgPool) {
+    public MessageRouter(IMessageAndHandler msgPool) {
         this.msgPool = msgPool;
     }
 
-    public void registerProcessor(int queueId, MessageProcessor consumer) {
+    public void registerProcessor(int queueId, IProcessor consumer) {
         processors.put(queueId, consumer);
     }
 
@@ -37,7 +37,7 @@ public class MessageRouter implements NetworkConsumer {
 
         int queueId = 1;
 
-        MessageProcessor processor = processors.get(queueId);
+        IProcessor processor = processors.get(queueId);
         if (processor == null) {
             LOGGER.error("找不到可用的消息处理器[{}]", queueId);
             return;
@@ -58,7 +58,7 @@ public class MessageRouter implements NetworkConsumer {
 
     }
 
-    public MessageProcessor getProcessor(int queueId) {
+    public IProcessor getProcessor(int queueId) {
         return processors.get(queueId);
     }
 

@@ -1,7 +1,7 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.gameCore.protocol.NetworkService;
-import info.xiaomo.gameCore.protocol.NetworkServiceBuilder;
+import info.xiaomo.gameCore.network.NetworkService;
+import info.xiaomo.gameCore.network.NetworkServiceBuilder;
 import info.xiaomo.server.config.ConfigDataManager;
 import info.xiaomo.server.constant.GameConst;
 import info.xiaomo.server.db.DataCenter;
@@ -39,15 +39,15 @@ public class GameServer {
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
 
-        GameMessagePool pool = new GameMessagePool();
+        GameIMessageAndHandler pool = new GameIMessageAndHandler();
 
         router = new MessageRouter(pool);
         NetworkServiceBuilder builder = new NetworkServiceBuilder();
-        builder.setMessagePool(pool);
+        builder.setIMessageAndHandler(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(option.getGameServerPort());
-        builder.setListener(new EventListener());
+        builder.setListener(new EventListenerI());
         builder.setConsumer(router);
 
         //登录和下线
@@ -78,7 +78,7 @@ public class GameServer {
 
     public void start() {
         netWork.start();
-        if (netWork.isRunning()) {
+        if (netWork.isOpened()) {
             state = true;
         }
     }

@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.protocol.MessageProcessor;
-import info.xiaomo.gameCore.protocol.NetworkEventListener;
+import info.xiaomo.gameCore.network.IProcessor;
+import info.xiaomo.gameCore.network.INetworkEventListener;
 import info.xiaomo.server.command.LogoutCommand;
 import info.xiaomo.server.constant.GameConst;
 import io.netty.channel.Channel;
@@ -16,9 +16,9 @@ import org.slf4j.LoggerFactory;
  * @author 小莫
  * 2017年6月6日 下午 5:00:11
  */
-public class EventListener implements NetworkEventListener {
+public class EventListenerI implements INetworkEventListener {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(EventListener.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(EventListenerI.class);
 
     @Override
     public void onConnected(ChannelHandlerContext ctx) {
@@ -51,7 +51,7 @@ public class EventListener implements NetworkEventListener {
             LOGGER.error("玩家断开连接[没有找到用户信息]");
             return;
         }
-        MessageProcessor processor = GameContext.getGameServer().getRouter().getProcessor(GameConst.QueueId.LOGIN_LOGOUT);
+        IProcessor processor = GameContext.getGameServer().getRouter().getProcessor(GameConst.QueueId.LOGIN_LOGOUT);
         processor.process(new LogoutCommand(session));
     }
 
