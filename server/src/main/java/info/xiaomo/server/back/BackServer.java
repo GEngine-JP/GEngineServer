@@ -1,6 +1,6 @@
 package info.xiaomo.server.back;
 
-import info.xiaomo.core.network.NetworkService;
+import info.xiaomo.core.network.NetworkServiceImpl;
 import info.xiaomo.core.network.NetworkServiceBuilder;
 import info.xiaomo.server.server.ServerOption;
 
@@ -20,7 +20,7 @@ import info.xiaomo.server.server.ServerOption;
 
 public class BackServer {
 
-    private NetworkService service;
+    private NetworkServiceImpl service;
 
     public BackServer(ServerOption option) {
         BackIMessageAndHandler pool = new BackIMessageAndHandler();

@@ -1,4 +1,4 @@
-package info.xiaomo.chessGame.log;
+package info.xiaomo.chessgame.log;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～

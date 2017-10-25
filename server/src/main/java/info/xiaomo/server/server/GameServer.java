@@ -1,6 +1,6 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.network.NetworkService;
+import info.xiaomo.core.network.NetworkServiceImpl;
 import info.xiaomo.core.network.NetworkServiceBuilder;
 import info.xiaomo.server.config.ConfigDataManager;
 import info.xiaomo.server.constant.GameConst;
@@ -28,7 +28,7 @@ import lombok.Data;
 @Data
 public class GameServer {
 
-    private NetworkService netWork;
+    private NetworkServiceImpl netWork;
 
     private boolean state = false;
 

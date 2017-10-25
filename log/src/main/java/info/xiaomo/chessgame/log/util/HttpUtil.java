@@ -1,4 +1,4 @@
-package info.xiaomo.chessGame.log.util;
+package info.xiaomo.chessgame.log.util;
 
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
