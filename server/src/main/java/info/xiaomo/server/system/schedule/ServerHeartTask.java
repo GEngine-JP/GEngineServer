@@ -44,7 +44,8 @@ public class ServerHeartTask implements Runnable {
             }
 
             //每天一次(零点过后至少20秒才执行)
-            if (day != lastDay && second > 20) {
+            int delay = 20;
+            if (day != lastDay && second > delay) {
                 lastDay = day;
                 EventUtil.fireEvent(EventType.SERVER_MIDNIGHT, null);
             }

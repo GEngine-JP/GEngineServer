@@ -102,8 +102,9 @@ public class ServerOption {
 
 
             this.openTime = format.parse(properties.getProperty("openTime"));
-            if (properties.getProperty("combineTime") != null) {
-                this.combineTime = format.parse(properties.getProperty("combineTime"));
+            String combineTime = "combineTime";
+            if (properties.getProperty(combineTime) != null) {
+                this.combineTime = format.parse(properties.getProperty(combineTime));
             }
 
             this.gameDbConfigPath = properties.getProperty("gameDbConfigPath");

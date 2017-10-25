@@ -18,7 +18,8 @@ public class IntegerMapConverter implements IConverter<int[], Map<Integer, Integ
     public Map<Integer, Integer> convert(int[] ints) {
         Map<Integer, Integer> map = new HashMap<>(10);
         if (ints != null) {
-            for (int i = 1; i < ints.length; i += 2) {
+            int step = 2;
+            for (int i = 1; i < ints.length; i += step) {
                 map.put(ints[i - 1], ints[i]);
             }
         }

@@ -325,7 +325,8 @@ public class GameCloseThread extends Thread {
         }
 
         LOGGER.info("退出程序...");
-        if (source != 4) {
+        int ret = 4;
+        if (source != ret) {
             System.exit(0);
         }
     }
