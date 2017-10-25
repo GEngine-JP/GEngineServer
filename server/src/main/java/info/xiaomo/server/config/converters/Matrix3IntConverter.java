@@ -4,7 +4,7 @@
  */
 package info.xiaomo.server.config.converters;
 
-import info.xiaomo.gameCore.config.IConverter;
+import info.xiaomo.core.config.IConverter;
 import org.apache.commons.beanutils.converters.ArrayConverter;
 import org.apache.commons.beanutils.converters.IntegerConverter;
 

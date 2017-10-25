@@ -3,11 +3,11 @@ package info.xiaomo.server.processor;
 
 import info.xiaomo.core.base.concurrent.command.IQueueDriverCommand;
 import info.xiaomo.core.network.IProcessor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 业务消息处理器
@@ -17,8 +17,9 @@ import java.util.concurrent.Executors;
  */
 public class LogicProcessor implements IProcessor {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LogicProcessor.class);
-    private Executor executor = Executors.newSingleThreadExecutor(r -> new Thread(r, "LOGIC"));
+    private ExecutorService executor = new ThreadPoolExecutor(8, 8, 0L,
+            TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(100000),
+            new ThreadPoolExecutor.CallerRunsPolicy());
 
     @Override
     public void process(IQueueDriverCommand handler) {

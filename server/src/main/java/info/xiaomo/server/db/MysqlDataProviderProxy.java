@@ -111,6 +111,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
         uidMap.put(user.getId(), NULL);
     }
 
+    @Override
     public User getUser(String loginName, int sid, int pid) {
         String key = loginName + "_" + sid + "_" + pid;
         Long id = nameSidPid2Uid.get(key);
@@ -132,6 +133,7 @@ public class MysqlDataProviderProxy implements IDataProvider {
      * @param id id
      * @return User
      */
+    @Override
     public User getUser(long id) {
 
         if (hasUser(id)) {

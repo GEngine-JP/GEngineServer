@@ -5,7 +5,7 @@
 package info.xiaomo.server.config.converters;
 
 
-import info.xiaomo.gameCore.config.IConverter;
+import info.xiaomo.core.config.IConverter;
 
 import java.util.Map;
 

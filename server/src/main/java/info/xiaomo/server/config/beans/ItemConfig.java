@@ -1,9 +1,9 @@
 package info.xiaomo.server.config.beans;
 
-import info.xiaomo.gameCore.config.IConfig;
-import info.xiaomo.gameCore.config.annotation.Column;
-import info.xiaomo.gameCore.config.annotation.Config;
-import info.xiaomo.gameCore.config.annotation.Table;
+import info.xiaomo.core.config.IConfig;
+import info.xiaomo.core.config.annotation.Column;
+import info.xiaomo.core.config.annotation.Config;
+import info.xiaomo.core.config.annotation.Table;
 import info.xiaomo.server.config.converters.IntegerArrayConverter;
 import info.xiaomo.server.config.converters.IntegerMapConverter;
 import info.xiaomo.server.config.converters.Matrix3IntConverter;
