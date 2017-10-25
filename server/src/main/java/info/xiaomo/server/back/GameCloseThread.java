@@ -1,6 +1,6 @@
 package info.xiaomo.server.back;
 
-import info.xiaomo.gameCore.base.concurrent.QueueExecutor;
+import info.xiaomo.core.base.concurrent.QueueExecutor;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;

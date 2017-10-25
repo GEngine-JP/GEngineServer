@@ -1,9 +1,8 @@
 package info.xiaomo.server.util;
 
 
-
-import info.xiaomo.gameCore.base.common.Cast;
-import info.xiaomo.gameCore.base.common.Symbol;
+import info.xiaomo.core.base.common.Cast;
+import info.xiaomo.core.base.common.Symbol;
 
 import java.util.ArrayList;
 import java.util.HashMap;

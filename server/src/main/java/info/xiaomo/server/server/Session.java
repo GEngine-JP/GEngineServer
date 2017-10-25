@@ -1,8 +1,7 @@
 package info.xiaomo.server.server;
 
-import com.alibaba.druid.util.Utils;
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.gameCore.base.common.AttributeUtil;
+import info.xiaomo.core.base.common.AttributeUtil;
 import info.xiaomo.server.entify.Role;
 import info.xiaomo.server.entify.User;
 import io.netty.channel.Channel;

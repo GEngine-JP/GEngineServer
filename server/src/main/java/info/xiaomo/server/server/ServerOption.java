@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
 
-import info.xiaomo.gameCore.base.common.Cast;
-import info.xiaomo.gameCore.base.common.FileLoaderUtil;
+import info.xiaomo.core.base.common.Cast;
+import info.xiaomo.core.base.common.FileLoaderUtil;
 import lombok.Data;
 
 import java.io.IOException;

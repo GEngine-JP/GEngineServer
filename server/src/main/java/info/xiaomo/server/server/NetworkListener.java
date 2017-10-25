@@ -1,6 +1,6 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.gameCore.base.common.AttributeUtil;
+import info.xiaomo.core.base.common.AttributeUtil;
 import info.xiaomo.core.network.IProcessor;
 import info.xiaomo.core.network.INetworkEventListener;
 import info.xiaomo.server.command.LogoutCommand;

@@ -1,7 +1,7 @@
 package info.xiaomo.server.server;
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.gameCore.base.common.AttributeUtil;
+import info.xiaomo.core.base.common.AttributeUtil;
 import info.xiaomo.core.network.AbstractHandler;
 import info.xiaomo.core.network.IMessageAndHandler;
 import info.xiaomo.core.network.IProcessor;
