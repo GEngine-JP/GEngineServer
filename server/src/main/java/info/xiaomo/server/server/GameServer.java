@@ -39,7 +39,7 @@ public class GameServer {
         int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
                 : Runtime.getRuntime().availableProcessors();
 
-        GameIMessageAndHandler pool = new GameIMessageAndHandler();
+        GameMessageAndHandler pool = new GameMessageAndHandler();
 
         router = new MessageRouter(pool);
         NetworkServiceBuilder builder = new NetworkServiceBuilder();
