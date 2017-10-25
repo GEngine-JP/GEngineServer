@@ -22,14 +22,16 @@ import java.util.Map;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class BackIMessageAndHandler implements IMessageAndHandler {
+public class BackMessageAndHandler implements IMessageAndHandler {
 
 
-    // 消息类字典
+    /**
+     * 消息类字典
+     */
     private final Map<Integer, AbstractMessage> messages = new HashMap<>(10);
     private final Map<String, Integer> ids = new HashMap<>(10);
 
-    public BackIMessageAndHandler() {
+    public BackMessageAndHandler() {
     }
 
     @Override

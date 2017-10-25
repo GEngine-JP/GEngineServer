@@ -16,6 +16,12 @@ package info.xiaomo.server.event;
  */
 public interface IEventListener {
 
-    void update(EventType type,Object param);
+    /**
+     * 更新
+     *
+     * @param type  type
+     * @param param param
+     */
+    void update(EventType type, Object param);
 
 }

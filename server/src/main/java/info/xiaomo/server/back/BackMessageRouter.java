@@ -4,6 +4,9 @@ import com.google.protobuf.AbstractMessage;
 import info.xiaomo.core.network.INetworkConsumer;
 import io.netty.channel.Channel;
 
+/**
+ * @author qq
+ */
 public class BackMessageRouter implements INetworkConsumer {
 
     @Override

@@ -13,15 +13,17 @@ import java.util.Map;
 /**
  * @author xiaomo
  */
-public class GameIMessageAndHandler implements IMessageAndHandler {
+public class GameMessageAndHandler implements IMessageAndHandler {
 
-    // 消息类字典
+    /**
+     * 消息类字典
+     */
     private final Map<Integer, AbstractMessage> messages = new HashMap<>(10);
     private final Map<String, Integer> ids = new HashMap<>(10);
 
     private final Map<String, Class<? extends AbstractHandler>> handlers = new HashMap<>(10);
 
-    public GameIMessageAndHandler() {
+    public GameMessageAndHandler() {
         register(101101, LoginRequest.getDefaultInstance(), LoginHandler.class);
         register(101102, LoginResponse.getDefaultInstance());
     }

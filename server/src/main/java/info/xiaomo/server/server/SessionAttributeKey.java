@@ -2,6 +2,9 @@ package info.xiaomo.server.server;
 
 import io.netty.util.AttributeKey;
 
+/**
+ * @author qq
+ */
 public interface SessionAttributeKey {
 
 	/**

@@ -37,12 +37,14 @@ public class ServerHeartTask implements Runnable {
             int day = calendar.get(Calendar.DAY_OF_YEAR);
             int minute = calendar.get(Calendar.MINUTE);
             int second = calendar.get(Calendar.SECOND);
-            if (minute != lastMinute) { //每分 一次
+            //每分 一次
+            if (minute != lastMinute) {
                 lastMinute = minute;
                 EventUtil.fireEvent(EventType.SERVER_MINUTE_HEART, null);
             }
 
-            if (day != lastDay && second > 20) { //每天一次(零点过后至少20秒才执行)
+            //每天一次(零点过后至少20秒才执行)
+            if (day != lastDay && second > 20) {
                 lastDay = day;
                 EventUtil.fireEvent(EventType.SERVER_MIDNIGHT, null);
             }

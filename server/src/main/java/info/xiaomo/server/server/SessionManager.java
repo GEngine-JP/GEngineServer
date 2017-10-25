@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  *
+ * @author qq
  */
 @Slf4j
 public class SessionManager {

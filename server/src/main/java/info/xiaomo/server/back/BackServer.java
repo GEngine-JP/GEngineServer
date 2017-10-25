@@ -23,7 +23,7 @@ public class BackServer {
     private NetworkServiceImpl service;
 
     public BackServer(ServerOption option) {
-        BackIMessageAndHandler pool = new BackIMessageAndHandler();
+        BackMessageAndHandler pool = new BackMessageAndHandler();
         int bossLoopGroupCount = 4;
         int workerLoopGroupCount = 4;
         NetworkServiceBuilder builder = new NetworkServiceBuilder();

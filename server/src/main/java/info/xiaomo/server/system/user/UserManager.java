@@ -58,9 +58,10 @@ public class UserManager {
                 return;
             }
         }
-
-        session.setUser(user); // 注册账户
-        SessionManager.getInstance().register(session);// 注册session
+        // 注册账户
+        session.setUser(user);
+        // 注册session
+        SessionManager.getInstance().register(session);
 
         LoginResponse.Builder builder = LoginResponse.newBuilder();
         LoginResponse loginResponse = builder.setUserId(user.getId()).build();

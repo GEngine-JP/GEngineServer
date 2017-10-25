@@ -13,7 +13,7 @@ public class StopServerClient {
 
         try {
 //            String optionPath = "config.properties";
-//            BackIMessageAndHandler pool = new BackIMessageAndHandler();
+//            BackMessageAndHandler pool = new BackMessageAndHandler();
 //            ServerOption option = new ServerOption(optionPath);
 //            ClientBuilder builder = new ClientBuilder();
 //            builder.setHost("localhost");//只关本机的服务器
