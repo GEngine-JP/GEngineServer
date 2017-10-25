@@ -18,6 +18,13 @@ import info.xiaomo.server.server.Session;
  */
 public interface GM {
 
+    /**
+     * 执行gm
+     *
+     * @param session session
+     * @param gmStr   gmStr
+     * @return String
+     */
     String executeGM(Session session, String[] gmStr);
 
 }

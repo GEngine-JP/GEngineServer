@@ -43,7 +43,7 @@ public class GameServer {
 
         router = new MessageRouter(pool);
         NetworkServiceBuilder builder = new NetworkServiceBuilder();
-        builder.setIMessageAndHandler(pool);
+        builder.setImessageandhandler(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(option.getGameServerPort());

@@ -10,6 +10,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * @author qq
+ */
 public class TimeUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(TimeUtil.class);
 
@@ -260,25 +263,6 @@ public class TimeUtil {
      */
     public static String getLeftTimeString(long leftTime) {
         StringBuilder sb = new StringBuilder();
-        // int leftSecond = (int) (leftTime / 1000);// 剩余秒数
-        // int second = leftSecond % 60;// 秒数
-        // if (second > 0) {
-        // sb.insert(0, second + "秒");
-        // }
-        // int leftMinute = leftSecond / 60;// 剩余分钟数
-        // int minute = leftMinute % 60;// 分钟数
-        // if (minute > 0) {
-        // sb.insert(0, minute + "分");
-        // }
-        // int leftHour = leftMinute / 60;// 剩余小时
-        // int hour = leftHour % 24;
-        // if (hour > 0) {
-        // sb.insert(0, hour + "小时");
-        // }
-        // int leftDay = leftHour / 24;// 剩余天数
-        // if (leftDay > 0) {
-        // sb.insert(0, leftDay + "天");
-        // }
         int day = (int) (leftTime / ONE_DAY_IN_MILLISECONDS);// 获取剩余天数
         if (day > 0) {// 1天及以上的显示剩余天
             sb.append(day).append("天");
