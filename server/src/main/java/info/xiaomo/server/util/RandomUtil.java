@@ -21,9 +21,9 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  */
 public class RandomUtil {
-	 
-	private static final Map<String, Double> curPrivateRate = new ConcurrentHashMap<>();
-	private static final Map<String, Integer> lastPrivateRate = new ConcurrentHashMap<>();
+
+	private static final Map<String, Double> CUR_PRIVATE_RATE = new ConcurrentHashMap<>();
+	private static final Map<String, Integer> LAST_PRIVATE_RATE = new ConcurrentHashMap<>();
 	
     private static final Logger LOGGER = LoggerFactory.getLogger(RandomUtil.class);
     
@@ -68,22 +68,22 @@ public class RandomUtil {
 		}
 
 		String key = rid + "_" + type;
-		Double curRate = curPrivateRate.get(key);  //取出当前的实际概率
+		Double curRate = CUR_PRIVATE_RATE.get(key);  //取出当前的实际概率
 		if (curRate == null) {
 			curRate = realRate;
 		}
-		Integer lastRate = lastPrivateRate.get(key);
+		Integer lastRate = LAST_PRIVATE_RATE.get(key);
 		if (lastRate == null || lastRate != rate) {
 			curRate = realRate;
 		}
 
-		lastPrivateRate.put(key, rate);
+		LAST_PRIVATE_RATE.put(key, rate);
 		if (ThreadLocalRandom.current().nextDouble() < curRate) {
 			//成功重置
-			curPrivateRate.put(key, realRate);
+			CUR_PRIVATE_RATE.put(key, realRate);
 			return true;
 		} else {//失败翻倍
-			curPrivateRate.put(key, curRate * 2);
+			CUR_PRIVATE_RATE.put(key, curRate * 2);
 			return false;
 		}
 	}

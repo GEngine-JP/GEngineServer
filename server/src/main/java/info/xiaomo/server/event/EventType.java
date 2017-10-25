@@ -6,6 +6,7 @@ package info.xiaomo.server.event;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  * <p>
+ *
  * @author : xiaomo
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
@@ -15,11 +16,29 @@ package info.xiaomo.server.event;
  * Copyright(©) 2017 by xiaomo.
  */
 public enum EventType {
+    /**
+     * 登录
+     */
     LOGIN,
+    /**
+     * 登出
+     */
     LOGOUT,
+    /**
+     * 服务器分钟心跳
+     */
     SERVER_MINUTE_HEART,
+    /**
+     * 服务器零点事件
+     */
     SERVER_MIDNIGHT,
+    /**
+     * 服务器秒心跳
+     */
     SERVER_SECOND_HEART,
-    SERVER_SHUTDOWN;
+    /**
+     * 关服事件
+     */
+    SERVER_SHUTDOWN
 
 }

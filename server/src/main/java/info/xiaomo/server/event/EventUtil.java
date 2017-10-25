@@ -19,7 +19,7 @@ public class EventUtil {
     /**
      * 游戏启动就初始化的监听者列表
      */
-    private final static Map<EventType, List<IEventListener>> preparedListeners = new HashMap<>();
+    private final static Map<EventType, List<IEventListener>> PREPARED_LISTENERS = new HashMap<>();
 
     /**
      * 游戏运行中动态添加的监听者列表
@@ -27,7 +27,7 @@ public class EventUtil {
     private final static Logger LOGGER = LoggerFactory.getLogger(EventUtil.class);
 
     static void addListener(IEventListener listener, EventType type) {
-        List<IEventListener> listenerList = preparedListeners.computeIfAbsent(type, k -> new ArrayList<>());
+        List<IEventListener> listenerList = PREPARED_LISTENERS.computeIfAbsent(type, k -> new ArrayList<>());
         listenerList.add(listener);
     }
 
@@ -37,7 +37,7 @@ public class EventUtil {
 
     public static void fireEvent(EventType type, Object obj) {
 
-        List<IEventListener> listenerList = preparedListeners.get(type);
+        List<IEventListener> listenerList = PREPARED_LISTENERS.get(type);
         if (listenerList != null) {
             for (IEventListener listener : listenerList) {
                 try {

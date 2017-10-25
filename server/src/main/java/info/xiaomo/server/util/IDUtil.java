@@ -4,12 +4,15 @@ import info.xiaomo.server.server.GameContext;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * @author qq
+ */
 public class IDUtil {
 
 	/**
 	 * 2017年4月1日凌晨
 	 */
-	public static final long _2017_4_1_0_0_0_0 = 1490976000000L;
+	public static final long TIME_2017_4_1_0_0_0_0 = 1490976000000L;
 	/**
 	 * 计数器
 	 */
@@ -21,14 +24,14 @@ public class IDUtil {
 	private static long curSec = System.currentTimeMillis() / 1000L;
 
 	private static long nowSec = getNowSec();
-	
+
 	private static final AtomicInteger INSTANCE_ID = new AtomicInteger(10000);
 
 	/**
 	 * 锁对象
 	 */
 
-	private final static Object obj = new Object();
+	private final static Object OBJ = new Object();
 
 	/**
 	 * 获取一个唯一ID ID 是一个64位long 16位服务器id + 48位时间秒数 + 16位自增ID
@@ -37,12 +40,12 @@ public class IDUtil {
 	 * 规则：1、服务器id不变 ，2、时间随着当前时间变更，3、自增id如果从1到65000后，ID复位，此时需要时间增1防止重复
 	 * 4、自增后的时间小于了当前时间，那么就更新当前时间
 	 *
-	 * @return
+	 * @return long
 	 */
 	public static long getId() {
 		int nowId;
 		long nowCurSec = System.currentTimeMillis() / 1000L;
-		synchronized (obj) {
+		synchronized (OBJ) {
 			// ID增1
 			id += 1;
 			// 当前ID赋值id
@@ -70,7 +73,7 @@ public class IDUtil {
 	public static long getNewId() {
 		int nowId;
 		long now = getNowSec();
-		synchronized (obj) {
+		synchronized (OBJ) {
 			id += 1;
 			if (id > 65000) {
 				id = 0;
@@ -87,9 +90,9 @@ public class IDUtil {
 	}
 
 	private static long getNowSec() {
-		return (System.currentTimeMillis() - _2017_4_1_0_0_0_0) / 1000L;
+		return (System.currentTimeMillis() - TIME_2017_4_1_0_0_0_0) / 1000L;
 	}
-	
+
 	public static int getInstanceId(){
 		return INSTANCE_ID.incrementAndGet();
 	}

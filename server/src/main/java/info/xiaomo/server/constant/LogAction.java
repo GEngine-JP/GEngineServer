@@ -2,8 +2,10 @@ package info.xiaomo.server.constant;
 
 public enum LogAction {
 
-    GM(1, "gm产生"),
-    ;
+    /**
+     * gm
+     */
+    GM(1, "gm产生"),;
 
     private int code;
 

@@ -12,6 +12,7 @@ import java.util.Map;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  * <p>
+ *
  * @author : xiaomo
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
@@ -22,7 +23,9 @@ import java.util.Map;
  */
 public enum GMCommand {
 
-
+    /**
+     * 关服
+     */
     关服(1);
 
     private int gmLevel;
@@ -35,26 +38,26 @@ public enum GMCommand {
         return gmLevel;
     }
 
-    private static final Map<String, GMCommand> commandMap = new HashMap<>();
+    private static final Map<String, GMCommand> COMMAND_MAP = new HashMap<>();
 
-    private static final Map<GMCommand, GM> GMMap = new HashMap<>();
+    private static final Map<GMCommand, GM> G_M_MAP = new HashMap<>();
 
     static {
         for (GMCommand command : GMCommand.values()) {
-            commandMap.put(command.name(), command);
+            COMMAND_MAP.put(command.name(), command);
         }
     }
 
     static {
-        GMMap.put(GMCommand.关服, new CloseServerGM());
+        G_M_MAP.put(GMCommand.关服, new CloseServerGM());
     }
 
     public static GMCommand getCommand(String command) {
-        return commandMap.get(command);
+        return COMMAND_MAP.get(command);
     }
 
     public static GM getGm(GMCommand command) {
-        return GMMap.get(command);
+        return G_M_MAP.get(command);
     }
 
 }
