@@ -26,8 +26,8 @@ public class RandomUtil {
 	private static final Map<String, Integer> LAST_PRIVATE_RATE = new ConcurrentHashMap<>();
 	
     private static final Logger LOGGER = LoggerFactory.getLogger(RandomUtil.class);
-    
-    private static final Map<Integer, Double> PRIVATE_RATE_INIT_MAP = new HashMap<>();
+
+    private static final Map<Integer, Double> PRIVATE_RATE_INIT_MAP = new HashMap<>(10);
     
     /**
      * 随机产生min到max之间的一个小数值，包含min和不包含max

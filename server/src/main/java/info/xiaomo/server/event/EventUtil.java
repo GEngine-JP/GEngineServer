@@ -19,7 +19,7 @@ public class EventUtil {
     /**
      * 游戏启动就初始化的监听者列表
      */
-    private final static Map<EventType, List<IEventListener>> PREPARED_LISTENERS = new HashMap<>();
+    private final static Map<EventType, List<IEventListener>> PREPARED_LISTENERS = new HashMap<>(10);
 
     /**
      * 游戏运行中动态添加的监听者列表

@@ -38,9 +38,9 @@ public enum GMCommand {
         return gmLevel;
     }
 
-    private static final Map<String, GMCommand> COMMAND_MAP = new HashMap<>();
+    private static final Map<String, GMCommand> COMMAND_MAP = new HashMap<>(10);
 
-    private static final Map<GMCommand, GM> G_M_MAP = new HashMap<>();
+    private static final Map<GMCommand, GM> G_M_MAP = new HashMap<>(10);
 
     static {
         for (GMCommand command : GMCommand.values()) {

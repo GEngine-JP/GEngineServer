@@ -16,7 +16,7 @@ import java.util.Map;
 public class IntegerMapConverter implements IConverter<int[], Map<Integer, Integer>> {
     @Override
     public Map<Integer, Integer> convert(int[] ints) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>(10);
         if (ints != null) {
             for (int i = 1; i < ints.length; i += 2) {
                 map.put(ints[i - 1], ints[i]);

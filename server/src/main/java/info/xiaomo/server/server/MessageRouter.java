@@ -20,7 +20,7 @@ public class MessageRouter implements INetworkConsumer {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MessageRouter.class);
 
-    private Map<Integer, IProcessor> processors = new HashMap<>();
+    private Map<Integer, IProcessor> processors = new HashMap<>(10);
 
     private IMessageAndHandler msgPool;
 
