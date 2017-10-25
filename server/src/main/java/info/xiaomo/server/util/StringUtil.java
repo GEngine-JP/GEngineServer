@@ -149,17 +149,15 @@ public class StringUtil {
      * @return
      */
     public static Map<Integer, Integer> strToIntMap(String str) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<>(10);
         if (isBlank(str)) {
             return map;
         } else {
             String[] allArray = str.split(Symbol.AND);
-            if (allArray != null) {
-                for (int i = 0; i < allArray.length; i++) {
-                    String[] strIntArr = allArray[i].split(Symbol.JINHAO);
-                    if (strIntArr != null && strIntArr.length == 2) {
-                        map.put(Cast.toInteger(strIntArr[0]), Cast.toInteger(strIntArr[1]));
-                    }
+            for (int i = 0; i < allArray.length; i++) {
+                String[] strIntArr = allArray[i].split(Symbol.JINHAO);
+                if (strIntArr != null && strIntArr.length == 2) {
+                    map.put(Cast.toInteger(strIntArr[0]), Cast.toInteger(strIntArr[1]));
                 }
             }
         }
@@ -173,7 +171,7 @@ public class StringUtil {
      * @return
      */
     public static Map<Integer, Integer> strToIntMap2(String str) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<>(10);
         if (isBlank(str)) {
             return map;
         } else {
