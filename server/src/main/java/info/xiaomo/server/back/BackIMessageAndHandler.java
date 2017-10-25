@@ -2,8 +2,8 @@ package info.xiaomo.server.back;
 
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.gameCore.network.AbstractHandler;
-import info.xiaomo.gameCore.network.IMessageAndHandler;
+import info.xiaomo.core.network.AbstractHandler;
+import info.xiaomo.core.network.IMessageAndHandler;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -2,7 +2,7 @@ package info.xiaomo.server.processor;
 
 
 import info.xiaomo.gameCore.base.concurrent.command.IQueueDriverCommand;
-import info.xiaomo.gameCore.network.IProcessor;
+import info.xiaomo.core.network.IProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

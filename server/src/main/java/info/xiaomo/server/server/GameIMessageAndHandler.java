@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.gameCore.network.AbstractHandler;
-import info.xiaomo.gameCore.network.IMessageAndHandler;
+import info.xiaomo.core.network.AbstractHandler;
+import info.xiaomo.core.network.IMessageAndHandler;
 import info.xiaomo.server.protocol.UserProto.LoginRequest;
 import info.xiaomo.server.protocol.UserProto.LoginResponse;
 import info.xiaomo.server.system.user.handler.LoginHandler;

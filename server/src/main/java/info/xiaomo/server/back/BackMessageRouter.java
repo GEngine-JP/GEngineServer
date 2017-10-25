@@ -1,7 +1,7 @@
 package info.xiaomo.server.back;
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.gameCore.network.INetworkConsumer;
+import info.xiaomo.core.network.INetworkConsumer;
 import io.netty.channel.Channel;
 
 public class BackMessageRouter implements INetworkConsumer {

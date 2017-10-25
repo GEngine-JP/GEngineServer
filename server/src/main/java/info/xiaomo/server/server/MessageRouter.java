@@ -2,10 +2,10 @@ package info.xiaomo.server.server;
 
 import com.google.protobuf.AbstractMessage;
 import info.xiaomo.gameCore.base.common.AttributeUtil;
-import info.xiaomo.gameCore.network.AbstractHandler;
-import info.xiaomo.gameCore.network.IMessageAndHandler;
-import info.xiaomo.gameCore.network.IProcessor;
-import info.xiaomo.gameCore.network.INetworkConsumer;
+import info.xiaomo.core.network.AbstractHandler;
+import info.xiaomo.core.network.IMessageAndHandler;
+import info.xiaomo.core.network.IProcessor;
+import info.xiaomo.core.network.INetworkConsumer;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
