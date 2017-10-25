@@ -1,7 +1,7 @@
 package info.xiaomo.server.system.gm;
 
-import info.xiaomo.server.system.gm.command.GM;
-import info.xiaomo.server.system.gm.command.impl.CloseServerGM;
+import info.xiaomo.server.system.gm.command.Gm;
+import info.xiaomo.server.system.gm.command.impl.CloseServerGm;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public enum GMCommand {
 
     private static final Map<String, GMCommand> COMMAND_MAP = new HashMap<>(10);
 
-    private static final Map<GMCommand, GM> G_M_MAP = new HashMap<>(10);
+    private static final Map<GMCommand, Gm> G_M_MAP = new HashMap<>(10);
 
     static {
         for (GMCommand command : GMCommand.values()) {
@@ -49,14 +49,14 @@ public enum GMCommand {
     }
 
     static {
-        G_M_MAP.put(GMCommand.关服, new CloseServerGM());
+        G_M_MAP.put(GMCommand.关服, new CloseServerGm());
     }
 
     public static GMCommand getCommand(String command) {
         return COMMAND_MAP.get(command);
     }
 
-    public static GM getGm(GMCommand command) {
+    public static Gm getGm(GMCommand command) {
         return G_M_MAP.get(command);
     }
 

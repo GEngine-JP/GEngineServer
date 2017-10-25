@@ -16,7 +16,7 @@ import info.xiaomo.server.server.Session;
  * desc  : gm命令接口
  * Copyright(©) 2017 by xiaomo.
  */
-public interface GM {
+public interface Gm {
 
     /**
      * 执行gm

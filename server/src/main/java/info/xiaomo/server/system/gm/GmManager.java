@@ -2,7 +2,7 @@ package info.xiaomo.server.system.gm;
 
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.server.Session;
-import info.xiaomo.server.system.gm.command.GM;
+import info.xiaomo.server.system.gm.command.Gm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,17 +20,17 @@ import org.slf4j.LoggerFactory;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class GMManager {
+public class GmManager {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(GMManager.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(GmManager.class);
 
-    private static GMManager ourInstance = new GMManager();
+    private static GmManager ourInstance = new GmManager();
 
-    public static GMManager getInstance() {
+    public static GmManager getInstance() {
         return ourInstance;
     }
 
-    private GMManager() {
+    private GmManager() {
     }
 
     public void execGMCmdFromGame(Session session, String command) {
@@ -68,7 +68,7 @@ public class GMManager {
             return "你没有权限执行此GM命令";
         }
 
-        GM gm = GMCommand.getGm(command);
+        Gm gm = GMCommand.getGm(command);
 
         String ret = gm.executeGM(session, commandArray);
 

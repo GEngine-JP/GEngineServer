@@ -1,7 +1,7 @@
 package info.xiaomo.server.system.gm.command.impl;
 
 import info.xiaomo.server.server.Session;
-import info.xiaomo.server.system.gm.command.GM;
+import info.xiaomo.server.system.gm.command.Gm;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -17,7 +17,7 @@ import info.xiaomo.server.system.gm.command.GM;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class CloseServerGM implements GM {
+public class CloseServerGm implements Gm {
 
 
     @Override
