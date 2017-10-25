@@ -13,7 +13,7 @@ import static info.xiaomo.server.event.EventUtil.addListener;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  * <p>
- * author: xiaomo
+ * @author : xiaomo
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856

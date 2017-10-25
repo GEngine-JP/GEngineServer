@@ -9,7 +9,7 @@ import info.xiaomo.server.config.beans.ItemConfig;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  * <p>
- * author: xiaomo
+ * @author : xiaomo
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
