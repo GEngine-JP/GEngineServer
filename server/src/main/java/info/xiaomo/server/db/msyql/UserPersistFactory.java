@@ -1,7 +1,7 @@
 package info.xiaomo.server.db.msyql;
 
-import info.xiaomo.gameCore.persist.persist.PersistFactory;
-import info.xiaomo.gameCore.persist.persist.Persistable;
+import info.xiaomo.core.persist.persist.PersistFactory;
+import info.xiaomo.core.persist.persist.Persistable;
 import info.xiaomo.server.db.DataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.util.JdbcUtil;

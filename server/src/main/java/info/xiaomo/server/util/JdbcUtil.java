@@ -1,9 +1,8 @@
 package info.xiaomo.server.util;
 
 
-
-import info.xiaomo.gameCore.persist.jdbc.JdbcTemplate;
-import info.xiaomo.gameCore.persist.jdbc.RowMapper;
+import info.xiaomo.core.persist.jdbc.JdbcTemplate;
+import info.xiaomo.core.persist.jdbc.RowMapper;
 
 import java.sql.SQLException;
 import java.util.List;

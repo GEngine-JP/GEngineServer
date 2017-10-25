@@ -1,12 +1,12 @@
 package info.xiaomo.server.db;
 
 
-import info.xiaomo.gameCore.persist.MysqlDataProvider;
-import info.xiaomo.gameCore.persist.jdbc.ConnectionPool;
-import info.xiaomo.gameCore.persist.jdbc.DruidConnectionPool;
-import info.xiaomo.gameCore.persist.jdbc.JdbcTemplate;
-import info.xiaomo.gameCore.persist.persist.CacheAble;
-import info.xiaomo.gameCore.persist.persist.Persistable;
+import info.xiaomo.core.persist.MysqlDataProvider;
+import info.xiaomo.core.persist.jdbc.ConnectionPool;
+import info.xiaomo.core.persist.jdbc.DruidConnectionPool;
+import info.xiaomo.core.persist.jdbc.JdbcTemplate;
+import info.xiaomo.core.persist.persist.CacheAble;
+import info.xiaomo.core.persist.persist.Persistable;
 import info.xiaomo.server.db.mapper.UserMapper;
 import info.xiaomo.server.db.msyql.UserPersistFactory;
 import info.xiaomo.server.entify.User;
