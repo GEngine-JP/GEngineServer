@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * @author xiaomo
+ */
 public class ExecutorUtil {
 
     public static final ScheduledExecutorService COMMON_LOGIC_EXECUTOR = Executors.newScheduledThreadPool(4, new ThreadFactory() {

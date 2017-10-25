@@ -11,6 +11,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @author xiaomo
+ */
 public class StringUtil {
     /**
      * ip正则表达式

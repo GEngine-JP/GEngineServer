@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Calendar;
 
+/**
+ * @author xiaomo
+ */
 public class ScheduleManager {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ScheduleManager.class);

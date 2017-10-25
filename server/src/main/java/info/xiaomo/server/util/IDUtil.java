@@ -5,7 +5,7 @@ import info.xiaomo.server.server.GameContext;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author qq
+ * @author xiaomo
  */
 public class IDUtil {
 

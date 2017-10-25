@@ -1,5 +1,9 @@
 package info.xiaomo.server.constant;
 
+/**
+ * @author xiaomo
+ */
+
 public enum LogAction {
 
     /**

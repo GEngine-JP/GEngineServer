@@ -7,6 +7,9 @@ import info.xiaomo.server.server.SessionManager;
 
 import java.util.Collection;
 
+/**
+ * @author xiaomo
+ */
 public class MessageUtil {
 
     public static void sendMsg(AbstractMessage msg, long id) {

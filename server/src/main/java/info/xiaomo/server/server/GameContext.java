@@ -7,6 +7,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 
+/**
+ * @author xiaomo
+ */
 public class GameContext {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(GameContext.class);
@@ -48,14 +51,14 @@ public class GameContext {
 	private static ServerOption option;
 
 	private static GameServer gameServer;
-	
+
 	private static BackServer backServer;
-	
+
 	/**
 	 * 服务器关闭逻辑已经是否已经执行
 	 */
 	public static boolean serverCloseLogicExecuted;
-	
+
 	/**
 	 * 游戏服务器关闭
 	 */
@@ -96,7 +99,7 @@ public class GameContext {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public static BackServer createBackServer() {
 		try {
 			backServer = new BackServer(option);
@@ -161,7 +164,7 @@ public class GameContext {
 	public static GameServer getGameServer() {
 		return gameServer;
 	}
-	
+
 	public static BackServer getBackServer(){
 		return backServer;
 	}
@@ -189,7 +192,6 @@ public class GameContext {
 	public static void setClosed(boolean closed) {
 		GameContext.closed = closed;
 	}
-	
-	
+
 
 }

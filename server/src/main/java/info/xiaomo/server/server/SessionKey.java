@@ -2,6 +2,9 @@ package info.xiaomo.server.server;
 
 import io.netty.util.AttributeKey;
 
+/**
+ * @author xiaomo
+ */
 public class SessionKey {
     public static final AttributeKey<Session> SESSION = AttributeKey.newInstance("SESSION");
 

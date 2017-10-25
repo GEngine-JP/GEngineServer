@@ -7,6 +7,9 @@ import info.xiaomo.core.persist.jdbc.RowMapper;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * @author xiaomo
+ */
 public class JdbcUtil {
 
     private static JdbcTemplate template;

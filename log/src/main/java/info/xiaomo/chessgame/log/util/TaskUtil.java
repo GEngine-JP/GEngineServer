@@ -4,6 +4,9 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author xiaomo
+ */
 public class TaskUtil {
 
 	private static final ScheduledThreadPoolExecutor SCHEDULED_THREAD_POOL_EXECUTOR = new ScheduledThreadPoolExecutor(15, new ThreadFactory() {
@@ -19,7 +22,7 @@ public class TaskUtil {
 
 		SCHEDULED_THREAD_POOL_EXECUTOR.scheduleAtFixedRate(task, initialDelay, period, unit);
 	}
-	
+
 //	public static void main(String[] args) {
 //		byte[] bytes = {0, 0, 1, 22};
 //		Input input = KryoHelper.getInput();

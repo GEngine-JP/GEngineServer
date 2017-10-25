@@ -3,6 +3,9 @@ package info.xiaomo.server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author xiaomo
+ */
 public class StopServerClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(StopServerClient.class);
 

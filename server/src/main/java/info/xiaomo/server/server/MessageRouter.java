@@ -13,6 +13,9 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author xiaomo
+ */
 public class MessageRouter implements INetworkConsumer {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MessageRouter.class);

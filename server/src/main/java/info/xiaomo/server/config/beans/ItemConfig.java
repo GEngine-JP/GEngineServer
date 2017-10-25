@@ -12,6 +12,9 @@ import lombok.ToString;
 
 import java.util.Map;
 
+/**
+ * @author xiaomo
+ */
 @ToString
 @Data
 @Config

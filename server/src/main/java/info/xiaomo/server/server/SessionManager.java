@@ -8,6 +8,9 @@ import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+/**
+ *
+ */
 @Slf4j
 public class SessionManager {
 

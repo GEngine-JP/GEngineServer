@@ -10,6 +10,9 @@ import info.xiaomo.server.system.user.handler.LoginHandler;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author xiaomo
+ */
 public class GameIMessageAndHandler implements IMessageAndHandler {
 
     // 消息类字典

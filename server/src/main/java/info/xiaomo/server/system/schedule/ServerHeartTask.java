@@ -7,6 +7,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Calendar;
 
+/**
+ * @author xiaomo
+ */
 public class ServerHeartTask implements Runnable {
 
     private static Logger LOGGER = LoggerFactory.getLogger(ServerHeartTask.class);
