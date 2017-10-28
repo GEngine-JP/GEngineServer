@@ -3,8093 +3,8328 @@
 
 package info.xiaomo.server.protocol;
 
+import javax.annotation.Generated;
+
+@Generated("protobuf")
 public final class UserProto {
-  private UserProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private UserProto() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  /**
-   * Protobuf enum {@code user.GoingDownReason}
-   */
-  public enum GoingDownReason
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <pre>
-     *维护
-     * </pre>
-     *
-     * <code>Maintain = 0;</code>
-     */
-    Maintain(0),
-    /**
-     * <pre>
-     *封禁
-     * </pre>
-     *
-     * <code>Block = 1;</code>
-     */
-    Block(1),
-    /**
-     * <pre>
-     *其他设备登录
-     * </pre>
-     *
-     * <code>AnotherSession = 2;</code>
-     */
-    AnotherSession(2),
-    UNRECOGNIZED(-1),
-    ;
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistryLite registry) {
+    }
 
-    /**
-     * <pre>
-     *维护
-     * </pre>
-     *
-     * <code>Maintain = 0;</code>
-     */
-    public static final int Maintain_VALUE = 0;
-    /**
-     * <pre>
-     *封禁
-     * </pre>
-     *
-     * <code>Block = 1;</code>
-     */
-    public static final int Block_VALUE = 1;
-    /**
-     * <pre>
-     *其他设备登录
-     * </pre>
-     *
-     * <code>AnotherSession = 2;</code>
-     */
-    public static final int AnotherSession_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions(
+                (com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
     /**
-     * @deprecated Use {@link #forNumber(int)} instead.
+     * Protobuf enum {@code user.GoingDownReason}
      */
-    @Deprecated
-    public static GoingDownReason valueOf(int value) {
-      return forNumber(value);
-    }
+    public enum GoingDownReason
+            implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         * <pre>
+         *维护
+         * </pre>
+         *
+         * <code>Maintain = 0;</code>
+         */
+        Maintain(0),
+        /**
+         * <pre>
+         *封禁
+         * </pre>
+         *
+         * <code>Block = 1;</code>
+         */
+        Block(1),
+        /**
+         * <pre>
+         *其他设备登录
+         * </pre>
+         *
+         * <code>AnotherSession = 2;</code>
+         */
+        AnotherSession(2),
+        UNRECOGNIZED(-1),;
 
-    public static GoingDownReason forNumber(int value) {
-      switch (value) {
-        case 0: return Maintain;
-        case 1: return Block;
-        case 2: return AnotherSession;
-        default: return null;
-      }
-    }
+        /**
+         * <pre>
+         *维护
+         * </pre>
+         *
+         * <code>Maintain = 0;</code>
+         */
+        public static final int Maintain_VALUE = 0;
+        /**
+         * <pre>
+         *封禁
+         * </pre>
+         *
+         * <code>Block = 1;</code>
+         */
+        public static final int Block_VALUE = 1;
+        /**
+         * <pre>
+         *其他设备登录
+         * </pre>
+         *
+         * <code>AnotherSession = 2;</code>
+         */
+        public static final int AnotherSession_VALUE = 2;
 
-    public static com.google.protobuf.Internal.EnumLiteMap<GoingDownReason>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        GoingDownReason> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<GoingDownReason>() {
-            public GoingDownReason findValueByNumber(int number) {
-              return GoingDownReason.forNumber(number);
+
+        public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+                throw new IllegalArgumentException(
+                        "Can't get the number of an unknown enum value.");
             }
-          };
+            return value;
+        }
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        /**
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @Deprecated
+        public static GoingDownReason valueOf(int value) {
+            return forNumber(value);
+        }
+
+        public static GoingDownReason forNumber(int value) {
+            switch (value) {
+                case 0: return Maintain;
+                case 1: return Block;
+                case 2: return AnotherSession;
+                default: return null;
+            }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<GoingDownReason>
+        internalGetValueMap() {
+            return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+                GoingDownReason> internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<GoingDownReason>() {
+                    public GoingDownReason findValueByNumber(int number) {
+                        return GoingDownReason.forNumber(number);
+                    }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
+            return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
+            return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return UserProto.getDescriptor().getEnumTypes().get(0);
+            return UserProto.getDescriptor().getEnumTypes().get(0);
+        }
+
+        private static final GoingDownReason[] VALUES = values();
+
+        public static GoingDownReason valueOf(
+                com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+                throw new IllegalArgumentException(
+                        "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+                return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private GoingDownReason(int value) {
+            this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:user.GoingDownReason)
     }
 
-    private static final GoingDownReason[] VALUES = values();
+    public interface RoleInfoOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.RoleInfo)
+            com.google.protobuf.MessageOrBuilder {
 
-    public static GoingDownReason valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
+        /**
+         * <pre>
+         *角色ID
+         * </pre>
+         *
+         * <code>int64 roleId = 1;</code>
+         */
+        long getRoleId();
 
-    private final int value;
+        /**
+         * <pre>
+         *名称
+         * </pre>
+         *
+         * <code>string roleName = 2;</code>
+         */
+        String getRoleName();
 
-    private GoingDownReason(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:user.GoingDownReason)
-  }
-
-  public interface RoleInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.RoleInfo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *角色ID
-     * </pre>
-     *
-     * <code>int64 roleId = 1;</code>
-     */
-    long getRoleId();
-
-    /**
-     * <pre>
-     *名称
-     * </pre>
-     *
-     * <code>string roleName = 2;</code>
-     */
-    String getRoleName();
-    /**
-     * <pre>
-     *名称
-     * </pre>
-     *
-     * <code>string roleName = 2;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         *名称
+         * </pre>
+         *
+         * <code>string roleName = 2;</code>
+         */
+        com.google.protobuf.ByteString
         getRoleNameBytes();
 
-    /**
-     * <pre>
-     *等级
-     * </pre>
-     *
-     * <code>int32 level = 3;</code>
-     */
-    int getLevel();
+        /**
+         * <pre>
+         *等级
+         * </pre>
+         *
+         * <code>int32 level = 3;</code>
+         */
+        int getLevel();
 
-    /**
-     * <pre>
-     *性别
-     * </pre>
-     *
-     * <code>int32 sex = 4;</code>
-     */
-    int getSex();
+        /**
+         * <pre>
+         *性别
+         * </pre>
+         *
+         * <code>int32 sex = 4;</code>
+         */
+        int getSex();
 
-    /**
-     * <pre>
-     *所在地图
-     * </pre>
-     *
-     * <code>int32 mapId = 5;</code>
-     */
-    int getMapId();
+        /**
+         * <pre>
+         *所在地图
+         * </pre>
+         *
+         * <code>int32 mapId = 5;</code>
+         */
+        int getMapId();
 
-    /**
-     * <pre>
-     *所在分线
-     * </pre>
-     *
-     * <code>int32 line = 6;</code>
-     */
-    int getLine();
+        /**
+         * <pre>
+         *所在分线
+         * </pre>
+         *
+         * <code>int32 line = 6;</code>
+         */
+        int getLine();
 
-    /**
-     * <pre>
-     *当前服务器类型
-     * </pre>
-     *
-     * <code>int32 curServerType = 7;</code>
-     */
-    int getCurServerType();
-  }
-  /**
-   * Protobuf type {@code user.RoleInfo}
-   */
-  public  static final class RoleInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.RoleInfo)
-      RoleInfoOrBuilder {
-    // Use RoleInfo.newBuilder() to construct.
-    private RoleInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private RoleInfo() {
-      roleId_ = 0L;
-      roleName_ = "";
-      level_ = 0;
-      sex_ = 0;
-      mapId_ = 0;
-      line_ = 0;
-      curServerType_ = 0;
+        /**
+         * <pre>
+         *当前服务器类型
+         * </pre>
+         *
+         * <code>int32 curServerType = 7;</code>
+         */
+        int getCurServerType();
     }
 
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private RoleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              roleId_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              String s = input.readStringRequireUtf8();
-
-              roleName_ = s;
-              break;
-            }
-            case 24: {
-
-              level_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              sex_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              mapId_ = input.readInt32();
-              break;
-            }
-            case 48: {
-
-              line_ = input.readInt32();
-              break;
-            }
-            case 56: {
-
-              curServerType_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return UserProto.internal_static_user_RoleInfo_descriptor;
-    }
-
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_RoleInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              RoleInfo.class, Builder.class);
-    }
-
-    public static final int ROLEID_FIELD_NUMBER = 1;
-    private long roleId_;
-    /**
-     * <pre>
-     *角色ID
-     * </pre>
-     *
-     * <code>int64 roleId = 1;</code>
-     */
-    public long getRoleId() {
-      return roleId_;
-    }
-
-    public static final int ROLENAME_FIELD_NUMBER = 2;
-    private volatile Object roleName_;
-    /**
-     * <pre>
-     *名称
-     * </pre>
-     *
-     * <code>string roleName = 2;</code>
-     */
-    public String getRoleName() {
-      Object ref = roleName_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        roleName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *名称
-     * </pre>
-     *
-     * <code>string roleName = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRoleNameBytes() {
-      Object ref = roleName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        roleName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LEVEL_FIELD_NUMBER = 3;
-    private int level_;
-    /**
-     * <pre>
-     *等级
-     * </pre>
-     *
-     * <code>int32 level = 3;</code>
-     */
-    public int getLevel() {
-      return level_;
-    }
-
-    public static final int SEX_FIELD_NUMBER = 4;
-    private int sex_;
-    /**
-     * <pre>
-     *性别
-     * </pre>
-     *
-     * <code>int32 sex = 4;</code>
-     */
-    public int getSex() {
-      return sex_;
-    }
-
-    public static final int MAPID_FIELD_NUMBER = 5;
-    private int mapId_;
-    /**
-     * <pre>
-     *所在地图
-     * </pre>
-     *
-     * <code>int32 mapId = 5;</code>
-     */
-    public int getMapId() {
-      return mapId_;
-    }
-
-    public static final int LINE_FIELD_NUMBER = 6;
-    private int line_;
-    /**
-     * <pre>
-     *所在分线
-     * </pre>
-     *
-     * <code>int32 line = 6;</code>
-     */
-    public int getLine() {
-      return line_;
-    }
-
-    public static final int CURSERVERTYPE_FIELD_NUMBER = 7;
-    private int curServerType_;
-    /**
-     * <pre>
-     *当前服务器类型
-     * </pre>
-     *
-     * <code>int32 curServerType = 7;</code>
-     */
-    public int getCurServerType() {
-      return curServerType_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (roleId_ != 0L) {
-        output.writeInt64(1, roleId_);
-      }
-      if (!getRoleNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleName_);
-      }
-      if (level_ != 0) {
-        output.writeInt32(3, level_);
-      }
-      if (sex_ != 0) {
-        output.writeInt32(4, sex_);
-      }
-      if (mapId_ != 0) {
-        output.writeInt32(5, mapId_);
-      }
-      if (line_ != 0) {
-        output.writeInt32(6, line_);
-      }
-      if (curServerType_ != 0) {
-        output.writeInt32(7, curServerType_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (roleId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, roleId_);
-      }
-      if (!getRoleNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roleName_);
-      }
-      if (level_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, level_);
-      }
-      if (sex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, sex_);
-      }
-      if (mapId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, mapId_);
-      }
-      if (line_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, line_);
-      }
-      if (curServerType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, curServerType_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof RoleInfo)) {
-        return super.equals(obj);
-      }
-      RoleInfo other = (RoleInfo) obj;
-
-      boolean result = true;
-      result = result && (getRoleId()
-          == other.getRoleId());
-      result = result && getRoleName()
-          .equals(other.getRoleName());
-      result = result && (getLevel()
-          == other.getLevel());
-      result = result && (getSex()
-          == other.getSex());
-      result = result && (getMapId()
-          == other.getMapId());
-      result = result && (getLine()
-          == other.getLine());
-      result = result && (getCurServerType()
-          == other.getCurServerType());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ROLEID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoleId());
-      hash = (37 * hash) + ROLENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getRoleName().hashCode();
-      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getLevel();
-      hash = (37 * hash) + SEX_FIELD_NUMBER;
-      hash = (53 * hash) + getSex();
-      hash = (37 * hash) + MAPID_FIELD_NUMBER;
-      hash = (53 * hash) + getMapId();
-      hash = (37 * hash) + LINE_FIELD_NUMBER;
-      hash = (53 * hash) + getLine();
-      hash = (37 * hash) + CURSERVERTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getCurServerType();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static RoleInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RoleInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RoleInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RoleInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RoleInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RoleInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RoleInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RoleInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RoleInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static RoleInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RoleInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RoleInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(RoleInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.RoleInfo}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.RoleInfo)
-        RoleInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_RoleInfo_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_RoleInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                RoleInfo.class, Builder.class);
-      }
-
-      // Construct using UserProto.RoleInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class RoleInfo extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.RoleInfo)
+            RoleInfoOrBuilder {
+        // Use RoleInfo.newBuilder() to construct.
+        private RoleInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        roleId_ = 0L;
 
-        roleName_ = "";
-
-        level_ = 0;
-
-        sex_ = 0;
-
-        mapId_ = 0;
-
-        line_ = 0;
-
-        curServerType_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_RoleInfo_descriptor;
-      }
-
-      public RoleInfo getDefaultInstanceForType() {
-        return RoleInfo.getDefaultInstance();
-      }
-
-      public RoleInfo build() {
-        RoleInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private RoleInfo() {
+            roleId_ = 0L;
+            roleName_ = "";
+            level_ = 0;
+            sex_ = 0;
+            mapId_ = 0;
+            line_ = 0;
+            curServerType_ = 0;
         }
-        return result;
-      }
 
-      public RoleInfo buildPartial() {
-        RoleInfo result = new RoleInfo(this);
-        result.roleId_ = roleId_;
-        result.roleName_ = roleName_;
-        result.level_ = level_;
-        result.sex_ = sex_;
-        result.mapId_ = mapId_;
-        result.line_ = line_;
-        result.curServerType_ = curServerType_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RoleInfo) {
-          return mergeFrom((RoleInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(RoleInfo other) {
-        if (other == RoleInfo.getDefaultInstance()) return this;
-        if (other.getRoleId() != 0L) {
-          setRoleId(other.getRoleId());
+        private RoleInfo(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+
+                            roleId_ = input.readInt64();
+                            break;
+                        }
+                        case 18: {
+                            String s = input.readStringRequireUtf8();
+
+                            roleName_ = s;
+                            break;
+                        }
+                        case 24: {
+
+                            level_ = input.readInt32();
+                            break;
+                        }
+                        case 32: {
+
+                            sex_ = input.readInt32();
+                            break;
+                        }
+                        case 40: {
+
+                            mapId_ = input.readInt32();
+                            break;
+                        }
+                        case 48: {
+
+                            line_ = input.readInt32();
+                            break;
+                        }
+                        case 56: {
+
+                            curServerType_ = input.readInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
-        if (!other.getRoleName().isEmpty()) {
-          roleName_ = other.roleName_;
-          onChanged();
-        }
-        if (other.getLevel() != 0) {
-          setLevel(other.getLevel());
-        }
-        if (other.getSex() != 0) {
-          setSex(other.getSex());
-        }
-        if (other.getMapId() != 0) {
-          setMapId(other.getMapId());
-        }
-        if (other.getLine() != 0) {
-          setLine(other.getLine());
-        }
-        if (other.getCurServerType() != 0) {
-          setCurServerType(other.getCurServerType());
-        }
-        onChanged();
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        RoleInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RoleInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long roleId_ ;
-      /**
-       * <pre>
-       *角色ID
-       * </pre>
-       *
-       * <code>int64 roleId = 1;</code>
-       */
-      public long getRoleId() {
-        return roleId_;
-      }
-      /**
-       * <pre>
-       *角色ID
-       * </pre>
-       *
-       * <code>int64 roleId = 1;</code>
-       */
-      public Builder setRoleId(long value) {
-        
-        roleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *角色ID
-       * </pre>
-       *
-       * <code>int64 roleId = 1;</code>
-       */
-      public Builder clearRoleId() {
-        
-        roleId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private Object roleName_ = "";
-      /**
-       * <pre>
-       *名称
-       * </pre>
-       *
-       * <code>string roleName = 2;</code>
-       */
-      public String getRoleName() {
-        Object ref = roleName_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          roleName_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *名称
-       * </pre>
-       *
-       * <code>string roleName = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRoleNameBytes() {
-        Object ref = roleName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          roleName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *名称
-       * </pre>
-       *
-       * <code>string roleName = 2;</code>
-       */
-      public Builder setRoleName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        roleName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *名称
-       * </pre>
-       *
-       * <code>string roleName = 2;</code>
-       */
-      public Builder clearRoleName() {
-        
-        roleName_ = getDefaultInstance().getRoleName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *名称
-       * </pre>
-       *
-       * <code>string roleName = 2;</code>
-       */
-      public Builder setRoleNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        roleName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int level_ ;
-      /**
-       * <pre>
-       *等级
-       * </pre>
-       *
-       * <code>int32 level = 3;</code>
-       */
-      public int getLevel() {
-        return level_;
-      }
-      /**
-       * <pre>
-       *等级
-       * </pre>
-       *
-       * <code>int32 level = 3;</code>
-       */
-      public Builder setLevel(int value) {
-        
-        level_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *等级
-       * </pre>
-       *
-       * <code>int32 level = 3;</code>
-       */
-      public Builder clearLevel() {
-        
-        level_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int sex_ ;
-      /**
-       * <pre>
-       *性别
-       * </pre>
-       *
-       * <code>int32 sex = 4;</code>
-       */
-      public int getSex() {
-        return sex_;
-      }
-      /**
-       * <pre>
-       *性别
-       * </pre>
-       *
-       * <code>int32 sex = 4;</code>
-       */
-      public Builder setSex(int value) {
-        
-        sex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *性别
-       * </pre>
-       *
-       * <code>int32 sex = 4;</code>
-       */
-      public Builder clearSex() {
-        
-        sex_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int mapId_ ;
-      /**
-       * <pre>
-       *所在地图
-       * </pre>
-       *
-       * <code>int32 mapId = 5;</code>
-       */
-      public int getMapId() {
-        return mapId_;
-      }
-      /**
-       * <pre>
-       *所在地图
-       * </pre>
-       *
-       * <code>int32 mapId = 5;</code>
-       */
-      public Builder setMapId(int value) {
-        
-        mapId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *所在地图
-       * </pre>
-       *
-       * <code>int32 mapId = 5;</code>
-       */
-      public Builder clearMapId() {
-        
-        mapId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int line_ ;
-      /**
-       * <pre>
-       *所在分线
-       * </pre>
-       *
-       * <code>int32 line = 6;</code>
-       */
-      public int getLine() {
-        return line_;
-      }
-      /**
-       * <pre>
-       *所在分线
-       * </pre>
-       *
-       * <code>int32 line = 6;</code>
-       */
-      public Builder setLine(int value) {
-        
-        line_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *所在分线
-       * </pre>
-       *
-       * <code>int32 line = 6;</code>
-       */
-      public Builder clearLine() {
-        
-        line_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int curServerType_ ;
-      /**
-       * <pre>
-       *当前服务器类型
-       * </pre>
-       *
-       * <code>int32 curServerType = 7;</code>
-       */
-      public int getCurServerType() {
-        return curServerType_;
-      }
-      /**
-       * <pre>
-       *当前服务器类型
-       * </pre>
-       *
-       * <code>int32 curServerType = 7;</code>
-       */
-      public Builder setCurServerType(int value) {
-        
-        curServerType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *当前服务器类型
-       * </pre>
-       *
-       * <code>int32 curServerType = 7;</code>
-       */
-      public Builder clearCurServerType() {
-        
-        curServerType_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.RoleInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.RoleInfo)
-    private static final RoleInfo DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new RoleInfo();
-    }
-
-    public static RoleInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<RoleInfo>
-        PARSER = new com.google.protobuf.AbstractParser<RoleInfo>() {
-      public RoleInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RoleInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<RoleInfo> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<RoleInfo> getParserForType() {
-      return PARSER;
-    }
-
-    public RoleInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface PlayerAttributeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.PlayerAttribute)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *物理攻击上限
-     * </pre>
-     *
-     * <code>int32 phyAttMax = 1;</code>
-     */
-    int getPhyAttMax();
-
-    /**
-     * <pre>
-     *物理攻击下限
-     * </pre>
-     *
-     * <code>int32 phyAttMin = 2;</code>
-     */
-    int getPhyAttMin();
-
-    /**
-     * <pre>
-     *魔法攻击上限
-     * </pre>
-     *
-     * <code>int32 magicAttMax = 3;</code>
-     */
-    int getMagicAttMax();
-
-    /**
-     * <pre>
-     *魔法攻击下限
-     * </pre>
-     *
-     * <code>int32 magicAttMin = 4;</code>
-     */
-    int getMagicAttMin();
-
-    /**
-     * <pre>
-     *道术攻击上限
-     * </pre>
-     *
-     * <code>int32 taoAttMax = 5;</code>
-     */
-    int getTaoAttMax();
-
-    /**
-     * <pre>
-     *道术攻击下限
-     * </pre>
-     *
-     * <code>int32 taoAttMin = 6;</code>
-     */
-    int getTaoAttMin();
-
-    /**
-     * <pre>
-     *物理防御上限
-     * </pre>
-     *
-     * <code>int32 phyDefMax = 7;</code>
-     */
-    int getPhyDefMax();
-
-    /**
-     * <pre>
-     *物理防御下限
-     * </pre>
-     *
-     * <code>int32 phyDefMin = 8;</code>
-     */
-    int getPhyDefMin();
-
-    /**
-     * <pre>
-     *魔法防御上限
-     * </pre>
-     *
-     * <code>int32 magicDefMax = 9;</code>
-     */
-    int getMagicDefMax();
-
-    /**
-     * <pre>
-     *魔法防御下限
-     * </pre>
-     *
-     * <code>int32 magicDefMin = 10;</code>
-     */
-    int getMagicDefMin();
-
-    /**
-     * <pre>
-     *精准
-     * </pre>
-     *
-     * <code>int32 accurate = 11;</code>
-     */
-    int getAccurate();
-
-    /**
-     * <pre>
-     *闪避
-     * </pre>
-     *
-     * <code>int32 dodge = 12;</code>
-     */
-    int getDodge();
-
-    /**
-     * <pre>
-     *负面恢复
-     * </pre>
-     *
-     * <code>int32 poisonRecover = 13;</code>
-     */
-    int getPoisonRecover();
-
-    /**
-     * <pre>
-     *体力恢复
-     * </pre>
-     *
-     * <code>int32 heathRecover = 14;</code>
-     */
-    int getHeathRecover();
-
-    /**
-     * <pre>
-     *攻击速度
-     * </pre>
-     *
-     * <code>int32 attackSpeed = 15;</code>
-     */
-    int getAttackSpeed();
-
-    /**
-     * <pre>
-     *最大HP
-     * </pre>
-     *
-     * <code>int32 maxHp = 16;</code>
-     */
-    int getMaxHp();
-
-    /**
-     * <pre>
-     *最大MP
-     * </pre>
-     *
-     * <code>int32 maxMp = 17;</code>
-     */
-    int getMaxMp();
-
-    /**
-     * <pre>
-     *魔法恢复
-     * </pre>
-     *
-     * <code>int32 magicRecover = 18;</code>
-     */
-    int getMagicRecover();
-
-    /**
-     * <pre>
-     *幸运
-     * </pre>
-     *
-     * <code>int32 luck = 19;</code>
-     */
-    int getLuck();
-
-    /**
-     * <pre>
-     *暴击率
-     * </pre>
-     *
-     * <code>int32 critical = 20;</code>
-     */
-    int getCritical();
-
-    /**
-     * <pre>
-     *战斗力
-     * </pre>
-     *
-     * <code>int32 nbValue = 21;</code>
-     */
-    int getNbValue();
-
-    /**
-     * <pre>
-     *暴击伤害
-     * </pre>
-     *
-     * <code>int32 criticalDamage = 22;</code>
-     */
-    int getCriticalDamage();
-
-    /**
-     * <pre>
-     *最大内力
-     * </pre>
-     *
-     * <code>int32 maxInnerPower = 23;</code>
-     */
-    int getMaxInnerPower();
-
-    /**
-     * <pre>
-     *抗性
-     * </pre>
-     *
-     * <code>int32 resistance = 24;</code>
-     */
-    int getResistance();
-
-    /**
-     * <pre>
-     *神圣伤害
-     * </pre>
-     *
-     * <code>int32 holyAtt = 25;</code>
-     */
-    int getHolyAtt();
-
-    /**
-     * <pre>
-     *PK伤害加成
-     * </pre>
-     *
-     * <code>int32 pkAtk = 26;</code>
-     */
-    int getPkAtk();
-
-    /**
-     * <pre>
-     *PK防御
-     * </pre>
-     *
-     * <code>int32 pkDef = 27;</code>
-     */
-    int getPkDef();
-  }
-  /**
-   * Protobuf type {@code user.PlayerAttribute}
-   */
-  public  static final class PlayerAttribute extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.PlayerAttribute)
-      PlayerAttributeOrBuilder {
-    // Use PlayerAttribute.newBuilder() to construct.
-    private PlayerAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PlayerAttribute() {
-      phyAttMax_ = 0;
-      phyAttMin_ = 0;
-      magicAttMax_ = 0;
-      magicAttMin_ = 0;
-      taoAttMax_ = 0;
-      taoAttMin_ = 0;
-      phyDefMax_ = 0;
-      phyDefMin_ = 0;
-      magicDefMax_ = 0;
-      magicDefMin_ = 0;
-      accurate_ = 0;
-      dodge_ = 0;
-      poisonRecover_ = 0;
-      heathRecover_ = 0;
-      attackSpeed_ = 0;
-      maxHp_ = 0;
-      maxMp_ = 0;
-      magicRecover_ = 0;
-      luck_ = 0;
-      critical_ = 0;
-      nbValue_ = 0;
-      criticalDamage_ = 0;
-      maxInnerPower_ = 0;
-      resistance_ = 0;
-      holyAtt_ = 0;
-      pkAtk_ = 0;
-      pkDef_ = 0;
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private PlayerAttribute(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              phyAttMax_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              phyAttMin_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              magicAttMax_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              magicAttMin_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              taoAttMax_ = input.readInt32();
-              break;
-            }
-            case 48: {
-
-              taoAttMin_ = input.readInt32();
-              break;
-            }
-            case 56: {
-
-              phyDefMax_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              phyDefMin_ = input.readInt32();
-              break;
-            }
-            case 72: {
-
-              magicDefMax_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              magicDefMin_ = input.readInt32();
-              break;
-            }
-            case 88: {
-
-              accurate_ = input.readInt32();
-              break;
-            }
-            case 96: {
-
-              dodge_ = input.readInt32();
-              break;
-            }
-            case 104: {
-
-              poisonRecover_ = input.readInt32();
-              break;
-            }
-            case 112: {
-
-              heathRecover_ = input.readInt32();
-              break;
-            }
-            case 120: {
-
-              attackSpeed_ = input.readInt32();
-              break;
-            }
-            case 128: {
-
-              maxHp_ = input.readInt32();
-              break;
-            }
-            case 136: {
-
-              maxMp_ = input.readInt32();
-              break;
-            }
-            case 144: {
-
-              magicRecover_ = input.readInt32();
-              break;
-            }
-            case 152: {
-
-              luck_ = input.readInt32();
-              break;
-            }
-            case 160: {
-
-              critical_ = input.readInt32();
-              break;
-            }
-            case 168: {
-
-              nbValue_ = input.readInt32();
-              break;
-            }
-            case 176: {
-
-              criticalDamage_ = input.readInt32();
-              break;
-            }
-            case 184: {
-
-              maxInnerPower_ = input.readInt32();
-              break;
-            }
-            case 192: {
-
-              resistance_ = input.readInt32();
-              break;
-            }
-            case 200: {
-
-              holyAtt_ = input.readInt32();
-              break;
-            }
-            case 208: {
-
-              pkAtk_ = input.readInt32();
-              break;
-            }
-            case 216: {
-
-              pkDef_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_PlayerAttribute_descriptor;
-    }
+            return UserProto.internal_static_user_RoleInfo_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_PlayerAttribute_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              PlayerAttribute.class, Builder.class);
+            return UserProto.internal_static_user_RoleInfo_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            RoleInfo.class, Builder.class);
+        }
+
+        public static final int ROLEID_FIELD_NUMBER = 1;
+        private long roleId_;
+
+        /**
+         * <pre>
+         *角色ID
+         * </pre>
+         *
+         * <code>int64 roleId = 1;</code>
+         */
+        public long getRoleId() {
+            return roleId_;
+        }
+
+        public static final int ROLENAME_FIELD_NUMBER = 2;
+        private volatile Object roleName_;
+
+        /**
+         * <pre>
+         *名称
+         * </pre>
+         *
+         * <code>string roleName = 2;</code>
+         */
+        public String getRoleName() {
+            Object ref = roleName_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                roleName_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         *名称
+         * </pre>
+         *
+         * <code>string roleName = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+        getRoleNameBytes() {
+            Object ref = roleName_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                roleName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int LEVEL_FIELD_NUMBER = 3;
+        private int level_;
+
+        /**
+         * <pre>
+         *等级
+         * </pre>
+         *
+         * <code>int32 level = 3;</code>
+         */
+        public int getLevel() {
+            return level_;
+        }
+
+        public static final int SEX_FIELD_NUMBER = 4;
+        private int sex_;
+
+        /**
+         * <pre>
+         *性别
+         * </pre>
+         *
+         * <code>int32 sex = 4;</code>
+         */
+        public int getSex() {
+            return sex_;
+        }
+
+        public static final int MAPID_FIELD_NUMBER = 5;
+        private int mapId_;
+
+        /**
+         * <pre>
+         *所在地图
+         * </pre>
+         *
+         * <code>int32 mapId = 5;</code>
+         */
+        public int getMapId() {
+            return mapId_;
+        }
+
+        public static final int LINE_FIELD_NUMBER = 6;
+        private int line_;
+
+        /**
+         * <pre>
+         *所在分线
+         * </pre>
+         *
+         * <code>int32 line = 6;</code>
+         */
+        public int getLine() {
+            return line_;
+        }
+
+        public static final int CURSERVERTYPE_FIELD_NUMBER = 7;
+        private int curServerType_;
+
+        /**
+         * <pre>
+         *当前服务器类型
+         * </pre>
+         *
+         * <code>int32 curServerType = 7;</code>
+         */
+        public int getCurServerType() {
+            return curServerType_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (roleId_ != 0L) {
+                output.writeInt64(1, roleId_);
+            }
+            if (!getRoleNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleName_);
+            }
+            if (level_ != 0) {
+                output.writeInt32(3, level_);
+            }
+            if (sex_ != 0) {
+                output.writeInt32(4, sex_);
+            }
+            if (mapId_ != 0) {
+                output.writeInt32(5, mapId_);
+            }
+            if (line_ != 0) {
+                output.writeInt32(6, line_);
+            }
+            if (curServerType_ != 0) {
+                output.writeInt32(7, curServerType_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (roleId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(1, roleId_);
+            }
+            if (!getRoleNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roleName_);
+            }
+            if (level_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(3, level_);
+            }
+            if (sex_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(4, sex_);
+            }
+            if (mapId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(5, mapId_);
+            }
+            if (line_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(6, line_);
+            }
+            if (curServerType_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(7, curServerType_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof RoleInfo)) {
+                return super.equals(obj);
+            }
+            RoleInfo other = (RoleInfo) obj;
+
+            boolean result = true;
+            result = result && (getRoleId()
+                    == other.getRoleId());
+            result = result && getRoleName()
+                    .equals(other.getRoleName());
+            result = result && (getLevel()
+                    == other.getLevel());
+            result = result && (getSex()
+                    == other.getSex());
+            result = result && (getMapId()
+                    == other.getMapId());
+            result = result && (getLine()
+                    == other.getLine());
+            result = result && (getCurServerType()
+                    == other.getCurServerType());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getRoleId());
+            hash = (37 * hash) + ROLENAME_FIELD_NUMBER;
+            hash = (53 * hash) + getRoleName().hashCode();
+            hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+            hash = (53 * hash) + getLevel();
+            hash = (37 * hash) + SEX_FIELD_NUMBER;
+            hash = (53 * hash) + getSex();
+            hash = (37 * hash) + MAPID_FIELD_NUMBER;
+            hash = (53 * hash) + getMapId();
+            hash = (37 * hash) + LINE_FIELD_NUMBER;
+            hash = (53 * hash) + getLine();
+            hash = (37 * hash) + CURSERVERTYPE_FIELD_NUMBER;
+            hash = (53 * hash) + getCurServerType();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static RoleInfo parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RoleInfo parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RoleInfo parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RoleInfo parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RoleInfo parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RoleInfo parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RoleInfo parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RoleInfo parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RoleInfo parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static RoleInfo parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RoleInfo parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RoleInfo parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(RoleInfo prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.RoleInfo}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.RoleInfo)
+                RoleInfoOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_RoleInfo_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_RoleInfo_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                RoleInfo.class, Builder.class);
+            }
+
+            // Construct using UserProto.RoleInfo.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                roleId_ = 0L;
+
+                roleName_ = "";
+
+                level_ = 0;
+
+                sex_ = 0;
+
+                mapId_ = 0;
+
+                line_ = 0;
+
+                curServerType_ = 0;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_RoleInfo_descriptor;
+            }
+
+            public RoleInfo getDefaultInstanceForType() {
+                return RoleInfo.getDefaultInstance();
+            }
+
+            public RoleInfo build() {
+                RoleInfo result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public RoleInfo buildPartial() {
+                RoleInfo result = new RoleInfo(this);
+                result.roleId_ = roleId_;
+                result.roleName_ = roleName_;
+                result.level_ = level_;
+                result.sex_ = sex_;
+                result.mapId_ = mapId_;
+                result.line_ = line_;
+                result.curServerType_ = curServerType_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof RoleInfo) {
+                    return mergeFrom((RoleInfo)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(RoleInfo other) {
+                if (other == RoleInfo.getDefaultInstance()) return this;
+                if (other.getRoleId() != 0L) {
+                    setRoleId(other.getRoleId());
+                }
+                if (!other.getRoleName().isEmpty()) {
+                    roleName_ = other.roleName_;
+                    onChanged();
+                }
+                if (other.getLevel() != 0) {
+                    setLevel(other.getLevel());
+                }
+                if (other.getSex() != 0) {
+                    setSex(other.getSex());
+                }
+                if (other.getMapId() != 0) {
+                    setMapId(other.getMapId());
+                }
+                if (other.getLine() != 0) {
+                    setLine(other.getLine());
+                }
+                if (other.getCurServerType() != 0) {
+                    setCurServerType(other.getCurServerType());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                RoleInfo parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (RoleInfo) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private long roleId_ ;
+
+            /**
+             * <pre>
+             *角色ID
+             * </pre>
+             *
+             * <code>int64 roleId = 1;</code>
+             */
+            public long getRoleId() {
+                return roleId_;
+            }
+
+            /**
+             * <pre>
+             *角色ID
+             * </pre>
+             *
+             * <code>int64 roleId = 1;</code>
+             */
+            public Builder setRoleId(long value) {
+
+                roleId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色ID
+             * </pre>
+             *
+             * <code>int64 roleId = 1;</code>
+             */
+            public Builder clearRoleId() {
+
+                roleId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private Object roleName_ = "";
+
+            /**
+             * <pre>
+             *名称
+             * </pre>
+             *
+             * <code>string roleName = 2;</code>
+             */
+            public String getRoleName() {
+                Object ref = roleName_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    roleName_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             *名称
+             * </pre>
+             *
+             * <code>string roleName = 2;</code>
+             */
+            public com.google.protobuf.ByteString
+            getRoleNameBytes() {
+                Object ref = roleName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    roleName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             *名称
+             * </pre>
+             *
+             * <code>string roleName = 2;</code>
+             */
+            public Builder setRoleName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                roleName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *名称
+             * </pre>
+             *
+             * <code>string roleName = 2;</code>
+             */
+            public Builder clearRoleName() {
+
+                roleName_ = getDefaultInstance().getRoleName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *名称
+             * </pre>
+             *
+             * <code>string roleName = 2;</code>
+             */
+            public Builder setRoleNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                roleName_ = value;
+                onChanged();
+                return this;
+            }
+
+            private int level_ ;
+
+            /**
+             * <pre>
+             *等级
+             * </pre>
+             *
+             * <code>int32 level = 3;</code>
+             */
+            public int getLevel() {
+                return level_;
+            }
+
+            /**
+             * <pre>
+             *等级
+             * </pre>
+             *
+             * <code>int32 level = 3;</code>
+             */
+            public Builder setLevel(int value) {
+
+                level_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *等级
+             * </pre>
+             *
+             * <code>int32 level = 3;</code>
+             */
+            public Builder clearLevel() {
+
+                level_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int sex_ ;
+
+            /**
+             * <pre>
+             *性别
+             * </pre>
+             *
+             * <code>int32 sex = 4;</code>
+             */
+            public int getSex() {
+                return sex_;
+            }
+
+            /**
+             * <pre>
+             *性别
+             * </pre>
+             *
+             * <code>int32 sex = 4;</code>
+             */
+            public Builder setSex(int value) {
+
+                sex_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *性别
+             * </pre>
+             *
+             * <code>int32 sex = 4;</code>
+             */
+            public Builder clearSex() {
+
+                sex_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int mapId_ ;
+
+            /**
+             * <pre>
+             *所在地图
+             * </pre>
+             *
+             * <code>int32 mapId = 5;</code>
+             */
+            public int getMapId() {
+                return mapId_;
+            }
+
+            /**
+             * <pre>
+             *所在地图
+             * </pre>
+             *
+             * <code>int32 mapId = 5;</code>
+             */
+            public Builder setMapId(int value) {
+
+                mapId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *所在地图
+             * </pre>
+             *
+             * <code>int32 mapId = 5;</code>
+             */
+            public Builder clearMapId() {
+
+                mapId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int line_ ;
+
+            /**
+             * <pre>
+             *所在分线
+             * </pre>
+             *
+             * <code>int32 line = 6;</code>
+             */
+            public int getLine() {
+                return line_;
+            }
+
+            /**
+             * <pre>
+             *所在分线
+             * </pre>
+             *
+             * <code>int32 line = 6;</code>
+             */
+            public Builder setLine(int value) {
+
+                line_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *所在分线
+             * </pre>
+             *
+             * <code>int32 line = 6;</code>
+             */
+            public Builder clearLine() {
+
+                line_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int curServerType_ ;
+
+            /**
+             * <pre>
+             *当前服务器类型
+             * </pre>
+             *
+             * <code>int32 curServerType = 7;</code>
+             */
+            public int getCurServerType() {
+                return curServerType_;
+            }
+
+            /**
+             * <pre>
+             *当前服务器类型
+             * </pre>
+             *
+             * <code>int32 curServerType = 7;</code>
+             */
+            public Builder setCurServerType(int value) {
+
+                curServerType_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *当前服务器类型
+             * </pre>
+             *
+             * <code>int32 curServerType = 7;</code>
+             */
+            public Builder clearCurServerType() {
+
+                curServerType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.RoleInfo)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.RoleInfo)
+        private static final RoleInfo DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new RoleInfo();
+        }
+
+        public static RoleInfo getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RoleInfo>
+                PARSER = new com.google.protobuf.AbstractParser<RoleInfo>() {
+            public RoleInfo parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new RoleInfo(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<RoleInfo> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<RoleInfo> getParserForType() {
+            return PARSER;
+        }
+
+        public RoleInfo getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int PHYATTMAX_FIELD_NUMBER = 1;
-    private int phyAttMax_;
-    /**
-     * <pre>
-     *物理攻击上限
-     * </pre>
-     *
-     * <code>int32 phyAttMax = 1;</code>
-     */
-    public int getPhyAttMax() {
-      return phyAttMax_;
+    public interface PlayerAttributeOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.PlayerAttribute)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         *物理攻击上限
+         * </pre>
+         *
+         * <code>int32 phyAttMax = 1;</code>
+         */
+        int getPhyAttMax();
+
+        /**
+         * <pre>
+         *物理攻击下限
+         * </pre>
+         *
+         * <code>int32 phyAttMin = 2;</code>
+         */
+        int getPhyAttMin();
+
+        /**
+         * <pre>
+         *魔法攻击上限
+         * </pre>
+         *
+         * <code>int32 magicAttMax = 3;</code>
+         */
+        int getMagicAttMax();
+
+        /**
+         * <pre>
+         *魔法攻击下限
+         * </pre>
+         *
+         * <code>int32 magicAttMin = 4;</code>
+         */
+        int getMagicAttMin();
+
+        /**
+         * <pre>
+         *道术攻击上限
+         * </pre>
+         *
+         * <code>int32 taoAttMax = 5;</code>
+         */
+        int getTaoAttMax();
+
+        /**
+         * <pre>
+         *道术攻击下限
+         * </pre>
+         *
+         * <code>int32 taoAttMin = 6;</code>
+         */
+        int getTaoAttMin();
+
+        /**
+         * <pre>
+         *物理防御上限
+         * </pre>
+         *
+         * <code>int32 phyDefMax = 7;</code>
+         */
+        int getPhyDefMax();
+
+        /**
+         * <pre>
+         *物理防御下限
+         * </pre>
+         *
+         * <code>int32 phyDefMin = 8;</code>
+         */
+        int getPhyDefMin();
+
+        /**
+         * <pre>
+         *魔法防御上限
+         * </pre>
+         *
+         * <code>int32 magicDefMax = 9;</code>
+         */
+        int getMagicDefMax();
+
+        /**
+         * <pre>
+         *魔法防御下限
+         * </pre>
+         *
+         * <code>int32 magicDefMin = 10;</code>
+         */
+        int getMagicDefMin();
+
+        /**
+         * <pre>
+         *精准
+         * </pre>
+         *
+         * <code>int32 accurate = 11;</code>
+         */
+        int getAccurate();
+
+        /**
+         * <pre>
+         *闪避
+         * </pre>
+         *
+         * <code>int32 dodge = 12;</code>
+         */
+        int getDodge();
+
+        /**
+         * <pre>
+         *负面恢复
+         * </pre>
+         *
+         * <code>int32 poisonRecover = 13;</code>
+         */
+        int getPoisonRecover();
+
+        /**
+         * <pre>
+         *体力恢复
+         * </pre>
+         *
+         * <code>int32 heathRecover = 14;</code>
+         */
+        int getHeathRecover();
+
+        /**
+         * <pre>
+         *攻击速度
+         * </pre>
+         *
+         * <code>int32 attackSpeed = 15;</code>
+         */
+        int getAttackSpeed();
+
+        /**
+         * <pre>
+         *最大HP
+         * </pre>
+         *
+         * <code>int32 maxHp = 16;</code>
+         */
+        int getMaxHp();
+
+        /**
+         * <pre>
+         *最大MP
+         * </pre>
+         *
+         * <code>int32 maxMp = 17;</code>
+         */
+        int getMaxMp();
+
+        /**
+         * <pre>
+         *魔法恢复
+         * </pre>
+         *
+         * <code>int32 magicRecover = 18;</code>
+         */
+        int getMagicRecover();
+
+        /**
+         * <pre>
+         *幸运
+         * </pre>
+         *
+         * <code>int32 luck = 19;</code>
+         */
+        int getLuck();
+
+        /**
+         * <pre>
+         *暴击率
+         * </pre>
+         *
+         * <code>int32 critical = 20;</code>
+         */
+        int getCritical();
+
+        /**
+         * <pre>
+         *战斗力
+         * </pre>
+         *
+         * <code>int32 nbValue = 21;</code>
+         */
+        int getNbValue();
+
+        /**
+         * <pre>
+         *暴击伤害
+         * </pre>
+         *
+         * <code>int32 criticalDamage = 22;</code>
+         */
+        int getCriticalDamage();
+
+        /**
+         * <pre>
+         *最大内力
+         * </pre>
+         *
+         * <code>int32 maxInnerPower = 23;</code>
+         */
+        int getMaxInnerPower();
+
+        /**
+         * <pre>
+         *抗性
+         * </pre>
+         *
+         * <code>int32 resistance = 24;</code>
+         */
+        int getResistance();
+
+        /**
+         * <pre>
+         *神圣伤害
+         * </pre>
+         *
+         * <code>int32 holyAtt = 25;</code>
+         */
+        int getHolyAtt();
+
+        /**
+         * <pre>
+         *PK伤害加成
+         * </pre>
+         *
+         * <code>int32 pkAtk = 26;</code>
+         */
+        int getPkAtk();
+
+        /**
+         * <pre>
+         *PK防御
+         * </pre>
+         *
+         * <code>int32 pkDef = 27;</code>
+         */
+        int getPkDef();
     }
 
-    public static final int PHYATTMIN_FIELD_NUMBER = 2;
-    private int phyAttMin_;
-    /**
-     * <pre>
-     *物理攻击下限
-     * </pre>
-     *
-     * <code>int32 phyAttMin = 2;</code>
-     */
-    public int getPhyAttMin() {
-      return phyAttMin_;
-    }
-
-    public static final int MAGICATTMAX_FIELD_NUMBER = 3;
-    private int magicAttMax_;
-    /**
-     * <pre>
-     *魔法攻击上限
-     * </pre>
-     *
-     * <code>int32 magicAttMax = 3;</code>
-     */
-    public int getMagicAttMax() {
-      return magicAttMax_;
-    }
-
-    public static final int MAGICATTMIN_FIELD_NUMBER = 4;
-    private int magicAttMin_;
-    /**
-     * <pre>
-     *魔法攻击下限
-     * </pre>
-     *
-     * <code>int32 magicAttMin = 4;</code>
-     */
-    public int getMagicAttMin() {
-      return magicAttMin_;
-    }
-
-    public static final int TAOATTMAX_FIELD_NUMBER = 5;
-    private int taoAttMax_;
-    /**
-     * <pre>
-     *道术攻击上限
-     * </pre>
-     *
-     * <code>int32 taoAttMax = 5;</code>
-     */
-    public int getTaoAttMax() {
-      return taoAttMax_;
-    }
-
-    public static final int TAOATTMIN_FIELD_NUMBER = 6;
-    private int taoAttMin_;
-    /**
-     * <pre>
-     *道术攻击下限
-     * </pre>
-     *
-     * <code>int32 taoAttMin = 6;</code>
-     */
-    public int getTaoAttMin() {
-      return taoAttMin_;
-    }
-
-    public static final int PHYDEFMAX_FIELD_NUMBER = 7;
-    private int phyDefMax_;
-    /**
-     * <pre>
-     *物理防御上限
-     * </pre>
-     *
-     * <code>int32 phyDefMax = 7;</code>
-     */
-    public int getPhyDefMax() {
-      return phyDefMax_;
-    }
-
-    public static final int PHYDEFMIN_FIELD_NUMBER = 8;
-    private int phyDefMin_;
-    /**
-     * <pre>
-     *物理防御下限
-     * </pre>
-     *
-     * <code>int32 phyDefMin = 8;</code>
-     */
-    public int getPhyDefMin() {
-      return phyDefMin_;
-    }
-
-    public static final int MAGICDEFMAX_FIELD_NUMBER = 9;
-    private int magicDefMax_;
-    /**
-     * <pre>
-     *魔法防御上限
-     * </pre>
-     *
-     * <code>int32 magicDefMax = 9;</code>
-     */
-    public int getMagicDefMax() {
-      return magicDefMax_;
-    }
-
-    public static final int MAGICDEFMIN_FIELD_NUMBER = 10;
-    private int magicDefMin_;
-    /**
-     * <pre>
-     *魔法防御下限
-     * </pre>
-     *
-     * <code>int32 magicDefMin = 10;</code>
-     */
-    public int getMagicDefMin() {
-      return magicDefMin_;
-    }
-
-    public static final int ACCURATE_FIELD_NUMBER = 11;
-    private int accurate_;
-    /**
-     * <pre>
-     *精准
-     * </pre>
-     *
-     * <code>int32 accurate = 11;</code>
-     */
-    public int getAccurate() {
-      return accurate_;
-    }
-
-    public static final int DODGE_FIELD_NUMBER = 12;
-    private int dodge_;
-    /**
-     * <pre>
-     *闪避
-     * </pre>
-     *
-     * <code>int32 dodge = 12;</code>
-     */
-    public int getDodge() {
-      return dodge_;
-    }
-
-    public static final int POISONRECOVER_FIELD_NUMBER = 13;
-    private int poisonRecover_;
-    /**
-     * <pre>
-     *负面恢复
-     * </pre>
-     *
-     * <code>int32 poisonRecover = 13;</code>
-     */
-    public int getPoisonRecover() {
-      return poisonRecover_;
-    }
-
-    public static final int HEATHRECOVER_FIELD_NUMBER = 14;
-    private int heathRecover_;
-    /**
-     * <pre>
-     *体力恢复
-     * </pre>
-     *
-     * <code>int32 heathRecover = 14;</code>
-     */
-    public int getHeathRecover() {
-      return heathRecover_;
-    }
-
-    public static final int ATTACKSPEED_FIELD_NUMBER = 15;
-    private int attackSpeed_;
-    /**
-     * <pre>
-     *攻击速度
-     * </pre>
-     *
-     * <code>int32 attackSpeed = 15;</code>
-     */
-    public int getAttackSpeed() {
-      return attackSpeed_;
-    }
-
-    public static final int MAXHP_FIELD_NUMBER = 16;
-    private int maxHp_;
-    /**
-     * <pre>
-     *最大HP
-     * </pre>
-     *
-     * <code>int32 maxHp = 16;</code>
-     */
-    public int getMaxHp() {
-      return maxHp_;
-    }
-
-    public static final int MAXMP_FIELD_NUMBER = 17;
-    private int maxMp_;
-    /**
-     * <pre>
-     *最大MP
-     * </pre>
-     *
-     * <code>int32 maxMp = 17;</code>
-     */
-    public int getMaxMp() {
-      return maxMp_;
-    }
-
-    public static final int MAGICRECOVER_FIELD_NUMBER = 18;
-    private int magicRecover_;
-    /**
-     * <pre>
-     *魔法恢复
-     * </pre>
-     *
-     * <code>int32 magicRecover = 18;</code>
-     */
-    public int getMagicRecover() {
-      return magicRecover_;
-    }
-
-    public static final int LUCK_FIELD_NUMBER = 19;
-    private int luck_;
-    /**
-     * <pre>
-     *幸运
-     * </pre>
-     *
-     * <code>int32 luck = 19;</code>
-     */
-    public int getLuck() {
-      return luck_;
-    }
-
-    public static final int CRITICAL_FIELD_NUMBER = 20;
-    private int critical_;
-    /**
-     * <pre>
-     *暴击率
-     * </pre>
-     *
-     * <code>int32 critical = 20;</code>
-     */
-    public int getCritical() {
-      return critical_;
-    }
-
-    public static final int NBVALUE_FIELD_NUMBER = 21;
-    private int nbValue_;
-    /**
-     * <pre>
-     *战斗力
-     * </pre>
-     *
-     * <code>int32 nbValue = 21;</code>
-     */
-    public int getNbValue() {
-      return nbValue_;
-    }
-
-    public static final int CRITICALDAMAGE_FIELD_NUMBER = 22;
-    private int criticalDamage_;
-    /**
-     * <pre>
-     *暴击伤害
-     * </pre>
-     *
-     * <code>int32 criticalDamage = 22;</code>
-     */
-    public int getCriticalDamage() {
-      return criticalDamage_;
-    }
-
-    public static final int MAXINNERPOWER_FIELD_NUMBER = 23;
-    private int maxInnerPower_;
-    /**
-     * <pre>
-     *最大内力
-     * </pre>
-     *
-     * <code>int32 maxInnerPower = 23;</code>
-     */
-    public int getMaxInnerPower() {
-      return maxInnerPower_;
-    }
-
-    public static final int RESISTANCE_FIELD_NUMBER = 24;
-    private int resistance_;
-    /**
-     * <pre>
-     *抗性
-     * </pre>
-     *
-     * <code>int32 resistance = 24;</code>
-     */
-    public int getResistance() {
-      return resistance_;
-    }
-
-    public static final int HOLYATT_FIELD_NUMBER = 25;
-    private int holyAtt_;
-    /**
-     * <pre>
-     *神圣伤害
-     * </pre>
-     *
-     * <code>int32 holyAtt = 25;</code>
-     */
-    public int getHolyAtt() {
-      return holyAtt_;
-    }
-
-    public static final int PKATK_FIELD_NUMBER = 26;
-    private int pkAtk_;
-    /**
-     * <pre>
-     *PK伤害加成
-     * </pre>
-     *
-     * <code>int32 pkAtk = 26;</code>
-     */
-    public int getPkAtk() {
-      return pkAtk_;
-    }
-
-    public static final int PKDEF_FIELD_NUMBER = 27;
-    private int pkDef_;
-    /**
-     * <pre>
-     *PK防御
-     * </pre>
-     *
-     * <code>int32 pkDef = 27;</code>
-     */
-    public int getPkDef() {
-      return pkDef_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (phyAttMax_ != 0) {
-        output.writeInt32(1, phyAttMax_);
-      }
-      if (phyAttMin_ != 0) {
-        output.writeInt32(2, phyAttMin_);
-      }
-      if (magicAttMax_ != 0) {
-        output.writeInt32(3, magicAttMax_);
-      }
-      if (magicAttMin_ != 0) {
-        output.writeInt32(4, magicAttMin_);
-      }
-      if (taoAttMax_ != 0) {
-        output.writeInt32(5, taoAttMax_);
-      }
-      if (taoAttMin_ != 0) {
-        output.writeInt32(6, taoAttMin_);
-      }
-      if (phyDefMax_ != 0) {
-        output.writeInt32(7, phyDefMax_);
-      }
-      if (phyDefMin_ != 0) {
-        output.writeInt32(8, phyDefMin_);
-      }
-      if (magicDefMax_ != 0) {
-        output.writeInt32(9, magicDefMax_);
-      }
-      if (magicDefMin_ != 0) {
-        output.writeInt32(10, magicDefMin_);
-      }
-      if (accurate_ != 0) {
-        output.writeInt32(11, accurate_);
-      }
-      if (dodge_ != 0) {
-        output.writeInt32(12, dodge_);
-      }
-      if (poisonRecover_ != 0) {
-        output.writeInt32(13, poisonRecover_);
-      }
-      if (heathRecover_ != 0) {
-        output.writeInt32(14, heathRecover_);
-      }
-      if (attackSpeed_ != 0) {
-        output.writeInt32(15, attackSpeed_);
-      }
-      if (maxHp_ != 0) {
-        output.writeInt32(16, maxHp_);
-      }
-      if (maxMp_ != 0) {
-        output.writeInt32(17, maxMp_);
-      }
-      if (magicRecover_ != 0) {
-        output.writeInt32(18, magicRecover_);
-      }
-      if (luck_ != 0) {
-        output.writeInt32(19, luck_);
-      }
-      if (critical_ != 0) {
-        output.writeInt32(20, critical_);
-      }
-      if (nbValue_ != 0) {
-        output.writeInt32(21, nbValue_);
-      }
-      if (criticalDamage_ != 0) {
-        output.writeInt32(22, criticalDamage_);
-      }
-      if (maxInnerPower_ != 0) {
-        output.writeInt32(23, maxInnerPower_);
-      }
-      if (resistance_ != 0) {
-        output.writeInt32(24, resistance_);
-      }
-      if (holyAtt_ != 0) {
-        output.writeInt32(25, holyAtt_);
-      }
-      if (pkAtk_ != 0) {
-        output.writeInt32(26, pkAtk_);
-      }
-      if (pkDef_ != 0) {
-        output.writeInt32(27, pkDef_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (phyAttMax_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, phyAttMax_);
-      }
-      if (phyAttMin_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, phyAttMin_);
-      }
-      if (magicAttMax_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, magicAttMax_);
-      }
-      if (magicAttMin_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, magicAttMin_);
-      }
-      if (taoAttMax_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, taoAttMax_);
-      }
-      if (taoAttMin_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, taoAttMin_);
-      }
-      if (phyDefMax_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, phyDefMax_);
-      }
-      if (phyDefMin_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, phyDefMin_);
-      }
-      if (magicDefMax_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, magicDefMax_);
-      }
-      if (magicDefMin_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, magicDefMin_);
-      }
-      if (accurate_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, accurate_);
-      }
-      if (dodge_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, dodge_);
-      }
-      if (poisonRecover_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, poisonRecover_);
-      }
-      if (heathRecover_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, heathRecover_);
-      }
-      if (attackSpeed_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, attackSpeed_);
-      }
-      if (maxHp_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(16, maxHp_);
-      }
-      if (maxMp_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(17, maxMp_);
-      }
-      if (magicRecover_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(18, magicRecover_);
-      }
-      if (luck_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(19, luck_);
-      }
-      if (critical_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(20, critical_);
-      }
-      if (nbValue_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(21, nbValue_);
-      }
-      if (criticalDamage_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(22, criticalDamage_);
-      }
-      if (maxInnerPower_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(23, maxInnerPower_);
-      }
-      if (resistance_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(24, resistance_);
-      }
-      if (holyAtt_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(25, holyAtt_);
-      }
-      if (pkAtk_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(26, pkAtk_);
-      }
-      if (pkDef_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(27, pkDef_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof PlayerAttribute)) {
-        return super.equals(obj);
-      }
-      PlayerAttribute other = (PlayerAttribute) obj;
-
-      boolean result = true;
-      result = result && (getPhyAttMax()
-          == other.getPhyAttMax());
-      result = result && (getPhyAttMin()
-          == other.getPhyAttMin());
-      result = result && (getMagicAttMax()
-          == other.getMagicAttMax());
-      result = result && (getMagicAttMin()
-          == other.getMagicAttMin());
-      result = result && (getTaoAttMax()
-          == other.getTaoAttMax());
-      result = result && (getTaoAttMin()
-          == other.getTaoAttMin());
-      result = result && (getPhyDefMax()
-          == other.getPhyDefMax());
-      result = result && (getPhyDefMin()
-          == other.getPhyDefMin());
-      result = result && (getMagicDefMax()
-          == other.getMagicDefMax());
-      result = result && (getMagicDefMin()
-          == other.getMagicDefMin());
-      result = result && (getAccurate()
-          == other.getAccurate());
-      result = result && (getDodge()
-          == other.getDodge());
-      result = result && (getPoisonRecover()
-          == other.getPoisonRecover());
-      result = result && (getHeathRecover()
-          == other.getHeathRecover());
-      result = result && (getAttackSpeed()
-          == other.getAttackSpeed());
-      result = result && (getMaxHp()
-          == other.getMaxHp());
-      result = result && (getMaxMp()
-          == other.getMaxMp());
-      result = result && (getMagicRecover()
-          == other.getMagicRecover());
-      result = result && (getLuck()
-          == other.getLuck());
-      result = result && (getCritical()
-          == other.getCritical());
-      result = result && (getNbValue()
-          == other.getNbValue());
-      result = result && (getCriticalDamage()
-          == other.getCriticalDamage());
-      result = result && (getMaxInnerPower()
-          == other.getMaxInnerPower());
-      result = result && (getResistance()
-          == other.getResistance());
-      result = result && (getHolyAtt()
-          == other.getHolyAtt());
-      result = result && (getPkAtk()
-          == other.getPkAtk());
-      result = result && (getPkDef()
-          == other.getPkDef());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PHYATTMAX_FIELD_NUMBER;
-      hash = (53 * hash) + getPhyAttMax();
-      hash = (37 * hash) + PHYATTMIN_FIELD_NUMBER;
-      hash = (53 * hash) + getPhyAttMin();
-      hash = (37 * hash) + MAGICATTMAX_FIELD_NUMBER;
-      hash = (53 * hash) + getMagicAttMax();
-      hash = (37 * hash) + MAGICATTMIN_FIELD_NUMBER;
-      hash = (53 * hash) + getMagicAttMin();
-      hash = (37 * hash) + TAOATTMAX_FIELD_NUMBER;
-      hash = (53 * hash) + getTaoAttMax();
-      hash = (37 * hash) + TAOATTMIN_FIELD_NUMBER;
-      hash = (53 * hash) + getTaoAttMin();
-      hash = (37 * hash) + PHYDEFMAX_FIELD_NUMBER;
-      hash = (53 * hash) + getPhyDefMax();
-      hash = (37 * hash) + PHYDEFMIN_FIELD_NUMBER;
-      hash = (53 * hash) + getPhyDefMin();
-      hash = (37 * hash) + MAGICDEFMAX_FIELD_NUMBER;
-      hash = (53 * hash) + getMagicDefMax();
-      hash = (37 * hash) + MAGICDEFMIN_FIELD_NUMBER;
-      hash = (53 * hash) + getMagicDefMin();
-      hash = (37 * hash) + ACCURATE_FIELD_NUMBER;
-      hash = (53 * hash) + getAccurate();
-      hash = (37 * hash) + DODGE_FIELD_NUMBER;
-      hash = (53 * hash) + getDodge();
-      hash = (37 * hash) + POISONRECOVER_FIELD_NUMBER;
-      hash = (53 * hash) + getPoisonRecover();
-      hash = (37 * hash) + HEATHRECOVER_FIELD_NUMBER;
-      hash = (53 * hash) + getHeathRecover();
-      hash = (37 * hash) + ATTACKSPEED_FIELD_NUMBER;
-      hash = (53 * hash) + getAttackSpeed();
-      hash = (37 * hash) + MAXHP_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxHp();
-      hash = (37 * hash) + MAXMP_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxMp();
-      hash = (37 * hash) + MAGICRECOVER_FIELD_NUMBER;
-      hash = (53 * hash) + getMagicRecover();
-      hash = (37 * hash) + LUCK_FIELD_NUMBER;
-      hash = (53 * hash) + getLuck();
-      hash = (37 * hash) + CRITICAL_FIELD_NUMBER;
-      hash = (53 * hash) + getCritical();
-      hash = (37 * hash) + NBVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getNbValue();
-      hash = (37 * hash) + CRITICALDAMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getCriticalDamage();
-      hash = (37 * hash) + MAXINNERPOWER_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxInnerPower();
-      hash = (37 * hash) + RESISTANCE_FIELD_NUMBER;
-      hash = (53 * hash) + getResistance();
-      hash = (37 * hash) + HOLYATT_FIELD_NUMBER;
-      hash = (53 * hash) + getHolyAtt();
-      hash = (37 * hash) + PKATK_FIELD_NUMBER;
-      hash = (53 * hash) + getPkAtk();
-      hash = (37 * hash) + PKDEF_FIELD_NUMBER;
-      hash = (53 * hash) + getPkDef();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static PlayerAttribute parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static PlayerAttribute parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static PlayerAttribute parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static PlayerAttribute parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static PlayerAttribute parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static PlayerAttribute parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static PlayerAttribute parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static PlayerAttribute parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static PlayerAttribute parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static PlayerAttribute parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static PlayerAttribute parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static PlayerAttribute parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(PlayerAttribute prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.PlayerAttribute}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.PlayerAttribute)
-        PlayerAttributeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_PlayerAttribute_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_PlayerAttribute_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                PlayerAttribute.class, Builder.class);
-      }
-
-      // Construct using UserProto.PlayerAttribute.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class PlayerAttribute extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.PlayerAttribute)
+            PlayerAttributeOrBuilder {
+        // Use PlayerAttribute.newBuilder() to construct.
+        private PlayerAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        phyAttMax_ = 0;
 
-        phyAttMin_ = 0;
-
-        magicAttMax_ = 0;
-
-        magicAttMin_ = 0;
-
-        taoAttMax_ = 0;
-
-        taoAttMin_ = 0;
-
-        phyDefMax_ = 0;
-
-        phyDefMin_ = 0;
-
-        magicDefMax_ = 0;
-
-        magicDefMin_ = 0;
-
-        accurate_ = 0;
-
-        dodge_ = 0;
-
-        poisonRecover_ = 0;
-
-        heathRecover_ = 0;
-
-        attackSpeed_ = 0;
-
-        maxHp_ = 0;
-
-        maxMp_ = 0;
-
-        magicRecover_ = 0;
-
-        luck_ = 0;
-
-        critical_ = 0;
-
-        nbValue_ = 0;
-
-        criticalDamage_ = 0;
-
-        maxInnerPower_ = 0;
-
-        resistance_ = 0;
-
-        holyAtt_ = 0;
-
-        pkAtk_ = 0;
-
-        pkDef_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_PlayerAttribute_descriptor;
-      }
-
-      public PlayerAttribute getDefaultInstanceForType() {
-        return PlayerAttribute.getDefaultInstance();
-      }
-
-      public PlayerAttribute build() {
-        PlayerAttribute result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private PlayerAttribute() {
+            phyAttMax_ = 0;
+            phyAttMin_ = 0;
+            magicAttMax_ = 0;
+            magicAttMin_ = 0;
+            taoAttMax_ = 0;
+            taoAttMin_ = 0;
+            phyDefMax_ = 0;
+            phyDefMin_ = 0;
+            magicDefMax_ = 0;
+            magicDefMin_ = 0;
+            accurate_ = 0;
+            dodge_ = 0;
+            poisonRecover_ = 0;
+            heathRecover_ = 0;
+            attackSpeed_ = 0;
+            maxHp_ = 0;
+            maxMp_ = 0;
+            magicRecover_ = 0;
+            luck_ = 0;
+            critical_ = 0;
+            nbValue_ = 0;
+            criticalDamage_ = 0;
+            maxInnerPower_ = 0;
+            resistance_ = 0;
+            holyAtt_ = 0;
+            pkAtk_ = 0;
+            pkDef_ = 0;
         }
-        return result;
-      }
 
-      public PlayerAttribute buildPartial() {
-        PlayerAttribute result = new PlayerAttribute(this);
-        result.phyAttMax_ = phyAttMax_;
-        result.phyAttMin_ = phyAttMin_;
-        result.magicAttMax_ = magicAttMax_;
-        result.magicAttMin_ = magicAttMin_;
-        result.taoAttMax_ = taoAttMax_;
-        result.taoAttMin_ = taoAttMin_;
-        result.phyDefMax_ = phyDefMax_;
-        result.phyDefMin_ = phyDefMin_;
-        result.magicDefMax_ = magicDefMax_;
-        result.magicDefMin_ = magicDefMin_;
-        result.accurate_ = accurate_;
-        result.dodge_ = dodge_;
-        result.poisonRecover_ = poisonRecover_;
-        result.heathRecover_ = heathRecover_;
-        result.attackSpeed_ = attackSpeed_;
-        result.maxHp_ = maxHp_;
-        result.maxMp_ = maxMp_;
-        result.magicRecover_ = magicRecover_;
-        result.luck_ = luck_;
-        result.critical_ = critical_;
-        result.nbValue_ = nbValue_;
-        result.criticalDamage_ = criticalDamage_;
-        result.maxInnerPower_ = maxInnerPower_;
-        result.resistance_ = resistance_;
-        result.holyAtt_ = holyAtt_;
-        result.pkAtk_ = pkAtk_;
-        result.pkDef_ = pkDef_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof PlayerAttribute) {
-          return mergeFrom((PlayerAttribute)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(PlayerAttribute other) {
-        if (other == PlayerAttribute.getDefaultInstance()) return this;
-        if (other.getPhyAttMax() != 0) {
-          setPhyAttMax(other.getPhyAttMax());
+        private PlayerAttribute(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+
+                            phyAttMax_ = input.readInt32();
+                            break;
+                        }
+                        case 16: {
+
+                            phyAttMin_ = input.readInt32();
+                            break;
+                        }
+                        case 24: {
+
+                            magicAttMax_ = input.readInt32();
+                            break;
+                        }
+                        case 32: {
+
+                            magicAttMin_ = input.readInt32();
+                            break;
+                        }
+                        case 40: {
+
+                            taoAttMax_ = input.readInt32();
+                            break;
+                        }
+                        case 48: {
+
+                            taoAttMin_ = input.readInt32();
+                            break;
+                        }
+                        case 56: {
+
+                            phyDefMax_ = input.readInt32();
+                            break;
+                        }
+                        case 64: {
+
+                            phyDefMin_ = input.readInt32();
+                            break;
+                        }
+                        case 72: {
+
+                            magicDefMax_ = input.readInt32();
+                            break;
+                        }
+                        case 80: {
+
+                            magicDefMin_ = input.readInt32();
+                            break;
+                        }
+                        case 88: {
+
+                            accurate_ = input.readInt32();
+                            break;
+                        }
+                        case 96: {
+
+                            dodge_ = input.readInt32();
+                            break;
+                        }
+                        case 104: {
+
+                            poisonRecover_ = input.readInt32();
+                            break;
+                        }
+                        case 112: {
+
+                            heathRecover_ = input.readInt32();
+                            break;
+                        }
+                        case 120: {
+
+                            attackSpeed_ = input.readInt32();
+                            break;
+                        }
+                        case 128: {
+
+                            maxHp_ = input.readInt32();
+                            break;
+                        }
+                        case 136: {
+
+                            maxMp_ = input.readInt32();
+                            break;
+                        }
+                        case 144: {
+
+                            magicRecover_ = input.readInt32();
+                            break;
+                        }
+                        case 152: {
+
+                            luck_ = input.readInt32();
+                            break;
+                        }
+                        case 160: {
+
+                            critical_ = input.readInt32();
+                            break;
+                        }
+                        case 168: {
+
+                            nbValue_ = input.readInt32();
+                            break;
+                        }
+                        case 176: {
+
+                            criticalDamage_ = input.readInt32();
+                            break;
+                        }
+                        case 184: {
+
+                            maxInnerPower_ = input.readInt32();
+                            break;
+                        }
+                        case 192: {
+
+                            resistance_ = input.readInt32();
+                            break;
+                        }
+                        case 200: {
+
+                            holyAtt_ = input.readInt32();
+                            break;
+                        }
+                        case 208: {
+
+                            pkAtk_ = input.readInt32();
+                            break;
+                        }
+                        case 216: {
+
+                            pkDef_ = input.readInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getPhyAttMin() != 0) {
-          setPhyAttMin(other.getPhyAttMin());
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return UserProto.internal_static_user_PlayerAttribute_descriptor;
         }
-        if (other.getMagicAttMax() != 0) {
-          setMagicAttMax(other.getMagicAttMax());
+
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return UserProto.internal_static_user_PlayerAttribute_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            PlayerAttribute.class, Builder.class);
         }
-        if (other.getMagicAttMin() != 0) {
-          setMagicAttMin(other.getMagicAttMin());
+
+        public static final int PHYATTMAX_FIELD_NUMBER = 1;
+        private int phyAttMax_;
+
+        /**
+         * <pre>
+         *物理攻击上限
+         * </pre>
+         *
+         * <code>int32 phyAttMax = 1;</code>
+         */
+        public int getPhyAttMax() {
+            return phyAttMax_;
         }
-        if (other.getTaoAttMax() != 0) {
-          setTaoAttMax(other.getTaoAttMax());
+
+        public static final int PHYATTMIN_FIELD_NUMBER = 2;
+        private int phyAttMin_;
+
+        /**
+         * <pre>
+         *物理攻击下限
+         * </pre>
+         *
+         * <code>int32 phyAttMin = 2;</code>
+         */
+        public int getPhyAttMin() {
+            return phyAttMin_;
         }
-        if (other.getTaoAttMin() != 0) {
-          setTaoAttMin(other.getTaoAttMin());
+
+        public static final int MAGICATTMAX_FIELD_NUMBER = 3;
+        private int magicAttMax_;
+
+        /**
+         * <pre>
+         *魔法攻击上限
+         * </pre>
+         *
+         * <code>int32 magicAttMax = 3;</code>
+         */
+        public int getMagicAttMax() {
+            return magicAttMax_;
         }
-        if (other.getPhyDefMax() != 0) {
-          setPhyDefMax(other.getPhyDefMax());
+
+        public static final int MAGICATTMIN_FIELD_NUMBER = 4;
+        private int magicAttMin_;
+
+        /**
+         * <pre>
+         *魔法攻击下限
+         * </pre>
+         *
+         * <code>int32 magicAttMin = 4;</code>
+         */
+        public int getMagicAttMin() {
+            return magicAttMin_;
         }
-        if (other.getPhyDefMin() != 0) {
-          setPhyDefMin(other.getPhyDefMin());
+
+        public static final int TAOATTMAX_FIELD_NUMBER = 5;
+        private int taoAttMax_;
+
+        /**
+         * <pre>
+         *道术攻击上限
+         * </pre>
+         *
+         * <code>int32 taoAttMax = 5;</code>
+         */
+        public int getTaoAttMax() {
+            return taoAttMax_;
         }
-        if (other.getMagicDefMax() != 0) {
-          setMagicDefMax(other.getMagicDefMax());
+
+        public static final int TAOATTMIN_FIELD_NUMBER = 6;
+        private int taoAttMin_;
+
+        /**
+         * <pre>
+         *道术攻击下限
+         * </pre>
+         *
+         * <code>int32 taoAttMin = 6;</code>
+         */
+        public int getTaoAttMin() {
+            return taoAttMin_;
         }
-        if (other.getMagicDefMin() != 0) {
-          setMagicDefMin(other.getMagicDefMin());
+
+        public static final int PHYDEFMAX_FIELD_NUMBER = 7;
+        private int phyDefMax_;
+
+        /**
+         * <pre>
+         *物理防御上限
+         * </pre>
+         *
+         * <code>int32 phyDefMax = 7;</code>
+         */
+        public int getPhyDefMax() {
+            return phyDefMax_;
         }
-        if (other.getAccurate() != 0) {
-          setAccurate(other.getAccurate());
+
+        public static final int PHYDEFMIN_FIELD_NUMBER = 8;
+        private int phyDefMin_;
+
+        /**
+         * <pre>
+         *物理防御下限
+         * </pre>
+         *
+         * <code>int32 phyDefMin = 8;</code>
+         */
+        public int getPhyDefMin() {
+            return phyDefMin_;
         }
-        if (other.getDodge() != 0) {
-          setDodge(other.getDodge());
+
+        public static final int MAGICDEFMAX_FIELD_NUMBER = 9;
+        private int magicDefMax_;
+
+        /**
+         * <pre>
+         *魔法防御上限
+         * </pre>
+         *
+         * <code>int32 magicDefMax = 9;</code>
+         */
+        public int getMagicDefMax() {
+            return magicDefMax_;
         }
-        if (other.getPoisonRecover() != 0) {
-          setPoisonRecover(other.getPoisonRecover());
+
+        public static final int MAGICDEFMIN_FIELD_NUMBER = 10;
+        private int magicDefMin_;
+
+        /**
+         * <pre>
+         *魔法防御下限
+         * </pre>
+         *
+         * <code>int32 magicDefMin = 10;</code>
+         */
+        public int getMagicDefMin() {
+            return magicDefMin_;
         }
-        if (other.getHeathRecover() != 0) {
-          setHeathRecover(other.getHeathRecover());
+
+        public static final int ACCURATE_FIELD_NUMBER = 11;
+        private int accurate_;
+
+        /**
+         * <pre>
+         *精准
+         * </pre>
+         *
+         * <code>int32 accurate = 11;</code>
+         */
+        public int getAccurate() {
+            return accurate_;
         }
-        if (other.getAttackSpeed() != 0) {
-          setAttackSpeed(other.getAttackSpeed());
+
+        public static final int DODGE_FIELD_NUMBER = 12;
+        private int dodge_;
+
+        /**
+         * <pre>
+         *闪避
+         * </pre>
+         *
+         * <code>int32 dodge = 12;</code>
+         */
+        public int getDodge() {
+            return dodge_;
         }
-        if (other.getMaxHp() != 0) {
-          setMaxHp(other.getMaxHp());
+
+        public static final int POISONRECOVER_FIELD_NUMBER = 13;
+        private int poisonRecover_;
+
+        /**
+         * <pre>
+         *负面恢复
+         * </pre>
+         *
+         * <code>int32 poisonRecover = 13;</code>
+         */
+        public int getPoisonRecover() {
+            return poisonRecover_;
         }
-        if (other.getMaxMp() != 0) {
-          setMaxMp(other.getMaxMp());
+
+        public static final int HEATHRECOVER_FIELD_NUMBER = 14;
+        private int heathRecover_;
+
+        /**
+         * <pre>
+         *体力恢复
+         * </pre>
+         *
+         * <code>int32 heathRecover = 14;</code>
+         */
+        public int getHeathRecover() {
+            return heathRecover_;
         }
-        if (other.getMagicRecover() != 0) {
-          setMagicRecover(other.getMagicRecover());
+
+        public static final int ATTACKSPEED_FIELD_NUMBER = 15;
+        private int attackSpeed_;
+
+        /**
+         * <pre>
+         *攻击速度
+         * </pre>
+         *
+         * <code>int32 attackSpeed = 15;</code>
+         */
+        public int getAttackSpeed() {
+            return attackSpeed_;
         }
-        if (other.getLuck() != 0) {
-          setLuck(other.getLuck());
+
+        public static final int MAXHP_FIELD_NUMBER = 16;
+        private int maxHp_;
+
+        /**
+         * <pre>
+         *最大HP
+         * </pre>
+         *
+         * <code>int32 maxHp = 16;</code>
+         */
+        public int getMaxHp() {
+            return maxHp_;
         }
-        if (other.getCritical() != 0) {
-          setCritical(other.getCritical());
+
+        public static final int MAXMP_FIELD_NUMBER = 17;
+        private int maxMp_;
+
+        /**
+         * <pre>
+         *最大MP
+         * </pre>
+         *
+         * <code>int32 maxMp = 17;</code>
+         */
+        public int getMaxMp() {
+            return maxMp_;
         }
-        if (other.getNbValue() != 0) {
-          setNbValue(other.getNbValue());
+
+        public static final int MAGICRECOVER_FIELD_NUMBER = 18;
+        private int magicRecover_;
+
+        /**
+         * <pre>
+         *魔法恢复
+         * </pre>
+         *
+         * <code>int32 magicRecover = 18;</code>
+         */
+        public int getMagicRecover() {
+            return magicRecover_;
         }
-        if (other.getCriticalDamage() != 0) {
-          setCriticalDamage(other.getCriticalDamage());
+
+        public static final int LUCK_FIELD_NUMBER = 19;
+        private int luck_;
+
+        /**
+         * <pre>
+         *幸运
+         * </pre>
+         *
+         * <code>int32 luck = 19;</code>
+         */
+        public int getLuck() {
+            return luck_;
         }
-        if (other.getMaxInnerPower() != 0) {
-          setMaxInnerPower(other.getMaxInnerPower());
+
+        public static final int CRITICAL_FIELD_NUMBER = 20;
+        private int critical_;
+
+        /**
+         * <pre>
+         *暴击率
+         * </pre>
+         *
+         * <code>int32 critical = 20;</code>
+         */
+        public int getCritical() {
+            return critical_;
         }
-        if (other.getResistance() != 0) {
-          setResistance(other.getResistance());
+
+        public static final int NBVALUE_FIELD_NUMBER = 21;
+        private int nbValue_;
+
+        /**
+         * <pre>
+         *战斗力
+         * </pre>
+         *
+         * <code>int32 nbValue = 21;</code>
+         */
+        public int getNbValue() {
+            return nbValue_;
         }
-        if (other.getHolyAtt() != 0) {
-          setHolyAtt(other.getHolyAtt());
+
+        public static final int CRITICALDAMAGE_FIELD_NUMBER = 22;
+        private int criticalDamage_;
+
+        /**
+         * <pre>
+         *暴击伤害
+         * </pre>
+         *
+         * <code>int32 criticalDamage = 22;</code>
+         */
+        public int getCriticalDamage() {
+            return criticalDamage_;
         }
-        if (other.getPkAtk() != 0) {
-          setPkAtk(other.getPkAtk());
+
+        public static final int MAXINNERPOWER_FIELD_NUMBER = 23;
+        private int maxInnerPower_;
+
+        /**
+         * <pre>
+         *最大内力
+         * </pre>
+         *
+         * <code>int32 maxInnerPower = 23;</code>
+         */
+        public int getMaxInnerPower() {
+            return maxInnerPower_;
         }
-        if (other.getPkDef() != 0) {
-          setPkDef(other.getPkDef());
+
+        public static final int RESISTANCE_FIELD_NUMBER = 24;
+        private int resistance_;
+
+        /**
+         * <pre>
+         *抗性
+         * </pre>
+         *
+         * <code>int32 resistance = 24;</code>
+         */
+        public int getResistance() {
+            return resistance_;
         }
-        onChanged();
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        return true;
-      }
+        public static final int HOLYATT_FIELD_NUMBER = 25;
+        private int holyAtt_;
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        PlayerAttribute parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (PlayerAttribute) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        /**
+         * <pre>
+         *神圣伤害
+         * </pre>
+         *
+         * <code>int32 holyAtt = 25;</code>
+         */
+        public int getHolyAtt() {
+            return holyAtt_;
         }
-        return this;
-      }
 
-      private int phyAttMax_ ;
-      /**
-       * <pre>
-       *物理攻击上限
-       * </pre>
-       *
-       * <code>int32 phyAttMax = 1;</code>
-       */
-      public int getPhyAttMax() {
-        return phyAttMax_;
-      }
-      /**
-       * <pre>
-       *物理攻击上限
-       * </pre>
-       *
-       * <code>int32 phyAttMax = 1;</code>
-       */
-      public Builder setPhyAttMax(int value) {
-        
-        phyAttMax_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *物理攻击上限
-       * </pre>
-       *
-       * <code>int32 phyAttMax = 1;</code>
-       */
-      public Builder clearPhyAttMax() {
-        
-        phyAttMax_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int PKATK_FIELD_NUMBER = 26;
+        private int pkAtk_;
 
-      private int phyAttMin_ ;
-      /**
-       * <pre>
-       *物理攻击下限
-       * </pre>
-       *
-       * <code>int32 phyAttMin = 2;</code>
-       */
-      public int getPhyAttMin() {
-        return phyAttMin_;
-      }
-      /**
-       * <pre>
-       *物理攻击下限
-       * </pre>
-       *
-       * <code>int32 phyAttMin = 2;</code>
-       */
-      public Builder setPhyAttMin(int value) {
-        
-        phyAttMin_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *物理攻击下限
-       * </pre>
-       *
-       * <code>int32 phyAttMin = 2;</code>
-       */
-      public Builder clearPhyAttMin() {
-        
-        phyAttMin_ = 0;
-        onChanged();
-        return this;
-      }
+        /**
+         * <pre>
+         *PK伤害加成
+         * </pre>
+         *
+         * <code>int32 pkAtk = 26;</code>
+         */
+        public int getPkAtk() {
+            return pkAtk_;
+        }
 
-      private int magicAttMax_ ;
-      /**
-       * <pre>
-       *魔法攻击上限
-       * </pre>
-       *
-       * <code>int32 magicAttMax = 3;</code>
-       */
-      public int getMagicAttMax() {
-        return magicAttMax_;
-      }
-      /**
-       * <pre>
-       *魔法攻击上限
-       * </pre>
-       *
-       * <code>int32 magicAttMax = 3;</code>
-       */
-      public Builder setMagicAttMax(int value) {
-        
-        magicAttMax_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *魔法攻击上限
-       * </pre>
-       *
-       * <code>int32 magicAttMax = 3;</code>
-       */
-      public Builder clearMagicAttMax() {
-        
-        magicAttMax_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int PKDEF_FIELD_NUMBER = 27;
+        private int pkDef_;
 
-      private int magicAttMin_ ;
-      /**
-       * <pre>
-       *魔法攻击下限
-       * </pre>
-       *
-       * <code>int32 magicAttMin = 4;</code>
-       */
-      public int getMagicAttMin() {
-        return magicAttMin_;
-      }
-      /**
-       * <pre>
-       *魔法攻击下限
-       * </pre>
-       *
-       * <code>int32 magicAttMin = 4;</code>
-       */
-      public Builder setMagicAttMin(int value) {
-        
-        magicAttMin_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *魔法攻击下限
-       * </pre>
-       *
-       * <code>int32 magicAttMin = 4;</code>
-       */
-      public Builder clearMagicAttMin() {
-        
-        magicAttMin_ = 0;
-        onChanged();
-        return this;
-      }
+        /**
+         * <pre>
+         *PK防御
+         * </pre>
+         *
+         * <code>int32 pkDef = 27;</code>
+         */
+        public int getPkDef() {
+            return pkDef_;
+        }
 
-      private int taoAttMax_ ;
-      /**
-       * <pre>
-       *道术攻击上限
-       * </pre>
-       *
-       * <code>int32 taoAttMax = 5;</code>
-       */
-      public int getTaoAttMax() {
-        return taoAttMax_;
-      }
-      /**
-       * <pre>
-       *道术攻击上限
-       * </pre>
-       *
-       * <code>int32 taoAttMax = 5;</code>
-       */
-      public Builder setTaoAttMax(int value) {
-        
-        taoAttMax_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *道术攻击上限
-       * </pre>
-       *
-       * <code>int32 taoAttMax = 5;</code>
-       */
-      public Builder clearTaoAttMax() {
-        
-        taoAttMax_ = 0;
-        onChanged();
-        return this;
-      }
+        private byte memoizedIsInitialized = -1;
 
-      private int taoAttMin_ ;
-      /**
-       * <pre>
-       *道术攻击下限
-       * </pre>
-       *
-       * <code>int32 taoAttMin = 6;</code>
-       */
-      public int getTaoAttMin() {
-        return taoAttMin_;
-      }
-      /**
-       * <pre>
-       *道术攻击下限
-       * </pre>
-       *
-       * <code>int32 taoAttMin = 6;</code>
-       */
-      public Builder setTaoAttMin(int value) {
-        
-        taoAttMin_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *道术攻击下限
-       * </pre>
-       *
-       * <code>int32 taoAttMin = 6;</code>
-       */
-      public Builder clearTaoAttMin() {
-        
-        taoAttMin_ = 0;
-        onChanged();
-        return this;
-      }
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
-      private int phyDefMax_ ;
-      /**
-       * <pre>
-       *物理防御上限
-       * </pre>
-       *
-       * <code>int32 phyDefMax = 7;</code>
-       */
-      public int getPhyDefMax() {
-        return phyDefMax_;
-      }
-      /**
-       * <pre>
-       *物理防御上限
-       * </pre>
-       *
-       * <code>int32 phyDefMax = 7;</code>
-       */
-      public Builder setPhyDefMax(int value) {
-        
-        phyDefMax_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *物理防御上限
-       * </pre>
-       *
-       * <code>int32 phyDefMax = 7;</code>
-       */
-      public Builder clearPhyDefMax() {
-        
-        phyDefMax_ = 0;
-        onChanged();
-        return this;
-      }
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      private int phyDefMin_ ;
-      /**
-       * <pre>
-       *物理防御下限
-       * </pre>
-       *
-       * <code>int32 phyDefMin = 8;</code>
-       */
-      public int getPhyDefMin() {
-        return phyDefMin_;
-      }
-      /**
-       * <pre>
-       *物理防御下限
-       * </pre>
-       *
-       * <code>int32 phyDefMin = 8;</code>
-       */
-      public Builder setPhyDefMin(int value) {
-        
-        phyDefMin_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *物理防御下限
-       * </pre>
-       *
-       * <code>int32 phyDefMin = 8;</code>
-       */
-      public Builder clearPhyDefMin() {
-        
-        phyDefMin_ = 0;
-        onChanged();
-        return this;
-      }
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (phyAttMax_ != 0) {
+                output.writeInt32(1, phyAttMax_);
+            }
+            if (phyAttMin_ != 0) {
+                output.writeInt32(2, phyAttMin_);
+            }
+            if (magicAttMax_ != 0) {
+                output.writeInt32(3, magicAttMax_);
+            }
+            if (magicAttMin_ != 0) {
+                output.writeInt32(4, magicAttMin_);
+            }
+            if (taoAttMax_ != 0) {
+                output.writeInt32(5, taoAttMax_);
+            }
+            if (taoAttMin_ != 0) {
+                output.writeInt32(6, taoAttMin_);
+            }
+            if (phyDefMax_ != 0) {
+                output.writeInt32(7, phyDefMax_);
+            }
+            if (phyDefMin_ != 0) {
+                output.writeInt32(8, phyDefMin_);
+            }
+            if (magicDefMax_ != 0) {
+                output.writeInt32(9, magicDefMax_);
+            }
+            if (magicDefMin_ != 0) {
+                output.writeInt32(10, magicDefMin_);
+            }
+            if (accurate_ != 0) {
+                output.writeInt32(11, accurate_);
+            }
+            if (dodge_ != 0) {
+                output.writeInt32(12, dodge_);
+            }
+            if (poisonRecover_ != 0) {
+                output.writeInt32(13, poisonRecover_);
+            }
+            if (heathRecover_ != 0) {
+                output.writeInt32(14, heathRecover_);
+            }
+            if (attackSpeed_ != 0) {
+                output.writeInt32(15, attackSpeed_);
+            }
+            if (maxHp_ != 0) {
+                output.writeInt32(16, maxHp_);
+            }
+            if (maxMp_ != 0) {
+                output.writeInt32(17, maxMp_);
+            }
+            if (magicRecover_ != 0) {
+                output.writeInt32(18, magicRecover_);
+            }
+            if (luck_ != 0) {
+                output.writeInt32(19, luck_);
+            }
+            if (critical_ != 0) {
+                output.writeInt32(20, critical_);
+            }
+            if (nbValue_ != 0) {
+                output.writeInt32(21, nbValue_);
+            }
+            if (criticalDamage_ != 0) {
+                output.writeInt32(22, criticalDamage_);
+            }
+            if (maxInnerPower_ != 0) {
+                output.writeInt32(23, maxInnerPower_);
+            }
+            if (resistance_ != 0) {
+                output.writeInt32(24, resistance_);
+            }
+            if (holyAtt_ != 0) {
+                output.writeInt32(25, holyAtt_);
+            }
+            if (pkAtk_ != 0) {
+                output.writeInt32(26, pkAtk_);
+            }
+            if (pkDef_ != 0) {
+                output.writeInt32(27, pkDef_);
+            }
+        }
 
-      private int magicDefMax_ ;
-      /**
-       * <pre>
-       *魔法防御上限
-       * </pre>
-       *
-       * <code>int32 magicDefMax = 9;</code>
-       */
-      public int getMagicDefMax() {
-        return magicDefMax_;
-      }
-      /**
-       * <pre>
-       *魔法防御上限
-       * </pre>
-       *
-       * <code>int32 magicDefMax = 9;</code>
-       */
-      public Builder setMagicDefMax(int value) {
-        
-        magicDefMax_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *魔法防御上限
-       * </pre>
-       *
-       * <code>int32 magicDefMax = 9;</code>
-       */
-      public Builder clearMagicDefMax() {
-        
-        magicDefMax_ = 0;
-        onChanged();
-        return this;
-      }
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
 
-      private int magicDefMin_ ;
-      /**
-       * <pre>
-       *魔法防御下限
-       * </pre>
-       *
-       * <code>int32 magicDefMin = 10;</code>
-       */
-      public int getMagicDefMin() {
-        return magicDefMin_;
-      }
-      /**
-       * <pre>
-       *魔法防御下限
-       * </pre>
-       *
-       * <code>int32 magicDefMin = 10;</code>
-       */
-      public Builder setMagicDefMin(int value) {
-        
-        magicDefMin_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *魔法防御下限
-       * </pre>
-       *
-       * <code>int32 magicDefMin = 10;</code>
-       */
-      public Builder clearMagicDefMin() {
-        
-        magicDefMin_ = 0;
-        onChanged();
-        return this;
-      }
+            size = 0;
+            if (phyAttMax_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, phyAttMax_);
+            }
+            if (phyAttMin_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(2, phyAttMin_);
+            }
+            if (magicAttMax_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(3, magicAttMax_);
+            }
+            if (magicAttMin_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(4, magicAttMin_);
+            }
+            if (taoAttMax_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(5, taoAttMax_);
+            }
+            if (taoAttMin_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(6, taoAttMin_);
+            }
+            if (phyDefMax_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(7, phyDefMax_);
+            }
+            if (phyDefMin_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(8, phyDefMin_);
+            }
+            if (magicDefMax_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(9, magicDefMax_);
+            }
+            if (magicDefMin_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(10, magicDefMin_);
+            }
+            if (accurate_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(11, accurate_);
+            }
+            if (dodge_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(12, dodge_);
+            }
+            if (poisonRecover_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(13, poisonRecover_);
+            }
+            if (heathRecover_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(14, heathRecover_);
+            }
+            if (attackSpeed_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(15, attackSpeed_);
+            }
+            if (maxHp_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(16, maxHp_);
+            }
+            if (maxMp_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(17, maxMp_);
+            }
+            if (magicRecover_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(18, magicRecover_);
+            }
+            if (luck_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(19, luck_);
+            }
+            if (critical_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(20, critical_);
+            }
+            if (nbValue_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(21, nbValue_);
+            }
+            if (criticalDamage_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(22, criticalDamage_);
+            }
+            if (maxInnerPower_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(23, maxInnerPower_);
+            }
+            if (resistance_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(24, resistance_);
+            }
+            if (holyAtt_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(25, holyAtt_);
+            }
+            if (pkAtk_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(26, pkAtk_);
+            }
+            if (pkDef_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(27, pkDef_);
+            }
+            memoizedSize = size;
+            return size;
+        }
 
-      private int accurate_ ;
-      /**
-       * <pre>
-       *精准
-       * </pre>
-       *
-       * <code>int32 accurate = 11;</code>
-       */
-      public int getAccurate() {
-        return accurate_;
-      }
-      /**
-       * <pre>
-       *精准
-       * </pre>
-       *
-       * <code>int32 accurate = 11;</code>
-       */
-      public Builder setAccurate(int value) {
-        
-        accurate_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *精准
-       * </pre>
-       *
-       * <code>int32 accurate = 11;</code>
-       */
-      public Builder clearAccurate() {
-        
-        accurate_ = 0;
-        onChanged();
-        return this;
-      }
+        private static final long serialVersionUID = 0L;
 
-      private int dodge_ ;
-      /**
-       * <pre>
-       *闪避
-       * </pre>
-       *
-       * <code>int32 dodge = 12;</code>
-       */
-      public int getDodge() {
-        return dodge_;
-      }
-      /**
-       * <pre>
-       *闪避
-       * </pre>
-       *
-       * <code>int32 dodge = 12;</code>
-       */
-      public Builder setDodge(int value) {
-        
-        dodge_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *闪避
-       * </pre>
-       *
-       * <code>int32 dodge = 12;</code>
-       */
-      public Builder clearDodge() {
-        
-        dodge_ = 0;
-        onChanged();
-        return this;
-      }
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof PlayerAttribute)) {
+                return super.equals(obj);
+            }
+            PlayerAttribute other = (PlayerAttribute) obj;
 
-      private int poisonRecover_ ;
-      /**
-       * <pre>
-       *负面恢复
-       * </pre>
-       *
-       * <code>int32 poisonRecover = 13;</code>
-       */
-      public int getPoisonRecover() {
-        return poisonRecover_;
-      }
-      /**
-       * <pre>
-       *负面恢复
-       * </pre>
-       *
-       * <code>int32 poisonRecover = 13;</code>
-       */
-      public Builder setPoisonRecover(int value) {
-        
-        poisonRecover_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *负面恢复
-       * </pre>
-       *
-       * <code>int32 poisonRecover = 13;</code>
-       */
-      public Builder clearPoisonRecover() {
-        
-        poisonRecover_ = 0;
-        onChanged();
-        return this;
-      }
+            boolean result = true;
+            result = result && (getPhyAttMax()
+                    == other.getPhyAttMax());
+            result = result && (getPhyAttMin()
+                    == other.getPhyAttMin());
+            result = result && (getMagicAttMax()
+                    == other.getMagicAttMax());
+            result = result && (getMagicAttMin()
+                    == other.getMagicAttMin());
+            result = result && (getTaoAttMax()
+                    == other.getTaoAttMax());
+            result = result && (getTaoAttMin()
+                    == other.getTaoAttMin());
+            result = result && (getPhyDefMax()
+                    == other.getPhyDefMax());
+            result = result && (getPhyDefMin()
+                    == other.getPhyDefMin());
+            result = result && (getMagicDefMax()
+                    == other.getMagicDefMax());
+            result = result && (getMagicDefMin()
+                    == other.getMagicDefMin());
+            result = result && (getAccurate()
+                    == other.getAccurate());
+            result = result && (getDodge()
+                    == other.getDodge());
+            result = result && (getPoisonRecover()
+                    == other.getPoisonRecover());
+            result = result && (getHeathRecover()
+                    == other.getHeathRecover());
+            result = result && (getAttackSpeed()
+                    == other.getAttackSpeed());
+            result = result && (getMaxHp()
+                    == other.getMaxHp());
+            result = result && (getMaxMp()
+                    == other.getMaxMp());
+            result = result && (getMagicRecover()
+                    == other.getMagicRecover());
+            result = result && (getLuck()
+                    == other.getLuck());
+            result = result && (getCritical()
+                    == other.getCritical());
+            result = result && (getNbValue()
+                    == other.getNbValue());
+            result = result && (getCriticalDamage()
+                    == other.getCriticalDamage());
+            result = result && (getMaxInnerPower()
+                    == other.getMaxInnerPower());
+            result = result && (getResistance()
+                    == other.getResistance());
+            result = result && (getHolyAtt()
+                    == other.getHolyAtt());
+            result = result && (getPkAtk()
+                    == other.getPkAtk());
+            result = result && (getPkDef()
+                    == other.getPkDef());
+            return result;
+        }
 
-      private int heathRecover_ ;
-      /**
-       * <pre>
-       *体力恢复
-       * </pre>
-       *
-       * <code>int32 heathRecover = 14;</code>
-       */
-      public int getHeathRecover() {
-        return heathRecover_;
-      }
-      /**
-       * <pre>
-       *体力恢复
-       * </pre>
-       *
-       * <code>int32 heathRecover = 14;</code>
-       */
-      public Builder setHeathRecover(int value) {
-        
-        heathRecover_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *体力恢复
-       * </pre>
-       *
-       * <code>int32 heathRecover = 14;</code>
-       */
-      public Builder clearHeathRecover() {
-        
-        heathRecover_ = 0;
-        onChanged();
-        return this;
-      }
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + PHYATTMAX_FIELD_NUMBER;
+            hash = (53 * hash) + getPhyAttMax();
+            hash = (37 * hash) + PHYATTMIN_FIELD_NUMBER;
+            hash = (53 * hash) + getPhyAttMin();
+            hash = (37 * hash) + MAGICATTMAX_FIELD_NUMBER;
+            hash = (53 * hash) + getMagicAttMax();
+            hash = (37 * hash) + MAGICATTMIN_FIELD_NUMBER;
+            hash = (53 * hash) + getMagicAttMin();
+            hash = (37 * hash) + TAOATTMAX_FIELD_NUMBER;
+            hash = (53 * hash) + getTaoAttMax();
+            hash = (37 * hash) + TAOATTMIN_FIELD_NUMBER;
+            hash = (53 * hash) + getTaoAttMin();
+            hash = (37 * hash) + PHYDEFMAX_FIELD_NUMBER;
+            hash = (53 * hash) + getPhyDefMax();
+            hash = (37 * hash) + PHYDEFMIN_FIELD_NUMBER;
+            hash = (53 * hash) + getPhyDefMin();
+            hash = (37 * hash) + MAGICDEFMAX_FIELD_NUMBER;
+            hash = (53 * hash) + getMagicDefMax();
+            hash = (37 * hash) + MAGICDEFMIN_FIELD_NUMBER;
+            hash = (53 * hash) + getMagicDefMin();
+            hash = (37 * hash) + ACCURATE_FIELD_NUMBER;
+            hash = (53 * hash) + getAccurate();
+            hash = (37 * hash) + DODGE_FIELD_NUMBER;
+            hash = (53 * hash) + getDodge();
+            hash = (37 * hash) + POISONRECOVER_FIELD_NUMBER;
+            hash = (53 * hash) + getPoisonRecover();
+            hash = (37 * hash) + HEATHRECOVER_FIELD_NUMBER;
+            hash = (53 * hash) + getHeathRecover();
+            hash = (37 * hash) + ATTACKSPEED_FIELD_NUMBER;
+            hash = (53 * hash) + getAttackSpeed();
+            hash = (37 * hash) + MAXHP_FIELD_NUMBER;
+            hash = (53 * hash) + getMaxHp();
+            hash = (37 * hash) + MAXMP_FIELD_NUMBER;
+            hash = (53 * hash) + getMaxMp();
+            hash = (37 * hash) + MAGICRECOVER_FIELD_NUMBER;
+            hash = (53 * hash) + getMagicRecover();
+            hash = (37 * hash) + LUCK_FIELD_NUMBER;
+            hash = (53 * hash) + getLuck();
+            hash = (37 * hash) + CRITICAL_FIELD_NUMBER;
+            hash = (53 * hash) + getCritical();
+            hash = (37 * hash) + NBVALUE_FIELD_NUMBER;
+            hash = (53 * hash) + getNbValue();
+            hash = (37 * hash) + CRITICALDAMAGE_FIELD_NUMBER;
+            hash = (53 * hash) + getCriticalDamage();
+            hash = (37 * hash) + MAXINNERPOWER_FIELD_NUMBER;
+            hash = (53 * hash) + getMaxInnerPower();
+            hash = (37 * hash) + RESISTANCE_FIELD_NUMBER;
+            hash = (53 * hash) + getResistance();
+            hash = (37 * hash) + HOLYATT_FIELD_NUMBER;
+            hash = (53 * hash) + getHolyAtt();
+            hash = (37 * hash) + PKATK_FIELD_NUMBER;
+            hash = (53 * hash) + getPkAtk();
+            hash = (37 * hash) + PKDEF_FIELD_NUMBER;
+            hash = (53 * hash) + getPkDef();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
 
-      private int attackSpeed_ ;
-      /**
-       * <pre>
-       *攻击速度
-       * </pre>
-       *
-       * <code>int32 attackSpeed = 15;</code>
-       */
-      public int getAttackSpeed() {
-        return attackSpeed_;
-      }
-      /**
-       * <pre>
-       *攻击速度
-       * </pre>
-       *
-       * <code>int32 attackSpeed = 15;</code>
-       */
-      public Builder setAttackSpeed(int value) {
-        
-        attackSpeed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *攻击速度
-       * </pre>
-       *
-       * <code>int32 attackSpeed = 15;</code>
-       */
-      public Builder clearAttackSpeed() {
-        
-        attackSpeed_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
 
-      private int maxHp_ ;
-      /**
-       * <pre>
-       *最大HP
-       * </pre>
-       *
-       * <code>int32 maxHp = 16;</code>
-       */
-      public int getMaxHp() {
-        return maxHp_;
-      }
-      /**
-       * <pre>
-       *最大HP
-       * </pre>
-       *
-       * <code>int32 maxHp = 16;</code>
-       */
-      public Builder setMaxHp(int value) {
-        
-        maxHp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *最大HP
-       * </pre>
-       *
-       * <code>int32 maxHp = 16;</code>
-       */
-      public Builder clearMaxHp() {
-        
-        maxHp_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
 
-      private int maxMp_ ;
-      /**
-       * <pre>
-       *最大MP
-       * </pre>
-       *
-       * <code>int32 maxMp = 17;</code>
-       */
-      public int getMaxMp() {
-        return maxMp_;
-      }
-      /**
-       * <pre>
-       *最大MP
-       * </pre>
-       *
-       * <code>int32 maxMp = 17;</code>
-       */
-      public Builder setMaxMp(int value) {
-        
-        maxMp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *最大MP
-       * </pre>
-       *
-       * <code>int32 maxMp = 17;</code>
-       */
-      public Builder clearMaxMp() {
-        
-        maxMp_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
 
-      private int magicRecover_ ;
-      /**
-       * <pre>
-       *魔法恢复
-       * </pre>
-       *
-       * <code>int32 magicRecover = 18;</code>
-       */
-      public int getMagicRecover() {
-        return magicRecover_;
-      }
-      /**
-       * <pre>
-       *魔法恢复
-       * </pre>
-       *
-       * <code>int32 magicRecover = 18;</code>
-       */
-      public Builder setMagicRecover(int value) {
-        
-        magicRecover_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *魔法恢复
-       * </pre>
-       *
-       * <code>int32 magicRecover = 18;</code>
-       */
-      public Builder clearMagicRecover() {
-        
-        magicRecover_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
 
-      private int luck_ ;
-      /**
-       * <pre>
-       *幸运
-       * </pre>
-       *
-       * <code>int32 luck = 19;</code>
-       */
-      public int getLuck() {
-        return luck_;
-      }
-      /**
-       * <pre>
-       *幸运
-       * </pre>
-       *
-       * <code>int32 luck = 19;</code>
-       */
-      public Builder setLuck(int value) {
-        
-        luck_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *幸运
-       * </pre>
-       *
-       * <code>int32 luck = 19;</code>
-       */
-      public Builder clearLuck() {
-        
-        luck_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
 
-      private int critical_ ;
-      /**
-       * <pre>
-       *暴击率
-       * </pre>
-       *
-       * <code>int32 critical = 20;</code>
-       */
-      public int getCritical() {
-        return critical_;
-      }
-      /**
-       * <pre>
-       *暴击率
-       * </pre>
-       *
-       * <code>int32 critical = 20;</code>
-       */
-      public Builder setCritical(int value) {
-        
-        critical_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *暴击率
-       * </pre>
-       *
-       * <code>int32 critical = 20;</code>
-       */
-      public Builder clearCritical() {
-        
-        critical_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
 
-      private int nbValue_ ;
-      /**
-       * <pre>
-       *战斗力
-       * </pre>
-       *
-       * <code>int32 nbValue = 21;</code>
-       */
-      public int getNbValue() {
-        return nbValue_;
-      }
-      /**
-       * <pre>
-       *战斗力
-       * </pre>
-       *
-       * <code>int32 nbValue = 21;</code>
-       */
-      public Builder setNbValue(int value) {
-        
-        nbValue_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *战斗力
-       * </pre>
-       *
-       * <code>int32 nbValue = 21;</code>
-       */
-      public Builder clearNbValue() {
-        
-        nbValue_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
 
-      private int criticalDamage_ ;
-      /**
-       * <pre>
-       *暴击伤害
-       * </pre>
-       *
-       * <code>int32 criticalDamage = 22;</code>
-       */
-      public int getCriticalDamage() {
-        return criticalDamage_;
-      }
-      /**
-       * <pre>
-       *暴击伤害
-       * </pre>
-       *
-       * <code>int32 criticalDamage = 22;</code>
-       */
-      public Builder setCriticalDamage(int value) {
-        
-        criticalDamage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *暴击伤害
-       * </pre>
-       *
-       * <code>int32 criticalDamage = 22;</code>
-       */
-      public Builder clearCriticalDamage() {
-        
-        criticalDamage_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
 
-      private int maxInnerPower_ ;
-      /**
-       * <pre>
-       *最大内力
-       * </pre>
-       *
-       * <code>int32 maxInnerPower = 23;</code>
-       */
-      public int getMaxInnerPower() {
-        return maxInnerPower_;
-      }
-      /**
-       * <pre>
-       *最大内力
-       * </pre>
-       *
-       * <code>int32 maxInnerPower = 23;</code>
-       */
-      public Builder setMaxInnerPower(int value) {
-        
-        maxInnerPower_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *最大内力
-       * </pre>
-       *
-       * <code>int32 maxInnerPower = 23;</code>
-       */
-      public Builder clearMaxInnerPower() {
-        
-        maxInnerPower_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
 
-      private int resistance_ ;
-      /**
-       * <pre>
-       *抗性
-       * </pre>
-       *
-       * <code>int32 resistance = 24;</code>
-       */
-      public int getResistance() {
-        return resistance_;
-      }
-      /**
-       * <pre>
-       *抗性
-       * </pre>
-       *
-       * <code>int32 resistance = 24;</code>
-       */
-      public Builder setResistance(int value) {
-        
-        resistance_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *抗性
-       * </pre>
-       *
-       * <code>int32 resistance = 24;</code>
-       */
-      public Builder clearResistance() {
-        
-        resistance_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
 
-      private int holyAtt_ ;
-      /**
-       * <pre>
-       *神圣伤害
-       * </pre>
-       *
-       * <code>int32 holyAtt = 25;</code>
-       */
-      public int getHolyAtt() {
-        return holyAtt_;
-      }
-      /**
-       * <pre>
-       *神圣伤害
-       * </pre>
-       *
-       * <code>int32 holyAtt = 25;</code>
-       */
-      public Builder setHolyAtt(int value) {
-        
-        holyAtt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *神圣伤害
-       * </pre>
-       *
-       * <code>int32 holyAtt = 25;</code>
-       */
-      public Builder clearHolyAtt() {
-        
-        holyAtt_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
 
-      private int pkAtk_ ;
-      /**
-       * <pre>
-       *PK伤害加成
-       * </pre>
-       *
-       * <code>int32 pkAtk = 26;</code>
-       */
-      public int getPkAtk() {
-        return pkAtk_;
-      }
-      /**
-       * <pre>
-       *PK伤害加成
-       * </pre>
-       *
-       * <code>int32 pkAtk = 26;</code>
-       */
-      public Builder setPkAtk(int value) {
-        
-        pkAtk_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *PK伤害加成
-       * </pre>
-       *
-       * <code>int32 pkAtk = 26;</code>
-       */
-      public Builder clearPkAtk() {
-        
-        pkAtk_ = 0;
-        onChanged();
-        return this;
-      }
+        public static PlayerAttribute parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
 
-      private int pkDef_ ;
-      /**
-       * <pre>
-       *PK防御
-       * </pre>
-       *
-       * <code>int32 pkDef = 27;</code>
-       */
-      public int getPkDef() {
-        return pkDef_;
-      }
-      /**
-       * <pre>
-       *PK防御
-       * </pre>
-       *
-       * <code>int32 pkDef = 27;</code>
-       */
-      public Builder setPkDef(int value) {
-        
-        pkDef_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *PK防御
-       * </pre>
-       *
-       * <code>int32 pkDef = 27;</code>
-       */
-      public Builder clearPkDef() {
-        
-        pkDef_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        public Builder newBuilderForType() { return newBuilder(); }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(PlayerAttribute prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.PlayerAttribute}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.PlayerAttribute)
+                PlayerAttributeOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_PlayerAttribute_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_PlayerAttribute_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                PlayerAttribute.class, Builder.class);
+            }
+
+            // Construct using UserProto.PlayerAttribute.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                phyAttMax_ = 0;
+
+                phyAttMin_ = 0;
+
+                magicAttMax_ = 0;
+
+                magicAttMin_ = 0;
+
+                taoAttMax_ = 0;
+
+                taoAttMin_ = 0;
+
+                phyDefMax_ = 0;
+
+                phyDefMin_ = 0;
+
+                magicDefMax_ = 0;
+
+                magicDefMin_ = 0;
+
+                accurate_ = 0;
+
+                dodge_ = 0;
+
+                poisonRecover_ = 0;
+
+                heathRecover_ = 0;
+
+                attackSpeed_ = 0;
+
+                maxHp_ = 0;
+
+                maxMp_ = 0;
+
+                magicRecover_ = 0;
+
+                luck_ = 0;
+
+                critical_ = 0;
+
+                nbValue_ = 0;
+
+                criticalDamage_ = 0;
+
+                maxInnerPower_ = 0;
+
+                resistance_ = 0;
+
+                holyAtt_ = 0;
+
+                pkAtk_ = 0;
+
+                pkDef_ = 0;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_PlayerAttribute_descriptor;
+            }
+
+            public PlayerAttribute getDefaultInstanceForType() {
+                return PlayerAttribute.getDefaultInstance();
+            }
+
+            public PlayerAttribute build() {
+                PlayerAttribute result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public PlayerAttribute buildPartial() {
+                PlayerAttribute result = new PlayerAttribute(this);
+                result.phyAttMax_ = phyAttMax_;
+                result.phyAttMin_ = phyAttMin_;
+                result.magicAttMax_ = magicAttMax_;
+                result.magicAttMin_ = magicAttMin_;
+                result.taoAttMax_ = taoAttMax_;
+                result.taoAttMin_ = taoAttMin_;
+                result.phyDefMax_ = phyDefMax_;
+                result.phyDefMin_ = phyDefMin_;
+                result.magicDefMax_ = magicDefMax_;
+                result.magicDefMin_ = magicDefMin_;
+                result.accurate_ = accurate_;
+                result.dodge_ = dodge_;
+                result.poisonRecover_ = poisonRecover_;
+                result.heathRecover_ = heathRecover_;
+                result.attackSpeed_ = attackSpeed_;
+                result.maxHp_ = maxHp_;
+                result.maxMp_ = maxMp_;
+                result.magicRecover_ = magicRecover_;
+                result.luck_ = luck_;
+                result.critical_ = critical_;
+                result.nbValue_ = nbValue_;
+                result.criticalDamage_ = criticalDamage_;
+                result.maxInnerPower_ = maxInnerPower_;
+                result.resistance_ = resistance_;
+                result.holyAtt_ = holyAtt_;
+                result.pkAtk_ = pkAtk_;
+                result.pkDef_ = pkDef_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof PlayerAttribute) {
+                    return mergeFrom((PlayerAttribute)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(PlayerAttribute other) {
+                if (other == PlayerAttribute.getDefaultInstance()) return this;
+                if (other.getPhyAttMax() != 0) {
+                    setPhyAttMax(other.getPhyAttMax());
+                }
+                if (other.getPhyAttMin() != 0) {
+                    setPhyAttMin(other.getPhyAttMin());
+                }
+                if (other.getMagicAttMax() != 0) {
+                    setMagicAttMax(other.getMagicAttMax());
+                }
+                if (other.getMagicAttMin() != 0) {
+                    setMagicAttMin(other.getMagicAttMin());
+                }
+                if (other.getTaoAttMax() != 0) {
+                    setTaoAttMax(other.getTaoAttMax());
+                }
+                if (other.getTaoAttMin() != 0) {
+                    setTaoAttMin(other.getTaoAttMin());
+                }
+                if (other.getPhyDefMax() != 0) {
+                    setPhyDefMax(other.getPhyDefMax());
+                }
+                if (other.getPhyDefMin() != 0) {
+                    setPhyDefMin(other.getPhyDefMin());
+                }
+                if (other.getMagicDefMax() != 0) {
+                    setMagicDefMax(other.getMagicDefMax());
+                }
+                if (other.getMagicDefMin() != 0) {
+                    setMagicDefMin(other.getMagicDefMin());
+                }
+                if (other.getAccurate() != 0) {
+                    setAccurate(other.getAccurate());
+                }
+                if (other.getDodge() != 0) {
+                    setDodge(other.getDodge());
+                }
+                if (other.getPoisonRecover() != 0) {
+                    setPoisonRecover(other.getPoisonRecover());
+                }
+                if (other.getHeathRecover() != 0) {
+                    setHeathRecover(other.getHeathRecover());
+                }
+                if (other.getAttackSpeed() != 0) {
+                    setAttackSpeed(other.getAttackSpeed());
+                }
+                if (other.getMaxHp() != 0) {
+                    setMaxHp(other.getMaxHp());
+                }
+                if (other.getMaxMp() != 0) {
+                    setMaxMp(other.getMaxMp());
+                }
+                if (other.getMagicRecover() != 0) {
+                    setMagicRecover(other.getMagicRecover());
+                }
+                if (other.getLuck() != 0) {
+                    setLuck(other.getLuck());
+                }
+                if (other.getCritical() != 0) {
+                    setCritical(other.getCritical());
+                }
+                if (other.getNbValue() != 0) {
+                    setNbValue(other.getNbValue());
+                }
+                if (other.getCriticalDamage() != 0) {
+                    setCriticalDamage(other.getCriticalDamage());
+                }
+                if (other.getMaxInnerPower() != 0) {
+                    setMaxInnerPower(other.getMaxInnerPower());
+                }
+                if (other.getResistance() != 0) {
+                    setResistance(other.getResistance());
+                }
+                if (other.getHolyAtt() != 0) {
+                    setHolyAtt(other.getHolyAtt());
+                }
+                if (other.getPkAtk() != 0) {
+                    setPkAtk(other.getPkAtk());
+                }
+                if (other.getPkDef() != 0) {
+                    setPkDef(other.getPkDef());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                PlayerAttribute parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (PlayerAttribute) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int phyAttMax_ ;
+
+            /**
+             * <pre>
+             *物理攻击上限
+             * </pre>
+             *
+             * <code>int32 phyAttMax = 1;</code>
+             */
+            public int getPhyAttMax() {
+                return phyAttMax_;
+            }
+
+            /**
+             * <pre>
+             *物理攻击上限
+             * </pre>
+             *
+             * <code>int32 phyAttMax = 1;</code>
+             */
+            public Builder setPhyAttMax(int value) {
+
+                phyAttMax_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *物理攻击上限
+             * </pre>
+             *
+             * <code>int32 phyAttMax = 1;</code>
+             */
+            public Builder clearPhyAttMax() {
+
+                phyAttMax_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int phyAttMin_ ;
+
+            /**
+             * <pre>
+             *物理攻击下限
+             * </pre>
+             *
+             * <code>int32 phyAttMin = 2;</code>
+             */
+            public int getPhyAttMin() {
+                return phyAttMin_;
+            }
+
+            /**
+             * <pre>
+             *物理攻击下限
+             * </pre>
+             *
+             * <code>int32 phyAttMin = 2;</code>
+             */
+            public Builder setPhyAttMin(int value) {
+
+                phyAttMin_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *物理攻击下限
+             * </pre>
+             *
+             * <code>int32 phyAttMin = 2;</code>
+             */
+            public Builder clearPhyAttMin() {
+
+                phyAttMin_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int magicAttMax_ ;
+
+            /**
+             * <pre>
+             *魔法攻击上限
+             * </pre>
+             *
+             * <code>int32 magicAttMax = 3;</code>
+             */
+            public int getMagicAttMax() {
+                return magicAttMax_;
+            }
+
+            /**
+             * <pre>
+             *魔法攻击上限
+             * </pre>
+             *
+             * <code>int32 magicAttMax = 3;</code>
+             */
+            public Builder setMagicAttMax(int value) {
+
+                magicAttMax_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *魔法攻击上限
+             * </pre>
+             *
+             * <code>int32 magicAttMax = 3;</code>
+             */
+            public Builder clearMagicAttMax() {
+
+                magicAttMax_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int magicAttMin_ ;
+
+            /**
+             * <pre>
+             *魔法攻击下限
+             * </pre>
+             *
+             * <code>int32 magicAttMin = 4;</code>
+             */
+            public int getMagicAttMin() {
+                return magicAttMin_;
+            }
+
+            /**
+             * <pre>
+             *魔法攻击下限
+             * </pre>
+             *
+             * <code>int32 magicAttMin = 4;</code>
+             */
+            public Builder setMagicAttMin(int value) {
+
+                magicAttMin_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *魔法攻击下限
+             * </pre>
+             *
+             * <code>int32 magicAttMin = 4;</code>
+             */
+            public Builder clearMagicAttMin() {
+
+                magicAttMin_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int taoAttMax_ ;
+
+            /**
+             * <pre>
+             *道术攻击上限
+             * </pre>
+             *
+             * <code>int32 taoAttMax = 5;</code>
+             */
+            public int getTaoAttMax() {
+                return taoAttMax_;
+            }
+
+            /**
+             * <pre>
+             *道术攻击上限
+             * </pre>
+             *
+             * <code>int32 taoAttMax = 5;</code>
+             */
+            public Builder setTaoAttMax(int value) {
+
+                taoAttMax_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *道术攻击上限
+             * </pre>
+             *
+             * <code>int32 taoAttMax = 5;</code>
+             */
+            public Builder clearTaoAttMax() {
+
+                taoAttMax_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int taoAttMin_ ;
+
+            /**
+             * <pre>
+             *道术攻击下限
+             * </pre>
+             *
+             * <code>int32 taoAttMin = 6;</code>
+             */
+            public int getTaoAttMin() {
+                return taoAttMin_;
+            }
+
+            /**
+             * <pre>
+             *道术攻击下限
+             * </pre>
+             *
+             * <code>int32 taoAttMin = 6;</code>
+             */
+            public Builder setTaoAttMin(int value) {
+
+                taoAttMin_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *道术攻击下限
+             * </pre>
+             *
+             * <code>int32 taoAttMin = 6;</code>
+             */
+            public Builder clearTaoAttMin() {
+
+                taoAttMin_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int phyDefMax_ ;
+
+            /**
+             * <pre>
+             *物理防御上限
+             * </pre>
+             *
+             * <code>int32 phyDefMax = 7;</code>
+             */
+            public int getPhyDefMax() {
+                return phyDefMax_;
+            }
+
+            /**
+             * <pre>
+             *物理防御上限
+             * </pre>
+             *
+             * <code>int32 phyDefMax = 7;</code>
+             */
+            public Builder setPhyDefMax(int value) {
+
+                phyDefMax_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *物理防御上限
+             * </pre>
+             *
+             * <code>int32 phyDefMax = 7;</code>
+             */
+            public Builder clearPhyDefMax() {
+
+                phyDefMax_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int phyDefMin_ ;
+
+            /**
+             * <pre>
+             *物理防御下限
+             * </pre>
+             *
+             * <code>int32 phyDefMin = 8;</code>
+             */
+            public int getPhyDefMin() {
+                return phyDefMin_;
+            }
+
+            /**
+             * <pre>
+             *物理防御下限
+             * </pre>
+             *
+             * <code>int32 phyDefMin = 8;</code>
+             */
+            public Builder setPhyDefMin(int value) {
+
+                phyDefMin_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *物理防御下限
+             * </pre>
+             *
+             * <code>int32 phyDefMin = 8;</code>
+             */
+            public Builder clearPhyDefMin() {
+
+                phyDefMin_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int magicDefMax_ ;
+
+            /**
+             * <pre>
+             *魔法防御上限
+             * </pre>
+             *
+             * <code>int32 magicDefMax = 9;</code>
+             */
+            public int getMagicDefMax() {
+                return magicDefMax_;
+            }
+
+            /**
+             * <pre>
+             *魔法防御上限
+             * </pre>
+             *
+             * <code>int32 magicDefMax = 9;</code>
+             */
+            public Builder setMagicDefMax(int value) {
+
+                magicDefMax_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *魔法防御上限
+             * </pre>
+             *
+             * <code>int32 magicDefMax = 9;</code>
+             */
+            public Builder clearMagicDefMax() {
+
+                magicDefMax_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int magicDefMin_ ;
+
+            /**
+             * <pre>
+             *魔法防御下限
+             * </pre>
+             *
+             * <code>int32 magicDefMin = 10;</code>
+             */
+            public int getMagicDefMin() {
+                return magicDefMin_;
+            }
+
+            /**
+             * <pre>
+             *魔法防御下限
+             * </pre>
+             *
+             * <code>int32 magicDefMin = 10;</code>
+             */
+            public Builder setMagicDefMin(int value) {
+
+                magicDefMin_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *魔法防御下限
+             * </pre>
+             *
+             * <code>int32 magicDefMin = 10;</code>
+             */
+            public Builder clearMagicDefMin() {
+
+                magicDefMin_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int accurate_ ;
+
+            /**
+             * <pre>
+             *精准
+             * </pre>
+             *
+             * <code>int32 accurate = 11;</code>
+             */
+            public int getAccurate() {
+                return accurate_;
+            }
+
+            /**
+             * <pre>
+             *精准
+             * </pre>
+             *
+             * <code>int32 accurate = 11;</code>
+             */
+            public Builder setAccurate(int value) {
+
+                accurate_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *精准
+             * </pre>
+             *
+             * <code>int32 accurate = 11;</code>
+             */
+            public Builder clearAccurate() {
+
+                accurate_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int dodge_ ;
+
+            /**
+             * <pre>
+             *闪避
+             * </pre>
+             *
+             * <code>int32 dodge = 12;</code>
+             */
+            public int getDodge() {
+                return dodge_;
+            }
+
+            /**
+             * <pre>
+             *闪避
+             * </pre>
+             *
+             * <code>int32 dodge = 12;</code>
+             */
+            public Builder setDodge(int value) {
+
+                dodge_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *闪避
+             * </pre>
+             *
+             * <code>int32 dodge = 12;</code>
+             */
+            public Builder clearDodge() {
+
+                dodge_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int poisonRecover_ ;
+
+            /**
+             * <pre>
+             *负面恢复
+             * </pre>
+             *
+             * <code>int32 poisonRecover = 13;</code>
+             */
+            public int getPoisonRecover() {
+                return poisonRecover_;
+            }
+
+            /**
+             * <pre>
+             *负面恢复
+             * </pre>
+             *
+             * <code>int32 poisonRecover = 13;</code>
+             */
+            public Builder setPoisonRecover(int value) {
+
+                poisonRecover_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *负面恢复
+             * </pre>
+             *
+             * <code>int32 poisonRecover = 13;</code>
+             */
+            public Builder clearPoisonRecover() {
+
+                poisonRecover_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int heathRecover_ ;
+
+            /**
+             * <pre>
+             *体力恢复
+             * </pre>
+             *
+             * <code>int32 heathRecover = 14;</code>
+             */
+            public int getHeathRecover() {
+                return heathRecover_;
+            }
+
+            /**
+             * <pre>
+             *体力恢复
+             * </pre>
+             *
+             * <code>int32 heathRecover = 14;</code>
+             */
+            public Builder setHeathRecover(int value) {
+
+                heathRecover_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *体力恢复
+             * </pre>
+             *
+             * <code>int32 heathRecover = 14;</code>
+             */
+            public Builder clearHeathRecover() {
+
+                heathRecover_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int attackSpeed_ ;
+
+            /**
+             * <pre>
+             *攻击速度
+             * </pre>
+             *
+             * <code>int32 attackSpeed = 15;</code>
+             */
+            public int getAttackSpeed() {
+                return attackSpeed_;
+            }
+
+            /**
+             * <pre>
+             *攻击速度
+             * </pre>
+             *
+             * <code>int32 attackSpeed = 15;</code>
+             */
+            public Builder setAttackSpeed(int value) {
+
+                attackSpeed_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *攻击速度
+             * </pre>
+             *
+             * <code>int32 attackSpeed = 15;</code>
+             */
+            public Builder clearAttackSpeed() {
+
+                attackSpeed_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int maxHp_ ;
+
+            /**
+             * <pre>
+             *最大HP
+             * </pre>
+             *
+             * <code>int32 maxHp = 16;</code>
+             */
+            public int getMaxHp() {
+                return maxHp_;
+            }
+
+            /**
+             * <pre>
+             *最大HP
+             * </pre>
+             *
+             * <code>int32 maxHp = 16;</code>
+             */
+            public Builder setMaxHp(int value) {
+
+                maxHp_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *最大HP
+             * </pre>
+             *
+             * <code>int32 maxHp = 16;</code>
+             */
+            public Builder clearMaxHp() {
+
+                maxHp_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int maxMp_ ;
+
+            /**
+             * <pre>
+             *最大MP
+             * </pre>
+             *
+             * <code>int32 maxMp = 17;</code>
+             */
+            public int getMaxMp() {
+                return maxMp_;
+            }
+
+            /**
+             * <pre>
+             *最大MP
+             * </pre>
+             *
+             * <code>int32 maxMp = 17;</code>
+             */
+            public Builder setMaxMp(int value) {
+
+                maxMp_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *最大MP
+             * </pre>
+             *
+             * <code>int32 maxMp = 17;</code>
+             */
+            public Builder clearMaxMp() {
+
+                maxMp_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int magicRecover_ ;
+
+            /**
+             * <pre>
+             *魔法恢复
+             * </pre>
+             *
+             * <code>int32 magicRecover = 18;</code>
+             */
+            public int getMagicRecover() {
+                return magicRecover_;
+            }
+
+            /**
+             * <pre>
+             *魔法恢复
+             * </pre>
+             *
+             * <code>int32 magicRecover = 18;</code>
+             */
+            public Builder setMagicRecover(int value) {
+
+                magicRecover_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *魔法恢复
+             * </pre>
+             *
+             * <code>int32 magicRecover = 18;</code>
+             */
+            public Builder clearMagicRecover() {
+
+                magicRecover_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int luck_ ;
+
+            /**
+             * <pre>
+             *幸运
+             * </pre>
+             *
+             * <code>int32 luck = 19;</code>
+             */
+            public int getLuck() {
+                return luck_;
+            }
+
+            /**
+             * <pre>
+             *幸运
+             * </pre>
+             *
+             * <code>int32 luck = 19;</code>
+             */
+            public Builder setLuck(int value) {
+
+                luck_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *幸运
+             * </pre>
+             *
+             * <code>int32 luck = 19;</code>
+             */
+            public Builder clearLuck() {
+
+                luck_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int critical_ ;
+
+            /**
+             * <pre>
+             *暴击率
+             * </pre>
+             *
+             * <code>int32 critical = 20;</code>
+             */
+            public int getCritical() {
+                return critical_;
+            }
+
+            /**
+             * <pre>
+             *暴击率
+             * </pre>
+             *
+             * <code>int32 critical = 20;</code>
+             */
+            public Builder setCritical(int value) {
+
+                critical_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *暴击率
+             * </pre>
+             *
+             * <code>int32 critical = 20;</code>
+             */
+            public Builder clearCritical() {
+
+                critical_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int nbValue_ ;
+
+            /**
+             * <pre>
+             *战斗力
+             * </pre>
+             *
+             * <code>int32 nbValue = 21;</code>
+             */
+            public int getNbValue() {
+                return nbValue_;
+            }
+
+            /**
+             * <pre>
+             *战斗力
+             * </pre>
+             *
+             * <code>int32 nbValue = 21;</code>
+             */
+            public Builder setNbValue(int value) {
+
+                nbValue_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *战斗力
+             * </pre>
+             *
+             * <code>int32 nbValue = 21;</code>
+             */
+            public Builder clearNbValue() {
+
+                nbValue_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int criticalDamage_ ;
+
+            /**
+             * <pre>
+             *暴击伤害
+             * </pre>
+             *
+             * <code>int32 criticalDamage = 22;</code>
+             */
+            public int getCriticalDamage() {
+                return criticalDamage_;
+            }
+
+            /**
+             * <pre>
+             *暴击伤害
+             * </pre>
+             *
+             * <code>int32 criticalDamage = 22;</code>
+             */
+            public Builder setCriticalDamage(int value) {
+
+                criticalDamage_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *暴击伤害
+             * </pre>
+             *
+             * <code>int32 criticalDamage = 22;</code>
+             */
+            public Builder clearCriticalDamage() {
+
+                criticalDamage_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int maxInnerPower_ ;
+
+            /**
+             * <pre>
+             *最大内力
+             * </pre>
+             *
+             * <code>int32 maxInnerPower = 23;</code>
+             */
+            public int getMaxInnerPower() {
+                return maxInnerPower_;
+            }
+
+            /**
+             * <pre>
+             *最大内力
+             * </pre>
+             *
+             * <code>int32 maxInnerPower = 23;</code>
+             */
+            public Builder setMaxInnerPower(int value) {
+
+                maxInnerPower_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *最大内力
+             * </pre>
+             *
+             * <code>int32 maxInnerPower = 23;</code>
+             */
+            public Builder clearMaxInnerPower() {
+
+                maxInnerPower_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int resistance_ ;
+
+            /**
+             * <pre>
+             *抗性
+             * </pre>
+             *
+             * <code>int32 resistance = 24;</code>
+             */
+            public int getResistance() {
+                return resistance_;
+            }
+
+            /**
+             * <pre>
+             *抗性
+             * </pre>
+             *
+             * <code>int32 resistance = 24;</code>
+             */
+            public Builder setResistance(int value) {
+
+                resistance_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *抗性
+             * </pre>
+             *
+             * <code>int32 resistance = 24;</code>
+             */
+            public Builder clearResistance() {
+
+                resistance_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int holyAtt_ ;
+
+            /**
+             * <pre>
+             *神圣伤害
+             * </pre>
+             *
+             * <code>int32 holyAtt = 25;</code>
+             */
+            public int getHolyAtt() {
+                return holyAtt_;
+            }
+
+            /**
+             * <pre>
+             *神圣伤害
+             * </pre>
+             *
+             * <code>int32 holyAtt = 25;</code>
+             */
+            public Builder setHolyAtt(int value) {
+
+                holyAtt_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *神圣伤害
+             * </pre>
+             *
+             * <code>int32 holyAtt = 25;</code>
+             */
+            public Builder clearHolyAtt() {
+
+                holyAtt_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int pkAtk_ ;
+
+            /**
+             * <pre>
+             *PK伤害加成
+             * </pre>
+             *
+             * <code>int32 pkAtk = 26;</code>
+             */
+            public int getPkAtk() {
+                return pkAtk_;
+            }
+
+            /**
+             * <pre>
+             *PK伤害加成
+             * </pre>
+             *
+             * <code>int32 pkAtk = 26;</code>
+             */
+            public Builder setPkAtk(int value) {
+
+                pkAtk_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *PK伤害加成
+             * </pre>
+             *
+             * <code>int32 pkAtk = 26;</code>
+             */
+            public Builder clearPkAtk() {
+
+                pkAtk_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int pkDef_ ;
+
+            /**
+             * <pre>
+             *PK防御
+             * </pre>
+             *
+             * <code>int32 pkDef = 27;</code>
+             */
+            public int getPkDef() {
+                return pkDef_;
+            }
+
+            /**
+             * <pre>
+             *PK防御
+             * </pre>
+             *
+             * <code>int32 pkDef = 27;</code>
+             */
+            public Builder setPkDef(int value) {
+
+                pkDef_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *PK防御
+             * </pre>
+             *
+             * <code>int32 pkDef = 27;</code>
+             */
+            public Builder clearPkDef() {
+
+                pkDef_ = 0;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:user.PlayerAttribute)
+            // @@protoc_insertion_point(builder_scope:user.PlayerAttribute)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.PlayerAttribute)
+        private static final PlayerAttribute DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new PlayerAttribute();
+        }
+
+        public static PlayerAttribute getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<PlayerAttribute>
+                PARSER = new com.google.protobuf.AbstractParser<PlayerAttribute>() {
+            public PlayerAttribute parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new PlayerAttribute(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<PlayerAttribute> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<PlayerAttribute> getParserForType() {
+            return PARSER;
+        }
+
+        public PlayerAttribute getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:user.PlayerAttribute)
-    private static final PlayerAttribute DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new PlayerAttribute();
-    }
+    public interface LoginRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.LoginRequest)
+            com.google.protobuf.MessageOrBuilder {
 
-    public static PlayerAttribute getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <pre>
+         *用户登录名
+         * </pre>
+         *
+         * <code>string loginName = 1;</code>
+         */
+        String getLoginName();
 
-    private static final com.google.protobuf.Parser<PlayerAttribute>
-        PARSER = new com.google.protobuf.AbstractParser<PlayerAttribute>() {
-      public PlayerAttribute parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlayerAttribute(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PlayerAttribute> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<PlayerAttribute> getParserForType() {
-      return PARSER;
-    }
-
-    public PlayerAttribute getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface LoginRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.LoginRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *用户登录名
-     * </pre>
-     *
-     * <code>string loginName = 1;</code>
-     */
-    String getLoginName();
-    /**
-     * <pre>
-     *用户登录名
-     * </pre>
-     *
-     * <code>string loginName = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         *用户登录名
+         * </pre>
+         *
+         * <code>string loginName = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getLoginNameBytes();
 
-    /**
-     * <pre>
-     *平台
-     * </pre>
-     *
-     * <code>int32 platformId = 2;</code>
-     */
-    int getPlatformId();
+        /**
+         * <pre>
+         *平台
+         * </pre>
+         *
+         * <code>int32 platformId = 2;</code>
+         */
+        int getPlatformId();
 
-    /**
-     * <pre>
-     *服务器ID
-     * </pre>
-     *
-     * <code>int32 serverId = 3;</code>
-     */
-    int getServerId();
+        /**
+         * <pre>
+         *服务器ID
+         * </pre>
+         *
+         * <code>int32 serverId = 3;</code>
+         */
+        int getServerId();
 
-    /**
-     * <code>string sign = 4;</code>
-     */
-    String getSign();
-    /**
-     * <code>string sign = 4;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string sign = 4;</code>
+         */
+        String getSign();
+
+        /**
+         * <code>string sign = 4;</code>
+         */
+        com.google.protobuf.ByteString
         getSignBytes();
 
-    /**
-     * <code>int64 time = 5;</code>
-     */
-    long getTime();
-  }
-  /**
-   * Protobuf type {@code user.LoginRequest}
-   */
-  public  static final class LoginRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.LoginRequest)
-      LoginRequestOrBuilder {
-    // Use LoginRequest.newBuilder() to construct.
-    private LoginRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private LoginRequest() {
-      loginName_ = "";
-      platformId_ = 0;
-      serverId_ = 0;
-      sign_ = "";
-      time_ = 0L;
+        /**
+         * <code>int64 time = 5;</code>
+         */
+        long getTime();
     }
 
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private LoginRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              loginName_ = s;
-              break;
-            }
-            case 16: {
-
-              platformId_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              serverId_ = input.readInt32();
-              break;
-            }
-            case 34: {
-              String s = input.readStringRequireUtf8();
-
-              sign_ = s;
-              break;
-            }
-            case 40: {
-
-              time_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return UserProto.internal_static_user_LoginRequest_descriptor;
-    }
-
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_LoginRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              LoginRequest.class, Builder.class);
-    }
-
-    public static final int LOGINNAME_FIELD_NUMBER = 1;
-    private volatile Object loginName_;
-    /**
-     * <pre>
-     *用户登录名
-     * </pre>
-     *
-     * <code>string loginName = 1;</code>
-     */
-    public String getLoginName() {
-      Object ref = loginName_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        loginName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *用户登录名
-     * </pre>
-     *
-     * <code>string loginName = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getLoginNameBytes() {
-      Object ref = loginName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        loginName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PLATFORMID_FIELD_NUMBER = 2;
-    private int platformId_;
-    /**
-     * <pre>
-     *平台
-     * </pre>
-     *
-     * <code>int32 platformId = 2;</code>
-     */
-    public int getPlatformId() {
-      return platformId_;
-    }
-
-    public static final int SERVERID_FIELD_NUMBER = 3;
-    private int serverId_;
-    /**
-     * <pre>
-     *服务器ID
-     * </pre>
-     *
-     * <code>int32 serverId = 3;</code>
-     */
-    public int getServerId() {
-      return serverId_;
-    }
-
-    public static final int SIGN_FIELD_NUMBER = 4;
-    private volatile Object sign_;
-    /**
-     * <code>string sign = 4;</code>
-     */
-    public String getSign() {
-      Object ref = sign_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        sign_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string sign = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSignBytes() {
-      Object ref = sign_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        sign_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TIME_FIELD_NUMBER = 5;
-    private long time_;
-    /**
-     * <code>int64 time = 5;</code>
-     */
-    public long getTime() {
-      return time_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getLoginNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, loginName_);
-      }
-      if (platformId_ != 0) {
-        output.writeInt32(2, platformId_);
-      }
-      if (serverId_ != 0) {
-        output.writeInt32(3, serverId_);
-      }
-      if (!getSignBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sign_);
-      }
-      if (time_ != 0L) {
-        output.writeInt64(5, time_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getLoginNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, loginName_);
-      }
-      if (platformId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, platformId_);
-      }
-      if (serverId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, serverId_);
-      }
-      if (!getSignBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sign_);
-      }
-      if (time_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, time_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof LoginRequest)) {
-        return super.equals(obj);
-      }
-      LoginRequest other = (LoginRequest) obj;
-
-      boolean result = true;
-      result = result && getLoginName()
-          .equals(other.getLoginName());
-      result = result && (getPlatformId()
-          == other.getPlatformId());
-      result = result && (getServerId()
-          == other.getServerId());
-      result = result && getSign()
-          .equals(other.getSign());
-      result = result && (getTime()
-          == other.getTime());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LOGINNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getLoginName().hashCode();
-      hash = (37 * hash) + PLATFORMID_FIELD_NUMBER;
-      hash = (53 * hash) + getPlatformId();
-      hash = (37 * hash) + SERVERID_FIELD_NUMBER;
-      hash = (53 * hash) + getServerId();
-      hash = (37 * hash) + SIGN_FIELD_NUMBER;
-      hash = (53 * hash) + getSign().hashCode();
-      hash = (37 * hash) + TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTime());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static LoginRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static LoginRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static LoginRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static LoginRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static LoginRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static LoginRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static LoginRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static LoginRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static LoginRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static LoginRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static LoginRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static LoginRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(LoginRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.LoginRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.LoginRequest)
-        LoginRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_LoginRequest_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_LoginRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                LoginRequest.class, Builder.class);
-      }
-
-      // Construct using UserProto.LoginRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class LoginRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.LoginRequest)
+            LoginRequestOrBuilder {
+        // Use LoginRequest.newBuilder() to construct.
+        private LoginRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        loginName_ = "";
 
-        platformId_ = 0;
-
-        serverId_ = 0;
-
-        sign_ = "";
-
-        time_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_LoginRequest_descriptor;
-      }
-
-      public LoginRequest getDefaultInstanceForType() {
-        return LoginRequest.getDefaultInstance();
-      }
-
-      public LoginRequest build() {
-        LoginRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private LoginRequest() {
+            loginName_ = "";
+            platformId_ = 0;
+            serverId_ = 0;
+            sign_ = "";
+            time_ = 0L;
         }
-        return result;
-      }
 
-      public LoginRequest buildPartial() {
-        LoginRequest result = new LoginRequest(this);
-        result.loginName_ = loginName_;
-        result.platformId_ = platformId_;
-        result.serverId_ = serverId_;
-        result.sign_ = sign_;
-        result.time_ = time_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LoginRequest) {
-          return mergeFrom((LoginRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(LoginRequest other) {
-        if (other == LoginRequest.getDefaultInstance()) return this;
-        if (!other.getLoginName().isEmpty()) {
-          loginName_ = other.loginName_;
-          onChanged();
-        }
-        if (other.getPlatformId() != 0) {
-          setPlatformId(other.getPlatformId());
-        }
-        if (other.getServerId() != 0) {
-          setServerId(other.getServerId());
-        }
-        if (!other.getSign().isEmpty()) {
-          sign_ = other.sign_;
-          onChanged();
-        }
-        if (other.getTime() != 0L) {
-          setTime(other.getTime());
-        }
-        onChanged();
-        return this;
-      }
+        private LoginRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
 
-      public final boolean isInitialized() {
-        return true;
-      }
+                            loginName_ = s;
+                            break;
+                        }
+                        case 16: {
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        LoginRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (LoginRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+                            platformId_ = input.readInt32();
+                            break;
+                        }
+                        case 24: {
 
-      private Object loginName_ = "";
-      /**
-       * <pre>
-       *用户登录名
-       * </pre>
-       *
-       * <code>string loginName = 1;</code>
-       */
-      public String getLoginName() {
-        Object ref = loginName_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          loginName_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *用户登录名
-       * </pre>
-       *
-       * <code>string loginName = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getLoginNameBytes() {
-        Object ref = loginName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          loginName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *用户登录名
-       * </pre>
-       *
-       * <code>string loginName = 1;</code>
-       */
-      public Builder setLoginName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        loginName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *用户登录名
-       * </pre>
-       *
-       * <code>string loginName = 1;</code>
-       */
-      public Builder clearLoginName() {
-        
-        loginName_ = getDefaultInstance().getLoginName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *用户登录名
-       * </pre>
-       *
-       * <code>string loginName = 1;</code>
-       */
-      public Builder setLoginNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        loginName_ = value;
-        onChanged();
-        return this;
-      }
+                            serverId_ = input.readInt32();
+                            break;
+                        }
+                        case 34: {
+                            String s = input.readStringRequireUtf8();
 
-      private int platformId_ ;
-      /**
-       * <pre>
-       *平台
-       * </pre>
-       *
-       * <code>int32 platformId = 2;</code>
-       */
-      public int getPlatformId() {
-        return platformId_;
-      }
-      /**
-       * <pre>
-       *平台
-       * </pre>
-       *
-       * <code>int32 platformId = 2;</code>
-       */
-      public Builder setPlatformId(int value) {
-        
-        platformId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *平台
-       * </pre>
-       *
-       * <code>int32 platformId = 2;</code>
-       */
-      public Builder clearPlatformId() {
-        
-        platformId_ = 0;
-        onChanged();
-        return this;
-      }
+                            sign_ = s;
+                            break;
+                        }
+                        case 40: {
 
-      private int serverId_ ;
-      /**
-       * <pre>
-       *服务器ID
-       * </pre>
-       *
-       * <code>int32 serverId = 3;</code>
-       */
-      public int getServerId() {
-        return serverId_;
-      }
-      /**
-       * <pre>
-       *服务器ID
-       * </pre>
-       *
-       * <code>int32 serverId = 3;</code>
-       */
-      public Builder setServerId(int value) {
-        
-        serverId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *服务器ID
-       * </pre>
-       *
-       * <code>int32 serverId = 3;</code>
-       */
-      public Builder clearServerId() {
-        
-        serverId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private Object sign_ = "";
-      /**
-       * <code>string sign = 4;</code>
-       */
-      public String getSign() {
-        Object ref = sign_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          sign_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string sign = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSignBytes() {
-        Object ref = sign_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          sign_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string sign = 4;</code>
-       */
-      public Builder setSign(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sign_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sign = 4;</code>
-       */
-      public Builder clearSign() {
-        
-        sign_ = getDefaultInstance().getSign();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sign = 4;</code>
-       */
-      public Builder setSignBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sign_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long time_ ;
-      /**
-       * <code>int64 time = 5;</code>
-       */
-      public long getTime() {
-        return time_;
-      }
-      /**
-       * <code>int64 time = 5;</code>
-       */
-      public Builder setTime(long value) {
-        
-        time_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 time = 5;</code>
-       */
-      public Builder clearTime() {
-        
-        time_ = 0L;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.LoginRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.LoginRequest)
-    private static final LoginRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new LoginRequest();
-    }
-
-    public static LoginRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<LoginRequest>
-        PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
-      public LoginRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LoginRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<LoginRequest> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<LoginRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public LoginRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface LoginResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.LoginResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    java.util.List<RoleInfo>
-        getRoleListList();
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    RoleInfo getRoleList(int index);
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    int getRoleListCount();
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    java.util.List<? extends RoleInfoOrBuilder>
-        getRoleListOrBuilderList();
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    RoleInfoOrBuilder getRoleListOrBuilder(
-            int index);
-
-    /**
-     * <code>int64 userId = 2;</code>
-     */
-    long getUserId();
-  }
-  /**
-   * Protobuf type {@code user.LoginResponse}
-   */
-  public  static final class LoginResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.LoginResponse)
-      LoginResponseOrBuilder {
-    // Use LoginResponse.newBuilder() to construct.
-    private LoginResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private LoginResponse() {
-      roleList_ = java.util.Collections.emptyList();
-      userId_ = 0L;
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private LoginResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            time_ = input.readInt64();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                roleList_ = new java.util.ArrayList<RoleInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              roleList_.add(
-                  input.readMessage(RoleInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 16: {
+        }
 
-              userId_ = input.readInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          roleList_ = java.util.Collections.unmodifiableList(roleList_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_LoginResponse_descriptor;
-    }
+            return UserProto.internal_static_user_LoginRequest_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_LoginResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              LoginResponse.class, Builder.class);
+            return UserProto.internal_static_user_LoginRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            LoginRequest.class, Builder.class);
+        }
+
+        public static final int LOGINNAME_FIELD_NUMBER = 1;
+        private volatile Object loginName_;
+
+        /**
+         * <pre>
+         *用户登录名
+         * </pre>
+         *
+         * <code>string loginName = 1;</code>
+         */
+        public String getLoginName() {
+            Object ref = loginName_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                loginName_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         *用户登录名
+         * </pre>
+         *
+         * <code>string loginName = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getLoginNameBytes() {
+            Object ref = loginName_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                loginName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int PLATFORMID_FIELD_NUMBER = 2;
+        private int platformId_;
+
+        /**
+         * <pre>
+         *平台
+         * </pre>
+         *
+         * <code>int32 platformId = 2;</code>
+         */
+        public int getPlatformId() {
+            return platformId_;
+        }
+
+        public static final int SERVERID_FIELD_NUMBER = 3;
+        private int serverId_;
+
+        /**
+         * <pre>
+         *服务器ID
+         * </pre>
+         *
+         * <code>int32 serverId = 3;</code>
+         */
+        public int getServerId() {
+            return serverId_;
+        }
+
+        public static final int SIGN_FIELD_NUMBER = 4;
+        private volatile Object sign_;
+
+        /**
+         * <code>string sign = 4;</code>
+         */
+        public String getSign() {
+            Object ref = sign_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                sign_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string sign = 4;</code>
+         */
+        public com.google.protobuf.ByteString
+        getSignBytes() {
+            Object ref = sign_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                sign_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int TIME_FIELD_NUMBER = 5;
+        private long time_;
+
+        /**
+         * <code>int64 time = 5;</code>
+         */
+        public long getTime() {
+            return time_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getLoginNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, loginName_);
+            }
+            if (platformId_ != 0) {
+                output.writeInt32(2, platformId_);
+            }
+            if (serverId_ != 0) {
+                output.writeInt32(3, serverId_);
+            }
+            if (!getSignBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sign_);
+            }
+            if (time_ != 0L) {
+                output.writeInt64(5, time_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getLoginNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, loginName_);
+            }
+            if (platformId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(2, platformId_);
+            }
+            if (serverId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(3, serverId_);
+            }
+            if (!getSignBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sign_);
+            }
+            if (time_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(5, time_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof LoginRequest)) {
+                return super.equals(obj);
+            }
+            LoginRequest other = (LoginRequest) obj;
+
+            boolean result = true;
+            result = result && getLoginName()
+                    .equals(other.getLoginName());
+            result = result && (getPlatformId()
+                    == other.getPlatformId());
+            result = result && (getServerId()
+                    == other.getServerId());
+            result = result && getSign()
+                    .equals(other.getSign());
+            result = result && (getTime()
+                    == other.getTime());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + LOGINNAME_FIELD_NUMBER;
+            hash = (53 * hash) + getLoginName().hashCode();
+            hash = (37 * hash) + PLATFORMID_FIELD_NUMBER;
+            hash = (53 * hash) + getPlatformId();
+            hash = (37 * hash) + SERVERID_FIELD_NUMBER;
+            hash = (53 * hash) + getServerId();
+            hash = (37 * hash) + SIGN_FIELD_NUMBER;
+            hash = (53 * hash) + getSign().hashCode();
+            hash = (37 * hash) + TIME_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getTime());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static LoginRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static LoginRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static LoginRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static LoginRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static LoginRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static LoginRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static LoginRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static LoginRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static LoginRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static LoginRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static LoginRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static LoginRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(LoginRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.LoginRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.LoginRequest)
+                LoginRequestOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_LoginRequest_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_LoginRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                LoginRequest.class, Builder.class);
+            }
+
+            // Construct using UserProto.LoginRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                loginName_ = "";
+
+                platformId_ = 0;
+
+                serverId_ = 0;
+
+                sign_ = "";
+
+                time_ = 0L;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_LoginRequest_descriptor;
+            }
+
+            public LoginRequest getDefaultInstanceForType() {
+                return LoginRequest.getDefaultInstance();
+            }
+
+            public LoginRequest build() {
+                LoginRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public LoginRequest buildPartial() {
+                LoginRequest result = new LoginRequest(this);
+                result.loginName_ = loginName_;
+                result.platformId_ = platformId_;
+                result.serverId_ = serverId_;
+                result.sign_ = sign_;
+                result.time_ = time_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof LoginRequest) {
+                    return mergeFrom((LoginRequest)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(LoginRequest other) {
+                if (other == LoginRequest.getDefaultInstance()) return this;
+                if (!other.getLoginName().isEmpty()) {
+                    loginName_ = other.loginName_;
+                    onChanged();
+                }
+                if (other.getPlatformId() != 0) {
+                    setPlatformId(other.getPlatformId());
+                }
+                if (other.getServerId() != 0) {
+                    setServerId(other.getServerId());
+                }
+                if (!other.getSign().isEmpty()) {
+                    sign_ = other.sign_;
+                    onChanged();
+                }
+                if (other.getTime() != 0L) {
+                    setTime(other.getTime());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                LoginRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (LoginRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private Object loginName_ = "";
+
+            /**
+             * <pre>
+             *用户登录名
+             * </pre>
+             *
+             * <code>string loginName = 1;</code>
+             */
+            public String getLoginName() {
+                Object ref = loginName_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    loginName_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             *用户登录名
+             * </pre>
+             *
+             * <code>string loginName = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getLoginNameBytes() {
+                Object ref = loginName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    loginName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             *用户登录名
+             * </pre>
+             *
+             * <code>string loginName = 1;</code>
+             */
+            public Builder setLoginName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                loginName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *用户登录名
+             * </pre>
+             *
+             * <code>string loginName = 1;</code>
+             */
+            public Builder clearLoginName() {
+
+                loginName_ = getDefaultInstance().getLoginName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *用户登录名
+             * </pre>
+             *
+             * <code>string loginName = 1;</code>
+             */
+            public Builder setLoginNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                loginName_ = value;
+                onChanged();
+                return this;
+            }
+
+            private int platformId_ ;
+
+            /**
+             * <pre>
+             *平台
+             * </pre>
+             *
+             * <code>int32 platformId = 2;</code>
+             */
+            public int getPlatformId() {
+                return platformId_;
+            }
+
+            /**
+             * <pre>
+             *平台
+             * </pre>
+             *
+             * <code>int32 platformId = 2;</code>
+             */
+            public Builder setPlatformId(int value) {
+
+                platformId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *平台
+             * </pre>
+             *
+             * <code>int32 platformId = 2;</code>
+             */
+            public Builder clearPlatformId() {
+
+                platformId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int serverId_ ;
+
+            /**
+             * <pre>
+             *服务器ID
+             * </pre>
+             *
+             * <code>int32 serverId = 3;</code>
+             */
+            public int getServerId() {
+                return serverId_;
+            }
+
+            /**
+             * <pre>
+             *服务器ID
+             * </pre>
+             *
+             * <code>int32 serverId = 3;</code>
+             */
+            public Builder setServerId(int value) {
+
+                serverId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *服务器ID
+             * </pre>
+             *
+             * <code>int32 serverId = 3;</code>
+             */
+            public Builder clearServerId() {
+
+                serverId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private Object sign_ = "";
+
+            /**
+             * <code>string sign = 4;</code>
+             */
+            public String getSign() {
+                Object ref = sign_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    sign_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string sign = 4;</code>
+             */
+            public com.google.protobuf.ByteString
+            getSignBytes() {
+                Object ref = sign_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    sign_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string sign = 4;</code>
+             */
+            public Builder setSign(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                sign_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string sign = 4;</code>
+             */
+            public Builder clearSign() {
+
+                sign_ = getDefaultInstance().getSign();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string sign = 4;</code>
+             */
+            public Builder setSignBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                sign_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long time_ ;
+
+            /**
+             * <code>int64 time = 5;</code>
+             */
+            public long getTime() {
+                return time_;
+            }
+
+            /**
+             * <code>int64 time = 5;</code>
+             */
+            public Builder setTime(long value) {
+
+                time_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int64 time = 5;</code>
+             */
+            public Builder clearTime() {
+
+                time_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.LoginRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.LoginRequest)
+        private static final LoginRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new LoginRequest();
+        }
+
+        public static LoginRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LoginRequest>
+                PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
+            public LoginRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new LoginRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<LoginRequest> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<LoginRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public LoginRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    private int bitField0_;
-    public static final int ROLELIST_FIELD_NUMBER = 1;
-    private java.util.List<RoleInfo> roleList_;
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    public java.util.List<RoleInfo> getRoleListList() {
-      return roleList_;
-    }
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    public java.util.List<? extends RoleInfoOrBuilder>
-        getRoleListOrBuilderList() {
-      return roleList_;
-    }
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    public int getRoleListCount() {
-      return roleList_.size();
-    }
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    public RoleInfo getRoleList(int index) {
-      return roleList_.get(index);
-    }
-    /**
-     * <pre>
-     *角色列表
-     * </pre>
-     *
-     * <code>repeated .user.RoleInfo roleList = 1;</code>
-     */
-    public RoleInfoOrBuilder getRoleListOrBuilder(
-        int index) {
-      return roleList_.get(index);
+    public interface LoginResponseOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.LoginResponse)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        java.util.List<RoleInfo>
+        getRoleListList();
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        RoleInfo getRoleList(int index);
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        int getRoleListCount();
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        java.util.List<? extends RoleInfoOrBuilder>
+        getRoleListOrBuilderList();
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        RoleInfoOrBuilder getRoleListOrBuilder(
+                int index);
+
+        /**
+         * <code>int64 userId = 2;</code>
+         */
+        long getUserId();
     }
 
-    public static final int USERID_FIELD_NUMBER = 2;
-    private long userId_;
-    /**
-     * <code>int64 userId = 2;</code>
-     */
-    public long getUserId() {
-      return userId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < roleList_.size(); i++) {
-        output.writeMessage(1, roleList_.get(i));
-      }
-      if (userId_ != 0L) {
-        output.writeInt64(2, userId_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (int i = 0; i < roleList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, roleList_.get(i));
-      }
-      if (userId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, userId_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof LoginResponse)) {
-        return super.equals(obj);
-      }
-      LoginResponse other = (LoginResponse) obj;
-
-      boolean result = true;
-      result = result && getRoleListList()
-          .equals(other.getRoleListList());
-      result = result && (getUserId()
-          == other.getUserId());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getRoleListCount() > 0) {
-        hash = (37 * hash) + ROLELIST_FIELD_NUMBER;
-        hash = (53 * hash) + getRoleListList().hashCode();
-      }
-      hash = (37 * hash) + USERID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUserId());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static LoginResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static LoginResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static LoginResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static LoginResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static LoginResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static LoginResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static LoginResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static LoginResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static LoginResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static LoginResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static LoginResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static LoginResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(LoginResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.LoginResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.LoginResponse)
-        LoginResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_LoginResponse_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_LoginResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                LoginResponse.class, Builder.class);
-      }
-
-      // Construct using UserProto.LoginResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRoleListFieldBuilder();
+    public  static final class LoginResponse extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.LoginResponse)
+            LoginResponseOrBuilder {
+        // Use LoginResponse.newBuilder() to construct.
+        private LoginResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        if (roleListBuilder_ == null) {
-          roleList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          roleListBuilder_.clear();
+
+        private LoginResponse() {
+            roleList_ = java.util.Collections.emptyList();
+            userId_ = 0L;
         }
-        userId_ = 0L;
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_LoginResponse_descriptor;
-      }
-
-      public LoginResponse getDefaultInstanceForType() {
-        return LoginResponse.getDefaultInstance();
-      }
-
-      public LoginResponse build() {
-        LoginResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-        return result;
-      }
 
-      public LoginResponse buildPartial() {
-        LoginResponse result = new LoginResponse(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (roleListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            roleList_ = java.util.Collections.unmodifiableList(roleList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.roleList_ = roleList_;
-        } else {
-          result.roleList_ = roleListBuilder_.build();
-        }
-        result.userId_ = userId_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
+        private LoginResponse(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                                roleList_ = new java.util.ArrayList<RoleInfo>();
+                                mutable_bitField0_ |= 0x00000001;
+                            }
+                            roleList_.add(
+                                    input.readMessage(RoleInfo.parser(), extensionRegistry));
+                            break;
+                        }
+                        case 16: {
 
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LoginResponse) {
-          return mergeFrom((LoginResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(LoginResponse other) {
-        if (other == LoginResponse.getDefaultInstance()) return this;
-        if (roleListBuilder_ == null) {
-          if (!other.roleList_.isEmpty()) {
-            if (roleList_.isEmpty()) {
-              roleList_ = other.roleList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRoleListIsMutable();
-              roleList_.addAll(other.roleList_);
+                            userId_ = input.readInt64();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                    roleList_ = java.util.Collections.unmodifiableList(roleList_);
+                }
+                makeExtensionsImmutable();
             }
-            onChanged();
-          }
-        } else {
-          if (!other.roleList_.isEmpty()) {
-            if (roleListBuilder_.isEmpty()) {
-              roleListBuilder_.dispose();
-              roleListBuilder_ = null;
-              roleList_ = other.roleList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              roleListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRoleListFieldBuilder() : null;
-            } else {
-              roleListBuilder_.addAllMessages(other.roleList_);
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return UserProto.internal_static_user_LoginResponse_descriptor;
+        }
+
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return UserProto.internal_static_user_LoginResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            LoginResponse.class, Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int ROLELIST_FIELD_NUMBER = 1;
+        private java.util.List<RoleInfo> roleList_;
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        public java.util.List<RoleInfo> getRoleListList() {
+            return roleList_;
+        }
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        public java.util.List<? extends RoleInfoOrBuilder>
+        getRoleListOrBuilderList() {
+            return roleList_;
+        }
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        public int getRoleListCount() {
+            return roleList_.size();
+        }
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        public RoleInfo getRoleList(int index) {
+            return roleList_.get(index);
+        }
+
+        /**
+         * <pre>
+         *角色列表
+         * </pre>
+         *
+         * <code>repeated .user.RoleInfo roleList = 1;</code>
+         */
+        public RoleInfoOrBuilder getRoleListOrBuilder(
+                int index) {
+            return roleList_.get(index);
+        }
+
+        public static final int USERID_FIELD_NUMBER = 2;
+        private long userId_;
+
+        /**
+         * <code>int64 userId = 2;</code>
+         */
+        public long getUserId() {
+            return userId_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            for (int i = 0; i < roleList_.size(); i++) {
+                output.writeMessage(1, roleList_.get(i));
             }
-          }
+            if (userId_ != 0L) {
+                output.writeInt64(2, userId_);
+            }
         }
-        if (other.getUserId() != 0L) {
-          setUserId(other.getUserId());
-        }
-        onChanged();
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        return true;
-      }
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        LoginResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (LoginResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+            size = 0;
+            for (int i = 0; i < roleList_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(1, roleList_.get(i));
+            }
+            if (userId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(2, userId_);
+            }
+            memoizedSize = size;
+            return size;
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private java.util.List<RoleInfo> roleList_ =
-        java.util.Collections.emptyList();
-      private void ensureRoleListIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          roleList_ = new java.util.ArrayList<RoleInfo>(roleList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+        private static final long serialVersionUID = 0L;
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          RoleInfo, RoleInfo.Builder, RoleInfoOrBuilder> roleListBuilder_;
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof LoginResponse)) {
+                return super.equals(obj);
+            }
+            LoginResponse other = (LoginResponse) obj;
 
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public java.util.List<RoleInfo> getRoleListList() {
-        if (roleListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(roleList_);
-        } else {
-          return roleListBuilder_.getMessageList();
+            boolean result = true;
+            result = result && getRoleListList()
+                    .equals(other.getRoleListList());
+            result = result && (getUserId()
+                    == other.getUserId());
+            return result;
         }
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public int getRoleListCount() {
-        if (roleListBuilder_ == null) {
-          return roleList_.size();
-        } else {
-          return roleListBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public RoleInfo getRoleList(int index) {
-        if (roleListBuilder_ == null) {
-          return roleList_.get(index);
-        } else {
-          return roleListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public Builder setRoleList(
-          int index, RoleInfo value) {
-        if (roleListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRoleListIsMutable();
-          roleList_.set(index, value);
-          onChanged();
-        } else {
-          roleListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public Builder setRoleList(
-          int index, RoleInfo.Builder builderForValue) {
-        if (roleListBuilder_ == null) {
-          ensureRoleListIsMutable();
-          roleList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          roleListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public Builder addRoleList(RoleInfo value) {
-        if (roleListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRoleListIsMutable();
-          roleList_.add(value);
-          onChanged();
-        } else {
-          roleListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public Builder addRoleList(
-          int index, RoleInfo value) {
-        if (roleListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRoleListIsMutable();
-          roleList_.add(index, value);
-          onChanged();
-        } else {
-          roleListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public Builder addRoleList(
-          RoleInfo.Builder builderForValue) {
-        if (roleListBuilder_ == null) {
-          ensureRoleListIsMutable();
-          roleList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          roleListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public Builder addRoleList(
-          int index, RoleInfo.Builder builderForValue) {
-        if (roleListBuilder_ == null) {
-          ensureRoleListIsMutable();
-          roleList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          roleListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public Builder addAllRoleList(
-          Iterable<? extends RoleInfo> values) {
-        if (roleListBuilder_ == null) {
-          ensureRoleListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, roleList_);
-          onChanged();
-        } else {
-          roleListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public Builder clearRoleList() {
-        if (roleListBuilder_ == null) {
-          roleList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          roleListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public Builder removeRoleList(int index) {
-        if (roleListBuilder_ == null) {
-          ensureRoleListIsMutable();
-          roleList_.remove(index);
-          onChanged();
-        } else {
-          roleListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public RoleInfo.Builder getRoleListBuilder(
-          int index) {
-        return getRoleListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public RoleInfoOrBuilder getRoleListOrBuilder(
-          int index) {
-        if (roleListBuilder_ == null) {
-          return roleList_.get(index);  } else {
-          return roleListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public java.util.List<? extends RoleInfoOrBuilder>
-           getRoleListOrBuilderList() {
-        if (roleListBuilder_ != null) {
-          return roleListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(roleList_);
-        }
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public RoleInfo.Builder addRoleListBuilder() {
-        return getRoleListFieldBuilder().addBuilder(
-            RoleInfo.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public RoleInfo.Builder addRoleListBuilder(
-          int index) {
-        return getRoleListFieldBuilder().addBuilder(
-            index, RoleInfo.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       *角色列表
-       * </pre>
-       *
-       * <code>repeated .user.RoleInfo roleList = 1;</code>
-       */
-      public java.util.List<RoleInfo.Builder>
-           getRoleListBuilderList() {
-        return getRoleListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          RoleInfo, RoleInfo.Builder, RoleInfoOrBuilder>
-          getRoleListFieldBuilder() {
-        if (roleListBuilder_ == null) {
-          roleListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              RoleInfo, RoleInfo.Builder, RoleInfoOrBuilder>(
-                  roleList_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
-          roleList_ = null;
-        }
-        return roleListBuilder_;
-      }
 
-      private long userId_ ;
-      /**
-       * <code>int64 userId = 2;</code>
-       */
-      public long getUserId() {
-        return userId_;
-      }
-      /**
-       * <code>int64 userId = 2;</code>
-       */
-      public Builder setUserId(long value) {
-        
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 userId = 2;</code>
-       */
-      public Builder clearUserId() {
-        
-        userId_ = 0L;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (getRoleListCount() > 0) {
+                hash = (37 * hash) + ROLELIST_FIELD_NUMBER;
+                hash = (53 * hash) + getRoleListList().hashCode();
+            }
+            hash = (37 * hash) + USERID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getUserId());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        public static LoginResponse parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static LoginResponse parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static LoginResponse parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static LoginResponse parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static LoginResponse parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static LoginResponse parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static LoginResponse parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static LoginResponse parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static LoginResponse parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static LoginResponse parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static LoginResponse parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static LoginResponse parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(LoginResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.LoginResponse}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.LoginResponse)
+                LoginResponseOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_LoginResponse_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_LoginResponse_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                LoginResponse.class, Builder.class);
+            }
+
+            // Construct using UserProto.LoginResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                    getRoleListFieldBuilder();
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                if (roleListBuilder_ == null) {
+                    roleList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                    roleListBuilder_.clear();
+                }
+                userId_ = 0L;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_LoginResponse_descriptor;
+            }
+
+            public LoginResponse getDefaultInstanceForType() {
+                return LoginResponse.getDefaultInstance();
+            }
+
+            public LoginResponse build() {
+                LoginResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public LoginResponse buildPartial() {
+                LoginResponse result = new LoginResponse(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (roleListBuilder_ == null) {
+                    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                        roleList_ = java.util.Collections.unmodifiableList(roleList_);
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    }
+                    result.roleList_ = roleList_;
+                } else {
+                    result.roleList_ = roleListBuilder_.build();
+                }
+                result.userId_ = userId_;
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof LoginResponse) {
+                    return mergeFrom((LoginResponse)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(LoginResponse other) {
+                if (other == LoginResponse.getDefaultInstance()) return this;
+                if (roleListBuilder_ == null) {
+                    if (!other.roleList_.isEmpty()) {
+                        if (roleList_.isEmpty()) {
+                            roleList_ = other.roleList_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                        } else {
+                            ensureRoleListIsMutable();
+                            roleList_.addAll(other.roleList_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.roleList_.isEmpty()) {
+                        if (roleListBuilder_.isEmpty()) {
+                            roleListBuilder_.dispose();
+                            roleListBuilder_ = null;
+                            roleList_ = other.roleList_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                            roleListBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                                            getRoleListFieldBuilder() : null;
+                        } else {
+                            roleListBuilder_.addAllMessages(other.roleList_);
+                        }
+                    }
+                }
+                if (other.getUserId() != 0L) {
+                    setUserId(other.getUserId());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                LoginResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (LoginResponse) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private java.util.List<RoleInfo> roleList_ =
+                    java.util.Collections.emptyList();
+
+            private void ensureRoleListIsMutable() {
+                if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+                    roleList_ = new java.util.ArrayList<RoleInfo>(roleList_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    RoleInfo, RoleInfo.Builder, RoleInfoOrBuilder> roleListBuilder_;
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public java.util.List<RoleInfo> getRoleListList() {
+                if (roleListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(roleList_);
+                } else {
+                    return roleListBuilder_.getMessageList();
+                }
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public int getRoleListCount() {
+                if (roleListBuilder_ == null) {
+                    return roleList_.size();
+                } else {
+                    return roleListBuilder_.getCount();
+                }
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public RoleInfo getRoleList(int index) {
+                if (roleListBuilder_ == null) {
+                    return roleList_.get(index);
+                } else {
+                    return roleListBuilder_.getMessage(index);
+                }
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public Builder setRoleList(
+                    int index, RoleInfo value) {
+                if (roleListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureRoleListIsMutable();
+                    roleList_.set(index, value);
+                    onChanged();
+                } else {
+                    roleListBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public Builder setRoleList(
+                    int index, RoleInfo.Builder builderForValue) {
+                if (roleListBuilder_ == null) {
+                    ensureRoleListIsMutable();
+                    roleList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    roleListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public Builder addRoleList(RoleInfo value) {
+                if (roleListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureRoleListIsMutable();
+                    roleList_.add(value);
+                    onChanged();
+                } else {
+                    roleListBuilder_.addMessage(value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public Builder addRoleList(
+                    int index, RoleInfo value) {
+                if (roleListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureRoleListIsMutable();
+                    roleList_.add(index, value);
+                    onChanged();
+                } else {
+                    roleListBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public Builder addRoleList(
+                    RoleInfo.Builder builderForValue) {
+                if (roleListBuilder_ == null) {
+                    ensureRoleListIsMutable();
+                    roleList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    roleListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public Builder addRoleList(
+                    int index, RoleInfo.Builder builderForValue) {
+                if (roleListBuilder_ == null) {
+                    ensureRoleListIsMutable();
+                    roleList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    roleListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public Builder addAllRoleList(
+                    Iterable<? extends RoleInfo> values) {
+                if (roleListBuilder_ == null) {
+                    ensureRoleListIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, roleList_);
+                    onChanged();
+                } else {
+                    roleListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public Builder clearRoleList() {
+                if (roleListBuilder_ == null) {
+                    roleList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                    onChanged();
+                } else {
+                    roleListBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public Builder removeRoleList(int index) {
+                if (roleListBuilder_ == null) {
+                    ensureRoleListIsMutable();
+                    roleList_.remove(index);
+                    onChanged();
+                } else {
+                    roleListBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public RoleInfo.Builder getRoleListBuilder(
+                    int index) {
+                return getRoleListFieldBuilder().getBuilder(index);
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public RoleInfoOrBuilder getRoleListOrBuilder(
+                    int index) {
+                if (roleListBuilder_ == null) {
+                    return roleList_.get(index);  } else {
+                    return roleListBuilder_.getMessageOrBuilder(index);
+                }
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public java.util.List<? extends RoleInfoOrBuilder>
+            getRoleListOrBuilderList() {
+                if (roleListBuilder_ != null) {
+                    return roleListBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(roleList_);
+                }
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public RoleInfo.Builder addRoleListBuilder() {
+                return getRoleListFieldBuilder().addBuilder(
+                        RoleInfo.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public RoleInfo.Builder addRoleListBuilder(
+                    int index) {
+                return getRoleListFieldBuilder().addBuilder(
+                        index, RoleInfo.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             *角色列表
+             * </pre>
+             *
+             * <code>repeated .user.RoleInfo roleList = 1;</code>
+             */
+            public java.util.List<RoleInfo.Builder>
+            getRoleListBuilderList() {
+                return getRoleListFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    RoleInfo, RoleInfo.Builder, RoleInfoOrBuilder>
+            getRoleListFieldBuilder() {
+                if (roleListBuilder_ == null) {
+                    roleListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                            RoleInfo, RoleInfo.Builder, RoleInfoOrBuilder>(
+                            roleList_,
+                            ((bitField0_ & 0x00000001) == 0x00000001),
+                            getParentForChildren(),
+                            isClean());
+                    roleList_ = null;
+                }
+                return roleListBuilder_;
+            }
+
+            private long userId_ ;
+
+            /**
+             * <code>int64 userId = 2;</code>
+             */
+            public long getUserId() {
+                return userId_;
+            }
+
+            /**
+             * <code>int64 userId = 2;</code>
+             */
+            public Builder setUserId(long value) {
+
+                userId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int64 userId = 2;</code>
+             */
+            public Builder clearUserId() {
+
+                userId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:user.LoginResponse)
+            // @@protoc_insertion_point(builder_scope:user.LoginResponse)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.LoginResponse)
+        private static final LoginResponse DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new LoginResponse();
+        }
+
+        public static LoginResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LoginResponse>
+                PARSER = new com.google.protobuf.AbstractParser<LoginResponse>() {
+            public LoginResponse parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new LoginResponse(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<LoginResponse> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<LoginResponse> getParserForType() {
+            return PARSER;
+        }
+
+        public LoginResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:user.LoginResponse)
-    private static final LoginResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new LoginResponse();
-    }
+    public interface CreateRoleRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.CreateRoleRequest)
+            com.google.protobuf.MessageOrBuilder {
 
-    public static LoginResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <pre>
+         *名字
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        String getName();
 
-    private static final com.google.protobuf.Parser<LoginResponse>
-        PARSER = new com.google.protobuf.AbstractParser<LoginResponse>() {
-      public LoginResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LoginResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<LoginResponse> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<LoginResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public LoginResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CreateRoleRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.CreateRoleRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *名字
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    String getName();
-    /**
-     * <pre>
-     *名字
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         *名字
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getNameBytes();
 
-    /**
-     * <pre>
-     *性别
-     * </pre>
-     *
-     * <code>int32 sex = 2;</code>
-     */
-    int getSex();
+        /**
+         * <pre>
+         *性别
+         * </pre>
+         *
+         * <code>int32 sex = 2;</code>
+         */
+        int getSex();
 
-    /**
-     * <pre>
-     *职业
-     * </pre>
-     *
-     * <code>int32 career = 3;</code>
-     */
-    int getCareer();
-  }
-  /**
-   * Protobuf type {@code user.CreateRoleRequest}
-   */
-  public  static final class CreateRoleRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.CreateRoleRequest)
-      CreateRoleRequestOrBuilder {
-    // Use CreateRoleRequest.newBuilder() to construct.
-    private CreateRoleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CreateRoleRequest() {
-      name_ = "";
-      sex_ = 0;
-      career_ = 0;
+        /**
+         * <pre>
+         *职业
+         * </pre>
+         *
+         * <code>int32 career = 3;</code>
+         */
+        int getCareer();
     }
 
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private CreateRoleRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 16: {
-
-              sex_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              career_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return UserProto.internal_static_user_CreateRoleRequest_descriptor;
-    }
-
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_CreateRoleRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              CreateRoleRequest.class, Builder.class);
-    }
-
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile Object name_;
-    /**
-     * <pre>
-     *名字
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *名字
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SEX_FIELD_NUMBER = 2;
-    private int sex_;
-    /**
-     * <pre>
-     *性别
-     * </pre>
-     *
-     * <code>int32 sex = 2;</code>
-     */
-    public int getSex() {
-      return sex_;
-    }
-
-    public static final int CAREER_FIELD_NUMBER = 3;
-    private int career_;
-    /**
-     * <pre>
-     *职业
-     * </pre>
-     *
-     * <code>int32 career = 3;</code>
-     */
-    public int getCareer() {
-      return career_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-      }
-      if (sex_ != 0) {
-        output.writeInt32(2, sex_);
-      }
-      if (career_ != 0) {
-        output.writeInt32(3, career_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      if (sex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, sex_);
-      }
-      if (career_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, career_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof CreateRoleRequest)) {
-        return super.equals(obj);
-      }
-      CreateRoleRequest other = (CreateRoleRequest) obj;
-
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && (getSex()
-          == other.getSex());
-      result = result && (getCareer()
-          == other.getCareer());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + SEX_FIELD_NUMBER;
-      hash = (53 * hash) + getSex();
-      hash = (37 * hash) + CAREER_FIELD_NUMBER;
-      hash = (53 * hash) + getCareer();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static CreateRoleRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static CreateRoleRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static CreateRoleRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static CreateRoleRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static CreateRoleRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static CreateRoleRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static CreateRoleRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static CreateRoleRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static CreateRoleRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static CreateRoleRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static CreateRoleRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static CreateRoleRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(CreateRoleRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.CreateRoleRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.CreateRoleRequest)
-        CreateRoleRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_CreateRoleRequest_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_CreateRoleRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                CreateRoleRequest.class, Builder.class);
-      }
-
-      // Construct using UserProto.CreateRoleRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class CreateRoleRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.CreateRoleRequest)
+            CreateRoleRequestOrBuilder {
+        // Use CreateRoleRequest.newBuilder() to construct.
+        private CreateRoleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        name_ = "";
 
-        sex_ = 0;
-
-        career_ = 0;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_CreateRoleRequest_descriptor;
-      }
-
-      public CreateRoleRequest getDefaultInstanceForType() {
-        return CreateRoleRequest.getDefaultInstance();
-      }
-
-      public CreateRoleRequest build() {
-        CreateRoleRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private CreateRoleRequest() {
+            name_ = "";
+            sex_ = 0;
+            career_ = 0;
         }
-        return result;
-      }
 
-      public CreateRoleRequest buildPartial() {
-        CreateRoleRequest result = new CreateRoleRequest(this);
-        result.name_ = name_;
-        result.sex_ = sex_;
-        result.career_ = career_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof CreateRoleRequest) {
-          return mergeFrom((CreateRoleRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(CreateRoleRequest other) {
-        if (other == CreateRoleRequest.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        if (other.getSex() != 0) {
-          setSex(other.getSex());
-        }
-        if (other.getCareer() != 0) {
-          setCareer(other.getCareer());
-        }
-        onChanged();
-        return this;
-      }
+        private CreateRoleRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
 
-      public final boolean isInitialized() {
-        return true;
-      }
+                            name_ = s;
+                            break;
+                        }
+                        case 16: {
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        CreateRoleRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (CreateRoleRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+                            sex_ = input.readInt32();
+                            break;
+                        }
+                        case 24: {
 
-      private Object name_ = "";
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder setName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int sex_ ;
-      /**
-       * <pre>
-       *性别
-       * </pre>
-       *
-       * <code>int32 sex = 2;</code>
-       */
-      public int getSex() {
-        return sex_;
-      }
-      /**
-       * <pre>
-       *性别
-       * </pre>
-       *
-       * <code>int32 sex = 2;</code>
-       */
-      public Builder setSex(int value) {
-        
-        sex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *性别
-       * </pre>
-       *
-       * <code>int32 sex = 2;</code>
-       */
-      public Builder clearSex() {
-        
-        sex_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int career_ ;
-      /**
-       * <pre>
-       *职业
-       * </pre>
-       *
-       * <code>int32 career = 3;</code>
-       */
-      public int getCareer() {
-        return career_;
-      }
-      /**
-       * <pre>
-       *职业
-       * </pre>
-       *
-       * <code>int32 career = 3;</code>
-       */
-      public Builder setCareer(int value) {
-        
-        career_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *职业
-       * </pre>
-       *
-       * <code>int32 career = 3;</code>
-       */
-      public Builder clearCareer() {
-        
-        career_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.CreateRoleRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.CreateRoleRequest)
-    private static final CreateRoleRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new CreateRoleRequest();
-    }
-
-    public static CreateRoleRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CreateRoleRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CreateRoleRequest>() {
-      public CreateRoleRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CreateRoleRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CreateRoleRequest> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<CreateRoleRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public CreateRoleRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface RandomRoleNameResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.RandomRoleNameResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *名字
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    String getName();
-    /**
-     * <pre>
-     *名字
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-  }
-  /**
-   * Protobuf type {@code user.RandomRoleNameResponse}
-   */
-  public  static final class RandomRoleNameResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.RandomRoleNameResponse)
-      RandomRoleNameResponseOrBuilder {
-    // Use RandomRoleNameResponse.newBuilder() to construct.
-    private RandomRoleNameResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private RandomRoleNameResponse() {
-      name_ = "";
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private RandomRoleNameResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            career_ = input.readInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_RandomRoleNameResponse_descriptor;
-    }
+            return UserProto.internal_static_user_CreateRoleRequest_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_RandomRoleNameResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              RandomRoleNameResponse.class, Builder.class);
-    }
+            return UserProto.internal_static_user_CreateRoleRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            CreateRoleRequest.class, Builder.class);
+        }
 
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile Object name_;
-    /**
-     * <pre>
-     *名字
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *名字
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
+        public static final int NAME_FIELD_NUMBER = 1;
+        private volatile Object name_;
+
+        /**
+         * <pre>
+         *名字
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        public String getName() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                name_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         *名字
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        public com.google.protobuf.ByteString
         getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+            Object ref = name_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                name_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int SEX_FIELD_NUMBER = 2;
+        private int sex_;
+
+        /**
+         * <pre>
+         *性别
+         * </pre>
+         *
+         * <code>int32 sex = 2;</code>
+         */
+        public int getSex() {
+            return sex_;
+        }
+
+        public static final int CAREER_FIELD_NUMBER = 3;
+        private int career_;
+
+        /**
+         * <pre>
+         *职业
+         * </pre>
+         *
+         * <code>int32 career = 3;</code>
+         */
+        public int getCareer() {
+            return career_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+            }
+            if (sex_ != 0) {
+                output.writeInt32(2, sex_);
+            }
+            if (career_ != 0) {
+                output.writeInt32(3, career_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+            }
+            if (sex_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(2, sex_);
+            }
+            if (career_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(3, career_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof CreateRoleRequest)) {
+                return super.equals(obj);
+            }
+            CreateRoleRequest other = (CreateRoleRequest) obj;
+
+            boolean result = true;
+            result = result && getName()
+                    .equals(other.getName());
+            result = result && (getSex()
+                    == other.getSex());
+            result = result && (getCareer()
+                    == other.getCareer());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getName().hashCode();
+            hash = (37 * hash) + SEX_FIELD_NUMBER;
+            hash = (53 * hash) + getSex();
+            hash = (37 * hash) + CAREER_FIELD_NUMBER;
+            hash = (53 * hash) + getCareer();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static CreateRoleRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static CreateRoleRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static CreateRoleRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static CreateRoleRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static CreateRoleRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static CreateRoleRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static CreateRoleRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static CreateRoleRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static CreateRoleRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static CreateRoleRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static CreateRoleRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static CreateRoleRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(CreateRoleRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.CreateRoleRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.CreateRoleRequest)
+                CreateRoleRequestOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_CreateRoleRequest_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_CreateRoleRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                CreateRoleRequest.class, Builder.class);
+            }
+
+            // Construct using UserProto.CreateRoleRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                name_ = "";
+
+                sex_ = 0;
+
+                career_ = 0;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_CreateRoleRequest_descriptor;
+            }
+
+            public CreateRoleRequest getDefaultInstanceForType() {
+                return CreateRoleRequest.getDefaultInstance();
+            }
+
+            public CreateRoleRequest build() {
+                CreateRoleRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public CreateRoleRequest buildPartial() {
+                CreateRoleRequest result = new CreateRoleRequest(this);
+                result.name_ = name_;
+                result.sex_ = sex_;
+                result.career_ = career_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof CreateRoleRequest) {
+                    return mergeFrom((CreateRoleRequest)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(CreateRoleRequest other) {
+                if (other == CreateRoleRequest.getDefaultInstance()) return this;
+                if (!other.getName().isEmpty()) {
+                    name_ = other.name_;
+                    onChanged();
+                }
+                if (other.getSex() != 0) {
+                    setSex(other.getSex());
+                }
+                if (other.getCareer() != 0) {
+                    setCareer(other.getCareer());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                CreateRoleRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (CreateRoleRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private Object name_ = "";
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public String getName() {
+                Object ref = name_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    name_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getNameBytes() {
+                Object ref = name_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    name_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public Builder setName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public Builder clearName() {
+
+                name_ = getDefaultInstance().getName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public Builder setNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            private int sex_ ;
+
+            /**
+             * <pre>
+             *性别
+             * </pre>
+             *
+             * <code>int32 sex = 2;</code>
+             */
+            public int getSex() {
+                return sex_;
+            }
+
+            /**
+             * <pre>
+             *性别
+             * </pre>
+             *
+             * <code>int32 sex = 2;</code>
+             */
+            public Builder setSex(int value) {
+
+                sex_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *性别
+             * </pre>
+             *
+             * <code>int32 sex = 2;</code>
+             */
+            public Builder clearSex() {
+
+                sex_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int career_ ;
+
+            /**
+             * <pre>
+             *职业
+             * </pre>
+             *
+             * <code>int32 career = 3;</code>
+             */
+            public int getCareer() {
+                return career_;
+            }
+
+            /**
+             * <pre>
+             *职业
+             * </pre>
+             *
+             * <code>int32 career = 3;</code>
+             */
+            public Builder setCareer(int value) {
+
+                career_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *职业
+             * </pre>
+             *
+             * <code>int32 career = 3;</code>
+             */
+            public Builder clearCareer() {
+
+                career_ = 0;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.CreateRoleRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.CreateRoleRequest)
+        private static final CreateRoleRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new CreateRoleRequest();
+        }
+
+        public static CreateRoleRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<CreateRoleRequest>
+                PARSER = new com.google.protobuf.AbstractParser<CreateRoleRequest>() {
+            public CreateRoleRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new CreateRoleRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<CreateRoleRequest> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<CreateRoleRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public CreateRoleRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+    public interface RandomRoleNameResponseOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.RandomRoleNameResponse)
+            com.google.protobuf.MessageOrBuilder {
 
-      memoizedIsInitialized = 1;
-      return true;
-    }
+        /**
+         * <pre>
+         *名字
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        String getName();
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      memoizedSize = size;
-      return size;
+        /**
+         * <pre>
+         *名字
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        com.google.protobuf.ByteString
+        getNameBytes();
     }
 
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof RandomRoleNameResponse)) {
-        return super.equals(obj);
-      }
-      RandomRoleNameResponse other = (RandomRoleNameResponse) obj;
-
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static RandomRoleNameResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RandomRoleNameResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RandomRoleNameResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RandomRoleNameResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RandomRoleNameResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RandomRoleNameResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RandomRoleNameResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RandomRoleNameResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RandomRoleNameResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static RandomRoleNameResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RandomRoleNameResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RandomRoleNameResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(RandomRoleNameResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.RandomRoleNameResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.RandomRoleNameResponse)
-        RandomRoleNameResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_RandomRoleNameResponse_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_RandomRoleNameResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                RandomRoleNameResponse.class, Builder.class);
-      }
-
-      // Construct using UserProto.RandomRoleNameResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class RandomRoleNameResponse extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.RandomRoleNameResponse)
+            RandomRoleNameResponseOrBuilder {
+        // Use RandomRoleNameResponse.newBuilder() to construct.
+        private RandomRoleNameResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        name_ = "";
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_RandomRoleNameResponse_descriptor;
-      }
-
-      public RandomRoleNameResponse getDefaultInstanceForType() {
-        return RandomRoleNameResponse.getDefaultInstance();
-      }
-
-      public RandomRoleNameResponse build() {
-        RandomRoleNameResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private RandomRoleNameResponse() {
+            name_ = "";
         }
-        return result;
-      }
 
-      public RandomRoleNameResponse buildPartial() {
-        RandomRoleNameResponse result = new RandomRoleNameResponse(this);
-        result.name_ = name_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RandomRoleNameResponse) {
-          return mergeFrom((RandomRoleNameResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(RandomRoleNameResponse other) {
-        if (other == RandomRoleNameResponse.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
+        private RandomRoleNameResponse(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        RandomRoleNameResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RandomRoleNameResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private Object name_ = "";
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder setName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *名字
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.RandomRoleNameResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.RandomRoleNameResponse)
-    private static final RandomRoleNameResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new RandomRoleNameResponse();
-    }
-
-    public static RandomRoleNameResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<RandomRoleNameResponse>
-        PARSER = new com.google.protobuf.AbstractParser<RandomRoleNameResponse>() {
-      public RandomRoleNameResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RandomRoleNameResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<RandomRoleNameResponse> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<RandomRoleNameResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public RandomRoleNameResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface RandomRoleNameRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.RandomRoleNameRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *性别
-     * </pre>
-     *
-     * <code>int32 sex = 1;</code>
-     */
-    int getSex();
-  }
-  /**
-   * Protobuf type {@code user.RandomRoleNameRequest}
-   */
-  public  static final class RandomRoleNameRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.RandomRoleNameRequest)
-      RandomRoleNameRequestOrBuilder {
-    // Use RandomRoleNameRequest.newBuilder() to construct.
-    private RandomRoleNameRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private RandomRoleNameRequest() {
-      sex_ = 0;
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private RandomRoleNameRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            name_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 8: {
-
-              sex_ = input.readInt32();
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_RandomRoleNameRequest_descriptor;
-    }
+            return UserProto.internal_static_user_RandomRoleNameResponse_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_RandomRoleNameRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              RandomRoleNameRequest.class, Builder.class);
+            return UserProto.internal_static_user_RandomRoleNameResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            RandomRoleNameResponse.class, Builder.class);
+        }
+
+        public static final int NAME_FIELD_NUMBER = 1;
+        private volatile Object name_;
+
+        /**
+         * <pre>
+         *名字
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        public String getName() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                name_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         *名字
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getNameBytes() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                name_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof RandomRoleNameResponse)) {
+                return super.equals(obj);
+            }
+            RandomRoleNameResponse other = (RandomRoleNameResponse) obj;
+
+            boolean result = true;
+            result = result && getName()
+                    .equals(other.getName());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getName().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static RandomRoleNameResponse parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RandomRoleNameResponse parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RandomRoleNameResponse parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RandomRoleNameResponse parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RandomRoleNameResponse parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RandomRoleNameResponse parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RandomRoleNameResponse parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RandomRoleNameResponse parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RandomRoleNameResponse parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static RandomRoleNameResponse parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RandomRoleNameResponse parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RandomRoleNameResponse parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(RandomRoleNameResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.RandomRoleNameResponse}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.RandomRoleNameResponse)
+                RandomRoleNameResponseOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_RandomRoleNameResponse_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_RandomRoleNameResponse_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                RandomRoleNameResponse.class, Builder.class);
+            }
+
+            // Construct using UserProto.RandomRoleNameResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                name_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_RandomRoleNameResponse_descriptor;
+            }
+
+            public RandomRoleNameResponse getDefaultInstanceForType() {
+                return RandomRoleNameResponse.getDefaultInstance();
+            }
+
+            public RandomRoleNameResponse build() {
+                RandomRoleNameResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public RandomRoleNameResponse buildPartial() {
+                RandomRoleNameResponse result = new RandomRoleNameResponse(this);
+                result.name_ = name_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof RandomRoleNameResponse) {
+                    return mergeFrom((RandomRoleNameResponse)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(RandomRoleNameResponse other) {
+                if (other == RandomRoleNameResponse.getDefaultInstance()) return this;
+                if (!other.getName().isEmpty()) {
+                    name_ = other.name_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                RandomRoleNameResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (RandomRoleNameResponse) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private Object name_ = "";
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public String getName() {
+                Object ref = name_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    name_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getNameBytes() {
+                Object ref = name_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    name_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public Builder setName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public Builder clearName() {
+
+                name_ = getDefaultInstance().getName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *名字
+             * </pre>
+             *
+             * <code>string name = 1;</code>
+             */
+            public Builder setNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.RandomRoleNameResponse)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.RandomRoleNameResponse)
+        private static final RandomRoleNameResponse DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new RandomRoleNameResponse();
+        }
+
+        public static RandomRoleNameResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RandomRoleNameResponse>
+                PARSER = new com.google.protobuf.AbstractParser<RandomRoleNameResponse>() {
+            public RandomRoleNameResponse parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new RandomRoleNameResponse(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<RandomRoleNameResponse> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<RandomRoleNameResponse> getParserForType() {
+            return PARSER;
+        }
+
+        public RandomRoleNameResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int SEX_FIELD_NUMBER = 1;
-    private int sex_;
-    /**
-     * <pre>
-     *性别
-     * </pre>
-     *
-     * <code>int32 sex = 1;</code>
-     */
-    public int getSex() {
-      return sex_;
+    public interface RandomRoleNameRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.RandomRoleNameRequest)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         *性别
+         * </pre>
+         *
+         * <code>int32 sex = 1;</code>
+         */
+        int getSex();
     }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (sex_ != 0) {
-        output.writeInt32(1, sex_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (sex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, sex_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof RandomRoleNameRequest)) {
-        return super.equals(obj);
-      }
-      RandomRoleNameRequest other = (RandomRoleNameRequest) obj;
-
-      boolean result = true;
-      result = result && (getSex()
-          == other.getSex());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SEX_FIELD_NUMBER;
-      hash = (53 * hash) + getSex();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static RandomRoleNameRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RandomRoleNameRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RandomRoleNameRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RandomRoleNameRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RandomRoleNameRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RandomRoleNameRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RandomRoleNameRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RandomRoleNameRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RandomRoleNameRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static RandomRoleNameRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RandomRoleNameRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RandomRoleNameRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(RandomRoleNameRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.RandomRoleNameRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.RandomRoleNameRequest)
-        RandomRoleNameRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_RandomRoleNameRequest_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_RandomRoleNameRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                RandomRoleNameRequest.class, Builder.class);
-      }
-
-      // Construct using UserProto.RandomRoleNameRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class RandomRoleNameRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.RandomRoleNameRequest)
+            RandomRoleNameRequestOrBuilder {
+        // Use RandomRoleNameRequest.newBuilder() to construct.
+        private RandomRoleNameRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        sex_ = 0;
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_RandomRoleNameRequest_descriptor;
-      }
-
-      public RandomRoleNameRequest getDefaultInstanceForType() {
-        return RandomRoleNameRequest.getDefaultInstance();
-      }
-
-      public RandomRoleNameRequest build() {
-        RandomRoleNameRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private RandomRoleNameRequest() {
+            sex_ = 0;
         }
-        return result;
-      }
 
-      public RandomRoleNameRequest buildPartial() {
-        RandomRoleNameRequest result = new RandomRoleNameRequest(this);
-        result.sex_ = sex_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RandomRoleNameRequest) {
-          return mergeFrom((RandomRoleNameRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(RandomRoleNameRequest other) {
-        if (other == RandomRoleNameRequest.getDefaultInstance()) return this;
-        if (other.getSex() != 0) {
-          setSex(other.getSex());
-        }
-        onChanged();
-        return this;
-      }
+        private RandomRoleNameRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        RandomRoleNameRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RandomRoleNameRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int sex_ ;
-      /**
-       * <pre>
-       *性别
-       * </pre>
-       *
-       * <code>int32 sex = 1;</code>
-       */
-      public int getSex() {
-        return sex_;
-      }
-      /**
-       * <pre>
-       *性别
-       * </pre>
-       *
-       * <code>int32 sex = 1;</code>
-       */
-      public Builder setSex(int value) {
-        
-        sex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *性别
-       * </pre>
-       *
-       * <code>int32 sex = 1;</code>
-       */
-      public Builder clearSex() {
-        
-        sex_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.RandomRoleNameRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.RandomRoleNameRequest)
-    private static final RandomRoleNameRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new RandomRoleNameRequest();
-    }
-
-    public static RandomRoleNameRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<RandomRoleNameRequest>
-        PARSER = new com.google.protobuf.AbstractParser<RandomRoleNameRequest>() {
-      public RandomRoleNameRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RandomRoleNameRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<RandomRoleNameRequest> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<RandomRoleNameRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public RandomRoleNameRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface RoleIdMsgOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.RoleIdMsg)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int64 roleId = 1;</code>
-     */
-    long getRoleId();
-  }
-  /**
-   * Protobuf type {@code user.RoleIdMsg}
-   */
-  public  static final class RoleIdMsg extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.RoleIdMsg)
-      RoleIdMsgOrBuilder {
-    // Use RoleIdMsg.newBuilder() to construct.
-    private RoleIdMsg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private RoleIdMsg() {
-      roleId_ = 0L;
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private RoleIdMsg(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            sex_ = input.readInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 8: {
-
-              roleId_ = input.readInt64();
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_RoleIdMsg_descriptor;
-    }
+            return UserProto.internal_static_user_RandomRoleNameRequest_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_RoleIdMsg_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              RoleIdMsg.class, Builder.class);
+            return UserProto.internal_static_user_RandomRoleNameRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            RandomRoleNameRequest.class, Builder.class);
+        }
+
+        public static final int SEX_FIELD_NUMBER = 1;
+        private int sex_;
+
+        /**
+         * <pre>
+         *性别
+         * </pre>
+         *
+         * <code>int32 sex = 1;</code>
+         */
+        public int getSex() {
+            return sex_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (sex_ != 0) {
+                output.writeInt32(1, sex_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (sex_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, sex_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof RandomRoleNameRequest)) {
+                return super.equals(obj);
+            }
+            RandomRoleNameRequest other = (RandomRoleNameRequest) obj;
+
+            boolean result = true;
+            result = result && (getSex()
+                    == other.getSex());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SEX_FIELD_NUMBER;
+            hash = (53 * hash) + getSex();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static RandomRoleNameRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RandomRoleNameRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RandomRoleNameRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RandomRoleNameRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RandomRoleNameRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RandomRoleNameRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RandomRoleNameRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RandomRoleNameRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RandomRoleNameRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static RandomRoleNameRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RandomRoleNameRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RandomRoleNameRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(RandomRoleNameRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.RandomRoleNameRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.RandomRoleNameRequest)
+                RandomRoleNameRequestOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_RandomRoleNameRequest_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_RandomRoleNameRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                RandomRoleNameRequest.class, Builder.class);
+            }
+
+            // Construct using UserProto.RandomRoleNameRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                sex_ = 0;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_RandomRoleNameRequest_descriptor;
+            }
+
+            public RandomRoleNameRequest getDefaultInstanceForType() {
+                return RandomRoleNameRequest.getDefaultInstance();
+            }
+
+            public RandomRoleNameRequest build() {
+                RandomRoleNameRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public RandomRoleNameRequest buildPartial() {
+                RandomRoleNameRequest result = new RandomRoleNameRequest(this);
+                result.sex_ = sex_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof RandomRoleNameRequest) {
+                    return mergeFrom((RandomRoleNameRequest)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(RandomRoleNameRequest other) {
+                if (other == RandomRoleNameRequest.getDefaultInstance()) return this;
+                if (other.getSex() != 0) {
+                    setSex(other.getSex());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                RandomRoleNameRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (RandomRoleNameRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int sex_ ;
+
+            /**
+             * <pre>
+             *性别
+             * </pre>
+             *
+             * <code>int32 sex = 1;</code>
+             */
+            public int getSex() {
+                return sex_;
+            }
+
+            /**
+             * <pre>
+             *性别
+             * </pre>
+             *
+             * <code>int32 sex = 1;</code>
+             */
+            public Builder setSex(int value) {
+
+                sex_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *性别
+             * </pre>
+             *
+             * <code>int32 sex = 1;</code>
+             */
+            public Builder clearSex() {
+
+                sex_ = 0;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.RandomRoleNameRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.RandomRoleNameRequest)
+        private static final RandomRoleNameRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new RandomRoleNameRequest();
+        }
+
+        public static RandomRoleNameRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RandomRoleNameRequest>
+                PARSER = new com.google.protobuf.AbstractParser<RandomRoleNameRequest>() {
+            public RandomRoleNameRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new RandomRoleNameRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<RandomRoleNameRequest> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<RandomRoleNameRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public RandomRoleNameRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int ROLEID_FIELD_NUMBER = 1;
-    private long roleId_;
-    /**
-     * <code>int64 roleId = 1;</code>
-     */
-    public long getRoleId() {
-      return roleId_;
+    public interface RoleIdMsgOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.RoleIdMsg)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>int64 roleId = 1;</code>
+         */
+        long getRoleId();
     }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (roleId_ != 0L) {
-        output.writeInt64(1, roleId_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (roleId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, roleId_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof RoleIdMsg)) {
-        return super.equals(obj);
-      }
-      RoleIdMsg other = (RoleIdMsg) obj;
-
-      boolean result = true;
-      result = result && (getRoleId()
-          == other.getRoleId());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ROLEID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoleId());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static RoleIdMsg parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RoleIdMsg parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RoleIdMsg parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RoleIdMsg parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RoleIdMsg parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RoleIdMsg parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RoleIdMsg parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RoleIdMsg parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RoleIdMsg parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static RoleIdMsg parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RoleIdMsg parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RoleIdMsg parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(RoleIdMsg prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.RoleIdMsg}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.RoleIdMsg)
-        RoleIdMsgOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_RoleIdMsg_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_RoleIdMsg_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                RoleIdMsg.class, Builder.class);
-      }
-
-      // Construct using UserProto.RoleIdMsg.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class RoleIdMsg extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.RoleIdMsg)
+            RoleIdMsgOrBuilder {
+        // Use RoleIdMsg.newBuilder() to construct.
+        private RoleIdMsg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        roleId_ = 0L;
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_RoleIdMsg_descriptor;
-      }
-
-      public RoleIdMsg getDefaultInstanceForType() {
-        return RoleIdMsg.getDefaultInstance();
-      }
-
-      public RoleIdMsg build() {
-        RoleIdMsg result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private RoleIdMsg() {
+            roleId_ = 0L;
         }
-        return result;
-      }
 
-      public RoleIdMsg buildPartial() {
-        RoleIdMsg result = new RoleIdMsg(this);
-        result.roleId_ = roleId_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RoleIdMsg) {
-          return mergeFrom((RoleIdMsg)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(RoleIdMsg other) {
-        if (other == RoleIdMsg.getDefaultInstance()) return this;
-        if (other.getRoleId() != 0L) {
-          setRoleId(other.getRoleId());
-        }
-        onChanged();
-        return this;
-      }
+        private RoleIdMsg(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        RoleIdMsg parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RoleIdMsg) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long roleId_ ;
-      /**
-       * <code>int64 roleId = 1;</code>
-       */
-      public long getRoleId() {
-        return roleId_;
-      }
-      /**
-       * <code>int64 roleId = 1;</code>
-       */
-      public Builder setRoleId(long value) {
-        
-        roleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 roleId = 1;</code>
-       */
-      public Builder clearRoleId() {
-        
-        roleId_ = 0L;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.RoleIdMsg)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.RoleIdMsg)
-    private static final RoleIdMsg DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new RoleIdMsg();
-    }
-
-    public static RoleIdMsg getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<RoleIdMsg>
-        PARSER = new com.google.protobuf.AbstractParser<RoleIdMsg>() {
-      public RoleIdMsg parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RoleIdMsg(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<RoleIdMsg> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<RoleIdMsg> getParserForType() {
-      return PARSER;
-    }
-
-    public RoleIdMsg getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface GMCommandOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.GMCommand)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string command = 1;</code>
-     */
-    String getCommand();
-    /**
-     * <code>string command = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getCommandBytes();
-  }
-  /**
-   * <pre>
-   *gm命令请求
-   * </pre>
-   *
-   * Protobuf type {@code user.GMCommand}
-   */
-  public  static final class GMCommand extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.GMCommand)
-      GMCommandOrBuilder {
-    // Use GMCommand.newBuilder() to construct.
-    private GMCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private GMCommand() {
-      command_ = "";
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private GMCommand(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            roleId_ = input.readInt64();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              command_ = s;
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_GMCommand_descriptor;
-    }
+            return UserProto.internal_static_user_RoleIdMsg_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_GMCommand_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              GMCommand.class, Builder.class);
+            return UserProto.internal_static_user_RoleIdMsg_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            RoleIdMsg.class, Builder.class);
+        }
+
+        public static final int ROLEID_FIELD_NUMBER = 1;
+        private long roleId_;
+
+        /**
+         * <code>int64 roleId = 1;</code>
+         */
+        public long getRoleId() {
+            return roleId_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (roleId_ != 0L) {
+                output.writeInt64(1, roleId_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (roleId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(1, roleId_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof RoleIdMsg)) {
+                return super.equals(obj);
+            }
+            RoleIdMsg other = (RoleIdMsg) obj;
+
+            boolean result = true;
+            result = result && (getRoleId()
+                    == other.getRoleId());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getRoleId());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static RoleIdMsg parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RoleIdMsg parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RoleIdMsg parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RoleIdMsg parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RoleIdMsg parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RoleIdMsg parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RoleIdMsg parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RoleIdMsg parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RoleIdMsg parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static RoleIdMsg parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RoleIdMsg parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RoleIdMsg parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(RoleIdMsg prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.RoleIdMsg}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.RoleIdMsg)
+                RoleIdMsgOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_RoleIdMsg_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_RoleIdMsg_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                RoleIdMsg.class, Builder.class);
+            }
+
+            // Construct using UserProto.RoleIdMsg.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                roleId_ = 0L;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_RoleIdMsg_descriptor;
+            }
+
+            public RoleIdMsg getDefaultInstanceForType() {
+                return RoleIdMsg.getDefaultInstance();
+            }
+
+            public RoleIdMsg build() {
+                RoleIdMsg result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public RoleIdMsg buildPartial() {
+                RoleIdMsg result = new RoleIdMsg(this);
+                result.roleId_ = roleId_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof RoleIdMsg) {
+                    return mergeFrom((RoleIdMsg)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(RoleIdMsg other) {
+                if (other == RoleIdMsg.getDefaultInstance()) return this;
+                if (other.getRoleId() != 0L) {
+                    setRoleId(other.getRoleId());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                RoleIdMsg parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (RoleIdMsg) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private long roleId_ ;
+
+            /**
+             * <code>int64 roleId = 1;</code>
+             */
+            public long getRoleId() {
+                return roleId_;
+            }
+
+            /**
+             * <code>int64 roleId = 1;</code>
+             */
+            public Builder setRoleId(long value) {
+
+                roleId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int64 roleId = 1;</code>
+             */
+            public Builder clearRoleId() {
+
+                roleId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.RoleIdMsg)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.RoleIdMsg)
+        private static final RoleIdMsg DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new RoleIdMsg();
+        }
+
+        public static RoleIdMsg getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RoleIdMsg>
+                PARSER = new com.google.protobuf.AbstractParser<RoleIdMsg>() {
+            public RoleIdMsg parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new RoleIdMsg(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<RoleIdMsg> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<RoleIdMsg> getParserForType() {
+            return PARSER;
+        }
+
+        public RoleIdMsg getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int COMMAND_FIELD_NUMBER = 1;
-    private volatile Object command_;
-    /**
-     * <code>string command = 1;</code>
-     */
-    public String getCommand() {
-      Object ref = command_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        command_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string command = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCommandBytes() {
-      Object ref = command_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        command_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public interface GMCommandOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.GMCommand)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>string command = 1;</code>
+         */
+        String getCommand();
+
+        /**
+         * <code>string command = 1;</code>
+         */
+        com.google.protobuf.ByteString
+        getCommandBytes();
     }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getCommandBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, command_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getCommandBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, command_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof GMCommand)) {
-        return super.equals(obj);
-      }
-      GMCommand other = (GMCommand) obj;
-
-      boolean result = true;
-      result = result && getCommand()
-          .equals(other.getCommand());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COMMAND_FIELD_NUMBER;
-      hash = (53 * hash) + getCommand().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static GMCommand parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static GMCommand parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static GMCommand parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static GMCommand parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static GMCommand parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static GMCommand parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static GMCommand parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static GMCommand parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static GMCommand parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static GMCommand parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static GMCommand parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static GMCommand parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(GMCommand prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      *gm命令请求
@@ -8097,1325 +8332,1220 @@ public final class UserProto {
      *
      * Protobuf type {@code user.GMCommand}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.GMCommand)
-        GMCommandOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_GMCommand_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_GMCommand_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                GMCommand.class, Builder.class);
-      }
-
-      // Construct using UserProto.GMCommand.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class GMCommand extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.GMCommand)
+            GMCommandOrBuilder {
+        // Use GMCommand.newBuilder() to construct.
+        private GMCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        command_ = "";
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_GMCommand_descriptor;
-      }
-
-      public GMCommand getDefaultInstanceForType() {
-        return GMCommand.getDefaultInstance();
-      }
-
-      public GMCommand build() {
-        GMCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private GMCommand() {
+            command_ = "";
         }
-        return result;
-      }
 
-      public GMCommand buildPartial() {
-        GMCommand result = new GMCommand(this);
-        result.command_ = command_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof GMCommand) {
-          return mergeFrom((GMCommand)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(GMCommand other) {
-        if (other == GMCommand.getDefaultInstance()) return this;
-        if (!other.getCommand().isEmpty()) {
-          command_ = other.command_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
+        private GMCommand(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        GMCommand parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (GMCommand) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private Object command_ = "";
-      /**
-       * <code>string command = 1;</code>
-       */
-      public String getCommand() {
-        Object ref = command_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          command_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string command = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCommandBytes() {
-        Object ref = command_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          command_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string command = 1;</code>
-       */
-      public Builder setCommand(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        command_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string command = 1;</code>
-       */
-      public Builder clearCommand() {
-        
-        command_ = getDefaultInstance().getCommand();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string command = 1;</code>
-       */
-      public Builder setCommandBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        command_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.GMCommand)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.GMCommand)
-    private static final GMCommand DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new GMCommand();
-    }
-
-    public static GMCommand getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<GMCommand>
-        PARSER = new com.google.protobuf.AbstractParser<GMCommand>() {
-      public GMCommand parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GMCommand(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<GMCommand> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<GMCommand> getParserForType() {
-      return PARSER;
-    }
-
-    public GMCommand getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CloseServerResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.CloseServerResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 code = 1;</code>
-     */
-    int getCode();
-
-    /**
-     * <code>string msg = 2;</code>
-     */
-    String getMsg();
-    /**
-     * <code>string msg = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getMsgBytes();
-  }
-  /**
-   * Protobuf type {@code user.CloseServerResponse}
-   */
-  public  static final class CloseServerResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.CloseServerResponse)
-      CloseServerResponseOrBuilder {
-    // Use CloseServerResponse.newBuilder() to construct.
-    private CloseServerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CloseServerResponse() {
-      code_ = 0;
-      msg_ = "";
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private CloseServerResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            command_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 8: {
-
-              code_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              String s = input.readStringRequireUtf8();
-
-              msg_ = s;
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_CloseServerResponse_descriptor;
-    }
+            return UserProto.internal_static_user_GMCommand_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_CloseServerResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              CloseServerResponse.class, Builder.class);
+            return UserProto.internal_static_user_GMCommand_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            GMCommand.class, Builder.class);
+        }
+
+        public static final int COMMAND_FIELD_NUMBER = 1;
+        private volatile Object command_;
+
+        /**
+         * <code>string command = 1;</code>
+         */
+        public String getCommand() {
+            Object ref = command_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                command_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string command = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getCommandBytes() {
+            Object ref = command_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                command_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getCommandBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, command_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getCommandBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, command_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof GMCommand)) {
+                return super.equals(obj);
+            }
+            GMCommand other = (GMCommand) obj;
+
+            boolean result = true;
+            result = result && getCommand()
+                    .equals(other.getCommand());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + COMMAND_FIELD_NUMBER;
+            hash = (53 * hash) + getCommand().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static GMCommand parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static GMCommand parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static GMCommand parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static GMCommand parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static GMCommand parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static GMCommand parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static GMCommand parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static GMCommand parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static GMCommand parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static GMCommand parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static GMCommand parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static GMCommand parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(GMCommand prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         *gm命令请求
+         * </pre>
+         *
+         * Protobuf type {@code user.GMCommand}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.GMCommand)
+                GMCommandOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_GMCommand_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_GMCommand_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                GMCommand.class, Builder.class);
+            }
+
+            // Construct using UserProto.GMCommand.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                command_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_GMCommand_descriptor;
+            }
+
+            public GMCommand getDefaultInstanceForType() {
+                return GMCommand.getDefaultInstance();
+            }
+
+            public GMCommand build() {
+                GMCommand result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public GMCommand buildPartial() {
+                GMCommand result = new GMCommand(this);
+                result.command_ = command_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof GMCommand) {
+                    return mergeFrom((GMCommand)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(GMCommand other) {
+                if (other == GMCommand.getDefaultInstance()) return this;
+                if (!other.getCommand().isEmpty()) {
+                    command_ = other.command_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                GMCommand parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (GMCommand) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private Object command_ = "";
+
+            /**
+             * <code>string command = 1;</code>
+             */
+            public String getCommand() {
+                Object ref = command_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    command_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string command = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getCommandBytes() {
+                Object ref = command_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    command_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string command = 1;</code>
+             */
+            public Builder setCommand(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                command_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string command = 1;</code>
+             */
+            public Builder clearCommand() {
+
+                command_ = getDefaultInstance().getCommand();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string command = 1;</code>
+             */
+            public Builder setCommandBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                command_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.GMCommand)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.GMCommand)
+        private static final GMCommand DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new GMCommand();
+        }
+
+        public static GMCommand getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<GMCommand>
+                PARSER = new com.google.protobuf.AbstractParser<GMCommand>() {
+            public GMCommand parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new GMCommand(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<GMCommand> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<GMCommand> getParserForType() {
+            return PARSER;
+        }
+
+        public GMCommand getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int CODE_FIELD_NUMBER = 1;
-    private int code_;
-    /**
-     * <code>int32 code = 1;</code>
-     */
-    public int getCode() {
-      return code_;
+    public interface CloseServerResponseOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.CloseServerResponse)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>int32 code = 1;</code>
+         */
+        int getCode();
+
+        /**
+         * <code>string msg = 2;</code>
+         */
+        String getMsg();
+
+        /**
+         * <code>string msg = 2;</code>
+         */
+        com.google.protobuf.ByteString
+        getMsgBytes();
     }
 
-    public static final int MSG_FIELD_NUMBER = 2;
-    private volatile Object msg_;
-    /**
-     * <code>string msg = 2;</code>
-     */
-    public String getMsg() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        msg_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string msg = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getMsgBytes() {
-      Object ref = msg_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        msg_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (code_ != 0) {
-        output.writeInt32(1, code_);
-      }
-      if (!getMsgBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (code_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, code_);
-      }
-      if (!getMsgBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof CloseServerResponse)) {
-        return super.equals(obj);
-      }
-      CloseServerResponse other = (CloseServerResponse) obj;
-
-      boolean result = true;
-      result = result && (getCode()
-          == other.getCode());
-      result = result && getMsg()
-          .equals(other.getMsg());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getCode();
-      hash = (37 * hash) + MSG_FIELD_NUMBER;
-      hash = (53 * hash) + getMsg().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static CloseServerResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static CloseServerResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static CloseServerResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static CloseServerResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static CloseServerResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static CloseServerResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static CloseServerResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static CloseServerResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static CloseServerResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static CloseServerResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static CloseServerResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static CloseServerResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(CloseServerResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.CloseServerResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.CloseServerResponse)
-        CloseServerResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_CloseServerResponse_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_CloseServerResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                CloseServerResponse.class, Builder.class);
-      }
-
-      // Construct using UserProto.CloseServerResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class CloseServerResponse extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.CloseServerResponse)
+            CloseServerResponseOrBuilder {
+        // Use CloseServerResponse.newBuilder() to construct.
+        private CloseServerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        code_ = 0;
 
-        msg_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_CloseServerResponse_descriptor;
-      }
-
-      public CloseServerResponse getDefaultInstanceForType() {
-        return CloseServerResponse.getDefaultInstance();
-      }
-
-      public CloseServerResponse build() {
-        CloseServerResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private CloseServerResponse() {
+            code_ = 0;
+            msg_ = "";
         }
-        return result;
-      }
 
-      public CloseServerResponse buildPartial() {
-        CloseServerResponse result = new CloseServerResponse(this);
-        result.code_ = code_;
-        result.msg_ = msg_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof CloseServerResponse) {
-          return mergeFrom((CloseServerResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(CloseServerResponse other) {
-        if (other == CloseServerResponse.getDefaultInstance()) return this;
-        if (other.getCode() != 0) {
-          setCode(other.getCode());
+        private CloseServerResponse(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+
+                            code_ = input.readInt32();
+                            break;
+                        }
+                        case 18: {
+                            String s = input.readStringRequireUtf8();
+
+                            msg_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
-        if (!other.getMsg().isEmpty()) {
-          msg_ = other.msg_;
-          onChanged();
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return UserProto.internal_static_user_CloseServerResponse_descriptor;
         }
-        onChanged();
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        CloseServerResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (CloseServerResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return UserProto.internal_static_user_CloseServerResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            CloseServerResponse.class, Builder.class);
         }
-        return this;
-      }
 
-      private int code_ ;
-      /**
-       * <code>int32 code = 1;</code>
-       */
-      public int getCode() {
-        return code_;
-      }
-      /**
-       * <code>int32 code = 1;</code>
-       */
-      public Builder setCode(int value) {
-        
-        code_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 code = 1;</code>
-       */
-      public Builder clearCode() {
-        
-        code_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int CODE_FIELD_NUMBER = 1;
+        private int code_;
 
-      private Object msg_ = "";
-      /**
-       * <code>string msg = 2;</code>
-       */
-      public String getMsg() {
-        Object ref = msg_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          msg_ = s;
-          return s;
-        } else {
-          return (String) ref;
+        /**
+         * <code>int32 code = 1;</code>
+         */
+        public int getCode() {
+            return code_;
         }
-      }
-      /**
-       * <code>string msg = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getMsgBytes() {
-        Object ref = msg_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          msg_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int MSG_FIELD_NUMBER = 2;
+        private volatile Object msg_;
+
+        /**
+         * <code>string msg = 2;</code>
+         */
+        public String getMsg() {
+            Object ref = msg_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                msg_ = s;
+                return s;
+            }
         }
-      }
-      /**
-       * <code>string msg = 2;</code>
-       */
-      public Builder setMsg(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        msg_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string msg = 2;</code>
-       */
-      public Builder clearMsg() {
-        
-        msg_ = getDefaultInstance().getMsg();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string msg = 2;</code>
-       */
-      public Builder setMsgBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        msg_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        /**
+         * <code>string msg = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+        getMsgBytes() {
+            Object ref = msg_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                msg_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (code_ != 0) {
+                output.writeInt32(1, code_);
+            }
+            if (!getMsgBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (code_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, code_);
+            }
+            if (!getMsgBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof CloseServerResponse)) {
+                return super.equals(obj);
+            }
+            CloseServerResponse other = (CloseServerResponse) obj;
+
+            boolean result = true;
+            result = result && (getCode()
+                    == other.getCode());
+            result = result && getMsg()
+                    .equals(other.getMsg());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + CODE_FIELD_NUMBER;
+            hash = (53 * hash) + getCode();
+            hash = (37 * hash) + MSG_FIELD_NUMBER;
+            hash = (53 * hash) + getMsg().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static CloseServerResponse parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static CloseServerResponse parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static CloseServerResponse parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static CloseServerResponse parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static CloseServerResponse parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static CloseServerResponse parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static CloseServerResponse parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static CloseServerResponse parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static CloseServerResponse parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static CloseServerResponse parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static CloseServerResponse parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static CloseServerResponse parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(CloseServerResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.CloseServerResponse}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.CloseServerResponse)
+                CloseServerResponseOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_CloseServerResponse_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_CloseServerResponse_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                CloseServerResponse.class, Builder.class);
+            }
+
+            // Construct using UserProto.CloseServerResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                code_ = 0;
+
+                msg_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_CloseServerResponse_descriptor;
+            }
+
+            public CloseServerResponse getDefaultInstanceForType() {
+                return CloseServerResponse.getDefaultInstance();
+            }
+
+            public CloseServerResponse build() {
+                CloseServerResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public CloseServerResponse buildPartial() {
+                CloseServerResponse result = new CloseServerResponse(this);
+                result.code_ = code_;
+                result.msg_ = msg_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof CloseServerResponse) {
+                    return mergeFrom((CloseServerResponse)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(CloseServerResponse other) {
+                if (other == CloseServerResponse.getDefaultInstance()) return this;
+                if (other.getCode() != 0) {
+                    setCode(other.getCode());
+                }
+                if (!other.getMsg().isEmpty()) {
+                    msg_ = other.msg_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                CloseServerResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (CloseServerResponse) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int code_ ;
+
+            /**
+             * <code>int32 code = 1;</code>
+             */
+            public int getCode() {
+                return code_;
+            }
+
+            /**
+             * <code>int32 code = 1;</code>
+             */
+            public Builder setCode(int value) {
+
+                code_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int32 code = 1;</code>
+             */
+            public Builder clearCode() {
+
+                code_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private Object msg_ = "";
+
+            /**
+             * <code>string msg = 2;</code>
+             */
+            public String getMsg() {
+                Object ref = msg_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    msg_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string msg = 2;</code>
+             */
+            public com.google.protobuf.ByteString
+            getMsgBytes() {
+                Object ref = msg_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    msg_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string msg = 2;</code>
+             */
+            public Builder setMsg(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                msg_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string msg = 2;</code>
+             */
+            public Builder clearMsg() {
+
+                msg_ = getDefaultInstance().getMsg();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string msg = 2;</code>
+             */
+            public Builder setMsgBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                msg_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:user.CloseServerResponse)
+            // @@protoc_insertion_point(builder_scope:user.CloseServerResponse)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.CloseServerResponse)
+        private static final CloseServerResponse DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new CloseServerResponse();
+        }
+
+        public static CloseServerResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<CloseServerResponse>
+                PARSER = new com.google.protobuf.AbstractParser<CloseServerResponse>() {
+            public CloseServerResponse parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new CloseServerResponse(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<CloseServerResponse> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<CloseServerResponse> getParserForType() {
+            return PARSER;
+        }
+
+        public CloseServerResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:user.CloseServerResponse)
-    private static final CloseServerResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new CloseServerResponse();
-    }
+    public interface ReconnectRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.ReconnectRequest)
+            com.google.protobuf.MessageOrBuilder {
 
-    public static CloseServerResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>string loginName = 1;</code>
+         */
+        String getLoginName();
 
-    private static final com.google.protobuf.Parser<CloseServerResponse>
-        PARSER = new com.google.protobuf.AbstractParser<CloseServerResponse>() {
-      public CloseServerResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CloseServerResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CloseServerResponse> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<CloseServerResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public CloseServerResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ReconnectRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.ReconnectRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string loginName = 1;</code>
-     */
-    String getLoginName();
-    /**
-     * <code>string loginName = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string loginName = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getLoginNameBytes();
 
-    /**
-     * <code>int32 serverId = 2;</code>
-     */
-    int getServerId();
+        /**
+         * <code>int32 serverId = 2;</code>
+         */
+        int getServerId();
 
-    /**
-     * <code>int32 platformId = 3;</code>
-     */
-    int getPlatformId();
+        /**
+         * <code>int32 platformId = 3;</code>
+         */
+        int getPlatformId();
 
-    /**
-     * <code>int64 roleId = 4;</code>
-     */
-    long getRoleId();
+        /**
+         * <code>int64 roleId = 4;</code>
+         */
+        long getRoleId();
 
-    /**
-     * <code>string sign = 5;</code>
-     */
-    String getSign();
-    /**
-     * <code>string sign = 5;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string sign = 5;</code>
+         */
+        String getSign();
+
+        /**
+         * <code>string sign = 5;</code>
+         */
+        com.google.protobuf.ByteString
         getSignBytes();
 
-    /**
-     * <code>int64 time = 6;</code>
-     */
-    long getTime();
+        /**
+         * <code>int64 time = 6;</code>
+         */
+        long getTime();
 
-    /**
-     * <pre>
-     *是否切换服务器
-     * </pre>
-     *
-     * <code>bool changeLine = 7;</code>
-     */
-    boolean getChangeLine();
-  }
-  /**
-   * <pre>
-   *重新连接请求
-   * </pre>
-   *
-   * Protobuf type {@code user.ReconnectRequest}
-   */
-  public  static final class ReconnectRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.ReconnectRequest)
-      ReconnectRequestOrBuilder {
-    // Use ReconnectRequest.newBuilder() to construct.
-    private ReconnectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ReconnectRequest() {
-      loginName_ = "";
-      serverId_ = 0;
-      platformId_ = 0;
-      roleId_ = 0L;
-      sign_ = "";
-      time_ = 0L;
-      changeLine_ = false;
+        /**
+         * <pre>
+         *是否切换服务器
+         * </pre>
+         *
+         * <code>bool changeLine = 7;</code>
+         */
+        boolean getChangeLine();
     }
 
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ReconnectRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              loginName_ = s;
-              break;
-            }
-            case 16: {
-
-              serverId_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              platformId_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              roleId_ = input.readInt64();
-              break;
-            }
-            case 42: {
-              String s = input.readStringRequireUtf8();
-
-              sign_ = s;
-              break;
-            }
-            case 48: {
-
-              time_ = input.readInt64();
-              break;
-            }
-            case 56: {
-
-              changeLine_ = input.readBool();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return UserProto.internal_static_user_ReconnectRequest_descriptor;
-    }
-
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_ReconnectRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              ReconnectRequest.class, Builder.class);
-    }
-
-    public static final int LOGINNAME_FIELD_NUMBER = 1;
-    private volatile Object loginName_;
-    /**
-     * <code>string loginName = 1;</code>
-     */
-    public String getLoginName() {
-      Object ref = loginName_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        loginName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string loginName = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getLoginNameBytes() {
-      Object ref = loginName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        loginName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SERVERID_FIELD_NUMBER = 2;
-    private int serverId_;
-    /**
-     * <code>int32 serverId = 2;</code>
-     */
-    public int getServerId() {
-      return serverId_;
-    }
-
-    public static final int PLATFORMID_FIELD_NUMBER = 3;
-    private int platformId_;
-    /**
-     * <code>int32 platformId = 3;</code>
-     */
-    public int getPlatformId() {
-      return platformId_;
-    }
-
-    public static final int ROLEID_FIELD_NUMBER = 4;
-    private long roleId_;
-    /**
-     * <code>int64 roleId = 4;</code>
-     */
-    public long getRoleId() {
-      return roleId_;
-    }
-
-    public static final int SIGN_FIELD_NUMBER = 5;
-    private volatile Object sign_;
-    /**
-     * <code>string sign = 5;</code>
-     */
-    public String getSign() {
-      Object ref = sign_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        sign_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string sign = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSignBytes() {
-      Object ref = sign_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        sign_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TIME_FIELD_NUMBER = 6;
-    private long time_;
-    /**
-     * <code>int64 time = 6;</code>
-     */
-    public long getTime() {
-      return time_;
-    }
-
-    public static final int CHANGELINE_FIELD_NUMBER = 7;
-    private boolean changeLine_;
-    /**
-     * <pre>
-     *是否切换服务器
-     * </pre>
-     *
-     * <code>bool changeLine = 7;</code>
-     */
-    public boolean getChangeLine() {
-      return changeLine_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getLoginNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, loginName_);
-      }
-      if (serverId_ != 0) {
-        output.writeInt32(2, serverId_);
-      }
-      if (platformId_ != 0) {
-        output.writeInt32(3, platformId_);
-      }
-      if (roleId_ != 0L) {
-        output.writeInt64(4, roleId_);
-      }
-      if (!getSignBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sign_);
-      }
-      if (time_ != 0L) {
-        output.writeInt64(6, time_);
-      }
-      if (changeLine_ != false) {
-        output.writeBool(7, changeLine_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getLoginNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, loginName_);
-      }
-      if (serverId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, serverId_);
-      }
-      if (platformId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, platformId_);
-      }
-      if (roleId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, roleId_);
-      }
-      if (!getSignBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sign_);
-      }
-      if (time_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, time_);
-      }
-      if (changeLine_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, changeLine_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof ReconnectRequest)) {
-        return super.equals(obj);
-      }
-      ReconnectRequest other = (ReconnectRequest) obj;
-
-      boolean result = true;
-      result = result && getLoginName()
-          .equals(other.getLoginName());
-      result = result && (getServerId()
-          == other.getServerId());
-      result = result && (getPlatformId()
-          == other.getPlatformId());
-      result = result && (getRoleId()
-          == other.getRoleId());
-      result = result && getSign()
-          .equals(other.getSign());
-      result = result && (getTime()
-          == other.getTime());
-      result = result && (getChangeLine()
-          == other.getChangeLine());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LOGINNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getLoginName().hashCode();
-      hash = (37 * hash) + SERVERID_FIELD_NUMBER;
-      hash = (53 * hash) + getServerId();
-      hash = (37 * hash) + PLATFORMID_FIELD_NUMBER;
-      hash = (53 * hash) + getPlatformId();
-      hash = (37 * hash) + ROLEID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRoleId());
-      hash = (37 * hash) + SIGN_FIELD_NUMBER;
-      hash = (53 * hash) + getSign().hashCode();
-      hash = (37 * hash) + TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTime());
-      hash = (37 * hash) + CHANGELINE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getChangeLine());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static ReconnectRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ReconnectRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ReconnectRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ReconnectRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ReconnectRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ReconnectRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ReconnectRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ReconnectRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ReconnectRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static ReconnectRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ReconnectRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ReconnectRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(ReconnectRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      *重新连接请求
@@ -9423,1360 +9553,1553 @@ public final class UserProto {
      *
      * Protobuf type {@code user.ReconnectRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.ReconnectRequest)
-        ReconnectRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_ReconnectRequest_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_ReconnectRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                ReconnectRequest.class, Builder.class);
-      }
-
-      // Construct using UserProto.ReconnectRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class ReconnectRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.ReconnectRequest)
+            ReconnectRequestOrBuilder {
+        // Use ReconnectRequest.newBuilder() to construct.
+        private ReconnectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        loginName_ = "";
 
-        serverId_ = 0;
-
-        platformId_ = 0;
-
-        roleId_ = 0L;
-
-        sign_ = "";
-
-        time_ = 0L;
-
-        changeLine_ = false;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_ReconnectRequest_descriptor;
-      }
-
-      public ReconnectRequest getDefaultInstanceForType() {
-        return ReconnectRequest.getDefaultInstance();
-      }
-
-      public ReconnectRequest build() {
-        ReconnectRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private ReconnectRequest() {
+            loginName_ = "";
+            serverId_ = 0;
+            platformId_ = 0;
+            roleId_ = 0L;
+            sign_ = "";
+            time_ = 0L;
+            changeLine_ = false;
         }
-        return result;
-      }
 
-      public ReconnectRequest buildPartial() {
-        ReconnectRequest result = new ReconnectRequest(this);
-        result.loginName_ = loginName_;
-        result.serverId_ = serverId_;
-        result.platformId_ = platformId_;
-        result.roleId_ = roleId_;
-        result.sign_ = sign_;
-        result.time_ = time_;
-        result.changeLine_ = changeLine_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ReconnectRequest) {
-          return mergeFrom((ReconnectRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(ReconnectRequest other) {
-        if (other == ReconnectRequest.getDefaultInstance()) return this;
-        if (!other.getLoginName().isEmpty()) {
-          loginName_ = other.loginName_;
-          onChanged();
-        }
-        if (other.getServerId() != 0) {
-          setServerId(other.getServerId());
-        }
-        if (other.getPlatformId() != 0) {
-          setPlatformId(other.getPlatformId());
-        }
-        if (other.getRoleId() != 0L) {
-          setRoleId(other.getRoleId());
-        }
-        if (!other.getSign().isEmpty()) {
-          sign_ = other.sign_;
-          onChanged();
-        }
-        if (other.getTime() != 0L) {
-          setTime(other.getTime());
-        }
-        if (other.getChangeLine() != false) {
-          setChangeLine(other.getChangeLine());
-        }
-        onChanged();
-        return this;
-      }
+        private ReconnectRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
 
-      public final boolean isInitialized() {
-        return true;
-      }
+                            loginName_ = s;
+                            break;
+                        }
+                        case 16: {
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        ReconnectRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ReconnectRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+                            serverId_ = input.readInt32();
+                            break;
+                        }
+                        case 24: {
 
-      private Object loginName_ = "";
-      /**
-       * <code>string loginName = 1;</code>
-       */
-      public String getLoginName() {
-        Object ref = loginName_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          loginName_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string loginName = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getLoginNameBytes() {
-        Object ref = loginName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          loginName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string loginName = 1;</code>
-       */
-      public Builder setLoginName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        loginName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string loginName = 1;</code>
-       */
-      public Builder clearLoginName() {
-        
-        loginName_ = getDefaultInstance().getLoginName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string loginName = 1;</code>
-       */
-      public Builder setLoginNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        loginName_ = value;
-        onChanged();
-        return this;
-      }
+                            platformId_ = input.readInt32();
+                            break;
+                        }
+                        case 32: {
 
-      private int serverId_ ;
-      /**
-       * <code>int32 serverId = 2;</code>
-       */
-      public int getServerId() {
-        return serverId_;
-      }
-      /**
-       * <code>int32 serverId = 2;</code>
-       */
-      public Builder setServerId(int value) {
-        
-        serverId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 serverId = 2;</code>
-       */
-      public Builder clearServerId() {
-        
-        serverId_ = 0;
-        onChanged();
-        return this;
-      }
+                            roleId_ = input.readInt64();
+                            break;
+                        }
+                        case 42: {
+                            String s = input.readStringRequireUtf8();
 
-      private int platformId_ ;
-      /**
-       * <code>int32 platformId = 3;</code>
-       */
-      public int getPlatformId() {
-        return platformId_;
-      }
-      /**
-       * <code>int32 platformId = 3;</code>
-       */
-      public Builder setPlatformId(int value) {
-        
-        platformId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 platformId = 3;</code>
-       */
-      public Builder clearPlatformId() {
-        
-        platformId_ = 0;
-        onChanged();
-        return this;
-      }
+                            sign_ = s;
+                            break;
+                        }
+                        case 48: {
 
-      private long roleId_ ;
-      /**
-       * <code>int64 roleId = 4;</code>
-       */
-      public long getRoleId() {
-        return roleId_;
-      }
-      /**
-       * <code>int64 roleId = 4;</code>
-       */
-      public Builder setRoleId(long value) {
-        
-        roleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 roleId = 4;</code>
-       */
-      public Builder clearRoleId() {
-        
-        roleId_ = 0L;
-        onChanged();
-        return this;
-      }
+                            time_ = input.readInt64();
+                            break;
+                        }
+                        case 56: {
 
-      private Object sign_ = "";
-      /**
-       * <code>string sign = 5;</code>
-       */
-      public String getSign() {
-        Object ref = sign_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          sign_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string sign = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSignBytes() {
-        Object ref = sign_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          sign_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string sign = 5;</code>
-       */
-      public Builder setSign(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sign_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sign = 5;</code>
-       */
-      public Builder clearSign() {
-        
-        sign_ = getDefaultInstance().getSign();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sign = 5;</code>
-       */
-      public Builder setSignBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sign_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long time_ ;
-      /**
-       * <code>int64 time = 6;</code>
-       */
-      public long getTime() {
-        return time_;
-      }
-      /**
-       * <code>int64 time = 6;</code>
-       */
-      public Builder setTime(long value) {
-        
-        time_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 time = 6;</code>
-       */
-      public Builder clearTime() {
-        
-        time_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private boolean changeLine_ ;
-      /**
-       * <pre>
-       *是否切换服务器
-       * </pre>
-       *
-       * <code>bool changeLine = 7;</code>
-       */
-      public boolean getChangeLine() {
-        return changeLine_;
-      }
-      /**
-       * <pre>
-       *是否切换服务器
-       * </pre>
-       *
-       * <code>bool changeLine = 7;</code>
-       */
-      public Builder setChangeLine(boolean value) {
-        
-        changeLine_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *是否切换服务器
-       * </pre>
-       *
-       * <code>bool changeLine = 7;</code>
-       */
-      public Builder clearChangeLine() {
-        
-        changeLine_ = false;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.ReconnectRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.ReconnectRequest)
-    private static final ReconnectRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new ReconnectRequest();
-    }
-
-    public static ReconnectRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ReconnectRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ReconnectRequest>() {
-      public ReconnectRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ReconnectRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ReconnectRequest> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<ReconnectRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public ReconnectRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface DisconnectResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.DisconnectResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.user.GoingDownReason reason = 1;</code>
-     */
-    int getReasonValue();
-    /**
-     * <code>.user.GoingDownReason reason = 1;</code>
-     */
-    GoingDownReason getReason();
-  }
-  /**
-   * Protobuf type {@code user.DisconnectResponse}
-   */
-  public  static final class DisconnectResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.DisconnectResponse)
-      DisconnectResponseOrBuilder {
-    // Use DisconnectResponse.newBuilder() to construct.
-    private DisconnectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DisconnectResponse() {
-      reason_ = 0;
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private DisconnectResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            changeLine_ = input.readBool();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 8: {
-              int rawValue = input.readEnum();
-
-              reason_ = rawValue;
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_DisconnectResponse_descriptor;
-    }
+            return UserProto.internal_static_user_ReconnectRequest_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_DisconnectResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              DisconnectResponse.class, Builder.class);
+            return UserProto.internal_static_user_ReconnectRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ReconnectRequest.class, Builder.class);
+        }
+
+        public static final int LOGINNAME_FIELD_NUMBER = 1;
+        private volatile Object loginName_;
+
+        /**
+         * <code>string loginName = 1;</code>
+         */
+        public String getLoginName() {
+            Object ref = loginName_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                loginName_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string loginName = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getLoginNameBytes() {
+            Object ref = loginName_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                loginName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int SERVERID_FIELD_NUMBER = 2;
+        private int serverId_;
+
+        /**
+         * <code>int32 serverId = 2;</code>
+         */
+        public int getServerId() {
+            return serverId_;
+        }
+
+        public static final int PLATFORMID_FIELD_NUMBER = 3;
+        private int platformId_;
+
+        /**
+         * <code>int32 platformId = 3;</code>
+         */
+        public int getPlatformId() {
+            return platformId_;
+        }
+
+        public static final int ROLEID_FIELD_NUMBER = 4;
+        private long roleId_;
+
+        /**
+         * <code>int64 roleId = 4;</code>
+         */
+        public long getRoleId() {
+            return roleId_;
+        }
+
+        public static final int SIGN_FIELD_NUMBER = 5;
+        private volatile Object sign_;
+
+        /**
+         * <code>string sign = 5;</code>
+         */
+        public String getSign() {
+            Object ref = sign_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                sign_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string sign = 5;</code>
+         */
+        public com.google.protobuf.ByteString
+        getSignBytes() {
+            Object ref = sign_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                sign_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int TIME_FIELD_NUMBER = 6;
+        private long time_;
+
+        /**
+         * <code>int64 time = 6;</code>
+         */
+        public long getTime() {
+            return time_;
+        }
+
+        public static final int CHANGELINE_FIELD_NUMBER = 7;
+        private boolean changeLine_;
+
+        /**
+         * <pre>
+         *是否切换服务器
+         * </pre>
+         *
+         * <code>bool changeLine = 7;</code>
+         */
+        public boolean getChangeLine() {
+            return changeLine_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getLoginNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, loginName_);
+            }
+            if (serverId_ != 0) {
+                output.writeInt32(2, serverId_);
+            }
+            if (platformId_ != 0) {
+                output.writeInt32(3, platformId_);
+            }
+            if (roleId_ != 0L) {
+                output.writeInt64(4, roleId_);
+            }
+            if (!getSignBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sign_);
+            }
+            if (time_ != 0L) {
+                output.writeInt64(6, time_);
+            }
+            if (changeLine_ != false) {
+                output.writeBool(7, changeLine_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getLoginNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, loginName_);
+            }
+            if (serverId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(2, serverId_);
+            }
+            if (platformId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(3, platformId_);
+            }
+            if (roleId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(4, roleId_);
+            }
+            if (!getSignBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sign_);
+            }
+            if (time_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(6, time_);
+            }
+            if (changeLine_ != false) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeBoolSize(7, changeLine_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ReconnectRequest)) {
+                return super.equals(obj);
+            }
+            ReconnectRequest other = (ReconnectRequest) obj;
+
+            boolean result = true;
+            result = result && getLoginName()
+                    .equals(other.getLoginName());
+            result = result && (getServerId()
+                    == other.getServerId());
+            result = result && (getPlatformId()
+                    == other.getPlatformId());
+            result = result && (getRoleId()
+                    == other.getRoleId());
+            result = result && getSign()
+                    .equals(other.getSign());
+            result = result && (getTime()
+                    == other.getTime());
+            result = result && (getChangeLine()
+                    == other.getChangeLine());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + LOGINNAME_FIELD_NUMBER;
+            hash = (53 * hash) + getLoginName().hashCode();
+            hash = (37 * hash) + SERVERID_FIELD_NUMBER;
+            hash = (53 * hash) + getServerId();
+            hash = (37 * hash) + PLATFORMID_FIELD_NUMBER;
+            hash = (53 * hash) + getPlatformId();
+            hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getRoleId());
+            hash = (37 * hash) + SIGN_FIELD_NUMBER;
+            hash = (53 * hash) + getSign().hashCode();
+            hash = (37 * hash) + TIME_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getTime());
+            hash = (37 * hash) + CHANGELINE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+                    getChangeLine());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static ReconnectRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ReconnectRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ReconnectRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ReconnectRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ReconnectRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ReconnectRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ReconnectRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ReconnectRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ReconnectRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ReconnectRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ReconnectRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ReconnectRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ReconnectRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         *重新连接请求
+         * </pre>
+         *
+         * Protobuf type {@code user.ReconnectRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.ReconnectRequest)
+                ReconnectRequestOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_ReconnectRequest_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_ReconnectRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ReconnectRequest.class, Builder.class);
+            }
+
+            // Construct using UserProto.ReconnectRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                loginName_ = "";
+
+                serverId_ = 0;
+
+                platformId_ = 0;
+
+                roleId_ = 0L;
+
+                sign_ = "";
+
+                time_ = 0L;
+
+                changeLine_ = false;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_ReconnectRequest_descriptor;
+            }
+
+            public ReconnectRequest getDefaultInstanceForType() {
+                return ReconnectRequest.getDefaultInstance();
+            }
+
+            public ReconnectRequest build() {
+                ReconnectRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public ReconnectRequest buildPartial() {
+                ReconnectRequest result = new ReconnectRequest(this);
+                result.loginName_ = loginName_;
+                result.serverId_ = serverId_;
+                result.platformId_ = platformId_;
+                result.roleId_ = roleId_;
+                result.sign_ = sign_;
+                result.time_ = time_;
+                result.changeLine_ = changeLine_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ReconnectRequest) {
+                    return mergeFrom((ReconnectRequest)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ReconnectRequest other) {
+                if (other == ReconnectRequest.getDefaultInstance()) return this;
+                if (!other.getLoginName().isEmpty()) {
+                    loginName_ = other.loginName_;
+                    onChanged();
+                }
+                if (other.getServerId() != 0) {
+                    setServerId(other.getServerId());
+                }
+                if (other.getPlatformId() != 0) {
+                    setPlatformId(other.getPlatformId());
+                }
+                if (other.getRoleId() != 0L) {
+                    setRoleId(other.getRoleId());
+                }
+                if (!other.getSign().isEmpty()) {
+                    sign_ = other.sign_;
+                    onChanged();
+                }
+                if (other.getTime() != 0L) {
+                    setTime(other.getTime());
+                }
+                if (other.getChangeLine() != false) {
+                    setChangeLine(other.getChangeLine());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ReconnectRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ReconnectRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private Object loginName_ = "";
+
+            /**
+             * <code>string loginName = 1;</code>
+             */
+            public String getLoginName() {
+                Object ref = loginName_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    loginName_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string loginName = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getLoginNameBytes() {
+                Object ref = loginName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    loginName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string loginName = 1;</code>
+             */
+            public Builder setLoginName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                loginName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string loginName = 1;</code>
+             */
+            public Builder clearLoginName() {
+
+                loginName_ = getDefaultInstance().getLoginName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string loginName = 1;</code>
+             */
+            public Builder setLoginNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                loginName_ = value;
+                onChanged();
+                return this;
+            }
+
+            private int serverId_ ;
+
+            /**
+             * <code>int32 serverId = 2;</code>
+             */
+            public int getServerId() {
+                return serverId_;
+            }
+
+            /**
+             * <code>int32 serverId = 2;</code>
+             */
+            public Builder setServerId(int value) {
+
+                serverId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int32 serverId = 2;</code>
+             */
+            public Builder clearServerId() {
+
+                serverId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int platformId_ ;
+
+            /**
+             * <code>int32 platformId = 3;</code>
+             */
+            public int getPlatformId() {
+                return platformId_;
+            }
+
+            /**
+             * <code>int32 platformId = 3;</code>
+             */
+            public Builder setPlatformId(int value) {
+
+                platformId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int32 platformId = 3;</code>
+             */
+            public Builder clearPlatformId() {
+
+                platformId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private long roleId_ ;
+
+            /**
+             * <code>int64 roleId = 4;</code>
+             */
+            public long getRoleId() {
+                return roleId_;
+            }
+
+            /**
+             * <code>int64 roleId = 4;</code>
+             */
+            public Builder setRoleId(long value) {
+
+                roleId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int64 roleId = 4;</code>
+             */
+            public Builder clearRoleId() {
+
+                roleId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private Object sign_ = "";
+
+            /**
+             * <code>string sign = 5;</code>
+             */
+            public String getSign() {
+                Object ref = sign_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    sign_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string sign = 5;</code>
+             */
+            public com.google.protobuf.ByteString
+            getSignBytes() {
+                Object ref = sign_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    sign_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string sign = 5;</code>
+             */
+            public Builder setSign(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                sign_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string sign = 5;</code>
+             */
+            public Builder clearSign() {
+
+                sign_ = getDefaultInstance().getSign();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string sign = 5;</code>
+             */
+            public Builder setSignBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                sign_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long time_ ;
+
+            /**
+             * <code>int64 time = 6;</code>
+             */
+            public long getTime() {
+                return time_;
+            }
+
+            /**
+             * <code>int64 time = 6;</code>
+             */
+            public Builder setTime(long value) {
+
+                time_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int64 time = 6;</code>
+             */
+            public Builder clearTime() {
+
+                time_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private boolean changeLine_ ;
+
+            /**
+             * <pre>
+             *是否切换服务器
+             * </pre>
+             *
+             * <code>bool changeLine = 7;</code>
+             */
+            public boolean getChangeLine() {
+                return changeLine_;
+            }
+
+            /**
+             * <pre>
+             *是否切换服务器
+             * </pre>
+             *
+             * <code>bool changeLine = 7;</code>
+             */
+            public Builder setChangeLine(boolean value) {
+
+                changeLine_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             *是否切换服务器
+             * </pre>
+             *
+             * <code>bool changeLine = 7;</code>
+             */
+            public Builder clearChangeLine() {
+
+                changeLine_ = false;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.ReconnectRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.ReconnectRequest)
+        private static final ReconnectRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new ReconnectRequest();
+        }
+
+        public static ReconnectRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ReconnectRequest>
+                PARSER = new com.google.protobuf.AbstractParser<ReconnectRequest>() {
+            public ReconnectRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ReconnectRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ReconnectRequest> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ReconnectRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public ReconnectRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int REASON_FIELD_NUMBER = 1;
-    private int reason_;
-    /**
-     * <code>.user.GoingDownReason reason = 1;</code>
-     */
-    public int getReasonValue() {
-      return reason_;
-    }
-    /**
-     * <code>.user.GoingDownReason reason = 1;</code>
-     */
-    public GoingDownReason getReason() {
-      GoingDownReason result = GoingDownReason.valueOf(reason_);
-      return result == null ? GoingDownReason.UNRECOGNIZED : result;
+    public interface DisconnectResponseOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.DisconnectResponse)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>.user.GoingDownReason reason = 1;</code>
+         */
+        int getReasonValue();
+
+        /**
+         * <code>.user.GoingDownReason reason = 1;</code>
+         */
+        GoingDownReason getReason();
     }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (reason_ != GoingDownReason.Maintain.getNumber()) {
-        output.writeEnum(1, reason_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (reason_ != GoingDownReason.Maintain.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, reason_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof DisconnectResponse)) {
-        return super.equals(obj);
-      }
-      DisconnectResponse other = (DisconnectResponse) obj;
-
-      boolean result = true;
-      result = result && reason_ == other.reason_;
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REASON_FIELD_NUMBER;
-      hash = (53 * hash) + reason_;
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static DisconnectResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static DisconnectResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static DisconnectResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static DisconnectResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static DisconnectResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static DisconnectResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static DisconnectResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static DisconnectResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static DisconnectResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static DisconnectResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static DisconnectResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static DisconnectResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(DisconnectResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.DisconnectResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.DisconnectResponse)
-        DisconnectResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_DisconnectResponse_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_DisconnectResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                DisconnectResponse.class, Builder.class);
-      }
-
-      // Construct using UserProto.DisconnectResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class DisconnectResponse extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.DisconnectResponse)
+            DisconnectResponseOrBuilder {
+        // Use DisconnectResponse.newBuilder() to construct.
+        private DisconnectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        reason_ = 0;
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_DisconnectResponse_descriptor;
-      }
-
-      public DisconnectResponse getDefaultInstanceForType() {
-        return DisconnectResponse.getDefaultInstance();
-      }
-
-      public DisconnectResponse build() {
-        DisconnectResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private DisconnectResponse() {
+            reason_ = 0;
         }
-        return result;
-      }
 
-      public DisconnectResponse buildPartial() {
-        DisconnectResponse result = new DisconnectResponse(this);
-        result.reason_ = reason_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof DisconnectResponse) {
-          return mergeFrom((DisconnectResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(DisconnectResponse other) {
-        if (other == DisconnectResponse.getDefaultInstance()) return this;
-        if (other.reason_ != 0) {
-          setReasonValue(other.getReasonValue());
+        private DisconnectResponse(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            int rawValue = input.readEnum();
+
+                            reason_ = rawValue;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
-        onChanged();
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        DisconnectResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (DisconnectResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return UserProto.internal_static_user_DisconnectResponse_descriptor;
         }
-        return this;
-      }
 
-      private int reason_ = 0;
-      /**
-       * <code>.user.GoingDownReason reason = 1;</code>
-       */
-      public int getReasonValue() {
-        return reason_;
-      }
-      /**
-       * <code>.user.GoingDownReason reason = 1;</code>
-       */
-      public Builder setReasonValue(int value) {
-        reason_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.user.GoingDownReason reason = 1;</code>
-       */
-      public GoingDownReason getReason() {
-        GoingDownReason result = GoingDownReason.valueOf(reason_);
-        return result == null ? GoingDownReason.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.user.GoingDownReason reason = 1;</code>
-       */
-      public Builder setReason(GoingDownReason value) {
-        if (value == null) {
-          throw new NullPointerException();
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return UserProto.internal_static_user_DisconnectResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            DisconnectResponse.class, Builder.class);
         }
-        
-        reason_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.user.GoingDownReason reason = 1;</code>
-       */
-      public Builder clearReason() {
-        
-        reason_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        public static final int REASON_FIELD_NUMBER = 1;
+        private int reason_;
+
+        /**
+         * <code>.user.GoingDownReason reason = 1;</code>
+         */
+        public int getReasonValue() {
+            return reason_;
+        }
+
+        /**
+         * <code>.user.GoingDownReason reason = 1;</code>
+         */
+        public GoingDownReason getReason() {
+            GoingDownReason result = GoingDownReason.valueOf(reason_);
+            return result == null ? GoingDownReason.UNRECOGNIZED : result;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (reason_ != GoingDownReason.Maintain.getNumber()) {
+                output.writeEnum(1, reason_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (reason_ != GoingDownReason.Maintain.getNumber()) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeEnumSize(1, reason_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof DisconnectResponse)) {
+                return super.equals(obj);
+            }
+            DisconnectResponse other = (DisconnectResponse) obj;
+
+            boolean result = true;
+            result = result && reason_ == other.reason_;
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + REASON_FIELD_NUMBER;
+            hash = (53 * hash) + reason_;
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static DisconnectResponse parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static DisconnectResponse parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static DisconnectResponse parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static DisconnectResponse parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static DisconnectResponse parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static DisconnectResponse parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static DisconnectResponse parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static DisconnectResponse parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static DisconnectResponse parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static DisconnectResponse parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static DisconnectResponse parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static DisconnectResponse parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(DisconnectResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.DisconnectResponse}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.DisconnectResponse)
+                DisconnectResponseOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_DisconnectResponse_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_DisconnectResponse_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                DisconnectResponse.class, Builder.class);
+            }
+
+            // Construct using UserProto.DisconnectResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                reason_ = 0;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_DisconnectResponse_descriptor;
+            }
+
+            public DisconnectResponse getDefaultInstanceForType() {
+                return DisconnectResponse.getDefaultInstance();
+            }
+
+            public DisconnectResponse build() {
+                DisconnectResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public DisconnectResponse buildPartial() {
+                DisconnectResponse result = new DisconnectResponse(this);
+                result.reason_ = reason_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof DisconnectResponse) {
+                    return mergeFrom((DisconnectResponse)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(DisconnectResponse other) {
+                if (other == DisconnectResponse.getDefaultInstance()) return this;
+                if (other.reason_ != 0) {
+                    setReasonValue(other.getReasonValue());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                DisconnectResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (DisconnectResponse) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int reason_ = 0;
+
+            /**
+             * <code>.user.GoingDownReason reason = 1;</code>
+             */
+            public int getReasonValue() {
+                return reason_;
+            }
+
+            /**
+             * <code>.user.GoingDownReason reason = 1;</code>
+             */
+            public Builder setReasonValue(int value) {
+                reason_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>.user.GoingDownReason reason = 1;</code>
+             */
+            public GoingDownReason getReason() {
+                GoingDownReason result = GoingDownReason.valueOf(reason_);
+                return result == null ? GoingDownReason.UNRECOGNIZED : result;
+            }
+
+            /**
+             * <code>.user.GoingDownReason reason = 1;</code>
+             */
+            public Builder setReason(GoingDownReason value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                reason_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>.user.GoingDownReason reason = 1;</code>
+             */
+            public Builder clearReason() {
+
+                reason_ = 0;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:user.DisconnectResponse)
+            // @@protoc_insertion_point(builder_scope:user.DisconnectResponse)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.DisconnectResponse)
+        private static final DisconnectResponse DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new DisconnectResponse();
+        }
+
+        public static DisconnectResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<DisconnectResponse>
+                PARSER = new com.google.protobuf.AbstractParser<DisconnectResponse>() {
+            public DisconnectResponse parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new DisconnectResponse(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<DisconnectResponse> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<DisconnectResponse> getParserForType() {
+            return PARSER;
+        }
+
+        public DisconnectResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:user.DisconnectResponse)
-    private static final DisconnectResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new DisconnectResponse();
-    }
+    public interface UserFeedbackRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.UserFeedbackRequest)
+            com.google.protobuf.MessageOrBuilder {
 
-    public static DisconnectResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>string content = 1;</code>
+         */
+        String getContent();
 
-    private static final com.google.protobuf.Parser<DisconnectResponse>
-        PARSER = new com.google.protobuf.AbstractParser<DisconnectResponse>() {
-      public DisconnectResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DisconnectResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DisconnectResponse> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<DisconnectResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public DisconnectResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface UserFeedbackRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.UserFeedbackRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string content = 1;</code>
-     */
-    String getContent();
-    /**
-     * <code>string content = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string content = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getContentBytes();
 
-    /**
-     * <code>string phoneType = 2;</code>
-     */
-    String getPhoneType();
-    /**
-     * <code>string phoneType = 2;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string phoneType = 2;</code>
+         */
+        String getPhoneType();
+
+        /**
+         * <code>string phoneType = 2;</code>
+         */
+        com.google.protobuf.ByteString
         getPhoneTypeBytes();
 
-    /**
-     * <code>string qq = 3;</code>
-     */
-    String getQq();
-    /**
-     * <code>string qq = 3;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string qq = 3;</code>
+         */
+        String getQq();
+
+        /**
+         * <code>string qq = 3;</code>
+         */
+        com.google.protobuf.ByteString
         getQqBytes();
-  }
-  /**
-   * <pre>
-   *用户反馈请求
-   * </pre>
-   *
-   * Protobuf type {@code user.UserFeedbackRequest}
-   */
-  public  static final class UserFeedbackRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.UserFeedbackRequest)
-      UserFeedbackRequestOrBuilder {
-    // Use UserFeedbackRequest.newBuilder() to construct.
-    private UserFeedbackRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private UserFeedbackRequest() {
-      content_ = "";
-      phoneType_ = "";
-      qq_ = "";
     }
 
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private UserFeedbackRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              content_ = s;
-              break;
-            }
-            case 18: {
-              String s = input.readStringRequireUtf8();
-
-              phoneType_ = s;
-              break;
-            }
-            case 26: {
-              String s = input.readStringRequireUtf8();
-
-              qq_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return UserProto.internal_static_user_UserFeedbackRequest_descriptor;
-    }
-
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_UserFeedbackRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              UserFeedbackRequest.class, Builder.class);
-    }
-
-    public static final int CONTENT_FIELD_NUMBER = 1;
-    private volatile Object content_;
-    /**
-     * <code>string content = 1;</code>
-     */
-    public String getContent() {
-      Object ref = content_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        content_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string content = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getContentBytes() {
-      Object ref = content_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        content_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PHONETYPE_FIELD_NUMBER = 2;
-    private volatile Object phoneType_;
-    /**
-     * <code>string phoneType = 2;</code>
-     */
-    public String getPhoneType() {
-      Object ref = phoneType_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        phoneType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string phoneType = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPhoneTypeBytes() {
-      Object ref = phoneType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        phoneType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int QQ_FIELD_NUMBER = 3;
-    private volatile Object qq_;
-    /**
-     * <code>string qq = 3;</code>
-     */
-    public String getQq() {
-      Object ref = qq_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        qq_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string qq = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getQqBytes() {
-      Object ref = qq_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        qq_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getContentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
-      }
-      if (!getPhoneTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, phoneType_);
-      }
-      if (!getQqBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, qq_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getContentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
-      }
-      if (!getPhoneTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, phoneType_);
-      }
-      if (!getQqBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, qq_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof UserFeedbackRequest)) {
-        return super.equals(obj);
-      }
-      UserFeedbackRequest other = (UserFeedbackRequest) obj;
-
-      boolean result = true;
-      result = result && getContent()
-          .equals(other.getContent());
-      result = result && getPhoneType()
-          .equals(other.getPhoneType());
-      result = result && getQq()
-          .equals(other.getQq());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getContent().hashCode();
-      hash = (37 * hash) + PHONETYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneType().hashCode();
-      hash = (37 * hash) + QQ_FIELD_NUMBER;
-      hash = (53 * hash) + getQq().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static UserFeedbackRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static UserFeedbackRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static UserFeedbackRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static UserFeedbackRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static UserFeedbackRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static UserFeedbackRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static UserFeedbackRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static UserFeedbackRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static UserFeedbackRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static UserFeedbackRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static UserFeedbackRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static UserFeedbackRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(UserFeedbackRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      *用户反馈请求
@@ -10784,673 +11107,828 @@ public final class UserProto {
      *
      * Protobuf type {@code user.UserFeedbackRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.UserFeedbackRequest)
-        UserFeedbackRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_UserFeedbackRequest_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_UserFeedbackRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                UserFeedbackRequest.class, Builder.class);
-      }
-
-      // Construct using UserProto.UserFeedbackRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class UserFeedbackRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.UserFeedbackRequest)
+            UserFeedbackRequestOrBuilder {
+        // Use UserFeedbackRequest.newBuilder() to construct.
+        private UserFeedbackRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        content_ = "";
 
-        phoneType_ = "";
-
-        qq_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_UserFeedbackRequest_descriptor;
-      }
-
-      public UserFeedbackRequest getDefaultInstanceForType() {
-        return UserFeedbackRequest.getDefaultInstance();
-      }
-
-      public UserFeedbackRequest build() {
-        UserFeedbackRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private UserFeedbackRequest() {
+            content_ = "";
+            phoneType_ = "";
+            qq_ = "";
         }
-        return result;
-      }
 
-      public UserFeedbackRequest buildPartial() {
-        UserFeedbackRequest result = new UserFeedbackRequest(this);
-        result.content_ = content_;
-        result.phoneType_ = phoneType_;
-        result.qq_ = qq_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof UserFeedbackRequest) {
-          return mergeFrom((UserFeedbackRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(UserFeedbackRequest other) {
-        if (other == UserFeedbackRequest.getDefaultInstance()) return this;
-        if (!other.getContent().isEmpty()) {
-          content_ = other.content_;
-          onChanged();
-        }
-        if (!other.getPhoneType().isEmpty()) {
-          phoneType_ = other.phoneType_;
-          onChanged();
-        }
-        if (!other.getQq().isEmpty()) {
-          qq_ = other.qq_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
+        private UserFeedbackRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
 
-      public final boolean isInitialized() {
-        return true;
-      }
+                            content_ = s;
+                            break;
+                        }
+                        case 18: {
+                            String s = input.readStringRequireUtf8();
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        UserFeedbackRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (UserFeedbackRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+                            phoneType_ = s;
+                            break;
+                        }
+                        case 26: {
+                            String s = input.readStringRequireUtf8();
 
-      private Object content_ = "";
-      /**
-       * <code>string content = 1;</code>
-       */
-      public String getContent() {
-        Object ref = content_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          content_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string content = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getContentBytes() {
-        Object ref = content_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          content_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string content = 1;</code>
-       */
-      public Builder setContent(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        content_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string content = 1;</code>
-       */
-      public Builder clearContent() {
-        
-        content_ = getDefaultInstance().getContent();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string content = 1;</code>
-       */
-      public Builder setContentBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        content_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object phoneType_ = "";
-      /**
-       * <code>string phoneType = 2;</code>
-       */
-      public String getPhoneType() {
-        Object ref = phoneType_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          phoneType_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string phoneType = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPhoneTypeBytes() {
-        Object ref = phoneType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          phoneType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string phoneType = 2;</code>
-       */
-      public Builder setPhoneType(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        phoneType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phoneType = 2;</code>
-       */
-      public Builder clearPhoneType() {
-        
-        phoneType_ = getDefaultInstance().getPhoneType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phoneType = 2;</code>
-       */
-      public Builder setPhoneTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        phoneType_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object qq_ = "";
-      /**
-       * <code>string qq = 3;</code>
-       */
-      public String getQq() {
-        Object ref = qq_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          qq_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string qq = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getQqBytes() {
-        Object ref = qq_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          qq_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string qq = 3;</code>
-       */
-      public Builder setQq(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        qq_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string qq = 3;</code>
-       */
-      public Builder clearQq() {
-        
-        qq_ = getDefaultInstance().getQq();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string qq = 3;</code>
-       */
-      public Builder setQqBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        qq_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.UserFeedbackRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.UserFeedbackRequest)
-    private static final UserFeedbackRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new UserFeedbackRequest();
-    }
-
-    public static UserFeedbackRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<UserFeedbackRequest>
-        PARSER = new com.google.protobuf.AbstractParser<UserFeedbackRequest>() {
-      public UserFeedbackRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UserFeedbackRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<UserFeedbackRequest> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<UserFeedbackRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public UserFeedbackRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface BindPhoneNumberRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.BindPhoneNumberRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string phoneNumber = 1;</code>
-     */
-    String getPhoneNumber();
-    /**
-     * <code>string phoneNumber = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getPhoneNumberBytes();
-  }
-  /**
-   * <pre>
-   *绑定手机号请求
-   * </pre>
-   *
-   * Protobuf type {@code user.BindPhoneNumberRequest}
-   */
-  public  static final class BindPhoneNumberRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.BindPhoneNumberRequest)
-      BindPhoneNumberRequestOrBuilder {
-    // Use BindPhoneNumberRequest.newBuilder() to construct.
-    private BindPhoneNumberRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private BindPhoneNumberRequest() {
-      phoneNumber_ = "";
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private BindPhoneNumberRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            qq_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              phoneNumber_ = s;
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_BindPhoneNumberRequest_descriptor;
-    }
+            return UserProto.internal_static_user_UserFeedbackRequest_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_BindPhoneNumberRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              BindPhoneNumberRequest.class, Builder.class);
+            return UserProto.internal_static_user_UserFeedbackRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            UserFeedbackRequest.class, Builder.class);
+        }
+
+        public static final int CONTENT_FIELD_NUMBER = 1;
+        private volatile Object content_;
+
+        /**
+         * <code>string content = 1;</code>
+         */
+        public String getContent() {
+            Object ref = content_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                content_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string content = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getContentBytes() {
+            Object ref = content_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                content_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int PHONETYPE_FIELD_NUMBER = 2;
+        private volatile Object phoneType_;
+
+        /**
+         * <code>string phoneType = 2;</code>
+         */
+        public String getPhoneType() {
+            Object ref = phoneType_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                phoneType_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string phoneType = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+        getPhoneTypeBytes() {
+            Object ref = phoneType_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                phoneType_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int QQ_FIELD_NUMBER = 3;
+        private volatile Object qq_;
+
+        /**
+         * <code>string qq = 3;</code>
+         */
+        public String getQq() {
+            Object ref = qq_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                qq_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string qq = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+        getQqBytes() {
+            Object ref = qq_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                qq_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getContentBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
+            }
+            if (!getPhoneTypeBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, phoneType_);
+            }
+            if (!getQqBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, qq_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getContentBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
+            }
+            if (!getPhoneTypeBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, phoneType_);
+            }
+            if (!getQqBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, qq_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof UserFeedbackRequest)) {
+                return super.equals(obj);
+            }
+            UserFeedbackRequest other = (UserFeedbackRequest) obj;
+
+            boolean result = true;
+            result = result && getContent()
+                    .equals(other.getContent());
+            result = result && getPhoneType()
+                    .equals(other.getPhoneType());
+            result = result && getQq()
+                    .equals(other.getQq());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+            hash = (53 * hash) + getContent().hashCode();
+            hash = (37 * hash) + PHONETYPE_FIELD_NUMBER;
+            hash = (53 * hash) + getPhoneType().hashCode();
+            hash = (37 * hash) + QQ_FIELD_NUMBER;
+            hash = (53 * hash) + getQq().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static UserFeedbackRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static UserFeedbackRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static UserFeedbackRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static UserFeedbackRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static UserFeedbackRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static UserFeedbackRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static UserFeedbackRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static UserFeedbackRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static UserFeedbackRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static UserFeedbackRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static UserFeedbackRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static UserFeedbackRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(UserFeedbackRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         *用户反馈请求
+         * </pre>
+         *
+         * Protobuf type {@code user.UserFeedbackRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.UserFeedbackRequest)
+                UserFeedbackRequestOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_UserFeedbackRequest_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_UserFeedbackRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                UserFeedbackRequest.class, Builder.class);
+            }
+
+            // Construct using UserProto.UserFeedbackRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                content_ = "";
+
+                phoneType_ = "";
+
+                qq_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_UserFeedbackRequest_descriptor;
+            }
+
+            public UserFeedbackRequest getDefaultInstanceForType() {
+                return UserFeedbackRequest.getDefaultInstance();
+            }
+
+            public UserFeedbackRequest build() {
+                UserFeedbackRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public UserFeedbackRequest buildPartial() {
+                UserFeedbackRequest result = new UserFeedbackRequest(this);
+                result.content_ = content_;
+                result.phoneType_ = phoneType_;
+                result.qq_ = qq_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof UserFeedbackRequest) {
+                    return mergeFrom((UserFeedbackRequest)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(UserFeedbackRequest other) {
+                if (other == UserFeedbackRequest.getDefaultInstance()) return this;
+                if (!other.getContent().isEmpty()) {
+                    content_ = other.content_;
+                    onChanged();
+                }
+                if (!other.getPhoneType().isEmpty()) {
+                    phoneType_ = other.phoneType_;
+                    onChanged();
+                }
+                if (!other.getQq().isEmpty()) {
+                    qq_ = other.qq_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                UserFeedbackRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (UserFeedbackRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private Object content_ = "";
+
+            /**
+             * <code>string content = 1;</code>
+             */
+            public String getContent() {
+                Object ref = content_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    content_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string content = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getContentBytes() {
+                Object ref = content_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    content_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string content = 1;</code>
+             */
+            public Builder setContent(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                content_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string content = 1;</code>
+             */
+            public Builder clearContent() {
+
+                content_ = getDefaultInstance().getContent();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string content = 1;</code>
+             */
+            public Builder setContentBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                content_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object phoneType_ = "";
+
+            /**
+             * <code>string phoneType = 2;</code>
+             */
+            public String getPhoneType() {
+                Object ref = phoneType_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    phoneType_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string phoneType = 2;</code>
+             */
+            public com.google.protobuf.ByteString
+            getPhoneTypeBytes() {
+                Object ref = phoneType_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    phoneType_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string phoneType = 2;</code>
+             */
+            public Builder setPhoneType(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                phoneType_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string phoneType = 2;</code>
+             */
+            public Builder clearPhoneType() {
+
+                phoneType_ = getDefaultInstance().getPhoneType();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string phoneType = 2;</code>
+             */
+            public Builder setPhoneTypeBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                phoneType_ = value;
+                onChanged();
+                return this;
+            }
+
+            private Object qq_ = "";
+
+            /**
+             * <code>string qq = 3;</code>
+             */
+            public String getQq() {
+                Object ref = qq_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    qq_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string qq = 3;</code>
+             */
+            public com.google.protobuf.ByteString
+            getQqBytes() {
+                Object ref = qq_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    qq_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string qq = 3;</code>
+             */
+            public Builder setQq(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                qq_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string qq = 3;</code>
+             */
+            public Builder clearQq() {
+
+                qq_ = getDefaultInstance().getQq();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string qq = 3;</code>
+             */
+            public Builder setQqBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                qq_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.UserFeedbackRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.UserFeedbackRequest)
+        private static final UserFeedbackRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new UserFeedbackRequest();
+        }
+
+        public static UserFeedbackRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<UserFeedbackRequest>
+                PARSER = new com.google.protobuf.AbstractParser<UserFeedbackRequest>() {
+            public UserFeedbackRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new UserFeedbackRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<UserFeedbackRequest> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<UserFeedbackRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public UserFeedbackRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int PHONENUMBER_FIELD_NUMBER = 1;
-    private volatile Object phoneNumber_;
-    /**
-     * <code>string phoneNumber = 1;</code>
-     */
-    public String getPhoneNumber() {
-      Object ref = phoneNumber_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        phoneNumber_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string phoneNumber = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPhoneNumberBytes() {
-      Object ref = phoneNumber_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        phoneNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public interface BindPhoneNumberRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.BindPhoneNumberRequest)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>string phoneNumber = 1;</code>
+         */
+        String getPhoneNumber();
+
+        /**
+         * <code>string phoneNumber = 1;</code>
+         */
+        com.google.protobuf.ByteString
+        getPhoneNumberBytes();
     }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getPhoneNumberBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, phoneNumber_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getPhoneNumberBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, phoneNumber_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof BindPhoneNumberRequest)) {
-        return super.equals(obj);
-      }
-      BindPhoneNumberRequest other = (BindPhoneNumberRequest) obj;
-
-      boolean result = true;
-      result = result && getPhoneNumber()
-          .equals(other.getPhoneNumber());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneNumber().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static BindPhoneNumberRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static BindPhoneNumberRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static BindPhoneNumberRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static BindPhoneNumberRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static BindPhoneNumberRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static BindPhoneNumberRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static BindPhoneNumberRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static BindPhoneNumberRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static BindPhoneNumberRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static BindPhoneNumberRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static BindPhoneNumberRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static BindPhoneNumberRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(BindPhoneNumberRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      *绑定手机号请求
@@ -11458,994 +11936,1327 @@ public final class UserProto {
      *
      * Protobuf type {@code user.BindPhoneNumberRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.BindPhoneNumberRequest)
-        BindPhoneNumberRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_BindPhoneNumberRequest_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_BindPhoneNumberRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                BindPhoneNumberRequest.class, Builder.class);
-      }
-
-      // Construct using UserProto.BindPhoneNumberRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class BindPhoneNumberRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.BindPhoneNumberRequest)
+            BindPhoneNumberRequestOrBuilder {
+        // Use BindPhoneNumberRequest.newBuilder() to construct.
+        private BindPhoneNumberRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        phoneNumber_ = "";
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_BindPhoneNumberRequest_descriptor;
-      }
-
-      public BindPhoneNumberRequest getDefaultInstanceForType() {
-        return BindPhoneNumberRequest.getDefaultInstance();
-      }
-
-      public BindPhoneNumberRequest build() {
-        BindPhoneNumberRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private BindPhoneNumberRequest() {
+            phoneNumber_ = "";
         }
-        return result;
-      }
 
-      public BindPhoneNumberRequest buildPartial() {
-        BindPhoneNumberRequest result = new BindPhoneNumberRequest(this);
-        result.phoneNumber_ = phoneNumber_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof BindPhoneNumberRequest) {
-          return mergeFrom((BindPhoneNumberRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(BindPhoneNumberRequest other) {
-        if (other == BindPhoneNumberRequest.getDefaultInstance()) return this;
-        if (!other.getPhoneNumber().isEmpty()) {
-          phoneNumber_ = other.phoneNumber_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
+        private BindPhoneNumberRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        BindPhoneNumberRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (BindPhoneNumberRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private Object phoneNumber_ = "";
-      /**
-       * <code>string phoneNumber = 1;</code>
-       */
-      public String getPhoneNumber() {
-        Object ref = phoneNumber_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          phoneNumber_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string phoneNumber = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPhoneNumberBytes() {
-        Object ref = phoneNumber_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          phoneNumber_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string phoneNumber = 1;</code>
-       */
-      public Builder setPhoneNumber(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        phoneNumber_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phoneNumber = 1;</code>
-       */
-      public Builder clearPhoneNumber() {
-        
-        phoneNumber_ = getDefaultInstance().getPhoneNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phoneNumber = 1;</code>
-       */
-      public Builder setPhoneNumberBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        phoneNumber_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:user.BindPhoneNumberRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:user.BindPhoneNumberRequest)
-    private static final BindPhoneNumberRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new BindPhoneNumberRequest();
-    }
-
-    public static BindPhoneNumberRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<BindPhoneNumberRequest>
-        PARSER = new com.google.protobuf.AbstractParser<BindPhoneNumberRequest>() {
-      public BindPhoneNumberRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BindPhoneNumberRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<BindPhoneNumberRequest> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<BindPhoneNumberRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public BindPhoneNumberRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface RechargeingRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.RechargeingRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string rechargeId = 1;</code>
-     */
-    String getRechargeId();
-    /**
-     * <code>string rechargeId = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getRechargeIdBytes();
-  }
-  /**
-   * Protobuf type {@code user.RechargeingRequest}
-   */
-  public  static final class RechargeingRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.RechargeingRequest)
-      RechargeingRequestOrBuilder {
-    // Use RechargeingRequest.newBuilder() to construct.
-    private RechargeingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private RechargeingRequest() {
-      rechargeId_ = "";
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private RechargeingRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            phoneNumber_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              rechargeId_ = s;
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserProto.internal_static_user_RechargeingRequest_descriptor;
-    }
+            return UserProto.internal_static_user_BindPhoneNumberRequest_descriptor;
+        }
 
-    protected FieldAccessorTable
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserProto.internal_static_user_RechargeingRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              RechargeingRequest.class, Builder.class);
+            return UserProto.internal_static_user_BindPhoneNumberRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            BindPhoneNumberRequest.class, Builder.class);
+        }
+
+        public static final int PHONENUMBER_FIELD_NUMBER = 1;
+        private volatile Object phoneNumber_;
+
+        /**
+         * <code>string phoneNumber = 1;</code>
+         */
+        public String getPhoneNumber() {
+            Object ref = phoneNumber_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                phoneNumber_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string phoneNumber = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getPhoneNumberBytes() {
+            Object ref = phoneNumber_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                phoneNumber_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getPhoneNumberBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, phoneNumber_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getPhoneNumberBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, phoneNumber_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof BindPhoneNumberRequest)) {
+                return super.equals(obj);
+            }
+            BindPhoneNumberRequest other = (BindPhoneNumberRequest) obj;
+
+            boolean result = true;
+            result = result && getPhoneNumber()
+                    .equals(other.getPhoneNumber());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
+            hash = (53 * hash) + getPhoneNumber().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static BindPhoneNumberRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static BindPhoneNumberRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static BindPhoneNumberRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static BindPhoneNumberRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static BindPhoneNumberRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static BindPhoneNumberRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static BindPhoneNumberRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static BindPhoneNumberRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static BindPhoneNumberRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static BindPhoneNumberRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static BindPhoneNumberRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static BindPhoneNumberRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(BindPhoneNumberRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         *绑定手机号请求
+         * </pre>
+         *
+         * Protobuf type {@code user.BindPhoneNumberRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.BindPhoneNumberRequest)
+                BindPhoneNumberRequestOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_BindPhoneNumberRequest_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_BindPhoneNumberRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                BindPhoneNumberRequest.class, Builder.class);
+            }
+
+            // Construct using UserProto.BindPhoneNumberRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                phoneNumber_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_BindPhoneNumberRequest_descriptor;
+            }
+
+            public BindPhoneNumberRequest getDefaultInstanceForType() {
+                return BindPhoneNumberRequest.getDefaultInstance();
+            }
+
+            public BindPhoneNumberRequest build() {
+                BindPhoneNumberRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public BindPhoneNumberRequest buildPartial() {
+                BindPhoneNumberRequest result = new BindPhoneNumberRequest(this);
+                result.phoneNumber_ = phoneNumber_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof BindPhoneNumberRequest) {
+                    return mergeFrom((BindPhoneNumberRequest)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(BindPhoneNumberRequest other) {
+                if (other == BindPhoneNumberRequest.getDefaultInstance()) return this;
+                if (!other.getPhoneNumber().isEmpty()) {
+                    phoneNumber_ = other.phoneNumber_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                BindPhoneNumberRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (BindPhoneNumberRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private Object phoneNumber_ = "";
+
+            /**
+             * <code>string phoneNumber = 1;</code>
+             */
+            public String getPhoneNumber() {
+                Object ref = phoneNumber_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    phoneNumber_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string phoneNumber = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getPhoneNumberBytes() {
+                Object ref = phoneNumber_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    phoneNumber_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string phoneNumber = 1;</code>
+             */
+            public Builder setPhoneNumber(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                phoneNumber_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string phoneNumber = 1;</code>
+             */
+            public Builder clearPhoneNumber() {
+
+                phoneNumber_ = getDefaultInstance().getPhoneNumber();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string phoneNumber = 1;</code>
+             */
+            public Builder setPhoneNumberBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                phoneNumber_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:user.BindPhoneNumberRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:user.BindPhoneNumberRequest)
+        private static final BindPhoneNumberRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new BindPhoneNumberRequest();
+        }
+
+        public static BindPhoneNumberRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<BindPhoneNumberRequest>
+                PARSER = new com.google.protobuf.AbstractParser<BindPhoneNumberRequest>() {
+            public BindPhoneNumberRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new BindPhoneNumberRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<BindPhoneNumberRequest> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<BindPhoneNumberRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public BindPhoneNumberRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int RECHARGEID_FIELD_NUMBER = 1;
-    private volatile Object rechargeId_;
-    /**
-     * <code>string rechargeId = 1;</code>
-     */
-    public String getRechargeId() {
-      Object ref = rechargeId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        rechargeId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string rechargeId = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRechargeIdBytes() {
-      Object ref = rechargeId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        rechargeId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public interface RechargeingRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:user.RechargeingRequest)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>string rechargeId = 1;</code>
+         */
+        String getRechargeId();
+
+        /**
+         * <code>string rechargeId = 1;</code>
+         */
+        com.google.protobuf.ByteString
+        getRechargeIdBytes();
     }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getRechargeIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rechargeId_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getRechargeIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rechargeId_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof RechargeingRequest)) {
-        return super.equals(obj);
-      }
-      RechargeingRequest other = (RechargeingRequest) obj;
-
-      boolean result = true;
-      result = result && getRechargeId()
-          .equals(other.getRechargeId());
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RECHARGEID_FIELD_NUMBER;
-      hash = (53 * hash) + getRechargeId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static RechargeingRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RechargeingRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RechargeingRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RechargeingRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RechargeingRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RechargeingRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RechargeingRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RechargeingRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RechargeingRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static RechargeingRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RechargeingRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RechargeingRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(RechargeingRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code user.RechargeingRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.RechargeingRequest)
-        RechargeingRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return UserProto.internal_static_user_RechargeingRequest_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return UserProto.internal_static_user_RechargeingRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                RechargeingRequest.class, Builder.class);
-      }
-
-      // Construct using UserProto.RechargeingRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public  static final class RechargeingRequest extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:user.RechargeingRequest)
+            RechargeingRequestOrBuilder {
+        // Use RechargeingRequest.newBuilder() to construct.
+        private RechargeingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        rechargeId_ = "";
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return UserProto.internal_static_user_RechargeingRequest_descriptor;
-      }
-
-      public RechargeingRequest getDefaultInstanceForType() {
-        return RechargeingRequest.getDefaultInstance();
-      }
-
-      public RechargeingRequest build() {
-        RechargeingRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private RechargeingRequest() {
+            rechargeId_ = "";
         }
-        return result;
-      }
 
-      public RechargeingRequest buildPartial() {
-        RechargeingRequest result = new RechargeingRequest(this);
-        result.rechargeId_ = rechargeId_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RechargeingRequest) {
-          return mergeFrom((RechargeingRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(RechargeingRequest other) {
-        if (other == RechargeingRequest.getDefaultInstance()) return this;
-        if (!other.getRechargeId().isEmpty()) {
-          rechargeId_ = other.rechargeId_;
-          onChanged();
+        private RechargeingRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
+
+                            rechargeId_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
-        onChanged();
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        RechargeingRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RechargeingRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return UserProto.internal_static_user_RechargeingRequest_descriptor;
         }
-        return this;
-      }
 
-      private Object rechargeId_ = "";
-      /**
-       * <code>string rechargeId = 1;</code>
-       */
-      public String getRechargeId() {
-        Object ref = rechargeId_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          rechargeId_ = s;
-          return s;
-        } else {
-          return (String) ref;
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return UserProto.internal_static_user_RechargeingRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            RechargeingRequest.class, Builder.class);
         }
-      }
-      /**
-       * <code>string rechargeId = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRechargeIdBytes() {
-        Object ref = rechargeId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          rechargeId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int RECHARGEID_FIELD_NUMBER = 1;
+        private volatile Object rechargeId_;
+
+        /**
+         * <code>string rechargeId = 1;</code>
+         */
+        public String getRechargeId() {
+            Object ref = rechargeId_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                rechargeId_ = s;
+                return s;
+            }
         }
-      }
-      /**
-       * <code>string rechargeId = 1;</code>
-       */
-      public Builder setRechargeId(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        rechargeId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string rechargeId = 1;</code>
-       */
-      public Builder clearRechargeId() {
-        
-        rechargeId_ = getDefaultInstance().getRechargeId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string rechargeId = 1;</code>
-       */
-      public Builder setRechargeIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        rechargeId_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        /**
+         * <code>string rechargeId = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getRechargeIdBytes() {
+            Object ref = rechargeId_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                rechargeId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getRechargeIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rechargeId_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getRechargeIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rechargeId_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof RechargeingRequest)) {
+                return super.equals(obj);
+            }
+            RechargeingRequest other = (RechargeingRequest) obj;
+
+            boolean result = true;
+            result = result && getRechargeId()
+                    .equals(other.getRechargeId());
+            return result;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + RECHARGEID_FIELD_NUMBER;
+            hash = (53 * hash) + getRechargeId().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static RechargeingRequest parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RechargeingRequest parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RechargeingRequest parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RechargeingRequest parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RechargeingRequest parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static RechargeingRequest parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static RechargeingRequest parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RechargeingRequest parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RechargeingRequest parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static RechargeingRequest parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static RechargeingRequest parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static RechargeingRequest parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() { return newBuilder(); }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(RechargeingRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code user.RechargeingRequest}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:user.RechargeingRequest)
+                RechargeingRequestOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return UserProto.internal_static_user_RechargeingRequest_descriptor;
+            }
+
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return UserProto.internal_static_user_RechargeingRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                RechargeingRequest.class, Builder.class);
+            }
+
+            // Construct using UserProto.RechargeingRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                rechargeId_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return UserProto.internal_static_user_RechargeingRequest_descriptor;
+            }
+
+            public RechargeingRequest getDefaultInstanceForType() {
+                return RechargeingRequest.getDefaultInstance();
+            }
+
+            public RechargeingRequest build() {
+                RechargeingRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public RechargeingRequest buildPartial() {
+                RechargeingRequest result = new RechargeingRequest(this);
+                result.rechargeId_ = rechargeId_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof RechargeingRequest) {
+                    return mergeFrom((RechargeingRequest)other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(RechargeingRequest other) {
+                if (other == RechargeingRequest.getDefaultInstance()) return this;
+                if (!other.getRechargeId().isEmpty()) {
+                    rechargeId_ = other.rechargeId_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                RechargeingRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (RechargeingRequest) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private Object rechargeId_ = "";
+
+            /**
+             * <code>string rechargeId = 1;</code>
+             */
+            public String getRechargeId() {
+                Object ref = rechargeId_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    rechargeId_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string rechargeId = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getRechargeIdBytes() {
+                Object ref = rechargeId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    rechargeId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string rechargeId = 1;</code>
+             */
+            public Builder setRechargeId(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                rechargeId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string rechargeId = 1;</code>
+             */
+            public Builder clearRechargeId() {
+
+                rechargeId_ = getDefaultInstance().getRechargeId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string rechargeId = 1;</code>
+             */
+            public Builder setRechargeIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                rechargeId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:user.RechargeingRequest)
-    }
+            // @@protoc_insertion_point(builder_scope:user.RechargeingRequest)
+        }
 
-    // @@protoc_insertion_point(class_scope:user.RechargeingRequest)
-    private static final RechargeingRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new RechargeingRequest();
-    }
+        // @@protoc_insertion_point(class_scope:user.RechargeingRequest)
+        private static final RechargeingRequest DEFAULT_INSTANCE;
 
-    public static RechargeingRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        static {
+            DEFAULT_INSTANCE = new RechargeingRequest();
+        }
 
-    private static final com.google.protobuf.Parser<RechargeingRequest>
-        PARSER = new com.google.protobuf.AbstractParser<RechargeingRequest>() {
-      public RechargeingRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RechargeingRequest(input, extensionRegistry);
-      }
-    };
+        public static RechargeingRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
 
-    public static com.google.protobuf.Parser<RechargeingRequest> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<RechargeingRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public RechargeingRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_RoleInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_RoleInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_PlayerAttribute_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_PlayerAttribute_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_LoginRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_LoginRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_LoginResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_LoginResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_CreateRoleRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_CreateRoleRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_RandomRoleNameResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_RandomRoleNameResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_RandomRoleNameRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_RandomRoleNameRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_RoleIdMsg_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_RoleIdMsg_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_GMCommand_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_GMCommand_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_CloseServerResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_CloseServerResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_ReconnectRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_ReconnectRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_DisconnectResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_DisconnectResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_UserFeedbackRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_UserFeedbackRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_BindPhoneNumberRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_BindPhoneNumberRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_user_RechargeingRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_user_RechargeingRequest_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    String[] descriptorData = {
-      "\n\020proto/user.proto\022\004user\"|\n\010RoleInfo\022\016\n\006" +
-      "roleId\030\001 \001(\003\022\020\n\010roleName\030\002 \001(\t\022\r\n\005level\030" +
-      "\003 \001(\005\022\013\n\003sex\030\004 \001(\005\022\r\n\005mapId\030\005 \001(\005\022\014\n\004lin" +
-      "e\030\006 \001(\005\022\025\n\rcurServerType\030\007 \001(\005\"\221\004\n\017Playe" +
-      "rAttribute\022\021\n\tphyAttMax\030\001 \001(\005\022\021\n\tphyAttM" +
-      "in\030\002 \001(\005\022\023\n\013magicAttMax\030\003 \001(\005\022\023\n\013magicAt" +
-      "tMin\030\004 \001(\005\022\021\n\ttaoAttMax\030\005 \001(\005\022\021\n\ttaoAttM" +
-      "in\030\006 \001(\005\022\021\n\tphyDefMax\030\007 \001(\005\022\021\n\tphyDefMin" +
-      "\030\010 \001(\005\022\023\n\013magicDefMax\030\t \001(\005\022\023\n\013magicDefM" +
-      "in\030\n \001(\005\022\020\n\010accurate\030\013 \001(\005\022\r\n\005dodge\030\014 \001(",
-      "\005\022\025\n\rpoisonRecover\030\r \001(\005\022\024\n\014heathRecover" +
-      "\030\016 \001(\005\022\023\n\013attackSpeed\030\017 \001(\005\022\r\n\005maxHp\030\020 \001" +
-      "(\005\022\r\n\005maxMp\030\021 \001(\005\022\024\n\014magicRecover\030\022 \001(\005\022" +
-      "\014\n\004luck\030\023 \001(\005\022\020\n\010critical\030\024 \001(\005\022\017\n\007nbVal" +
-      "ue\030\025 \001(\005\022\026\n\016criticalDamage\030\026 \001(\005\022\025\n\rmaxI" +
-      "nnerPower\030\027 \001(\005\022\022\n\nresistance\030\030 \001(\005\022\017\n\007h" +
-      "olyAtt\030\031 \001(\005\022\r\n\005pkAtk\030\032 \001(\005\022\r\n\005pkDef\030\033 \001" +
-      "(\005\"c\n\014LoginRequest\022\021\n\tloginName\030\001 \001(\t\022\022\n" +
-      "\nplatformId\030\002 \001(\005\022\020\n\010serverId\030\003 \001(\005\022\014\n\004s" +
-      "ign\030\004 \001(\t\022\014\n\004time\030\005 \001(\003\"A\n\rLoginResponse",
-      "\022 \n\010roleList\030\001 \003(\0132\016.user.RoleInfo\022\016\n\006us" +
-      "erId\030\002 \001(\003\">\n\021CreateRoleRequest\022\014\n\004name\030" +
-      "\001 \001(\t\022\013\n\003sex\030\002 \001(\005\022\016\n\006career\030\003 \001(\005\"&\n\026Ra" +
-      "ndomRoleNameResponse\022\014\n\004name\030\001 \001(\t\"$\n\025Ra" +
-      "ndomRoleNameRequest\022\013\n\003sex\030\001 \001(\005\"\033\n\tRole" +
-      "IdMsg\022\016\n\006roleId\030\001 \001(\003\"\034\n\tGMCommand\022\017\n\007co" +
-      "mmand\030\001 \001(\t\"0\n\023CloseServerResponse\022\014\n\004co" +
-      "de\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\"\213\001\n\020ReconnectReque" +
-      "st\022\021\n\tloginName\030\001 \001(\t\022\020\n\010serverId\030\002 \001(\005\022" +
-      "\022\n\nplatformId\030\003 \001(\005\022\016\n\006roleId\030\004 \001(\003\022\014\n\004s",
-      "ign\030\005 \001(\t\022\014\n\004time\030\006 \001(\003\022\022\n\nchangeLine\030\007 " +
-      "\001(\010\";\n\022DisconnectResponse\022%\n\006reason\030\001 \001(" +
-      "\0162\025.user.GoingDownReason\"E\n\023UserFeedback" +
-      "Request\022\017\n\007content\030\001 \001(\t\022\021\n\tphoneType\030\002 " +
-      "\001(\t\022\n\n\002qq\030\003 \001(\t\"-\n\026BindPhoneNumberReques" +
-      "t\022\023\n\013phoneNumber\030\001 \001(\t\"(\n\022RechargeingReq" +
-      "uest\022\022\n\nrechargeId\030\001 \001(\t*>\n\017GoingDownRea" +
-      "son\022\014\n\010Maintain\020\000\022\t\n\005Block\020\001\022\022\n\016AnotherS" +
-      "ession\020\002B.\n!info.xiaomo.server.protocol." +
-      "protoB\tUserProtob\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
+        private static final com.google.protobuf.Parser<RechargeingRequest>
+                PARSER = new com.google.protobuf.AbstractParser<RechargeingRequest>() {
+            public RechargeingRequest parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new RechargeingRequest(input, extensionRegistry);
+            }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-    internal_static_user_RoleInfo_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_user_RoleInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_RoleInfo_descriptor,
-        new String[] { "RoleId", "RoleName", "Level", "Sex", "MapId", "Line", "CurServerType", });
-    internal_static_user_PlayerAttribute_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_user_PlayerAttribute_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_PlayerAttribute_descriptor,
-        new String[] { "PhyAttMax", "PhyAttMin", "MagicAttMax", "MagicAttMin", "TaoAttMax", "TaoAttMin", "PhyDefMax", "PhyDefMin", "MagicDefMax", "MagicDefMin", "Accurate", "Dodge", "PoisonRecover", "HeathRecover", "AttackSpeed", "MaxHp", "MaxMp", "MagicRecover", "Luck", "Critical", "NbValue", "CriticalDamage", "MaxInnerPower", "Resistance", "HolyAtt", "PkAtk", "PkDef", });
-    internal_static_user_LoginRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_user_LoginRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_LoginRequest_descriptor,
-        new String[] { "LoginName", "PlatformId", "ServerId", "Sign", "Time", });
-    internal_static_user_LoginResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_user_LoginResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_LoginResponse_descriptor,
-        new String[] { "RoleList", "UserId", });
-    internal_static_user_CreateRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_user_CreateRoleRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_CreateRoleRequest_descriptor,
-        new String[] { "Name", "Sex", "Career", });
-    internal_static_user_RandomRoleNameResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_user_RandomRoleNameResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_RandomRoleNameResponse_descriptor,
-        new String[] { "Name", });
-    internal_static_user_RandomRoleNameRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_user_RandomRoleNameRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_RandomRoleNameRequest_descriptor,
-        new String[] { "Sex", });
-    internal_static_user_RoleIdMsg_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_user_RoleIdMsg_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_RoleIdMsg_descriptor,
-        new String[] { "RoleId", });
-    internal_static_user_GMCommand_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_user_GMCommand_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_GMCommand_descriptor,
-        new String[] { "Command", });
-    internal_static_user_CloseServerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_user_CloseServerResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_CloseServerResponse_descriptor,
-        new String[] { "Code", "Msg", });
-    internal_static_user_ReconnectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_user_ReconnectRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_ReconnectRequest_descriptor,
-        new String[] { "LoginName", "ServerId", "PlatformId", "RoleId", "Sign", "Time", "ChangeLine", });
-    internal_static_user_DisconnectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_user_DisconnectResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_DisconnectResponse_descriptor,
-        new String[] { "Reason", });
-    internal_static_user_UserFeedbackRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_user_UserFeedbackRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_UserFeedbackRequest_descriptor,
-        new String[] { "Content", "PhoneType", "Qq", });
-    internal_static_user_BindPhoneNumberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_user_BindPhoneNumberRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_BindPhoneNumberRequest_descriptor,
-        new String[] { "PhoneNumber", });
-    internal_static_user_RechargeingRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_user_RechargeingRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_user_RechargeingRequest_descriptor,
-        new String[] { "RechargeId", });
-  }
 
-  // @@protoc_insertion_point(outer_class_scope)
+        public static com.google.protobuf.Parser<RechargeingRequest> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<RechargeingRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public RechargeingRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+    }
+
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_RoleInfo_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_RoleInfo_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_PlayerAttribute_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_PlayerAttribute_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_LoginRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_LoginRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_LoginResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_LoginResponse_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_CreateRoleRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_CreateRoleRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_RandomRoleNameResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_RandomRoleNameResponse_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_RandomRoleNameRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_RandomRoleNameRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_RoleIdMsg_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_RoleIdMsg_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_GMCommand_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_GMCommand_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_CloseServerResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_CloseServerResponse_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_ReconnectRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_ReconnectRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_DisconnectResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_DisconnectResponse_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_UserFeedbackRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_UserFeedbackRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_BindPhoneNumberRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_BindPhoneNumberRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_user_RechargeingRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_user_RechargeingRequest_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+
+    private static  com.google.protobuf.Descriptors.FileDescriptor
+            descriptor;
+
+    static {
+        String[] descriptorData = {
+                "\n\020proto/user.proto\022\004user\"|\n\010RoleInfo\022\016\n\006" +
+                        "roleId\030\001 \001(\003\022\020\n\010roleName\030\002 \001(\t\022\r\n\005level\030" +
+                        "\003 \001(\005\022\013\n\003sex\030\004 \001(\005\022\r\n\005mapId\030\005 \001(\005\022\014\n\004lin" +
+                        "e\030\006 \001(\005\022\025\n\rcurServerType\030\007 \001(\005\"\221\004\n\017Playe" +
+                        "rAttribute\022\021\n\tphyAttMax\030\001 \001(\005\022\021\n\tphyAttM" +
+                        "in\030\002 \001(\005\022\023\n\013magicAttMax\030\003 \001(\005\022\023\n\013magicAt" +
+                        "tMin\030\004 \001(\005\022\021\n\ttaoAttMax\030\005 \001(\005\022\021\n\ttaoAttM" +
+                        "in\030\006 \001(\005\022\021\n\tphyDefMax\030\007 \001(\005\022\021\n\tphyDefMin" +
+                        "\030\010 \001(\005\022\023\n\013magicDefMax\030\t \001(\005\022\023\n\013magicDefM" +
+                        "in\030\n \001(\005\022\020\n\010accurate\030\013 \001(\005\022\r\n\005dodge\030\014 \001(",
+                "\005\022\025\n\rpoisonRecover\030\r \001(\005\022\024\n\014heathRecover" +
+                        "\030\016 \001(\005\022\023\n\013attackSpeed\030\017 \001(\005\022\r\n\005maxHp\030\020 \001" +
+                        "(\005\022\r\n\005maxMp\030\021 \001(\005\022\024\n\014magicRecover\030\022 \001(\005\022" +
+                        "\014\n\004luck\030\023 \001(\005\022\020\n\010critical\030\024 \001(\005\022\017\n\007nbVal" +
+                        "ue\030\025 \001(\005\022\026\n\016criticalDamage\030\026 \001(\005\022\025\n\rmaxI" +
+                        "nnerPower\030\027 \001(\005\022\022\n\nresistance\030\030 \001(\005\022\017\n\007h" +
+                        "olyAtt\030\031 \001(\005\022\r\n\005pkAtk\030\032 \001(\005\022\r\n\005pkDef\030\033 \001" +
+                        "(\005\"c\n\014LoginRequest\022\021\n\tloginName\030\001 \001(\t\022\022\n" +
+                        "\nplatformId\030\002 \001(\005\022\020\n\010serverId\030\003 \001(\005\022\014\n\004s" +
+                        "ign\030\004 \001(\t\022\014\n\004time\030\005 \001(\003\"A\n\rLoginResponse",
+                "\022 \n\010roleList\030\001 \003(\0132\016.user.RoleInfo\022\016\n\006us" +
+                        "erId\030\002 \001(\003\">\n\021CreateRoleRequest\022\014\n\004name\030" +
+                        "\001 \001(\t\022\013\n\003sex\030\002 \001(\005\022\016\n\006career\030\003 \001(\005\"&\n\026Ra" +
+                        "ndomRoleNameResponse\022\014\n\004name\030\001 \001(\t\"$\n\025Ra" +
+                        "ndomRoleNameRequest\022\013\n\003sex\030\001 \001(\005\"\033\n\tRole" +
+                        "IdMsg\022\016\n\006roleId\030\001 \001(\003\"\034\n\tGMCommand\022\017\n\007co" +
+                        "mmand\030\001 \001(\t\"0\n\023CloseServerResponse\022\014\n\004co" +
+                        "de\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\"\213\001\n\020ReconnectReque" +
+                        "st\022\021\n\tloginName\030\001 \001(\t\022\020\n\010serverId\030\002 \001(\005\022" +
+                        "\022\n\nplatformId\030\003 \001(\005\022\016\n\006roleId\030\004 \001(\003\022\014\n\004s",
+                "ign\030\005 \001(\t\022\014\n\004time\030\006 \001(\003\022\022\n\nchangeLine\030\007 " +
+                        "\001(\010\";\n\022DisconnectResponse\022%\n\006reason\030\001 \001(" +
+                        "\0162\025.user.GoingDownReason\"E\n\023UserFeedback" +
+                        "Request\022\017\n\007content\030\001 \001(\t\022\021\n\tphoneType\030\002 " +
+                        "\001(\t\022\n\n\002qq\030\003 \001(\t\"-\n\026BindPhoneNumberReques" +
+                        "t\022\023\n\013phoneNumber\030\001 \001(\t\"(\n\022RechargeingReq" +
+                        "uest\022\022\n\nrechargeId\030\001 \001(\t*>\n\017GoingDownRea" +
+                        "son\022\014\n\010Maintain\020\000\022\t\n\005Block\020\001\022\022\n\016AnotherS" +
+                        "ession\020\002B.\n!info.xiaomo.server.protocol." +
+                        "protoB\tUserProtob\006proto3"
+        };
+        com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+                new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+                    public com.google.protobuf.ExtensionRegistry assignDescriptors(
+                            com.google.protobuf.Descriptors.FileDescriptor root) {
+                        descriptor = root;
+                        return null;
+                    }
+                };
+        com.google.protobuf.Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[] {
+                        }, assigner);
+        internal_static_user_RoleInfo_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_user_RoleInfo_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_RoleInfo_descriptor,
+                new String[] { "RoleId", "RoleName", "Level", "Sex", "MapId", "Line", "CurServerType", });
+        internal_static_user_PlayerAttribute_descriptor =
+                getDescriptor().getMessageTypes().get(1);
+        internal_static_user_PlayerAttribute_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_PlayerAttribute_descriptor,
+                new String[] { "PhyAttMax", "PhyAttMin", "MagicAttMax", "MagicAttMin", "TaoAttMax", "TaoAttMin", "PhyDefMax", "PhyDefMin", "MagicDefMax", "MagicDefMin", "Accurate", "Dodge", "PoisonRecover", "HeathRecover", "AttackSpeed", "MaxHp", "MaxMp", "MagicRecover", "Luck", "Critical", "NbValue", "CriticalDamage", "MaxInnerPower", "Resistance", "HolyAtt", "PkAtk", "PkDef", });
+        internal_static_user_LoginRequest_descriptor =
+                getDescriptor().getMessageTypes().get(2);
+        internal_static_user_LoginRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_LoginRequest_descriptor,
+                new String[] { "LoginName", "PlatformId", "ServerId", "Sign", "Time", });
+        internal_static_user_LoginResponse_descriptor =
+                getDescriptor().getMessageTypes().get(3);
+        internal_static_user_LoginResponse_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_LoginResponse_descriptor,
+                new String[] { "RoleList", "UserId", });
+        internal_static_user_CreateRoleRequest_descriptor =
+                getDescriptor().getMessageTypes().get(4);
+        internal_static_user_CreateRoleRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_CreateRoleRequest_descriptor,
+                new String[] { "Name", "Sex", "Career", });
+        internal_static_user_RandomRoleNameResponse_descriptor =
+                getDescriptor().getMessageTypes().get(5);
+        internal_static_user_RandomRoleNameResponse_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_RandomRoleNameResponse_descriptor,
+                new String[] { "Name", });
+        internal_static_user_RandomRoleNameRequest_descriptor =
+                getDescriptor().getMessageTypes().get(6);
+        internal_static_user_RandomRoleNameRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_RandomRoleNameRequest_descriptor,
+                new String[] { "Sex", });
+        internal_static_user_RoleIdMsg_descriptor =
+                getDescriptor().getMessageTypes().get(7);
+        internal_static_user_RoleIdMsg_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_RoleIdMsg_descriptor,
+                new String[] { "RoleId", });
+        internal_static_user_GMCommand_descriptor =
+                getDescriptor().getMessageTypes().get(8);
+        internal_static_user_GMCommand_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_GMCommand_descriptor,
+                new String[] { "Command", });
+        internal_static_user_CloseServerResponse_descriptor =
+                getDescriptor().getMessageTypes().get(9);
+        internal_static_user_CloseServerResponse_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_CloseServerResponse_descriptor,
+                new String[] { "Code", "Msg", });
+        internal_static_user_ReconnectRequest_descriptor =
+                getDescriptor().getMessageTypes().get(10);
+        internal_static_user_ReconnectRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_ReconnectRequest_descriptor,
+                new String[] { "LoginName", "ServerId", "PlatformId", "RoleId", "Sign", "Time", "ChangeLine", });
+        internal_static_user_DisconnectResponse_descriptor =
+                getDescriptor().getMessageTypes().get(11);
+        internal_static_user_DisconnectResponse_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_DisconnectResponse_descriptor,
+                new String[] { "Reason", });
+        internal_static_user_UserFeedbackRequest_descriptor =
+                getDescriptor().getMessageTypes().get(12);
+        internal_static_user_UserFeedbackRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_UserFeedbackRequest_descriptor,
+                new String[] { "Content", "PhoneType", "Qq", });
+        internal_static_user_BindPhoneNumberRequest_descriptor =
+                getDescriptor().getMessageTypes().get(13);
+        internal_static_user_BindPhoneNumberRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_BindPhoneNumberRequest_descriptor,
+                new String[] { "PhoneNumber", });
+        internal_static_user_RechargeingRequest_descriptor =
+                getDescriptor().getMessageTypes().get(14);
+        internal_static_user_RechargeingRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_user_RechargeingRequest_descriptor,
+                new String[] { "RechargeId", });
+    }
+
+    // @@protoc_insertion_point(outer_class_scope)
 }
