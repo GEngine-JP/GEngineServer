@@ -14,15 +14,15 @@
     </modules>
 
     <repositories>
-        <repository>
-            <id>releases</id>
-            <name>inner-release</name>
-            <layout>default</layout>
-            <url>http://xiaomo.info:8081/nexus/content/groups/public</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
+        <!--<repository>-->
+            <!--<id>releases</id>-->
+            <!--<name>inner-release</name>-->
+            <!--<layout>default</layout>-->
+            <!--<url>http://xiaomo.info:8081/nexus/content/groups/public</url>-->
+            <!--<snapshots>-->
+                <!--<enabled>false</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
         <repository>
             <id>central</id>
             <name>aliyun maven</name>
