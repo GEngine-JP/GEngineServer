@@ -22,7 +22,7 @@
 		</encoder>
 		<target>System.out</target>
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
-			<level>DEBUG</level>
+			<level>INFO</level>
 			<onMatch>ACCEPT</onMatch>
 			<onMismatch>DENY</onMismatch>
 		</filter>

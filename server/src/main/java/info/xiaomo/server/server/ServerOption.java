@@ -6,7 +6,7 @@ import info.xiaomo.core.base.common.FileLoaderUtil;
 import lombok.Data;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -76,7 +76,7 @@ public class ServerOption {
     }
 
     private void build() throws IOException, ParseException {
-        InputStream in = null;
+        InputStreamReader in = null;
         try {
             in = FileLoaderUtil.findInputStreamByFileName(configPath);
             DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
