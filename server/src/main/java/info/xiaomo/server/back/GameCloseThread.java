@@ -1,5 +1,6 @@
 package info.xiaomo.server.back;
 
+import info.xiaomo.core.base.common.ExecutorUtil;
 import info.xiaomo.core.base.concurrent.QueueExecutor;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventType;
@@ -7,7 +8,6 @@ import info.xiaomo.server.event.EventUtil;
 import info.xiaomo.server.server.GameContext;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionManager;
-import info.xiaomo.server.util.ExecutorUtil;
 import info.xiaomo.server.util.TimeUtil;
 import io.netty.channel.ChannelFuture;
 import org.slf4j.Logger;

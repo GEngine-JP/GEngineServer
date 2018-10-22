@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
  * Copyright(©) 2015 by xiaomo.
  **/
 
-@ConfigFileScan(value = "/Users/hupeng/IdeaProjects/game/ConfigData", suffix = ".xlsx")
+@ConfigFileScan(value = "/Users/hupeng/Workspace/IdeaProjects/game/ConfigData", suffix = ".xlsx")
 @PackageScan("info.xiaomo.server.config.beans")
 public class GameServerBootstrap {
     public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
