@@ -11,7 +11,7 @@ package info.xiaomo.server.constant;
  * email : xiaomo@xiaomo.info
  * QQ    : 83387856
  * Date  : 2017/8/16 9:47
- * desc  :
+ * desc  : 游戲常量類
  * Copyright(©) 2017 by xiaomo.
  */
 public interface GameConst {

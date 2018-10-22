@@ -20,6 +20,10 @@ public class NetworkListener implements INetworkEventListener {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(NetworkListener.class);
 
+    /**
+     * 連接建立
+     * @param ctx ctx
+     */
     @Override
     public void onConnected(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
@@ -34,6 +38,11 @@ public class NetworkListener implements INetworkEventListener {
         }
     }
 
+
+    /**
+     * 連接斷開
+     * @param ctx
+     */
     @Override
     public void onDisconnected(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
@@ -41,10 +50,21 @@ public class NetworkListener implements INetworkEventListener {
         closeSession(session);
     }
 
+
+    /**
+     * 發生異常
+     * @param ctx
+     * @param cause
+     */
     @Override
     public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {
     }
 
+
+    /**
+     * 關閉session
+     * @param session
+     */
     public static void closeSession(Session session) {
         if (session == null || session.getUser() == null) {
             //下线

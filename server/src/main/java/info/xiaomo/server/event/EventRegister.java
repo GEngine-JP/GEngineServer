@@ -13,6 +13,7 @@ import static info.xiaomo.server.event.EventUtil.addListener;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  * <p>
+ *
  * @author : xiaomo
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
@@ -23,6 +24,9 @@ import static info.xiaomo.server.event.EventUtil.addListener;
  */
 public class EventRegister {
 
+    /**
+     * 可以隨時新增事件
+     */
     public static void registerPreparedListeners() {
         addLoginListener(); // 登录监听器
         addLogoutListener(); // 登出事件

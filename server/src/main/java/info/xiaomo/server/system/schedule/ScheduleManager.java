@@ -1,10 +1,12 @@
 package info.xiaomo.server.system.schedule;
 
+import info.xiaomo.core.base.common.ExecutorUtil;
 import info.xiaomo.server.util.TimeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author xiaomo
@@ -45,7 +47,7 @@ public class ScheduleManager {
 
 		LOGGER.info("距离整秒剩余：{}MS", secondDelay);
 		//每秒
-//		ExecutorUtil.scheduleAtFixedRate(new ServerHeartTask(), secondDelay, TimeUtil.ONE_MILLS, TimeUnit.MILLISECONDS);
+		ExecutorUtil.scheduleAtFixedRate(new ServerHeartTask(), secondDelay, TimeUtil.ONE_MILLS, TimeUnit.MILLISECONDS);
 	}
 
 }
