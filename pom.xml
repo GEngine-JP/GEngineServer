@@ -42,7 +42,7 @@
         <!--核心包start-->
         <gameCore.version>2019.1</gameCore.version>
         <!--核心包end-->
-        <netty.version>4.1.12.Final</netty.version>
+        <netty.version>4.1.42.Final</netty.version>
         <apache-commons-codec.version>1.10</apache-commons-codec.version>
         <kryo.version>3.0.3</kryo.version>
         <fastjson.version>1.2.29</fastjson.version>
