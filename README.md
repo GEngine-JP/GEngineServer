@@ -13,6 +13,11 @@
 - JDK1.8
 - netty4.1.42
 
+# 项目依赖
+- 服务器核心包 [ServerCore](https://github.com/GameUnion/ServerCore)
+- 通讯协议 [ConfigProtocol](https://github.com/GameUnion/ConfigProtocol)
+- 数值数据 [ConfigData](https://github.com/GameUnion/ConfigData)
+- Unity客户端 [GameClient](https://github.com/GameUnion/GameClient)
 
 # 启动方式
 - 替换[config.properties](server/src/main/resources/config.properties)文件的configDataPath
