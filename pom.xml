@@ -11,34 +11,14 @@
     <modules>
         <module>server</module>
         <module>log</module>
+        <module>hall</module>
     </modules>
-
-    <repositories>
-        <!--<repository>-->
-            <!--<id>releases</id>-->
-            <!--<name>inner-release</name>-->
-            <!--<layout>default</layout>-->
-            <!--<url>http://xiaomo.info:8081/nexus/content/groups/public</url>-->
-            <!--<snapshots>-->
-                <!--<enabled>false</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-        <repository>
-            <id>central</id>
-            <name>aliyun maven</name>
-            <layout>default</layout>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <!--核心包start-->
         <gameCore.version>2019.1</gameCore.version>
         <!--核心包end-->
@@ -194,17 +174,18 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>3.3.0</version>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.5.1</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <compilerArgs>
-                        <arg>-XDignore.symbol.file</arg>
-                    </compilerArgs>
-                    <fork>true</fork>
                 </configuration>
             </plugin>
         </plugins>
