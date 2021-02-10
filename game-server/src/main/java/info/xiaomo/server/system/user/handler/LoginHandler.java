@@ -1,9 +1,7 @@
 package info.xiaomo.server.system.user.handler;
 
 import info.xiaomo.core.network.netty.AbstractHandler;
-import info.xiaomo.server.protocol.UserProto.LoginRequest;
 import info.xiaomo.server.server.Session;
-import info.xiaomo.server.system.user.UserManager;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -19,12 +17,12 @@ import info.xiaomo.server.system.user.UserManager;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
-public class LoginHandler extends AbstractHandler<LoginRequest> {
+public class LoginHandler extends AbstractHandler<Object> {
 
     @Override
     public void doAction() {
         Session session = (Session) this.session;
-        UserManager.getInstance().login(session, message.getLoginName());
+//        UserManager.getInstance().login(session, message.getLoginName());
     }
 
 

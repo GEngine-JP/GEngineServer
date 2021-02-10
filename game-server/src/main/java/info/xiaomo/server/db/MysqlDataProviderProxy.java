@@ -1,12 +1,12 @@
 package info.xiaomo.server.db;
 
 
-import info.xiaomo.core.persist.MysqlDataProvider;
-import info.xiaomo.core.persist.jdbc.ConnectionPool;
-import info.xiaomo.core.persist.jdbc.DruidConnectionPool;
-import info.xiaomo.core.persist.jdbc.JdbcTemplate;
-import info.xiaomo.core.persist.persist.CacheAble;
-import info.xiaomo.core.persist.persist.Persistable;
+import info.xiaomo.core.persist.mysql.MysqlDataProvider;
+import info.xiaomo.core.persist.mysql.jdbc.ConnectionPool;
+import info.xiaomo.core.persist.mysql.jdbc.DruidConnectionPool;
+import info.xiaomo.core.persist.mysql.jdbc.JdbcTemplate;
+import info.xiaomo.core.persist.mysql.persist.CacheAble;
+import info.xiaomo.core.persist.mysql.persist.PersistAble;
 import info.xiaomo.server.db.mapper.UserMapper;
 import info.xiaomo.server.db.msyql.UserPersistFactory;
 import info.xiaomo.server.entify.User;
@@ -92,12 +92,12 @@ public class MysqlDataProviderProxy implements IDataProvider {
 
     @Override
     public void insertData(CacheAble cache, boolean immediately) {
-        provider.insert((Persistable) cache, immediately);
+        provider.insert((PersistAble) cache, immediately);
     }
 
     @Override
     public void addData(CacheAble cache) {
-        provider.put((Persistable) cache);
+        provider.put((PersistAble) cache);
     }
 
     @Override

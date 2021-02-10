@@ -1,27 +1,13 @@
 package info.xiaomo.server.db.msyql;
 
-import info.xiaomo.core.persist.persist.PersistFactory;
-import info.xiaomo.core.persist.persist.Persistable;
+import info.xiaomo.core.persist.mysql.persist.PersistAble;
+import info.xiaomo.core.persist.mysql.persist.PersistFactory;
 import info.xiaomo.server.db.DataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.util.JdbcUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * 把今天最好的表现当作明天最新的起点．．～
- * いま 最高の表現 として 明日最新の始発．．～
- * Today the best performance  as tomorrow newest starter!
- * Created by IntelliJ IDEA.
- * <p>
- * @author : xiaomo
- * github: https://github.com/xiaomoinfo
- * email : xiaomo@xiaomo.info
- * QQ    : 83387856
- * Date  : 2017/7/13 17:25
- * desc  :
- * Copyright(©) 2017 by xiaomo.
- */
 public class UserPersistFactory implements PersistFactory {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserPersistFactory.class);
 
@@ -89,19 +75,19 @@ public class UserPersistFactory implements PersistFactory {
     }
 
     @Override
-    public Object[] createInsertParameters(Persistable obj) {
+    public Object[] createInsertParameters(PersistAble obj) {
         User user = (User) obj;
         return createParameters(user);
     }
 
     @Override
-    public Object[] createUpdateParameters(Persistable obj) {
+    public Object[] createUpdateParameters(PersistAble obj) {
         User user = (User) obj;
         return createParameters(user);
     }
 
     @Override
-    public Object[] createDeleteParameters(Persistable obj) {
+    public Object[] createDeleteParameters(PersistAble obj) {
         return new Object[]{obj.getId()};
     }
 

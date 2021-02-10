@@ -5,13 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>info.xiaomo</groupId>
-    <artifactId>GameServer</artifactId>
+    <artifactId>game-project</artifactId>
     <packaging>pom</packaging>
     <version>2019.1</version>
     <modules>
-        <module>server</module>
-        <module>log</module>
-        <module>hall</module>
+        <module>game-server</module>
+        <module>game-log</module>
+        <module>game-hall</module>
+        <module>game-gate</module>
+        <module>game-protocol</module>
     </modules>
 
 

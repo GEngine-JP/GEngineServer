@@ -1,6 +1,6 @@
 package info.xiaomo.server.system.schedule;
 
-import info.xiaomo.core.base.common.ExecutorUtil;
+import info.xiaomo.core.common.utils.ExecutorUtil;
 import info.xiaomo.server.util.TimeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

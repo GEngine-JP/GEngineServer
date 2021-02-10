@@ -5,11 +5,9 @@ import info.xiaomo.server.db.DataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;
-import info.xiaomo.server.protocol.UserProto.LoginResponse;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionManager;
 import info.xiaomo.server.util.IDUtil;
-import info.xiaomo.server.util.MessageUtil;
 import info.xiaomo.server.util.TimeUtil;
 import lombok.extern.slf4j.Slf4j;
 
@@ -63,9 +61,9 @@ public class UserManager {
         // 注册session
         SessionManager.getInstance().register(session);
 
-        LoginResponse.Builder builder = LoginResponse.newBuilder();
-        LoginResponse loginResponse = builder.setUserId(user.getId()).build();
-        MessageUtil.sendMsg(loginResponse, user.getId());
+//        LoginResponse.Builder builder = LoginResponse.newBuilder();
+//        LoginResponse loginResponse = builder.setUserId(user.getId()).build();
+//        MessageUtil.sendMsg(loginResponse, user.getId());
 
         EventUtil.fireEvent(EventType.LOGIN, user);
     }
