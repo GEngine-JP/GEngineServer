@@ -1,10 +1,7 @@
 package info.xiaomo.server.listener;
 
-import info.xiaomo.server.entify.User;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.IEventListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -12,6 +9,7 @@ import org.slf4j.LoggerFactory;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  * <p>
+ *
  * @author : xiaomo
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
@@ -21,10 +19,7 @@ import org.slf4j.LoggerFactory;
  * Copyright(©) 2017 by xiaomo.
  */
 public class SecondEventListener implements IEventListener {
-    private static final Logger LOGGER = LoggerFactory.getLogger(MinuteEventListener.class);
     @Override
     public void update(EventType type, Object param) {
-        User user = (User)param;
-        LOGGER.info("一秒钟执行一次。。。。。");
     }
 }

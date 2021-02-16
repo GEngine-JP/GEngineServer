@@ -7,7 +7,7 @@
     <groupId>info.xiaomo</groupId>
     <artifactId>g-engine-server</artifactId>
     <packaging>pom</packaging>
-    <version>3.1.0</version>
+    <version>3.1.3</version>
     <modules>
         <module>game-server</module>
         <module>game-log</module>
@@ -23,7 +23,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!--核心包start-->
-        <GEngine.version>3.1.0</GEngine.version>
+        <GEngine.version>3.1.3</GEngine.version>
         <!--核心包end-->
         <netty.version>[4.1.42,)</netty.version>
         <apache-commons-codec.version>1.10</apache-commons-codec.version>
@@ -33,11 +33,11 @@
         <slf4j.version>1.7.25</slf4j.version>
         <dom4j.version>1.6.1</dom4j.version>
         <logback.version>1.1.3</logback.version>
-        <commons-lang3.version>3.6</commons-lang3.version>
+        <commons-lang3.version>3.10</commons-lang3.version>
         <lombok.version>1.18.2</lombok.version>
         <junit.version>4.13.1</junit.version>
         <beanutils.version>1.9.4</beanutils.version>
-        <mysql.version>8.0.16</mysql.version>
+        <mysql.version>8.0.20</mysql.version>
         <protostuff.version>1.3.7</protostuff.version>
         <druid.version>1.0.16</druid.version>
         <concurrentlinkedhashmap.version>1.4.2</concurrentlinkedhashmap.version>
@@ -50,17 +50,7 @@
             <dependency>
                 <groupId>info.xiaomo</groupId>
                 <artifactId>g-engine</artifactId>
-                <version>3.1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>1.4.2.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-security</artifactId>
-                <version>1.4.2.RELEASE</version>
+                <version>3.1.3</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
