@@ -1,8 +1,8 @@
 package info.xiaomo.server.gate.struct;
 
-import info.xiaomo.core.network.mina.message.IDMessage;
-import info.xiaomo.core.server.ServerInfo;
-import info.xiaomo.core.server.ServerType;
+import info.xiaomo.gengine.network.mina.message.IDMessage;
+import info.xiaomo.gengine.server.ServerInfo;
+import info.xiaomo.gengine.server.ServerType;
 import info.xiaomo.server.gate.manager.ServerManager;
 import info.xiaomo.server.gate.manager.UserSessionManager;
 import org.apache.mina.core.session.IoSession;

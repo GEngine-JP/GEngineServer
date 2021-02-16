@@ -1,6 +1,6 @@
 package info.xiaomo.server.db;
 
-import info.xiaomo.core.persist.mysql.persist.CacheAble;
+import info.xiaomo.gengine.persist.mysql.persist.CacheAble;
 import info.xiaomo.server.entify.User;
 
 /**

@@ -1,7 +1,7 @@
 package info.xiaomo.server.gate.script;
 
-import info.xiaomo.core.common.bean.Reason;
-import info.xiaomo.core.script.IScript;
+import info.xiaomo.gengine.common.bean.Reason;
+import info.xiaomo.gengine.script.IScript;
 import org.apache.mina.core.session.IoSession;
 
 /**

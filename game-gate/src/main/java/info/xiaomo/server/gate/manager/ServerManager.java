@@ -1,8 +1,8 @@
 package info.xiaomo.server.gate.manager;
 
-import info.xiaomo.core.server.ServerInfo;
-import info.xiaomo.core.server.ServerState;
-import info.xiaomo.core.server.ServerType;
+import info.xiaomo.gengine.server.ServerInfo;
+import info.xiaomo.gengine.server.ServerState;
+import info.xiaomo.gengine.server.ServerType;
 import info.xiaomo.server.gate.struct.UserSession;
 import info.xiaomo.server.protocol.ServerMessage;
 import info.xiaomo.server.protocol.system.SystemMessage.SystemErroCode;

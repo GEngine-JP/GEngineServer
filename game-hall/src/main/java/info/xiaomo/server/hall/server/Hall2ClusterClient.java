@@ -1,8 +1,8 @@
 package info.xiaomo.server.hall.server;
 
 
-import info.xiaomo.core.network.mina.config.MinaClientConfig;
-import info.xiaomo.core.network.mina.service.SingleMinaTcpClientService;
+import info.xiaomo.gengine.network.mina.config.MinaClientConfig;
+import info.xiaomo.gengine.network.mina.service.SingleMinaTcpClientService;
 
 /**
  * 连接集群 tcp客户端

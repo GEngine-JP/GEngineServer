@@ -1,7 +1,7 @@
 package info.xiaomo.server;
 
-import info.xiaomo.core.config.annotation.ConfigFileScan;
-import info.xiaomo.core.config.annotation.PackageScan;
+import info.xiaomo.gengine.config.annotation.ConfigFileScan;
+import info.xiaomo.gengine.config.annotation.PackageScan;
 import info.xiaomo.server.back.BackServer;
 import info.xiaomo.server.server.GameContext;
 import info.xiaomo.server.server.GameServer;

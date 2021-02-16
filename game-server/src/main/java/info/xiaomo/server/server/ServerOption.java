@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
 
-import info.xiaomo.core.common.utils.Cast;
-import info.xiaomo.core.common.utils.FileLoaderUtil;
+import info.xiaomo.gengine.common.utils.Cast;
+import info.xiaomo.gengine.common.utils.FileLoaderUtil;
 import lombok.Data;
 
 import java.io.IOException;

@@ -1,8 +1,8 @@
 package info.xiaomo.server.hall;
 
 import java.io.File;
-import info.xiaomo.core.persist.redis.jedis.JedisManager;
-import info.xiaomo.core.script.ScriptManager;
+import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
+import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.server.hall.manager.MongoManager;
 import info.xiaomo.server.hall.server.HallServer;
 import org.slf4j.Logger;

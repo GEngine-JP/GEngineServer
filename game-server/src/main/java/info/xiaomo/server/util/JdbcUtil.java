@@ -4,8 +4,8 @@ package info.xiaomo.server.util;
 
 import java.sql.SQLException;
 import java.util.List;
-import info.xiaomo.core.persist.mysql.jdbc.JdbcTemplate;
-import info.xiaomo.core.persist.mysql.jdbc.RowMapper;
+import info.xiaomo.gengine.persist.mysql.jdbc.JdbcTemplate;
+import info.xiaomo.gengine.persist.mysql.jdbc.RowMapper;
 
 /**
  * @author xiaomo

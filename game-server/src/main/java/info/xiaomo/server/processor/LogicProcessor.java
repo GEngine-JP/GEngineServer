@@ -4,8 +4,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import info.xiaomo.core.concurrent.command.IQueueDriverCommand;
-import info.xiaomo.core.network.netty.IProcessor;
+import info.xiaomo.gengine.concurrent.command.IQueueDriverCommand;
+import info.xiaomo.gengine.network.netty.IProcessor;
 
 /**
  * 业务消息处理器

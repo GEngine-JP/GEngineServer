@@ -1,7 +1,7 @@
 package info.xiaomo.server.gate.script;
 
-import info.xiaomo.core.script.IScript;
-import info.xiaomo.core.server.ServerType;
+import info.xiaomo.gengine.script.IScript;
+import info.xiaomo.gengine.server.ServerType;
 import org.apache.mina.filter.firewall.BlacklistFilter;
 
 /**

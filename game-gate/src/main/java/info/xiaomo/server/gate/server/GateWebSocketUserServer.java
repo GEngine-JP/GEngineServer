@@ -2,11 +2,11 @@ package info.xiaomo.server.gate.server;
 
 import java.util.HashMap;
 import java.util.Map;
-import info.xiaomo.core.network.mina.TcpServer;
-import info.xiaomo.core.network.mina.config.MinaServerConfig;
-import info.xiaomo.core.network.mina.websocket.WebSocketCodecFactory;
-import info.xiaomo.core.script.ScriptManager;
-import info.xiaomo.core.server.GameService;
+import info.xiaomo.gengine.network.mina.TcpServer;
+import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
+import info.xiaomo.gengine.network.mina.websocket.WebSocketCodecFactory;
+import info.xiaomo.gengine.script.ScriptManager;
+import info.xiaomo.gengine.server.GameService;
 import info.xiaomo.server.gate.script.IGateServerScript;
 import info.xiaomo.server.gate.server.handler.GateWebSocketUserServerHandler;
 import org.apache.mina.core.filterchain.IoFilter;

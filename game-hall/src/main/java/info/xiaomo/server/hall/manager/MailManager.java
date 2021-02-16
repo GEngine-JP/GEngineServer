@@ -2,9 +2,9 @@ package info.xiaomo.server.hall.manager;
 
 import java.util.function.Consumer;
 
-import info.xiaomo.core.common.struct.Mail;
-import info.xiaomo.core.persist.mongo.dao.MailDao;
-import info.xiaomo.core.script.ScriptManager;
+import info.xiaomo.gengine.common.struct.Mail;
+import info.xiaomo.gengine.persist.mongo.dao.MailDao;
+import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.server.hall.script.IMailScript;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,7 @@
 package info.xiaomo.server.command;
 
-import info.xiaomo.core.common.utils.AttributeUtil;
-import info.xiaomo.core.concurrent.command.AbstractCommand;
+import info.xiaomo.gengine.common.utils.AttributeUtil;
+import info.xiaomo.gengine.concurrent.command.AbstractCommand;
 import info.xiaomo.server.server.Session;
 import info.xiaomo.server.server.SessionKey;
 import info.xiaomo.server.system.user.UserManager;

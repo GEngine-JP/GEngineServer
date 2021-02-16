@@ -1,7 +1,7 @@
 package info.xiaomo.server.gate.server.client;
 
-import info.xiaomo.core.network.mina.config.MinaClientConfig;
-import info.xiaomo.core.network.mina.service.SingleMinaTcpClientService;
+import info.xiaomo.gengine.network.mina.config.MinaClientConfig;
+import info.xiaomo.gengine.network.mina.service.SingleMinaTcpClientService;
 
 /**
  * 连接到集群管理

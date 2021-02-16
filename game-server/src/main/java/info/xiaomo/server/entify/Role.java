@@ -1,6 +1,6 @@
 package info.xiaomo.server.entify;
 
-import info.xiaomo.core.persist.mysql.persist.PersistAble;
+import info.xiaomo.gengine.persist.mysql.persist.PersistAble;
 import info.xiaomo.server.db.DataType;
 import io.protostuff.Exclude;
 import io.protostuff.Tag;

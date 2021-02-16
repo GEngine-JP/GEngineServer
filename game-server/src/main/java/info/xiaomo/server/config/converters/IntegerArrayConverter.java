@@ -5,7 +5,7 @@
 package info.xiaomo.server.config.converters;
 
 
-import info.xiaomo.core.config.IConverter;
+import info.xiaomo.gengine.config.IConverter;
 
 /**
  * @author YangQiang

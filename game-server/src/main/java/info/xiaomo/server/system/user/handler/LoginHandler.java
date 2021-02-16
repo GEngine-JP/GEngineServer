@@ -1,6 +1,6 @@
 package info.xiaomo.server.system.user.handler;
 
-import info.xiaomo.core.network.netty.AbstractHandler;
+import info.xiaomo.gengine.network.netty.AbstractHandler;
 import info.xiaomo.server.server.Session;
 
 /**

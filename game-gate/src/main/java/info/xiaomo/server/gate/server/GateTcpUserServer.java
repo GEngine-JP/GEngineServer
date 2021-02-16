@@ -2,9 +2,9 @@ package info.xiaomo.server.gate.server;
 
 import java.util.HashMap;
 import java.util.Map;
-import info.xiaomo.core.network.mina.config.MinaServerConfig;
-import info.xiaomo.core.network.mina.service.ClientServerService;
-import info.xiaomo.core.thread.ThreadPoolExecutorConfig;
+import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
+import info.xiaomo.gengine.network.mina.service.ClientServerService;
+import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.server.gate.manager.UserSessionManager;
 import info.xiaomo.server.gate.server.handler.GateTcpUserServerHandler;
 import org.apache.mina.core.filterchain.IoFilter;

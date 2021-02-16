@@ -1,9 +1,9 @@
 package info.xiaomo.server.gate.server;
 
-import info.xiaomo.core.common.handler.*;
-import info.xiaomo.core.network.mina.config.MinaServerConfig;
-import info.xiaomo.core.network.mina.service.GameHttpSevice;
-import info.xiaomo.core.script.ScriptManager;
+import info.xiaomo.gengine.common.handler.*;
+import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
+import info.xiaomo.gengine.network.mina.service.GameHttpSevice;
+import info.xiaomo.gengine.script.ScriptManager;
 
 /**
  * http服务器

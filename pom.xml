@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>info.xiaomo</groupId>
-    <artifactId>game-project</artifactId>
+    <artifactId>g-engine-server</artifactId>
     <packaging>pom</packaging>
-    <version>2019.1</version>
+    <version>3.1.0</version>
     <modules>
         <module>game-server</module>
         <module>game-log</module>
@@ -23,7 +23,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!--核心包start-->
-        <gameCore.version>2019.1</gameCore.version>
+        <GEngine.version>3.1.0</GEngine.version>
         <!--核心包end-->
         <netty.version>[4.1.42,)</netty.version>
         <apache-commons-codec.version>1.10</apache-commons-codec.version>
@@ -49,8 +49,8 @@
             <!--核心包start-->
             <dependency>
                 <groupId>info.xiaomo</groupId>
-                <artifactId>all</artifactId>
-                <version>${gameCore.version}</version>
+                <artifactId>g-engine</artifactId>
+                <version>3.1.0</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -165,7 +165,6 @@
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
             </dependency>
-            <!--concurrentlinkedhashmap-->
             <dependency>
                 <groupId>com.googlecode.concurrentlinkedhashmap</groupId>
                 <artifactId>concurrentlinkedhashmap-lru</artifactId>

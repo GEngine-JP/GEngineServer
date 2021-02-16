@@ -1,8 +1,8 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.common.utils.AttributeUtil;
-import info.xiaomo.core.network.netty.INetworkEventListener;
-import info.xiaomo.core.network.netty.IProcessor;
+import info.xiaomo.gengine.common.utils.AttributeUtil;
+import info.xiaomo.gengine.network.netty.INetworkEventListener;
+import info.xiaomo.gengine.network.netty.IProcessor;
 import info.xiaomo.server.command.LogoutCommand;
 import info.xiaomo.server.constant.GameConst;
 import io.netty.channel.Channel;

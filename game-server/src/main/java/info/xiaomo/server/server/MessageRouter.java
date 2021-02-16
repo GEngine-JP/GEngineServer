@@ -1,11 +1,11 @@
 package info.xiaomo.server.server;
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.core.common.utils.AttributeUtil;
-import info.xiaomo.core.network.netty.AbstractHandler;
-import info.xiaomo.core.network.netty.IMessageAndHandler;
-import info.xiaomo.core.network.netty.INetworkConsumer;
-import info.xiaomo.core.network.netty.IProcessor;
+import info.xiaomo.gengine.common.utils.AttributeUtil;
+import info.xiaomo.gengine.network.netty.AbstractHandler;
+import info.xiaomo.gengine.network.netty.IMessageAndHandler;
+import info.xiaomo.gengine.network.netty.INetworkConsumer;
+import info.xiaomo.gengine.network.netty.IProcessor;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

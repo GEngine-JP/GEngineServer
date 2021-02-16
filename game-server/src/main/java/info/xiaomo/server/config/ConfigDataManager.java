@@ -1,6 +1,6 @@
 package info.xiaomo.server.config;
 
-import info.xiaomo.core.config.excel.ExcelConfigDataManager;
+import info.xiaomo.gengine.config.excel.ExcelConfigDataManager;
 import info.xiaomo.server.GameServerBootstrap;
 
 /**

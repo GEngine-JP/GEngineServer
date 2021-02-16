@@ -3,9 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>game-project</artifactId>
+        <artifactId>g-engine-server</artifactId>
         <groupId>info.xiaomo</groupId>
-        <version>2019.1</version>
+        <version>3.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -19,8 +19,8 @@
     <dependencies>
         <dependency>
             <groupId>info.xiaomo</groupId>
-            <artifactId>game-core</artifactId>
-            <version>2.0.7</version>
+            <artifactId>g-engine</artifactId>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
 

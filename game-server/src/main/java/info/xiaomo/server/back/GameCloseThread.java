@@ -1,7 +1,7 @@
 package info.xiaomo.server.back;
 
-import info.xiaomo.core.common.utils.ExecutorUtil;
-import info.xiaomo.core.concurrent.QueueExecutor;
+import info.xiaomo.gengine.common.utils.ExecutorUtil;
+import info.xiaomo.gengine.concurrent.QueueExecutor;
 import info.xiaomo.server.db.DataCenter;
 import info.xiaomo.server.event.EventType;
 import info.xiaomo.server.event.EventUtil;

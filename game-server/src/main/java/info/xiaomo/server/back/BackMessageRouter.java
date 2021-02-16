@@ -1,7 +1,7 @@
 package info.xiaomo.server.back;
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.core.network.netty.INetworkConsumer;
+import info.xiaomo.gengine.network.netty.INetworkConsumer;
 import io.netty.channel.Channel;
 
 /**

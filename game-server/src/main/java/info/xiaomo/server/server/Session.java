@@ -1,7 +1,7 @@
 package info.xiaomo.server.server;
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.core.common.utils.AttributeUtil;
+import info.xiaomo.gengine.common.utils.AttributeUtil;
 import info.xiaomo.server.entify.Role;
 import info.xiaomo.server.entify.User;
 import io.netty.channel.Channel;

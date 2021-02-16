@@ -1,6 +1,6 @@
 package info.xiaomo.server.db.mapper;
 
-import info.xiaomo.core.persist.mysql.jdbc.RowMapper;
+import info.xiaomo.gengine.persist.mysql.jdbc.RowMapper;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.system.user.field.UserField;
 

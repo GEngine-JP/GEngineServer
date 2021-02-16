@@ -1,10 +1,10 @@
 package info.xiaomo.server.hall.manager;
 
 import java.util.function.Consumer;
-import info.xiaomo.core.common.bean.Reason;
-import info.xiaomo.core.common.struct.GameItem;
-import info.xiaomo.core.common.struct.Role;
-import info.xiaomo.core.script.ScriptManager;
+import info.xiaomo.gengine.common.bean.Reason;
+import info.xiaomo.gengine.common.struct.GameItem;
+import info.xiaomo.gengine.common.struct.Role;
+import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.server.hall.script.IPacketScript;
 import info.xiaomo.server.protocol.hall.HallPacketMessage.PacketItem;
 import org.slf4j.Logger;

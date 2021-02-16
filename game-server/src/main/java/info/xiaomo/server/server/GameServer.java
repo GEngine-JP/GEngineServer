@@ -1,7 +1,7 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.network.netty.NetworkServiceBuilder;
-import info.xiaomo.core.network.netty.NetworkServiceImpl;
+import info.xiaomo.gengine.network.netty.NetworkServiceBuilder;
+import info.xiaomo.gengine.network.netty.NetworkServiceImpl;
 import info.xiaomo.server.config.ConfigDataManager;
 import info.xiaomo.server.constant.GameConst;
 import info.xiaomo.server.db.DataCenter;

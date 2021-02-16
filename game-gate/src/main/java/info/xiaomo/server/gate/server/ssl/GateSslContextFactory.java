@@ -30,7 +30,7 @@ import java.security.KeyStore;
 import java.security.Security;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
-import info.xiaomo.core.common.utils.FileUtil;
+import info.xiaomo.gengine.common.utils.FileUtil;
 import info.xiaomo.server.gate.AppGate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

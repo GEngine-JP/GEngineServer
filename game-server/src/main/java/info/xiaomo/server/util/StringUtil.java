@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import info.xiaomo.core.common.utils.Cast;
-import info.xiaomo.core.common.utils.Symbol;
+import info.xiaomo.gengine.common.utils.Cast;
+import info.xiaomo.gengine.common.utils.Symbol;
 
 /**
  * @author xiaomo

@@ -1,6 +1,6 @@
 package info.xiaomo.server.server;
 
-import info.xiaomo.core.network.netty.pool.MessageAndHandlerPool;
+import info.xiaomo.gengine.network.netty.pool.MessageAndHandlerPool;
 
 /** @author xiaomo 所有消息和handler的消息池 */
 public class GameMessageAndHandlerPool extends MessageAndHandlerPool {

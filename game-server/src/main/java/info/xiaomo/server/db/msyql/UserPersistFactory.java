@@ -1,7 +1,7 @@
 package info.xiaomo.server.db.msyql;
 
-import info.xiaomo.core.persist.mysql.persist.PersistAble;
-import info.xiaomo.core.persist.mysql.persist.PersistFactory;
+import info.xiaomo.gengine.persist.mysql.persist.PersistAble;
+import info.xiaomo.gengine.persist.mysql.persist.PersistFactory;
 import info.xiaomo.server.db.DataType;
 import info.xiaomo.server.entify.User;
 import info.xiaomo.server.util.JdbcUtil;

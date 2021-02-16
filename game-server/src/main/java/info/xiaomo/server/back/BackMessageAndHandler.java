@@ -5,8 +5,8 @@ import com.google.protobuf.AbstractMessage;
 
 import java.util.HashMap;
 import java.util.Map;
-import info.xiaomo.core.network.netty.AbstractHandler;
-import info.xiaomo.core.network.netty.IMessageAndHandler;
+import info.xiaomo.gengine.network.netty.AbstractHandler;
+import info.xiaomo.gengine.network.netty.IMessageAndHandler;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～

@@ -1,8 +1,8 @@
 package info.xiaomo.server.hall.script;
 
 import java.util.function.Consumer;
-import info.xiaomo.core.common.struct.Mail;
-import info.xiaomo.core.script.IScript;
+import info.xiaomo.gengine.common.struct.Mail;
+import info.xiaomo.gengine.script.IScript;
 
 /**
  * 邮件

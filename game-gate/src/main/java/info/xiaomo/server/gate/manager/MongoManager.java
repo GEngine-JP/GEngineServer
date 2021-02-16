@@ -5,10 +5,10 @@
  */
 package info.xiaomo.server.gate.manager;
 
-import info.xiaomo.core.persist.mongo.AbsMongoManager;
-import info.xiaomo.core.persist.mongo.dao.HallInfoDao;
-import info.xiaomo.core.persist.mongo.dao.RoleDao;
-import info.xiaomo.core.persist.mongo.dao.UserDao;
+import info.xiaomo.gengine.persist.mongo.AbsMongoManager;
+import info.xiaomo.gengine.persist.mongo.dao.HallInfoDao;
+import info.xiaomo.gengine.persist.mongo.dao.RoleDao;
+import info.xiaomo.gengine.persist.mongo.dao.UserDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,7 +1,7 @@
 package info.xiaomo.server.back;
 
-import info.xiaomo.core.network.netty.NetworkServiceBuilder;
-import info.xiaomo.core.network.netty.NetworkServiceImpl;
+import info.xiaomo.gengine.network.netty.NetworkServiceBuilder;
+import info.xiaomo.gengine.network.netty.NetworkServiceImpl;
 import info.xiaomo.server.server.ServerOption;
 
 /**

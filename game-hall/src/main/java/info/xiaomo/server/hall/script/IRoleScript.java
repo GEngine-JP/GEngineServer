@@ -1,9 +1,9 @@
 package info.xiaomo.server.hall.script;
 
 import java.util.function.Consumer;
-import info.xiaomo.core.common.bean.Reason;
-import info.xiaomo.core.common.struct.Role;
-import info.xiaomo.core.script.IScript;
+import info.xiaomo.gengine.common.bean.Reason;
+import info.xiaomo.gengine.common.struct.Role;
+import info.xiaomo.gengine.script.IScript;
 
 
 /**

@@ -1,7 +1,7 @@
 package info.xiaomo.server.hall.script;
 
 
-import info.xiaomo.core.script.IScript;
+import info.xiaomo.gengine.script.IScript;
 
 /**
  * 公会脚本
