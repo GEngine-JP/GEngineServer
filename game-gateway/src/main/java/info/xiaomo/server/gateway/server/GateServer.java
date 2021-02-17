@@ -1,4 +1,4 @@
-package info.xiaomo.server.gameserver.gateway.server;
+package info.xiaomo.server.gateway.server;
 
 import info.xiaomo.gengine.bean.Config;
 import info.xiaomo.gengine.network.mina.config.MinaClientConfig;
@@ -9,9 +9,9 @@ import info.xiaomo.gengine.persist.redis.key.GateKey;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.utils.FileUtil;
 import info.xiaomo.gengine.utils.SysUtil;
-import info.xiaomo.server.gameserver.gateway.AppGateWay;
-import info.xiaomo.server.gameserver.gateway.manager.UserSessionManager;
-import info.xiaomo.server.gameserver.gateway.server.client.Gate2ClusterClient;
+import info.xiaomo.server.gateway.AppGateWay;
+import info.xiaomo.server.gateway.manager.UserSessionManager;
+import info.xiaomo.server.gateway.server.client.Gate2ClusterClient;
 import info.xiaomo.server.gameserver.protocol.ServerMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

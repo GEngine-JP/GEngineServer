@@ -1,4 +1,4 @@
-package info.xiaomo.server.gameserver.gateway.server.handler;
+package info.xiaomo.server.gateway.server.handler;
 
 import java.util.Arrays;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
@@ -7,10 +7,10 @@ import info.xiaomo.gengine.network.server.BaseServerConfig;
 import info.xiaomo.gengine.network.server.GameService;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.utils.MsgUtil;
-import info.xiaomo.server.gameserver.gateway.script.IGateServerScript;
-import info.xiaomo.server.gameserver.gateway.manager.UserSessionManager;
-import info.xiaomo.server.gameserver.gateway.server.GateTcpGameServer;
-import info.xiaomo.server.gameserver.gateway.struct.UserSession;
+import info.xiaomo.server.gateway.script.IGateServerScript;
+import info.xiaomo.server.gateway.manager.UserSessionManager;
+import info.xiaomo.server.gateway.server.GateTcpGameServer;
+import info.xiaomo.server.gateway.struct.UserSession;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.FilterEvent;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package info.xiaomo.server.gameserver.gateway.script;
+package info.xiaomo.server.gateway.script;
 
 import info.xiaomo.gengine.network.server.ServerType;
 import info.xiaomo.gengine.script.IScript;

@@ -1,4 +1,4 @@
-package info.xiaomo.server.gameserver.gateway.server.ssl;
+package info.xiaomo.server.gateway.server.ssl;
 
 import java.security.InvalidAlgorithmParameterException;
 import java.security.KeyStore;

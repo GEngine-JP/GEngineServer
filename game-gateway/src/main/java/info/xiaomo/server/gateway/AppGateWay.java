@@ -1,12 +1,12 @@
-package info.xiaomo.server.gameserver.gateway;
+package info.xiaomo.server.gateway;
 
 import java.io.File;
 import info.xiaomo.gengine.persist.redis.jedis.JedisClusterConfig;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.utils.FileUtil;
-import info.xiaomo.server.gameserver.gateway.manager.MongoManager;
-import info.xiaomo.server.gameserver.gateway.server.GateServer;
+import info.xiaomo.server.gateway.manager.MongoManager;
+import info.xiaomo.server.gateway.server.GateServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

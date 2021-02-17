@@ -1,4 +1,4 @@
-package info.xiaomo.server.gameserver.gateway.server;
+package info.xiaomo.server.gateway.server;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,8 +7,8 @@ import info.xiaomo.gengine.network.mina.code.ClientProtocolCodecFactory;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.network.server.GameService;
 import info.xiaomo.gengine.script.ScriptManager;
-import info.xiaomo.server.gameserver.gateway.script.IGateServerScript;
-import info.xiaomo.server.gameserver.gateway.server.handler.GateUdpUserServerHandler;
+import info.xiaomo.server.gateway.script.IGateServerScript;
+import info.xiaomo.server.gateway.server.handler.GateUdpUserServerHandler;
 import org.apache.mina.core.filterchain.IoFilter;
 import org.apache.mina.filter.firewall.BlacklistFilter;
 

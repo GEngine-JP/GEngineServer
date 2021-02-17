@@ -1,10 +1,10 @@
-package info.xiaomo.server.gameserver.gateway.manager;
+package info.xiaomo.server.gateway.manager;
 
 import info.xiaomo.gengine.network.server.ServerInfo;
 import info.xiaomo.gengine.network.server.ServerState;
 import info.xiaomo.gengine.network.server.ServerType;
 import info.xiaomo.server.gameserver.protocol.ServerMessage;
-import info.xiaomo.server.gameserver.gateway.struct.UserSession;
+import info.xiaomo.server.gateway.struct.UserSession;
 import info.xiaomo.server.gameserver.protocol.system.SystemMessage.SystemErroCode;
 import info.xiaomo.server.gameserver.protocol.system.SystemMessage.SystemErrorResponse;
 import java.util.Map;

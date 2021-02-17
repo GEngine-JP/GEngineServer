@@ -1,4 +1,4 @@
-package info.xiaomo.server.gameserver.gateway.server.client;
+package info.xiaomo.server.gateway.server.client;
 
 import info.xiaomo.gengine.network.mina.config.MinaClientConfig;
 import info.xiaomo.gengine.network.mina.service.SingleMinaTcpClientService;

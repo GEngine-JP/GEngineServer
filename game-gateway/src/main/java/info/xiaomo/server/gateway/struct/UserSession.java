@@ -1,10 +1,10 @@
-package info.xiaomo.server.gameserver.gateway.struct;
+package info.xiaomo.server.gateway.struct;
 
 import info.xiaomo.gengine.network.mina.message.IDMessage;
 import info.xiaomo.gengine.network.server.ServerInfo;
 import info.xiaomo.gengine.network.server.ServerType;
-import info.xiaomo.server.gameserver.gateway.manager.ServerManager;
-import info.xiaomo.server.gameserver.gateway.manager.UserSessionManager;
+import info.xiaomo.server.gateway.manager.ServerManager;
+import info.xiaomo.server.gateway.manager.UserSessionManager;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

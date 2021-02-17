@@ -1,9 +1,9 @@
-package info.xiaomo.server.gameserver.gateway.server;
+package info.xiaomo.server.gateway.server;
 
 import info.xiaomo.gengine.network.mina.TcpServer;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.network.server.GameService;
-import info.xiaomo.server.gameserver.gateway.server.handler.GateTcpGameServerHandler;
+import info.xiaomo.server.gateway.server.handler.GateTcpGameServerHandler;
 
 /**
  * 子游戏连接 服务

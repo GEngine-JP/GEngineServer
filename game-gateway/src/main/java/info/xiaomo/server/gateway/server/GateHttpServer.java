@@ -1,4 +1,4 @@
-package info.xiaomo.server.gameserver.gateway.server;
+package info.xiaomo.server.gateway.server;
 
 import info.xiaomo.gengine.network.handler.*;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;

@@ -1,12 +1,12 @@
-package info.xiaomo.server.gameserver.gateway.manager;
+package info.xiaomo.server.gateway.manager;
 
 import com.google.protobuf.Message;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.script.ScriptManager;
-import info.xiaomo.server.gameserver.gateway.script.IUserScript;
-import info.xiaomo.server.gameserver.gateway.struct.UserSession;
+import info.xiaomo.server.gateway.script.IUserScript;
+import info.xiaomo.server.gateway.struct.UserSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

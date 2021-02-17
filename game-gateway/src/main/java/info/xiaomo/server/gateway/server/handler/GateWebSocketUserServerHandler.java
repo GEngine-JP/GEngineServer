@@ -1,4 +1,4 @@
-package info.xiaomo.server.gameserver.gateway.server.handler;
+package info.xiaomo.server.gateway.server.handler;
 
 import info.xiaomo.gengine.bean.Config;
 import info.xiaomo.gengine.bean.GlobalReason;
@@ -8,8 +8,8 @@ import info.xiaomo.gengine.network.server.BaseServerConfig;
 import info.xiaomo.gengine.network.server.GameService;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.utils.MsgUtil;
-import info.xiaomo.server.gameserver.gateway.script.IUserScript;
-import info.xiaomo.server.gameserver.gateway.struct.UserSession;
+import info.xiaomo.server.gateway.script.IUserScript;
+import info.xiaomo.server.gateway.struct.UserSession;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.FilterEvent;

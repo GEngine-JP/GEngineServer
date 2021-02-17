@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package info.xiaomo.server.gameserver.gateway.manager;
+package info.xiaomo.server.gateway.manager;
 
 import info.xiaomo.gengine.persist.mongo.AbsMongoManager;
 import info.xiaomo.gengine.persist.mongo.dao.HallInfoDao;

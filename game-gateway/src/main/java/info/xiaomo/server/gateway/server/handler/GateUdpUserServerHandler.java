@@ -1,11 +1,11 @@
-package info.xiaomo.server.gameserver.gateway.server.handler;
+package info.xiaomo.server.gateway.server.handler;
 
 import info.xiaomo.gengine.bean.Config;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.network.mina.handler.ClientProtocolHandler;
 import info.xiaomo.gengine.network.server.GameService;
 import info.xiaomo.gengine.utils.MsgUtil;
-import info.xiaomo.server.gameserver.gateway.struct.UserSession;
+import info.xiaomo.server.gateway.struct.UserSession;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;

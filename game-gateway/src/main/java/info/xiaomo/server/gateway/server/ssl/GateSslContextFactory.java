@@ -1,4 +1,4 @@
-package info.xiaomo.server.gameserver.gateway.server.ssl;
+package info.xiaomo.server.gateway.server.ssl;
 /**
 * <h3>RSA证书生成步骤</h3>
 * <p>
@@ -31,7 +31,7 @@ import java.security.Security;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import info.xiaomo.gengine.utils.FileUtil;
-import info.xiaomo.server.gameserver.gateway.AppGateWay;
+import info.xiaomo.server.gateway.AppGateWay;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
