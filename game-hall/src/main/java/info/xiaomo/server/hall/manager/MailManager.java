@@ -3,9 +3,9 @@ package info.xiaomo.server.hall.manager;
 import java.util.function.Consumer;
 import info.xiaomo.gengine.persist.mongo.dao.MailDao;
 import info.xiaomo.gengine.script.ScriptManager;
-import info.xiaomo.server.hall.entity.Mail;
 import info.xiaomo.server.hall.script.IMailScript;
-import info.xiaomo.server.protocol.hall.HallChatMessage.MailInfo;
+import info.xiaomo.server.gameserver.entity.Mail;
+import info.xiaomo.server.gameserver.protocol.hall.HallChatMessage.MailInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

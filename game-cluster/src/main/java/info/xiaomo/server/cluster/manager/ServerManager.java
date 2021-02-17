@@ -7,7 +7,7 @@ import info.xiaomo.gengine.server.ServerInfo;
 import info.xiaomo.gengine.server.ServerState;
 import info.xiaomo.gengine.server.ServerType;
 import info.xiaomo.server.cluster.server.ClusterTcpServer;
-import info.xiaomo.server.protocol.ServerMessage;
+import info.xiaomo.server.gameserver.protocol.ServerMessage;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

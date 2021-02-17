@@ -12,8 +12,8 @@
         <module>game-server</module>
         <module>game-log</module>
         <module>game-hall</module>
-        <module>game-gate</module>
-        <module>game-protocol</module>
+        <module>game-gateway</module>
+        <module>game-shared</module>
         <module>game-cluster</module>
     </modules>
 

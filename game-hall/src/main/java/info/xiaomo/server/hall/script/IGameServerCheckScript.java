@@ -1,7 +1,7 @@
 package info.xiaomo.server.hall.script;
 
 import info.xiaomo.gengine.script.IScript;
-import info.xiaomo.server.protocol.ServerMessage;
+import info.xiaomo.server.gameserver.protocol.ServerMessage;
 
 /**
  * 游戏服务器状态监测脚本

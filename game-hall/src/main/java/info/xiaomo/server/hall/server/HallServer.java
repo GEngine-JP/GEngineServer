@@ -9,8 +9,8 @@ import info.xiaomo.gengine.persist.redis.channel.HallChannel;
 import info.xiaomo.gengine.persist.redis.jedis.JedisPubListener;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.utils.FileUtil;
+import info.xiaomo.server.gameserver.protocol.ServerMessage;
 import info.xiaomo.server.hall.AppHall;
-import info.xiaomo.server.protocol.ServerMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

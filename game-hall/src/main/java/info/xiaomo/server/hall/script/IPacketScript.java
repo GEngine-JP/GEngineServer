@@ -3,8 +3,8 @@ package info.xiaomo.server.hall.script;
 import java.util.function.Consumer;
 import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.script.IScript;
-import info.xiaomo.server.hall.entity.Item;
-import info.xiaomo.server.hall.entity.Role;
+import info.xiaomo.server.gameserver.entity.Item;
+import info.xiaomo.server.gameserver.entity.Role;
 
 /**
  * 道具

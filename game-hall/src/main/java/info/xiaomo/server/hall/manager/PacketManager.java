@@ -3,10 +3,10 @@ package info.xiaomo.server.hall.manager;
 import java.util.function.Consumer;
 import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.script.ScriptManager;
-import info.xiaomo.server.hall.entity.Item;
-import info.xiaomo.server.hall.entity.Role;
 import info.xiaomo.server.hall.script.IPacketScript;
-import info.xiaomo.server.protocol.hall.HallPacketMessage.PacketItem;
+import info.xiaomo.server.gameserver.entity.Item;
+import info.xiaomo.server.gameserver.entity.Role;
+import info.xiaomo.server.gameserver.protocol.hall.HallPacketMessage.PacketItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

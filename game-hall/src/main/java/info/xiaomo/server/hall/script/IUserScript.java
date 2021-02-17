@@ -2,7 +2,7 @@ package info.xiaomo.server.hall.script;
 
 import java.util.function.Consumer;
 import info.xiaomo.gengine.script.IScript;
-import info.xiaomo.server.hall.entity.User;
+import info.xiaomo.server.gameserver.entity.User;
 
 /**
  * 用户接口

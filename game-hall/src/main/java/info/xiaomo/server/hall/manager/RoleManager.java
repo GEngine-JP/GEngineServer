@@ -12,7 +12,7 @@ import info.xiaomo.gengine.persist.redis.jedis.JedisPubSubMessage;
 import info.xiaomo.gengine.persist.redis.key.HallKey;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.utils.JsonUtil;
-import info.xiaomo.server.hall.entity.Role;
+import info.xiaomo.server.gameserver.entity.Role;
 import info.xiaomo.server.hall.script.IRoleScript;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
