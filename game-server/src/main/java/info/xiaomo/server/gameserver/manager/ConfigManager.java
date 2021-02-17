@@ -7,7 +7,7 @@ import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.utils.FileUtil;
 import info.xiaomo.server.gameserver.AppBydr;
 import info.xiaomo.server.gameserver.config.GameConfig;
-import info.xiaomo.server.gameserver.entity.CFish;
+import info.xiaomo.server.shared.entity.CFish;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

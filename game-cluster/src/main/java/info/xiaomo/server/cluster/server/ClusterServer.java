@@ -1,10 +1,10 @@
 package info.xiaomo.server.cluster.server;
 
-import info.xiaomo.gengine.common.bean.NetPort;
-import info.xiaomo.gengine.common.utils.SysUtil;
+import info.xiaomo.gengine.bean.NetPort;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
+import info.xiaomo.gengine.utils.SysUtil;
 import info.xiaomo.server.cluster.AppCluster;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  * 集群管理服务器
  *
  *
- * @date 2017-03-31
+ * 2017-03-31
  */
 public class ClusterServer implements Runnable {
 

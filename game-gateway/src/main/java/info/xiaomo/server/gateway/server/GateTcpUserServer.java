@@ -13,7 +13,7 @@ import org.apache.mina.filter.firewall.BlacklistFilter;
 /**
  * 网关 用户 TCP服务器
  *
- * @date 2017-03-30
+ * 2017-03-30
  */
 public class GateTcpUserServer extends ClientServerService {
   private static final Map<String, IoFilter> filters = new HashMap<>();

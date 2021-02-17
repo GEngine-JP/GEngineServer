@@ -9,7 +9,7 @@ import info.xiaomo.gengine.utils.JsonUtil;
 import info.xiaomo.server.gameserver.world.BydrWorldChannel;
 import info.xiaomo.server.gameserver.world.TeamManager;
 import info.xiaomo.server.gameserver.manager.ConfigManager;
-import info.xiaomo.server.gameserver.struct.Team;
+import info.xiaomo.server.shared.entity.Team;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,8 +17,8 @@ import org.slf4j.LoggerFactory;
 /**
  * 申请竞技赛
  * 
- * @author JiangZhiYong
- * @QQ 359135103 2017年8月3日 上午11:07:52
+ *
+ *  2017年8月3日 上午11:07:52
  */
 public class ApplyAthleticsScript implements IPubSubScript {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ApplyAthleticsScript.class);

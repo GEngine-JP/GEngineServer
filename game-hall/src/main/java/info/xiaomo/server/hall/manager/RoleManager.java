@@ -6,13 +6,13 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 import info.xiaomo.gengine.bean.GlobalReason;
-import info.xiaomo.gengine.persist.redis.channel.HallChannel;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
 import info.xiaomo.gengine.persist.redis.jedis.JedisPubSubMessage;
 import info.xiaomo.gengine.persist.redis.key.HallKey;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.utils.JsonUtil;
-import info.xiaomo.server.gameserver.entity.Role;
+import info.xiaomo.server.hall.HallChannel;
+import info.xiaomo.server.shared.entity.UserRole;
 import info.xiaomo.server.hall.script.IRoleScript;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ public class RoleManager {
   private static volatile RoleManager roleManager;
 
   /** role 数据需要实时存数据库 */
-  private final Map<Long, Role> roles = new ConcurrentHashMap<>();
+  private final Map<Long, UserRole> roles = new ConcurrentHashMap<>();
 
   private RoleManager() {}
 
@@ -44,32 +44,32 @@ public class RoleManager {
   }
 
   /** 创建角色 */
-  public Role createUser(long userId, Consumer<Role> roleConsumer) {
+  public UserRole createUser(long userId, Consumer<UserRole> roleConsumer) {
     Collection<IRoleScript> evts =
         ScriptManager.getInstance().getBaseScriptEntry().getEvts(IRoleScript.class);
     Iterator<IRoleScript> iterator = evts.iterator();
     while (iterator.hasNext()) {
       IRoleScript userScript = iterator.next();
-      Role role = userScript.createRole(userId, roleConsumer);
-      if (role != null) {
-        return role;
+      UserRole userRole = userScript.createRole(userId, roleConsumer);
+      if (userRole != null) {
+        return userRole;
       }
     }
     return null;
   }
 
-  public Map<Long, Role> getRoles() {
+  public Map<Long, UserRole> getRoles() {
     return roles;
   }
 
-  public Role getRole(long id) {
-    Role role = roles.get(id);
-    Map<String, String> hgetAll = JedisManager.getJedisCluster().hgetAll(role.getRoleRedisKey());
+  public UserRole getRole(long id) {
+    UserRole userRole = roles.get(id);
+    Map<String, String> hgetAll = JedisManager.getJedisCluster().hgetAll(userRole.getRoleRedisKey());
     // 从redis读取最新数据
     if (hgetAll != null) {
-      JsonUtil.map2Object(hgetAll, role);
+      JsonUtil.map2Object(hgetAll, userRole);
     }
-    return role;
+    return userRole;
   }
 
   /**
@@ -77,12 +77,12 @@ public class RoleManager {
    *
    * <p>2017年9月18日 下午6:23:14
    *
-   * @param role
+   * @param userRole
    */
-  public void login(Role role, GlobalReason reason) {
+  public void login(UserRole userRole, GlobalReason reason) {
     ScriptManager.getInstance()
         .getBaseScriptEntry()
-        .executeScripts(IRoleScript.class, script -> script.login(role, reason));
+        .executeScripts(IRoleScript.class, script -> script.login(userRole, reason));
   }
 
   /**
@@ -102,13 +102,13 @@ public class RoleManager {
    *
    * <p>2017年9月18日 下午6:09:51
    *
-   * @param role
+   * @param userRole
    * @param reason
    */
-  public void quit(Role role, GlobalReason reason) {
+  public void quit(UserRole userRole, GlobalReason reason) {
     ScriptManager.getInstance()
         .getBaseScriptEntry()
-        .executeScripts(IRoleScript.class, script -> script.quit(role, reason));
+        .executeScripts(IRoleScript.class, script -> script.quit(userRole, reason));
   }
 
   /**

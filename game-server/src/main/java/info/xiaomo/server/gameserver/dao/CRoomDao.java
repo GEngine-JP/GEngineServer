@@ -5,7 +5,7 @@ package info.xiaomo.server.gameserver.dao;
 
 import java.util.List;
 import info.xiaomo.gengine.persist.mongo.AbsMongoManager;
-import info.xiaomo.server.gameserver.entity.CRoom;
+import info.xiaomo.server.shared.entity.CRoom;
 import org.mongodb.morphia.dao.BasicDAO;
 
 public class CRoomDao extends BasicDAO<CRoom, Integer> {

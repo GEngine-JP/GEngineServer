@@ -2,7 +2,7 @@ package info.xiaomo.server.hall.script;
 
 import java.util.function.Consumer;
 import info.xiaomo.gengine.script.IScript;
-import info.xiaomo.server.gameserver.entity.Mail;
+import info.xiaomo.server.shared.entity.Mail;
 
 /**
  * 邮件

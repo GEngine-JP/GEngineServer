@@ -6,7 +6,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import info.xiaomo.gengine.thread.ServerThread;
 import info.xiaomo.gengine.thread.ThreadType;
-import info.xiaomo.server.gameserver.struct.room.Room;
+import info.xiaomo.server.shared.entity.room.Room;
 import info.xiaomo.server.gameserver.thread.timer.RoomTimer;
 
 /**
@@ -16,7 +16,7 @@ import info.xiaomo.server.gameserver.thread.timer.RoomTimer;
  * </p>
  * 
  *
- * @date 2017-03-24
+ * 2017-03-24
  */
 public class RoomThread extends ServerThread {
 	private static final AtomicInteger threadNum = new AtomicInteger(0);

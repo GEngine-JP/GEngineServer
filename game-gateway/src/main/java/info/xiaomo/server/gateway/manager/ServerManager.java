@@ -3,13 +3,14 @@ package info.xiaomo.server.gateway.manager;
 import info.xiaomo.gengine.network.server.ServerInfo;
 import info.xiaomo.gengine.network.server.ServerState;
 import info.xiaomo.gengine.network.server.ServerType;
-import info.xiaomo.server.gameserver.protocol.ServerMessage;
 import info.xiaomo.server.gateway.struct.UserSession;
-import info.xiaomo.server.gameserver.protocol.system.SystemMessage.SystemErroCode;
-import info.xiaomo.server.gameserver.protocol.system.SystemMessage.SystemErrorResponse;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
+
+import info.xiaomo.server.shared.protocol.server.GameServerInfo;
+import info.xiaomo.server.shared.protocol.system.SystemErrorCode;
+import info.xiaomo.server.shared.protocol.system.SystemErrorResponse;
 import io.netty.util.internal.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,7 +62,7 @@ public class ServerManager {
 	 * 
 	 * @param info
 	 */
-	public void updateServerInfo(ServerMessage.ServerInfo info) {
+	public void updateServerInfo(GameServerInfo info) {
 		if (info.getType() < 100 && info.getType() != ServerType.HALL.ordinal()) { // 游戏服从101开始定义
 																					// 大厅服需要更新
 			return;
@@ -80,7 +81,7 @@ public class ServerManager {
 		server.setHttpPort(server.getHttpPort());
 		server.setState(info.getState());
 		server.setType(info.getType());
-		server.setWwwip(info.getWwwip());
+		server.setWwwip(info.getWwwIp());
 
 		if (!serverMap.containsKey(serverType)) {
 			serverMap.put(serverType, new ConcurrentHashMap<>());
@@ -114,13 +115,13 @@ public class ServerManager {
 	 * 
 	 *
 	 *  2017年7月21日 上午10:37:49
-	 * @param erroCode
+	 * @param errorCode
 	 * @param msg
 	 * @return
 	 */
-	public SystemErrorResponse buildSystemErrorResponse(SystemErroCode erroCode, String msg) {
+	public SystemErrorResponse buildSystemErrorResponse(SystemErrorCode errorCode, String msg) {
 		SystemErrorResponse.Builder builder = SystemErrorResponse.newBuilder();
-		builder.setErrorCode(erroCode);
+		builder.setErrorCode(errorCode);
 		if (msg != null) {
 			builder.setMsg(msg);
 		}

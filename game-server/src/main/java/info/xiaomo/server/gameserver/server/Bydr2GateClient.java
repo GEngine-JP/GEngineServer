@@ -11,8 +11,10 @@ import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.thread.ThreadType;
 import info.xiaomo.gengine.thread.timer.event.ServerHeartTimer;
 import info.xiaomo.gengine.utils.SysUtil;
-import info.xiaomo.server.gameserver.protocol.ServerMessage;
 import info.xiaomo.server.gameserver.thread.RoomExecutor;
+import info.xiaomo.server.shared.protocol.server.GameServerInfo;
+import info.xiaomo.server.shared.protocol.server.ServerMessage;
+import info.xiaomo.server.shared.protocol.server.ServerRegisterRequest;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,8 +59,8 @@ public class Bydr2GateClient extends MutilMinaTcpClientGameService {
 		public void sessionOpened(IoSession session) {
 			super.sessionOpened(session);
 			// 向网关服注册session
-			ServerMessage.ServerRegisterRequest.Builder builder = ServerMessage.ServerRegisterRequest.newBuilder();
-			ServerMessage.ServerInfo.Builder info = ServerMessage.ServerInfo.newBuilder();
+			ServerRegisterRequest.Builder builder = ServerRegisterRequest.newBuilder();
+			GameServerInfo.Builder info = GameServerInfo.newBuilder();
 			info.setId(getMinaClientConfig().getId());
 			info.setIp("");
 			info.setMaxUserCount(1000);
@@ -66,7 +68,7 @@ public class Bydr2GateClient extends MutilMinaTcpClientGameService {
 			info.setName(getMinaClientConfig().getName());
 			info.setState(ServerState.NORMAL.getState());
 			info.setType(getMinaClientConfig().getType().getType());
-			info.setWwwip("");
+			info.setWwwIp("");
 			info.setTotalMemory(SysUtil.totalMemory());
 			info.setFreeMemory(SysUtil.freeMemory());
 //			ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IGameServerCheckScript.class,

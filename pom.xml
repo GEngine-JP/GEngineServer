@@ -7,7 +7,7 @@
     <groupId>info.xiaomo</groupId>
     <artifactId>g-engine-server</artifactId>
     <packaging>pom</packaging>
-    <version>3.1.4</version>
+    <version>${gameServer.version}</version>
     <modules>
         <module>game-server</module>
         <module>game-log</module>
@@ -15,16 +15,16 @@
         <module>game-gateway</module>
         <module>game-shared</module>
         <module>game-cluster</module>
+        <module>game-server-script</module>
     </modules>
 
 
     <properties>
+        <gameServer.version>3.1.4</gameServer.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <!--核心包start-->
-        <GEngine.version>3.1.4</GEngine.version>
-        <!--核心包end-->
+        <GEngine.version>3.2.0</GEngine.version>
         <netty.version>[4.1.42,)</netty.version>
         <apache-commons-codec.version>1.10</apache-commons-codec.version>
         <kryo.version>3.0.3</kryo.version>
@@ -50,7 +50,13 @@
             <dependency>
                 <groupId>info.xiaomo</groupId>
                 <artifactId>g-engine</artifactId>
-                <version>3.2.0</version>
+                <version>${GEngine.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.xiaomo</groupId>
+                <artifactId>game-shared</artifactId>
+                <version>${gameServer.version}</version>
+                <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>

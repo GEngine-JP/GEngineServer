@@ -9,8 +9,8 @@ import org.slf4j.LoggerFactory;
 /**
  * 捕鱼世界服，处理竞技场匹配等全局事件
  * 
- * @author JiangZhiYong
- * @QQ 359135103 2017年8月1日 下午5:15:07
+ *
+ *  2017年8月1日 下午5:15:07
  */
 public class AppBydrWorld {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AppBydrWorld.class);

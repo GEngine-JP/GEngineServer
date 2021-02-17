@@ -2,15 +2,16 @@ package info.xiaomo.server.gameserver.script;
 
 import java.time.LocalTime;
 import info.xiaomo.gengine.script.IScript;
-import info.xiaomo.server.gameserver.protocol.BydrRoomMessage;
-import info.xiaomo.server.gameserver.struct.role.Role;
-import info.xiaomo.server.gameserver.struct.room.Room;
+import info.xiaomo.server.shared.entity.UserRole;
+import info.xiaomo.server.shared.protocol.gameserver.room.BydrRoomMessage;
+import info.xiaomo.server.shared.entity.room.Room;
+import info.xiaomo.server.shared.protocol.gameserver.room.RoomType;
 
 /**
  * 房间脚本
  *
  *
- * @date 2017-04-21
+ * 2017-04-21
  */
 public interface IRoomScript extends IScript {
 
@@ -22,7 +23,7 @@ public interface IRoomScript extends IScript {
 	 * @param room
 	 * @return
 	 */
-	default void enterRoom(Role role, Room room) {
+	default void enterRoom(UserRole role, Room room) {
 
 	}
 
@@ -35,7 +36,7 @@ public interface IRoomScript extends IScript {
 	 *
 	 * Role> 2017年9月14日 下午2:42:25
 	 */
-	default void enterRoom(Role role, BydrRoomMessage.RoomType roomType, int rank) {
+	default void enterRoom(UserRole role, RoomType roomType, int rank) {
 
 	}
 
@@ -45,7 +46,7 @@ public interface IRoomScript extends IScript {
 	 * @param role
 	 * @param room
 	 */
-	default void quitRoom(Role role, Room room) {
+	default void quitRoom(UserRole role, Room room) {
 
 	}
 
@@ -58,7 +59,7 @@ public interface IRoomScript extends IScript {
 	 * @param role
 	 * @param accumulateGold
 	 */
-	default void sendPmd(Role role, int totalGold, int accumulateGold, int multiple, String fishName) {
+	default void sendPmd(UserRole role, int totalGold, int accumulateGold, int multiple, String fishName) {
 
 	}
 

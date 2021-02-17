@@ -12,14 +12,15 @@ import info.xiaomo.gengine.utils.SysUtil;
 import info.xiaomo.server.gateway.AppGateWay;
 import info.xiaomo.server.gateway.manager.UserSessionManager;
 import info.xiaomo.server.gateway.server.client.Gate2ClusterClient;
-import info.xiaomo.server.gameserver.protocol.ServerMessage;
+import info.xiaomo.server.shared.protocol.server.GameServerInfo;
+import info.xiaomo.server.shared.protocol.server.ServerRegisterRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * 网关服务器
  *
- * @date 2017-03-30
+ * 2017-03-30
  */
 public class GateServer implements Runnable {
   private static final Logger LOGGER = LoggerFactory.getLogger(GateServer.class);
@@ -125,11 +126,11 @@ public class GateServer implements Runnable {
   }
 
   /** 构建服务器更新注册信息 */
-  public ServerMessage.ServerRegisterRequest buildServerRegisterRequest(
+  public ServerRegisterRequest buildServerRegisterRequest(
       MinaServerConfig minaServerConfig) {
-    ServerMessage.ServerRegisterRequest.Builder builder =
-        ServerMessage.ServerRegisterRequest.newBuilder();
-    ServerMessage.ServerInfo.Builder info = ServerMessage.ServerInfo.newBuilder();
+    ServerRegisterRequest.Builder builder =
+        ServerRegisterRequest.newBuilder();
+    GameServerInfo.Builder info = GameServerInfo.newBuilder();
     info.setId(minaServerConfig.getId());
     info.setIp(minaServerConfig.getIp());
     info.setMaxUserCount(1000);
@@ -137,9 +138,9 @@ public class GateServer implements Runnable {
     info.setName(minaServerConfig.getName());
     info.setState(ServerState.NORMAL.getState());
     info.setType(minaServerConfig.getType().getType());
-    info.setWwwip("");
+    info.setWwwIp("");
     info.setPort(minaServerConfig.getPort());
-    info.setHttpport(minaServerConfig.getHttpPort());
+    info.setHttpPort(minaServerConfig.getHttpPort());
     info.setFreeMemory(SysUtil.freeMemory());
     info.setVersion(minaServerConfig.getVersion());
     info.setTotalMemory(SysUtil.totalMemory());

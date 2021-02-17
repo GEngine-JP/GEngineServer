@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
  * 游戏配置
  *
  *
- * @date 2017-04-14
+ * 2017-04-14
  */
 @EqualsAndHashCode(callSuper = true)
 @Root

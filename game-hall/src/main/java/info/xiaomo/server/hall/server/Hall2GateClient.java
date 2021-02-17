@@ -12,8 +12,9 @@ import info.xiaomo.gengine.thread.ServerThread;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.thread.ThreadType;
 import info.xiaomo.gengine.thread.timer.event.ServerHeartTimer;
-import info.xiaomo.server.gameserver.protocol.ServerMessage;
 import info.xiaomo.server.hall.script.IGameServerCheckScript;
+import info.xiaomo.server.shared.protocol.server.GameServerInfo;
+import info.xiaomo.server.shared.protocol.server.ServerRegisterRequest;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +44,7 @@ public class Hall2GateClient extends MutilMinaTcpClientGameService {
 	 * 
 	 * @param info
 	 */
-	public void updateHallServerInfo(ServerMessage.ServerInfo info) {
+	public void updateHallServerInfo(GameServerInfo info) {
 		ServerInfo serverInfo = serverMap.get(info.getId());
 		if (serverInfo == null) {
 			serverInfo = getServerInfo(info);
@@ -56,13 +57,13 @@ public class Hall2GateClient extends MutilMinaTcpClientGameService {
 			serverInfo.setOnline(info.getOnline());
 			serverInfo.setMaxUserCount(info.getMaxUserCount());
 			serverInfo.setName(info.getName());
-			serverInfo.setHttpPort(info.getHttpport());
-			serverInfo.setWwwip(info.getWwwip());
+			serverInfo.setHttpPort(info.getHttpPort());
+			serverInfo.setWwwip(info.getWwwIp());
 		}
 		serverMap.put(info.getId(), serverInfo);
 	}
 
-	private ServerInfo getServerInfo(ServerMessage.ServerInfo info) {
+	private ServerInfo getServerInfo(GameServerInfo info) {
 		ServerInfo serverInfo = new ServerInfo();
 		serverInfo.setIp(info.getIp());
 		serverInfo.setId(info.getId());
@@ -71,8 +72,8 @@ public class Hall2GateClient extends MutilMinaTcpClientGameService {
 		serverInfo.setOnline(info.getOnline());
 		serverInfo.setMaxUserCount(info.getMaxUserCount());
 		serverInfo.setName(info.getName());
-		serverInfo.setHttpPort(info.getHttpport());
-		serverInfo.setWwwip(info.getWwwip());
+		serverInfo.setHttpPort(info.getHttpPort());
+		serverInfo.setWwwip(info.getWwwIp());
 		return serverInfo;
 	}
 
@@ -91,8 +92,8 @@ public class Hall2GateClient extends MutilMinaTcpClientGameService {
 		@Override
 		public void sessionOpened(IoSession session) {
 			super.sessionOpened(session);
-			ServerMessage.ServerRegisterRequest.Builder builder = ServerMessage.ServerRegisterRequest.newBuilder();
-			ServerMessage.ServerInfo.Builder info = ServerMessage.ServerInfo.newBuilder();
+			ServerRegisterRequest.Builder builder = ServerRegisterRequest.newBuilder();
+			GameServerInfo.Builder info = GameServerInfo.newBuilder();
 			info.setId(getMinaClientConfig().getId());
 			info.setIp("");
 			info.setMaxUserCount(1000);
@@ -100,7 +101,7 @@ public class Hall2GateClient extends MutilMinaTcpClientGameService {
 			info.setName(getMinaClientConfig().getName());
 			info.setState(ServerState.NORMAL.getState());
 			info.setType(getMinaClientConfig().getType().getType());
-			info.setWwwip("");
+			info.setWwwIp("");
 			ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IGameServerCheckScript.class,
 					script -> script.buildServerInfo(info));
 			builder.setServerInfo(info);

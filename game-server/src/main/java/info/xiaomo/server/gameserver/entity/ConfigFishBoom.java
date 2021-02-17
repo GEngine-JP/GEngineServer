@@ -3,7 +3,7 @@
  * <p>
  * 2017-10-31
  */
-package info.xiaomo.server.gameserver.entity;
+package info.xiaomo.server.shared.entity;
 
 import java.util.List;
 import info.xiaomo.gengine.persist.mongo.IConfigChecker;

@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.function.Consumer;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.server.hall.script.IUserScript;
-import info.xiaomo.server.gameserver.entity.User;
+import info.xiaomo.server.shared.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

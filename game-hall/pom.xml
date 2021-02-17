@@ -20,13 +20,13 @@
     <dependencies>
         <dependency>
             <groupId>info.xiaomo</groupId>
-            <artifactId>game-protocol</artifactId>
+            <artifactId>g-engine</artifactId>
 
         </dependency>
         <dependency>
             <groupId>info.xiaomo</groupId>
-            <artifactId>g-engine</artifactId>
-
+            <artifactId>game-shared</artifactId>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

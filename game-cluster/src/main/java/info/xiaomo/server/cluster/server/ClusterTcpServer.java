@@ -1,16 +1,16 @@
 package info.xiaomo.server.cluster.server;
 
-import info.xiaomo.gengine.common.utils.IntUtil;
-import info.xiaomo.gengine.common.utils.MsgUtil;
 import info.xiaomo.gengine.network.mina.TcpServer;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.network.mina.handler.DefaultProtocolHandler;
-import info.xiaomo.gengine.server.GameService;
-import info.xiaomo.gengine.server.ServerInfo;
+import info.xiaomo.gengine.network.server.GameService;
+import info.xiaomo.gengine.network.server.ServerInfo;
 import info.xiaomo.gengine.thread.ServerThread;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.thread.ThreadType;
 import info.xiaomo.gengine.thread.timer.event.ServerHeartTimer;
+import info.xiaomo.gengine.utils.IntUtil;
+import info.xiaomo.gengine.utils.MsgUtil;
 import info.xiaomo.server.cluster.manager.ServerManager;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
@@ -69,7 +69,7 @@ public class ClusterTcpServer extends GameService<MinaServerConfig> {
    * 消息处理器
    *
    *
-   * @date 2017-03-31
+   * 2017-03-31
    */
   public class ClusterTcpServerHandler extends DefaultProtocolHandler {
     private final GameService<MinaServerConfig> service;

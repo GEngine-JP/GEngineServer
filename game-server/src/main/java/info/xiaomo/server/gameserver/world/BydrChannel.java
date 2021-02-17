@@ -3,8 +3,8 @@ package info.xiaomo.server.gameserver.world;
 /**
  * 捕鱼达人监听通道
  * 
- * @author JiangZhiYong
- * @QQ 359135103 2017年7月10日 下午2:40:49
+ *
+ *  2017年7月10日 下午2:40:49
  */
 public enum BydrChannel {
 	/** 登录大厅 */

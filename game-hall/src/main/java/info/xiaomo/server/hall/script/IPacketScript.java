@@ -3,8 +3,8 @@ package info.xiaomo.server.hall.script;
 import java.util.function.Consumer;
 import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.script.IScript;
-import info.xiaomo.server.gameserver.entity.Item;
-import info.xiaomo.server.gameserver.entity.Role;
+import info.xiaomo.server.shared.entity.Item;
+import info.xiaomo.server.shared.entity.UserRole;
 
 /**
  * 道具
@@ -22,7 +22,7 @@ public interface IPacketScript extends IScript {
 	 * @param num          数量
 	 * @param itemConsumer
 	 */
-	default void useItem(Role role, long id, int num, GlobalReason reason, Consumer<Item> itemConsumer) {
+	default void useItem(UserRole userRole, long id, int num, GlobalReason reason, Consumer<Item> itemConsumer) {
 	}
 
 	/**
@@ -36,7 +36,7 @@ public interface IPacketScript extends IScript {
 	 * @param itemConsumer
 	 */
 	default Item addItem(
-			Role role, int configId, int num, GlobalReason reason, Consumer<Item> itemConsumer) {
+            UserRole userRole, int configId, int num, GlobalReason reason, Consumer<Item> itemConsumer) {
 		return null;
 	}
 }

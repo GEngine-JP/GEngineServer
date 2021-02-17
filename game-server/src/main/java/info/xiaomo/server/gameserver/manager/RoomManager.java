@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import info.xiaomo.gengine.script.ScriptManager;
-import info.xiaomo.server.gameserver.protocol.BydrRoomMessage;
 import info.xiaomo.server.gameserver.script.IRoomScript;
-import info.xiaomo.server.gameserver.struct.room.Room;
-import info.xiaomo.server.gameserver.struct.Fish;
-import info.xiaomo.server.gameserver.struct.role.Role;
-import info.xiaomo.server.gameserver.struct.room.ClassicsRoom;
+import info.xiaomo.server.shared.entity.UserRole;
+import info.xiaomo.server.shared.entity.room.Room;
+import info.xiaomo.server.shared.entity.Fish;
+import info.xiaomo.server.shared.protocol.gameserver.room.*;
+import info.xiaomo.server.shared.entity.room.ClassicsRoom;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +24,7 @@ public class RoomManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RoomManager.class);
 	private static volatile RoomManager roomManager;
 	private final Map<Long, Room> rooms = new ConcurrentHashMap<Long, Room>();
-	private final Map<BydrRoomMessage.RoomType, List<Room>> roomTypes = new ConcurrentHashMap<>();
+	private final Map<RoomType, List<Room>> roomTypes = new ConcurrentHashMap<>();
 
 	private RoomManager() {
 
@@ -50,7 +50,7 @@ public class RoomManager {
 	 *
 	 * Role> 2017年9月14日 下午2:32:40
 	 */
-	public void enterRoom(Role role, BydrRoomMessage.RoomType roomType, int rank) {
+	public void enterRoom(UserRole role, RoomType roomType, int rank) {
 		ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IRoomScript.class,
 				script -> script.enterRoom(role, roomType, rank));
 	}
@@ -63,19 +63,19 @@ public class RoomManager {
 	 *
 	 * Role> 2017年9月26日 下午4:08:55
 	 */
-	public void quitRoom(Role role, long roomId) {
+	public void quitRoom(UserRole role, long roomId) {
 		Room room = getRoom(roomId);
 		if (room == null) {
 			return;
 		}
 		Thread currentThread = Thread.currentThread();
-		if (currentThread.equals(room.getRoomThread())) {
-			ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IRoomScript.class,
-					script -> script.quitRoom(role, room));
-		} else {
-			room.getRoomThread().execute(() -> ScriptManager.getInstance().getBaseScriptEntry()
-					.executeScripts(IRoomScript.class, script -> script.quitRoom(role, room)));
-		}
+//		if (currentThread.equals(room.getRoomThread())) {
+//			ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IRoomScript.class,
+//					script -> script.quitRoom(role, room));
+//		} else {
+//			room.getRoomThread().execute(() -> ScriptManager.getInstance().getBaseScriptEntry()
+//					.executeScripts(IRoomScript.class, script -> script.quitRoom(role, room)));
+//		}
 
 	}
 
@@ -89,10 +89,10 @@ public class RoomManager {
 	public void addRoom(Room room) {
 		rooms.put(room.getId(), room);
 		if (room instanceof ClassicsRoom) {
-			if (!roomTypes.containsKey(BydrRoomMessage.RoomType.CLASSICS)) {
-				roomTypes.put(BydrRoomMessage.RoomType.CLASSICS, new ArrayList<Room>());
+			if (!roomTypes.containsKey(RoomType.CLASSICS)) {
+				roomTypes.put(RoomType.CLASSICS, new ArrayList<Room>());
 			}
-			roomTypes.get(BydrRoomMessage.RoomType.CLASSICS).add(room);
+			roomTypes.get(RoomType.CLASSICS).add(room);
 		}
 	}
 
@@ -116,7 +116,7 @@ public class RoomManager {
 	 *
 	 * Role> 2017年9月14日 下午3:11:11
 	 */
-	public List<Room> getRooms(BydrRoomMessage.RoomType roomType) {
+	public List<Room> getRooms(RoomType roomType) {
 		if (roomTypes.containsKey(roomType)) {
 			return roomTypes.get(roomType);
 		}
@@ -137,13 +137,13 @@ public class RoomManager {
 		if (fishs == null) {
 			return;
 		}
-		BydrRoomMessage.FishEnterRoomResponse.Builder builder = BydrRoomMessage.FishEnterRoomResponse.newBuilder();
-		BydrRoomMessage.FishInfo.Builder fishInfo = BydrRoomMessage.FishInfo.newBuilder();
+		FishEnterRoomResponse.Builder builder = FishEnterRoomResponse.newBuilder();
+		FishInfo.Builder fishInfo = FishInfo.newBuilder();
 		for (Fish fish : fishs) {
 			builder.addFishInfo(buildFishInfo(fishInfo, fish));
 		}
 
-		BydrRoomMessage.FishEnterRoomResponse response = builder.build();
+		FishEnterRoomResponse response = builder.build();
 		room.getRoles().values().forEach(r -> {
 			r.sendMsg(response);
 		});
@@ -157,7 +157,7 @@ public class RoomManager {
 	 * @param fish    单个鱼
 	 * @return
 	 */
-	private BydrRoomMessage.FishInfo buildFishInfo(BydrRoomMessage.FishInfo.Builder builder, Fish fish) {
+	private FishInfo buildFishInfo(FishInfo.Builder builder, Fish fish) {
 		builder.clear();
 		builder.addId(fish.getId());
 		builder.addConfigId(fish.getConfigId());
@@ -180,8 +180,8 @@ public class RoomManager {
 	 *
 	 * Role> 2017年9月25日 下午5:59:28
 	 */
-	public BydrRoomMessage.RoomRoleInfo buildRoomRoleInfo(Role role) {
-		BydrRoomMessage.RoomRoleInfo.Builder builder = BydrRoomMessage.RoomRoleInfo.newBuilder();
+	public RoomRoleInfo buildRoomRoleInfo(UserRole role) {
+		RoomRoleInfo.Builder builder = RoomRoleInfo.newBuilder();
 		builder.setDiamond(role.getGem());
 		builder.setGold(role.getGold());
 		builder.setIcon(role.getHead() == null ? "" : role.getHead());
@@ -201,8 +201,8 @@ public class RoomManager {
 	 * Role>
 	 * 2017年10月20日 上午10:51:45
 	 */
-	public BydrRoomMessage.RoomInfo buildRoomInfo(Room room) {
-		BydrRoomMessage.RoomInfo.Builder builder = BydrRoomMessage.RoomInfo.newBuilder();
+	public RoomInfo buildRoomInfo(Room room) {
+		RoomInfo.Builder builder = RoomInfo.newBuilder();
 		builder.setId(room.getId());
 		builder.setType(room.getType());
 		builder.setState(room.getState());

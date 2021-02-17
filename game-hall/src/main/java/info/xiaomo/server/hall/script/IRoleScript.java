@@ -3,20 +3,20 @@ package info.xiaomo.server.hall.script;
 import java.util.function.Consumer;
 import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.script.IScript;
-import info.xiaomo.server.gameserver.entity.Role;
+import info.xiaomo.server.shared.entity.UserRole;
 
 
 /**
  * 玩家脚本
  *
- * @date 2017-03-30
+ * 2017-03-30
  */
 public interface IRoleScript extends IScript {
 
 	/**
 	 * 登录游戏
 	 */
-	public default void login(Role role, GlobalReason reason) {
+	public default void login(UserRole userRole, GlobalReason reason) {
 
 	}
 
@@ -26,7 +26,7 @@ public interface IRoleScript extends IScript {
 	 * @param userId
 	 * @return
 	 */
-	public default Role createRole(long userId, Consumer<Role> roleConsumer) {
+	public default UserRole createRole(long userId, Consumer<UserRole> roleConsumer) {
 
 		return null;
 	}
@@ -37,9 +37,9 @@ public interface IRoleScript extends IScript {
 	 * <p>
 	 * 2017年9月18日 下午6:01:08
 	 *
-	 * @param role
+	 * @param userRole
 	 */
-	default void quit(Role role, GlobalReason reason) {
+	default void quit(UserRole userRole, GlobalReason reason) {
 
 	}
 

@@ -2,7 +2,7 @@ package info.xiaomo.server.gameserver.dao;
 
 import java.util.List;
 import info.xiaomo.gengine.persist.mongo.AbsMongoManager;
-import info.xiaomo.server.gameserver.entity.CFish;
+import info.xiaomo.server.shared.entity.CFish;
 import org.mongodb.morphia.dao.BasicDAO;
 
 /**

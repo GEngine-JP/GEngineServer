@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>game-protocol</artifactId>
+    <artifactId>game-shared</artifactId>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -21,7 +21,6 @@
         <dependency>
             <groupId>info.xiaomo</groupId>
             <artifactId>g-engine</artifactId>
-
         </dependency>
     </dependencies>
 

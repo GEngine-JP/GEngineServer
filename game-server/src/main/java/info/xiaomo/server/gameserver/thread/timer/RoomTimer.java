@@ -8,7 +8,7 @@ import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.script.ScriptPool;
 import info.xiaomo.gengine.thread.timer.TimerEvent;
 import info.xiaomo.server.gameserver.script.IRoomScript;
-import info.xiaomo.server.gameserver.struct.room.Room;
+import info.xiaomo.server.shared.entity.room.Room;
 import info.xiaomo.server.gameserver.thread.RoomThread;
 import info.xiaomo.server.gameserver.script.IFishScript;
 
@@ -16,7 +16,7 @@ import info.xiaomo.server.gameserver.script.IFishScript;
  * 房间定时器
  * 
  *
- * @date 2017-04-25
+ * 2017-04-25
  */
 public class RoomTimer extends TimerEvent {
 

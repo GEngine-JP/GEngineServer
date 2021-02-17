@@ -4,13 +4,13 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import info.xiaomo.server.gameserver.manager.ConfigManager;
-import info.xiaomo.server.gameserver.struct.Team;
+import info.xiaomo.server.shared.entity.Team;
 
 /**
  * 组队管理
  *
- * @author JiangZhiYong
- * @QQ 359135103 2017年8月3日 上午11:42:22
+ *
+ *  2017年8月3日 上午11:42:22
  */
 public class TeamManager {
 	private static volatile TeamManager teamManager;

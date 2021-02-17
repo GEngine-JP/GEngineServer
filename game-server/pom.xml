@@ -38,8 +38,8 @@
         </dependency>
         <dependency>
             <groupId>info.xiaomo</groupId>
-            <artifactId>game-protocol</artifactId>
-
+            <artifactId>game-shared</artifactId>
+            <version>3.1.4</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

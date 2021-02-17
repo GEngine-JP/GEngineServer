@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 大厅tcp消息处理器
  *
- * @date 2017-04-09
+ * 2017-04-09
  */
 public class GateTcpUserServerHandler extends ClientProtocolHandler {
   private static final Logger LOGGER = LoggerFactory.getLogger(GateTcpUserServerHandler.class);

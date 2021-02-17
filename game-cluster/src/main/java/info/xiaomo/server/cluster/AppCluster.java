@@ -2,11 +2,11 @@ package info.xiaomo.server.cluster;
 
 import java.io.File;
 import java.util.Objects;
-import info.xiaomo.gengine.common.utils.FileUtil;
-import info.xiaomo.gengine.common.utils.SysUtil;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.persist.redis.jedis.JedisClusterConfig;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
+import info.xiaomo.gengine.utils.FileUtil;
+import info.xiaomo.gengine.utils.SysUtil;
 import info.xiaomo.server.cluster.server.ClusterServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  * <p>服务器注册管理中心 <br>
  * 是否可用zookeeper替换
  *
- * @date 2017-03-31
+ * 2017-03-31
  */
 public class AppCluster {
   private static final Logger log = LoggerFactory.getLogger(AppCluster.class);

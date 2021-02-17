@@ -5,12 +5,13 @@ import info.xiaomo.gengine.mq.MQConsumer;
 import info.xiaomo.gengine.network.mina.config.MinaClientConfig;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.network.server.ServerState;
-import info.xiaomo.gengine.persist.redis.channel.HallChannel;
 import info.xiaomo.gengine.persist.redis.jedis.JedisPubListener;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.utils.FileUtil;
-import info.xiaomo.server.gameserver.protocol.ServerMessage;
 import info.xiaomo.server.hall.AppHall;
+import info.xiaomo.server.hall.HallChannel;
+import info.xiaomo.server.shared.protocol.server.GameServerInfo;
+import info.xiaomo.server.shared.protocol.server.ServerRegisterRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -121,11 +122,11 @@ public class HallServer implements Runnable {
    *
    * @return
    */
-  public ServerMessage.ServerRegisterRequest buildServerRegisterRequest(
+  public ServerRegisterRequest buildServerRegisterRequest(
       MinaClientConfig minaClientConfig) {
-    ServerMessage.ServerRegisterRequest.Builder builder =
-        ServerMessage.ServerRegisterRequest.newBuilder();
-    ServerMessage.ServerInfo.Builder info = ServerMessage.ServerInfo.newBuilder();
+    ServerRegisterRequest.Builder builder =
+        ServerRegisterRequest.newBuilder();
+    GameServerInfo.Builder info = GameServerInfo.newBuilder();
     info.setId(minaClientConfig.getId());
     info.setIp("");
     info.setMaxUserCount(1000);
@@ -133,7 +134,7 @@ public class HallServer implements Runnable {
     info.setName(minaClientConfig.getName());
     info.setState(ServerState.NORMAL.getState());
     info.setType(minaClientConfig.getType().getType());
-    info.setWwwip("");
+    info.setWwwIp("");
     builder.setServerInfo(info);
     return builder.build();
   }
