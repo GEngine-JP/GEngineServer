@@ -1,8 +1,8 @@
 package info.xiaomo.server.gate.manager;
 
-import info.xiaomo.gengine.server.ServerInfo;
-import info.xiaomo.gengine.server.ServerState;
-import info.xiaomo.gengine.server.ServerType;
+import info.xiaomo.gengine.network.server.ServerInfo;
+import info.xiaomo.gengine.network.server.ServerState;
+import info.xiaomo.gengine.network.server.ServerType;
 import info.xiaomo.server.gate.struct.UserSession;
 import info.xiaomo.server.protocol.ServerMessage;
 import info.xiaomo.server.protocol.system.SystemMessage.SystemErroCode;
@@ -66,7 +66,7 @@ public class ServerManager {
 																					// 大厅服需要更新
 			return;
 		}
-		ServerType serverType = ServerType.valueof(info.getType());
+		ServerType serverType = ServerType.valueOf(info.getType());
 		ServerInfo server = getGameServerInfo(serverType, info.getId());
 		if (server == null) {
 			server = new ServerInfo();

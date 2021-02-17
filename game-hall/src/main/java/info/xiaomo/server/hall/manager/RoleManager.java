@@ -5,14 +5,14 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
-import info.xiaomo.gengine.common.bean.Reason;
-import info.xiaomo.gengine.common.struct.Role;
-import info.xiaomo.gengine.common.utils.JsonUtil;
+import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.persist.redis.channel.HallChannel;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
 import info.xiaomo.gengine.persist.redis.jedis.JedisPubSubMessage;
 import info.xiaomo.gengine.persist.redis.key.HallKey;
 import info.xiaomo.gengine.script.ScriptManager;
+import info.xiaomo.gengine.utils.JsonUtil;
+import info.xiaomo.server.hall.entity.Role;
 import info.xiaomo.server.hall.script.IRoleScript;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,7 +66,7 @@ public class RoleManager {
     Role role = roles.get(id);
     Map<String, String> hgetAll = JedisManager.getJedisCluster().hgetAll(role.getRoleRedisKey());
     // 从redis读取最新数据
-    if (hgetAll != null && role != null) {
+    if (hgetAll != null) {
       JsonUtil.map2Object(hgetAll, role);
     }
     return role;
@@ -79,7 +79,7 @@ public class RoleManager {
    *
    * @param role
    */
-  public void login(Role role, Reason reason) {
+  public void login(Role role, GlobalReason reason) {
     ScriptManager.getInstance()
         .getBaseScriptEntry()
         .executeScripts(IRoleScript.class, script -> script.login(role, reason));
@@ -93,7 +93,7 @@ public class RoleManager {
    * @param rid
    * @param reason
    */
-  public void quit(long rid, Reason reason) {
+  public void quit(long rid, GlobalReason reason) {
     quit(getRole(rid), reason);
   }
 
@@ -105,7 +105,7 @@ public class RoleManager {
    * @param role
    * @param reason
    */
-  public void quit(Role role, Reason reason) {
+  public void quit(Role role, GlobalReason reason) {
     ScriptManager.getInstance()
         .getBaseScriptEntry()
         .executeScripts(IRoleScript.class, script -> script.quit(role, reason));

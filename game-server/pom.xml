@@ -6,6 +6,7 @@
         <artifactId>g-engine-server</artifactId>
         <groupId>info.xiaomo</groupId>
         <version>3.1.4</version>
+
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,7 +17,7 @@
         <dependency>
             <groupId>info.xiaomo</groupId>
             <artifactId>g-engine</artifactId>
-            <version>3.1.4</version>
+
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -34,6 +35,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>info.xiaomo</groupId>
+            <artifactId>game-protocol</artifactId>
+
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

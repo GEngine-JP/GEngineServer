@@ -3,7 +3,7 @@ package info.xiaomo.server.gate.manager;
 import com.google.protobuf.Message;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import info.xiaomo.gengine.common.bean.Reason;
+import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.server.gate.script.IUserScript;
 import info.xiaomo.server.gate.struct.UserSession;
@@ -88,7 +88,7 @@ public class UserSessionManager {
 		return allSessions.get(sessionId);
 	}
 
-	public void quit(UserSession userSession, Reason reason) {
+	public void quit(UserSession userSession, GlobalReason reason) {
 		allSessions.remove(userSession.getClientSession().getId());
 		userSessions.remove(userSession.getUserId());
 		roleSessions.remove(userSession.getRoleId());
@@ -125,7 +125,7 @@ public class UserSessionManager {
 	public void onShutdown() {
 		//踢出玩家
 		for(UserSession userSession:allSessions.values()) {
-			ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IUserScript.class, script->script.quit(userSession.getClientSession(), Reason.ServerClose));
+			ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IUserScript.class, script->script.quit(userSession.getClientSession(), GlobalReason.ServerClose));
 		}
 	}
 	

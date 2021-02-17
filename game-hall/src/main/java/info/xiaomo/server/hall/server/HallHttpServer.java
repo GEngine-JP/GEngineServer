@@ -1,6 +1,6 @@
 package info.xiaomo.server.hall.server;
 
-import info.xiaomo.gengine.common.handler.*;
+import info.xiaomo.gengine.network.handler.*;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.network.mina.service.GameHttpSevice;
 import info.xiaomo.gengine.script.ScriptManager;
@@ -12,18 +12,18 @@ import info.xiaomo.gengine.script.ScriptManager;
  */
 public class HallHttpServer extends GameHttpSevice {
 
-  public HallHttpServer(MinaServerConfig minaServerConfig) {
-    super(minaServerConfig);
-  }
+	public HallHttpServer(MinaServerConfig minaServerConfig) {
+		super(minaServerConfig);
+	}
 
-  @Override
-  protected void running() {
-    super.running();
-    ScriptManager.getInstance().addIHandler(ReloadScriptHandler.class);
-    ScriptManager.getInstance().addIHandler(ExitServerHandler.class);
-    ScriptManager.getInstance().addIHandler(ReloadConfigHandler.class);
-    ScriptManager.getInstance().addIHandler(JvmInfoHandler.class);
-    ScriptManager.getInstance().addIHandler(GetFaviconHandler.class);
-    ScriptManager.getInstance().addIHandler(ThreadInfoHandler.class);
-  }
+	@Override
+	protected void running() {
+		super.running();
+		ScriptManager.getInstance().addIHandler(ReloadScriptHandler.class);
+		ScriptManager.getInstance().addIHandler(CloseServerHandler.class);
+		ScriptManager.getInstance().addIHandler(ReloadConfigHandler.class);
+		ScriptManager.getInstance().addIHandler(JvmInfoHandler.class);
+		ScriptManager.getInstance().addIHandler(GetFaviconHandler.class);
+		ScriptManager.getInstance().addIHandler(ThreadInfoHandler.class);
+	}
 }

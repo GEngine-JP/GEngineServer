@@ -1,6 +1,6 @@
 package info.xiaomo.server.gate.server;
 
-import info.xiaomo.gengine.common.handler.*;
+import info.xiaomo.gengine.network.handler.*;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.network.mina.service.GameHttpSevice;
 import info.xiaomo.gengine.script.ScriptManager;
@@ -12,19 +12,19 @@ import info.xiaomo.gengine.script.ScriptManager;
  */
 public class GateHttpServer extends GameHttpSevice {
 
-  public GateHttpServer(MinaServerConfig minaServerConfig) {
-    super(minaServerConfig);
-  }
+	public GateHttpServer(MinaServerConfig minaServerConfig) {
+		super(minaServerConfig);
+	}
 
-  @Override
-  protected void running() {
-    super.running();
-    // 添加关服、脚本加载 等公用 handler
-    ScriptManager.getInstance().addIHandler(ReloadScriptHandler.class);
-    ScriptManager.getInstance().addIHandler(ExitServerHandler.class);
-    ScriptManager.getInstance().addIHandler(ReloadConfigHandler.class);
-    ScriptManager.getInstance().addIHandler(JvmInfoHandler.class);
-    ScriptManager.getInstance().addIHandler(GetFaviconHandler.class);
-    ScriptManager.getInstance().addIHandler(ThreadInfoHandler.class);
-  }
+	@Override
+	protected void running() {
+		super.running();
+		// 添加关服、脚本加载 等公用 handler
+		ScriptManager.getInstance().addIHandler(ReloadScriptHandler.class);
+		ScriptManager.getInstance().addIHandler(CloseServerHandler.class);
+		ScriptManager.getInstance().addIHandler(ReloadConfigHandler.class);
+		ScriptManager.getInstance().addIHandler(JvmInfoHandler.class);
+		ScriptManager.getInstance().addIHandler(GetFaviconHandler.class);
+		ScriptManager.getInstance().addIHandler(ThreadInfoHandler.class);
+	}
 }

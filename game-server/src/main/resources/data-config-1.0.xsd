@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns="info/xiaomo/config/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="info/xiaomo/config/schema" elementFormDefault="qualified">
+    <xs:element name="configData">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="configs" type="configs">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <![CDATA[
+                                所有的配置相关信息
+                            ]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="caches" type="caches" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <![CDATA[
+                                缓存的相关信息
+                            ]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="configs">
+        <xs:sequence>
+            <xs:element name="config" type="config" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[
+                            单个配置标签
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="caches">
+        <xs:sequence>
+            <xs:element name="cache" type="cache" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[
+                            缓存配置
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="config">
+        <xs:sequence>
+            <xs:element name="field" type="field" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[
+                            定义字段相关信息
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="configAttribute"/>
+    </xs:complexType>
+    <xs:complexType name="field">
+        <xs:sequence>
+            <xs:element name="converter" type="converter" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[
+                            类型转换器, 定一个如何将一个其他类型的字段转为当前字段类型
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        属性字段名称
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="columnName" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        对应的配置文件字段名称 如果不设置则使用属性字段名称
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="notNull" type="xs:boolean" default="false">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        该字段的配置是否必须有值
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="converters" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        类型转换器组, 定一个如何将一个其他类型的字段转为当前字段类型 如果有converter标签 则覆盖该属性标签 多个转换器由逗号隔开
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:attributeGroup name="configAttribute">
+        <xs:attribute name="class" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        类完整名称
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        配置文件名称 缺省状态下则为类的简短名称
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="primaryKeys" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        主键字段 与配置类的属性名对应 多个字段由逗号隔开
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="index" type="xs:nonNegativeInteger" default="0">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        对应sheet页索引
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="header" type="xs:nonNegativeInteger" default="0">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        表头所在行数
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ignoreRow" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
+                        忽略的行
+                    ]]>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="desc" type="xs:string"/>
+    </xs:attributeGroup>
+    <xs:complexType name="converter">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="class" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <![CDATA[
+                                类完整名称
+                            ]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="desc" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="cache">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="class" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <![CDATA[
+                                类完整名称
+                            ]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="desc" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

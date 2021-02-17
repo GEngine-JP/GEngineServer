@@ -1,13 +1,13 @@
 package info.xiaomo.server.gate.server.handler;
 
-import info.xiaomo.gengine.common.bean.Config;
-import info.xiaomo.gengine.common.bean.Reason;
-import info.xiaomo.gengine.common.utils.MsgUtil;
+import info.xiaomo.gengine.bean.Config;
+import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.network.mina.handler.DefaultProtocolHandler;
+import info.xiaomo.gengine.network.server.BaseServerConfig;
+import info.xiaomo.gengine.network.server.GameService;
 import info.xiaomo.gengine.script.ScriptManager;
-import info.xiaomo.gengine.server.BaseServerConfig;
-import info.xiaomo.gengine.server.GameService;
+import info.xiaomo.gengine.utils.MsgUtil;
 import info.xiaomo.server.gate.script.IUserScript;
 import info.xiaomo.server.gate.struct.UserSession;
 import org.apache.mina.core.session.IdleStatus;
@@ -100,7 +100,7 @@ public class GateWebSocketUserServerHandler extends DefaultProtocolHandler {
     LOGGER.debug("{}关闭连接", MsgUtil.getIp(session));
     ScriptManager.getInstance()
         .getBaseScriptEntry()
-        .executeScripts(IUserScript.class, script -> script.quit(session, Reason.SessionClosed));
+        .executeScripts(IUserScript.class, script -> script.quit(session, GlobalReason.SessionClosed));
   }
 
   @Override
@@ -108,7 +108,7 @@ public class GateWebSocketUserServerHandler extends DefaultProtocolHandler {
     super.sessionIdle(session, idleStatus);
     ScriptManager.getInstance()
         .getBaseScriptEntry()
-        .executeScripts(IUserScript.class, script -> script.quit(session, Reason.SessionIdle));
+        .executeScripts(IUserScript.class, script -> script.quit(session, GlobalReason.SessionIdle));
   }
 
   @Override

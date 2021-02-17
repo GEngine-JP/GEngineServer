@@ -1,13 +1,13 @@
 package info.xiaomo.server.hall.server;
 
-import info.xiaomo.gengine.common.bean.NetPort;
+import info.xiaomo.gengine.bean.NetPort;
 import info.xiaomo.gengine.network.mina.config.MinaClientConfig;
 import info.xiaomo.gengine.network.mina.message.IDMessage;
 import info.xiaomo.gengine.network.mina.service.MinaClientGameService;
 import info.xiaomo.gengine.network.mina.service.MutilMinaTcpClientGameService;
+import info.xiaomo.gengine.network.server.ServerInfo;
+import info.xiaomo.gengine.network.server.ServerState;
 import info.xiaomo.gengine.script.ScriptManager;
-import info.xiaomo.gengine.server.ServerInfo;
-import info.xiaomo.gengine.server.ServerState;
 import info.xiaomo.gengine.thread.ServerThread;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.thread.ThreadType;

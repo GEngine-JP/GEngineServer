@@ -1,10 +1,10 @@
 package info.xiaomo.server.hall.script;
 
 import java.util.function.Consumer;
-import info.xiaomo.gengine.common.bean.Reason;
-import info.xiaomo.gengine.common.struct.GameItem;
-import info.xiaomo.gengine.common.struct.Role;
+import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.script.IScript;
+import info.xiaomo.server.hall.entity.Item;
+import info.xiaomo.server.hall.entity.Role;
 
 /**
  * 道具
@@ -13,29 +13,30 @@ import info.xiaomo.gengine.script.IScript;
  */
 public interface IPacketScript extends IScript {
 
-  /**
-   * 使用道具
-   *
-   * <p>2017年9月18日 下午4:20:16
-   *
-   * @param id 道具Id
-   * @param num 数量
-   * @param itemConsumer
-   */
-  default void useItem(Role role, long id, int num, Reason reason, Consumer<GameItem> itemConsumer) {}
+	/**
+	 * 使用道具
+	 *
+	 * <p>2017年9月18日 下午4:20:16
+	 *
+	 * @param id           道具Id
+	 * @param num          数量
+	 * @param itemConsumer
+	 */
+	default void useItem(Role role, long id, int num, GlobalReason reason, Consumer<Item> itemConsumer) {
+	}
 
-  /**
-   * 添加道具
-   *
-   * <p>2017年9月18日 下午4:23:47
-   *
-   * @param configId
-   * @param num 数量
-   * @param reason
-   * @param itemConsumer
-   */
-  default GameItem addItem(
-      Role role, int configId, int num, Reason reason, Consumer<GameItem> itemConsumer) {
-    return null;
-  }
+	/**
+	 * 添加道具
+	 *
+	 * <p>2017年9月18日 下午4:23:47
+	 *
+	 * @param configId
+	 * @param num          数量
+	 * @param reason
+	 * @param itemConsumer
+	 */
+	default Item addItem(
+			Role role, int configId, int num, GlobalReason reason, Consumer<Item> itemConsumer) {
+		return null;
+	}
 }

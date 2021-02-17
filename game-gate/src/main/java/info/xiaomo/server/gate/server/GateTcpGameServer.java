@@ -2,7 +2,7 @@ package info.xiaomo.server.gate.server;
 
 import info.xiaomo.gengine.network.mina.TcpServer;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
-import info.xiaomo.gengine.server.GameService;
+import info.xiaomo.gengine.network.server.GameService;
 import info.xiaomo.server.gate.server.handler.GateTcpGameServerHandler;
 
 /**

@@ -1,23 +1,22 @@
 package info.xiaomo.server.hall.manager;
 
 import java.util.function.Consumer;
-
-import info.xiaomo.gengine.common.struct.Mail;
 import info.xiaomo.gengine.persist.mongo.dao.MailDao;
 import info.xiaomo.gengine.script.ScriptManager;
+import info.xiaomo.server.hall.entity.Mail;
 import info.xiaomo.server.hall.script.IMailScript;
+import info.xiaomo.server.protocol.hall.HallChatMessage.MailInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import info.xiaomo.server.protocol.hall.HallChatMessage.MailInfo;
 
 /**
  * 邮件
  * <p>
  * 个人邮件单独存储，系统通用邮件只存一封,直接操作mongodb，不缓存
  * </p>
- * 
- *
- *  2017年9月21日 下午3:25:17
+ * <p>
+ * <p>
+ * 2017年9月21日 下午3:25:17
  */
 public class MailManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MailManager.class);
@@ -39,14 +38,15 @@ public class MailManager {
 	}
 
 	public Mail getMail(long mailId) {
-		return MailDao.getMail(mailId);
+		return (Mail) MailDao.getMail(mailId);
 	}
 
 	/**
 	 * 发送邮件
-	 * 
+	 * <p>
+	 * <p>
+	 * 2017年9月21日 下午4:26:31
 	 *
-	 *  2017年9月21日 下午4:26:31
 	 * @param title
 	 * @param content
 	 * @param type
@@ -54,14 +54,15 @@ public class MailManager {
 	 */
 	public void sendMail(long senderId, long receiverId, String title, String content, Mail.MailType type, Consumer<Mail> mailConsumer) {
 		ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IMailScript.class,
-				script -> script.sendMail(senderId,receiverId,title, content, type, mailConsumer));
+				script -> script.sendMail(senderId, receiverId, title, content, type, mailConsumer));
 	}
 
 	/**
 	 * 构建邮箱信息
-	 * 
+	 * <p>
+	 * <p>
+	 * 2017年9月21日 下午5:45:09
 	 *
-	 *  2017年9月21日 下午5:45:09
 	 * @param mail
 	 * @return
 	 */

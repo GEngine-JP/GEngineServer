@@ -6,6 +6,7 @@
         <artifactId>g-engine-server</artifactId>
         <groupId>info.xiaomo</groupId>
         <version>3.1.4</version>
+
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,7 +21,7 @@
         <dependency>
             <groupId>info.xiaomo</groupId>
             <artifactId>g-engine</artifactId>
-            <version>3.1.4</version>
+
         </dependency>
     </dependencies>
 

@@ -80,7 +80,7 @@ public class ServerManager {
 	 * 获取服务器
 	 * 
 	 *
-	 * @QQ 359135103 2017年7月13日 下午3:57:14
+	 * Role> 2017年7月13日 下午3:57:14
 	 * @param serverType
 	 * @param serverId
 	 * @return

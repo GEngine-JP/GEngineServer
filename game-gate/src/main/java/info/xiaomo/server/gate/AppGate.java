@@ -1,10 +1,10 @@
 package info.xiaomo.server.gate;
 
 import java.io.File;
-import info.xiaomo.gengine.common.utils.FileUtil;
 import info.xiaomo.gengine.persist.redis.jedis.JedisClusterConfig;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
 import info.xiaomo.gengine.script.ScriptManager;
+import info.xiaomo.gengine.utils.FileUtil;
 import info.xiaomo.server.gate.manager.MongoManager;
 import info.xiaomo.server.gate.server.GateServer;
 import org.slf4j.Logger;
@@ -27,7 +27,7 @@ public final class AppGate {
     JedisClusterConfig jedisClusterConfig =
         FileUtil.getConfigXML(configPath, "jedisClusterConfig.xml", JedisClusterConfig.class);
     if (jedisClusterConfig == null) {
-      LOGGER.error("redis配置{}未找到", configPath);
+      LOGGER.error("redis配置 [{}] 未找到", configPath);
       System.exit(1);
     }
     redisManager = new JedisManager(jedisClusterConfig);

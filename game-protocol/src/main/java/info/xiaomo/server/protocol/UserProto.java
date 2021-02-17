@@ -10848,12 +10848,12 @@ public final class UserProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.user.GoingDownReason reason = 1;</code>
+     * <code>.user.GoingDownGlobalReason reason = 1;</code>
      * @return The enum numeric value on the wire for reason.
      */
     int getReasonValue();
     /**
-     * <code>.user.GoingDownReason reason = 1;</code>
+     * <code>.user.GoingDownGlobalReason reason = 1;</code>
      * @return The reason.
      */
     GoingDownReason getReason();
@@ -10945,14 +10945,14 @@ public final class UserProto {
     public static final int REASON_FIELD_NUMBER = 1;
     private int reason_;
     /**
-     * <code>.user.GoingDownReason reason = 1;</code>
+     * <code>.user.GoingDownGlobalReason reason = 1;</code>
      * @return The enum numeric value on the wire for reason.
      */
     @Override public int getReasonValue() {
       return reason_;
     }
     /**
-     * <code>.user.GoingDownReason reason = 1;</code>
+     * <code>.user.GoingDownGlobalReason reason = 1;</code>
      * @return The reason.
      */
     @Override public GoingDownReason getReason() {
@@ -11264,14 +11264,14 @@ public final class UserProto {
 
       private int reason_ = 0;
       /**
-       * <code>.user.GoingDownReason reason = 1;</code>
+       * <code>.user.GoingDownGlobalReason reason = 1;</code>
        * @return The enum numeric value on the wire for reason.
        */
       @Override public int getReasonValue() {
         return reason_;
       }
       /**
-       * <code>.user.GoingDownReason reason = 1;</code>
+       * <code>.user.GoingDownGlobalReason reason = 1;</code>
        * @param value The enum numeric value on the wire for reason to set.
        * @return This builder for chaining.
        */
@@ -11282,7 +11282,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>.user.GoingDownReason reason = 1;</code>
+       * <code>.user.GoingDownGlobalReason reason = 1;</code>
        * @return The reason.
        */
       @Override
@@ -11292,7 +11292,7 @@ public final class UserProto {
         return result == null ? GoingDownReason.UNRECOGNIZED : result;
       }
       /**
-       * <code>.user.GoingDownReason reason = 1;</code>
+       * <code>.user.GoingDownGlobalReason reason = 1;</code>
        * @param value The reason to set.
        * @return This builder for chaining.
        */
@@ -11306,7 +11306,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>.user.GoingDownReason reason = 1;</code>
+       * <code>.user.GoingDownGlobalReason reason = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearReason() {
