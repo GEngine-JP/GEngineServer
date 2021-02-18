@@ -9,22 +9,22 @@
     <packaging>pom</packaging>
     <version>${gameServer.version}</version>
     <modules>
-        <module>game-server</module>
         <module>game-log</module>
         <module>game-hall</module>
         <module>game-gateway</module>
         <module>game-shared</module>
         <module>game-cluster</module>
-        <module>game-server-script</module>
+        <module>game-server-fish</module>
+        <module>game-server-fish-script</module>
     </modules>
 
 
     <properties>
         <gameServer.version>3.1.4</gameServer.version>
+        <GEngine.version>3.2.1</GEngine.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <GEngine.version>3.2.0</GEngine.version>
         <netty.version>[4.1.42,)</netty.version>
         <apache-commons-codec.version>1.10</apache-commons-codec.version>
         <kryo.version>3.0.3</kryo.version>

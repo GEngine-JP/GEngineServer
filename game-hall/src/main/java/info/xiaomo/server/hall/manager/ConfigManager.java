@@ -3,7 +3,7 @@ package info.xiaomo.server.hall.manager;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import info.xiaomo.gengine.persist.mongo.bydr.entity.CFish;
+import info.xiaomo.server.shared.entity.CFish;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
