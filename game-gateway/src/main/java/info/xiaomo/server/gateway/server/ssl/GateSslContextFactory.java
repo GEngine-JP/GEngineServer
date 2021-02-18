@@ -129,11 +129,11 @@ public final class GateSslContextFactory {
 			}
 		}
 
-		// Set up key manager factory to use our key store
+		// Set up rediskey manager factory to use our rediskey store
 		KeyManagerFactory kmf = KeyManagerFactory.getInstance(KEY_MANAGER_FACTORY_ALGORITHM);
 		kmf.init(ks, GATE_PW);
 
-		// Initialize the SSLContext to work with our key managers.
+		// Initialize the SSLContext to work with our rediskey managers.
 		SSLContext sslContext = SSLContext.getInstance(PROTOCOL);
 		sslContext.init(kmf.getKeyManagers(), GateTrustManagerFactory.X509_MANAGERS, null);
 		return sslContext;
@@ -158,11 +158,11 @@ public final class GateSslContextFactory {
 			}
 		}
 
-		// Set up key manager factory to use our key store
+		// Set up rediskey manager factory to use our rediskey store
 		KeyManagerFactory kmf = KeyManagerFactory.getInstance(KEY_MANAGER_FACTORY_ALGORITHM);
 		kmf.init(ks, GATE_PW);
 
-		// Initialize the SSLContext to work with our key managers.
+		// Initialize the SSLContext to work with our rediskey managers.
 		SSLContext sslContext = SSLContext.getInstance(PROTOCOL);
 		sslContext.init(kmf.getKeyManagers(), GateTrustManagerFactory.X509_MANAGERS, null);
 		return sslContext;

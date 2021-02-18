@@ -1,0 +1,2 @@
+dbName: bydr_hall
+url: mongodb://127.0.0.1:27017/?replicaSet=rs_lztb

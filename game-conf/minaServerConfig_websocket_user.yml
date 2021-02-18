@@ -1,0 +1,16 @@
+minaServerConfig:
+  id: ${GATE.ID}
+  ip: ${GATE.HOST}
+  port: ${GATE.WEBSOCKET.PORT}
+  httpPort: ${GATE.GMAE.PORT}
+  type: GATE
+  name: 网关 ${GATE.ID}服
+  orderedThreadPoolExecutorSize: 50
+  receiveBufferSize: 1048576
+  sendBufferSize: 1048576
+  reuseAddress: true
+  tcpNoDelay: true
+  readerIdleTime: 600
+  writerIdleTime: 600
+  soLinger: 0
+  channel: jzy

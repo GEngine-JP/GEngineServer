@@ -323,7 +323,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.gameserver.fight.GunLeveUpResponse.class, info.xiaomo.server.shared.protocol.gameserver.fight.GunLeveUpResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.gameserver.fight.GunLeveUpResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.gameserver.fight.GunLeveUpResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

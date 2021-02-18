@@ -1,0 +1,11 @@
+minaServerConfig:
+  httpPort: ${GAME.HTTPPORT}
+  ip: ${GAME.HOST}
+  orderedThreadPoolExecutorSize: 5
+  receiveBufferSize: 204800
+  sendBufferSize: 204800
+  reuseAddress: true
+  tcpNoDelay: true
+  readerIdleTime: 30
+  writerIdleTime: 30
+  soLinger: 5

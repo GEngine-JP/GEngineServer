@@ -81,7 +81,7 @@ public final class HallLoginMessage {
       "d\030\001 \001(\0162\006.MsgId\022\013\n\003rid\030\002 \001(\003\"<\n\023QuitSubG" +
       "ameResponse\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\016\n\006re" +
       "sult\030\002 \001(\005*)\n\tLoginType\022\017\n\013DefaultType\020\000" +
-      "\022\013\n\007ACCOUNT\020\001B1\n-info.xiaomo.server.shar" +
+      "\022\013\n\007ACCOUNT\020\001B1\n-info.xiaomo.handler.shar" +
       "ed.protocol.hall.loginP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

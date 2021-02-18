@@ -6,7 +6,7 @@ import info.xiaomo.gengine.script.IScript;
 
 /**
  * gm
- *
+ * <p>
  * 2017-04-17
  */
 public interface IGmScript extends IScript {

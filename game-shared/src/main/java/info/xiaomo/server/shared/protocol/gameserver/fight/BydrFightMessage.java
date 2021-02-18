@@ -83,7 +83,7 @@ public final class BydrFightMessage {
       "umulateGold\030\007 \001(\003\")\n\020GunLeveUpRequest\022\025\n" +
       "\005msgId\030\001 \001(\0162\006.MsgId\":\n\021GunLeveUpRespons" +
       "e\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\016\n\006result\030\002 \001(\005" +
-      "B7\n3info.xiaomo.server.shared.protocol.g" +
+      "B7\n3info.xiaomo.handler.shared.protocol.g" +
       "ameserver.fightP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

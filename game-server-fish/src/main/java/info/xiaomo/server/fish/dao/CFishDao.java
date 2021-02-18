@@ -7,9 +7,9 @@ import org.mongodb.morphia.dao.BasicDAO;
 
 /**
  * 角色
- *
- *
- *  2017-02-27
+ * <p>
+ * <p>
+ * 2017-02-27
  */
 public class CFishDao extends BasicDAO<CFish, Integer> {
 
@@ -25,7 +25,7 @@ public class CFishDao extends BasicDAO<CFish, Integer> {
 			synchronized (CFishDao.class) {
 				if (cFishDao == null) {
 					cFishDao = new CFishDao(mongoManager);
-					// cFishDao.getDs().ensureIndexes(true);
+					 cFishDao.getDs().ensureIndexes(true);
 				}
 			}
 		}

@@ -117,7 +117,7 @@ public final class BydrRoomMessage {
       "p\030\010 \001(\010\022\017\n\007diamond\030\t \001(\003\022\013\n\003rid\030\n \001(\003\022\017\n" +
       "\007robotNo\030\013 \001(\005\022\017\n\007ownerId\030\014 \001(\005\022\013\n\003sid\030\r" +
       " \001(\t*0\n\010RoomType\022\013\n\007DEFAULT\020\000\022\014\n\010CLASSIC" +
-      "S\020\001\022\t\n\005ARENA\020\002B6\n2info.xiaomo.server.sha" +
+      "S\020\001\022\t\n\005ARENA\020\002B6\n2info.xiaomo.handler.sha" +
       "red.protocol.gameserver.roomP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

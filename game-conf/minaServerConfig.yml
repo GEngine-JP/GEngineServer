@@ -1,0 +1,15 @@
+minaServerConfig:
+  id: ${GAME.ID}
+  ip: ${GAME.HOST}
+  port: ${GAME.PORT}
+  httpPort: ${GAME.HTTPPORT}
+  type: HALL
+  orderedThreadPoolExecutorSize: 300
+  receiveBufferSize: 1048576
+  sendBufferSize: 1048576
+  reuseAddress: true
+  tcpNoDelay: true
+  readerIdleTime: 180
+  writerIdleTime: 0
+  soLinger: 0
+  channel: jzy

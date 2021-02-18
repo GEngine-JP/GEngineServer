@@ -787,7 +787,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo.class, info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.gameserver.room.RoomRoleInfo.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.gameserver.handler.RoomRoleInfo.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

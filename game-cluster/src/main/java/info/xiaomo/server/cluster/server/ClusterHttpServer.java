@@ -19,41 +19,41 @@ import org.slf4j.LoggerFactory;
  */
 public class ClusterHttpServer extends GameService<MinaServerConfig> {
 
-    private static final Logger log = LoggerFactory.getLogger(ClusterHttpServer.class);
+	private static final Logger log = LoggerFactory.getLogger(ClusterHttpServer.class);
 
-    private final HttpServer httpServer;
-    private final MinaServerConfig minaServerConfig;
+	private final HttpServer httpServer;
+	private final MinaServerConfig minaServerConfig;
 
-    public ClusterHttpServer(
-            ThreadPoolExecutorConfig threadExecutorConfig, MinaServerConfig minaServerConfig) {
-        super(threadExecutorConfig);
-        this.minaServerConfig = minaServerConfig;
-        this.httpServer = new HttpServer(minaServerConfig, new ClusterHttpServerHandler(this));
-    }
+	public ClusterHttpServer(
+			ThreadPoolExecutorConfig threadExecutorConfig, MinaServerConfig minaServerConfig) {
+		super(threadExecutorConfig);
+		this.minaServerConfig = minaServerConfig;
+		this.httpServer = new HttpServer(minaServerConfig, new ClusterHttpServerHandler(this));
+	}
 
-    @Override
-    protected void running() {
-        log.debug(" run ... ");
-        httpServer.run();
-        ScriptManager.getInstance().addIHandler(ReloadScriptHandler.class);
-        ScriptManager.getInstance().addIHandler(CloseServerHandler.class);
-        ScriptManager.getInstance().addIHandler(ReloadConfigHandler.class);
-        ScriptManager.getInstance().addIHandler(JvmInfoHandler.class);
-        ScriptManager.getInstance().addIHandler(GetFaviconHandler.class);
-        ScriptManager.getInstance().addIHandler(ThreadInfoHandler.class);
-    }
+	@Override
+	protected void running() {
+		log.debug(" run ... ");
+		httpServer.run();
+		ScriptManager.getInstance().addIHandler(ReloadScriptHandler.class);
+		ScriptManager.getInstance().addIHandler(CloseServerHandler.class);
+		ScriptManager.getInstance().addIHandler(ReloadConfigHandler.class);
+		ScriptManager.getInstance().addIHandler(JvmInfoHandler.class);
+		ScriptManager.getInstance().addIHandler(GetFaviconHandler.class);
+		ScriptManager.getInstance().addIHandler(ThreadInfoHandler.class);
+	}
 
-    @Override
-    protected void onShutdown() {
-        super.onShutdown();
-        log.debug(" stop ... ");
-        httpServer.stop();
-    }
+	@Override
+	protected void onShutdown() {
+		super.onShutdown();
+		log.debug(" stop ... ");
+		httpServer.stop();
+	}
 
-    @Override
-    public String toString() {
-        return minaServerConfig.getName();
-    }
+	@Override
+	public String toString() {
+		return minaServerConfig.getName();
+	}
 }
 
 /**
@@ -63,19 +63,19 @@ public class ClusterHttpServer extends GameService<MinaServerConfig> {
  */
 class ClusterHttpServerHandler extends HttpServerIoHandler {
 
-    private final GameService<MinaServerConfig> service;
+	private final GameService<MinaServerConfig> service;
 
-    public ClusterHttpServerHandler(GameService<MinaServerConfig> service) {
-        this.service = service;
-    }
+	public ClusterHttpServerHandler(GameService<MinaServerConfig> service) {
+		this.service = service;
+	}
 
-    @Override
-    protected GameService<MinaServerConfig> getService() {
-        return this.service;
-    }
+	@Override
+	protected GameService<MinaServerConfig> getService() {
+		return this.service;
+	}
 
-    @Override
-    public void event(IoSession ioSession, FilterEvent filterEvent) {
+	@Override
+	public void event(IoSession ioSession, FilterEvent filterEvent) {
 
-    }
+	}
 }

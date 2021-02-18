@@ -20,13 +20,13 @@ public class UserSessionManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserSessionManager.class);
 	private static volatile UserSessionManager userSessionManager;
 
-	/** 用户session key：sessionID */
+	/** 用户session rediskey：sessionID */
 	private final Map<Long, UserSession> allSessions = new ConcurrentHashMap<>();
 
-	/** 用户session key：userID */
+	/** 用户session rediskey：userID */
 	private final Map<Long, UserSession> userSessions = new ConcurrentHashMap<>();
 
-	/** 用户session key：roleID */
+	/** 用户session rediskey：roleID */
 	private final Map<Long, UserSession> roleSessions = new ConcurrentHashMap<>();
 
 	private UserSessionManager() {

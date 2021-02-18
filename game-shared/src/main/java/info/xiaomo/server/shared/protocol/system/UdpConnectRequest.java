@@ -360,7 +360,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.system.UdpConnectRequest.class, info.xiaomo.server.shared.protocol.system.UdpConnectRequest.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.system.UdpConnectRequest.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.system.UdpConnectRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

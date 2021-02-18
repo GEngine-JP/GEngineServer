@@ -52,5 +52,4 @@ public final class AppBydr {
     public static String getConfigPath() {
         return configPath;
     }
-
 }

@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.server.GameServerInfo.class, info.xiaomo.server.shared.protocol.server.GameServerInfo.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.server.GameServerInfo.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.handler.GameServerInfo.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

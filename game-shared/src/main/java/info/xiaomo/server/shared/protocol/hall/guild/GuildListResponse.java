@@ -383,7 +383,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.hall.guild.GuildListResponse.class, info.xiaomo.server.shared.protocol.hall.guild.GuildListResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.hall.guild.GuildListResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.hall.guild.GuildListResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

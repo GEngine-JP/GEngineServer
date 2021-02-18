@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.system.HeartRequest.class, info.xiaomo.server.shared.protocol.system.HeartRequest.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.system.HeartRequest.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.system.HeartRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

@@ -416,7 +416,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.hall.login.LoginResponse.class, info.xiaomo.server.shared.protocol.hall.login.LoginResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.hall.login.LoginResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.hall.login.LoginResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

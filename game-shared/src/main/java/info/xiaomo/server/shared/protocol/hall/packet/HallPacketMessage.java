@@ -56,7 +56,7 @@ public final class HallPacketMessage {
       "Id\022\016\n\006itemId\030\002 \001(\003\"8\n\017UseItemResponse\022\025\n" +
       "\005msgId\030\001 \001(\0162\006.MsgId\022\016\n\006result\030\002 \001(\005\"7\n\n" +
       "PacketItem\022\n\n\002id\030\001 \001(\003\022\020\n\010configId\030\002 \001(\005" +
-      "\022\013\n\003num\030\003 \001(\005B2\n.info.xiaomo.server.shar" +
+      "\022\013\n\003num\030\003 \001(\005B2\n.info.xiaomo.handler.shar" +
       "ed.protocol.hall.packetP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

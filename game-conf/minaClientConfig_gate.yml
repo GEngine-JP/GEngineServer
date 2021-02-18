@@ -1,0 +1,15 @@
+minaClientConfig:
+  id: ${GAME.ID}
+  receiveBufferSize: 1048576
+  sendBufferSize: 1048576
+  orderedThreadPoolExecutorSize: 10
+  soLinger: 0
+  type: HALL
+  name: 大厅 ${GAME.ID}服
+  maxConnectCount: 3
+  connTo:
+    receiveBufferSize: 1048576
+    sendBufferSize: 1048576
+    type: HALL
+    host: ${GAME.CONNTO.HALL.HOST}
+    port: 8520

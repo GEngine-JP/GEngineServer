@@ -327,7 +327,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.hall.login.QuitSubGameResponse.class, info.xiaomo.server.shared.protocol.hall.login.QuitSubGameResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.hall.login.QuitSubGameResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.hall.login.QuitSubGameResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

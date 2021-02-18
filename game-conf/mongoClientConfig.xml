@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<info.xiaomo.gengine.persist.mongo.MongoClientConfig>
-    <dbName>bydr_hall</dbName>
-    <url>mongodb://127.0.0.1:27888/?replicaSet=rs_lztb</url>
-</info.xiaomo.gengine.persist.mongo.MongoClientConfig>
-
-
-

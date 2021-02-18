@@ -383,7 +383,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse.class, info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.hall.packet.PacketItemsResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.hall.packet.PacketItemsResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

@@ -105,7 +105,7 @@ public final class HallGuildMessage {
       "\001(\003\022\r\n\005level\030\004 \001(\005\022!\n\007members\030\005 \003(\0132\020.Gu" +
       "ildMemberInfo\">\n\017GuildMemberInfo\022\016\n\006role" +
       "Id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\r\n\005level\030\003 \001(\005B1\n" +
-      "-info.xiaomo.server.shared.protocol.hall" +
+      "-info.xiaomo.handler.shared.protocol.hall" +
       ".guildP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

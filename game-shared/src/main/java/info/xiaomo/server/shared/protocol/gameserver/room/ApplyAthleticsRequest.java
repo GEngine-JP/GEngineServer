@@ -371,7 +371,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest.class, info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.gameserver.room.ApplyAthleticsRequest.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.gameserver.handler.ApplyAthleticsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

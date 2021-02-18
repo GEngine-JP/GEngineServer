@@ -1,0 +1,8 @@
+nodes:
+  entry:
+    - redis://${REDIS_IP}:7000
+    - redis://${REDIS_IP}:7001
+    - redis://${REDIS_IP}:7002
+    - redis://${REDIS_IP}:7003
+    - redis://${REDIS_IP}:7004
+    - redis://${REDIS_IP}:7005

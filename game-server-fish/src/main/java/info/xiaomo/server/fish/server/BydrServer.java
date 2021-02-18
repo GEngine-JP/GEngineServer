@@ -14,7 +14,7 @@ import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.thread.ThreadType;
 import info.xiaomo.gengine.utils.FileUtil;
 import info.xiaomo.server.fish.AppBydr;
-import info.xiaomo.server.fish.world.BydrChannel;
+import info.xiaomo.server.fish.BydrChannel;
 import info.xiaomo.server.shared.protocol.server.GameServerInfo;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

@@ -363,7 +363,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.gameserver.room.RoomChangeResponse.class, info.xiaomo.server.shared.protocol.gameserver.room.RoomChangeResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.gameserver.room.RoomChangeResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.gameserver.handler.RoomChangeResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

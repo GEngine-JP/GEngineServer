@@ -383,7 +383,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.gameserver.room.FishEnterRoomResponse.class, info.xiaomo.server.shared.protocol.gameserver.room.FishEnterRoomResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.gameserver.room.FishEnterRoomResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.gameserver.handler.FishEnterRoomResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

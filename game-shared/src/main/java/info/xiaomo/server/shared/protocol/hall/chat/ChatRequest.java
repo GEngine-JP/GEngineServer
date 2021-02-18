@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.hall.chat.ChatRequest.class, info.xiaomo.server.shared.protocol.hall.chat.ChatRequest.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.hall.chat.ChatRequest.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.hall.chat.ChatRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

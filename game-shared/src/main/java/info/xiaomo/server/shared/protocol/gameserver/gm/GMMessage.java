@@ -35,7 +35,7 @@ public final class GMMessage {
     java.lang.String[] descriptorData = {
       "\n\017GMMessage.proto\"$\n\022CloseServerRequest\022" +
       "\016\n\006resMsg\030\001 \001(\t\"%\n\023CloseServerResponse\022\016" +
-      "\n\006resMsg\030\001 \001(\tB4\n0info.xiaomo.server.sha" +
+      "\n\006resMsg\030\001 \001(\tB4\n0info.xiaomo.handler.sha" +
       "red.protocol.gameserver.gmP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

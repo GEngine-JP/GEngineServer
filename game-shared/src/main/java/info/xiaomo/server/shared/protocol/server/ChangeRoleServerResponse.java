@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.server.ChangeRoleServerResponse.class, info.xiaomo.server.shared.protocol.server.ChangeRoleServerResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.server.ChangeRoleServerResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.handler.ChangeRoleServerResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

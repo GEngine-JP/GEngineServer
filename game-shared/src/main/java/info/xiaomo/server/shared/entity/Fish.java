@@ -152,7 +152,7 @@ public class Fish implements IMemoryObject, Serializable {
 //		fish.topSpeed = this.topSpeed;
 //		fish.topSpeedStartTime = this.topSpeedStartTime;
 //		fish.trackIds = new ArrayList<Integer>(this.trackIds);
-//		fish.room=this.room;
+//		fish.handler=this.handler;
 //		fish.formationId=this.formationId;
 //		return fish;
 //	}

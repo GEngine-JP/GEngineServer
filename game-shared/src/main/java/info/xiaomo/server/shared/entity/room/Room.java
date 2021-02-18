@@ -17,7 +17,7 @@ import java.util.*;
  * 2017-02-28
  */
 @Data
-@Entity(value = "room", noClassnameStored = true)
+@Entity(value = "handler", noClassnameStored = true)
 public class Room {
     @Id
     private long id;

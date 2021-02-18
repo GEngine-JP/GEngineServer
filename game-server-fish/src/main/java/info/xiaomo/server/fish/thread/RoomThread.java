@@ -11,11 +11,7 @@ import info.xiaomo.server.shared.entity.room.Room;
 
 /**
  * 房间逻辑线程
- * <p>
  * 一个线程处理多个房间
- * </p>
- * 
- *
  * 2017-03-24
  */
 public class RoomThread extends ServerThread {
@@ -25,7 +21,7 @@ public class RoomThread extends ServerThread {
 
 	public RoomThread(ThreadGroup threadGroup, Room room) {
 		super(threadGroup, ThreadType.ROOM + "-" + threadNum.getAndIncrement(), 500, 10000); // TODO
-        rooms.add(room);
+		rooms.add(room);
 	}
 
 	public RoomTimer getRoomTimer() {
@@ -33,13 +29,13 @@ public class RoomThread extends ServerThread {
 	}
 
 	public void setRoomTimer(RoomTimer roomFishTimer) {
-        roomTimer = roomFishTimer;
+		roomTimer = roomFishTimer;
 	}
 
 	public List<Room> getRooms() {
 		return rooms;
 	}
-	
+
 
 	public Room getRoom(long roomId) {
 		Optional<Room> findAny = rooms.stream().filter(r -> r.getId() == roomId).findAny();

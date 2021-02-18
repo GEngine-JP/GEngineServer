@@ -7,15 +7,15 @@ import java.util.List;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.script.ScriptPool;
 import info.xiaomo.gengine.thread.timer.TimerEvent;
-import info.xiaomo.server.fish.script.IRoomScript;
-import info.xiaomo.server.shared.entity.room.Room;
-import info.xiaomo.server.fish.thread.RoomThread;
 import info.xiaomo.server.fish.script.IFishScript;
+import info.xiaomo.server.fish.script.IRoomScript;
+import info.xiaomo.server.fish.thread.RoomThread;
+import info.xiaomo.server.shared.entity.room.Room;
 
 /**
  * 房间定时器
- * 
- *
+ * <p>
+ * <p>
  * 2017-04-25
  */
 public class RoomTimer extends TimerEvent {
@@ -28,12 +28,12 @@ public class RoomTimer extends TimerEvent {
 
 	public RoomTimer(Room room, RoomThread roomThread) {
 		super(Long.MAX_VALUE, -1);
-        rooms.add(room);
+		rooms.add(room);
 		this.roomThread = roomThread;
 	}
 
 	public void addRoom(Room room) {
-        rooms.add(room);
+		rooms.add(room);
 	}
 
 	public void removeRoom(Room room) {
@@ -51,25 +51,25 @@ public class RoomTimer extends TimerEvent {
 			ScriptPool scriptPool = ScriptManager.getInstance().getBaseScriptEntry();
 
 			// 鱼群刷新
-            roomThread
+			roomThread
 					.execute(() -> scriptPool.executeScripts(IFishScript.class, script -> script.fishRefresh(room)));
 
 			// 每秒执行
 			if (sec != _sec) {
-				sec=_sec;
-                roomThread.execute(() -> scriptPool.executeScripts(IRoomScript.class,
+				sec = _sec;
+				roomThread.execute(() -> scriptPool.executeScripts(IRoomScript.class,
 						script -> script.secondHandler(room, localTime)));
 			}
-			
+
 			//每分钟执行
-			if(min!=_min) {
-				min=_min;
-				scriptPool.executeScripts(IRoomScript.class, script->script.minuteHandler(room, localTime));
+			if (min != _min) {
+				min = _min;
+				scriptPool.executeScripts(IRoomScript.class, script -> script.minuteHandler(room, localTime));
 			}
-			
+
 			if (hour != _hour) { // 每小时执行
 				hour = _hour;
-				scriptPool.executeScripts(IRoomScript.class, script->script.minuteHandler(room, localTime));
+				scriptPool.executeScripts(IRoomScript.class, script -> script.hourHandler(room, localTime));
 			}
 		});
 

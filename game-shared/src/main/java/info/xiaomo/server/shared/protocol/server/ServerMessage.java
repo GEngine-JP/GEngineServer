@@ -92,7 +92,7 @@ public final class ServerMessage {
       "(\005\022\020\n\010httpPort\030\010 \001(\005\022\014\n\004name\030\t \001(\t\022\r\n\005ww" +
       "wIp\030\n \001(\t\022\022\n\nfreeMemory\030\013 \001(\005\022\023\n\013totalMe" +
       "mory\030\014 \001(\005\022\017\n\007version\030\r \001(\tB-\n)info.xiao" +
-      "mo.server.shared.protocol.serverP\001b\006prot" +
+      "mo.handler.shared.protocol.serverP\001b\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

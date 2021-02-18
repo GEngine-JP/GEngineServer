@@ -6,8 +6,8 @@ import info.xiaomo.server.shared.entity.room.Room;
 
 /**
  * 鱼脚本
- *
- *
+ * <p>
+ * <p>
  * 2017-04-24
  */
 public interface IFishScript extends IScript {

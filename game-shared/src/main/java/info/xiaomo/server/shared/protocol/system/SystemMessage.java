@@ -59,7 +59,7 @@ public final class SystemMessage {
       "ectResponse\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\016\n\006re" +
       "sult\030\002 \001(\005*Q\n\017SystemErrorCode\022\013\n\007Default" +
       "\020\000\022\017\n\013HallNotFind\020\001\022\017\n\013GameNotFind\020\002\022\017\n\013" +
-      "ConectReset\020\003B-\n)info.xiaomo.server.shar" +
+      "ConectReset\020\003B-\n)info.xiaomo.handler.shar" +
       "ed.protocol.systemP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

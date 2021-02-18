@@ -320,7 +320,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.system.HeartResponse.class, info.xiaomo.server.shared.protocol.system.HeartResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.system.HeartResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.system.HeartResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

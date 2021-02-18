@@ -1,0 +1,14 @@
+minaClientConfig:
+  id: ${GAME.ID}
+  receiveBufferSize: 1048576
+  sendBufferSize: 1048576
+  orderedThreadPoolExecutorSize: 2
+  soLinger: 0
+  type: HALL
+  maxConnectCount: 1
+  connTo:
+    receiveBufferSize: 1048576
+    sendBufferSize: 1048576
+    type: CLUSTER
+    host: ${GAME.CONNTO.CLUSTER.HOST}
+    port: 8000

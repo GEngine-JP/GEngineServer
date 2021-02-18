@@ -403,7 +403,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.system.SystemErrorResponse.class, info.xiaomo.server.shared.protocol.system.SystemErrorResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.system.SystemErrorResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.system.SystemErrorResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

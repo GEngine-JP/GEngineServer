@@ -505,7 +505,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.hall.chat.MailInfo.class, info.xiaomo.server.shared.protocol.hall.chat.MailInfo.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.hall.chat.MailInfo.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.hall.chat.MailInfo.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

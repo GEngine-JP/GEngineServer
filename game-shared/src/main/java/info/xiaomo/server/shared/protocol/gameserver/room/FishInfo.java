@@ -719,7 +719,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.gameserver.room.FishInfo.class, info.xiaomo.server.shared.protocol.gameserver.room.FishInfo.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.gameserver.room.FishInfo.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.gameserver.handler.FishInfo.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

@@ -11,8 +11,8 @@ import info.xiaomo.server.fish.thread.RoomExecutor;
 
 /**
  * netty 连接网关服
- *
- *
+ * <p>
+ * <p>
  * Role> 2017年9月14日 下午4:52:20
  */
 public class Bydr2GateClientNetty extends MutilNettyTcpClientService {

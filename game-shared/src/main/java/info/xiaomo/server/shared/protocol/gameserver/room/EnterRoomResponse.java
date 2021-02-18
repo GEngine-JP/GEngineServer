@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse.class, info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.gameserver.room.EnterRoomResponse.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.gameserver.handler.EnterRoomResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

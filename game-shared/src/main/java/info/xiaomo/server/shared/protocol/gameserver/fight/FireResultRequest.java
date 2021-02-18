@@ -484,7 +484,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.gameserver.fight.FireResultRequest.class, info.xiaomo.server.shared.protocol.gameserver.fight.FireResultRequest.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.gameserver.fight.FireResultRequest.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.gameserver.fight.FireResultRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

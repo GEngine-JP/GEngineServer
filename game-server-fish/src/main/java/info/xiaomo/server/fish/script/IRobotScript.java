@@ -1,9 +1,8 @@
 package info.xiaomo.server.fish.script;
 
+import java.util.function.Consumer;
 import info.xiaomo.gengine.script.IScript;
 import info.xiaomo.server.shared.entity.UserRole;
-
-import java.util.function.Consumer;
 
 /**
  * 机器人脚本
@@ -13,19 +12,19 @@ import java.util.function.Consumer;
  */
 public interface IRobotScript extends IScript {
 
-    /**
-     * 创建机器人
-     *
-     * @param roleConsumer
-     */
-    default UserRole createRobot(Consumer<UserRole> roleConsumer) {
-        return null;
-    }
+	/**
+	 * 创建机器人
+	 *
+	 * @param roleConsumer
+	 */
+	default UserRole createRobot(Consumer<UserRole> roleConsumer) {
+		return null;
+	}
 
-    /**
-     * 检查机器人金币，并修正
-     */
-    default void checkGold(UserRole robot) {
+	/**
+	 * 检查机器人金币，并修正
+	 */
+	default void checkGold(UserRole robot) {
 
-    }
+	}
 }

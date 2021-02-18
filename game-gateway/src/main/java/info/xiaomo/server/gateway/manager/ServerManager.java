@@ -88,7 +88,7 @@ public class ServerManager {
 		}
 
 		serverMap.get(serverType).put(info.getId(), server);
-		// LOGGER.warn("游戏服务器{}注册更新到网关服务器", server.toString());
+		// LOGGER.warn("游戏服务器{}注册更新到网关服务器", handler.toString());
 	}
 
 	/**

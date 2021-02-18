@@ -1,0 +1,10 @@
+nettyClientConfig:
+  id: ${GAME.ID}
+  receiveBufferSize: 1048576
+  sendBufferSize: 1048576
+  type: GAME_BYDR
+  maxConnectCount: 1
+  groupThreadNum: 2
+  info: NettyFirst
+  ip: ${GAME.CONNTO.CLUSTER.HOST}
+  port: 8000

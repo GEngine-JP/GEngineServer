@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
               info.xiaomo.server.shared.protocol.server.ServerEventRequest.class, info.xiaomo.server.shared.protocol.server.ServerEventRequest.Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.server.ServerEventRequest.newBuilder()
+    // Construct using info.xiaomo.handler.shared.protocol.handler.ServerEventRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
