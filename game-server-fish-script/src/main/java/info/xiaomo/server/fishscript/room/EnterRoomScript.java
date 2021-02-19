@@ -4,7 +4,7 @@ import java.util.*;
 import info.xiaomo.gengine.thread.ThreadType;
 import info.xiaomo.server.fish.manager.RoomManager;
 import info.xiaomo.server.fish.script.IRoomScript;
-import info.xiaomo.server.fish.server.BydrServer;
+import info.xiaomo.server.fish.server.FishServer;
 import info.xiaomo.server.fish.thread.RoomExecutor;
 import info.xiaomo.server.shared.entity.UserRole;
 import info.xiaomo.server.shared.entity.room.ClassicsRoom;
@@ -67,7 +67,7 @@ public class EnterRoomScript implements IRoomScript {
 				room.setRank(rank);
 			}
 			RoomManager.getInstance().addRoom(room);
-			RoomExecutor roomExecutor = BydrServer.getInstance().getExecutor(ThreadType.ROOM);
+			RoomExecutor roomExecutor = FishServer.getInstance().getExecutor(ThreadType.ROOM);
 			if (roomExecutor != null) {
 				roomExecutor.addRoom(room);
 			}

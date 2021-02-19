@@ -7,6 +7,7 @@ import info.xiaomo.gengine.network.mina.handler.HttpServerIoHandler;
 import info.xiaomo.gengine.network.server.GameService;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
+import lombok.Data;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.FilterEvent;
 import org.slf4j.Logger;
@@ -19,8 +20,6 @@ import org.slf4j.LoggerFactory;
  */
 public class ClusterHttpServer extends GameService<MinaServerConfig> {
 
-	private static final Logger log = LoggerFactory.getLogger(ClusterHttpServer.class);
-
 	private final HttpServer httpServer;
 	private final MinaServerConfig minaServerConfig;
 
@@ -31,9 +30,12 @@ public class ClusterHttpServer extends GameService<MinaServerConfig> {
 		this.httpServer = new HttpServer(minaServerConfig, new ClusterHttpServerHandler(this));
 	}
 
+	public int getHttpPort(){
+		return this.minaServerConfig.getHttpPort();
+	}
+
 	@Override
 	protected void running() {
-		log.debug(" run ... ");
 		httpServer.run();
 		ScriptManager.getInstance().addIHandler(ReloadScriptHandler.class);
 		ScriptManager.getInstance().addIHandler(CloseServerHandler.class);
@@ -46,7 +48,6 @@ public class ClusterHttpServer extends GameService<MinaServerConfig> {
 	@Override
 	protected void onShutdown() {
 		super.onShutdown();
-		log.debug(" stop ... ");
 		httpServer.stop();
 	}
 

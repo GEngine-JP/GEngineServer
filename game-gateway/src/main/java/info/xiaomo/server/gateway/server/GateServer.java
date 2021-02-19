@@ -35,7 +35,7 @@ public class GateServer implements Runnable {
 	public GateServer() {
 		// 用户Tcp服务器
 		ThreadPoolExecutorConfig threadPoolExecutorConfig =
-				FileUtil.getConfigXML(
+				YamlUtil.read(
 						AppGateWay.getConfigPath(),
 						"threadPoolExecutorConfig.yml",
 						ThreadPoolExecutorConfig.class);
@@ -44,23 +44,23 @@ public class GateServer implements Runnable {
 			System.exit(1);
 		}
 		MinaServerConfig minaServerConfig_user =
-				FileUtil.getConfigXML(
+				YamlUtil.read(
 						AppGateWay.getConfigPath(), "minaServerConfig_user.yml", MinaServerConfig.class);
 		if (minaServerConfig_user == null) {
 			LOGGER.error("mina服务器配置不存在");
 			System.exit(1);
 		}
 		MinaServerConfig minaServerConfig_udp_user =
-				FileUtil.getConfigXML(
+				YamlUtil.read(
 						AppGateWay.getConfigPath(), "minaServerConfig_udp_user.yml", MinaServerConfig.class);
 
 		MinaServerConfig minaServerConfig_websocket_user =
-				FileUtil.getConfigXML(
+				YamlUtil.read(
 						AppGateWay.getConfigPath(), "minaServerConfig_websocket_user.yml", MinaServerConfig.class);
 
 		// HTTP通信
 		MinaServerConfig minaServerConfig_http =
-				FileUtil.getConfigXML(
+				YamlUtil.read(
 						AppGateWay.getConfigPath(), "minaServerConfig_http.yml", MinaServerConfig.class);
 
 		gateTcpUserServer = new GateTcpUserServer(threadPoolExecutorConfig, minaServerConfig_user);
@@ -79,7 +79,7 @@ public class GateServer implements Runnable {
 
 		// 游戏tcp 服务器
 		MinaServerConfig minaServerConfig_game =
-				FileUtil.getConfigXML(
+				YamlUtil.read(
 						AppGateWay.getConfigPath(), "minaServerConfig_game.yml", MinaServerConfig.class);
 		if (minaServerConfig_game == null) {
 			LOGGER.error("mina服务器配置不存在");
@@ -90,7 +90,7 @@ public class GateServer implements Runnable {
 
 		// 连接Cluster集群客户端
 		MinaClientConfig minaClientConfig_cluster =
-				FileUtil.getConfigXML(
+				YamlUtil.read(
 						AppGateWay.getConfigPath(), "minaClientConfig_cluster.yml", MinaClientConfig.class);
 		if (minaClientConfig_cluster == null) {
 			LOGGER.error("mina连接集群配置不存在");

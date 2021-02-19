@@ -1,9 +1,10 @@
 id: 1
 receiveBufferSize: 1048576
 sendBufferSize: 1048576
-type: 5
+type: 3
+name: Cluster
 maxConnectCount: 1
 groupThreadNum: 2
-info: 注册中心
+info: NettyFirst
 ip: 127.0.0.1
-port: 8000
+port: 8500

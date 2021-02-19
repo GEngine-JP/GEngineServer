@@ -4,7 +4,7 @@ import java.util.*;
 import info.xiaomo.gengine.network.handler.HandlerEntity;
 import info.xiaomo.gengine.network.handler.TcpHandler;
 import info.xiaomo.gengine.network.server.ServerInfo;
-import info.xiaomo.server.fish.server.BydrServer;
+import info.xiaomo.server.fish.server.FishServer;
 import info.xiaomo.server.shared.protocol.msg.MsgId;
 import info.xiaomo.server.shared.protocol.server.GameServerInfo;
 import info.xiaomo.server.shared.protocol.server.ServerListResponse;
@@ -28,17 +28,17 @@ public class ServerListHandler extends TcpHandler {
 		// 更新服务器信息
 		Set<Integer> serverIds = new HashSet<>();
 		list.forEach(info -> {
-			BydrServer.getInstance().updateGateServerInfo(info);
+			FishServer.getInstance().updateGateServerInfo(info);
 			serverIds.add(info.getId());
 		});
-		Map<Integer, ServerInfo> hallServers = BydrServer.getInstance().getBydr2GateClient()
+		Map<Integer, ServerInfo> hallServers = FishServer.getInstance().getFishGateClient()
 				.getServers();
 
 		if (hallServers.size() != list.size()) {
 			List<Integer> ids = new ArrayList<>(hallServers.keySet());
 			ids.removeAll(serverIds);
 			ids.forEach(serverId -> {
-				BydrServer.getInstance().getBydr2GateClient().removeTcpClient(serverId);
+				FishServer.getInstance().getFishGateClient().removeTcpClient(serverId);
 			});
 		}
 	}

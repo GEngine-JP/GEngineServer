@@ -12,9 +12,9 @@ import info.xiaomo.gengine.script.ScriptManager;
  *
  * Role> 2017年7月24日 下午1:46:00
  */
-public class BydrHttpServer extends GameHttpSevice {
+public class FishHttpServer extends GameHttpSevice {
 
-	public BydrHttpServer(MinaServerConfig minaServerConfig) {
+	public FishHttpServer(MinaServerConfig minaServerConfig) {
 		super(minaServerConfig);
 	}
 

@@ -9,7 +9,7 @@ import info.xiaomo.gengine.network.server.BaseServerConfig;
 import info.xiaomo.gengine.network.server.GameService;
 import info.xiaomo.gengine.network.server.IMutilTcpClientService;
 import info.xiaomo.gengine.network.server.ServerState;
-import info.xiaomo.server.fish.server.BydrServer;
+import info.xiaomo.server.fish.server.FishServer;
 import info.xiaomo.server.shared.protocol.server.GameServerInfo;
 import info.xiaomo.server.shared.protocol.server.ServerRegisterRequest;
 import io.netty.channel.Channel;
@@ -37,7 +37,7 @@ public class GateClientInBoundHandlerScript implements IChannelHandlerScript {
 			return;
 		}
 		// 向网关服注册session
-		IMutilTcpClientService<? extends BaseServerConfig> client = BydrServer.getInstance().getBydr2GateClient();
+		IMutilTcpClientService<? extends BaseServerConfig> client = FishServer.getInstance().getFishGateClient();
 		if (!(client instanceof MutilNettyTcpClientService)) {
 			LOGGER.warn("未开启netty服务");
 			return;
@@ -51,7 +51,7 @@ public class GateClientInBoundHandlerScript implements IChannelHandlerScript {
 		info.setOnline(1);
 		info.setName(config.getName());
 		info.setState(ServerState.NORMAL.getState());
-		info.setType(config.getType().getType());
+		info.setType(config.getType());
 		info.setWwwIp("");
 //		ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IGameServerCheckScript.class,
 //				script -> script.buildServerInfo(info));

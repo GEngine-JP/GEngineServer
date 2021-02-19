@@ -1,9 +1,8 @@
 package info.xiaomo.server.fish;
 
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
-import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.utils.PathUtil;
-import info.xiaomo.server.fish.server.BydrServer;
+import info.xiaomo.server.fish.server.FishServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +16,7 @@ public final class FishApp {
 	private static final Logger LOGGER = LoggerFactory.getLogger(FishApp.class);
 	protected static JedisManager redisManager;
 	private static String configPath;
-	private static BydrServer bydrServer;
+	private static FishServer fishServer;
 
 	private FishApp() {
 	}
@@ -37,8 +36,8 @@ public final class FishApp {
 //		ScriptManager.getInstance().init("",str -> System.exit(0));
 
 		// 启动通信连接
-		bydrServer = new BydrServer(configPath);
-		new Thread(bydrServer).start();
+		fishServer = new FishServer(configPath);
+		new Thread(fishServer).start();
 	}
 
 	private static void initConfigPath() {
@@ -46,8 +45,8 @@ public final class FishApp {
 		LOGGER.info("配置路径为：" + configPath);
 	}
 
-	public static BydrServer getBydrServer() {
-		return bydrServer;
+	public static FishServer getBydrServer() {
+		return fishServer;
 	}
 
 	public static String getConfigPath() {
