@@ -21,7 +21,7 @@
 
     <properties>
         <gameServer.version>3.1.4</gameServer.version>
-        <GEngine.version>3.2.1</GEngine.version>
+        <GEngine.version>3.2.2</GEngine.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -43,6 +43,12 @@
         <concurrentlinkedhashmap.version>1.4.2</concurrentlinkedhashmap.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/GEngine-JP/GEngine</url>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>

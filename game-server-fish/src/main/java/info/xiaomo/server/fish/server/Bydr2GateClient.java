@@ -66,7 +66,7 @@ public class Bydr2GateClient extends MutilMinaTcpClientGameService {
 			info.setOnline(1);
 			info.setName(getMinaClientConfig().getName());
 			info.setState(ServerState.NORMAL.getState());
-			info.setType(getMinaClientConfig().getType().getType());
+			info.setType(getMinaClientConfig().getType());
 			info.setWwwIp("");
 			info.setTotalMemory(SysUtil.totalMemory());
 			info.setFreeMemory(SysUtil.freeMemory());
