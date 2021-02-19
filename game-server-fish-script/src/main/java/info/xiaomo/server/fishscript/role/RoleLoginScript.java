@@ -6,11 +6,11 @@ import java.util.function.Consumer;
 import info.xiaomo.gengine.bean.Config;
 import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
-import info.xiaomo.gengine.persist.redis.key.HallKey;
 import info.xiaomo.gengine.utils.JsonUtil;
 import info.xiaomo.server.fish.manager.RoleManager;
 import info.xiaomo.server.fish.script.IRoleScript;
 import info.xiaomo.server.shared.entity.UserRole;
+import info.xiaomo.server.shared.rediskey.HallKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 /**

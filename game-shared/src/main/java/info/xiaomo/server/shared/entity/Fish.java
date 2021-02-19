@@ -6,133 +6,39 @@ import java.util.List;
 import info.xiaomo.gengine.bean.Config;
 import info.xiaomo.gengine.persist.cache.IMemoryObject;
 import info.xiaomo.server.shared.entity.room.Room;
+import lombok.Data;
 
 /**
  * 鱼
- *
- *
+ * <p>
+ * <p>
  * 2017-04-21
  */
+
+@Data
 public class Fish implements IMemoryObject, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private long id;
 	// 配置ID
-	private int configId; 
+	private int configId;
 	// 出生时间
-	private long bornTime; 
+	private long bornTime;
 	// 当前速度
-	private int speed; 
+	private int speed;
 	private long speedEndTime; // 当前速度结束时间
-	private long dieTime; 	// 死亡时间
+	private long dieTime;    // 死亡时间
 	private List<Integer> trackIds; // 鱼游动路线ID
 	private int refreshId; // 刷新ID
 	private long topSpeedStartTime; // 极速开始时间
 	private int topSpeed; // 极速
-	private int formationId;	//阵型ID
-	
-	
-	private transient Room room;	//所属的房间
+	private int formationId;    //阵型ID
+
+
+	private transient Room room;    //所属的房间
 
 	public Fish() {
-        id = Config.getId();
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public int getConfigId() {
-		return configId;
-	}
-
-	public void setConfigId(int configId) {
-		this.configId = configId;
-	}
-
-	public long getBornTime() {
-		return bornTime;
-	}
-
-	public void setBornTime(long bornTime) {
-		this.bornTime = bornTime;
-	}
-
-	public int getSpeed() {
-		return speed;
-	}
-
-	public void setSpeed(int speed) {
-		this.speed = speed;
-	}
-
-	public long getSpeedEndTime() {
-		return speedEndTime;
-	}
-
-	public void setSpeedEndTime(long speedEndTime) {
-		this.speedEndTime = speedEndTime;
-	}
-
-	public long getDieTime() {
-		return dieTime;
-	}
-
-	public void setDieTime(long dieTime) {
-		this.dieTime = dieTime;
-	}
-
-	public int getRefreshId() {
-		return refreshId;
-	}
-
-	public void setRefreshId(int refreshId) {
-		this.refreshId = refreshId;
-	}
-
-	public List<Integer> getTrackIds() {
-		return trackIds;
-	}
-
-	public void setTrackIds(List<Integer> trackIds) {
-		this.trackIds = trackIds;
-	}
-
-	public long getTopSpeedStartTime() {
-		return topSpeedStartTime;
-	}
-
-	public void setTopSpeedStartTime(long topSpeedStartTime) {
-		this.topSpeedStartTime = topSpeedStartTime;
-	}
-
-	public int getTopSpeed() {
-		return topSpeed;
-	}
-
-	public void setTopSpeed(int topSpeed) {
-		this.topSpeed = topSpeed;
-	}
-
-	
-	public Room getRoom() {
-		return room;
-	}
-
-	public void setRoom(Room room) {
-		this.room = room;
-	}
-	
-	public int getFormationId() {
-		return formationId;
-	}
-
-	public void setFormationId(int formationId) {
-		this.formationId = formationId;
+		id = Config.getId();
 	}
 
 //	/**
@@ -159,18 +65,18 @@ public class Fish implements IMemoryObject, Serializable {
 
 	@Override
 	public void reset() {
-        id = Config.getId();
-        bornTime = 0;
-        configId = 0;
-        dieTime = 0;
-        refreshId = 0;
-        speed = 0;
-        speedEndTime = 0;
-        topSpeed = 0;
-        topSpeedStartTime = 0;
-        trackIds.clear();
-        formationId =0;
-        room =null;
+		id = Config.getId();
+		bornTime = 0;
+		configId = 0;
+		dieTime = 0;
+		refreshId = 0;
+		speed = 0;
+		speedEndTime = 0;
+		topSpeed = 0;
+		topSpeedStartTime = 0;
+		trackIds.clear();
+		formationId = 0;
+		room = null;
 	}
 
 	@Override
@@ -193,10 +99,7 @@ public class Fish implements IMemoryObject, Serializable {
 			return false;
 		}
 		Fish other = (Fish) obj;
-		if (id != other.id) {
-			return false;
-		}
-		return true;
+		return id == other.id;
 	}
 
 	@Override

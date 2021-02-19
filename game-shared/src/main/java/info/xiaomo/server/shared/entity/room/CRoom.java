@@ -1,4 +1,4 @@
-package info.xiaomo.server.shared.entity;
+package info.xiaomo.server.shared.entity.room;
 
 import info.xiaomo.gengine.persist.mongo.IConfigChecker;
 import org.mongodb.morphia.annotations.Entity;

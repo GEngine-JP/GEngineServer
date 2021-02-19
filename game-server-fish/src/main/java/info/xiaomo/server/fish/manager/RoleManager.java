@@ -6,11 +6,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
-import info.xiaomo.gengine.persist.redis.key.BydrKey;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.gengine.utils.JsonUtil;
 import info.xiaomo.server.fish.script.IRoleScript;
 import info.xiaomo.server.shared.entity.UserRole;
+import info.xiaomo.server.shared.rediskey.FishKey;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -80,7 +80,7 @@ public class RoleManager {
 	 * @param roleId Role> 2017年8月3日 下午3:43:59
 	 */
 	public UserRole loadRoleData(long roleId) {
-		Map<String, String> roleMap = JedisManager.getJedisCluster().hgetAll(BydrKey.Role_Map.getKey(roleId));
+		Map<String, String> roleMap = JedisManager.getJedisCluster().hgetAll(FishKey.Role_Map.getKey(roleId));
 		if (roleMap == null || roleMap.size() < 1) {
 			return null;
 		}
@@ -104,7 +104,7 @@ public class RoleManager {
 	 *             Role> 2017年8月3日 下午3:22:58
 	 */
 	public void saveRoleData(UserRole role) {
-		String key = BydrKey.Role_Map.getKey(role.getId());
+		String key = FishKey.Role_Map.getKey(role.getId());
 		log.debug("{}存储数据", key);
 		JedisManager.getJedisCluster().hmset(key, JsonUtil.object2Map(role));
 	}
@@ -124,10 +124,8 @@ public class RoleManager {
 	 * 修改金币
 	 *
 	 * @param gold
-	 * @param reason
-	 *
-	 * Role>
-	 * 2017年9月25日 下午5:23:41
+	 * @param reason Role>
+	 *               2017年9月25日 下午5:23:41
 	 */
 	public void changeGold(UserRole userRole, int gold, GlobalReason reason) {
 		ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IRoleScript.class, script -> script.changeGold(userRole, gold, reason));
@@ -136,10 +134,8 @@ public class RoleManager {
 	/**
 	 * 同步金币
 	 *
-	 * @param reason
-	 *
-	 * Role>
-	 * 2017年9月26日 上午10:42:24
+	 * @param reason Role>
+	 *               2017年9月26日 上午10:42:24
 	 */
 	public void syncGold(UserRole userRole, GlobalReason reason) {
 		ScriptManager.getInstance().getBaseScriptEntry().executeScripts(IRoleScript.class, script -> script.syncGold(userRole, reason));
@@ -149,7 +145,7 @@ public class RoleManager {
 		if (userRole.getRoomId() < 1) {
 			throw new RuntimeException(String.format("角色ID %d 异常", userRole.getRoomId()));
 		}
-		String key = BydrKey.Role_Map.getKey(userRole.getRoomId());
+		String key = FishKey.Role_Map.getKey(userRole.getRoomId());
 		Method method = UserRole.WRITEMETHODS.get(propertiesName);
 		if (method != null) {
 			try {

@@ -1,7 +1,6 @@
 package info.xiaomo.server.hall.manager;
 
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.function.Consumer;
 import info.xiaomo.gengine.script.ScriptManager;
 import info.xiaomo.server.hall.script.IUserScript;
@@ -41,9 +40,7 @@ public class UserManager {
 	public User createUser(Consumer<User> userConsumer) {
 		Collection<IUserScript> evts =
 				ScriptManager.getInstance().getBaseScriptEntry().getEvts(IUserScript.class);
-		Iterator<IUserScript> iterator = evts.iterator();
-		while (iterator.hasNext()) {
-			IUserScript userScript = iterator.next();
+		for (IUserScript userScript : evts) {
 			User user = userScript.createUser(userConsumer);
 			if (user != null) {
 				return user;

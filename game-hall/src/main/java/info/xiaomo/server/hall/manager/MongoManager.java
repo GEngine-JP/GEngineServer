@@ -1,10 +1,10 @@
 package info.xiaomo.server.hall.manager;
 
 import info.xiaomo.gengine.persist.mongo.AbsMongoManager;
-import info.xiaomo.gengine.persist.mongo.dao.HallInfoDao;
-import info.xiaomo.gengine.persist.mongo.dao.MailDao;
-import info.xiaomo.gengine.persist.mongo.dao.UserDao;
-import info.xiaomo.gengine.persist.mongo.dao.UserRoleDao;
+import info.xiaomo.server.shared.dao.mongo.HallInfoDao;
+import info.xiaomo.server.shared.dao.mongo.MailDao;
+import info.xiaomo.server.shared.dao.mongo.UserDao;
+import info.xiaomo.server.shared.dao.mongo.UserRoleDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

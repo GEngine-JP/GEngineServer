@@ -3,7 +3,7 @@ package info.xiaomo.server.fish.dao;
 
 import java.util.List;
 import info.xiaomo.gengine.persist.mongo.AbsMongoManager;
-import info.xiaomo.server.shared.entity.CRoom;
+import info.xiaomo.server.shared.entity.room.CRoom;
 import org.mongodb.morphia.dao.BasicDAO;
 
 public class CRoomDao extends BasicDAO<CRoom, Integer> {

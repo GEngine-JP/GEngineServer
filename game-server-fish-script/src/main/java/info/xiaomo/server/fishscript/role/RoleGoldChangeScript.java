@@ -2,9 +2,9 @@ package info.xiaomo.server.fishscript.role;
 
 import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
-import info.xiaomo.gengine.persist.redis.key.HallKey;
 import info.xiaomo.server.fish.script.IRoleScript;
 import info.xiaomo.server.shared.entity.UserRole;
+import info.xiaomo.server.shared.rediskey.HallKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

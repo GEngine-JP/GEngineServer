@@ -36,7 +36,7 @@ public interface IPacketScript extends IScript {
 	 * @param itemConsumer
 	 */
 	default Item addItem(
-            UserRole userRole, int configId, int num, GlobalReason reason, Consumer<Item> itemConsumer) {
+			UserRole userRole, int configId, int num, GlobalReason reason, Consumer<Item> itemConsumer) {
 		return null;
 	}
 }

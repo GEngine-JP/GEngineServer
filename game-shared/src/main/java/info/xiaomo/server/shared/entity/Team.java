@@ -3,121 +3,65 @@ package info.xiaomo.server.shared.entity;
 import com.alibaba.fastjson.annotation.JSONField;
 import java.util.Set;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
-import info.xiaomo.gengine.persist.redis.key.BydrKey;
 import info.xiaomo.gengine.utils.JsonUtil;
+import info.xiaomo.server.shared.rediskey.FishKey;
+import lombok.Data;
 import org.apache.mina.util.ConcurrentHashSet;
 
 /**
  * 组队
- *
+ * <p>
  * Role>
  * 2017年8月3日 上午11:24:51
  */
+@Data
 public class Team {
 
-	/**唯一ID，用队长ID作为ID*/
-	@JSONField(serialize=true)
+	/**
+	 * 唯一ID，用队长ID作为ID
+	 */
+	@JSONField()
 	private long id;
-	
-	/**所在服务器ID，队长所在服务器*/
-	@JSONField(serialize=true)
+
+	/**
+	 * 所在服务器ID，队长所在服务器
+	 */
+	@JSONField()
 	private int serverId;
-	
-	/**类型，当前只有竞技场比赛*/
-	@JSONField(serialize=true)
+
+	/**
+	 * 类型，当前只有竞技场比赛
+	 */
+	@JSONField()
 	private int type;
-	
-	/**级别*/
-	@JSONField(serialize=true)
+
+	/**
+	 * 级别
+	 */
+	@JSONField()
 	private int rank;
-	
-	/**队员集合*/
-	@JSONField(serialize=true)
-	private Set<Long> roleIds=new ConcurrentHashSet<>();
-	
-	/**状态*/
-	@JSONField(serialize=true)
+
+	/**
+	 * 队员集合
+	 */
+	@JSONField()
+	private Set<Long> roleIds = new ConcurrentHashSet<>();
+
+	/**
+	 * 状态
+	 */
+	@JSONField()
 	private int status;
-	
-	public Team(long id,int serverId,int rank){
-		this.id=id;
-		this.serverId=serverId;
-		this.rank=rank;
-        roleIds.add(id);
-	}
-	
-	
-	
-	public long getId() {
-		return id;
-	}
 
-
-
-	public void setId(long id) {
+	public Team(long id, int serverId, int rank) {
 		this.id = id;
-	}
-
-
-
-	public int getServerId() {
-		return serverId;
-	}
-
-
-
-	public void setServerId(int serverId) {
 		this.serverId = serverId;
-	}
-
-
-
-	public int getType() {
-		return type;
-	}
-
-
-
-	public void setType(int type) {
-		this.type = type;
-	}
-
-
-
-	public int getRank() {
-		return rank;
-	}
-
-
-
-	public void setRank(int rank) {
 		this.rank = rank;
+		roleIds.add(id);
 	}
 
 
-
-	public Set<Long> getRoleIds() {
-		return roleIds;
-	}
-
-
-
-	public void setRoleIds(Set<Long> roleIds) {
-		this.roleIds = roleIds;
-	}
-
-
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
-
-
-
-	public void saveToRedis(){
-		JedisManager.getJedisCluster().hset(BydrKey.Team_Map.getKey(), String.valueOf(id), JsonUtil.toJSONString(this));
+	public void saveToRedis() {
+		JedisManager.getJedisCluster().hset(FishKey.Team_Map.getKey(), String.valueOf(id), JsonUtil.toJSONString(this));
 	}
 }
