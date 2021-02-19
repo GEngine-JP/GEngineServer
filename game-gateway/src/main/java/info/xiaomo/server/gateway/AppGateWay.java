@@ -4,7 +4,7 @@ import java.io.File;
 import info.xiaomo.gengine.persist.redis.jedis.JedisClusterConfig;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
 import info.xiaomo.gengine.script.ScriptManager;
-import info.xiaomo.gengine.utils.FileUtil;
+import info.xiaomo.gengine.utils.YamlUtil;
 import info.xiaomo.server.gateway.manager.MongoManager;
 import info.xiaomo.server.gateway.server.GateServer;
 import org.slf4j.Logger;
@@ -26,7 +26,7 @@ public final class AppGateWay {
 
 		// redis
 		JedisClusterConfig jedisClusterConfig =
-				FileUtil.getConfigXML(configPath, "jedisClusterConfig.xml", JedisClusterConfig.class);
+				YamlUtil.read(configPath+"jedisClusterConfig.yml", JedisClusterConfig.class);
 		if (jedisClusterConfig == null) {
 			LOGGER.error("redis配置 [{}] 未找到", configPath);
 			System.exit(1);

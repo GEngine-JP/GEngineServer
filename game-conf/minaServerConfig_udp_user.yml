@@ -1,10 +1,10 @@
 minaServerConfig:
-  id: ${GATE.ID}
-  ip: ${GATE.HOST}
-  port: ${GATE.USER.UDP.PORT}
-  httpPort: ${GATE.GMAE.PORT}
-  type: GATE
-  name: 网关 ${GATE.ID}服
+  id: 1
+  ip: 127.0.0.1
+  port: 6000
+  httpPort: 6000
+  type: 1
+  name: 网关1服
   orderedThreadPoolExecutorSize: 100
   receiveBufferSize: 1048576
   sendBufferSize: 1048576

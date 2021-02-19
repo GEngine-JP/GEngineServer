@@ -37,7 +37,7 @@ public class GateServer implements Runnable {
 		ThreadPoolExecutorConfig threadPoolExecutorConfig =
 				FileUtil.getConfigXML(
 						AppGateWay.getConfigPath(),
-						"threadPoolExecutorConfig.xml",
+						"threadPoolExecutorConfig.yml",
 						ThreadPoolExecutorConfig.class);
 		if (threadPoolExecutorConfig == null) {
 			LOGGER.error("线程池配置不存在");
@@ -45,23 +45,23 @@ public class GateServer implements Runnable {
 		}
 		MinaServerConfig minaServerConfig_user =
 				FileUtil.getConfigXML(
-						AppGateWay.getConfigPath(), "minaServerConfig_user.xml", MinaServerConfig.class);
+						AppGateWay.getConfigPath(), "minaServerConfig_user.yml", MinaServerConfig.class);
 		if (minaServerConfig_user == null) {
 			LOGGER.error("mina服务器配置不存在");
 			System.exit(1);
 		}
 		MinaServerConfig minaServerConfig_udp_user =
 				FileUtil.getConfigXML(
-						AppGateWay.getConfigPath(), "minaServerConfig_udp_user.xml", MinaServerConfig.class);
+						AppGateWay.getConfigPath(), "minaServerConfig_udp_user.yml", MinaServerConfig.class);
 
 		MinaServerConfig minaServerConfig_websocket_user =
 				FileUtil.getConfigXML(
-						AppGateWay.getConfigPath(), "minaServerConfig_websocket_user.xml", MinaServerConfig.class);
+						AppGateWay.getConfigPath(), "minaServerConfig_websocket_user.yml", MinaServerConfig.class);
 
 		// HTTP通信
 		MinaServerConfig minaServerConfig_http =
 				FileUtil.getConfigXML(
-						AppGateWay.getConfigPath(), "minaServerConfig_http.xml", MinaServerConfig.class);
+						AppGateWay.getConfigPath(), "minaServerConfig_http.yml", MinaServerConfig.class);
 
 		gateTcpUserServer = new GateTcpUserServer(threadPoolExecutorConfig, minaServerConfig_user);
 		// 开启udp服务
@@ -80,7 +80,7 @@ public class GateServer implements Runnable {
 		// 游戏tcp 服务器
 		MinaServerConfig minaServerConfig_game =
 				FileUtil.getConfigXML(
-						AppGateWay.getConfigPath(), "minaServerConfig_game.xml", MinaServerConfig.class);
+						AppGateWay.getConfigPath(), "minaServerConfig_game.yml", MinaServerConfig.class);
 		if (minaServerConfig_game == null) {
 			LOGGER.error("mina服务器配置不存在");
 			System.exit(1);
@@ -91,7 +91,7 @@ public class GateServer implements Runnable {
 		// 连接Cluster集群客户端
 		MinaClientConfig minaClientConfig_cluster =
 				FileUtil.getConfigXML(
-						AppGateWay.getConfigPath(), "minaClientConfig_cluster.xml", MinaClientConfig.class);
+						AppGateWay.getConfigPath(), "minaClientConfig_cluster.yml", MinaClientConfig.class);
 		if (minaClientConfig_cluster == null) {
 			LOGGER.error("mina连接集群配置不存在");
 			System.exit(1);
@@ -139,7 +139,7 @@ public class GateServer implements Runnable {
 		info.setOnline(UserSessionManager.getInstance().getOlineCount());
 		info.setName(minaServerConfig.getName());
 		info.setState(ServerState.NORMAL.getState());
-		info.setType(minaServerConfig.getType().getType());
+		info.setType(minaServerConfig.getType());
 		info.setWwwIp("");
 		info.setPort(minaServerConfig.getPort());
 		info.setHttpPort(minaServerConfig.getHttpPort());

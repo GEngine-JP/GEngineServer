@@ -34,7 +34,7 @@ public final class FishApp {
 //		MongoManager.getInstance().createConnect(configPath);
 
 		// 加载脚本
-		ScriptManager.getInstance().init("",str -> System.exit(0));
+//		ScriptManager.getInstance().init("",str -> System.exit(0));
 
 		// 启动通信连接
 		bydrServer = new BydrServer(configPath);

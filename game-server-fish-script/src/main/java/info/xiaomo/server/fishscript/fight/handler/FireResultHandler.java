@@ -16,8 +16,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 使用技能
- *
- *
+ * <p>
+ * <p>
  * 2017-04-21
  */
 @HandlerEntity(mid = MsgId.FireResultReq_VALUE, msg = FireResultRequest.class, thread = ThreadType.ROOM)

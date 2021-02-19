@@ -29,28 +29,28 @@ public class AppCluster {
 		log.debug("configPath: {}", path);
 		log.info("配置路径为：" + path);
 		JedisClusterConfig jedisClusterConfig =
-				FileUtil.getConfigXML(path, "jedisclusterConfig.xml", JedisClusterConfig.class);
+				FileUtil.getConfigXML(path, "jedisclusterConfig.yml", JedisClusterConfig.class);
 		if (jedisClusterConfig == null) {
 			SysUtil.exit(AppCluster.class, null, "jedisclusterConfig");
 		}
 		ThreadPoolExecutorConfig threadExecutorConfig_http =
 				FileUtil.getConfigXML(
-						path, "threadExecutorConfig_http.xml", ThreadPoolExecutorConfig.class);
+						path, "threadExecutorConfig_http.yml", ThreadPoolExecutorConfig.class);
 		if (threadExecutorConfig_http == null) {
 			SysUtil.exit(AppCluster.class, null, "threadExecutorConfig_http");
 		}
 		ThreadPoolExecutorConfig threadExecutorConfig_tcp =
-				FileUtil.getConfigXML(path, "threadExecutorConfig_tcp.xml", ThreadPoolExecutorConfig.class);
+				FileUtil.getConfigXML(path, "threadExecutorConfig_tcp.yml", ThreadPoolExecutorConfig.class);
 		if (threadExecutorConfig_tcp == null) {
 			SysUtil.exit(AppCluster.class, null, "threadExecutorConfig_tcp");
 		}
 		MinaServerConfig minaServerConfig_http =
-				FileUtil.getConfigXML(path, "minaServerConfig_http.xml", MinaServerConfig.class);
+				FileUtil.getConfigXML(path, "minaServerConfig_http.yml", MinaServerConfig.class);
 		if (minaServerConfig_http == null) {
 			SysUtil.exit(AppCluster.class, null, "minaServerConfig_http");
 		}
 		MinaServerConfig minaServerConfig_tcp =
-				FileUtil.getConfigXML(path, "minaServerConfig_tcp.xml", MinaServerConfig.class);
+				FileUtil.getConfigXML(path, "minaServerConfig_tcp.yml", MinaServerConfig.class);
 		if (minaServerConfig_tcp == null) {
 			SysUtil.exit(AppCluster.class, null, "minaServerConfig_tcp");
 		}

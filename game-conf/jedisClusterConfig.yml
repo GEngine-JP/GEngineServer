@@ -11,10 +11,8 @@ testOnBorrow: true
 testWhileIdle: false
 testOnReturn: false
 nodes:
-  - ip: 127.0.0.1
+  - ip: 192.168.0.123
     port: 7000
-  - ip: 127.0.0.1
+  - ip: 192.168.0.123
     port: 7001
-  - ip: 127.0.0.1
-    port: 7002
 

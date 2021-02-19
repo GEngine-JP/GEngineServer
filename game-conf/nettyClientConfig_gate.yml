@@ -1,11 +1,10 @@
-nettyClientConfig:
-  id: ${GAME.ID}
-  receiveBufferSize: 1048576
-  sendBufferSize: 1048576
-  type: GAME_BYDR
-  name: 捕鱼达人 ${GAME.ID}服
-  maxConnectCount: 10
-  ip: ${GAME.CONNTO.HALL.HOST}
-  groupThreadNum: 10
-  port: 8520
-  info: NettyFirst
+id: 1
+receiveBufferSize: 1048576
+sendBufferSize: 1048576
+type: 10
+name: 网关1服
+maxConnectCount: 1
+ip: 127.0.0.1
+groupThreadNum: 10
+port: 8520
+info: NettyFirst

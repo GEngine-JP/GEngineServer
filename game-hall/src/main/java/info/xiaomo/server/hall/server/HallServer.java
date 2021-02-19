@@ -8,6 +8,7 @@ import info.xiaomo.gengine.network.server.ServerState;
 import info.xiaomo.gengine.persist.redis.jedis.JedisPubListener;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.utils.FileUtil;
+import info.xiaomo.gengine.utils.YamlUtil;
 import info.xiaomo.server.hall.AppHall;
 import info.xiaomo.server.hall.HallChannel;
 import info.xiaomo.server.shared.protocol.server.GameServerInfo;
@@ -56,13 +57,13 @@ public class HallServer implements Runnable {
 		// 加载连接大厅客户端配置
 		ThreadPoolExecutorConfig hallClientThreatPool =
 				FileUtil.getConfigXML(
-						configPath, "hallClientThreadPoolExecutorConfig.xml", ThreadPoolExecutorConfig.class);
+						configPath, "hallClientThreadPoolExecutorConfig.yml", ThreadPoolExecutorConfig.class);
 		if (hallClientThreatPool == null) {
 			LOGGER.error("{}/hallClientThreadPoolExecutorConfig.xml未找到", configPath);
 			System.exit(0);
 		}
 		MinaClientConfig minaClientConfig_gate =
-				FileUtil.getConfigXML(configPath, "minaClientConfig_gate.xml", MinaClientConfig.class);
+				YamlUtil.read(configPath+"minaClientConfig_gate.yml", MinaClientConfig.class);
 		if (minaClientConfig_gate == null) {
 			LOGGER.error("{}/minaClientConfig_hall.xml未找到", configPath);
 			System.exit(0);
@@ -70,7 +71,7 @@ public class HallServer implements Runnable {
 
 		// 加载连接集群配置
 		MinaClientConfig minaClientConfig_cluster =
-				FileUtil.getConfigXML(configPath, "minaClientConfig_cluster.xml", MinaClientConfig.class);
+				YamlUtil.read(configPath+"minaClientConfig_cluster.yml", MinaClientConfig.class);
 		if (minaClientConfig_cluster == null) {
 			LOGGER.error("{}/minaClientConfig_hall.xml未找到", configPath);
 			System.exit(0);
@@ -78,7 +79,7 @@ public class HallServer implements Runnable {
 
 		// http配置
 		MinaServerConfig minaServerConfig_http =
-				FileUtil.getConfigXML(configPath, "minaServerConfig_http.xml", MinaServerConfig.class);
+				YamlUtil.read(configPath+"minaServerConfig_http.yml", MinaServerConfig.class);
 		if (minaServerConfig_http == null) {
 			LOGGER.error("{}/minaServerConfig_http.xml未找到", configPath);
 			System.exit(0);
@@ -143,7 +144,7 @@ public class HallServer implements Runnable {
 		info.setOnline(1);
 		info.setName(minaClientConfig.getName());
 		info.setState(ServerState.NORMAL.getState());
-		info.setType(minaClientConfig.getType().getType());
+		info.setType(minaClientConfig.getType());
 		info.setWwwIp("");
 		builder.setServerInfo(info);
 		return builder.build();

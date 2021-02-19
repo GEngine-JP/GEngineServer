@@ -13,7 +13,7 @@ import info.xiaomo.gengine.network.server.*;
 import info.xiaomo.gengine.persist.redis.jedis.JedisPubListener;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.thread.ThreadType;
-import info.xiaomo.gengine.utils.FileUtil;
+import info.xiaomo.gengine.utils.YamlUtil;
 import info.xiaomo.server.fish.FishApp;
 import info.xiaomo.server.fish.FishChannel;
 import info.xiaomo.server.shared.protocol.server.GameServerInfo;
@@ -24,12 +24,12 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 捕鱼服务器
- *
- *
+ * <p>
+ * <p>
  * 可接收大厅服转发来的消息，和客户端直接发来的消息
  * </p>
  * <h4>mina和netty性能测试对比</h4>
- *
+ * <p>
  * 开启100个客户端，每个客户端每隔100ms发送一条消息
  * <li>在使用自定义线程池时，mina 50个连接,netty 1个连接:mina通信耗时在1~3毫秒，netty通信在0~100ms(变动幅度很大，多客户端性能较低，当单客户端发消息时变为0~3ms)</li>
  * <li>在使用自定义线程池时，mina 1个连接,netty 1个连接:mina通信耗时在1~3毫秒，netty通信耗时0~100ms. mina才启动比较耗时，然而netty才启动比较快；mina在单客户端比较耗时，多客户端比较快，netty相反</li>
@@ -39,8 +39,8 @@ import org.slf4j.LoggerFactory;
  * <li>在使用自定义线程池时，mina 1个连接,netty 1个连接:mina耗时0~3毫秒， netty耗时0~3毫秒</li>
  *
  * </p>
- *
- *
+ * <p>
+ * <p>
  * Role> 2017年6月28日 下午3:37:19
  */
 @Data
@@ -82,35 +82,35 @@ public class BydrServer implements Runnable {
 	public BydrServer(String configPath) {
 
 		//线程池配置
-		ThreadPoolExecutorConfig threadPoolExecutorConfig = FileUtil.getConfigXML(configPath, "threadPoolExecutorConfig.xml", ThreadPoolExecutorConfig.class);
+		ThreadPoolExecutorConfig threadPoolExecutorConfig = YamlUtil.read(configPath + "threadPoolExecutorConfig.yml", ThreadPoolExecutorConfig.class);
 		if (threadPoolExecutorConfig == null) {
-			LOGGER.error("{}/threadPoolExecutorConfig.xml未找到", configPath);
+			LOGGER.error("{}threadPoolExecutorConfig.xml未找到", configPath);
 			System.exit(0);
 		}
 
 		// 加载连接网关配置
-		MinaClientConfig minaClientConfig_gate = FileUtil.getConfigXML(configPath, "minaClientConfig_gate.xml", MinaClientConfig.class);
-		NettyClientConfig nettyClientConfig_gate = FileUtil.getConfigXML(configPath, "nettyClientConfig_gate.xml", NettyClientConfig.class);
+		MinaClientConfig minaClientConfig_gate = YamlUtil.read(configPath + "minaClientConfig_gate.yml", MinaClientConfig.class);
+		NettyClientConfig nettyClientConfig_gate = YamlUtil.read(configPath + "nettyClientConfig_gate.yml", NettyClientConfig.class);
 		if (minaClientConfig_gate == null && nettyClientConfig_gate == null) {
 			LOGGER.error("{}未配置网关连接客户端", configPath);
 			System.exit(0);
 		}
 
 		// 加载连接集群配置
-		MinaClientConfig minaClientConfig_cluster = FileUtil.getConfigXML(configPath, "minaClientConfig_cluster.xml", MinaClientConfig.class);
-		NettyClientConfig nettyClinetConfig_cluster = FileUtil.getConfigXML(configPath, "nettyClientConfig_cluster.xml", NettyClientConfig.class);
+		MinaClientConfig minaClientConfig_cluster = YamlUtil.read(configPath + "minaClientConfig_cluster.yml", MinaClientConfig.class);
+		NettyClientConfig nettyClinetConfig_cluster = YamlUtil.read(configPath + "nettyClientConfig_cluster.yml", NettyClientConfig.class);
 		if (minaClientConfig_cluster == null && nettyClinetConfig_cluster == null) {
 			LOGGER.error("{}未配置集群连接客户端", configPath);
 			System.exit(0);
 		}
 
 		// HTTP通信
-		MinaServerConfig minaServerConfig_http = FileUtil.getConfigXML(configPath, "minaServerConfig_http.xml", MinaServerConfig.class);
+		MinaServerConfig minaServerConfig_http = YamlUtil.read(configPath + "minaServerConfig_http.yml", MinaServerConfig.class);
 
 		gameHttpServer = new BydrHttpServer(minaServerConfig_http);
 
 		// 游戏前端消息服务 配置为空，不开启，开启后消息可以不经过网关直接发送到本服务器
-		MinaServerConfig minaServerConfig = FileUtil.getConfigXML(configPath, "minaServerConfig.xml", MinaServerConfig.class);
+		MinaServerConfig minaServerConfig = YamlUtil.read(configPath + "minaServerConfig.yml", MinaServerConfig.class);
 		if (minaServerConfig != null) {
 			bydrTcpServer = new ClientServerService(minaServerConfig);
 		}
