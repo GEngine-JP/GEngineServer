@@ -12,8 +12,7 @@ import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Indexed;
 
 /**
- *
- *  2017-10-31
+ * 2017-10-31
  */
 @Entity(value = "config_fish_boom", noClassnameStored = true)
 public class ConfigFishBoom implements IConfigChecker {
@@ -22,16 +21,26 @@ public class ConfigFishBoom implements IConfigChecker {
 	@Indexed
 	/**编号*/
 	private int id;
-	/**阵型id*/
+	/**
+	 * 阵型id
+	 */
 	private List formationIds;
-	/**时间*/
+	/**
+	 * 时间
+	 */
 	private List refreshTimes;
-	/**线路id*/
+	/**
+	 * 线路id
+	 */
 	private List lineIds;
-	/**存活时间*/
+	/**
+	 * 存活时间
+	 */
 	private List surviveTimes;
 
-	/**编号*/
+	/**
+	 * 编号
+	 */
 	public int getId() {
 		return id;
 	}
@@ -40,7 +49,9 @@ public class ConfigFishBoom implements IConfigChecker {
 		this.id = id;
 	}
 
-	/**阵型id*/
+	/**
+	 * 阵型id
+	 */
 	public List getFormationIds() {
 		return formationIds;
 	}
@@ -49,7 +60,9 @@ public class ConfigFishBoom implements IConfigChecker {
 		this.formationIds = formationIds;
 	}
 
-	/**时间*/
+	/**
+	 * 时间
+	 */
 	public List getRefreshTimes() {
 		return refreshTimes;
 	}
@@ -58,7 +71,9 @@ public class ConfigFishBoom implements IConfigChecker {
 		this.refreshTimes = refreshTimes;
 	}
 
-	/**线路id*/
+	/**
+	 * 线路id
+	 */
 	public List getLineIds() {
 		return lineIds;
 	}
@@ -67,7 +82,9 @@ public class ConfigFishBoom implements IConfigChecker {
 		this.lineIds = lineIds;
 	}
 
-	/**存活时间*/
+	/**
+	 * 存活时间
+	 */
 	public List getSurviveTimes() {
 		return surviveTimes;
 	}

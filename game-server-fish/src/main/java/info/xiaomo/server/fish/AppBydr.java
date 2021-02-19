@@ -13,43 +13,43 @@ import org.slf4j.LoggerFactory;
  * Role> 2017年6月28日 上午11:30:49
  */
 public final class AppBydr {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AppBydr.class);
-    private static String configPath;
-    protected static JedisManager redisManager;
-    private static BydrServer bydrServer;
+	private static final Logger LOGGER = LoggerFactory.getLogger(AppBydr.class);
+	protected static JedisManager redisManager;
+	private static String configPath;
+	private static BydrServer bydrServer;
 
-    private AppBydr() {
-    }
+	private AppBydr() {
+	}
 
-    public static void main(String[] args) {
-        initConfigPath();
-        // redis
-        redisManager = new JedisManager(configPath);
-        redisManager.initScript(configPath);
-        JedisManager.setRedisManager(redisManager);
+	public static void main(String[] args) {
+		initConfigPath();
+		// redis
+		redisManager = new JedisManager(configPath);
+		redisManager.initScript(configPath);
+		JedisManager.setRedisManager(redisManager);
 
 
-        // 创建mongodb连接
-        MongoManager.getInstance().createConnect(configPath);
+		// 创建mongodb连接
+		MongoManager.getInstance().createConnect(configPath);
 
-        // 加载脚本
+		// 加载脚本
 //        ScriptManager.getInstance().init(str -> System.exit(0));
 
-        // 启动通信连接
-        bydrServer = new BydrServer(configPath);
-        new Thread(bydrServer).start();
-    }
+		// 启动通信连接
+		bydrServer = new BydrServer(configPath);
+		new Thread(bydrServer).start();
+	}
 
-    private static void initConfigPath() {
-        configPath = System.getProperty("user.dir") + "/game-conf";
-        LOGGER.info("配置路径为：" + configPath);
-    }
+	private static void initConfigPath() {
+		configPath = System.getProperty("user.dir") + "/game-conf";
+		LOGGER.info("配置路径为：" + configPath);
+	}
 
-    public static BydrServer getBydrServer() {
-        return bydrServer;
-    }
+	public static BydrServer getBydrServer() {
+		return bydrServer;
+	}
 
-    public static String getConfigPath() {
-        return configPath;
-    }
+	public static String getConfigPath() {
+		return configPath;
+	}
 }

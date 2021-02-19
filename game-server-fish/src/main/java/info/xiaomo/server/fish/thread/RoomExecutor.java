@@ -19,14 +19,12 @@ import org.slf4j.LoggerFactory;
 public class RoomExecutor implements ExecutorPool {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RoomExecutor.class);
 	private static final ThreadGroup threadGroup = new ThreadGroup("房间线程组");
-
-	// rediskey:房间ID
-	private final Map<Long, RoomThread> roomThreads = new HashMap<>();
-
 	/**
 	 * 房间线程
 	 */
 	final List<RoomThread> threads = Collections.synchronizedList(new ArrayList<>());
+	// rediskey:房间ID
+	private final Map<Long, RoomThread> roomThreads = new HashMap<>();
 
 	@Override
 	public void execute(Runnable command) {

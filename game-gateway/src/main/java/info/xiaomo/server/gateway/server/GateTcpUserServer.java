@@ -12,36 +12,36 @@ import org.apache.mina.filter.firewall.BlacklistFilter;
 
 /**
  * 网关 用户 TCP服务器
- *
+ * <p>
  * 2017-03-30
  */
 public class GateTcpUserServer extends ClientServerService {
-  private static final Map<String, IoFilter> filters = new HashMap<>();
-  private static final BlacklistFilter blacklistFilter = new BlacklistFilter(); // IP黑名单过滤器
+	private static final Map<String, IoFilter> filters = new HashMap<>();
+	private static final BlacklistFilter blacklistFilter = new BlacklistFilter(); // IP黑名单过滤器
 
-  static {
-    filters.put("Blacklist", blacklistFilter);
+	static {
+		filters.put("Blacklist", blacklistFilter);
 
-    // //添加ssl支持
-    // if (USE_SSL) {
-    // //ssl是串行执行，加上加解密，速度很慢
-    // SslFilter sslFilter = new SslFilter(GateSslContextFactory.getInstance(true));
-    // filters.put("SSL", sslFilter);
-    // }
-  }
+		// //添加ssl支持
+		// if (USE_SSL) {
+		// //ssl是串行执行，加上加解密，速度很慢
+		// SslFilter sslFilter = new SslFilter(GateSslContextFactory.getInstance(true));
+		// filters.put("SSL", sslFilter);
+		// }
+	}
 
-  public GateTcpUserServer(
-      ThreadPoolExecutorConfig threadExecutorConfig, MinaServerConfig minaServerConfig) {
-    super(threadExecutorConfig, minaServerConfig, new GateTcpUserServerHandler(), filters);
-  }
+	public GateTcpUserServer(
+			ThreadPoolExecutorConfig threadExecutorConfig, MinaServerConfig minaServerConfig) {
+		super(threadExecutorConfig, minaServerConfig, new GateTcpUserServerHandler(), filters);
+	}
 
-  public static BlacklistFilter getBlacklistFilter() {
-    return blacklistFilter;
-  }
+	public static BlacklistFilter getBlacklistFilter() {
+		return blacklistFilter;
+	}
 
-  @Override
-  protected void onShutdown() {
-    UserSessionManager.getInstance().onShutdown();
-    super.onShutdown();
-  }
+	@Override
+	protected void onShutdown() {
+		UserSessionManager.getInstance().onShutdown();
+		super.onShutdown();
+	}
 }

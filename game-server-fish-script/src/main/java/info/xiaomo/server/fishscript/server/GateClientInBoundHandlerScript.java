@@ -12,16 +12,16 @@ import info.xiaomo.gengine.network.server.ServerState;
 import info.xiaomo.server.fish.server.BydrServer;
 import info.xiaomo.server.shared.protocol.server.GameServerInfo;
 import info.xiaomo.server.shared.protocol.server.ServerRegisterRequest;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * netty连接网关客户端消息处理器脚本
- * 
- *
- *  2017年8月30日 上午10:52:05
+ * <p>
+ * <p>
+ * 2017年8月30日 上午10:52:05
  */
 public class GateClientInBoundHandlerScript implements IChannelHandlerScript {
 	private static final Logger LOGGER = LoggerFactory.getLogger(GateClientInBoundHandlerScript.class);
@@ -31,7 +31,7 @@ public class GateClientInBoundHandlerScript implements IChannelHandlerScript {
 	 */
 	@Override
 	public void channelActive(Class<? extends ChannelHandler> handlerClass, GameService<? extends BaseServerConfig> service,
-			Channel channel) {
+	                          Channel channel) {
 		if (!handlerClass.isAssignableFrom(DefaultClientInBoundHandler.class)
 				|| !(service instanceof MutilNettyTcpClientService)) {
 			return;

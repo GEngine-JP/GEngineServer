@@ -10,10 +10,11 @@ import info.xiaomo.server.shared.protocol.server.GameServerInfo;
  */
 public interface IGameServerCheckScript extends IScript {
 
-  /**
-   * 构建服务器状态信息
-   *
-   * @param builder
-   */
-  default void buildServerInfo(GameServerInfo.Builder builder) {}
+	/**
+	 * 构建服务器状态信息
+	 *
+	 * @param builder
+	 */
+	default void buildServerInfo(GameServerInfo.Builder builder) {
+	}
 }

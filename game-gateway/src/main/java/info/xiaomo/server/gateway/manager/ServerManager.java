@@ -1,13 +1,12 @@
 package info.xiaomo.server.gateway.manager;
 
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 import info.xiaomo.gengine.network.server.ServerInfo;
 import info.xiaomo.gengine.network.server.ServerState;
 import info.xiaomo.gengine.network.server.ServerType;
 import info.xiaomo.server.gateway.struct.UserSession;
-import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
-
 import info.xiaomo.server.shared.protocol.server.GameServerInfo;
 import info.xiaomo.server.shared.protocol.system.SystemErrorCode;
 import info.xiaomo.server.shared.protocol.system.SystemErrorResponse;
@@ -19,7 +18,7 @@ import org.slf4j.LoggerFactory;
  * 服务器管理类
  * 
  *
- *  2017年6月30日 下午5:49:38
+ *   下午5:49:38
  */
 public class ServerManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ServerManager.class);

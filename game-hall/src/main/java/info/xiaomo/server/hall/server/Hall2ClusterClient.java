@@ -6,8 +6,8 @@ import info.xiaomo.gengine.network.mina.service.SingleMinaTcpClientService;
 
 /**
  * 连接集群 tcp客户端
- * 
- * 
+ * <p>
+ * <p>
  * 2017年6月28日 下午4:16:19
  */
 public class Hall2ClusterClient extends SingleMinaTcpClientService {
@@ -22,7 +22,6 @@ public class Hall2ClusterClient extends SingleMinaTcpClientService {
 		// ServerThread executor = getExecutor(ThreadType.SYNC);
 		// executor.addTimerEvent(new ServerHeartTimer()); //TODO 临时添加
 	}
-	
-	
+
 
 }

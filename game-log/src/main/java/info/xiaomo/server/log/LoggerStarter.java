@@ -6,6 +6,7 @@ package info.xiaomo.server.log;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  * <p>
+ *
  * @author : xiaomo
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
@@ -15,7 +16,7 @@ package info.xiaomo.server.log;
  * Copyright(©) 2017 by xiaomo.
  */
 public class LoggerStarter {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-    }
+	}
 }

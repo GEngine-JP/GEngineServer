@@ -7,11 +7,11 @@ import org.mongodb.morphia.annotations.Id;
 
 /**
  * 房间配置
- *
- *
+ * <p>
+ * <p>
  * 2017年10月19日 上午11:42:31
  */
-@Entity(value="c_room",noClassnameStored=true)
+@Entity(value = "c_room", noClassnameStored = true)
 public class CRoom implements IConfigChecker {
 	@Id
 	private int id;
@@ -23,6 +23,6 @@ public class CRoom implements IConfigChecker {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
+
+
 }

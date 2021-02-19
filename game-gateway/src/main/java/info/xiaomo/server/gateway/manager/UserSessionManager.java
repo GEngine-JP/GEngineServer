@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  * 用户连接会话管理类
  * 
  *
- *  2017年6月30日 下午3:58:31
+ *   下午3:58:31
  */
 public class UserSessionManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserSessionManager.class);

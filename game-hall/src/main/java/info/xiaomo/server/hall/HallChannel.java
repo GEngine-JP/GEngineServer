@@ -2,17 +2,22 @@ package info.xiaomo.server.hall;
 
 /**
  * 大厅订阅发布 通道
- * 
- *
- *  2017年7月10日 下午2:36:31
+ * <p>
+ * <p>
+ * 2017年7月10日 下午2:36:31
  */
 public enum HallChannel {
-	/** 登录大厅 */
+	/**
+	 * 登录大厅
+	 */
 	LoginHall,
-	/**大厅金币更新*/
+	/**
+	 * 大厅金币更新
+	 */
 	HallGoldChange,
-	
+
 	;
+
 	public static String[] getChannels() {
 		HallChannel[] values = HallChannel.values();
 		String[] channels = new String[values.length];

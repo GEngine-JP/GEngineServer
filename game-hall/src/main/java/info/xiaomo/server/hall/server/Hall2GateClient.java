@@ -21,9 +21,9 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 捕鱼达人连接大厅 Tcp客户端
- * 
- * 
- *  2017年6月28日 下午4:12:57
+ * <p>
+ * <p>
+ * 2017年6月28日 下午4:12:57
  */
 public class Hall2GateClient extends MutilMinaTcpClientGameService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Hall2GateClient.class);
@@ -41,7 +41,7 @@ public class Hall2GateClient extends MutilMinaTcpClientGameService {
 
 	/**
 	 * 更新大厅服务器信息
-	 * 
+	 *
 	 * @param info
 	 */
 	public void updateHallServerInfo(GameServerInfo info) {
@@ -79,9 +79,9 @@ public class Hall2GateClient extends MutilMinaTcpClientGameService {
 
 	/**
 	 * 消息处理器
-	 * 
-	 * 
-	 *  2017年7月11日 下午6:29:34
+	 * <p>
+	 * <p>
+	 * 2017年7月11日 下午6:29:34
 	 */
 	public class MutilConHallHandler extends MutilTcpProtocolHandler {
 

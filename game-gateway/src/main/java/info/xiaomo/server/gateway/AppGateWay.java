@@ -1,7 +1,6 @@
 package info.xiaomo.server.gateway;
 
 import java.io.File;
-
 import info.xiaomo.gengine.persist.redis.jedis.JedisClusterConfig;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
 import info.xiaomo.gengine.script.ScriptManager;

@@ -2,7 +2,6 @@ package info.xiaomo.server.fishscript.role;
 
 import java.util.Map;
 import java.util.function.Consumer;
-
 import info.xiaomo.gengine.bean.Config;
 import info.xiaomo.gengine.bean.GlobalReason;
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
@@ -13,11 +12,12 @@ import info.xiaomo.server.shared.entity.UserRole;
 import info.xiaomo.server.shared.rediskey.HallKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 /**
  * 登录
- * 
- *
- *  2017年8月4日 下午2:14:53
+ * <p>
+ * <p>
+ * 2017年8月4日 下午2:14:53
  */
 public class RoleLoginScript implements IRoleScript {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RoleLoginScript.class);
@@ -42,9 +42,10 @@ public class RoleLoginScript implements IRoleScript {
 
 	/**
 	 * 同步大厅数据
-	 * 
+	 * <p>
+	 * <p>
+	 * 2017年9月26日 下午2:44:18
 	 *
-	 *  2017年9月26日 下午2:44:18
 	 * @param role
 	 */
 	private void syncHallData(UserRole role) {
@@ -62,7 +63,7 @@ public class RoleLoginScript implements IRoleScript {
 		role.setLevel(hallRole.getLevel());
 		RoleManager.getInstance().saveRoleData(role);
 
-		
+
 //		//加载大厅数据
 //		// 道具
 //		RMap<Long, Item> items = RedissonManager.getRedissonClient()
@@ -73,9 +74,10 @@ public class RoleLoginScript implements IRoleScript {
 
 	/**
 	 * 临时初始化
-	 * 
+	 * <p>
+	 * <p>
+	 * 2017年9月25日 下午5:31:37
 	 *
-	 *  2017年9月25日 下午5:31:37
 	 * @param role
 	 */
 	private void tempInit(UserRole role) {

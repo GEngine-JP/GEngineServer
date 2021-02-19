@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 用户连接会话
  *
- * <p>2017年6月30日 下午2:13:54
+ * <p> 下午2:13:54
  */
 public class UserSession {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserSession.class);

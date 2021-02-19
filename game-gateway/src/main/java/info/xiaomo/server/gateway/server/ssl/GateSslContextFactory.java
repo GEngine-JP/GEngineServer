@@ -1,26 +1,5 @@
 package info.xiaomo.server.gateway.server.ssl;
-/**
-* <h3>RSA证书生成步骤</h3>
-* <p>
-* //服务器证书生成
-* keytool -genkey -keyalg RSA -keysize 2048 -validity 36500 -alias GATE -keypass 123456 -keystore gate.jzy -storepass 123456 -dname "CN=localhost,OU=JJY,O=CN,L=CD,ST=SC,C=CN"
-* //服务器证书导出
-*	keytool -export -alias GATE -file gate.cert -keystore gate.jzy -storepass 123456
-*	//服务器导入客户端证书
-*	keytool -import  -file client.cert -keystore gate.jzy -storepass 123456
-*	//查看证书条目
-*	keytool -list -v -keystore gate.jzy -storepass 123456
-*	
-*	//客户端证书生成
-*	keytool -genkey -keyalg RSA -keysize 2048 -validity 36500 -alias CLIENT -keypass 123456 -keystore client.jzy -storepass 123456 -dname "CN=localhost,OU=JJY,O=CN,L=CD,ST=SC,C=CN"
-*	//客户端证书导出
-*	keytool -export -alias CLIENT -file client.cert -keystore client.jzy -storepass 123456
-*	//客户端导入服务器证书
-*	keytool -import  -file gate.cert -keystore client.jzy -storepass 123456
-*	//查看证书条目
-*	keytool -list -v -keystore client.jzy -storepass 123456
-* </p>
-*/
+
 
 import java.io.File;
 import java.io.IOException;
@@ -36,11 +15,28 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * <code>SSLContext</code>生成工厂，使用tls协议，RSA算法 <br>
- * 暂时测试用，RSA为非对称加密算法，运行速率过慢，实际运用可使用AES算法加解密
- * 
- *
- *  2017年9月5日 上午11:49:53
+ * <h3>RSA证书生成步骤</h3>
+ * <p>
+ * //服务器证书生成
+ * keytool -genkey -keyalg RSA -keysize 2048 -validity 36500 -alias GATE -keypass 123456 -keystore gate.jzy -storepass 123456 -dname "CN=localhost,OU=JJY,O=CN,L=CD,ST=SC,C=CN"
+ * //服务器证书导出
+ * keytool -export -alias GATE -file gate.cert -keystore gate.jzy -storepass 123456
+ * //服务器导入客户端证书
+ * keytool -import  -file client.cert -keystore gate.jzy -storepass 123456
+ * //查看证书条目
+ * keytool -list -v -keystore gate.jzy -storepass 123456
+ * <p>
+ * //客户端证书生成
+ * keytool -genkey -keyalg RSA -keysize 2048 -validity 36500 -alias CLIENT -keypass 123456 -keystore client.jzy -storepass 123456 -dname "CN=localhost,OU=JJY,O=CN,L=CD,ST=SC,C=CN"
+ * //客户端证书导出
+ * keytool -export -alias CLIENT -file client.cert -keystore client.jzy -storepass 123456
+ * //客户端导入服务器证书
+ * keytool -import  -file gate.cert -keystore client.jzy -storepass 123456
+ * //查看证书条目
+ * keytool -list -v -keystore client.jzy -storepass 123456
+ * </p>
+ * * <code>SSLContext</code>生成工厂，使用tls协议，RSA算法 <br>
+ * * 暂时测试用，RSA为非对称加密算法，运行速率过慢，实际运用可使用AES算法加解密
  */
 public final class GateSslContextFactory {
 	private static final Logger LOGGER = LoggerFactory.getLogger(GateSslContextFactory.class);
@@ -48,7 +44,7 @@ public final class GateSslContextFactory {
 	private static final String KEY_MANAGER_FACTORY_ALGORITHM; // KEY管理算法名称
 	private static final String GATE_KEYSTORE = "gate.keystore"; // 证书名称
 	private static final String CLIENT_KEYSTORE = "client.p12"; // 证书名称
-	private static final char[] GATE_PW = { '1', '2', '3', '4', '5', '6' }; // keystore密码
+	private static final char[] GATE_PW = {'1', '2', '3', '4', '5', '6'}; // keystore密码
 	private static SSLContext serverContext;
 	private static SSLContext clientContext;
 
@@ -65,11 +61,11 @@ public final class GateSslContextFactory {
 
 	/**
 	 * 获取 SSL上下文
-	 * 
+	 * <p>
+	 * <p>
+	 * 2017年9月5日 下午2:11:31
 	 *
-	 *  2017年9月5日 下午2:11:31
-	 * @param server
-	 *            true服务器模式
+	 * @param server true服务器模式
 	 * @return
 	 */
 	public static SSLContext getInstance(boolean server) {
@@ -103,9 +99,10 @@ public final class GateSslContextFactory {
 
 	/**
 	 * 服务器 SSLContext
-	 * 
+	 * <p>
+	 * <p>
+	 * 2017年9月5日 下午2:19:01
 	 *
-	 *  2017年9月5日 下午2:19:01
 	 * @return
 	 * @throws GeneralSecurityException
 	 * @throws IOException
@@ -117,7 +114,7 @@ public final class GateSslContextFactory {
 		try {
 			in = GateSslContextFactory.class.getResourceAsStream(GATE_KEYSTORE);
 			if (in == null) {
-				in = FileUtil.getFileInputStream(AppGateWay.getConfigPath()+File.separatorChar+GATE_KEYSTORE);
+				in = FileUtil.getFileInputStream(AppGateWay.getConfigPath() + File.separatorChar + GATE_KEYSTORE);
 			}
 			ks.load(in, GATE_PW);
 		} finally {
@@ -146,7 +143,7 @@ public final class GateSslContextFactory {
 		try {
 			in = GateSslContextFactory.class.getResourceAsStream(CLIENT_KEYSTORE);
 			if (in == null) {
-				in = FileUtil.getFileInputStream(AppGateWay.getConfigPath()+File.separatorChar+CLIENT_KEYSTORE);
+				in = FileUtil.getFileInputStream(AppGateWay.getConfigPath() + File.separatorChar + CLIENT_KEYSTORE);
 			}
 			ks.load(in, GATE_PW); // TODO 密码暂时都一样
 		} finally {

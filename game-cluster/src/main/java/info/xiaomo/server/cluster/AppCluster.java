@@ -21,8 +21,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AppCluster {
 
-	private static ClusterServer clusterServer;
 	public static String path = "";
+	private static ClusterServer clusterServer;
 
 	public static void main(String[] args) {
 		path = ConfigUtil.getConfigPath();

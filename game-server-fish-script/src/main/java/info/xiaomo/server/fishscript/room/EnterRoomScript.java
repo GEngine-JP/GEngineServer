@@ -1,11 +1,6 @@
 package info.xiaomo.server.fishscript.room;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-
+import java.util.*;
 import info.xiaomo.gengine.thread.ThreadType;
 import info.xiaomo.server.fish.manager.RoomManager;
 import info.xiaomo.server.fish.script.IRoomScript;
@@ -20,9 +15,9 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 进入房间脚本
- * 
- *
- *  2017年9月14日 上午10:09:16
+ * <p>
+ * <p>
+ * 2017年9月14日 上午10:09:16
  */
 public class EnterRoomScript implements IRoomScript {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EnterRoomScript.class);
@@ -83,10 +78,10 @@ public class EnterRoomScript implements IRoomScript {
 
 	/**
 	 * 随机一个空闲座位号
-	 * 
-	 * @note 并未真正随机
+	 *
 	 * @param room
 	 * @return
+	 * @note 并未真正随机
 	 */
 	private int randomSeat(Room room) {
 		if (room.getRoles().size() < 1) {

@@ -12,9 +12,7 @@ import javax.net.ssl.X509TrustManager;
 
 /**
  * 网关信任管理工厂
- * 
- *
- *  2017年9月5日 下午2:35:24
+ * 2017年9月5日 下午2:35:24
  */
 public class GateTrustManagerFactory extends TrustManagerFactorySpi {
 
@@ -35,7 +33,7 @@ public class GateTrustManagerFactory extends TrustManagerFactorySpi {
 
 		}
 	};
-	static final TrustManager[] X509_MANAGERS = { X509 };
+	static final TrustManager[] X509_MANAGERS = {X509};
 
 	@Override
 	protected TrustManager[] engineGetTrustManagers() {

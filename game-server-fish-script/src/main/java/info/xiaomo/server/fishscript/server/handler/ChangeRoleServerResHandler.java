@@ -12,9 +12,9 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 改变服务器结果
- * 
- *
- *  2017年8月3日 下午4:11:03
+ * <p>
+ * <p>
+ * 2017年8月3日 下午4:11:03
  */
 @HandlerEntity(mid = MsgId.ChangeRoleServerRes_VALUE, msg = ChangeRoleServerResponse.class)
 public class ChangeRoleServerResHandler extends TcpHandler {

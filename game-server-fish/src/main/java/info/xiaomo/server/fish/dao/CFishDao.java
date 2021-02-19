@@ -25,7 +25,7 @@ public class CFishDao extends BasicDAO<CFish, Integer> {
 			synchronized (CFishDao.class) {
 				if (cFishDao == null) {
 					cFishDao = new CFishDao(mongoManager);
-					 cFishDao.getDs().ensureIndexes(true);
+					cFishDao.getDs().ensureIndexes(true);
 				}
 			}
 		}

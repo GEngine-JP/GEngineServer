@@ -5,12 +5,12 @@ import info.xiaomo.gengine.network.mina.service.SingleMinaTcpClientService;
 
 /**
  * 连接到集群管理
- *
+ * <p>
  * 2017-04-05
  */
 public class Gate2ClusterClient extends SingleMinaTcpClientService {
 
-  public Gate2ClusterClient(MinaClientConfig minaClientConfig) {
-    super(minaClientConfig);
-  }
+	public Gate2ClusterClient(MinaClientConfig minaClientConfig) {
+		super(minaClientConfig);
+	}
 }

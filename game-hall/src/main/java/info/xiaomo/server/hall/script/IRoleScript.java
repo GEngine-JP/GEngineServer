@@ -8,7 +8,7 @@ import info.xiaomo.server.shared.entity.UserRole;
 
 /**
  * 玩家脚本
- *
+ * <p>
  * 2017-03-30
  */
 public interface IRoleScript extends IScript {
