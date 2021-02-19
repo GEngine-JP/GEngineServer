@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 用户连接会话
  *
- * <p> 下午2:13:54
+ *  下午2:13:54
  */
 public class UserSession {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserSession.class);
@@ -257,7 +257,7 @@ public class UserSession {
 	/**
 	 * 移除游戏连接状态
 	 *
-	 * <p>2017年7月27日 上午9:41:13
+	 * 2017年7月27日 上午9:41:13
 	 */
 	public void removeGame() {
 		setGameSession(null);

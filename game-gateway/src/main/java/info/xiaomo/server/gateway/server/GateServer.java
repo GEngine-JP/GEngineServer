@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 网关服务器
- * <p>
+ *
  * 2017-03-30
  */
 public class GateServer implements Runnable {

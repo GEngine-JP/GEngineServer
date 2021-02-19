@@ -14,8 +14,8 @@ import info.xiaomo.server.shared.protocol.gameserver.room.*;
 
 /**
  * 房间管理类
- * <p>
- * <p>
+ *
+ *
  * Role> 2017年9月14日 下午2:27:59
  */
 public class RoomManager {

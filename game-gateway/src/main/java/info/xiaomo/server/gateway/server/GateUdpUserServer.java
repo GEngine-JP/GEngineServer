@@ -14,7 +14,7 @@ import org.apache.mina.filter.firewall.BlacklistFilter;
 
 /**
  * 网关 用户udp 服务器
- * <p>
+ *
  * 1.在弱网条件下，udp效率更高，tcp存在阻塞重发，三次握手，消息重组等条件，速度很慢；如果消息丢包影响不大，实时性要求高，可以使用udp替换tcp
  * <br>
  * 2.网关服务器收到前端udp消息通过内部的tcp消息进行转发，当收到内部服务器的tcp消息为udp消息时，用udp返回给用户

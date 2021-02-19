@@ -8,7 +8,7 @@ import info.xiaomo.server.shared.entity.UserRole;
 
 /**
  * 玩家脚本
- * <p>
+ *
  * 2017-03-30
  */
 public interface IRoleScript extends IScript {
@@ -33,9 +33,9 @@ public interface IRoleScript extends IScript {
 
 	/**
 	 * 角色退出游戏
-	 * <p>
-	 * <p>
-	 * 2017年9月18日 下午6:01:08
+	 *
+	 *
+	 *  下午6:01:08
 	 *
 	 * @param userRole
 	 */

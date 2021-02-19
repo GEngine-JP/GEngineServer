@@ -1,6 +1,6 @@
 /**
  * 工具自动生成,暂时不支持泛型和对象
- * <p>
+ *
  * 2017-10-31
  */
 package info.xiaomo.server.shared.entity.room;

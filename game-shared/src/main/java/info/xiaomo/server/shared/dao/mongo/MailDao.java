@@ -10,8 +10,8 @@ import org.mongodb.morphia.query.UpdateOperations;
 
 /**
  * 邮件
- * <p>
- * <p>
+ *
+ *
  * 2017年9月21日 下午3:32:10
  */
 public class MailDao extends BasicDAO<Mail, Long> {
@@ -35,8 +35,8 @@ public class MailDao extends BasicDAO<Mail, Long> {
 
 	/**
 	 * 玩家所有邮件
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月21日 下午4:04:46
 	 *
 	 * @param receiverId
@@ -48,8 +48,8 @@ public class MailDao extends BasicDAO<Mail, Long> {
 
 	/**
 	 * 获取公共邮件
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月21日 下午4:12:44
 	 *
 	 * @return
@@ -60,8 +60,8 @@ public class MailDao extends BasicDAO<Mail, Long> {
 
 	/**
 	 * 存储邮件
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月21日 下午4:13:37
 	 *
 	 * @param Mail
@@ -72,8 +72,8 @@ public class MailDao extends BasicDAO<Mail, Long> {
 
 	/**
 	 * 改变邮件状态
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月21日 下午4:15:10
 	 *
 	 * @param id
@@ -87,8 +87,8 @@ public class MailDao extends BasicDAO<Mail, Long> {
 
 	/**
 	 * 删除邮件
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月21日 下午4:23:52
 	 *
 	 * @param id
@@ -101,8 +101,8 @@ public class MailDao extends BasicDAO<Mail, Long> {
 
 	/**
 	 * 获取邮件
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月21日 下午5:25:11
 	 *
 	 * @param mailId

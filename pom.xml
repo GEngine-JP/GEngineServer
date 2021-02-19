@@ -7,7 +7,7 @@
     <groupId>info.xiaomo</groupId>
     <artifactId>g-engine-server</artifactId>
     <packaging>pom</packaging>
-    <version>${gameServer.version}</version>
+    <version>3.1.4</version>
     <modules>
         <module>game-log</module>
         <module>game-hall</module>

@@ -12,8 +12,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 进入房间
- * <p>
- * <p>
+ *
+ *
  * 2017年7月5日 下午5:35:36
  */
 @HandlerEntity(mid = MsgId.EnterRoomReq_VALUE, msg = EnterRoomRequest.class)

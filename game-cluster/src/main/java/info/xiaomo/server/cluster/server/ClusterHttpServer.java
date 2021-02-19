@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * http连接
- * <p>
+ *
  * 2017-03-31
  */
 public class ClusterHttpServer extends GameService<MinaServerConfig> {
@@ -58,7 +58,7 @@ public class ClusterHttpServer extends GameService<MinaServerConfig> {
 
 /**
  * 消息处理器
- * <p>
+ *
  * 2017-03-31
  */
 class ClusterHttpServerHandler extends HttpServerIoHandler {

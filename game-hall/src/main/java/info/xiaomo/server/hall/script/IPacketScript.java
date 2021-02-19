@@ -9,14 +9,14 @@ import info.xiaomo.server.shared.entity.UserRole;
 /**
  * 道具
  *
- * <p>2017年9月18日 下午4:18:44
+ *  下午4:18:44
  */
 public interface IPacketScript extends IScript {
 
 	/**
 	 * 使用道具
 	 *
-	 * <p>2017年9月18日 下午4:20:16
+	 *  下午4:20:16
 	 *
 	 * @param id           道具Id
 	 * @param num          数量
@@ -28,7 +28,7 @@ public interface IPacketScript extends IScript {
 	/**
 	 * 添加道具
 	 *
-	 * <p>2017年9月18日 下午4:23:47
+	 *  下午4:23:47
 	 *
 	 * @param configId
 	 * @param num          数量

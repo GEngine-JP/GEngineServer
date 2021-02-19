@@ -6,8 +6,8 @@ import info.xiaomo.server.shared.entity.room.Room;
 
 /**
  * 退出房间
- * <p>
- * <p>
+ *
+ *
  * 2017年9月14日 上午10:10:12
  */
 public class QuitRoomScript implements IRoomScript {

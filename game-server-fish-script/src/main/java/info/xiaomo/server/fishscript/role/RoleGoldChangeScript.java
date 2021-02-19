@@ -10,8 +10,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 修改角色金币
- * <p>
- * <p>
+ *
+ *
  * 2017年9月25日 下午5:21:32
  */
 public class RoleGoldChangeScript implements IRoleScript {

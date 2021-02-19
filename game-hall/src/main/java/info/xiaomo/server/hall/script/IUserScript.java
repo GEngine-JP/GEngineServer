@@ -6,8 +6,8 @@ import info.xiaomo.server.shared.entity.User;
 
 /**
  * 用户接口
- * <p>
- * <p>
+ *
+ *
  * 2017年7月7日 下午4:16:57
  */
 public interface IUserScript extends IScript {

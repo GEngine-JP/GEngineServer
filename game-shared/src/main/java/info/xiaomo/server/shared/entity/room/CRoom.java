@@ -7,8 +7,8 @@ import org.mongodb.morphia.annotations.Id;
 
 /**
  * 房间配置
- * <p>
- * <p>
+ *
+ *
  * 2017年10月19日 上午11:42:31
  */
 @Entity(value = "c_room", noClassnameStored = true)

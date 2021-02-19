@@ -16,7 +16,7 @@ import org.redisson.api.RRemoteService;
  * 道具 <br>
  * redis实时存储
  *
- * <p>暂时各个服务器各种修改，可以考虑再通过redisson {@link RRemoteService} 实现在大厅处理 2017年9月18日 下午2:31:29
+ * 暂时各个服务器各种修改，可以考虑再通过redisson {@link RRemoteService} 实现在大厅处理  下午2:31:29
  */
 @JSONType(serialzeFeatures = SerializerFeature.WriteClassName)
 @Entity(value = "item", noClassnameStored = true)

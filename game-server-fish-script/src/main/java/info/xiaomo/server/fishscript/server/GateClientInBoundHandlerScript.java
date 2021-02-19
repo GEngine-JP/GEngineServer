@@ -19,8 +19,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * netty连接网关客户端消息处理器脚本
- * <p>
- * <p>
+ *
+ *
  * 2017年8月30日 上午10:52:05
  */
 public class GateClientInBoundHandlerScript implements IChannelHandlerScript {

@@ -12,8 +12,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 逻辑执行线程池，将玩家的逻辑操作分配到同一个线程中执行，避免并发数据异常
- * <p>
- * <p>
+ *
+ *
  * 2017-03-24
  */
 public class RoomExecutor implements ExecutorPool {

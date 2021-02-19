@@ -1,7 +1,8 @@
 package info.xiaomo.server.fish;
 
 import info.xiaomo.gengine.persist.redis.jedis.JedisManager;
-import info.xiaomo.server.fish.manager.MongoManager;
+import info.xiaomo.gengine.script.ScriptManager;
+import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.server.fish.server.BydrServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,13 +13,13 @@ import org.slf4j.LoggerFactory;
  * <p>
  * Role> 2017年6月28日 上午11:30:49
  */
-public final class AppBydr {
-	private static final Logger LOGGER = LoggerFactory.getLogger(AppBydr.class);
+public final class FishApp {
+	private static final Logger LOGGER = LoggerFactory.getLogger(FishApp.class);
 	protected static JedisManager redisManager;
 	private static String configPath;
 	private static BydrServer bydrServer;
 
-	private AppBydr() {
+	private FishApp() {
 	}
 
 	public static void main(String[] args) {
@@ -30,10 +31,10 @@ public final class AppBydr {
 
 
 		// 创建mongodb连接
-		MongoManager.getInstance().createConnect(configPath);
+//		MongoManager.getInstance().createConnect(configPath);
 
 		// 加载脚本
-//        ScriptManager.getInstance().init(str -> System.exit(0));
+		ScriptManager.getInstance().init("",str -> System.exit(0));
 
 		// 启动通信连接
 		bydrServer = new BydrServer(configPath);
@@ -41,7 +42,7 @@ public final class AppBydr {
 	}
 
 	private static void initConfigPath() {
-		configPath = System.getProperty("user.dir") + "/game-conf";
+		configPath = PathUtil.getConfigPath();
 		LOGGER.info("配置路径为：" + configPath);
 	}
 

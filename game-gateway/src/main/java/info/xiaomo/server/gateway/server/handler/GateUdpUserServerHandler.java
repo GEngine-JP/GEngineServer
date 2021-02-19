@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 /**
  * udp消息处理器
  *
- * <p>2017年9月1日 下午2:06:36
+ * 2017年9月1日 下午2:06:36
  */
 public class GateUdpUserServerHandler extends ClientProtocolHandler {
 	private static final Logger LOGGER = LoggerFactory.getLogger(GateUdpUserServerHandler.class);
@@ -59,7 +59,7 @@ public class GateUdpUserServerHandler extends ClientProtocolHandler {
 	/**
 	 * 消息转发到大厅服务器
 	 *
-	 * <p>2017年7月21日 上午10:14:44
+	 * 2017年7月21日 上午10:14:44
 	 *
 	 * @param session
 	 * @param msgID

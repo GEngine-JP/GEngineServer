@@ -8,7 +8,7 @@ import info.xiaomo.server.gateway.server.handler.GateTcpGameServerHandler;
 /**
  * 子游戏连接 服务
  *
- * <p>游戏服、大厅服等内部共用的服务器  下午2:20:01
+ * 游戏服、大厅服等内部共用的服务器  下午2:20:01
  */
 public class GateTcpGameServer extends GameService<MinaServerConfig> {
   private final TcpServer tcpServer;

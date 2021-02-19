@@ -12,8 +12,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 服务器注册消息返回
- * <p>
- * <p>
+ *
+ *
  * 2017年6月29日 上午11:15:57
  */
 @HandlerEntity(mid = MsgId.ServerRegisterRes_VALUE, msg = ServerRegisterResponse.class, thread = ThreadType.SYNC)

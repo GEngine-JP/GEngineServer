@@ -15,8 +15,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 登录
- * <p>
- * <p>
+ *
+ *
  * 2017年8月4日 下午2:14:53
  */
 public class RoleLoginScript implements IRoleScript {
@@ -42,8 +42,8 @@ public class RoleLoginScript implements IRoleScript {
 
 	/**
 	 * 同步大厅数据
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月26日 下午2:44:18
 	 *
 	 * @param role
@@ -74,8 +74,8 @@ public class RoleLoginScript implements IRoleScript {
 
 	/**
 	 * 临时初始化
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月25日 下午5:31:37
 	 *
 	 * @param role

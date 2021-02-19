@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 背包
  *
- * <p>2017年9月18日 下午2:49:17
+ *  下午2:49:17
  */
 public class PacketManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PacketManager.class);
@@ -36,7 +36,7 @@ public class PacketManager {
 	/**
 	 * 使用道具
 	 *
-	 * <p>2017年9月18日 下午4:25:54
+	 *  下午4:25:54
 	 *
 	 * @param id
 	 * @param num
@@ -53,7 +53,7 @@ public class PacketManager {
 	/**
 	 * 添加道具
 	 *
-	 * <p>2017年9月18日 下午4:23:47
+	 *  下午4:23:47
 	 *
 	 * @param configId
 	 * @param num          数量
@@ -72,7 +72,7 @@ public class PacketManager {
 	/**
 	 * 构建
 	 *
-	 * <p>2017年9月18日 下午4:07:49
+	 *  下午4:07:49
 	 *
 	 * @param Item
 	 * @return
@@ -88,7 +88,7 @@ public class PacketManager {
 	/**
 	 * 获取物品
 	 *
-	 * <p>2017年9月18日 下午5:10:36
+	 *  下午5:10:36
 	 *
 	 * @param itemId
 	 * @return

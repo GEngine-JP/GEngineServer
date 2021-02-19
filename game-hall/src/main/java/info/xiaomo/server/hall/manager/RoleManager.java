@@ -1,7 +1,6 @@
 package info.xiaomo.server.hall.manager;
 
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
@@ -19,8 +18,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 角色管理
- *
- * <p>2017年7月7日 下午4:00:37
+ * <p>
+ * 2017年7月7日 下午4:00:37
  */
 public class RoleManager {
 
@@ -51,10 +50,8 @@ public class RoleManager {
 	 */
 	public UserRole createUser(long userId, Consumer<UserRole> roleConsumer) {
 		Collection<IRoleScript> evts =
-				ScriptManager.getInstance().getBaseScriptEntry().getEvts(IRoleScript.class);
-		Iterator<IRoleScript> iterator = evts.iterator();
-		while (iterator.hasNext()) {
-			IRoleScript userScript = iterator.next();
+				ScriptManager.getInstance().getBaseScriptEntry().getScripts(IRoleScript.class);
+		for (IRoleScript userScript : evts) {
 			UserRole userRole = userScript.createRole(userId, roleConsumer);
 			if (userRole != null) {
 				return userRole;
@@ -79,8 +76,8 @@ public class RoleManager {
 
 	/**
 	 * 登陆
-	 *
-	 * <p>2017年9月18日 下午6:23:14
+	 * <p>
+	 * 下午6:23:14
 	 *
 	 * @param userRole
 	 */
@@ -92,8 +89,8 @@ public class RoleManager {
 
 	/**
 	 * 退出
-	 *
-	 * <p>2017年9月18日 下午6:28:51
+	 * <p>
+	 * 下午6:28:51
 	 *
 	 * @param rid
 	 * @param reason
@@ -104,8 +101,8 @@ public class RoleManager {
 
 	/**
 	 * 退出游戏
-	 *
-	 * <p>2017年9月18日 下午6:09:51
+	 * <p>
+	 * 下午6:09:51
 	 *
 	 * @param userRole
 	 * @param reason
@@ -118,8 +115,8 @@ public class RoleManager {
 
 	/**
 	 * 广播金币改变
-	 *
-	 * <p>2017年10月17日 上午10:11:59
+	 * <p>
+	 * 2017年10月17日 上午10:11:59
 	 *
 	 * @param roleId
 	 * @param gold   金币改变量

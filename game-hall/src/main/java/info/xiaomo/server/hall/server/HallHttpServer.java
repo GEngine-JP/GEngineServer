@@ -8,7 +8,7 @@ import info.xiaomo.gengine.script.ScriptManager;
 /**
  * 大厅HTTP服务
  *
- * <p>2017年7月25日 上午11:46:07
+ * 2017年7月25日 上午11:46:07
  */
 public class HallHttpServer extends GameHttpSevice {
 

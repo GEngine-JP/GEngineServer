@@ -3,6 +3,7 @@ package info.xiaomo.server.fishscript.fight.handler;
 import info.xiaomo.gengine.network.handler.HandlerEntity;
 import info.xiaomo.gengine.network.handler.TcpHandler;
 import info.xiaomo.gengine.thread.ThreadType;
+import info.xiaomo.gengine.utils.MsgUtil;
 import info.xiaomo.gengine.utils.TimeUtil;
 import info.xiaomo.server.fish.manager.RoomManager;
 import info.xiaomo.server.shared.entity.UserRole;
@@ -13,9 +14,6 @@ import info.xiaomo.server.shared.protocol.msg.MsgId;
 
 /**
  * 开炮
- * <p>
- * <p>
- * 2017-04-21 QQ:359135103
  */
 @HandlerEntity(mid = MsgId.FireReq_VALUE, msg = FireRequest.class, thread = ThreadType.ROOM)
 public class FireHandler extends TcpHandler {
@@ -23,13 +21,11 @@ public class FireHandler extends TcpHandler {
 	@Override
 	public void run() {
 		FireRequest req = getMsg();
-		// LOGGER.info(req.toString());
 		UserRole userRole = getPerson();
 
 		Room room = RoomManager.getInstance().getRoom(userRole.getRoomId());
 
 		if (userRole.getGold() < req.getGold()) {
-//			sendServerMsg(ServerMsgId.not_enough_gold);
 			return;
 		}
 
@@ -37,7 +33,6 @@ public class FireHandler extends TcpHandler {
 //        RoleUtil.changeGold(-req.getGold(), GlobalReason.RoleFire);
 //        RoleUtil.addBetGold(req.getGold());
 		userRole.setFireTime(TimeUtil.currentTimeMillis());
-//        handler.addAllFireCount();
 //        RoleUtil.addFireCount();
 
 
@@ -48,9 +43,7 @@ public class FireHandler extends TcpHandler {
 		builder.setAngleY(req.getAngleY());
 		builder.setTargetFishId(req.getTargetFishId());
 		FireResponse response = builder.build();
-		room.getRoles().values().forEach(roomRole -> {
-//            MsgUtil.sendMsg(response);
-		});
+		room.getRoles().values().forEach(roomRole -> MsgUtil.sendMsg(roomRole, response));
 
 	}
 

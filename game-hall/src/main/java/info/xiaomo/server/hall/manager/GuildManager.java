@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 公会管理
- * <p>
- * <p>
+ *
+ *
  * 2017年9月22日 上午9:56:19
  */
 public final class GuildManager {

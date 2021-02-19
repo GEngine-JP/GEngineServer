@@ -15,8 +15,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 服务器管理类
- * <p>
- * <p>
+ *
+ *
  * 2017-04-05
  */
 public class ServerManager {
@@ -81,8 +81,8 @@ public class ServerManager {
 
 	/**
 	 * 获取服务器
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * Role> 2017年7月13日 下午3:57:14
 	 *
 	 * @param serverType
@@ -103,10 +103,10 @@ public class ServerManager {
 
 	/**
 	 * 空闲服务器
-	 * <p>
+	 *
 	 * 服务器状态监测,在线人数统计 <br>
 	 * 服务健康度检测（除了根据在线人数判断还可根据cpu内存等服务器检测设置优先级）
-	 * <p>
+	 *
 	 *
 	 * @param version 版本号 null 无版本要求
 	 * @return

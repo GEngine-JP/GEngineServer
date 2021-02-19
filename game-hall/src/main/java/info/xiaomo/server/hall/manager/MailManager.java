@@ -11,11 +11,11 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 邮件
- * <p>
+ *
  * 个人邮件单独存储，系统通用邮件只存一封,直接操作mongodb，不缓存
  * </p>
- * <p>
- * <p>
+ *
+ *
  * 2017年9月21日 下午3:25:17
  */
 public class MailManager {
@@ -43,8 +43,8 @@ public class MailManager {
 
 	/**
 	 * 发送邮件
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月21日 下午4:26:31
 	 *
 	 * @param title
@@ -59,8 +59,8 @@ public class MailManager {
 
 	/**
 	 * 构建邮箱信息
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月21日 下午5:45:09
 	 *
 	 * @param mail

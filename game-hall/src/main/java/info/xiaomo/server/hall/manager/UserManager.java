@@ -10,8 +10,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 用户管理
- *
- * <p>2017年7月7日 下午4:00:13
+ * <p>
+ * 2017年7月7日 下午4:00:13
  */
 public class UserManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserManager.class);
@@ -39,7 +39,7 @@ public class UserManager {
 	 */
 	public User createUser(Consumer<User> userConsumer) {
 		Collection<IUserScript> evts =
-				ScriptManager.getInstance().getBaseScriptEntry().getEvts(IUserScript.class);
+				ScriptManager.getInstance().getBaseScriptEntry().getScripts(IUserScript.class);
 		for (IUserScript userScript : evts) {
 			User user = userScript.createUser(userConsumer);
 			if (user != null) {

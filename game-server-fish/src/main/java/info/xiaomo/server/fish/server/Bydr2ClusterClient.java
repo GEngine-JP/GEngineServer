@@ -9,7 +9,7 @@ import info.xiaomo.gengine.thread.timer.event.ServerHeartTimer;
 
 /**
  * 连接集群 tcp客户端
- * <p>
+ *
  * Role>
  * 2017年6月28日 下午4:16:19
  */

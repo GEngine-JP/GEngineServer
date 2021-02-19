@@ -8,8 +8,8 @@ import info.xiaomo.gengine.script.ScriptManager;
 
 /**
  * http服务器
- * <p>
- * <p>
+ *
+ *
  * Role> 2017年7月24日 下午1:46:00
  */
 public class BydrHttpServer extends GameHttpSevice {

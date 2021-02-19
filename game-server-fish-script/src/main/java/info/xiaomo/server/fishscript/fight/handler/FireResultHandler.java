@@ -16,9 +16,9 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 使用技能
- * <p>
- * <p>
- * 2017-04-21 QQ:359135103
+ *
+ *
+ * 2017-04-21
  */
 @HandlerEntity(mid = MsgId.FireResultReq_VALUE, msg = FireResultRequest.class, thread = ThreadType.ROOM)
 public class FireResultHandler extends TcpHandler {
@@ -27,7 +27,6 @@ public class FireResultHandler extends TcpHandler {
 	@Override
 	public void run() {
 		FireResultRequest req = getMsg();
-		// LOGGER.info(req.toString());
 		UserRole role = getPerson();
 
 		Room room = RoomManager.getInstance().getRoom(role.getRoomId());
@@ -42,14 +41,8 @@ public class FireResultHandler extends TcpHandler {
 			return;
 		}
 
-		if (req.getTargetFishIdList() == null) {
-			return;
-		}
 		FireResultResponse.Builder builder = FireResultResponse.newBuilder();
 		builder.addAllDieFishId(req.getTargetFishIdList());
-
-//		handler.addFireResultCount();
-
 
 		role.getFireGolds().remove((Integer) req.getFireGold());
 		if (builder.getDieFishIdCount() > 0) {
@@ -98,7 +91,6 @@ public class FireResultHandler extends TcpHandler {
 			fishDie(room, fish.getId());
 		}
 		builder.setMultiple(0);
-
 //		role.changeGold(fireGold*2, Reason.RoleFire);
 
 		return result;

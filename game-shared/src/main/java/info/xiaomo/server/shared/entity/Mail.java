@@ -10,9 +10,9 @@ import org.mongodb.morphia.annotations.Indexed;
 /**
  * 邮件 <br>
  * 直接操作mongodb数据库
- * <p>
- * <p>
- * 2017年9月18日 下午2:19:59
+ *
+ *
+ *  下午2:19:59
  */
 @Entity(value = "mail", noClassnameStored = true)
 @Data
@@ -75,7 +75,7 @@ public class Mail {
     /**
      * 邮件状态
      * <br>优先级依次递增
-     * <p>
+     *
      * 2017年9月21日 下午3:12:11
      */
     public enum MailState {
@@ -99,8 +99,8 @@ public class Mail {
 
     /**
      * 邮件类型
-     * <p>
-     * <p>
+     *
+     *
      * 2017年9月21日 下午3:14:51
      */
     public enum MailType {

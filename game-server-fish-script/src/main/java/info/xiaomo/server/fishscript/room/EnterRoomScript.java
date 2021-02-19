@@ -15,8 +15,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 进入房间脚本
- * <p>
- * <p>
+ *
+ *
  * 2017年9月14日 上午10:09:16
  */
 public class EnterRoomScript implements IRoomScript {

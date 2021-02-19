@@ -15,8 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * 角色管理
- * <p>
- * <p>
+ *
+ *
  * Role> 2017年7月10日 下午4:01:42
  */
 @Slf4j
@@ -54,7 +54,7 @@ public class RoleManager {
 	 * @param roleId
 	 * @param reason
 	 * @return 0 成功
-	 * <p>
+	 *
 	 * Role> 2017年8月3日 下午3:49:37
 	 */
 	public void login(long roleId, GlobalReason reason, Consumer<UserRole> roleConsumer) {
@@ -66,7 +66,7 @@ public class RoleManager {
 	 * 退出
 	 *
 	 * @param reason 原因
-	 *               <p>
+	 *
 	 *               Role> 2017年8月3日 下午3:21:15
 	 */
 	public void quit(UserRole role, GlobalReason reason) {
@@ -100,7 +100,7 @@ public class RoleManager {
 	 * 存储角色数据
 	 *
 	 * @param role TODO 存储到mongodb
-	 *             <p>
+	 *
 	 *             Role> 2017年8月3日 下午3:22:58
 	 */
 	public void saveRoleData(UserRole role) {

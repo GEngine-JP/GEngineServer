@@ -5,7 +5,7 @@ package info.xiaomo.server.log;
  * いま 最高の表現 として 明日最新の始発．．～
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
- * <p>
+ *
  *
  * @author : xiaomo
  * github: https://github.com/xiaomoinfo

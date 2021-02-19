@@ -10,7 +10,7 @@ import org.apache.mina.util.ConcurrentHashSet;
 
 /**
  * 组队
- * <p>
+ *
  * Role>
  * 2017年8月3日 上午11:24:51
  */

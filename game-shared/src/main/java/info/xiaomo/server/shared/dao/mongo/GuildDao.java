@@ -6,7 +6,7 @@ import org.mongodb.morphia.dao.BasicDAO;
 
 /**
  * 公会
- * <p>
+ *
  * 2017年9月22日 上午10:38:16
  */
 public class GuildDao extends BasicDAO<Guild, Long> {
@@ -33,7 +33,7 @@ public class GuildDao extends BasicDAO<Guild, Long> {
 
 	/**
 	 * 存储
-	 * <p>
+	 *
 	 * 2017年9月22日 上午10:45:52
 	 *
 	 * @param Guild

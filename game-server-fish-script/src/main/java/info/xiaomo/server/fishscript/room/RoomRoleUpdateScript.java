@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 房间角色监测更新
- * <p>
- * <p>
+ *
+ *
  * 2017年9月26日 下午2:28:29
  */
 public class RoomRoleUpdateScript implements IRoomScript {

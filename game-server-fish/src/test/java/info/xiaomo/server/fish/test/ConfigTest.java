@@ -1,6 +1,6 @@
 package info.xiaomo.server.fish.test;
 
-import info.xiaomo.gengine.utils.ConfigUtil;
+import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.YamlUtil;
 import info.xiaomo.server.shared.config.FishGameConfig;
 import info.xiaomo.server.shared.config.JedisClusterConfig;
@@ -13,7 +13,7 @@ public class ConfigTest {
 	 */
 	@Test
 	public void testConfigUrl() {
-		System.out.println(ConfigUtil.getConfigPath());
+		System.out.println(PathUtil.getConfigPath());
 	}
 
 	/**
@@ -21,7 +21,7 @@ public class ConfigTest {
 	 */
 	@Test
 	public void testYamlReader() {
-		String path = ConfigUtil.getConfigPath();
+		String path = PathUtil.getConfigPath();
 		String file = "jedisClusterConfig.yml";
 		JedisClusterConfig jedisClusterConfig = YamlUtil.read(path + file, JedisClusterConfig.class);
 		System.out.println(jedisClusterConfig.getNodes().size());

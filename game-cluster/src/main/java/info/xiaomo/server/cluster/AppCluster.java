@@ -4,8 +4,8 @@ import java.util.Objects;
 import info.xiaomo.gengine.network.mina.config.MinaServerConfig;
 import info.xiaomo.gengine.persist.redis.jedis.JedisClusterConfig;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
-import info.xiaomo.gengine.utils.ConfigUtil;
 import info.xiaomo.gengine.utils.FileUtil;
+import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.SysUtil;
 import info.xiaomo.server.cluster.server.ClusterServer;
 import lombok.extern.slf4j.Slf4j;
@@ -13,9 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 启动类
  *
- * <p>服务器注册管理中心 <br>
+ * 服务器注册管理中心 <br>
  * 是否可用zookeeper替换
- * <p>
+ *
  * 2017-03-31
  */
 @Slf4j
@@ -25,7 +25,7 @@ public class AppCluster {
 	private static ClusterServer clusterServer;
 
 	public static void main(String[] args) {
-		path = ConfigUtil.getConfigPath();
+		path = PathUtil.getConfigPath();
 		log.debug("configPath: {}", path);
 		log.info("配置路径为：" + path);
 		JedisClusterConfig jedisClusterConfig =

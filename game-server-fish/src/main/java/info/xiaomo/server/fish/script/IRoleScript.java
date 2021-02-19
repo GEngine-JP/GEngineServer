@@ -7,8 +7,8 @@ import info.xiaomo.server.shared.entity.UserRole;
 
 /**
  * 角色
- * <p>
- * <p>
+ *
+ *
  * Role>
  * 2017年8月4日 下午2:10:47
  */

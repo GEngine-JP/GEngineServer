@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 集群管理服务器
- * <p>
- * <p>
+ *
+ *
  * 2017-03-31
  */
 public class ClusterServer implements Runnable {
@@ -46,7 +46,7 @@ public class ClusterServer implements Runnable {
 		log.info("ClusterServer::clusterTcpServer::start!!!");
 		new Thread(clusterTcpServer).start();
 
-		ScriptManager.getInstance().init((str) -> SysUtil.exit(this.getClass(), null, "加载脚本错误"));
+		ScriptManager.getInstance().init("",(str) -> SysUtil.exit(this.getClass(), null, "加载脚本错误"));
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException ex) {

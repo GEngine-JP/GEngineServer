@@ -10,8 +10,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 大厅启动类
- *
- * <p>2017年6月28日 上午11:30:49
+ * <p>
+ * 2017年6月28日 上午11:30:49
  */
 public final class AppHall {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AppHall.class);
@@ -32,7 +32,7 @@ public final class AppHall {
 		MongoManager.getInstance().createConnect(configPath);
 
 		// 加载脚本
-		ScriptManager.getInstance().init(str -> System.exit(0));
+		ScriptManager.getInstance().init("", str -> System.exit(0));
 
 		// 启动通信连接
 		bydrServer = new HallServer(configPath);

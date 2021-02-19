@@ -14,8 +14,8 @@ import info.xiaomo.server.shared.entity.room.Room;
 
 /**
  * 房间定时器
- * <p>
- * <p>
+ *
+ *
  * 2017-04-25
  */
 public class RoomTimer extends TimerEvent {

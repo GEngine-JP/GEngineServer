@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 大厅服务器
  *
- * <p>2017年6月28日 下午3:37:19
+ * 2017年6月28日 下午3:37:19
  */
 public class HallServer implements Runnable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(HallServer.class);

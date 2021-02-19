@@ -11,8 +11,8 @@ import org.mongodb.morphia.annotations.Id;
 
 /**
  * 房间信息
- * <p>
- * <p>
+ *
+ *
  * 2017-02-28
  */
 @Data

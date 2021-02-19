@@ -20,8 +20,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 捕鱼达人连接大厅 Tcp客户端
- * <p>
- * <p>
+ *
+ *
  * Role> 2017年6月28日 下午4:12:57
  */
 public class Bydr2GateClient extends MutilMinaTcpClientGameService {
@@ -44,8 +44,8 @@ public class Bydr2GateClient extends MutilMinaTcpClientGameService {
 
 	/**
 	 * 消息处理器
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * Role> 2017年7月11日 下午6:29:34
 	 */
 	public class MutilConHallHandler extends MutilTcpProtocolHandler {

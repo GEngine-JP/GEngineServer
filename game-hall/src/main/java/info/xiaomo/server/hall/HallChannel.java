@@ -2,8 +2,8 @@ package info.xiaomo.server.hall;
 
 /**
  * 大厅订阅发布 通道
- * <p>
- * <p>
+ *
+ *
  * 2017年7月10日 下午2:36:31
  */
 public enum HallChannel {

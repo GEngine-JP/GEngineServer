@@ -14,8 +14,8 @@ import info.xiaomo.gengine.persist.redis.jedis.JedisPubListener;
 import info.xiaomo.gengine.thread.ThreadPoolExecutorConfig;
 import info.xiaomo.gengine.thread.ThreadType;
 import info.xiaomo.gengine.utils.FileUtil;
-import info.xiaomo.server.fish.AppBydr;
-import info.xiaomo.server.fish.BydrChannel;
+import info.xiaomo.server.fish.FishApp;
+import info.xiaomo.server.fish.FishChannel;
 import info.xiaomo.server.shared.protocol.server.GameServerInfo;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -25,11 +25,11 @@ import org.slf4j.LoggerFactory;
 /**
  * 捕鱼服务器
  *
- * <p>
+ *
  * 可接收大厅服转发来的消息，和客户端直接发来的消息
  * </p>
  * <h4>mina和netty性能测试对比</h4>
- * <p>
+ *
  * 开启100个客户端，每个客户端每隔100ms发送一条消息
  * <li>在使用自定义线程池时，mina 50个连接,netty 1个连接:mina通信耗时在1~3毫秒，netty通信在0~100ms(变动幅度很大，多客户端性能较低，当单客户端发消息时变为0~3ms)</li>
  * <li>在使用自定义线程池时，mina 1个连接,netty 1个连接:mina通信耗时在1~3毫秒，netty通信耗时0~100ms. mina才启动比较耗时，然而netty才启动比较快；mina在单客户端比较耗时，多客户端比较快，netty相反</li>
@@ -39,8 +39,8 @@ import org.slf4j.LoggerFactory;
  * <li>在使用自定义线程池时，mina 1个连接,netty 1个连接:mina耗时0~3毫秒， netty耗时0~3毫秒</li>
  *
  * </p>
- * <p>
- * <p>
+ *
+ *
  * Role> 2017年6月28日 下午3:37:19
  */
 @Data
@@ -136,7 +136,7 @@ public class BydrServer implements Runnable {
 //        gameServerCheckTimer = new GameServerCheckTimer(bydr2ClusterClient, bydr2GateClient,
 //		bydr2GateClient instanceof Bydr2GateClient ? minaClientConfig_gate : nettyClientConfig_gate);
 		// 订阅发布
-		bydrPubListener = new JedisPubListener(BydrChannel.getChannels());
+		bydrPubListener = new JedisPubListener(FishChannel.getChannels());
 
 		//设置配置相关常量
 		Config.SERVER_ID = minaClientConfig_gate.getId();
@@ -144,7 +144,7 @@ public class BydrServer implements Runnable {
 	}
 
 	public static BydrServer getInstance() {
-		return AppBydr.getBydrServer();
+		return FishApp.getBydrServer();
 	}
 
 	@Override

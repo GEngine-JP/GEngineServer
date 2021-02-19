@@ -7,14 +7,14 @@ import info.xiaomo.server.shared.entity.Mail;
 /**
  * 邮件
  *
- * <p>2017年9月21日 下午4:45:19
+ * 2017年9月21日 下午4:45:19
  */
 public interface IMailScript extends IScript {
 
 	/**
 	 * 发送邮件
 	 *
-	 * <p>2017年9月21日 下午4:26:31
+	 * 2017年9月21日 下午4:26:31
 	 *
 	 * @param title
 	 * @param content

@@ -8,8 +8,8 @@ import org.simpleframework.xml.Root;
 
 /**
  * 游戏配置
- * <p>
- * <p>
+ *
+ *
  * 2017-04-14
  */
 @EqualsAndHashCode(callSuper = true)

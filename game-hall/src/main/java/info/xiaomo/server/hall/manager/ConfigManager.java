@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 配置表
- * <p>
- * <p>
+ *
+ *
  * 2017年10月18日 下午2:31:04
  */
 public class ConfigManager {
@@ -46,8 +46,8 @@ public class ConfigManager {
 
 	/**
 	 * 鱼配置信息
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年10月18日 下午3:18:43
 	 *
 	 * @param configId

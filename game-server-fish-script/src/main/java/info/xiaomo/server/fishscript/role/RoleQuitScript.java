@@ -8,8 +8,8 @@ import info.xiaomo.server.shared.entity.UserRole;
 
 /**
  * 退出
- * <p>
- * <p>
+ *
+ *
  * 2017年8月4日 下午2:14:32
  */
 public class RoleQuitScript implements IRoleScript {

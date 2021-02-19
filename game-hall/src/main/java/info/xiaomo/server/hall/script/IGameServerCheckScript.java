@@ -6,7 +6,7 @@ import info.xiaomo.server.shared.protocol.server.GameServerInfo;
 /**
  * 游戏服务器状态监测脚本
  *
- * <p>2017年7月10日 下午4:29:45
+ * 2017年7月10日 下午4:29:45
  */
 public interface IGameServerCheckScript extends IScript {
 

@@ -2,11 +2,11 @@ package info.xiaomo.server.fish;
 
 /**
  * 捕鱼达人监听通道
- * <p>
- * <p>
+ *
+ *
  * 2017年7月10日 下午2:40:49
  */
-public enum BydrChannel {
+public enum FishChannel {
 	/**
 	 * 登录大厅
 	 */
@@ -22,7 +22,7 @@ public enum BydrChannel {
 	;
 
 	public static String[] getChannels() {
-		BydrChannel[] values = BydrChannel.values();
+		FishChannel[] values = FishChannel.values();
 		String[] channels = new String[values.length];
 		for (int i = 0; i < values.length; i++) {
 			channels[i] = values[i].name();

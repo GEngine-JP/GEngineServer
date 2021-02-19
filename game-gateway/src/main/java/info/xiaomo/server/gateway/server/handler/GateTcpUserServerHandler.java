@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 大厅tcp消息处理器
- * <p>
+ *
  * 2017-04-09
  */
 public class GateTcpUserServerHandler extends ClientProtocolHandler {
@@ -62,7 +62,7 @@ public class GateTcpUserServerHandler extends ClientProtocolHandler {
 	/**
 	 * 消息转发到大厅服务器
 	 *
-	 * <p>2017年7月21日 上午10:14:44
+	 * 2017年7月21日 上午10:14:44
 	 *
 	 * @param session
 	 * @param msgID

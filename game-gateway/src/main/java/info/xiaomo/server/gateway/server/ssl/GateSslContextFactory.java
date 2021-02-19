@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * <h3>RSA证书生成步骤</h3>
- * <p>
+ *
  * //服务器证书生成
  * keytool -genkey -keyalg RSA -keysize 2048 -validity 36500 -alias GATE -keypass 123456 -keystore gate.jzy -storepass 123456 -dname "CN=localhost,OU=JJY,O=CN,L=CD,ST=SC,C=CN"
  * //服务器证书导出
@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
  * keytool -import  -file client.cert -keystore gate.jzy -storepass 123456
  * //查看证书条目
  * keytool -list -v -keystore gate.jzy -storepass 123456
- * <p>
+ *
  * //客户端证书生成
  * keytool -genkey -keyalg RSA -keysize 2048 -validity 36500 -alias CLIENT -keypass 123456 -keystore client.jzy -storepass 123456 -dname "CN=localhost,OU=JJY,O=CN,L=CD,ST=SC,C=CN"
  * //客户端证书导出
@@ -61,8 +61,8 @@ public final class GateSslContextFactory {
 
 	/**
 	 * 获取 SSL上下文
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月5日 下午2:11:31
 	 *
 	 * @param server true服务器模式
@@ -99,8 +99,8 @@ public final class GateSslContextFactory {
 
 	/**
 	 * 服务器 SSLContext
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月5日 下午2:19:01
 	 *
 	 * @return

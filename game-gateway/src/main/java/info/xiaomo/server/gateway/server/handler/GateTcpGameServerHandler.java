@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 游戏服、大厅服等内部共用的服务器
- * <p>
+ *
  * 下午2:05:46
  */
 public class GateTcpGameServerHandler extends DefaultProtocolHandler {

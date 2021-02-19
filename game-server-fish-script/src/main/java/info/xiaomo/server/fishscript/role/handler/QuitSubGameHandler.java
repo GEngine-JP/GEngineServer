@@ -14,8 +14,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 退出子游戏
- * <p>
- * <p>
+ *
+ *
  * 2017年7月26日 下午5:34:06
  */
 @HandlerEntity(mid = MsgId.QuitSubGameReq_VALUE, msg = QuitSubGameRequest.class)

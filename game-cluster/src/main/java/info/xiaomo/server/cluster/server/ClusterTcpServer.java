@@ -66,8 +66,8 @@ public class ClusterTcpServer extends GameService<MinaServerConfig> {
 
 	/**
 	 * 消息处理器
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017-03-31
 	 */
 	public class ClusterTcpServerHandler extends DefaultProtocolHandler {

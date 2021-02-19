@@ -20,8 +20,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 角色信息
- * <p>
- * <p>
+ *
+ *
  * 2017-02-27
  */
 @EqualsAndHashCode(callSuper = true)
@@ -133,8 +133,8 @@ public class UserRole extends AbsPerson {
 
 	/**
 	 * 道具数量
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年10月24日 上午10:23:57
 	 *
 	 * @return
@@ -147,8 +147,8 @@ public class UserRole extends AbsPerson {
 
 	/**
 	 * 获取道具
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年10月24日 上午10:21:18
 	 *
 	 * @param itemId
@@ -161,8 +161,8 @@ public class UserRole extends AbsPerson {
 
 	/**
 	 * 所有道具
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年10月24日 上午10:36:11
 	 *
 	 * @return
@@ -175,8 +175,8 @@ public class UserRole extends AbsPerson {
 
 	/**
 	 * 角色存redis key
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月26日 下午5:02:40
 	 *
 	 * @return
@@ -187,8 +187,8 @@ public class UserRole extends AbsPerson {
 
 	/**
 	 * 存储整个role对象
-	 * <p>
-	 * <p>
+	 *
+	 *
 	 * 2017年9月26日 下午5:06:51
 	 */
 	public void saveToRedis() {

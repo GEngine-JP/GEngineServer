@@ -6,8 +6,8 @@ import info.xiaomo.server.shared.entity.UserRole;
 
 /**
  * 机器人脚本
- * <p>
- * <p>
+ *
+ *
  * 2017-04-27
  */
 public interface IRobotScript extends IScript {
