@@ -23,11 +23,6 @@
         </dependency>
         <dependency>
             <groupId>info.xiaomo</groupId>
-            <artifactId>g-engine-server</artifactId>
-            <version>3.1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>info.xiaomo</groupId>
             <artifactId>game-shared</artifactId>
         </dependency>
         <dependency>
