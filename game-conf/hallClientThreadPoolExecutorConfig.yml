@@ -1,5 +1,0 @@
-name: 游戏线程池执行器:0
-corePoolSize: 20
-maxPoolSize: 400
-keepAliveTime: 30
-heart: 1000

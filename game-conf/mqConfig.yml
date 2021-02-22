@@ -1,5 +1,0 @@
-MqConfig:
-  baseUser: xiaomo
-  password: xiaomo2019
-  host: 127.0.0.1
-  port: 61616

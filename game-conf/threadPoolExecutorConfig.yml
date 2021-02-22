@@ -1,5 +1,0 @@
-name: IO默认线程池
-corePoolSize: 10
-maxPoolSize: 400
-keepAliveTime: 30
-heart: 1000
