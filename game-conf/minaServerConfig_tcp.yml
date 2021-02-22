@@ -1,0 +1,10 @@
+ip: 127.0.0.1
+port: 8500
+orderedThreadPoolExecutorSize: 10
+receiveBufferSize: 1048576
+sendBufferSize: 1048576
+reuseAddress: true
+tcpNoDelay: true
+readerIdleTime: 1200
+writerIdleTime: 1200
+soLinger: 0

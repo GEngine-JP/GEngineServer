@@ -40,6 +40,12 @@
         <concurrentlinkedhashmap.version>1.4.2</concurrentlinkedhashmap.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/GEngine-JP/GEngine</url>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>
