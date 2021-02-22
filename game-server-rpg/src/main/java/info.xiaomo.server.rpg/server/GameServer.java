@@ -1,7 +1,7 @@
 package info.xiaomo.server.rpg.server;
 
+import info.xiaomo.gengine.network.IService;
 import info.xiaomo.gengine.network.NetworkServiceBuilder;
-import info.xiaomo.gengine.network.NetworkServiceImpl;
 import info.xiaomo.server.rpg.config.ConfigDataManager;
 import info.xiaomo.server.rpg.constant.GameConst;
 import info.xiaomo.server.rpg.db.DataCenter;
@@ -12,84 +12,73 @@ import info.xiaomo.server.rpg.system.schedule.ScheduleManager;
 import lombok.Data;
 
 /**
- * 把今天最好的表现当作明天最新的起点．．～
- * いま 最高の表現 として 明日最新の始発．．～
- * Today the best performance  as tomorrow newest starter!
- * Created by IntelliJ IDEA.
- * <p>
- * @author : xiaomo
- * github: https://github.com/xiaomoinfo
- * email : xiaomo@xiaomo.info
- * QQ    : 83387856
- * Date  : 2017/7/11 15:08
- * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
 @Data
 public class GameServer {
 
-    private NetworkServiceImpl netWork;
+	private IService networkService;
 
-    private boolean state = false;
+	private boolean networkState = false;
 
-    private MessageRouter router;
+	private MessageRouter router;
 
-    public GameServer() throws Exception {
-        int bossLoopGroupCount = 4;
-        int workerLoopGroupCount = Math.max(Runtime.getRuntime().availableProcessors(), 8);
+	public GameServer() throws Exception {
+		int bossLoopGroupCount = 1;
+		int workerLoopGroupCount = Math.max(Runtime.getRuntime().availableProcessors(), 4);
 
-        GameMessageAndHandlerPool pool = new GameMessageAndHandlerPool();
+		GameMessageAndHandlerPool pool = new GameMessageAndHandlerPool();
 
-        router = new MessageRouter(pool);
-        NetworkServiceBuilder builder = new NetworkServiceBuilder();
-        builder.setImessageandhandler(pool);
-        builder.setBossLoopGroupCount(bossLoopGroupCount);
-        builder.setWorkerLoopGroupCount(workerLoopGroupCount);
-        builder.setPort(GameContext.getGameServerPort());
-        builder.setListener(new NetworkListener());
-        builder.setConsumer(router);
+		router = new MessageRouter(pool);
+		NetworkServiceBuilder builder = new NetworkServiceBuilder();
+		builder.setImessageandhandler(pool);
+		builder.setBossLoopGroupCount(bossLoopGroupCount);
+		builder.setWorkerLoopGroupCount(workerLoopGroupCount);
+		builder.setPort(GameContext.getGameServerPort());
+		builder.setListener(new NetworkListener());
+		builder.setConsumer(router);
 
-        //登录和下线
-        router.registerProcessor(GameConst.QueueId.LOGIN_LOGOUT, new LoginProcessor());
-        //业务队列
-        router.registerProcessor(GameConst.QueueId.LOGIC, new LogicProcessor());
+		//登录和下线
+		router.registerProcessor(GameConst.QueueId.LOGIN_LOGOUT, new LoginProcessor());
+		//业务队列
+		router.registerProcessor(GameConst.QueueId.LOGIC, new LogicProcessor());
 
-        // 创建网络服务
-        netWork = builder.createService();
+		// 创建网络服务
+		networkService = builder.createService();
 
-        // 初始化数据库
-        DataCenter.init();
+		// 初始化数据库
+		DataCenter.init();
 
-        //初始化配置文件
-        ConfigDataManager.getInstance().init();
+		//初始化配置文件
+		ConfigDataManager.getInstance().init();
 
-        // 注册事件
-        EventRegister.registerPreparedListeners();
+		// 注册事件
+		EventRegister.registerPreparedListeners();
 
-        //开启定时任务
-        ScheduleManager.getInstance().start();
-    }
+		//开启定时任务
+		ScheduleManager.getInstance().start();
+	}
 
-    public MessageRouter getRouter() {
-        return this.router;
-    }
+	public MessageRouter getRouter() {
+		return this.router;
+	}
 
 
-    public void start() {
-        netWork.start();
-        if (netWork.isOpened()) {
-            state = true;
-        }
-    }
+	public void start() {
+		networkService.start();
+		if (networkService.isOpened()) {
+			networkState = true;
+		}
+	}
 
-    public boolean isOpen() {
-        return state;
-    }
+	public boolean isOpen() {
+		return networkState;
+	}
 
-    public void stop() {
-        netWork.stop();
-        state = false;
-    }
+	public void stop() {
+		networkService.stop();
+		networkState = false;
+	}
 
 
 }
