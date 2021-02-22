@@ -18,7 +18,7 @@
 
     <properties>
         <gameServer.version>3.1.4</gameServer.version>
-        <GEngine.version>3.2.2</GEngine.version>
+        <GEngine.version>3.2.3</GEngine.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
@@ -36,7 +36,7 @@
         <beanutils.version>1.9.4</beanutils.version>
         <mysql.version>8.0.20</mysql.version>
         <protostuff.version>1.3.7</protostuff.version>
-        <druid.version>1.0.16</druid.version>
+        <druid.version>1.2.5</druid.version>
         <concurrentlinkedhashmap.version>1.4.2</concurrentlinkedhashmap.version>
     </properties>
 

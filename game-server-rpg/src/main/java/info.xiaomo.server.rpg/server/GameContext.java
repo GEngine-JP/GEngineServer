@@ -1,15 +1,18 @@
 package info.xiaomo.server.rpg.server;
 
+import java.util.Date;
+import info.xiaomo.gengine.utils.PathUtil;
+import info.xiaomo.gengine.utils.StringUtil;
 import info.xiaomo.gengine.utils.TimeUtil;
 import info.xiaomo.server.rpg.back.BackServer;
+import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Date;
 
 /**
  * @author xiaomo
  */
+@Data
 public class GameContext {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(GameContext.class);
@@ -17,6 +20,12 @@ public class GameContext {
 	private static int serverId;
 
 	private static int serverType;
+
+	private static String gameDBConfigPath;
+
+	private static String logDBConfigPath;
+
+	private static int gameServerPort;
 
 	/**
 	 * 开服日期
@@ -70,6 +79,20 @@ public class GameContext {
 		serverId = option.getServerId();
 		serverType = option.getServerType();
 		openTime = option.getOpenTime();
+
+		if (StringUtil.isBlank(option.getGameDbConfigPath())) {
+			gameDBConfigPath = PathUtil.getConfigPath() + "gameDb.yml";
+		} else {
+			gameDBConfigPath = option.getGameDbConfigPath();
+		}
+
+		if (StringUtil.isBlank(option.getGameDbConfigPath())) {
+			logDBConfigPath = PathUtil.getConfigPath() + "logDbConfig.yml";
+		} else {
+			logDBConfigPath = option.getGameDbConfigPath();
+		}
+
+		gameServerPort = option.getGameServerPort();
 		openDayZeroTime = TimeUtil.getZeroClockTime(openTime.getTime());
 
 		LOGGER.info("开服时间：{}", openTime);
@@ -93,7 +116,7 @@ public class GameContext {
 
 	public static GameServer createGameServer() {
 		try {
-			gameServer = new GameServer(option);
+			gameServer = new GameServer();
 			return gameServer;
 		} catch (Throwable e) {
 			throw new RuntimeException(e);
@@ -165,7 +188,7 @@ public class GameContext {
 		return gameServer;
 	}
 
-	public static BackServer getBackServer(){
+	public static BackServer getBackServer() {
 		return backServer;
 	}
 
@@ -193,5 +216,15 @@ public class GameContext {
 		GameContext.closed = closed;
 	}
 
+	public static String getGameDBConfigPath() {
+		return gameDBConfigPath;
+	}
 
+	public static String getLogDBConfigPath() {
+		return logDBConfigPath;
+	}
+
+	public static int getGameServerPort() {
+		return gameServerPort;
+	}
 }

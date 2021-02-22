@@ -1,8 +1,8 @@
 package info.xiaomo.server.rpg.util;
 
-import info.xiaomo.server.rpg.server.GameContext;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import info.xiaomo.server.rpg.server.GameContext;
 
 /**
  * @author xiaomo

@@ -27,8 +27,8 @@ public class LogoutCommand extends AbstractCommand {
 	@Override
 	public void doAction() {
 
-		Boolean logoutHandled =  AttributeUtil.get(session.getChannel(), SessionKey.LOGOUT_HANDLED);
-		if(Boolean.TRUE.equals(logoutHandled)) {
+		Boolean logoutHandled = AttributeUtil.get(session.getChannel(), SessionKey.LOGOUT_HANDLED);
+		if (Boolean.TRUE.equals(logoutHandled)) {
 			LOGGER.error("网络连接断开的时候玩家已经处理过下线事件[顶号]->{}", session.getUser().toString());
 			return;
 		}

@@ -10,6 +10,7 @@ import info.xiaomo.server.rpg.server.ServerOption;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  * <p>
+ *
  * @author : xiaomo
  * github: https://github.com/xiaomoinfo
  * email: xiaomo@xiaomo.info
@@ -20,27 +21,27 @@ import info.xiaomo.server.rpg.server.ServerOption;
 
 public class BackServer {
 
-    private NetworkServiceImpl service;
+	private NetworkServiceImpl service;
 
-    public BackServer(ServerOption option) {
-        BackMessageAndHandler pool = new BackMessageAndHandler();
-        int bossLoopGroupCount = 4;
-        int workerLoopGroupCount = 4;
-        NetworkServiceBuilder builder = new NetworkServiceBuilder();
-        builder.setBossLoopGroupCount(bossLoopGroupCount);
-        builder.setWorkerLoopGroupCount(workerLoopGroupCount);
-        builder.setPort(option.getBackServerPort());
-        builder.setImessageandhandler(pool);
-        builder.setConsumer(new BackMessageRouter());
+	public BackServer(ServerOption option) {
+		BackMessageAndHandler pool = new BackMessageAndHandler();
+		int bossLoopGroupCount = 4;
+		int workerLoopGroupCount = 4;
+		NetworkServiceBuilder builder = new NetworkServiceBuilder();
+		builder.setBossLoopGroupCount(bossLoopGroupCount);
+		builder.setWorkerLoopGroupCount(workerLoopGroupCount);
+		builder.setPort(option.getBackServerPort());
+		builder.setImessageandhandler(pool);
+		builder.setConsumer(new BackMessageRouter());
 
-        service = builder.createService();
-    }
+		service = builder.createService();
+	}
 
-    public void start() {
-        service.start();
-    }
+	public void start() {
+		service.start();
+	}
 
-    public void stop() {
-        service.stop();
-    }
+	public void stop() {
+		service.stop();
+	}
 }

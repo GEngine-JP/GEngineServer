@@ -3,6 +3,8 @@ package info.xiaomo.server.rpg;
 import info.xiaomo.gengine.config.ConfigSuffix;
 import info.xiaomo.gengine.config.annotation.ConfigFileScan;
 import info.xiaomo.gengine.config.annotation.PackageScan;
+import info.xiaomo.gengine.utils.PathUtil;
+import info.xiaomo.gengine.utils.YamlUtil;
 import info.xiaomo.server.rpg.back.BackServer;
 import info.xiaomo.server.rpg.server.GameContext;
 import info.xiaomo.server.rpg.server.GameServer;
@@ -25,17 +27,13 @@ import org.slf4j.LoggerFactory;
  * Copyright(©) 2015 by xiaomo.
  **/
 
-@ConfigFileScan(value = "/Users/hupeng/Workspace/IdeaProjects/game/ConfigData", suffix = ConfigSuffix.excel)
+@ConfigFileScan(value = "/Users/ctwdevops/Workspace/game/GameTables", suffix = ConfigSuffix.excel)
 @PackageScan("info.xiaomo.server.config.tables")
-public class GameServerBootstrap {
-	public static final Logger LOGGER = LoggerFactory.getLogger(GameServerBootstrap.class);
+public class GameApplication {
+	public static final Logger LOGGER = LoggerFactory.getLogger(GameApplication.class);
 
-	public static void main(String[] args) throws Exception {
-		String configPath = "config.properties";
-		if (args.length > 0) {
-			configPath = args[0];
-		}
-		ServerOption option = new ServerOption(configPath);
+	public static void main(String[] args) {
+		ServerOption option = YamlUtil.read(PathUtil.getConfigPath() + "config.yml", ServerOption.class);
 		GameContext.init(option);
 
 		GameServer server = GameContext.createGameServer();

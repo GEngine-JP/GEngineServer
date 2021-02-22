@@ -34,10 +34,9 @@ public class GameServer {
 
     private MessageRouter router;
 
-    public GameServer(ServerOption option) throws Exception {
+    public GameServer() throws Exception {
         int bossLoopGroupCount = 4;
-        int workerLoopGroupCount = Runtime.getRuntime().availableProcessors() < 8 ? 8
-                : Runtime.getRuntime().availableProcessors();
+        int workerLoopGroupCount = Math.max(Runtime.getRuntime().availableProcessors(), 8);
 
         GameMessageAndHandlerPool pool = new GameMessageAndHandlerPool();
 
@@ -46,7 +45,7 @@ public class GameServer {
         builder.setImessageandhandler(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
-        builder.setPort(option.getGameServerPort());
+        builder.setPort(GameContext.getGameServerPort());
         builder.setListener(new NetworkListener());
         builder.setConsumer(router);
 
@@ -59,7 +58,7 @@ public class GameServer {
         netWork = builder.createService();
 
         // 初始化数据库
-        DataCenter.init(option);
+        DataCenter.init();
 
         //初始化配置文件
         ConfigDataManager.getInstance().init();

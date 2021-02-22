@@ -1,4 +1,0 @@
-name: 默认线程池执行器:0
-corePoolSize: 100
-maxPoolSize: 300
-keepAliveTime: 30

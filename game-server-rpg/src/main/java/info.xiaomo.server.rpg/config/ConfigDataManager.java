@@ -2,7 +2,7 @@ package info.xiaomo.server.rpg.config;
 
 
 import info.xiaomo.gengine.config.excel.ExcelConfigDataManager;
-import info.xiaomo.server.rpg.GameServerBootstrap;
+import info.xiaomo.server.rpg.GameApplication;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -23,7 +23,7 @@ public class ConfigDataManager extends ExcelConfigDataManager {
     private static final ConfigDataManager INSTANCE = new ConfigDataManager();
 
     private ConfigDataManager() {
-        super(GameServerBootstrap.class);
+        super(GameApplication.class);
     }
 
     public static ConfigDataManager getInstance() {

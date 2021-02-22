@@ -14,7 +14,7 @@ import info.xiaomo.gengine.utils.JdbcUtil;
 import info.xiaomo.server.rpg.db.mapper.UserMapper;
 import info.xiaomo.server.rpg.db.msyql.UserPersistFactory;
 import info.xiaomo.server.rpg.entify.User;
-import info.xiaomo.server.rpg.server.ServerOption;
+import info.xiaomo.server.rpg.server.GameContext;
 import info.xiaomo.server.rpg.system.user.field.UserField;
 
 /**
@@ -48,9 +48,9 @@ public class MysqlDataProviderProxy implements IDataProvider {
 		return uidMap.containsKey(id);
 	}
 
-	MysqlDataProviderProxy(ServerOption option) throws Exception {
+	MysqlDataProviderProxy() throws Exception {
 		// 创建数据库模板
-		ConnectionPool connectionPool = new DruidConnectionPool(option.getGameDbConfigPath());
+		ConnectionPool connectionPool = new DruidConnectionPool(GameContext.getGameDBConfigPath());
 		JdbcTemplate template = new JdbcTemplate(connectionPool);
 		this.template = template;
 		provider = new MysqlDataProvider();

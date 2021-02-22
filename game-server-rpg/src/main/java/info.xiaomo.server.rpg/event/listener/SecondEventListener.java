@@ -2,8 +2,7 @@ package info.xiaomo.server.rpg.event.listener;
 
 import info.xiaomo.gengine.event.IEventListener;
 import info.xiaomo.server.rpg.entify.User;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～
@@ -19,11 +18,11 @@ import org.slf4j.LoggerFactory;
  * desc  :
  * Copyright(©) 2017 by xiaomo.
  */
+@Slf4j
 public class SecondEventListener implements IEventListener {
-    private static final Logger LOGGER = LoggerFactory.getLogger(MinuteEventListener.class);
     @Override
     public void update(Integer type, Object param) {
         User user = (User)param;
-        LOGGER.info("一秒钟执行一次。。。。。");
+//        log.info("一秒钟执行一次。。。。。");
     }
 }

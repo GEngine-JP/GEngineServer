@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
  * Today the best performance  as tomorrow newest starter!
  * Created by IntelliJ IDEA.
  * <p>
+ *
  * @author : xiaomo
  * github: https://github.com/xiaomoinfo
  * email : xiaomo@xiaomo.info
@@ -20,31 +21,31 @@ import org.slf4j.LoggerFactory;
  */
 public class BackManager {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BackManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(BackManager.class);
 
-    private static BackManager ourInstance = new BackManager();
+	private static BackManager ourInstance = new BackManager();
 
-    public static BackManager getInstance() {
-        return ourInstance;
-    }
+	public static BackManager getInstance() {
+		return ourInstance;
+	}
 
-    private BackManager() {
-    }
+	private BackManager() {
+	}
 
-    public void closeServer() {
-        LOGGER.error("通过后台命令关服");
-        System.exit(0);
-    }
+	public void closeServer() {
+		LOGGER.error("通过后台命令关服");
+		System.exit(0);
+	}
 
-    public void exeGM(short sequence, Session session, String command) {
+	public void exeGM(short sequence, Session session, String command) {
 //        ResGMMessage msg = new ResGMMessage();
 //        msg.setSequence(sequence);
 //        msg.setContent(command);
 //        MessageUtil.sendMsg(msg, session.getUser().getId());
 
-    }
+	}
 
-    public void reloadCfg(short sequence, Session session, int type, String cfgName, String cacheName) {
+	public void reloadCfg(short sequence, Session session, int type, String cfgName, String cacheName) {
 
-    }
+	}
 }
