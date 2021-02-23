@@ -32,12 +32,12 @@
 
 # 项目预览
 
-![输入图片说明](screenshot/大厅.png "屏幕截图.png")
-![输入图片说明](screenshot/大厅2.png "屏幕截图.png")
-![输入图片说明](screenshot/majiang.jpeg "屏幕截图.png")
-![输入图片说明](screenshot/分享.png "屏幕截图.png")
-![输入图片说明](screenshot/反馈.png "屏幕截图.png")
-![输入图片说明](screenshot/房间号.png "屏幕截图.png")
-![输入图片说明](screenshot/加入房间.png "屏幕截图.png")
-![输入图片说明](screenshot/消息.png "屏幕截图.png")
-![输入图片说明](screenshot/设置.png "屏幕截图.png")      
+![输入图片说明](game-screenshot/大厅.png "屏幕截图.png")
+![输入图片说明](game-screenshot/大厅2.png "屏幕截图.png")
+![输入图片说明](game-screenshot/majiang.jpeg "屏幕截图.png")
+![输入图片说明](game-screenshot/分享.png "屏幕截图.png")
+![输入图片说明](game-screenshot/反馈.png "屏幕截图.png")
+![输入图片说明](game-screenshot/房间号.png "屏幕截图.png")
+![输入图片说明](game-screenshot/加入房间.png "屏幕截图.png")
+![输入图片说明](game-screenshot/消息.png "屏幕截图.png")
+![输入图片说明](game-screenshot/设置.png "屏幕截图.png")      
