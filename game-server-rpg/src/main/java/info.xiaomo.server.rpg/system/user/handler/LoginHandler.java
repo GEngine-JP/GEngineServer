@@ -10,11 +10,11 @@ import info.xiaomo.server.shared.protocol.user.LoginRequest;
  */
 public class LoginHandler extends AbstractHandler<LoginRequest> {
 
-	@Override
-	public void doAction() {
-		Session session = (Session) this.session;
-		UserManager.getInstance().login(session, message.getLoginName());
-	}
+    @Override
+    public void doAction() {
+        Session session = (Session) this.session;
+        UserManager.getInstance().login(session, message.getLoginName());
+    }
 
 
 }
