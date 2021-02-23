@@ -15,7 +15,7 @@ import info.xiaomo.gengine.network.IProcessor;
  */
 public class LoginProcessor implements IProcessor {
 
-	private ExecutorService executor = new ThreadPoolExecutor(8, 8, 0L,
+	private final ExecutorService executor = new ThreadPoolExecutor(8, 8, 0L,
 			TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(100000),
 			new ThreadPoolExecutor.CallerRunsPolicy());
 

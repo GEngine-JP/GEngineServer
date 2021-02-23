@@ -1,4 +1,4 @@
-package info.xiaomo.server.rpg.server;
+package info.xiaomo.server.rpg.server.game;
 
 import info.xiaomo.gengine.network.INetworkEventListener;
 import info.xiaomo.gengine.network.IProcessor;

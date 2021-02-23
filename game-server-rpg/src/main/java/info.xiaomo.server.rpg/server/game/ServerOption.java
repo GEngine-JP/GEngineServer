@@ -1,4 +1,4 @@
-package info.xiaomo.server.rpg.server;
+package info.xiaomo.server.rpg.server.game;
 
 
 import java.util.Date;

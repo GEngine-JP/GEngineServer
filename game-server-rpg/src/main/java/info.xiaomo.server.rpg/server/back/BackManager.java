@@ -1,6 +1,6 @@
-package info.xiaomo.server.rpg.back;
+package info.xiaomo.server.rpg.server.back;
 
-import info.xiaomo.server.rpg.server.Session;
+import info.xiaomo.server.rpg.server.game.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

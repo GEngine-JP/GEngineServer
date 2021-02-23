@@ -1,4 +1,4 @@
-package info.xiaomo.server.rpg.server;
+package info.xiaomo.server.rpg.server.game;
 
 import info.xiaomo.server.rpg.entify.Role;
 import info.xiaomo.server.rpg.entify.User;

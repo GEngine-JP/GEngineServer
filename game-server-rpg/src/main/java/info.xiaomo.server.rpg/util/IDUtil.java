@@ -2,7 +2,7 @@ package info.xiaomo.server.rpg.util;
 
 
 import java.util.concurrent.atomic.AtomicInteger;
-import info.xiaomo.server.rpg.server.GameContext;
+import info.xiaomo.server.rpg.server.game.GameContext;
 
 /**
  * @author xiaomo

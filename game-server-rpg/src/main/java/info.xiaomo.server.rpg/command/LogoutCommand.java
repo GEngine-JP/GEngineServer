@@ -3,7 +3,7 @@ package info.xiaomo.server.rpg.command;
 import info.xiaomo.gengine.concurrent.command.AbstractCommand;
 import info.xiaomo.gengine.network.SessionKey;
 import info.xiaomo.gengine.utils.AttributeUtil;
-import info.xiaomo.server.rpg.server.Session;
+import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.system.user.UserManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -4,7 +4,7 @@ import com.google.protobuf.AbstractMessage;
 import info.xiaomo.gengine.network.INetworkConsumer;
 import info.xiaomo.gengine.network.SessionKey;
 import info.xiaomo.gengine.utils.AttributeUtil;
-import info.xiaomo.server.rpg.server.Session;
+import info.xiaomo.server.rpg.server.game.Session;
 import io.netty.channel.Channel;
 
 public class RobotConsumer implements INetworkConsumer {

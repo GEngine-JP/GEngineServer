@@ -14,7 +14,7 @@ import info.xiaomo.gengine.utils.JdbcUtil;
 import info.xiaomo.server.rpg.db.mapper.UserMapper;
 import info.xiaomo.server.rpg.db.msyql.UserPersistFactory;
 import info.xiaomo.server.rpg.entify.User;
-import info.xiaomo.server.rpg.server.GameContext;
+import info.xiaomo.server.rpg.server.game.GameContext;
 import info.xiaomo.server.rpg.system.user.field.UserField;
 
 /**

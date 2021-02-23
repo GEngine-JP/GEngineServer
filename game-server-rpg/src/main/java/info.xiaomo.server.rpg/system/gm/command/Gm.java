@@ -1,7 +1,7 @@
 package info.xiaomo.server.rpg.system.gm.command;
 
 
-import info.xiaomo.server.rpg.server.Session;
+import info.xiaomo.server.rpg.server.game.Session;
 
 /**
  * 把今天最好的表现当作明天最新的起点．．～

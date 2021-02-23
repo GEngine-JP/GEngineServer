@@ -1,4 +1,4 @@
-package info.xiaomo.server.rpg.back;
+package info.xiaomo.server.rpg.server.back;
 
 
 import info.xiaomo.gengine.network.pool.MessageAndHandlerPool;

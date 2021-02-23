@@ -5,10 +5,10 @@ import info.xiaomo.gengine.config.annotation.ConfigFileScan;
 import info.xiaomo.gengine.config.annotation.PackageScan;
 import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.YamlUtil;
-import info.xiaomo.server.rpg.back.BackServer;
-import info.xiaomo.server.rpg.server.GameContext;
+import info.xiaomo.server.rpg.server.BackServer;
+import info.xiaomo.server.rpg.server.game.GameContext;
 import info.xiaomo.server.rpg.server.GameServer;
-import info.xiaomo.server.rpg.server.ServerOption;
+import info.xiaomo.server.rpg.server.game.ServerOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -3,7 +3,7 @@ package info.xiamo.server.robot.handle;
 import info.xiaomo.gengine.network.INetworkEventListener;
 import info.xiaomo.gengine.network.SessionKey;
 import info.xiaomo.gengine.utils.AttributeUtil;
-import info.xiaomo.server.rpg.server.Session;
+import info.xiaomo.server.rpg.server.game.Session;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;

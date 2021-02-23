@@ -1,4 +1,4 @@
-package info.xiaomo.server.rpg.server;
+package info.xiaomo.server.rpg.server.game;
 
 import com.google.protobuf.AbstractMessage;
 import java.net.InetSocketAddress;

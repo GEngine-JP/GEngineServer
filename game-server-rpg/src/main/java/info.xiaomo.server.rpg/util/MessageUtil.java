@@ -3,8 +3,8 @@ package info.xiaomo.server.rpg.util;
 
 import com.google.protobuf.AbstractMessage;
 import java.util.Collection;
-import info.xiaomo.server.rpg.server.Session;
-import info.xiaomo.server.rpg.server.SessionManager;
+import info.xiaomo.server.rpg.server.game.Session;
+import info.xiaomo.server.rpg.server.game.SessionManager;
 
 /**
  * @author xiaomo

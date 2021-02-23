@@ -1,4 +1,4 @@
-package info.xiaomo.server.rpg.server;
+package info.xiaomo.server.rpg.server.game;
 
 import info.xiaomo.gengine.network.pool.MessageAndHandlerPool;
 import info.xiaomo.server.rpg.system.user.handler.LoginHandler;

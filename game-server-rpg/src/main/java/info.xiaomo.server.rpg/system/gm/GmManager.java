@@ -1,11 +1,9 @@
 package info.xiaomo.server.rpg.system.gm;
 
 import info.xiaomo.server.rpg.entify.User;
-import info.xiaomo.server.rpg.server.Session;
+import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.system.gm.command.Gm;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Copyright(©) 2017 by xiaomo.

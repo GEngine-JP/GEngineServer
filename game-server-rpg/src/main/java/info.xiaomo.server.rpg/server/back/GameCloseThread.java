@@ -1,4 +1,4 @@
-package info.xiaomo.server.rpg.back;
+package info.xiaomo.server.rpg.server.back;
 
 import java.util.concurrent.TimeUnit;
 import info.xiaomo.gengine.concurrent.QueueExecutor;
@@ -7,9 +7,9 @@ import info.xiaomo.gengine.utils.ExecutorUtil;
 import info.xiaomo.gengine.utils.TimeUtil;
 import info.xiaomo.server.rpg.db.DataCenter;
 import info.xiaomo.server.rpg.event.EventType;
-import info.xiaomo.server.rpg.server.GameContext;
-import info.xiaomo.server.rpg.server.Session;
-import info.xiaomo.server.rpg.server.SessionManager;
+import info.xiaomo.server.rpg.server.game.GameContext;
+import info.xiaomo.server.rpg.server.game.Session;
+import info.xiaomo.server.rpg.server.game.SessionManager;
 import io.netty.channel.ChannelFuture;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

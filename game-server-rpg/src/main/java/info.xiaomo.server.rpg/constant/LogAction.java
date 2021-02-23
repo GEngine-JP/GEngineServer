@@ -11,9 +11,9 @@ public enum LogAction {
      */
     GM(1, "gm产生"),;
 
-    private int code;
+    private final int code;
 
-    private String comment;
+    private final String comment;
 
     LogAction(int code, String comment) {
         this.code = code;
