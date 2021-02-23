@@ -1,10 +1,7 @@
 package info.xiaomo.server.rpg.server.game;
 
 import com.google.protobuf.AbstractMessage;
-import info.xiaomo.gengine.network.AbstractHandler;
-import info.xiaomo.gengine.network.IMessageAndHandler;
-import info.xiaomo.gengine.network.INetworkConsumer;
-import info.xiaomo.gengine.network.IProcessor;
+import info.xiaomo.gengine.network.*;
 import info.xiaomo.gengine.utils.AttributeUtil;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +30,7 @@ public class MessageRouter implements INetworkConsumer {
 
     @SuppressWarnings("unchecked")
     @Override
-    public void consume(AbstractMessage msg, Channel channel) {
+    public void consume(Packet msg, Channel channel) {
 
         //将消息分发到指定的队列中，该队列有可能在同一个进程，也有可能不在同一个进程
 

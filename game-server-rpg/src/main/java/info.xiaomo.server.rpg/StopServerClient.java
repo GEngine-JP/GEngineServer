@@ -25,7 +25,7 @@ public class StopServerClient {
             ClientBuilder builder = new ClientBuilder();
             builder.setHost("localhost");//只关本机的服务器
             builder.setPort(option.getBackServerPort());
-            builder.setConsumer(new BackMessageRouter());
+            builder.setConsumer(new BackMessageRouter(pool));
             builder.setMsgPool(pool);
 
             Client client = builder.createClient();

@@ -2,6 +2,7 @@ package info.xiamo.server.robot;
 
 import info.xiamo.server.robot.handle.RobotConsumer;
 import info.xiamo.server.robot.handle.RobotEventListener;
+import info.xiamo.server.robot.handle.RobotMessagePool;
 import info.xiaomo.gengine.network.handler.MessageDecoder;
 import info.xiaomo.gengine.network.handler.MessageEncoder;
 import info.xiaomo.gengine.network.handler.MessageExecutor;
@@ -25,7 +26,7 @@ public class Client {
                 pip.addLast("NettyMessageDecoder", new MessageDecoder(8192));
                 pip.addLast("NettyMessageEncoder", new MessageEncoder(8192));
                 pip.addLast("NettyMessageExecutor",
-                        new MessageExecutor(new RobotConsumer(), new RobotEventListener()));
+                        new MessageExecutor(new RobotConsumer(new RobotMessagePool()), new RobotEventListener()));
             }
         });
 
@@ -44,11 +45,7 @@ public class Client {
 //		channel.writeAndFlush(req);
 
 
-        while (true) {
-            Thread.sleep(1000000);
-        }
-
-        //f.channel().closeFuture().sync();
-        //group.shutdownGracefully();
+        f.channel().closeFuture().sync();
+        group.shutdownGracefully();
     }
 }
