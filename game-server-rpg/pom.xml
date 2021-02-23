@@ -16,6 +16,8 @@
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
 
+
+
     <dependencies>
         <dependency>
             <groupId>info.xiaomo</groupId>
@@ -24,6 +26,16 @@
         <dependency>
             <groupId>info.xiaomo</groupId>
             <artifactId>game-shared</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

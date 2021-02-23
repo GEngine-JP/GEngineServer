@@ -12,6 +12,7 @@ public class BackMessageRouter implements INetworkConsumer {
 
 	@Override
 	public void consume(AbstractMessage message, Channel channel) {
+		System.out.println();
 //        message.doAction();
 	}
 

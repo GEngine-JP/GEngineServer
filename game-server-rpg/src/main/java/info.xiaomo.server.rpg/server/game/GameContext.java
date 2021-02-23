@@ -1,6 +1,7 @@
 package info.xiaomo.server.rpg.server.game;
 
 import java.util.Date;
+
 import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.StringUtil;
 import info.xiaomo.gengine.utils.TimeUtil;
@@ -16,216 +17,223 @@ import org.slf4j.LoggerFactory;
 @Data
 public class GameContext {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(GameContext.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GameContext.class);
 
-	private static int serverId;
+    private static int serverId;
 
-	private static int serverType;
+    private static int serverType;
 
-	private static String gameDBConfigPath;
+    private static String gameDBConfigPath;
 
-	private static String logDBConfigPath;
+    private static String logDBConfigPath;
 
-	private static int gameServerPort;
-
-	/**
-	 * 开服日期
-	 */
-	private static Date openTime;
-
-	/**
-	 * 开服当天凌晨0点时间戳
-	 */
-	private static long openDayZeroTime;
-
-	/**
-	 * 合服日期
-	 */
-	private static Date combineTime;
-
-	/**
-	 * 合服日期当天凌晨0点时间戳
-	 */
-	private static long combineDayZeroTime;
-
-	/**
-	 * 是否已经合服
-	 */
-	private static boolean combined = false;
-
-	/**
-	 * 是否开启全服双倍经验
-	 */
-	private static int expDouble = 1;
-
-	private static ServerOption option;
-
-	private static GameServer gameServer;
-
-	private static BackServer backServer;
-
-	/**
-	 * 服务器关闭逻辑已经是否已经执行
-	 */
-	public static boolean serverCloseLogicExecuted;
-
-	/**
-	 * 游戏服务器关闭
-	 */
-	private static boolean closed;
+    private static int gameServerPort;
 
 
-	public static void init(ServerOption option) {
-		GameContext.option = option;
-		serverId = option.getServerId();
-		serverType = option.getServerType();
-		openTime = option.getOpenTime();
+    private static int backServerPort;
 
-		if (StringUtil.isBlank(option.getGameDbConfigPath())) {
-			gameDBConfigPath = PathUtil.getConfigPath() + "gameDb.yml";
-		} else {
-			gameDBConfigPath = option.getGameDbConfigPath();
-		}
+    /**
+     * 开服日期
+     */
+    private static Date openTime;
 
-		if (StringUtil.isBlank(option.getGameDbConfigPath())) {
-			logDBConfigPath = PathUtil.getConfigPath() + "logDbConfig.yml";
-		} else {
-			logDBConfigPath = option.getGameDbConfigPath();
-		}
+    /**
+     * 开服当天凌晨0点时间戳
+     */
+    private static long openDayZeroTime;
 
-		gameServerPort = option.getGameServerPort();
-		openDayZeroTime = TimeUtil.getZeroClockTime(openTime.getTime());
+    /**
+     * 合服日期
+     */
+    private static Date combineTime;
 
-		LOGGER.info("开服时间：{}", openTime);
-		LOGGER.info("开服当天凌晨0点时间戳：{}", openDayZeroTime);
-		LOGGER.info("开服距离开服当天凌晨：{}", (openTime.getTime() - openDayZeroTime));
+    /**
+     * 合服日期当天凌晨0点时间戳
+     */
+    private static long combineDayZeroTime;
 
-		combineTime = option.getCombineTime();
-		if (combineTime != null) {
-			combineDayZeroTime = TimeUtil.getZeroClockTime(option.getCombineTime().getTime());
-			if (combineTime.getTime() <= openTime.getTime()) {
-				throw new RuntimeException("开服与合服时间配置错误，合服时间早于或等于开服时间....");
-			}
-			combined = true;
+    /**
+     * 是否已经合服
+     */
+    private static boolean combined = false;
 
-			LOGGER.info("合服时间：{}", combineTime);
-			LOGGER.info("合服当天凌晨0点时间戳：{}", combineDayZeroTime);
-			LOGGER.info("合服距离开服当天凌晨：{}", (combineTime.getTime() - combineDayZeroTime));
-		}
+    /**
+     * 是否开启全服双倍经验
+     */
+    private static int expDouble = 1;
 
-	}
+    private static ServerOption option;
 
-	public static GameServer createGameServer() {
-		try {
-			gameServer = new GameServer();
-			return gameServer;
-		} catch (Throwable e) {
-			throw new RuntimeException(e);
-		}
-	}
+    private static GameServer gameServer;
 
-	public static BackServer createBackServer() {
-		try {
-			backServer = new BackServer(option);
-			return backServer;
-		} catch (Throwable e) {
-			throw new RuntimeException(e);
-		}
-	}
+    private static BackServer backServer;
 
-	public static boolean isStarted() {
-		return gameServer != null && gameServer.isOpen();
-	}
+    /**
+     * 服务器关闭逻辑已经是否已经执行
+     */
+    public static boolean serverCloseLogicExecuted;
 
-	public static int getExpDouble() {
-		return expDouble;
-	}
+    /**
+     * 游戏服务器关闭
+     */
+    private static boolean closed;
 
-	public static void setExpDouble(int expDouble) {
-		GameContext.expDouble = expDouble;
-	}
 
-	public static Date getOpenTime() {
-		return openTime;
-	}
+    public static void init(ServerOption option) {
+        GameContext.option = option;
+        serverId = option.getServerId();
+        serverType = option.getServerType();
+        openTime = option.getOpenTime();
 
-	public static void setOpenTime(Date openTime) {
-		GameContext.openTime = openTime;
-	}
+        if (StringUtil.isBlank(option.getGameDbConfigPath())) {
+            gameDBConfigPath = PathUtil.getConfigPath() + "gameDb.yml";
+        } else {
+            gameDBConfigPath = option.getGameDbConfigPath();
+        }
 
-	public static long getOpenDayZeroTime() {
-		return openDayZeroTime;
-	}
+        if (StringUtil.isBlank(option.getGameDbConfigPath())) {
+            logDBConfigPath = PathUtil.getConfigPath() + "logDbConfig.yml";
+        } else {
+            logDBConfigPath = option.getGameDbConfigPath();
+        }
 
-	public static void setOpenDayZeroTime(long openDayZeroTime) {
-		GameContext.openDayZeroTime = openDayZeroTime;
-	}
+        gameServerPort = option.getGameServerPort();
+        backServerPort = option.getBackServerPort();
+        openDayZeroTime = TimeUtil.getZeroClockTime(openTime.getTime());
 
-	public static Date getCombineTime() {
-		return combineTime;
-	}
+        LOGGER.info("开服时间：{}", openTime);
+        LOGGER.info("开服当天凌晨0点时间戳：{}", openDayZeroTime);
+        LOGGER.info("开服距离开服当天凌晨：{}", (openTime.getTime() - openDayZeroTime));
 
-	public static void setCombineTime(Date combineTime) {
-		GameContext.combineTime = combineTime;
-	}
+        combineTime = option.getCombineTime();
+        if (combineTime != null) {
+            combineDayZeroTime = TimeUtil.getZeroClockTime(option.getCombineTime().getTime());
+            if (combineTime.getTime() <= openTime.getTime()) {
+                throw new RuntimeException("开服与合服时间配置错误，合服时间早于或等于开服时间....");
+            }
+            combined = true;
 
-	public static long getCombineDayZeroTime() {
-		return combineDayZeroTime;
-	}
+            LOGGER.info("合服时间：{}", combineTime);
+            LOGGER.info("合服当天凌晨0点时间戳：{}", combineDayZeroTime);
+            LOGGER.info("合服距离开服当天凌晨：{}", (combineTime.getTime() - combineDayZeroTime));
+        }
 
-	public static void setCombineDayZeroTime(long combineDayZeroTime) {
-		GameContext.combineDayZeroTime = combineDayZeroTime;
-	}
+    }
 
-	public static boolean isCombined() {
-		return combined;
-	}
+    public static GameServer createGameServer() {
+        try {
+            gameServer = new GameServer();
+            return gameServer;
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-	public static ServerOption getOption() {
-		return option;
-	}
+    public static BackServer createBackServer() {
+        try {
+            return new BackServer();
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-	public static GameServer getGameServer() {
-		return gameServer;
-	}
+    public static boolean isStarted() {
+        return gameServer != null && gameServer.isOpen();
+    }
 
-	public static BackServer getBackServer() {
-		return backServer;
-	}
+    public static int getExpDouble() {
+        return expDouble;
+    }
 
-	public static int getServerId() {
-		return serverId;
-	}
+    public static void setExpDouble(int expDouble) {
+        GameContext.expDouble = expDouble;
+    }
 
-	public static int getServerType() {
-		return serverType;
-	}
+    public static Date getOpenTime() {
+        return openTime;
+    }
 
-	public static boolean isServerCloseLogicExecuted() {
-		return serverCloseLogicExecuted;
-	}
+    public static void setOpenTime(Date openTime) {
+        GameContext.openTime = openTime;
+    }
 
-	public static void setServerCloseLogicExecuted(boolean serverCloseLogicExecuted) {
-		GameContext.serverCloseLogicExecuted = serverCloseLogicExecuted;
-	}
+    public static long getOpenDayZeroTime() {
+        return openDayZeroTime;
+    }
 
-	public static boolean isClosed() {
-		return closed;
-	}
+    public static void setOpenDayZeroTime(long openDayZeroTime) {
+        GameContext.openDayZeroTime = openDayZeroTime;
+    }
 
-	public static void setClosed(boolean closed) {
-		GameContext.closed = closed;
-	}
+    public static Date getCombineTime() {
+        return combineTime;
+    }
 
-	public static String getGameDBConfigPath() {
-		return gameDBConfigPath;
-	}
+    public static void setCombineTime(Date combineTime) {
+        GameContext.combineTime = combineTime;
+    }
 
-	public static String getLogDBConfigPath() {
-		return logDBConfigPath;
-	}
+    public static long getCombineDayZeroTime() {
+        return combineDayZeroTime;
+    }
 
-	public static int getGameServerPort() {
-		return gameServerPort;
-	}
+    public static void setCombineDayZeroTime(long combineDayZeroTime) {
+        GameContext.combineDayZeroTime = combineDayZeroTime;
+    }
+
+    public static boolean isCombined() {
+        return combined;
+    }
+
+    public static ServerOption getOption() {
+        return option;
+    }
+
+    public static GameServer getGameServer() {
+        return gameServer;
+    }
+
+    public static BackServer getBackServer() {
+        return backServer;
+    }
+
+    public static int getServerId() {
+        return serverId;
+    }
+
+    public static int getServerType() {
+        return serverType;
+    }
+
+    public static boolean isServerCloseLogicExecuted() {
+        return serverCloseLogicExecuted;
+    }
+
+    public static void setServerCloseLogicExecuted(boolean serverCloseLogicExecuted) {
+        GameContext.serverCloseLogicExecuted = serverCloseLogicExecuted;
+    }
+
+    public static boolean isClosed() {
+        return closed;
+    }
+
+    public static void setClosed(boolean closed) {
+        GameContext.closed = closed;
+    }
+
+    public static String getGameDBConfigPath() {
+        return gameDBConfigPath;
+    }
+
+    public static String getLogDBConfigPath() {
+        return logDBConfigPath;
+    }
+
+    public static int getGameServerPort() {
+        return gameServerPort;
+    }
+
+    public static int getBackServerPort() {
+        return backServerPort;
+    }
 }

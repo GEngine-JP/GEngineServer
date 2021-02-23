@@ -7,8 +7,7 @@ import info.xiaomo.gengine.network.INetworkConsumer;
 import info.xiaomo.gengine.network.IProcessor;
 import info.xiaomo.gengine.utils.AttributeUtil;
 import io.netty.channel.Channel;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,13 +15,13 @@ import java.util.Map;
 /**
  * @author xiaomo
  */
+@Slf4j
 public class MessageRouter implements INetworkConsumer {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(MessageRouter.class);
 
-    private Map<Integer, IProcessor> processors = new HashMap<>(10);
+    private final Map<Integer, IProcessor> processors = new HashMap<>(10);
 
-    private IMessageAndHandler msgPool;
+    private final IMessageAndHandler msgPool;
 
     public MessageRouter(IMessageAndHandler msgPool) {
         this.msgPool = msgPool;
@@ -42,7 +41,7 @@ public class MessageRouter implements INetworkConsumer {
 
         IProcessor processor = processors.get(queueId);
         if (processor == null) {
-            LOGGER.error("找不到可用的消息处理器[{}]", queueId);
+            log.error("找不到可用的消息处理器[{}]", queueId);
             return;
         }
 
@@ -55,7 +54,7 @@ public class MessageRouter implements INetworkConsumer {
         AbstractHandler handler = msgPool.getHandler(msg.getClass().getName());
         handler.setMessage(msg);
         handler.setParam(session);
-        LOGGER.debug("收到消息:" + msg);
+        log.debug("收到消息:" + msg);
 
         processor.process(handler);
 

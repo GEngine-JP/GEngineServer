@@ -60,6 +60,11 @@ public class NetworkListener implements INetworkEventListener {
     public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {
     }
 
+    @Override
+    public void idle(ChannelHandlerContext ctx, Object evt) {
+
+    }
+
 
     /**
      * 關閉session

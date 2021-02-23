@@ -1,7 +1,7 @@
 #\u57FA\u672C\u5C5E\u6027 url\u3001user\u3001password
-url: jdbc:mysql://localhost:3306/vhr?characterEncoding=UTF8
-username: root
-password: mysql
+url: jdbc:mysql://106.15.188.160:3306/mygame?characterEncoding=UTF8
+username: mygame
+password: xiaomo2019
 #\u914D\u7F6E\u521D\u59CB\u5316\u5927\u5C0F\u3001\u6700\u5C0F\u3001\u6700\u5927
 initialSize: 10
 minIdle: 10
