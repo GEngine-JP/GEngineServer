@@ -33,27 +33,31 @@ public final class GMMessage {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\017GMMessage.proto\"$\n\022CloseServerRequest\022" +
-      "\016\n\006resMsg\030\001 \001(\t\"%\n\023CloseServerResponse\022\016" +
-      "\n\006resMsg\030\001 \001(\tB-\n)info.xiaomo.server.sha" +
-      "red.protocol.rpg.gmP\001b\006proto3"
+      "\n\017GMMessage.proto\032\017MessageId.proto\";\n\022Cl" +
+      "oseServerRequest\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022" +
+      "\016\n\006resMsg\030\002 \001(\t\"<\n\023CloseServerResponse\022\025" +
+      "\n\005msgId\030\001 \001(\0162\006.MsgId\022\016\n\006resMsg\030\002 \001(\tB)\n" +
+      "%info.xiaomo.server.shared.protocol.gmP\001" +
+      "P\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor(),
         });
     internal_static_CloseServerRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_CloseServerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CloseServerRequest_descriptor,
-        new String[] { "ResMsg", });
+        new String[] { "MsgId", "ResMsg", });
     internal_static_CloseServerResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_CloseServerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CloseServerResponse_descriptor,
-        new String[] { "ResMsg", });
+        new String[] { "MsgId", "ResMsg", });
+    info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

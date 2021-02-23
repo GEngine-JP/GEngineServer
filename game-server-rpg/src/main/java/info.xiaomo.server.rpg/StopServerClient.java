@@ -6,9 +6,9 @@ import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.YamlUtil;
 import info.xiaomo.server.rpg.server.back.BackMessageAndHandler;
 import info.xiaomo.server.rpg.server.back.BackMessageRouter;
-import info.xiaomo.server.rpg.server.game.NetworkListener;
 import info.xiaomo.server.rpg.server.game.ServerOption;
 import info.xiaomo.server.shared.protocol.gm.CloseServerRequest;
+import info.xiaomo.server.shared.protocol.msg.MsgId;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -26,13 +26,16 @@ public class StopServerClient {
             builder.setHost("localhost");//只关本机的服务器
             builder.setPort(option.getBackServerPort());
             builder.setConsumer(new BackMessageRouter());
-            builder.setEventListener(new NetworkListener());
             builder.setMsgPool(pool);
 
-            CloseServerRequest request = CloseServerRequest.newBuilder().setResMsg("1").build();
             Client client = builder.createClient();
             client.connect(false);
             Thread.sleep(1000);
+            CloseServerRequest request = CloseServerRequest
+                    .newBuilder()
+                    .setMsgId(MsgId.CloseServer)
+                    .setResMsg("1")
+                    .build();
             client.sendMsg(request);
             int count = 10;
             while (count > 0) {

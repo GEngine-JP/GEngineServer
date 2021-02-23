@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CloseServerResponse() {
+    msgId_ = 0;
     resMsg_ = "";
   }
 
@@ -49,7 +50,13 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
+          case 8: {
+            int rawValue = input.readEnum();
+
+            msgId_ = rawValue;
+            break;
+          }
+          case 18: {
             String s = input.readStringRequireUtf8();
 
             resMsg_ = s;
@@ -87,10 +94,29 @@ private static final long serialVersionUID = 0L;
             CloseServerResponse.class, Builder.class);
   }
 
-  public static final int RESMSG_FIELD_NUMBER = 1;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
+  /**
+   * <code>.MsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
+   */
+  @Override public int getMsgIdValue() {
+    return msgId_;
+  }
+  /**
+   * <code>.MsgId msgId = 1;</code>
+   * @return The msgId.
+   */
+  @Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+    @SuppressWarnings("deprecation")
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+  }
+
+  public static final int RESMSG_FIELD_NUMBER = 2;
   private volatile Object resMsg_;
   /**
-   * <code>string resMsg = 1;</code>
+   * <code>string resMsg = 2;</code>
    * @return The resMsg.
    */
   @Override
@@ -107,7 +133,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string resMsg = 1;</code>
+   * <code>string resMsg = 2;</code>
    * @return The bytes for resMsg.
    */
   @Override
@@ -139,8 +165,11 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.DefaultMessageId.getNumber()) {
+      output.writeEnum(1, msgId_);
+    }
     if (!getResMsgBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resMsg_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resMsg_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +180,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.DefaultMessageId.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(1, msgId_);
+    }
     if (!getResMsgBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resMsg_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resMsg_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +202,7 @@ private static final long serialVersionUID = 0L;
     }
     CloseServerResponse other = (CloseServerResponse) obj;
 
+    if (msgId_ != other.msgId_) return false;
     if (!getResMsg()
         .equals(other.getResMsg())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -182,6 +216,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
     hash = (37 * hash) + RESMSG_FIELD_NUMBER;
     hash = (53 * hash) + getResMsg().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -299,7 +335,7 @@ private static final long serialVersionUID = 0L;
               CloseServerResponse.class, Builder.class);
     }
 
-    // Construct using CloseServerResponse.newBuilder()
+    // Construct using info.xiaomo.server.shared.protocol.gm.CloseServerResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -317,6 +353,8 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
+      msgId_ = 0;
+
       resMsg_ = "";
 
       return this;
@@ -345,6 +383,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public CloseServerResponse buildPartial() {
       CloseServerResponse result = new CloseServerResponse(this);
+      result.msgId_ = msgId_;
       result.resMsg_ = resMsg_;
       onBuilt();
       return result;
@@ -394,6 +433,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(CloseServerResponse other) {
       if (other == CloseServerResponse.getDefaultInstance()) return this;
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
+      }
       if (!other.getResMsg().isEmpty()) {
         resMsg_ = other.resMsg_;
         onChanged();
@@ -427,9 +469,63 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int msgId_ = 0;
+    /**
+     * <code>.MsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
+     */
+    @Override public int getMsgIdValue() {
+      return msgId_;
+    }
+    /**
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgIdValue(int value) {
+
+      msgId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.MsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @Override
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.MsgId msgId = 1;</code>
+     * @param value The msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.MsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+
+      msgId_ = 0;
+      onChanged();
+      return this;
+    }
+
     private Object resMsg_ = "";
     /**
-     * <code>string resMsg = 1;</code>
+     * <code>string resMsg = 2;</code>
      * @return The resMsg.
      */
     public String getResMsg() {
@@ -445,7 +541,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resMsg = 1;</code>
+     * <code>string resMsg = 2;</code>
      * @return The bytes for resMsg.
      */
     public com.google.protobuf.ByteString
@@ -462,7 +558,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resMsg = 1;</code>
+     * <code>string resMsg = 2;</code>
      * @param value The resMsg to set.
      * @return This builder for chaining.
      */
@@ -477,7 +573,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string resMsg = 1;</code>
+     * <code>string resMsg = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearResMsg() {
@@ -487,7 +583,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string resMsg = 1;</code>
+     * <code>string resMsg = 2;</code>
      * @param value The bytes for resMsg to set.
      * @return This builder for chaining.
      */

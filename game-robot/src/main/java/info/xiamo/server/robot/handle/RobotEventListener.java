@@ -11,29 +11,34 @@ import org.slf4j.LoggerFactory;
 
 public class RobotEventListener implements INetworkEventListener {
 
-	static Logger LOGGER = LoggerFactory.getLogger(RobotEventListener.class);
+    static Logger LOGGER = LoggerFactory.getLogger(RobotEventListener.class);
 
-	@Override
-	public void onConnected(ChannelHandlerContext ctx) {
-		Channel channel = ctx.channel();
-		Session session = (Session) AttributeUtil.get(channel, SessionKey.SESSION);
-		if (session == null) {
-			session = new Session(channel);
-			AttributeUtil.set(channel, SessionKey.SESSION, session);
-			LOGGER.error("接收到新的连接：" + channel.toString());
-		} else {
-			LOGGER.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
-		}
-	}
+    @Override
+    public void onConnected(ChannelHandlerContext ctx) {
+        Channel channel = ctx.channel();
+        Session session = (Session) AttributeUtil.get(channel, SessionKey.SESSION);
+        if (session == null) {
+            session = new Session(channel);
+            AttributeUtil.set(channel, SessionKey.SESSION, session);
+            LOGGER.error("接收到新的连接：" + channel.toString());
+        } else {
+            LOGGER.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
+        }
+    }
 
-	@Override
-	public void onDisconnected(ChannelHandlerContext ctx) {
+    @Override
+    public void onDisconnected(ChannelHandlerContext ctx) {
 
-	}
+    }
 
-	@Override
-	public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {
+    @Override
+    public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {
 
-	}
+    }
+
+    @Override
+    public void idle(ChannelHandlerContext ctx, Object evt) {
+
+    }
 
 }
