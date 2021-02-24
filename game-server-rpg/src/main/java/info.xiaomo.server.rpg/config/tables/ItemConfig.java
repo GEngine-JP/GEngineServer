@@ -11,27 +11,27 @@ import info.xiaomo.gengine.config.converters.Matrix3IntConverter;
 import lombok.Data;
 import lombok.ToString;
 
-/**
- * @author xiaomo
- */
+/** @author xiaomo */
 @ToString
 @Data
 @Config
-@Table(name = "cfg_item", primaryKey = {"id", "secondId"})
+@Table(
+        name = "cfg_item",
+        primaryKey = {"id", "secondId"})
 public class ItemConfig implements IConfig {
-	@Column(notNull = true)
-	private int id;
+    @Column(notNull = true)
+    private int id;
 
-	@Column(name = "id2")
-	private String secondId;
+    @Column(name = "id2")
+    private String secondId;
 
-	// 多个转换器共同使用 先转成int数组 然后将int数组转为map
-	@Column({IntegerArrayConverter.class, IntegerMapConverter.class})
-	private Map<Integer, Integer> map;
+    // 多个转换器共同使用 先转成int数组 然后将int数组转为map
+    @Column({IntegerArrayConverter.class, IntegerMapConverter.class})
+    private Map<Integer, Integer> map;
 
-	@Column(name = "ints")
-	private int[] arrays;
+    @Column(name = "ints")
+    private int[] arrays;
 
-	@Column(Matrix3IntConverter.class)
-	private int[][][] intss;
+    @Column(Matrix3IntConverter.class)
+    private int[][][] intss;
 }

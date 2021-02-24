@@ -2,10 +2,7 @@ package info.xiaomo.server.rpg.server.back;
 
 import info.xiaomo.gengine.network.AbstractHandler;
 import info.xiaomo.server.rpg.server.game.Session;
-import info.xiaomo.server.rpg.util.MessageUtil;
 import info.xiaomo.server.shared.protocol.gm.ReqGMCloseServer;
-import info.xiaomo.server.shared.protocol.gm.ResGMCloseServer;
-import info.xiaomo.server.shared.protocol.msg.GMMsgId;
 
 public class CloseServerHandler extends AbstractHandler<ReqGMCloseServer> {
 

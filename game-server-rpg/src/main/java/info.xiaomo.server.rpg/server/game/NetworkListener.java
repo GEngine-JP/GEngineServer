@@ -13,15 +13,33 @@ import org.slf4j.LoggerFactory;
 /**
  * 网络事件监听器
  *
- * @author 小莫
- * 2017年6月6日 下午 5:00:11
+ * @author 小莫 2017年6月6日 下午 5:00:11
  */
 public class NetworkListener implements INetworkEventListener {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(NetworkListener.class);
 
     /**
+     * 關閉session
+     *
+     * @param session
+     */
+    public static void closeSession(Session session) {
+        if (session == null || session.getUser() == null) {
+            // 下线
+            LOGGER.error("玩家断开连接[没有找到用户信息]");
+            return;
+        }
+        IProcessor processor =
+                GameContext.getGameServer()
+                        .getRouter()
+                        .getProcessor(GameConst.QueueId.LOGIN_LOGOUT);
+        processor.process(new LogoutCommand(session));
+    }
+
+    /**
      * 連接建立
+     *
      * @param ctx ctx
      */
     @Override
@@ -38,9 +56,9 @@ public class NetworkListener implements INetworkEventListener {
         }
     }
 
-
     /**
      * 連接斷開
+     *
      * @param ctx
      */
     @Override
@@ -50,35 +68,15 @@ public class NetworkListener implements INetworkEventListener {
         closeSession(session);
     }
 
-
     /**
      * 發生異常
+     *
      * @param ctx
      * @param cause
      */
     @Override
-    public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {
-    }
+    public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {}
 
     @Override
-    public void idle(ChannelHandlerContext ctx, Object evt) {
-
-    }
-
-
-    /**
-     * 關閉session
-     * @param session
-     */
-    public static void closeSession(Session session) {
-        if (session == null || session.getUser() == null) {
-            //下线
-            LOGGER.error("玩家断开连接[没有找到用户信息]");
-            return;
-        }
-        IProcessor processor = GameContext.getGameServer().getRouter().getProcessor(GameConst.QueueId.LOGIN_LOGOUT);
-        processor.process(new LogoutCommand(session));
-    }
-
-
+    public void idle(ChannelHandlerContext ctx, Object evt) {}
 }

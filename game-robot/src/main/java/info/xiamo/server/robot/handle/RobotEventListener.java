@@ -27,18 +27,11 @@ public class RobotEventListener implements INetworkEventListener {
     }
 
     @Override
-    public void onDisconnected(ChannelHandlerContext ctx) {
-
-    }
+    public void onDisconnected(ChannelHandlerContext ctx) {}
 
     @Override
-    public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {
-
-    }
+    public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {}
 
     @Override
-    public void idle(ChannelHandlerContext ctx, Object evt) {
-
-    }
-
+    public void idle(ChannelHandlerContext ctx, Object evt) {}
 }

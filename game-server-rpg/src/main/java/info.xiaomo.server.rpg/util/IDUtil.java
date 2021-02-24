@@ -1,45 +1,30 @@
 package info.xiaomo.server.rpg.util;
 
-
 import java.util.concurrent.atomic.AtomicInteger;
 import info.xiaomo.server.rpg.server.game.GameContext;
 
-/**
- * @author xiaomo
- */
+/** @author xiaomo */
 public class IDUtil {
 
-    /**
-     * 2017年4月1日凌晨
-     */
+    /** 2017年4月1日凌晨 */
     public static final long TIME_2017_4_1_0_0_0_0 = 1490976000000L;
+
     public static final int MAX = 65000;
-    /**
-     * 计数器
-     */
-    private static int id = 0;
-
-    /**
-     * 当前秒数
-     */
-    private static long curSec = System.currentTimeMillis() / 1000L;
-
-    private static long nowSec = getNowSec();
-
     private static final AtomicInteger INSTANCE_ID = new AtomicInteger(10000);
-
-    /**
-     * 锁对象
-     */
-
-    private final static Object OBJ = new Object();
+    /** 锁对象 */
+    private static final Object OBJ = new Object();
+    /** 计数器 */
+    private static int id = 0;
+    /** 当前秒数 */
+    private static long curSec = System.currentTimeMillis() / 1000L;
+    private static long nowSec = getNowSec();
 
     /**
      * 获取一个唯一ID ID 是一个64位long 16位服务器id + 48位时间秒数 + 16位自增ID
+     *
      * <p>
-     * <p>
-     * 规则：1、服务器id不变 ，2、时间随着当前时间变更，3、自增id如果从1到65000后，ID复位，此时需要时间增1防止重复
-     * 4、自增后的时间小于了当前时间，那么就更新当前时间
+     *
+     * <p>规则：1、服务器id不变 ，2、时间随着当前时间变更，3、自增id如果从1到65000后，ID复位，此时需要时间增1防止重复 4、自增后的时间小于了当前时间，那么就更新当前时间
      *
      * @return long
      */
@@ -68,7 +53,9 @@ public class IDUtil {
                 nowCurSec = curSec;
             }
         }
-        return ((long) (GameContext.getOption().getServerId() & 0xFFFF)) << 48 | (nowCurSec) << 16 | nowId & 0xFFFF;
+        return ((long) (GameContext.getOption().getServerId() & 0xFFFF)) << 48
+                | (nowCurSec) << 16
+                | nowId & 0xFFFF;
     }
 
     public static long getNewId() {
@@ -87,7 +74,9 @@ public class IDUtil {
                 now = nowSec;
             }
         }
-        return ((GameContext.getOption().getServerId() & 0x7_FFFFL) << 45) | ((now & 0x1FFF_FFFF) << 16) | (nowId & 0xFFFF);
+        return ((GameContext.getOption().getServerId() & 0x7_FFFFL) << 45)
+                | ((now & 0x1FFF_FFFF) << 16)
+                | (nowId & 0xFFFF);
     }
 
     private static long getNowSec() {

@@ -25,7 +25,5 @@ public class RobotConsumer implements INetworkConsumer {
         }
         AbstractHandler handler = msgPool.getHandler(msg.getMsgId());
         handler.doAction();
-
     }
-
 }

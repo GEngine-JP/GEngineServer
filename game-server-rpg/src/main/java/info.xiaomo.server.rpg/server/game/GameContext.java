@@ -1,7 +1,6 @@
 package info.xiaomo.server.rpg.server.game;
 
 import java.util.Date;
-
 import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.StringUtil;
 import info.xiaomo.gengine.utils.TimeUtil;
@@ -11,73 +10,36 @@ import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @author xiaomo
- */
+/** @author xiaomo */
 @Data
 public class GameContext {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameContext.class);
-
-    private static int serverId;
-
-    private static int serverType;
-
-    private static String gameDBConfigPath;
-
-    private static String logDBConfigPath;
-
-    private static int gameServerPort;
-
-
-    private static int backServerPort;
-
-    /**
-     * 开服日期
-     */
-    private static Date openTime;
-
-    /**
-     * 开服当天凌晨0点时间戳
-     */
-    private static long openDayZeroTime;
-
-    /**
-     * 合服日期
-     */
-    private static Date combineTime;
-
-    /**
-     * 合服日期当天凌晨0点时间戳
-     */
-    private static long combineDayZeroTime;
-
-    /**
-     * 是否已经合服
-     */
-    private static boolean combined = false;
-
-    /**
-     * 是否开启全服双倍经验
-     */
-    private static int expDouble = 1;
-
-    private static ServerOption option;
-
-    private static GameServer gameServer;
-
-    private static BackServer backServer;
-
-    /**
-     * 服务器关闭逻辑已经是否已经执行
-     */
+    /** 服务器关闭逻辑已经是否已经执行 */
     public static boolean serverCloseLogicExecuted;
-
-    /**
-     * 游戏服务器关闭
-     */
+    private static int serverId;
+    private static int serverType;
+    private static String gameDBConfigPath;
+    private static String logDBConfigPath;
+    private static int gameServerPort;
+    private static int backServerPort;
+    /** 开服日期 */
+    private static Date openTime;
+    /** 开服当天凌晨0点时间戳 */
+    private static long openDayZeroTime;
+    /** 合服日期 */
+    private static Date combineTime;
+    /** 合服日期当天凌晨0点时间戳 */
+    private static long combineDayZeroTime;
+    /** 是否已经合服 */
+    private static boolean combined = false;
+    /** 是否开启全服双倍经验 */
+    private static int expDouble = 1;
+    private static ServerOption option;
+    private static GameServer gameServer;
+    private static BackServer backServer;
+    /** 游戏服务器关闭 */
     private static boolean closed;
-
 
     public static void init(ServerOption option) {
         GameContext.option = option;
@@ -117,7 +79,6 @@ public class GameContext {
             LOGGER.info("合服当天凌晨0点时间戳：{}", combineDayZeroTime);
             LOGGER.info("合服距离开服当天凌晨：{}", (combineTime.getTime() - combineDayZeroTime));
         }
-
     }
 
     public static GameServer createGameServer() {

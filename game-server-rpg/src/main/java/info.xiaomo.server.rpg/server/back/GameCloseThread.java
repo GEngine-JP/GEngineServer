@@ -26,11 +26,10 @@ import org.slf4j.LoggerFactory;
 public class GameCloseThread extends Thread {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameCloseThread.class);
-    private short sequence;
     /** 关服来源1：命令行，2：后台，3：GM命令，4：JVM钩子 */
     private final int source;
-
     private final Session session;
+    private short sequence;
 
     public GameCloseThread(short sequence, int source, Session session) {
         super();

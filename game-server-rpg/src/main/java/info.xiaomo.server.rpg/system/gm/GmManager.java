@@ -5,19 +5,16 @@ import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.system.gm.command.Gm;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * Copyright(©) 2017 by xiaomo.
- */
+/** Copyright(©) 2017 by xiaomo. */
 @Slf4j
 public class GmManager {
 
     private static final GmManager ourInstance = new GmManager();
 
+    private GmManager() {}
+
     public static GmManager getInstance() {
         return ourInstance;
-    }
-
-    private GmManager() {
     }
 
     public void execGMCmdFromGame(Session session, String command) {
@@ -31,14 +28,13 @@ public class GmManager {
 
         log.warn("玩家:{} 执行gm命令: {}", session.getUser().getLoginName(), command);
         String ret = execGmCmd(session, command, gmLevel);
-        //发送到聊天频道
-//            ResGMMessage msg = new ResGMMessage();
-//            msg.setContent(ret);
-//            MessageUtil.sendMsg(msg, session.getUser().getId());
+        // 发送到聊天频道
+        //            ResGMMessage msg = new ResGMMessage();
+        //            msg.setContent(ret);
+        //            MessageUtil.sendMsg(msg, session.getUser().getId());
     }
 
     private String execGmCmd(Session session, String gmStr, int gmLevel) {
-
 
         gmStr = gmStr.substring(1);
         String[] commandArray = gmStr.split(" ");

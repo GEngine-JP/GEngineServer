@@ -6,13 +6,13 @@ import info.xiaomo.server.rpg.entify.User;
 /**
  * 数据提供者
  *
- * @author 小莫
- * 2017年7月6日 下午9:30:03
+ * @author 小莫 2017年7月6日 下午9:30:03
  */
 public interface IDataProvider {
 
     /**
      * 更新数据到磁盘中
+     *
      * @param cache cache
      * @param immediately 是否立即更新
      */
@@ -21,14 +21,15 @@ public interface IDataProvider {
     /**
      * 更新数据
      *
-     * @param dataId      dataId
-     * @param dataType    dataType
+     * @param dataId dataId
+     * @param dataType dataType
      * @param immediately immediately
      */
     void updateData(long dataId, int dataType, boolean immediately);
 
     /**
      * 从磁盘和缓存中删除一条数据
+     *
      * @param cache cache
      * @param immediately 是否立即删除
      */
@@ -42,10 +43,7 @@ public interface IDataProvider {
      */
     void insertData(CacheAble cache, boolean immediately);
 
-    /**
-     * 添加一条数据到缓存中
-     * * @param cache cache
-     */
+    /** 添加一条数据到缓存中 * @param cache cache */
     void addData(CacheAble cache);
 
     /**
@@ -59,8 +57,8 @@ public interface IDataProvider {
      * 获取用户数据
      *
      * @param loginName 用户登录名
-     * @param sid       服务器id
-     * @param pid       平台id
+     * @param sid 服务器id
+     * @param pid 平台id
      * @return User
      */
     User getUser(String loginName, int sid, int pid);
@@ -81,7 +79,6 @@ public interface IDataProvider {
      */
     User getUser(String loginName);
 
-
     /**
      * 注册用户
      *
@@ -89,10 +86,6 @@ public interface IDataProvider {
      */
     void registerUser(User user);
 
-    /**
-     * 存储
-     */
+    /** 存储 */
     void store();
-
-
 }

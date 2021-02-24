@@ -6,12 +6,8 @@ import info.xiaomo.server.rpg.server.back.BackMessageAndHandler;
 import info.xiaomo.server.rpg.server.back.BackMessageRouter;
 import info.xiaomo.server.rpg.server.game.GameContext;
 import info.xiaomo.server.rpg.server.game.NetworkListener;
-import info.xiaomo.server.rpg.server.game.ServerOption;
 
-/**
- * Copyright(©) 2015 by xiaomo.
- **/
-
+/** Copyright(©) 2015 by xiaomo. */
 public class BackServer {
 
     private final NetworkServiceImpl service;

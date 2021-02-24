@@ -1,7 +1,8 @@
 package info.xiaomo.server.rpg.server.game;
 
-import info.xiaomo.gengine.network.MsgPack;
+import java.net.InetSocketAddress;
 import info.xiaomo.gengine.network.ISession;
+import info.xiaomo.gengine.network.MsgPack;
 import info.xiaomo.gengine.utils.AttributeUtil;
 import info.xiaomo.server.rpg.entify.Role;
 import info.xiaomo.server.rpg.entify.User;
@@ -9,11 +10,7 @@ import io.netty.channel.Channel;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-import java.net.InetSocketAddress;
-
-/**
- * @author xiaomo
- */
+/** @author xiaomo */
 @Slf4j
 @Data
 public class Session implements ISession {

@@ -1,6 +1,5 @@
 package info.xiaomo.server.rpg.processor;
 
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -15,13 +14,17 @@ import info.xiaomo.gengine.network.IProcessor;
  */
 public class LoginProcessor implements IProcessor {
 
-	private final ExecutorService executor = new ThreadPoolExecutor(8, 8, 0L,
-			TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(100000),
-			new ThreadPoolExecutor.CallerRunsPolicy());
+    private final ExecutorService executor =
+            new ThreadPoolExecutor(
+                    8,
+                    8,
+                    0L,
+                    TimeUnit.MILLISECONDS,
+                    new LinkedBlockingQueue<>(100000),
+                    new ThreadPoolExecutor.CallerRunsPolicy());
 
-	@Override
-	public void process(IQueueDriverCommand handler) {
-		this.executor.execute(handler);
-	}
-
+    @Override
+    public void process(IQueueDriverCommand handler) {
+        this.executor.execute(handler);
+    }
 }

@@ -4,8 +4,5 @@ import info.xiaomo.gengine.network.pool.MessageAndHandlerPool;
 
 public class RobotMessagePool extends MessageAndHandlerPool {
 
-	public RobotMessagePool() {
-	}
-
-
+    public RobotMessagePool() {}
 }

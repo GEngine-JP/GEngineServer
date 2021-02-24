@@ -18,32 +18,34 @@ public class RobotApplication {
         Bootstrap b = new Bootstrap();
         b.group(group).channel(NioSocketChannel.class);
         b.option(ChannelOption.TCP_NODELAY, true);
-        b.handler(new ChannelInitializer<SocketChannel>() {
+        b.handler(
+                new ChannelInitializer<SocketChannel>() {
 
-            @Override
-            protected void initChannel(SocketChannel ch) throws Exception {
-                ChannelPipeline pip = ch.pipeline();
-                pip.addLast("NettyMessageDecoder", new MessageDecoder(8192));
-                pip.addLast("NettyMessageEncoder", new MessageEncoder());
-                pip.addLast("NettyMessageExecutor",
-                        new MessageExecutor(new RobotConsumer(new RobotMessagePool()), new RobotEventListener()));
-            }
-        });
+                    @Override
+                    protected void initChannel(SocketChannel ch) throws Exception {
+                        ChannelPipeline pip = ch.pipeline();
+                        pip.addLast("NettyMessageDecoder", new MessageDecoder(8192));
+                        pip.addLast("NettyMessageEncoder", new MessageEncoder());
+                        pip.addLast(
+                                "NettyMessageExecutor",
+                                new MessageExecutor(
+                                        new RobotConsumer(new RobotMessagePool()),
+                                        new RobotEventListener()));
+                    }
+                });
 
         ChannelFuture f = b.connect("127.0.0.1", 9001).sync();
 
         Channel channel = f.channel();
 
-//		ReqLoginMessage req = new ReqLoginMessage();
-//		req.setLoginName("zhangxiaoli");
-//		req.setPid(1);
-//		req.setSid(1);
-//		req.setIDNumber("123456789012345678");
-//		req.setClient(1);
+        //		ReqLoginMessage req = new ReqLoginMessage();
+        //		req.setLoginName("zhangxiaoli");
+        //		req.setPid(1);
+        //		req.setSid(1);
+        //		req.setIDNumber("123456789012345678");
+        //		req.setClient(1);
 
-
-//		channel.writeAndFlush(req);
-
+        //		channel.writeAndFlush(req);
 
         f.channel().closeFuture().sync();
         group.shutdownGracefully();

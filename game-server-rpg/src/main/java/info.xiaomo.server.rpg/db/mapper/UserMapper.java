@@ -1,17 +1,15 @@
 package info.xiaomo.server.rpg.db.mapper;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import info.xiaomo.gengine.persist.mysql.jdbc.RowMapper;
 import info.xiaomo.server.rpg.entify.User;
 import info.xiaomo.server.rpg.system.user.field.UserField;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 /**
  * 玩家数据的 映射器
  *
- * @author 小莫
- *         2017年6月6日 下午9:30:20
+ * @author 小莫 2017年6月6日 下午9:30:20
  */
 public class UserMapper implements RowMapper<User> {
 
@@ -29,8 +27,5 @@ public class UserMapper implements RowMapper<User> {
     }
 
     @Override
-    public void release() {
-
-    }
-
+    public void release() {}
 }

@@ -1,32 +1,25 @@
 package info.xiaomo.server.rpg.server.game;
 
+import java.util.Collection;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import info.xiaomo.server.rpg.entify.Role;
 import info.xiaomo.server.rpg.entify.User;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Collection;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
-/**
- *
- * @author qq
- */
+/** @author qq */
 @Slf4j
 public class SessionManager {
 
     private static final SessionManager INSTANCE = new SessionManager();
+    private final ConcurrentMap<Long, Session> uidSessionMap = new ConcurrentHashMap<>();
+    private final ConcurrentMap<Long, Session> ridSessionMap = new ConcurrentHashMap<>();
+
+    private SessionManager() {}
 
     public static SessionManager getInstance() {
         return INSTANCE;
     }
-
-    private SessionManager() {
-
-    }
-
-    private final ConcurrentMap<Long, Session> uidSessionMap = new ConcurrentHashMap<>();
-    private final ConcurrentMap<Long, Session> ridSessionMap = new ConcurrentHashMap<>();
 
     public Session getSession(long uid) {
         return uidSessionMap.get(uid);

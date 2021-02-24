@@ -1,34 +1,17 @@
 package info.xiaomo.server.rpg.system.gm;
 
-
 import java.util.HashMap;
 import java.util.Map;
-
 import info.xiaomo.server.rpg.system.gm.command.Gm;
 import info.xiaomo.server.rpg.system.gm.command.impl.CloseServerGm;
 
-/**
- * Copyright(©) 2017 by xiaomo.
- */
+/** Copyright(©) 2017 by xiaomo. */
 public enum GMCommand {
 
-    /**
-     * 关服
-     */
+    /** 关服 */
     关服(1);
 
-    private final int gmLevel;
-
-    GMCommand(int gmLevel) {
-        this.gmLevel = gmLevel;
-    }
-
-    public int getGmLevel() {
-        return gmLevel;
-    }
-
     private static final Map<String, GMCommand> COMMAND_MAP = new HashMap<>(10);
-
     private static final Map<GMCommand, Gm> G_M_MAP = new HashMap<>(10);
 
     static {
@@ -41,6 +24,12 @@ public enum GMCommand {
         G_M_MAP.put(GMCommand.关服, new CloseServerGm());
     }
 
+    private final int gmLevel;
+
+    GMCommand(int gmLevel) {
+        this.gmLevel = gmLevel;
+    }
+
     public static GMCommand getCommand(String command) {
         return COMMAND_MAP.get(command);
     }
@@ -49,4 +38,7 @@ public enum GMCommand {
         return G_M_MAP.get(command);
     }
 
+    public int getGmLevel() {
+        return gmLevel;
+    }
 }

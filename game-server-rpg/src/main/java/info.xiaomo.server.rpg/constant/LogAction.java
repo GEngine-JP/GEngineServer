@@ -1,15 +1,11 @@
 package info.xiaomo.server.rpg.constant;
 
-/**
- * @author xiaomo
- */
-
+/** @author xiaomo */
 public enum LogAction {
 
-    /**
-     * gm
-     */
-    GM(1, "gm产生"),;
+    /** gm */
+    GM(1, "gm产生"),
+    ;
 
     private final int code;
 
@@ -19,7 +15,6 @@ public enum LogAction {
         this.code = code;
         this.comment = comment;
     }
-
 
     public int getCode() {
         return code;
