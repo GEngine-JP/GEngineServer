@@ -2,10 +2,10 @@ package info.xiaomo.server.rpg;
 
 import info.xiaomo.gengine.network.client.Client;
 import info.xiaomo.gengine.network.client.ClientBuilder;
+import info.xiaomo.gengine.network.pool.MessageRouter;
 import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.YamlUtil;
 import info.xiaomo.server.rpg.server.back.BackMessageAndHandler;
-import info.xiaomo.server.rpg.server.back.BackMessageRouter;
 import info.xiaomo.server.rpg.server.game.NetworkListener;
 import info.xiaomo.server.rpg.server.game.ServerOption;
 import info.xiaomo.server.shared.protocol.gm.ReqGMCloseServer;
@@ -29,7 +29,7 @@ public class StopServerClient {
             ClientBuilder builder = new ClientBuilder();
             builder.setHost("localhost"); // 只关本机的服务器
             builder.setPort(option.getBackServerPort());
-            builder.setConsumer(new BackMessageRouter(pool));
+            builder.setConsumer(new MessageRouter(pool));
             builder.setEventListener(new NetworkListener());
             builder.setMsgPool(pool);
 
@@ -42,11 +42,14 @@ public class StopServerClient {
                             .setResMsg("1")
                             .build();
             client.sendMsg(request);
+
+            // 等待10秒后关闭客户端
             int count = 10;
             while (count > 0) {
-                Thread.sleep(10 * 1000);
+                Thread.sleep(1000);
                 count--;
             }
+            client.stop();
         } catch (Exception e) {
             log.error("关服发生错误", e);
         }

@@ -1,11 +1,11 @@
 package info.xiamo.server.robot;
 
-import info.xiamo.server.robot.handle.RobotConsumer;
 import info.xiamo.server.robot.handle.RobotEventListener;
 import info.xiamo.server.robot.handle.RobotMessagePool;
 import info.xiaomo.gengine.network.handler.MessageDecoder;
 import info.xiaomo.gengine.network.handler.MessageEncoder;
 import info.xiaomo.gengine.network.handler.MessageExecutor;
+import info.xiaomo.gengine.network.pool.MessageRouter;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -29,7 +29,7 @@ public class RobotApplication {
                         pip.addLast(
                                 "NettyMessageExecutor",
                                 new MessageExecutor(
-                                        new RobotConsumer(new RobotMessagePool()),
+                                        new MessageRouter(new RobotMessagePool()),
                                         new RobotEventListener()));
                     }
                 });
