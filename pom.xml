@@ -17,6 +17,9 @@
 
 
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <gameServer.version>3.1.4</gameServer.version>
         <GEngine.version>3.2.3</GEngine.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
