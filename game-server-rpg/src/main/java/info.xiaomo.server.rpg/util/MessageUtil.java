@@ -3,14 +3,12 @@ package info.xiaomo.server.rpg.util;
 
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Descriptors;
-import com.google.protobuf.Message;
-import info.xiaomo.gengine.network.Packet;
+import java.util.Collection;
+import java.util.Map;
+import info.xiaomo.gengine.network.Message;
 import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.server.game.SessionManager;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.Collection;
-import java.util.Map;
 
 /**
  * @author xiaomo
@@ -23,12 +21,12 @@ public class MessageUtil {
         if (session == null) {
             return;
         }
-        int cmd = getMessageID(msg);
-        Packet packet = new Packet(Packet.HEAD_TCP, cmd, msg.toByteArray());
+        int msgId = getMessageID(msg);
+        Message packet = new Message(Message.HEAD_TCP, msgId, msg.toByteArray());
         session.sendMessage(packet);
     }
 
-    public static void sendMsg(Session session, Packet msg) {
+    public static void sendMsg(Session session, Message msg) {
         session.sendMessage(msg);
     }
 
@@ -54,7 +52,7 @@ public class MessageUtil {
         }
     }
 
-    private static int getMessageID(Message msg) {
+    private static int getMessageID(AbstractMessage msg) {
         for (Map.Entry<Descriptors.FieldDescriptor, Object> fieldDescriptorObjectEntry : msg.getAllFields().entrySet()) {
             if (fieldDescriptorObjectEntry.getKey().getName().equals("msgId")) {
                 return ((Descriptors.EnumValueDescriptor) fieldDescriptorObjectEntry.getValue()).getNumber();
