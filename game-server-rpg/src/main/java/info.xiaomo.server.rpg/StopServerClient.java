@@ -6,9 +6,10 @@ import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.YamlUtil;
 import info.xiaomo.server.rpg.server.back.BackMessageAndHandler;
 import info.xiaomo.server.rpg.server.back.BackMessageRouter;
+import info.xiaomo.server.rpg.server.game.NetworkListener;
 import info.xiaomo.server.rpg.server.game.ServerOption;
-import info.xiaomo.server.shared.protocol.gm.CloseServerRequest;
-import info.xiaomo.server.shared.protocol.msg.MsgId;
+import info.xiaomo.server.shared.protocol.gm.ReqGMCloseServer;
+import info.xiaomo.server.shared.protocol.msg.GMMsgId;
 import lombok.extern.slf4j.Slf4j;
 
 /** @author xiaomo */
@@ -29,14 +30,15 @@ public class StopServerClient {
             builder.setHost("localhost"); // 只关本机的服务器
             builder.setPort(option.getBackServerPort());
             builder.setConsumer(new BackMessageRouter(pool));
+            builder.setEventListener(new NetworkListener());
             builder.setMsgPool(pool);
 
             Client client = builder.createClient();
             client.connect(false);
             Thread.sleep(1000);
-            CloseServerRequest request =
-                    CloseServerRequest.newBuilder()
-                            .setMsgId(MsgId.CloseServer)
+            ReqGMCloseServer request =
+                    ReqGMCloseServer.newBuilder()
+                            .setMsgId(GMMsgId.CloseServerRequest)
                             .setResMsg("1")
                             .build();
             client.sendMsg(request);

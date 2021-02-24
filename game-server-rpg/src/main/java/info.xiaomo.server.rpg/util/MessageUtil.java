@@ -1,18 +1,15 @@
 package info.xiaomo.server.rpg.util;
 
-
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Descriptors;
 import java.util.Collection;
 import java.util.Map;
-import info.xiaomo.gengine.network.Message;
+import info.xiaomo.gengine.network.MsgPack;
 import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.server.game.SessionManager;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * @author xiaomo
- */
+/** @author xiaomo */
 @Slf4j
 public class MessageUtil {
 
@@ -22,12 +19,14 @@ public class MessageUtil {
             return;
         }
         int msgId = getMessageID(msg);
-        Message packet = new Message(Message.HEAD_TCP, msgId, msg.toByteArray());
+        MsgPack packet = new MsgPack(MsgPack.HEAD_TCP, msgId, msg.toByteArray(), msg);
         session.sendMessage(packet);
     }
 
-    public static void sendMsg(Session session, Message msg) {
-        session.sendMessage(msg);
+    public static void sendMsg(Session session, AbstractMessage msg) {
+        int msgId = getMessageID(msg);
+        MsgPack packet = new MsgPack(MsgPack.HEAD_TCP, msgId, msg.toByteArray(), msg);
+        session.sendMessage(packet);
     }
 
     public static void sendMsgToRids(AbstractMessage msg, long... rids) {
@@ -44,7 +43,8 @@ public class MessageUtil {
         }
     }
 
-    public static void sendMsgToRids(AbstractMessage msg, Collection<Long> rids, Long exceptRoleId) {
+    public static void sendMsgToRids(
+            AbstractMessage msg, Collection<Long> rids, Long exceptRoleId) {
         for (Long rid : rids) {
             if (rid != null && (!rid.equals(exceptRoleId))) {
                 sendMsg(msg, rid);
@@ -53,13 +53,14 @@ public class MessageUtil {
     }
 
     private static int getMessageID(AbstractMessage msg) {
-        for (Map.Entry<Descriptors.FieldDescriptor, Object> fieldDescriptorObjectEntry : msg.getAllFields().entrySet()) {
+        for (Map.Entry<Descriptors.FieldDescriptor, Object> fieldDescriptorObjectEntry :
+                msg.getAllFields().entrySet()) {
             if (fieldDescriptorObjectEntry.getKey().getName().equals("msgId")) {
-                return ((Descriptors.EnumValueDescriptor) fieldDescriptorObjectEntry.getValue()).getNumber();
+                return ((Descriptors.EnumValueDescriptor) fieldDescriptorObjectEntry.getValue())
+                        .getNumber();
             }
         }
         log.error("在消息体中没有找到对应的消息id:{}", msg);
         return 0;
     }
-
 }

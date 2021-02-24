@@ -28,7 +28,7 @@ public class MessageRouter implements INetworkConsumer {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void consume(Message msg, Channel channel) {
+	public void consume(MsgPack msg, Channel channel) {
 
 		//将消息分发到指定的队列中，该队列有可能在同一个进程，也有可能不在同一个进程
 

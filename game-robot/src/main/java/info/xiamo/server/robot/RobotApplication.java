@@ -24,7 +24,7 @@ public class RobotApplication {
             protected void initChannel(SocketChannel ch) throws Exception {
                 ChannelPipeline pip = ch.pipeline();
                 pip.addLast("NettyMessageDecoder", new MessageDecoder(8192));
-                pip.addLast("NettyMessageEncoder", new MessageEncoder(8192));
+                pip.addLast("NettyMessageEncoder", new MessageEncoder());
                 pip.addLast("NettyMessageExecutor",
                         new MessageExecutor(new RobotConsumer(new RobotMessagePool()), new RobotEventListener()));
             }

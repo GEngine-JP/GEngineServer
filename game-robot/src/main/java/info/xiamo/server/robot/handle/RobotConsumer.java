@@ -2,7 +2,7 @@ package info.xiamo.server.robot.handle;
 
 import info.xiaomo.gengine.network.AbstractHandler;
 import info.xiaomo.gengine.network.INetworkConsumer;
-import info.xiaomo.gengine.network.Message;
+import info.xiaomo.gengine.network.MsgPack;
 import info.xiaomo.gengine.network.SessionKey;
 import info.xiaomo.gengine.utils.AttributeUtil;
 import info.xiaomo.server.rpg.server.game.Session;
@@ -17,7 +17,7 @@ public class RobotConsumer implements INetworkConsumer {
     }
 
     @Override
-    public void consume(Message msg, Channel channel) {
+    public void consume(MsgPack msg, Channel channel) {
         Session session = (Session) AttributeUtil.get(channel, SessionKey.SESSION);
 
         if (session == null) {

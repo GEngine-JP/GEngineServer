@@ -1,7 +1,7 @@
 package info.xiaomo.server.rpg.server.game;
 
+import info.xiaomo.gengine.network.MsgPack;
 import info.xiaomo.gengine.network.ISession;
-import info.xiaomo.gengine.network.Message;
 import info.xiaomo.gengine.utils.AttributeUtil;
 import info.xiaomo.server.rpg.entify.Role;
 import info.xiaomo.server.rpg.entify.User;
@@ -96,7 +96,7 @@ public class Session implements ISession {
         }
     }
 
-    public void sendMessage(Message msg) {
+    public void sendMessage(MsgPack msg) {
         channel.writeAndFlush(msg);
     }
 }

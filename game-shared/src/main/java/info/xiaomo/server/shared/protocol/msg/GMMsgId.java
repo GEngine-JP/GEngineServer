@@ -4,29 +4,37 @@
 package info.xiaomo.server.shared.protocol.msg;
 
 /**
- * Protobuf enum {@code MsgId}
+ * Protobuf enum {@code GMMsgId}
  */
-public enum MsgId
+public enum GMMsgId
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>DefaultMessageId = 0;</code>
+   * <code>UNKNOWN = 0;</code>
    */
-  DefaultMessageId(0),
+  UNKNOWN(0),
   /**
-   * <code>CloseServer = 10001;</code>
+   * <code>CloseServerRequest = 1;</code>
    */
-  CloseServer(10001),
+  CloseServerRequest(1),
+  /**
+   * <code>CloseServerResponse = 2;</code>
+   */
+  CloseServerResponse(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>DefaultMessageId = 0;</code>
+   * <code>UNKNOWN = 0;</code>
    */
-  public static final int DefaultMessageId_VALUE = 0;
+  public static final int UNKNOWN_VALUE = 0;
   /**
-   * <code>CloseServer = 10001;</code>
+   * <code>CloseServerRequest = 1;</code>
    */
-  public static final int CloseServer_VALUE = 10001;
+  public static final int CloseServerRequest_VALUE = 1;
+  /**
+   * <code>CloseServerResponse = 2;</code>
+   */
+  public static final int CloseServerResponse_VALUE = 2;
 
 
   public final int getNumber() {
@@ -43,7 +51,7 @@ public enum MsgId
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @Deprecated
-  public static MsgId valueOf(int value) {
+  public static GMMsgId valueOf(int value) {
     return forNumber(value);
   }
 
@@ -51,23 +59,24 @@ public enum MsgId
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static MsgId forNumber(int value) {
+  public static GMMsgId forNumber(int value) {
     switch (value) {
-      case 0: return DefaultMessageId;
-      case 10001: return CloseServer;
+      case 0: return UNKNOWN;
+      case 1: return CloseServerRequest;
+      case 2: return CloseServerResponse;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<MsgId>
+  public static com.google.protobuf.Internal.EnumLiteMap<GMMsgId>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      MsgId> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<MsgId>() {
-          public MsgId findValueByNumber(int number) {
-            return MsgId.forNumber(number);
+      GMMsgId> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<GMMsgId>() {
+          public GMMsgId findValueByNumber(int number) {
+            return GMMsgId.forNumber(number);
           }
         };
 
@@ -88,9 +97,9 @@ public enum MsgId
     return MessageId.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final MsgId[] VALUES = values();
+  private static final GMMsgId[] VALUES = values();
 
-  public static MsgId valueOf(
+  public static GMMsgId valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new IllegalArgumentException(
@@ -104,10 +113,10 @@ public enum MsgId
 
   private final int value;
 
-  private MsgId(int value) {
+  private GMMsgId(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:MsgId)
+  // @@protoc_insertion_point(enum_scope:GMMsgId)
 }
 

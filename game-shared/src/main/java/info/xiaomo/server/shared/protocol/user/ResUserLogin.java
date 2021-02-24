@@ -4,18 +4,19 @@
 package info.xiaomo.server.shared.protocol.user;
 
 /**
- * Protobuf type {@code LoginRequest}
+ * Protobuf type {@code ResUserLogin}
  */
-public final class LoginRequest extends
+public final class ResUserLogin extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:LoginRequest)
-    LoginRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:ResUserLogin)
+    ResUserLoginOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use LoginRequest.newBuilder() to construct.
-  private LoginRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ResUserLogin.newBuilder() to construct.
+  private ResUserLogin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private LoginRequest() {
+  private ResUserLogin() {
+    msgId_ = 0;
     loginName_ = "";
   }
 
@@ -23,7 +24,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected Object newInstance(
       UnusedPrivateParameter unused) {
-    return new LoginRequest();
+    return new ResUserLogin();
   }
 
   @Override
@@ -31,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private LoginRequest(
+  private ResUserLogin(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -50,16 +51,22 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
+            int rawValue = input.readEnum();
 
-            sex_ = input.readInt32();
+            msgId_ = rawValue;
             break;
           }
           case 16: {
 
+            sex_ = input.readInt32();
+            break;
+          }
+          case 24: {
+
             userId_ = input.readInt64();
             break;
           }
-          case 26: {
+          case 34: {
             String s = input.readStringRequireUtf8();
 
             loginName_ = s;
@@ -86,21 +93,40 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return UserMessage.internal_static_LoginRequest_descriptor;
+    return UserMessage.internal_static_ResUserLogin_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return UserMessage.internal_static_LoginRequest_fieldAccessorTable
+    return UserMessage.internal_static_ResUserLogin_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            LoginRequest.class, Builder.class);
+            ResUserLogin.class, Builder.class);
   }
 
-  public static final int SEX_FIELD_NUMBER = 1;
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
+  /**
+   * <code>.UserMsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
+   */
+  @Override public int getMsgIdValue() {
+    return msgId_;
+  }
+  /**
+   * <code>.UserMsgId msgId = 1;</code>
+   * @return The msgId.
+   */
+  @Override public info.xiaomo.server.shared.protocol.msg.UserMsgId getMsgId() {
+    @SuppressWarnings("deprecation")
+    info.xiaomo.server.shared.protocol.msg.UserMsgId result = info.xiaomo.server.shared.protocol.msg.UserMsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.UserMsgId.UNRECOGNIZED : result;
+  }
+
+  public static final int SEX_FIELD_NUMBER = 2;
   private int sex_;
   /**
-   * <code>int32 sex = 1;</code>
+   * <code>int32 sex = 2;</code>
    * @return The sex.
    */
   @Override
@@ -108,10 +134,10 @@ private static final long serialVersionUID = 0L;
     return sex_;
   }
 
-  public static final int USERID_FIELD_NUMBER = 2;
+  public static final int USERID_FIELD_NUMBER = 3;
   private long userId_;
   /**
-   * <code>int64 userId = 2;</code>
+   * <code>int64 userId = 3;</code>
    * @return The userId.
    */
   @Override
@@ -119,10 +145,10 @@ private static final long serialVersionUID = 0L;
     return userId_;
   }
 
-  public static final int LOGINNAME_FIELD_NUMBER = 3;
+  public static final int LOGINNAME_FIELD_NUMBER = 4;
   private volatile Object loginName_;
   /**
-   * <code>string loginName = 3;</code>
+   * <code>string loginName = 4;</code>
    * @return The loginName.
    */
   @Override
@@ -139,7 +165,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string loginName = 3;</code>
+   * <code>string loginName = 4;</code>
    * @return The bytes for loginName.
    */
   @Override
@@ -171,14 +197,17 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.KNOWN.getNumber()) {
+      output.writeEnum(1, msgId_);
+    }
     if (sex_ != 0) {
-      output.writeInt32(1, sex_);
+      output.writeInt32(2, sex_);
     }
     if (userId_ != 0L) {
-      output.writeInt64(2, userId_);
+      output.writeInt64(3, userId_);
     }
     if (!getLoginNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, loginName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, loginName_);
     }
     unknownFields.writeTo(output);
   }
@@ -189,16 +218,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.KNOWN.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(1, msgId_);
+    }
     if (sex_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, sex_);
+        .computeInt32Size(2, sex_);
     }
     if (userId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, userId_);
+        .computeInt64Size(3, userId_);
     }
     if (!getLoginNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, loginName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, loginName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -210,11 +243,12 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof LoginRequest)) {
+    if (!(obj instanceof ResUserLogin)) {
       return super.equals(obj);
     }
-    LoginRequest other = (LoginRequest) obj;
+    ResUserLogin other = (ResUserLogin) obj;
 
+    if (msgId_ != other.msgId_) return false;
     if (getSex()
         != other.getSex()) return false;
     if (getUserId()
@@ -232,6 +266,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
     hash = (37 * hash) + SEX_FIELD_NUMBER;
     hash = (53 * hash) + getSex();
     hash = (37 * hash) + USERID_FIELD_NUMBER;
@@ -244,69 +280,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static LoginRequest parseFrom(
+  public static ResUserLogin parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static LoginRequest parseFrom(
+  public static ResUserLogin parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static LoginRequest parseFrom(
+  public static ResUserLogin parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static LoginRequest parseFrom(
+  public static ResUserLogin parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static LoginRequest parseFrom(byte[] data)
+  public static ResUserLogin parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static LoginRequest parseFrom(
+  public static ResUserLogin parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static LoginRequest parseFrom(java.io.InputStream input)
+  public static ResUserLogin parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static LoginRequest parseFrom(
+  public static ResUserLogin parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static LoginRequest parseDelimitedFrom(java.io.InputStream input)
+  public static ResUserLogin parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static LoginRequest parseDelimitedFrom(
+  public static ResUserLogin parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static LoginRequest parseFrom(
+  public static ResUserLogin parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static LoginRequest parseFrom(
+  public static ResUserLogin parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -319,7 +355,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(LoginRequest prototype) {
+  public static Builder newBuilder(ResUserLogin prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @Override
@@ -335,26 +371,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code LoginRequest}
+   * Protobuf type {@code ResUserLogin}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:LoginRequest)
-      LoginRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ResUserLogin)
+      ResUserLoginOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return UserMessage.internal_static_LoginRequest_descriptor;
+      return UserMessage.internal_static_ResUserLogin_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return UserMessage.internal_static_LoginRequest_fieldAccessorTable
+      return UserMessage.internal_static_ResUserLogin_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              LoginRequest.class, Builder.class);
+              ResUserLogin.class, Builder.class);
     }
 
-    // Construct using LoginRequest.newBuilder()
+    // Construct using info.xiaomo.server.shared.protocol.user.ResUserLogin.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -372,6 +408,8 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
+      msgId_ = 0;
+
       sex_ = 0;
 
       userId_ = 0L;
@@ -384,17 +422,17 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return UserMessage.internal_static_LoginRequest_descriptor;
+      return UserMessage.internal_static_ResUserLogin_descriptor;
     }
 
     @Override
-    public LoginRequest getDefaultInstanceForType() {
-      return LoginRequest.getDefaultInstance();
+    public ResUserLogin getDefaultInstanceForType() {
+      return ResUserLogin.getDefaultInstance();
     }
 
     @Override
-    public LoginRequest build() {
-      LoginRequest result = buildPartial();
+    public ResUserLogin build() {
+      ResUserLogin result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -402,8 +440,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @Override
-    public LoginRequest buildPartial() {
-      LoginRequest result = new LoginRequest(this);
+    public ResUserLogin buildPartial() {
+      ResUserLogin result = new ResUserLogin(this);
+      result.msgId_ = msgId_;
       result.sex_ = sex_;
       result.userId_ = userId_;
       result.loginName_ = loginName_;
@@ -445,16 +484,19 @@ private static final long serialVersionUID = 0L;
     }
     @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof LoginRequest) {
-        return mergeFrom((LoginRequest)other);
+      if (other instanceof ResUserLogin) {
+        return mergeFrom((ResUserLogin)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(LoginRequest other) {
-      if (other == LoginRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(ResUserLogin other) {
+      if (other == ResUserLogin.getDefaultInstance()) return this;
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
+      }
       if (other.getSex() != 0) {
         setSex(other.getSex());
       }
@@ -480,11 +522,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      LoginRequest parsedMessage = null;
+      ResUserLogin parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (LoginRequest) e.getUnfinishedMessage();
+        parsedMessage = (ResUserLogin) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -494,9 +536,63 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int msgId_ = 0;
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
+     */
+    @Override public int getMsgIdValue() {
+      return msgId_;
+    }
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @Override
+    public info.xiaomo.server.shared.protocol.msg.UserMsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.UserMsgId result = info.xiaomo.server.shared.protocol.msg.UserMsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.UserMsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @param value The msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.UserMsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int sex_ ;
     /**
-     * <code>int32 sex = 1;</code>
+     * <code>int32 sex = 2;</code>
      * @return The sex.
      */
     @Override
@@ -504,7 +600,7 @@ private static final long serialVersionUID = 0L;
       return sex_;
     }
     /**
-     * <code>int32 sex = 1;</code>
+     * <code>int32 sex = 2;</code>
      * @param value The sex to set.
      * @return This builder for chaining.
      */
@@ -515,7 +611,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 sex = 1;</code>
+     * <code>int32 sex = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearSex() {
@@ -527,7 +623,7 @@ private static final long serialVersionUID = 0L;
 
     private long userId_ ;
     /**
-     * <code>int64 userId = 2;</code>
+     * <code>int64 userId = 3;</code>
      * @return The userId.
      */
     @Override
@@ -535,7 +631,7 @@ private static final long serialVersionUID = 0L;
       return userId_;
     }
     /**
-     * <code>int64 userId = 2;</code>
+     * <code>int64 userId = 3;</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
@@ -546,7 +642,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 userId = 2;</code>
+     * <code>int64 userId = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
@@ -558,7 +654,7 @@ private static final long serialVersionUID = 0L;
 
     private Object loginName_ = "";
     /**
-     * <code>string loginName = 3;</code>
+     * <code>string loginName = 4;</code>
      * @return The loginName.
      */
     public String getLoginName() {
@@ -574,7 +670,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string loginName = 3;</code>
+     * <code>string loginName = 4;</code>
      * @return The bytes for loginName.
      */
     public com.google.protobuf.ByteString
@@ -591,7 +687,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string loginName = 3;</code>
+     * <code>string loginName = 4;</code>
      * @param value The loginName to set.
      * @return This builder for chaining.
      */
@@ -606,7 +702,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string loginName = 3;</code>
+     * <code>string loginName = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearLoginName() {
@@ -616,7 +712,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string loginName = 3;</code>
+     * <code>string loginName = 4;</code>
      * @param value The bytes for loginName to set.
      * @return This builder for chaining.
      */
@@ -644,41 +740,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:LoginRequest)
+    // @@protoc_insertion_point(builder_scope:ResUserLogin)
   }
 
-  // @@protoc_insertion_point(class_scope:LoginRequest)
-  private static final LoginRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ResUserLogin)
+  private static final ResUserLogin DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new LoginRequest();
+    DEFAULT_INSTANCE = new ResUserLogin();
   }
 
-  public static LoginRequest getDefaultInstance() {
+  public static ResUserLogin getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LoginRequest>
-      PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
+  private static final com.google.protobuf.Parser<ResUserLogin>
+      PARSER = new com.google.protobuf.AbstractParser<ResUserLogin>() {
     @Override
-    public LoginRequest parsePartialFrom(
+    public ResUserLogin parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LoginRequest(input, extensionRegistry);
+      return new ResUserLogin(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<LoginRequest> parser() {
+  public static com.google.protobuf.Parser<ResUserLogin> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<LoginRequest> getParserForType() {
+  public com.google.protobuf.Parser<ResUserLogin> getParserForType() {
     return PARSER;
   }
 
   @Override
-  public LoginRequest getDefaultInstanceForType() {
+  public ResUserLogin getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

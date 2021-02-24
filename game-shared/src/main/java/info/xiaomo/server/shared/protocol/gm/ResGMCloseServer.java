@@ -4,18 +4,18 @@
 package info.xiaomo.server.shared.protocol.gm;
 
 /**
- * Protobuf type {@code CloseServerRequest}
+ * Protobuf type {@code ResGMCloseServer}
  */
-public final class CloseServerRequest extends
+public final class ResGMCloseServer extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:CloseServerRequest)
-    CloseServerRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:ResGMCloseServer)
+    ResGMCloseServerOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CloseServerRequest.newBuilder() to construct.
-  private CloseServerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ResGMCloseServer.newBuilder() to construct.
+  private ResGMCloseServer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CloseServerRequest() {
+  private ResGMCloseServer() {
     msgId_ = 0;
     resMsg_ = "";
   }
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CloseServerRequest();
+    return new ResGMCloseServer();
   }
 
   @Override
@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CloseServerRequest(
+  private ResGMCloseServer(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -83,34 +83,34 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return GMMessage.internal_static_CloseServerRequest_descriptor;
+    return GMMessage.internal_static_ResGMCloseServer_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return GMMessage.internal_static_CloseServerRequest_fieldAccessorTable
+    return GMMessage.internal_static_ResGMCloseServer_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            CloseServerRequest.class, Builder.class);
+            ResGMCloseServer.class, Builder.class);
   }
 
   public static final int MSGID_FIELD_NUMBER = 1;
   private int msgId_;
   /**
-   * <code>.MsgId msgId = 1;</code>
+   * <code>.GMMsgId msgId = 1;</code>
    * @return The enum numeric value on the wire for msgId.
    */
   @Override public int getMsgIdValue() {
     return msgId_;
   }
   /**
-   * <code>.MsgId msgId = 1;</code>
+   * <code>.GMMsgId msgId = 1;</code>
    * @return The msgId.
    */
-  @Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+  @Override public info.xiaomo.server.shared.protocol.msg.GMMsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
-    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+    info.xiaomo.server.shared.protocol.msg.GMMsgId result = info.xiaomo.server.shared.protocol.msg.GMMsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.GMMsgId.UNRECOGNIZED : result;
   }
 
   public static final int RESMSG_FIELD_NUMBER = 2;
@@ -125,7 +125,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof String) {
       return (String) ref;
     } else {
-      com.google.protobuf.ByteString bs =
+      com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       String s = bs.toStringUtf8();
       resMsg_ = s;
@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
       getResMsgBytes() {
     Object ref = resMsg_;
     if (ref instanceof String) {
-      com.google.protobuf.ByteString b =
+      com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
       resMsg_ = b;
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.DefaultMessageId.getNumber()) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.GMMsgId.UNKNOWN.getNumber()) {
       output.writeEnum(1, msgId_);
     }
     if (!getResMsgBytes().isEmpty()) {
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.DefaultMessageId.getNumber()) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.GMMsgId.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, msgId_);
     }
@@ -197,10 +197,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof CloseServerRequest)) {
+    if (!(obj instanceof ResGMCloseServer)) {
       return super.equals(obj);
     }
-    CloseServerRequest other = (CloseServerRequest) obj;
+    ResGMCloseServer other = (ResGMCloseServer) obj;
 
     if (msgId_ != other.msgId_) return false;
     if (!getResMsg()
@@ -225,69 +225,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static CloseServerRequest parseFrom(
+  public static ResGMCloseServer parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static CloseServerRequest parseFrom(
+  public static ResGMCloseServer parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static CloseServerRequest parseFrom(
+  public static ResGMCloseServer parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static CloseServerRequest parseFrom(
+  public static ResGMCloseServer parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static CloseServerRequest parseFrom(byte[] data)
+  public static ResGMCloseServer parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static CloseServerRequest parseFrom(
+  public static ResGMCloseServer parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static CloseServerRequest parseFrom(java.io.InputStream input)
+  public static ResGMCloseServer parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static CloseServerRequest parseFrom(
+  public static ResGMCloseServer parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static CloseServerRequest parseDelimitedFrom(java.io.InputStream input)
+  public static ResGMCloseServer parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static CloseServerRequest parseDelimitedFrom(
+  public static ResGMCloseServer parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static CloseServerRequest parseFrom(
+  public static ResGMCloseServer parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static CloseServerRequest parseFrom(
+  public static ResGMCloseServer parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -300,7 +300,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(CloseServerRequest prototype) {
+  public static Builder newBuilder(ResGMCloseServer prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @Override
@@ -316,26 +316,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code CloseServerRequest}
+   * Protobuf type {@code ResGMCloseServer}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:CloseServerRequest)
-      CloseServerRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ResGMCloseServer)
+      ResGMCloseServerOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return GMMessage.internal_static_CloseServerRequest_descriptor;
+      return GMMessage.internal_static_ResGMCloseServer_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return GMMessage.internal_static_CloseServerRequest_fieldAccessorTable
+      return GMMessage.internal_static_ResGMCloseServer_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              CloseServerRequest.class, Builder.class);
+              ResGMCloseServer.class, Builder.class);
     }
 
-    // Construct using info.xiaomo.server.shared.protocol.gm.CloseServerRequest.newBuilder()
+    // Construct using info.xiaomo.server.shared.protocol.gm.ResGMCloseServer.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -363,17 +363,17 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return GMMessage.internal_static_CloseServerRequest_descriptor;
+      return GMMessage.internal_static_ResGMCloseServer_descriptor;
     }
 
     @Override
-    public CloseServerRequest getDefaultInstanceForType() {
-      return CloseServerRequest.getDefaultInstance();
+    public ResGMCloseServer getDefaultInstanceForType() {
+      return ResGMCloseServer.getDefaultInstance();
     }
 
     @Override
-    public CloseServerRequest build() {
-      CloseServerRequest result = buildPartial();
+    public ResGMCloseServer build() {
+      ResGMCloseServer result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -381,8 +381,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @Override
-    public CloseServerRequest buildPartial() {
-      CloseServerRequest result = new CloseServerRequest(this);
+    public ResGMCloseServer buildPartial() {
+      ResGMCloseServer result = new ResGMCloseServer(this);
       result.msgId_ = msgId_;
       result.resMsg_ = resMsg_;
       onBuilt();
@@ -423,16 +423,16 @@ private static final long serialVersionUID = 0L;
     }
     @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof CloseServerRequest) {
-        return mergeFrom((CloseServerRequest)other);
+      if (other instanceof ResGMCloseServer) {
+        return mergeFrom((ResGMCloseServer)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(CloseServerRequest other) {
-      if (other == CloseServerRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(ResGMCloseServer other) {
+      if (other == ResGMCloseServer.getDefaultInstance()) return this;
       if (other.msgId_ != 0) {
         setMsgIdValue(other.getMsgIdValue());
       }
@@ -455,11 +455,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      CloseServerRequest parsedMessage = null;
+      ResGMCloseServer parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (CloseServerRequest) e.getUnfinishedMessage();
+        parsedMessage = (ResGMCloseServer) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -471,53 +471,53 @@ private static final long serialVersionUID = 0L;
 
     private int msgId_ = 0;
     /**
-     * <code>.MsgId msgId = 1;</code>
+     * <code>.GMMsgId msgId = 1;</code>
      * @return The enum numeric value on the wire for msgId.
      */
     @Override public int getMsgIdValue() {
       return msgId_;
     }
     /**
-     * <code>.MsgId msgId = 1;</code>
+     * <code>.GMMsgId msgId = 1;</code>
      * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
     public Builder setMsgIdValue(int value) {
-
+      
       msgId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.MsgId msgId = 1;</code>
+     * <code>.GMMsgId msgId = 1;</code>
      * @return The msgId.
      */
     @Override
-    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
+    public info.xiaomo.server.shared.protocol.msg.GMMsgId getMsgId() {
       @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
-      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
+      info.xiaomo.server.shared.protocol.msg.GMMsgId result = info.xiaomo.server.shared.protocol.msg.GMMsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.GMMsgId.UNRECOGNIZED : result;
     }
     /**
-     * <code>.MsgId msgId = 1;</code>
+     * <code>.GMMsgId msgId = 1;</code>
      * @param value The msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.GMMsgId value) {
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       msgId_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.MsgId msgId = 1;</code>
+     * <code>.GMMsgId msgId = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearMsgId() {
-
+      
       msgId_ = 0;
       onChanged();
       return this;
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
         getResMsgBytes() {
       Object ref = resMsg_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
         resMsg_ = b;
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-
+  
       resMsg_ = value;
       onChanged();
       return this;
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearResMsg() {
-
+      
       resMsg_ = getDefaultInstance().getResMsg();
       onChanged();
       return this;
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+      
       resMsg_ = value;
       onChanged();
       return this;
@@ -611,41 +611,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:CloseServerRequest)
+    // @@protoc_insertion_point(builder_scope:ResGMCloseServer)
   }
 
-  // @@protoc_insertion_point(class_scope:CloseServerRequest)
-  private static final CloseServerRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ResGMCloseServer)
+  private static final ResGMCloseServer DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new CloseServerRequest();
+    DEFAULT_INSTANCE = new ResGMCloseServer();
   }
 
-  public static CloseServerRequest getDefaultInstance() {
+  public static ResGMCloseServer getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CloseServerRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CloseServerRequest>() {
+  private static final com.google.protobuf.Parser<ResGMCloseServer>
+      PARSER = new com.google.protobuf.AbstractParser<ResGMCloseServer>() {
     @Override
-    public CloseServerRequest parsePartialFrom(
+    public ResGMCloseServer parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CloseServerRequest(input, extensionRegistry);
+      return new ResGMCloseServer(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CloseServerRequest> parser() {
+  public static com.google.protobuf.Parser<ResGMCloseServer> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<CloseServerRequest> getParserForType() {
+  public com.google.protobuf.Parser<ResGMCloseServer> getParserForType() {
     return PARSER;
   }
 
   @Override
-  public CloseServerRequest getDefaultInstanceForType() {
+  public ResGMCloseServer getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
