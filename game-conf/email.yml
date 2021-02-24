@@ -1,0 +1,10 @@
+mailSmtpHost: smtp.mail.yahoo.com
+port: 465
+mailSmtpSslEnable: true
+mailSmtpAuth: true
+sendUser: suzukaze.hazuki2020@yahoo.com
+password: jxqdjdrpntfhhvjt
+receivedUser:
+  - suzukaze.hazuki2020@gmail.com
+  - xiaomo@xiaomo.info
+isDebug: true

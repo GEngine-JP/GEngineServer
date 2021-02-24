@@ -229,7 +229,7 @@ public class GameCloseThread extends Thread {
             sendMsg(4, "保存邮件数据....");
         }
         LOGGER.info("保存邮件数据....");
-        // MailManager.getInstance().onServerClose();
+        // EMailManager.getInstance().onServerClose();
 
         // 保存延迟写入数据
         if (source == 1) {
