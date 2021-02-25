@@ -1,4 +1,4 @@
-package info.xiamo.server.robot.handle;
+package info.xiaomo.server.robot.handle;
 
 import com.google.protobuf.AbstractMessage;
 

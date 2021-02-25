@@ -1,7 +1,7 @@
-package info.xiamo.server.robot;
+package info.xiaomo.server.robot;
 
-import info.xiamo.server.robot.handle.RobotEventListener;
-import info.xiamo.server.robot.handle.RobotMessagePool;
+import info.xiaomo.server.robot.handle.RobotEventListener;
+import info.xiaomo.server.robot.handle.RobotMessagePool;
 import info.xiaomo.gengine.network.handler.MessageDecoder;
 import info.xiaomo.gengine.network.handler.MessageEncoder;
 import info.xiaomo.gengine.network.handler.MessageExecutor;

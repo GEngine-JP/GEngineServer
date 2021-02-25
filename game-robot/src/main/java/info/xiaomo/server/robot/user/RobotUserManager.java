@@ -1,4 +1,4 @@
-package info.xiamo.server.robot.user;
+package info.xiaomo.server.robot.user;
 
 import info.xiaomo.server.rpg.server.game.Session;
 import org.slf4j.Logger;

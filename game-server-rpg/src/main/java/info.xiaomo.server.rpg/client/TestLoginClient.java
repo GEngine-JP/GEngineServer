@@ -30,7 +30,8 @@ public class TestLoginClient {
             }
             MessageRouter router = new MessageRouter(pool);
             ClientBuilder builder = new ClientBuilder();
-            builder.setHost("localhost"); // 只关本机的服务器
+//            builder.setHost("localhost");
+            builder.setHost("106.15.188.160");
             builder.setPort(option.getGameServerPort());
             builder.setConsumer(router);
             builder.setEventListener(new NetworkListener());

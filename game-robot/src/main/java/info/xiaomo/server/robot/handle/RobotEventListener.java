@@ -1,4 +1,4 @@
-package info.xiamo.server.robot.handle;
+package info.xiaomo.server.robot.handle;
 
 import info.xiaomo.gengine.network.INetworkEventListener;
 import info.xiaomo.gengine.network.SessionKey;
