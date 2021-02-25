@@ -52,7 +52,7 @@ public class GameServer {
         DataCenter.init();
 
         // 初始化配置文件
-        ConfigDataManager.getInstance().init();
+//        ConfigDataManager.getInstance().init();
 
         // 注册事件
         EventRegister.registerPreparedListeners();

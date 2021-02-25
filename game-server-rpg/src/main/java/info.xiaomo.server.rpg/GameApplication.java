@@ -21,8 +21,8 @@ import org.slf4j.LoggerFactory;
  * @author : xiaomo github: https://github.com/xiaomoinfo email: xiaomo@xiaomo.info QQ_NO: 83387856
  *     Date: 2016/11/24 10:11 Copyright(©) 2015 by xiaomo.
  */
-//@ConfigFileScan(value = "/Users/ctwdevops/Workspace/game/GameTables", suffix = ConfigSuffix.excel)
-//@PackageScan("info.xiaomo.server.config.tables")
+@ConfigFileScan(value = "/Users/ctwdevops/Workspace/game/GameTables", suffix = ConfigSuffix.excel)
+@PackageScan("info.xiaomo.server.config.tables")
 public class GameApplication {
     public static final Logger LOGGER = LoggerFactory.getLogger(GameApplication.class);
 
