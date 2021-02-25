@@ -1,14 +1,14 @@
 package info.xiaomo.server.rpg.server.back;
 
-import info.xiaomo.gengine.network.pool.MessageAndHandlerPool;
+import info.xiaomo.gengine.network.pool.MessagePool;
 import info.xiaomo.server.shared.protocol.gm.ReqGMCloseServer;
 import info.xiaomo.server.shared.protocol.msg.GMMsgId;
 
 /** Copyright(©) 2017 by xiaomo. */
-public class BackMessageAndHandler extends MessageAndHandlerPool {
+public class BackMessagePool extends MessagePool {
 
     /** 游戏启动的时候注册消息 */
-    public BackMessageAndHandler() {
+    public BackMessagePool() {
         register(
                 GMMsgId.CloseServerRequest.getNumber(),
                 ReqGMCloseServer.getDefaultInstance(),

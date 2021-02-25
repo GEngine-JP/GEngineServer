@@ -10,6 +10,7 @@ import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.server.game.SessionManager;
 import info.xiaomo.server.rpg.util.IDUtil;
 import info.xiaomo.server.rpg.util.MessageUtil;
+import info.xiaomo.server.shared.protocol.msg.UserMsgId;
 import info.xiaomo.server.shared.protocol.user.ResUserLogin;
 import lombok.extern.slf4j.Slf4j;
 
@@ -51,8 +52,13 @@ public class UserManager {
         // 注册session
         SessionManager.getInstance().register(session);
 
-        ResUserLogin.Builder builder = ResUserLogin.newBuilder();
-        ResUserLogin loginResponse = builder.setUserId(user.getId()).build();
+        ResUserLogin loginResponse =
+                ResUserLogin.newBuilder()
+                        .setMsgId(UserMsgId.LoginResponse)
+                        .setLoginName(user.getLoginName())
+                        .setUserId(user.getId())
+                        .setSex(1)
+                        .build();
         MessageUtil.sendMsg(loginResponse, user.getId());
 
         EventUtil.fireEvent(EventType.LOGIN, user);

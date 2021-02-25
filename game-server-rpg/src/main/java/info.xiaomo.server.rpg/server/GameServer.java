@@ -10,7 +10,7 @@ import info.xiaomo.server.rpg.event.EventRegister;
 import info.xiaomo.server.rpg.processor.LogicProcessor;
 import info.xiaomo.server.rpg.processor.LoginProcessor;
 import info.xiaomo.server.rpg.server.game.GameContext;
-import info.xiaomo.server.rpg.server.game.GameMessageAndHandlerPool;
+import info.xiaomo.server.rpg.server.game.GameMessagePool;
 import info.xiaomo.server.rpg.server.game.NetworkListener;
 import info.xiaomo.server.rpg.system.schedule.ScheduleManager;
 import lombok.Data;
@@ -29,7 +29,7 @@ public class GameServer {
         int bossLoopGroupCount = 1;
         int workerLoopGroupCount = Math.max(Runtime.getRuntime().availableProcessors(), 4);
 
-        GameMessageAndHandlerPool pool = new GameMessageAndHandlerPool();
+        GameMessagePool pool = new GameMessagePool();
 
         router = new MessageRouter(pool);
         NetworkServiceBuilder builder = new NetworkServiceBuilder();

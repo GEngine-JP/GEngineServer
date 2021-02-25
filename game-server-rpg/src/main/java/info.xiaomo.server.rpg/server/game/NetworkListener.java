@@ -2,6 +2,7 @@ package info.xiaomo.server.rpg.server.game;
 
 import info.xiaomo.gengine.network.INetworkEventListener;
 import info.xiaomo.gengine.network.IProcessor;
+import info.xiaomo.gengine.network.SessionKey;
 import info.xiaomo.gengine.utils.AttributeUtil;
 import info.xiaomo.server.rpg.command.LogoutCommand;
 import info.xiaomo.server.rpg.constant.GameConst;
@@ -17,66 +18,64 @@ import org.slf4j.LoggerFactory;
  */
 public class NetworkListener implements INetworkEventListener {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(NetworkListener.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(NetworkListener.class);
 
-    /**
-     * 關閉session
-     *
-     * @param session
-     */
-    public static void closeSession(Session session) {
-        if (session == null || session.getUser() == null) {
-            // 下线
-            LOGGER.error("玩家断开连接[没有找到用户信息]");
-            return;
-        }
-        IProcessor processor =
-                GameContext.getGameServer()
-                        .getRouter()
-                        .getProcessor(GameConst.QueueId.LOGIN_LOGOUT);
-        processor.process(new LogoutCommand(session));
+  /**
+   * 關閉session
+   *
+   * @param session
+   */
+  public static void closeSession(Session session) {
+    if (session == null || session.getUser() == null) {
+      // 下线
+      LOGGER.error("玩家断开连接[没有找到用户信息]");
+      return;
     }
+    IProcessor processor =
+        GameContext.getGameServer().getRouter().getProcessor(GameConst.QueueId.LOGIN_LOGOUT);
+    processor.process(new LogoutCommand(session));
+  }
 
-    /**
-     * 連接建立
-     *
-     * @param ctx ctx
-     */
-    @Override
-    public void onConnected(ChannelHandlerContext ctx) {
-        Channel channel = ctx.channel();
-        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
-        if (session == null) {
-            session = new Session(channel);
-            session.setChannel(channel);
-            AttributeUtil.set(channel, SessionKey.SESSION, session);
-            LOGGER.info("接收到新的连接：" + channel.toString());
-        } else {
-            LOGGER.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
-        }
+  /**
+   * 連接建立
+   *
+   * @param ctx ctx
+   */
+  @Override
+  public void onConnected(ChannelHandlerContext ctx) {
+    Channel channel = ctx.channel();
+    Session session = (Session) AttributeUtil.get(channel, SessionKey.SESSION);
+    if (session == null) {
+      session = new Session(channel);
+      session.setChannel(channel);
+      AttributeUtil.set(channel, SessionKey.SESSION, session);
+      LOGGER.info("接收到新的连接：" + channel.toString());
+    } else {
+      LOGGER.error("新连接建立时已存在Session，注意排查原因" + channel.toString());
     }
+  }
 
-    /**
-     * 連接斷開
-     *
-     * @param ctx
-     */
-    @Override
-    public void onDisconnected(ChannelHandlerContext ctx) {
-        Channel channel = ctx.channel();
-        Session session = AttributeUtil.get(channel, SessionKey.SESSION);
-        closeSession(session);
-    }
+  /**
+   * 連接斷開
+   *
+   * @param ctx
+   */
+  @Override
+  public void onDisconnected(ChannelHandlerContext ctx) {
+    Channel channel = ctx.channel();
+    Session session = (Session) AttributeUtil.get(channel, SessionKey.SESSION);
+    closeSession(session);
+  }
 
-    /**
-     * 發生異常
-     *
-     * @param ctx
-     * @param cause
-     */
-    @Override
-    public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {}
+  /**
+   * 發生異常
+   *
+   * @param ctx
+   * @param cause
+   */
+  @Override
+  public void onExceptionOccur(ChannelHandlerContext ctx, Throwable cause) {}
 
-    @Override
-    public void idle(ChannelHandlerContext ctx, Object evt) {}
+  @Override
+  public void idle(ChannelHandlerContext ctx, Object evt) {}
 }

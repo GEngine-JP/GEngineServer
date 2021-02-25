@@ -1,11 +1,11 @@
-package info.xiaomo.server.rpg;
+package info.xiaomo.server.rpg.client;
 
 import info.xiaomo.gengine.network.client.Client;
 import info.xiaomo.gengine.network.client.ClientBuilder;
 import info.xiaomo.gengine.network.pool.MessageRouter;
 import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.YamlUtil;
-import info.xiaomo.server.rpg.server.back.BackMessageAndHandler;
+import info.xiaomo.server.rpg.server.back.BackMessagePool;
 import info.xiaomo.server.rpg.server.game.NetworkListener;
 import info.xiaomo.server.rpg.server.game.ServerOption;
 import info.xiaomo.server.shared.protocol.gm.ReqGMCloseServer;
@@ -19,7 +19,7 @@ public class StopServerClient {
     public static void main(String[] args) {
 
         try {
-            BackMessageAndHandler pool = new BackMessageAndHandler();
+            BackMessagePool pool = new BackMessagePool();
             ServerOption option =
                     YamlUtil.read(PathUtil.getConfigPath() + "config.yml", ServerOption.class);
             if (option == null) {

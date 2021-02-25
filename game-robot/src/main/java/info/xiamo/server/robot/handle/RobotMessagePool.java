@@ -1,8 +1,8 @@
 package info.xiamo.server.robot.handle;
 
-import info.xiaomo.gengine.network.pool.MessageAndHandlerPool;
+import info.xiaomo.gengine.network.pool.MessagePool;
 
-public class RobotMessagePool extends MessageAndHandlerPool {
+public class RobotMessagePool extends MessagePool {
 
     public RobotMessagePool() {}
 }

@@ -3,804 +3,780 @@
 
 package info.xiaomo.server.shared.protocol.user;
 
-/** Protobuf type {@code ReqUserLogin} */
-public final class ReqUserLogin extends com.google.protobuf.GeneratedMessageV3
-        implements
-        // @@protoc_insertion_point(message_implements:ReqUserLogin)
-        ReqUserLoginOrBuilder {
-    public static final int MSGID_FIELD_NUMBER = 1;
-    public static final int SEX_FIELD_NUMBER = 2;
-    public static final int USERID_FIELD_NUMBER = 3;
-    public static final int LOGINNAME_FIELD_NUMBER = 4;
-    private static final long serialVersionUID = 0L;
-    // @@protoc_insertion_point(class_scope:ReqUserLogin)
-    private static final ReqUserLogin DEFAULT_INSTANCE;
-    private static final com.google.protobuf.Parser<ReqUserLogin> PARSER =
-            new com.google.protobuf.AbstractParser<ReqUserLogin>() {
-                @Override
-                public ReqUserLogin parsePartialFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-                    return new ReqUserLogin(input, extensionRegistry);
-                }
-            };
+/**
+ * Protobuf type {@code ReqUserLogin}
+ */
+public final class ReqUserLogin extends
+    com.google.protobuf.GeneratedMessageV3 implements
+    // @@protoc_insertion_point(message_implements:ReqUserLogin)
+    ReqUserLoginOrBuilder {
+private static final long serialVersionUID = 0L;
+  // Use ReqUserLogin.newBuilder() to construct.
+  private ReqUserLogin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+  private ReqUserLogin() {
+    msgId_ = 0;
+    loginName_ = "";
+  }
 
-    static {
-        DEFAULT_INSTANCE = new ReqUserLogin();
+  @Override
+  @SuppressWarnings({"unused"})
+  protected Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ReqUserLogin();
+  }
+
+  @Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
+  private ReqUserLogin(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new NullPointerException();
     }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 8: {
+            int rawValue = input.readEnum();
 
-    private int msgId_;
-    private int sex_;
-    private long userId_;
-    private volatile Object loginName_;
-    private byte memoizedIsInitialized = -1;
-    // Use ReqUserLogin.newBuilder() to construct.
-    private ReqUserLogin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-    }
-    private ReqUserLogin() {
-        msgId_ = 0;
-        loginName_ = "";
-    }
+            msgId_ = rawValue;
+            break;
+          }
+          case 16: {
 
-    private ReqUserLogin(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-            throw new NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-            boolean done = false;
-            while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                    case 0:
-                        done = true;
-                        break;
-                    case 8:
-                        {
-                            int rawValue = input.readEnum();
+            sex_ = input.readInt32();
+            break;
+          }
+          case 24: {
 
-                            msgId_ = rawValue;
-                            break;
-                        }
-                    case 16:
-                        {
-                            sex_ = input.readInt32();
-                            break;
-                        }
-                    case 24:
-                        {
-                            userId_ = input.readInt64();
-                            break;
-                        }
-                    case 34:
-                        {
-                            String s = input.readStringRequireUtf8();
+            userId_ = input.readInt64();
+            break;
+          }
+          case 34: {
+            String s = input.readStringRequireUtf8();
 
-                            loginName_ = s;
-                            break;
-                        }
-                    default:
-                        {
-                            if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                }
-            }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                    .setUnfinishedMessage(this);
-        } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-        }
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return UserMessage.internal_static_ReqUserLogin_descriptor;
-    }
-
-    public static ReqUserLogin parseFrom(java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-    }
-
-    public static ReqUserLogin parseFrom(
-            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static ReqUserLogin parseFrom(com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-    }
-
-    public static ReqUserLogin parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static ReqUserLogin parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-    }
-
-    public static ReqUserLogin parseFrom(
-            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static ReqUserLogin parseFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static ReqUserLogin parseFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                PARSER, input, extensionRegistry);
-    }
-
-    public static ReqUserLogin parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static ReqUserLogin parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-                PARSER, input, extensionRegistry);
-    }
-
-    public static ReqUserLogin parseFrom(com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static ReqUserLogin parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                PARSER, input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(ReqUserLogin prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    public static ReqUserLogin getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-    }
-
-    public static com.google.protobuf.Parser<ReqUserLogin> parser() {
-        return PARSER;
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(UnusedPrivateParameter unused) {
-        return new ReqUserLogin();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-    }
-
-    @Override
-    protected FieldAccessorTable internalGetFieldAccessorTable() {
-        return UserMessage.internal_static_ReqUserLogin_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(ReqUserLogin.class, Builder.class);
-    }
-
-    /**
-     * <code>.UserMsgId msgId = 1;</code>
-     *
-     * @return The enum numeric value on the wire for msgId.
-     */
-    @Override
-    public int getMsgIdValue() {
-        return msgId_;
-    }
-
-    /**
-     * <code>.UserMsgId msgId = 1;</code>
-     *
-     * @return The msgId.
-     */
-    @Override
-    public info.xiaomo.server.shared.protocol.msg.UserMsgId getMsgId() {
-        @SuppressWarnings("deprecation")
-        info.xiaomo.server.shared.protocol.msg.UserMsgId result =
-                info.xiaomo.server.shared.protocol.msg.UserMsgId.valueOf(msgId_);
-        return result == null
-                ? info.xiaomo.server.shared.protocol.msg.UserMsgId.UNRECOGNIZED
-                : result;
-    }
-
-    /**
-     * <code>int32 sex = 2;</code>
-     *
-     * @return The sex.
-     */
-    @Override
-    public int getSex() {
-        return sex_;
-    }
-
-    /**
-     * <code>int64 userId = 3;</code>
-     *
-     * @return The userId.
-     */
-    @Override
-    public long getUserId() {
-        return userId_;
-    }
-
-    /**
-     * <code>string loginName = 4;</code>
-     *
-     * @return The loginName.
-     */
-    @Override
-    public String getLoginName() {
-        Object ref = loginName_;
-        if (ref instanceof String) {
-            return (String) ref;
-        } else {
-            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-            String s = bs.toStringUtf8();
             loginName_ = s;
-            return s;
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
+    }
+  }
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+    return UserMessage.internal_static_ReqUserLogin_descriptor;
+  }
+
+  @Override
+  protected FieldAccessorTable
+      internalGetFieldAccessorTable() {
+    return UserMessage.internal_static_ReqUserLogin_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+            ReqUserLogin.class, Builder.class);
+  }
+
+  public static final int MSGID_FIELD_NUMBER = 1;
+  private int msgId_;
+  /**
+   * <code>.UserMsgId msgId = 1;</code>
+   * @return The enum numeric value on the wire for msgId.
+   */
+  @Override public int getMsgIdValue() {
+    return msgId_;
+  }
+  /**
+   * <code>.UserMsgId msgId = 1;</code>
+   * @return The msgId.
+   */
+  @Override public info.xiaomo.server.shared.protocol.msg.UserMsgId getMsgId() {
+    @SuppressWarnings("deprecation")
+    info.xiaomo.server.shared.protocol.msg.UserMsgId result = info.xiaomo.server.shared.protocol.msg.UserMsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.UserMsgId.UNRECOGNIZED : result;
+  }
+
+  public static final int SEX_FIELD_NUMBER = 2;
+  private int sex_;
+  /**
+   * <code>int32 sex = 2;</code>
+   * @return The sex.
+   */
+  @Override
+  public int getSex() {
+    return sex_;
+  }
+
+  public static final int USERID_FIELD_NUMBER = 3;
+  private long userId_;
+  /**
+   * <code>int64 userId = 3;</code>
+   * @return The userId.
+   */
+  @Override
+  public long getUserId() {
+    return userId_;
+  }
+
+  public static final int LOGINNAME_FIELD_NUMBER = 4;
+  private volatile Object loginName_;
+  /**
+   * <code>string loginName = 4;</code>
+   * @return The loginName.
+   */
+  @Override
+  public String getLoginName() {
+    Object ref = loginName_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      loginName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string loginName = 4;</code>
+   * @return The bytes for loginName.
+   */
+  @Override
+  public com.google.protobuf.ByteString
+      getLoginNameBytes() {
+    Object ref = loginName_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      loginName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  private byte memoizedIsInitialized = -1;
+  @Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
+  @Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.UserUnknown.getNumber()) {
+      output.writeEnum(1, msgId_);
+    }
+    if (sex_ != 0) {
+      output.writeInt32(2, sex_);
+    }
+    if (userId_ != 0L) {
+      output.writeInt64(3, userId_);
+    }
+    if (!getLoginNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, loginName_);
+    }
+    unknownFields.writeTo(output);
+  }
+
+  @Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.UserUnknown.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(1, msgId_);
+    }
+    if (sex_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, sex_);
+    }
+    if (userId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, userId_);
+    }
+    if (!getLoginNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, loginName_);
+    }
+    size += unknownFields.getSerializedSize();
+    memoizedSize = size;
+    return size;
+  }
+
+  @Override
+  public boolean equals(final Object obj) {
+    if (obj == this) {
+     return true;
+    }
+    if (!(obj instanceof ReqUserLogin)) {
+      return super.equals(obj);
+    }
+    ReqUserLogin other = (ReqUserLogin) obj;
+
+    if (msgId_ != other.msgId_) return false;
+    if (getSex()
+        != other.getSex()) return false;
+    if (getUserId()
+        != other.getUserId()) return false;
+    if (!getLoginName()
+        .equals(other.getLoginName())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MSGID_FIELD_NUMBER;
+    hash = (53 * hash) + msgId_;
+    hash = (37 * hash) + SEX_FIELD_NUMBER;
+    hash = (53 * hash) + getSex();
+    hash = (37 * hash) + USERID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
+    hash = (37 * hash) + LOGINNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getLoginName().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  public static ReqUserLogin parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static ReqUserLogin parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static ReqUserLogin parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static ReqUserLogin parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static ReqUserLogin parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static ReqUserLogin parseFrom(
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static ReqUserLogin parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static ReqUserLogin parseFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static ReqUserLogin parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
+  }
+  public static ReqUserLogin parseDelimitedFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static ReqUserLogin parseFrom(
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static ReqUserLogin parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+
+  @Override
+  public Builder newBuilderForType() { return newBuilder(); }
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+  public static Builder newBuilder(ReqUserLogin prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+  @Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @Override
+  protected Builder newBuilderForType(
+      BuilderParent parent) {
+    Builder builder = new Builder(parent);
+    return builder;
+  }
+  /**
+   * Protobuf type {@code ReqUserLogin}
+   */
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      // @@protoc_insertion_point(builder_implements:ReqUserLogin)
+      ReqUserLoginOrBuilder {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return UserMessage.internal_static_ReqUserLogin_descriptor;
     }
 
-    /**
-     * <code>string loginName = 4;</code>
-     *
-     * @return The bytes for loginName.
-     */
     @Override
-    public com.google.protobuf.ByteString getLoginNameBytes() {
-        Object ref = loginName_;
-        if (ref instanceof String) {
-            com.google.protobuf.ByteString b =
-                    com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-            loginName_ = b;
-            return b;
-        } else {
-            return (com.google.protobuf.ByteString) ref;
-        }
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return UserMessage.internal_static_ReqUserLogin_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ReqUserLogin.class, Builder.class);
+    }
+
+    // Construct using info.xiaomo.server.shared.protocol.user.ReqUserLogin.newBuilder()
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
+
+    private Builder(
+        BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
+    }
+    @Override
+    public Builder clear() {
+      super.clear();
+      msgId_ = 0;
+
+      sex_ = 0;
+
+      userId_ = 0L;
+
+      loginName_ = "";
+
+      return this;
     }
 
     @Override
-    public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.KNOWN.getNumber()) {
-            output.writeEnum(1, msgId_);
-        }
-        if (sex_ != 0) {
-            output.writeInt32(2, sex_);
-        }
-        if (userId_ != 0L) {
-            output.writeInt64(3, userId_);
-        }
-        if (!getLoginNameBytes().isEmpty()) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 4, loginName_);
-        }
-        unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (msgId_ != info.xiaomo.server.shared.protocol.msg.UserMsgId.KNOWN.getNumber()) {
-            size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, msgId_);
-        }
-        if (sex_ != 0) {
-            size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, sex_);
-        }
-        if (userId_ != 0L) {
-            size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, userId_);
-        }
-        if (!getLoginNameBytes().isEmpty()) {
-            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, loginName_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof ReqUserLogin)) {
-            return super.equals(obj);
-        }
-        ReqUserLogin other = (ReqUserLogin) obj;
-
-        if (msgId_ != other.msgId_) return false;
-        if (getSex() != other.getSex()) return false;
-        if (getUserId() != other.getUserId()) return false;
-        if (!getLoginName().equals(other.getLoginName())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        if (memoizedHashCode != 0) {
-            return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + MSGID_FIELD_NUMBER;
-        hash = (53 * hash) + msgId_;
-        hash = (37 * hash) + SEX_FIELD_NUMBER;
-        hash = (53 * hash) + getSex();
-        hash = (37 * hash) + USERID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUserId());
-        hash = (37 * hash) + LOGINNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getLoginName().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-    }
-
-    @Override
-    public Builder newBuilderForType() {
-        return newBuilder();
-    }
-
-    @Override
-    public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<ReqUserLogin> getParserForType() {
-        return PARSER;
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+      return UserMessage.internal_static_ReqUserLogin_descriptor;
     }
 
     @Override
     public ReqUserLogin getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
+      return ReqUserLogin.getDefaultInstance();
     }
 
-    /** Protobuf type {@code ReqUserLogin} */
-    public static final class Builder
-            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-            implements
-            // @@protoc_insertion_point(builder_implements:ReqUserLogin)
-            ReqUserLoginOrBuilder {
-        private int msgId_ = 0;
-        private int sex_;
-        private long userId_;
-        private Object loginName_ = "";
-
-        // Construct using info.xiaomo.server.shared.protocol.user.ReqUserLogin.newBuilder()
-        private Builder() {
-            maybeForceBuilderInitialization();
-        }
-
-        private Builder(BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return UserMessage.internal_static_ReqUserLogin_descriptor;
-        }
-
-        @Override
-        protected FieldAccessorTable internalGetFieldAccessorTable() {
-            return UserMessage.internal_static_ReqUserLogin_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(ReqUserLogin.class, Builder.class);
-        }
-
-        private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-        }
-
-        @Override
-        public Builder clear() {
-            super.clear();
-            msgId_ = 0;
-
-            sex_ = 0;
-
-            userId_ = 0L;
-
-            loginName_ = "";
-
-            return this;
-        }
-
-        @Override
-        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-            return UserMessage.internal_static_ReqUserLogin_descriptor;
-        }
-
-        @Override
-        public ReqUserLogin getDefaultInstanceForType() {
-            return ReqUserLogin.getDefaultInstance();
-        }
-
-        @Override
-        public ReqUserLogin build() {
-            ReqUserLogin result = buildPartial();
-            if (!result.isInitialized()) {
-                throw newUninitializedMessageException(result);
-            }
-            return result;
-        }
-
-        @Override
-        public ReqUserLogin buildPartial() {
-            ReqUserLogin result = new ReqUserLogin(this);
-            result.msgId_ = msgId_;
-            result.sex_ = sex_;
-            result.userId_ = userId_;
-            result.loginName_ = loginName_;
-            onBuilt();
-            return result;
-        }
-
-        @Override
-        public Builder clone() {
-            return super.clone();
-        }
-
-        @Override
-        public Builder setField(
-                com.google.protobuf.Descriptors.FieldDescriptor field, Object value) {
-            return super.setField(field, value);
-        }
-
-        @Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return super.clearField(field);
-        }
-
-        @Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return super.clearOneof(oneof);
-        }
-
-        @Override
-        public Builder setRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field, int index, Object value) {
-            return super.setRepeatedField(field, index, value);
-        }
-
-        @Override
-        public Builder addRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field, Object value) {
-            return super.addRepeatedField(field, value);
-        }
-
-        @Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof ReqUserLogin) {
-                return mergeFrom((ReqUserLogin) other);
-            } else {
-                super.mergeFrom(other);
-                return this;
-            }
-        }
-
-        public Builder mergeFrom(ReqUserLogin other) {
-            if (other == ReqUserLogin.getDefaultInstance()) return this;
-            if (other.msgId_ != 0) {
-                setMsgIdValue(other.getMsgIdValue());
-            }
-            if (other.getSex() != 0) {
-                setSex(other.getSex());
-            }
-            if (other.getUserId() != 0L) {
-                setUserId(other.getUserId());
-            }
-            if (!other.getLoginName().isEmpty()) {
-                loginName_ = other.loginName_;
-                onChanged();
-            }
-            this.mergeUnknownFields(other.unknownFields);
-            onChanged();
-            return this;
-        }
-
-        @Override
-        public final boolean isInitialized() {
-            return true;
-        }
-
-        @Override
-        public Builder mergeFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            ReqUserLogin parsedMessage = null;
-            try {
-                parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                parsedMessage = (ReqUserLogin) e.getUnfinishedMessage();
-                throw e.unwrapIOException();
-            } finally {
-                if (parsedMessage != null) {
-                    mergeFrom(parsedMessage);
-                }
-            }
-            return this;
-        }
-
-        /**
-         * <code>.UserMsgId msgId = 1;</code>
-         *
-         * @return The enum numeric value on the wire for msgId.
-         */
-        @Override
-        public int getMsgIdValue() {
-            return msgId_;
-        }
-
-        /**
-         * <code>.UserMsgId msgId = 1;</code>
-         *
-         * @param value The enum numeric value on the wire for msgId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setMsgIdValue(int value) {
-
-            msgId_ = value;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>.UserMsgId msgId = 1;</code>
-         *
-         * @return The msgId.
-         */
-        @Override
-        public info.xiaomo.server.shared.protocol.msg.UserMsgId getMsgId() {
-            @SuppressWarnings("deprecation")
-            info.xiaomo.server.shared.protocol.msg.UserMsgId result =
-                    info.xiaomo.server.shared.protocol.msg.UserMsgId.valueOf(msgId_);
-            return result == null
-                    ? info.xiaomo.server.shared.protocol.msg.UserMsgId.UNRECOGNIZED
-                    : result;
-        }
-
-        /**
-         * <code>.UserMsgId msgId = 1;</code>
-         *
-         * @param value The msgId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.UserMsgId value) {
-            if (value == null) {
-                throw new NullPointerException();
-            }
-
-            msgId_ = value.getNumber();
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>.UserMsgId msgId = 1;</code>
-         *
-         * @return This builder for chaining.
-         */
-        public Builder clearMsgId() {
-
-            msgId_ = 0;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>int32 sex = 2;</code>
-         *
-         * @return The sex.
-         */
-        @Override
-        public int getSex() {
-            return sex_;
-        }
-
-        /**
-         * <code>int32 sex = 2;</code>
-         *
-         * @param value The sex to set.
-         * @return This builder for chaining.
-         */
-        public Builder setSex(int value) {
-
-            sex_ = value;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>int32 sex = 2;</code>
-         *
-         * @return This builder for chaining.
-         */
-        public Builder clearSex() {
-
-            sex_ = 0;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>int64 userId = 3;</code>
-         *
-         * @return The userId.
-         */
-        @Override
-        public long getUserId() {
-            return userId_;
-        }
-
-        /**
-         * <code>int64 userId = 3;</code>
-         *
-         * @param value The userId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setUserId(long value) {
-
-            userId_ = value;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>int64 userId = 3;</code>
-         *
-         * @return This builder for chaining.
-         */
-        public Builder clearUserId() {
-
-            userId_ = 0L;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>string loginName = 4;</code>
-         *
-         * @return The loginName.
-         */
-        public String getLoginName() {
-            Object ref = loginName_;
-            if (!(ref instanceof String)) {
-                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                loginName_ = s;
-                return s;
-            } else {
-                return (String) ref;
-            }
-        }
-
-        /**
-         * <code>string loginName = 4;</code>
-         *
-         * @param value The loginName to set.
-         * @return This builder for chaining.
-         */
-        public Builder setLoginName(String value) {
-            if (value == null) {
-                throw new NullPointerException();
-            }
-
-            loginName_ = value;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>string loginName = 4;</code>
-         *
-         * @return The bytes for loginName.
-         */
-        public com.google.protobuf.ByteString getLoginNameBytes() {
-            Object ref = loginName_;
-            if (ref instanceof String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-                loginName_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>string loginName = 4;</code>
-         *
-         * @param value The bytes for loginName to set.
-         * @return This builder for chaining.
-         */
-        public Builder setLoginNameBytes(com.google.protobuf.ByteString value) {
-            if (value == null) {
-                throw new NullPointerException();
-            }
-            checkByteStringIsUtf8(value);
-
-            loginName_ = value;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>string loginName = 4;</code>
-         *
-         * @return This builder for chaining.
-         */
-        public Builder clearLoginName() {
-
-            loginName_ = getDefaultInstance().getLoginName();
-            onChanged();
-            return this;
-        }
-
-        @Override
-        public final Builder setUnknownFields(
-                final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFields(unknownFields);
-        }
-
-        @Override
-        public final Builder mergeUnknownFields(
-                final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.mergeUnknownFields(unknownFields);
-        }
-
-        // @@protoc_insertion_point(builder_scope:ReqUserLogin)
+    @Override
+    public ReqUserLogin build() {
+      ReqUserLogin result = buildPartial();
+      if (!result.isInitialized()) {
+        throw newUninitializedMessageException(result);
+      }
+      return result;
     }
+
+    @Override
+    public ReqUserLogin buildPartial() {
+      ReqUserLogin result = new ReqUserLogin(this);
+      result.msgId_ = msgId_;
+      result.sex_ = sex_;
+      result.userId_ = userId_;
+      result.loginName_ = loginName_;
+      onBuilt();
+      return result;
+    }
+
+    @Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return super.setField(field, value);
+    }
+    @Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        Object value) {
+      return super.addRepeatedField(field, value);
+    }
+    @Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof ReqUserLogin) {
+        return mergeFrom((ReqUserLogin)other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
+    }
+
+    public Builder mergeFrom(ReqUserLogin other) {
+      if (other == ReqUserLogin.getDefaultInstance()) return this;
+      if (other.msgId_ != 0) {
+        setMsgIdValue(other.getMsgIdValue());
+      }
+      if (other.getSex() != 0) {
+        setSex(other.getSex());
+      }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
+      }
+      if (!other.getLoginName().isEmpty()) {
+        loginName_ = other.loginName_;
+        onChanged();
+      }
+      this.mergeUnknownFields(other.unknownFields);
+      onChanged();
+      return this;
+    }
+
+    @Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @Override
+    public Builder mergeFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      ReqUserLogin parsedMessage = null;
+      try {
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (ReqUserLogin) e.getUnfinishedMessage();
+        throw e.unwrapIOException();
+      } finally {
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
+      return this;
+    }
+
+    private int msgId_ = 0;
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @return The enum numeric value on the wire for msgId.
+     */
+    @Override public int getMsgIdValue() {
+      return msgId_;
+    }
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @param value The enum numeric value on the wire for msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgIdValue(int value) {
+      
+      msgId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @return The msgId.
+     */
+    @Override
+    public info.xiaomo.server.shared.protocol.msg.UserMsgId getMsgId() {
+      @SuppressWarnings("deprecation")
+      info.xiaomo.server.shared.protocol.msg.UserMsgId result = info.xiaomo.server.shared.protocol.msg.UserMsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.UserMsgId.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @param value The msgId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.UserMsgId value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      msgId_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.UserMsgId msgId = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMsgId() {
+      
+      msgId_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int sex_ ;
+    /**
+     * <code>int32 sex = 2;</code>
+     * @return The sex.
+     */
+    @Override
+    public int getSex() {
+      return sex_;
+    }
+    /**
+     * <code>int32 sex = 2;</code>
+     * @param value The sex to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSex(int value) {
+      
+      sex_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 sex = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSex() {
+      
+      sex_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private long userId_ ;
+    /**
+     * <code>int64 userId = 3;</code>
+     * @return The userId.
+     */
+    @Override
+    public long getUserId() {
+      return userId_;
+    }
+    /**
+     * <code>int64 userId = 3;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(long value) {
+      
+      userId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 userId = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private Object loginName_ = "";
+    /**
+     * <code>string loginName = 4;</code>
+     * @return The loginName.
+     */
+    public String getLoginName() {
+      Object ref = loginName_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        loginName_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
+    }
+    /**
+     * <code>string loginName = 4;</code>
+     * @return The bytes for loginName.
+     */
+    public com.google.protobuf.ByteString
+        getLoginNameBytes() {
+      Object ref = loginName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        loginName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string loginName = 4;</code>
+     * @param value The loginName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoginName(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      loginName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string loginName = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLoginName() {
+      
+      loginName_ = getDefaultInstance().getLoginName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string loginName = 4;</code>
+     * @param value The bytes for loginName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoginNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      loginName_ = value;
+      onChanged();
+      return this;
+    }
+    @Override
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      return super.setUnknownFields(unknownFields);
+    }
+
+    @Override
+    public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      return super.mergeUnknownFields(unknownFields);
+    }
+
+
+    // @@protoc_insertion_point(builder_scope:ReqUserLogin)
+  }
+
+  // @@protoc_insertion_point(class_scope:ReqUserLogin)
+  private static final ReqUserLogin DEFAULT_INSTANCE;
+  static {
+    DEFAULT_INSTANCE = new ReqUserLogin();
+  }
+
+  public static ReqUserLogin getDefaultInstance() {
+    return DEFAULT_INSTANCE;
+  }
+
+  private static final com.google.protobuf.Parser<ReqUserLogin>
+      PARSER = new com.google.protobuf.AbstractParser<ReqUserLogin>() {
+    @Override
+    public ReqUserLogin parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return new ReqUserLogin(input, extensionRegistry);
+    }
+  };
+
+  public static com.google.protobuf.Parser<ReqUserLogin> parser() {
+    return PARSER;
+  }
+
+  @Override
+  public com.google.protobuf.Parser<ReqUserLogin> getParserForType() {
+    return PARSER;
+  }
+
+  @Override
+  public ReqUserLogin getDefaultInstanceForType() {
+    return DEFAULT_INSTANCE;
+  }
+
 }
+

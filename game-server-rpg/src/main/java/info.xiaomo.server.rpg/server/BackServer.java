@@ -2,7 +2,7 @@ package info.xiaomo.server.rpg.server;
 
 import info.xiaomo.gengine.network.NetworkServiceBuilder;
 import info.xiaomo.gengine.network.NetworkServiceImpl;
-import info.xiaomo.server.rpg.server.back.BackMessageAndHandler;
+import info.xiaomo.server.rpg.server.back.BackMessagePool;
 import info.xiaomo.server.rpg.server.back.BackMessageRouter;
 import info.xiaomo.server.rpg.server.game.GameContext;
 import info.xiaomo.server.rpg.server.game.NetworkListener;
@@ -13,7 +13,7 @@ public class BackServer {
     private final NetworkServiceImpl service;
 
     public BackServer() {
-        BackMessageAndHandler pool = new BackMessageAndHandler();
+        BackMessagePool pool = new BackMessagePool();
         int bossLoopGroupCount = 1;
         int workerLoopGroupCount = 4;
         NetworkServiceBuilder builder = new NetworkServiceBuilder();

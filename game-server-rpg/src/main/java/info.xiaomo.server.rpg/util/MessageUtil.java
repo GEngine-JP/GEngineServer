@@ -60,7 +60,7 @@ public class MessageUtil {
                         .getNumber();
             }
         }
-        log.error("在消息体中没有找到对应的消息id:{}", msg);
+        log.error("【{}】中未设置msgId, 内容：{}", msg.getClass().getSimpleName(), msg);
         return 0;
     }
 }
