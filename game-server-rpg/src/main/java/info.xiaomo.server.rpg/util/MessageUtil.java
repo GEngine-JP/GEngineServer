@@ -1,10 +1,8 @@
 package info.xiaomo.server.rpg.util;
 
 import com.google.protobuf.AbstractMessage;
-import com.google.protobuf.Descriptors;
+import com.google.protobuf.Message;
 import java.util.Collection;
-import java.util.Map;
-import info.xiaomo.gengine.network.MsgPack;
 import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.server.game.SessionManager;
 import lombok.extern.slf4j.Slf4j;
@@ -13,27 +11,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MessageUtil {
 
-    public static void sendMsg(AbstractMessage msg, long id) {
-        Session session = SessionManager.getInstance().getSession(id);
-        if (session == null) {
-            return;
-        }
-        sendMsg(session, msg);
-    }
-
-    public static void sendMsg(Session session, AbstractMessage msg) {
-        int msgId = getMessageID(msg);
-        MsgPack packet = new MsgPack(MsgPack.HEAD_TCP, msgId, msg.toByteArray());
-        session.sendMessage(packet);
-    }
-
-    public static void sendMsgToRids(AbstractMessage msg, long... rids) {
+    public static void sendMsgToRids(Message msg, long... rids) {
         for (long rid : rids) {
             sendMsg(msg, rid);
         }
     }
 
-    public static void sendMsgToRids(AbstractMessage msg, Collection<Long> rids) {
+    public static void sendMsgToRids(Message msg, Collection<Long> rids) {
         for (Long rid : rids) {
             if (rid != null) {
                 sendMsg(msg, rid);
@@ -50,15 +34,15 @@ public class MessageUtil {
         }
     }
 
-    private static int getMessageID(AbstractMessage msg) {
-        for (Map.Entry<Descriptors.FieldDescriptor, Object> fieldDescriptorObjectEntry :
-                msg.getAllFields().entrySet()) {
-            if (fieldDescriptorObjectEntry.getKey().getName().equals("msgId")) {
-                return ((Descriptors.EnumValueDescriptor) fieldDescriptorObjectEntry.getValue())
-                        .getNumber();
-            }
+    public static void sendMsg(Message msg, long id) {
+        Session session = SessionManager.getInstance().getSession(id);
+        if (session == null) {
+            return;
         }
-        log.error("【{}】中未设置msgId, 内容：{}", msg.getClass().getSimpleName(), msg);
-        return 0;
+        sendMsg(session, msg);
+    }
+
+    public static void sendMsg(Session session, Message msg) {
+        session.sendMessage(msg);
     }
 }

@@ -30,7 +30,7 @@ public class TestLoginClient {
             MessageRouter router = new MessageRouter(pool);
             ClientBuilder builder = new ClientBuilder();
             builder.setHost("localhost");
-//            builder.setHost("106.15.188.160");
+            //            builder.setHost("106.15.188.160");
             builder.setPort(option.getGameServerPort());
             builder.setConsumer(router);
             builder.setEventListener(new NetworkListener());
@@ -48,6 +48,7 @@ public class TestLoginClient {
                             .setSex(1)
                             .setUserId(1021)
                             .build();
+
             client.sendMsg(request);
 
             // 等待10秒后关闭客户端

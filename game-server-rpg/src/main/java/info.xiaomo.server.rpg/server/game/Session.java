@@ -1,8 +1,8 @@
 package info.xiaomo.server.rpg.server.game;
 
+import com.google.protobuf.Message;
 import java.net.InetSocketAddress;
 import info.xiaomo.gengine.network.ISession;
-import info.xiaomo.gengine.network.MsgPack;
 import info.xiaomo.gengine.utils.AttributeUtil;
 import info.xiaomo.server.rpg.entify.Role;
 import info.xiaomo.server.rpg.entify.User;
@@ -93,7 +93,7 @@ public class Session implements ISession {
         }
     }
 
-    public void sendMessage(MsgPack msg) {
+    public void sendMessage(Message msg) {
         channel.writeAndFlush(msg);
     }
 }
