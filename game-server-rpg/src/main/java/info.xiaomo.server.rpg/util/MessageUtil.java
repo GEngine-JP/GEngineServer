@@ -37,6 +37,7 @@ public class MessageUtil {
     public static void sendMsg(Message msg, long id) {
         Session session = SessionManager.getInstance().getSession(id);
         if (session == null) {
+            log.error("session为空:{}", id);
             return;
         }
         sendMsg(session, msg);

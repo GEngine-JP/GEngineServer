@@ -10,7 +10,6 @@ import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.server.game.SessionManager;
 import info.xiaomo.server.rpg.util.IDUtil;
 import info.xiaomo.server.rpg.util.MessageUtil;
-import info.xiaomo.server.shared.protocol.msg.MsgId;
 import info.xiaomo.server.shared.protocol.user.ResUserLogin;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,6 +31,7 @@ public class UserManager {
      */
     public void login(Session session, String loginName) {
         if (loginName.isEmpty()) {
+            log.error("loginName为空:{}", session.getIP());
             return;
         }
         User user = DataCenter.getUser(loginName);
