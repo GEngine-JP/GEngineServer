@@ -1,11 +1,11 @@
 package info.xiaomo.server.robot;
 
-import info.xiaomo.server.robot.handle.RobotEventListener;
-import info.xiaomo.server.robot.handle.RobotMessagePool;
-import info.xiaomo.gengine.network.handler.MessageDecoder;
-import info.xiaomo.gengine.network.handler.MessageEncoder;
+import info.xiaomo.gengine.network.handler.DefaultProtobufDecoder;
+import info.xiaomo.gengine.network.handler.DefaultProtobufEncoder;
 import info.xiaomo.gengine.network.handler.MessageExecutor;
 import info.xiaomo.gengine.network.pool.MessageRouter;
+import info.xiaomo.server.robot.handle.RobotEventListener;
+import info.xiaomo.server.robot.handle.RobotMessagePool;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -22,15 +22,15 @@ public class RobotApplication {
                 new ChannelInitializer<SocketChannel>() {
 
                     @Override
-                    protected void initChannel(SocketChannel ch) throws Exception {
+                    protected void initChannel(SocketChannel ch) {
                         ChannelPipeline pip = ch.pipeline();
-                        pip.addLast("NettyMessageDecoder", new MessageDecoder(8192));
-                        pip.addLast("NettyMessageEncoder", new MessageEncoder());
+                        RobotMessagePool pool = new RobotMessagePool();
+                        pip.addLast("NettyMessageDecoder", new DefaultProtobufDecoder(pool));
+                        pip.addLast("NettyMessageEncoder", new DefaultProtobufEncoder(pool));
                         pip.addLast(
                                 "NettyMessageExecutor",
                                 new MessageExecutor(
-                                        new MessageRouter(new RobotMessagePool()),
-                                        new RobotEventListener()));
+                                        new MessageRouter(pool), new RobotEventListener(), pool));
                     }
                 });
 

@@ -3,7 +3,6 @@ package info.xiaomo.server.rpg.server;
 import info.xiaomo.gengine.network.IService;
 import info.xiaomo.gengine.network.NetworkServiceBuilder;
 import info.xiaomo.gengine.network.pool.MessageRouter;
-import info.xiaomo.server.rpg.config.ConfigDataManager;
 import info.xiaomo.server.rpg.constant.GameConst;
 import info.xiaomo.server.rpg.db.DataCenter;
 import info.xiaomo.server.rpg.event.EventRegister;
@@ -33,7 +32,7 @@ public class GameServer {
 
         router = new MessageRouter(pool);
         NetworkServiceBuilder builder = new NetworkServiceBuilder();
-        builder.setImessageandhandler(pool);
+        builder.setMessagePool(pool);
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(GameContext.getGameServerPort());

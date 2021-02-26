@@ -20,7 +20,7 @@ public class BackServer {
         builder.setBossLoopGroupCount(bossLoopGroupCount);
         builder.setWorkerLoopGroupCount(workerLoopGroupCount);
         builder.setPort(GameContext.getBackServerPort());
-        builder.setImessageandhandler(pool);
+        builder.setMessagePool(pool);
         builder.setConsumer(new BackMessageRouter(pool));
         builder.setListener(new NetworkListener());
 
