@@ -33,12 +33,12 @@ public final class GMMessage {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\017GMMessage.proto\032\017MessageId.proto\";\n\020Re" +
-      "qGMCloseServer\022\027\n\005msgId\030\001 \001(\0162\010.GMMsgId\022" +
-      "\016\n\006resMsg\030\002 \001(\t\";\n\020ResGMCloseServer\022\027\n\005m" +
-      "sgId\030\001 \001(\0162\010.GMMsgId\022\016\n\006resMsg\030\002 \001(\tB)\n%" +
-      "info.xiaomo.server.shared.protocol.gmP\001b" +
-      "\006proto3"
+      "\n\017GMMessage.proto\032\017MessageId.proto\"9\n\020Re" +
+      "qGMCloseServer\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\016\n" +
+      "\006resMsg\030\002 \001(\t\"9\n\020ResGMCloseServer\022\025\n\005msg" +
+      "Id\030\001 \001(\0162\006.MsgId\022\016\n\006resMsg\030\002 \001(\tB)\n%info" +
+      ".xiaomo.server.shared.protocol.gmP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

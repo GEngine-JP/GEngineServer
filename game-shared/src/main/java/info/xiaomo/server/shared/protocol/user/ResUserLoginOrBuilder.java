@@ -8,15 +8,15 @@ public interface ResUserLoginOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.UserMsgId msgId = 1;</code>
+   * <code>.MsgId msgId = 1;</code>
    * @return The enum numeric value on the wire for msgId.
    */
   int getMsgIdValue();
   /**
-   * <code>.UserMsgId msgId = 1;</code>
+   * <code>.MsgId msgId = 1;</code>
    * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.msg.UserMsgId getMsgId();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <code>int32 sex = 2;</code>

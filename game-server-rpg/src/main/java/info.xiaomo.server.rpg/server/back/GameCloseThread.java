@@ -12,7 +12,7 @@ import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.server.game.SessionManager;
 import info.xiaomo.server.rpg.util.MessageUtil;
 import info.xiaomo.server.shared.protocol.gm.ResGMCloseServer;
-import info.xiaomo.server.shared.protocol.msg.GMMsgId;
+import info.xiaomo.server.shared.protocol.msg.MsgId;
 import io.netty.channel.ChannelFuture;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +45,7 @@ public class GameCloseThread extends Thread {
         }
         ResGMCloseServer resGMCloseServer =
                 ResGMCloseServer.newBuilder()
-                        .setMsgId(GMMsgId.CloseServerResponse)
+                        .setMsgId(MsgId.CloseServerResponse)
                         .setResMsg(text + code)
                         .build();
         MessageUtil.sendMsg(session, resGMCloseServer);

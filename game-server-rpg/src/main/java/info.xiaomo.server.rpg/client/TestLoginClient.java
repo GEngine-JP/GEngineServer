@@ -9,7 +9,7 @@ import info.xiaomo.server.rpg.constant.GameConst;
 import info.xiaomo.server.rpg.processor.LoginProcessor;
 import info.xiaomo.server.rpg.server.game.NetworkListener;
 import info.xiaomo.server.rpg.server.game.ServerOption;
-import info.xiaomo.server.shared.protocol.msg.UserMsgId;
+import info.xiaomo.server.shared.protocol.msg.MsgId;
 import info.xiaomo.server.shared.protocol.user.ReqUserLogin;
 import lombok.extern.slf4j.Slf4j;
 
@@ -43,7 +43,7 @@ public class TestLoginClient {
             Thread.sleep(1000);
             ReqUserLogin request =
                     ReqUserLogin.newBuilder()
-                            .setMsgId(UserMsgId.LoginRequest)
+                            .setMsgId(MsgId.LoginRequest)
                             .setLoginName("xiaomo")
                             .setSex(1)
                             .setUserId(1021)

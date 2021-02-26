@@ -8,15 +8,15 @@ public interface ReqGMCloseServerOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.GMMsgId msgId = 1;</code>
+   * <code>.MsgId msgId = 1;</code>
    * @return The enum numeric value on the wire for msgId.
    */
   int getMsgIdValue();
   /**
-   * <code>.GMMsgId msgId = 1;</code>
+   * <code>.MsgId msgId = 1;</code>
    * @return The msgId.
    */
-  info.xiaomo.server.shared.protocol.msg.GMMsgId getMsgId();
+  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
 
   /**
    * <code>string resMsg = 2;</code>

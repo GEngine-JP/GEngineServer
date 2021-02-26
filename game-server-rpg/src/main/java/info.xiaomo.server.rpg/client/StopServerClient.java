@@ -9,7 +9,7 @@ import info.xiaomo.server.rpg.server.back.BackMessagePool;
 import info.xiaomo.server.rpg.server.game.NetworkListener;
 import info.xiaomo.server.rpg.server.game.ServerOption;
 import info.xiaomo.server.shared.protocol.gm.ReqGMCloseServer;
-import info.xiaomo.server.shared.protocol.msg.GMMsgId;
+import info.xiaomo.server.shared.protocol.msg.MsgId;
 import lombok.extern.slf4j.Slf4j;
 
 /** @author xiaomo */
@@ -38,7 +38,7 @@ public class StopServerClient {
             Thread.sleep(1000);
             ReqGMCloseServer request =
                     ReqGMCloseServer.newBuilder()
-                            .setMsgId(GMMsgId.CloseServerRequest)
+                            .setMsgId(MsgId.CloseServerRequest)
                             .setResMsg("1")
                             .build();
             client.sendMsg(request);

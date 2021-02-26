@@ -33,13 +33,13 @@ public final class UserMessage {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\021UserMessage.proto\032\017MessageId.proto\"Y\n\014" +
-      "ReqUserLogin\022\031\n\005msgId\030\001 \001(\0162\n.UserMsgId\022" +
-      "\013\n\003sex\030\002 \001(\005\022\016\n\006userId\030\003 \001(\003\022\021\n\tloginNam" +
-      "e\030\004 \001(\t\"Y\n\014ResUserLogin\022\031\n\005msgId\030\001 \001(\0162\n" +
-      ".UserMsgId\022\013\n\003sex\030\002 \001(\005\022\016\n\006userId\030\003 \001(\003\022" +
-      "\021\n\tloginName\030\004 \001(\tB+\n\'info.xiaomo.server" +
-      ".shared.protocol.userP\001b\006proto3"
+      "\n\021UserMessage.proto\032\017MessageId.proto\"U\n\014" +
+      "ReqUserLogin\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\013\n\003s" +
+      "ex\030\002 \001(\005\022\016\n\006userId\030\003 \001(\003\022\021\n\tloginName\030\004 " +
+      "\001(\t\"U\n\014ResUserLogin\022\025\n\005msgId\030\001 \001(\0162\006.Msg" +
+      "Id\022\013\n\003sex\030\002 \001(\005\022\016\n\006userId\030\003 \001(\003\022\021\n\tlogin" +
+      "Name\030\004 \001(\tB+\n\'info.xiaomo.server.shared." +
+      "protocol.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

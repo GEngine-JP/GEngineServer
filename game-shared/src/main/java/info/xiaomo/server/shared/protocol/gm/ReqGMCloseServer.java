@@ -97,20 +97,20 @@ private static final long serialVersionUID = 0L;
   public static final int MSGID_FIELD_NUMBER = 1;
   private int msgId_;
   /**
-   * <code>.GMMsgId msgId = 1;</code>
+   * <code>.MsgId msgId = 1;</code>
    * @return The enum numeric value on the wire for msgId.
    */
   @Override public int getMsgIdValue() {
     return msgId_;
   }
   /**
-   * <code>.GMMsgId msgId = 1;</code>
+   * <code>.MsgId msgId = 1;</code>
    * @return The msgId.
    */
-  @Override public info.xiaomo.server.shared.protocol.msg.GMMsgId getMsgId() {
+  @Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.msg.GMMsgId result = info.xiaomo.server.shared.protocol.msg.GMMsgId.valueOf(msgId_);
-    return result == null ? info.xiaomo.server.shared.protocol.msg.GMMsgId.UNRECOGNIZED : result;
+    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
 
   public static final int RESMSG_FIELD_NUMBER = 2;
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (msgId_ != info.xiaomo.server.shared.protocol.msg.GMMsgId.GmUnknown.getNumber()) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Unknown.getNumber()) {
       output.writeEnum(1, msgId_);
     }
     if (!getResMsgBytes().isEmpty()) {
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (msgId_ != info.xiaomo.server.shared.protocol.msg.GMMsgId.GmUnknown.getNumber()) {
+    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, msgId_);
     }
@@ -471,14 +471,14 @@ private static final long serialVersionUID = 0L;
 
     private int msgId_ = 0;
     /**
-     * <code>.GMMsgId msgId = 1;</code>
+     * <code>.MsgId msgId = 1;</code>
      * @return The enum numeric value on the wire for msgId.
      */
     @Override public int getMsgIdValue() {
       return msgId_;
     }
     /**
-     * <code>.GMMsgId msgId = 1;</code>
+     * <code>.MsgId msgId = 1;</code>
      * @param value The enum numeric value on the wire for msgId to set.
      * @return This builder for chaining.
      */
@@ -489,21 +489,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.GMMsgId msgId = 1;</code>
+     * <code>.MsgId msgId = 1;</code>
      * @return The msgId.
      */
     @Override
-    public info.xiaomo.server.shared.protocol.msg.GMMsgId getMsgId() {
+    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
       @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.msg.GMMsgId result = info.xiaomo.server.shared.protocol.msg.GMMsgId.valueOf(msgId_);
-      return result == null ? info.xiaomo.server.shared.protocol.msg.GMMsgId.UNRECOGNIZED : result;
+      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
+      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
     }
     /**
-     * <code>.GMMsgId msgId = 1;</code>
+     * <code>.MsgId msgId = 1;</code>
      * @param value The msgId to set.
      * @return This builder for chaining.
      */
-    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.GMMsgId value) {
+    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -513,7 +513,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.GMMsgId msgId = 1;</code>
+     * <code>.MsgId msgId = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearMsgId() {

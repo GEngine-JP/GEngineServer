@@ -1,9 +1,8 @@
 package info.xiaomo.server.rpg.server.game;
 
 import info.xiaomo.gengine.network.pool.MessagePool;
-import info.xiaomo.server.rpg.client.TestResLoginHandler;
 import info.xiaomo.server.rpg.system.user.handler.LoginHandler;
-import info.xiaomo.server.shared.protocol.msg.UserMsgId;
+import info.xiaomo.server.shared.protocol.msg.MsgId;
 import info.xiaomo.server.shared.protocol.user.ReqUserLogin;
 import info.xiaomo.server.shared.protocol.user.ResUserLogin;
 
@@ -16,13 +15,7 @@ public class GameMessagePool extends MessagePool {
     }
 
     private void registerLogin() {
-        register(
-                UserMsgId.LoginRequest_VALUE,
-                ReqUserLogin.getDefaultInstance(),
-                LoginHandler.class);
-        register(
-                UserMsgId.LoginResponse_VALUE,
-                ResUserLogin.getDefaultInstance(),
-                TestResLoginHandler.class);
+        register(MsgId.LoginRequest, ReqUserLogin.getDefaultInstance(), LoginHandler.class);
+        register(MsgId.LoginResponse, ResUserLogin.getDefaultInstance());
     }
 }

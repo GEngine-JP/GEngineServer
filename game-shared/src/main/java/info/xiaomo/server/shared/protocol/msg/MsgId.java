@@ -4,15 +4,19 @@
 package info.xiaomo.server.shared.protocol.msg;
 
 /**
- * Protobuf enum {@code UserMsgId}
+ * Protobuf enum {@code MsgId}
  */
-public enum UserMsgId
+public enum MsgId
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UserUnknown = 0;</code>
+   * <code>Unknown = 0;</code>
    */
-  UserUnknown(0),
+  Unknown(0),
   /**
+   * <pre>
+   * user group:101
+   * </pre>
+   *
    * <code>LoginRequest = 101001;</code>
    */
   LoginRequest(101001),
@@ -20,14 +24,30 @@ public enum UserMsgId
    * <code>LoginResponse = 101002;</code>
    */
   LoginResponse(101002),
+  /**
+   * <pre>
+   * gm group: 201
+   * </pre>
+   *
+   * <code>CloseServerRequest = 201001;</code>
+   */
+  CloseServerRequest(201001),
+  /**
+   * <code>CloseServerResponse = 201002;</code>
+   */
+  CloseServerResponse(201002),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UserUnknown = 0;</code>
+   * <code>Unknown = 0;</code>
    */
-  public static final int UserUnknown_VALUE = 0;
+  public static final int Unknown_VALUE = 0;
   /**
+   * <pre>
+   * user group:101
+   * </pre>
+   *
    * <code>LoginRequest = 101001;</code>
    */
   public static final int LoginRequest_VALUE = 101001;
@@ -35,6 +55,18 @@ public enum UserMsgId
    * <code>LoginResponse = 101002;</code>
    */
   public static final int LoginResponse_VALUE = 101002;
+  /**
+   * <pre>
+   * gm group: 201
+   * </pre>
+   *
+   * <code>CloseServerRequest = 201001;</code>
+   */
+  public static final int CloseServerRequest_VALUE = 201001;
+  /**
+   * <code>CloseServerResponse = 201002;</code>
+   */
+  public static final int CloseServerResponse_VALUE = 201002;
 
 
   public final int getNumber() {
@@ -51,7 +83,7 @@ public enum UserMsgId
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @Deprecated
-  public static UserMsgId valueOf(int value) {
+  public static MsgId valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +91,26 @@ public enum UserMsgId
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static UserMsgId forNumber(int value) {
+  public static MsgId forNumber(int value) {
     switch (value) {
-      case 0: return UserUnknown;
+      case 0: return Unknown;
       case 101001: return LoginRequest;
       case 101002: return LoginResponse;
+      case 201001: return CloseServerRequest;
+      case 201002: return CloseServerResponse;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<UserMsgId>
+  public static com.google.protobuf.Internal.EnumLiteMap<MsgId>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      UserMsgId> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<UserMsgId>() {
-          public UserMsgId findValueByNumber(int number) {
-            return UserMsgId.forNumber(number);
+      MsgId> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<MsgId>() {
+          public MsgId findValueByNumber(int number) {
+            return MsgId.forNumber(number);
           }
         };
 
@@ -94,12 +128,12 @@ public enum UserMsgId
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return MessageId.getDescriptor().getEnumTypes().get(1);
+    return MessageId.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final UserMsgId[] VALUES = values();
+  private static final MsgId[] VALUES = values();
 
-  public static UserMsgId valueOf(
+  public static MsgId valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new IllegalArgumentException(
@@ -113,10 +147,10 @@ public enum UserMsgId
 
   private final int value;
 
-  private UserMsgId(int value) {
+  private MsgId(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:UserMsgId)
+  // @@protoc_insertion_point(enum_scope:MsgId)
 }
 

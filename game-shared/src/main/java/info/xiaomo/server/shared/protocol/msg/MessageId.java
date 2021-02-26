@@ -23,12 +23,11 @@ public final class MessageId {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\017MessageId.proto*M\n\007GMMsgId\022\r\n\tGmUnknow" +
-      "n\020\000\022\030\n\022CloseServerRequest\020\251\242\014\022\031\n\023CloseSe" +
-      "rverResponse\020\252\242\014*E\n\tUserMsgId\022\017\n\013UserUnk" +
-      "nown\020\000\022\022\n\014LoginRequest\020\211\225\006\022\023\n\rLoginRespo" +
-      "nse\020\212\225\006B*\n&info.xiaomo.server.shared.pro" +
-      "tocol.msgP\001b\006proto3"
+      "\n\017MessageId.proto*r\n\005MsgId\022\013\n\007Unknown\020\000\022" +
+      "\022\n\014LoginRequest\020\211\225\006\022\023\n\rLoginResponse\020\212\225\006" +
+      "\022\030\n\022CloseServerRequest\020\251\242\014\022\031\n\023CloseServe" +
+      "rResponse\020\252\242\014B*\n&info.xiaomo.server.shar" +
+      "ed.protocol.msgP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

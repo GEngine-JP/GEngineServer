@@ -10,19 +10,11 @@ import info.xiaomo.server.rpg.server.game.Session;
 import info.xiaomo.server.rpg.server.game.SessionManager;
 import info.xiaomo.server.rpg.util.IDUtil;
 import info.xiaomo.server.rpg.util.MessageUtil;
-import info.xiaomo.server.shared.protocol.msg.UserMsgId;
+import info.xiaomo.server.shared.protocol.msg.MsgId;
 import info.xiaomo.server.shared.protocol.user.ResUserLogin;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * 把今天最好的表现当作明天最新的起点．．～ いま 最高の表現 として 明日最新の始発．．～ Today the best performance as tomorrow newest
- * starter! Created by IntelliJ IDEA.
- *
- * <p>
- *
- * @author : xiaomo github: https://github.com/xiaomoinfo email : xiaomo@xiaomo.info QQ : 83387856
- *     Date : 2017/7/13 15:02 desc : Copyright(©) 2017 by xiaomo.
- */
+/** Date : 2017/7/13 15:02 desc : Copyright(©) 2017 by xiaomo. */
 @Slf4j
 public class UserManager {
     private static final UserManager instance = new UserManager();
@@ -54,7 +46,7 @@ public class UserManager {
 
         ResUserLogin loginResponse =
                 ResUserLogin.newBuilder()
-                        .setMsgId(UserMsgId.LoginResponse)
+                        .setMsgId(MsgId.LoginResponse)
                         .setLoginName(user.getLoginName())
                         .setUserId(user.getId())
                         .setSex(1)
