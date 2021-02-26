@@ -7,7 +7,6 @@ import info.xiaomo.gengine.utils.PathUtil;
 import info.xiaomo.gengine.utils.YamlUtil;
 import info.xiaomo.server.rpg.constant.GameConst;
 import info.xiaomo.server.rpg.processor.LoginProcessor;
-import info.xiaomo.server.rpg.server.game.GameMessagePool;
 import info.xiaomo.server.rpg.server.game.NetworkListener;
 import info.xiaomo.server.rpg.server.game.ServerOption;
 import info.xiaomo.server.shared.protocol.msg.UserMsgId;
@@ -30,8 +29,8 @@ public class TestLoginClient {
             }
             MessageRouter router = new MessageRouter(pool);
             ClientBuilder builder = new ClientBuilder();
-//            builder.setHost("localhost");
-            builder.setHost("106.15.188.160");
+            builder.setHost("localhost");
+//            builder.setHost("106.15.188.160");
             builder.setPort(option.getGameServerPort());
             builder.setConsumer(router);
             builder.setEventListener(new NetworkListener());

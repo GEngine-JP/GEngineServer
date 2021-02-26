@@ -18,14 +18,12 @@ public class MessageUtil {
         if (session == null) {
             return;
         }
-        int msgId = getMessageID(msg);
-        MsgPack packet = new MsgPack(MsgPack.HEAD_TCP, msgId, msg.toByteArray(), msg);
-        session.sendMessage(packet);
+        sendMsg(session, msg);
     }
 
     public static void sendMsg(Session session, AbstractMessage msg) {
         int msgId = getMessageID(msg);
-        MsgPack packet = new MsgPack(MsgPack.HEAD_TCP, msgId, msg.toByteArray(), msg);
+        MsgPack packet = new MsgPack(MsgPack.HEAD_TCP, msgId, msg.toByteArray());
         session.sendMessage(packet);
     }
 
