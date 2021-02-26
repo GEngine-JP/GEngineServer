@@ -33,32 +33,27 @@ public final class UserMessage {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\021UserMessage.proto\032\017MessageId.proto\"U\n\014" +
-      "ReqUserLogin\022\025\n\005msgId\030\001 \001(\0162\006.MsgId\022\013\n\003s" +
-      "ex\030\002 \001(\005\022\016\n\006userId\030\003 \001(\003\022\021\n\tloginName\030\004 " +
-      "\001(\t\"U\n\014ResUserLogin\022\025\n\005msgId\030\001 \001(\0162\006.Msg" +
-      "Id\022\013\n\003sex\030\002 \001(\005\022\016\n\006userId\030\003 \001(\003\022\021\n\tlogin" +
-      "Name\030\004 \001(\tB+\n\'info.xiaomo.server.shared." +
-      "protocol.userP\001b\006proto3"
+      "\n\021UserMessage.proto\"!\n\014ReqUserLogin\022\021\n\tl" +
+      "oginName\030\001 \001(\t\"1\n\014ResUserLogin\022\021\n\tloginN" +
+      "ame\030\001 \001(\t\022\016\n\006userId\030\003 \001(\003B+\n\'info.xiaomo" +
+      ".server.shared.protocol.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor(),
         });
     internal_static_ReqUserLogin_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ReqUserLogin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ReqUserLogin_descriptor,
-        new String[] { "MsgId", "Sex", "UserId", "LoginName", });
+        new String[] { "LoginName", });
     internal_static_ResUserLogin_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ResUserLogin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ResUserLogin_descriptor,
-        new String[] { "MsgId", "Sex", "UserId", "LoginName", });
-    info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor();
+        new String[] { "LoginName", "UserId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

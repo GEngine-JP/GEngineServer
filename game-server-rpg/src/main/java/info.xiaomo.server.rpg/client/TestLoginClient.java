@@ -43,10 +43,7 @@ public class TestLoginClient {
             Thread.sleep(1000);
             ReqUserLogin request =
                     ReqUserLogin.newBuilder()
-                            .setMsgId(MsgId.LoginRequest)
                             .setLoginName("xiaomo")
-                            .setSex(1)
-                            .setUserId(1021)
                             .build();
 
             client.sendMsg(request);

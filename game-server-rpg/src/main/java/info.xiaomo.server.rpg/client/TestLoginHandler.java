@@ -8,9 +8,7 @@ public class TestLoginHandler extends AbstractHandler<ResUserLogin> {
 
     @Override
     public void doAction() {
-        System.out.println(message.getMsgId());
         System.out.println(message.getUserId());
         System.out.println(message.getLoginName());
-        System.out.println(message.getSex());
     }
 }

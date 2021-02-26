@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ResUserLogin() {
-    msgId_ = 0;
     loginName_ = "";
   }
 
@@ -50,26 +49,15 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 10: {
+            String s = input.readStringRequireUtf8();
 
-            msgId_ = rawValue;
-            break;
-          }
-          case 16: {
-
-            sex_ = input.readInt32();
+            loginName_ = s;
             break;
           }
           case 24: {
 
             userId_ = input.readInt64();
-            break;
-          }
-          case 34: {
-            String s = input.readStringRequireUtf8();
-
-            loginName_ = s;
             break;
           }
           default: {
@@ -104,51 +92,10 @@ private static final long serialVersionUID = 0L;
             ResUserLogin.class, Builder.class);
   }
 
-  public static final int MSGID_FIELD_NUMBER = 1;
-  private int msgId_;
-  /**
-   * <code>.MsgId msgId = 1;</code>
-   * @return The enum numeric value on the wire for msgId.
-   */
-  @Override public int getMsgIdValue() {
-    return msgId_;
-  }
-  /**
-   * <code>.MsgId msgId = 1;</code>
-   * @return The msgId.
-   */
-  @Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
-    @SuppressWarnings("deprecation")
-    info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
-    return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
-  }
-
-  public static final int SEX_FIELD_NUMBER = 2;
-  private int sex_;
-  /**
-   * <code>int32 sex = 2;</code>
-   * @return The sex.
-   */
-  @Override
-  public int getSex() {
-    return sex_;
-  }
-
-  public static final int USERID_FIELD_NUMBER = 3;
-  private long userId_;
-  /**
-   * <code>int64 userId = 3;</code>
-   * @return The userId.
-   */
-  @Override
-  public long getUserId() {
-    return userId_;
-  }
-
-  public static final int LOGINNAME_FIELD_NUMBER = 4;
+  public static final int LOGINNAME_FIELD_NUMBER = 1;
   private volatile Object loginName_;
   /**
-   * <code>string loginName = 4;</code>
+   * <code>string loginName = 1;</code>
    * @return The loginName.
    */
   @Override
@@ -165,7 +112,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string loginName = 4;</code>
+   * <code>string loginName = 1;</code>
    * @return The bytes for loginName.
    */
   @Override
@@ -183,6 +130,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int USERID_FIELD_NUMBER = 3;
+  private long userId_;
+  /**
+   * <code>int64 userId = 3;</code>
+   * @return The userId.
+   */
+  @Override
+  public long getUserId() {
+    return userId_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @Override
   public final boolean isInitialized() {
@@ -197,17 +155,11 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Unknown.getNumber()) {
-      output.writeEnum(1, msgId_);
-    }
-    if (sex_ != 0) {
-      output.writeInt32(2, sex_);
+    if (!getLoginNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, loginName_);
     }
     if (userId_ != 0L) {
       output.writeInt64(3, userId_);
-    }
-    if (!getLoginNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, loginName_);
     }
     unknownFields.writeTo(output);
   }
@@ -218,20 +170,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Unknown.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, msgId_);
-    }
-    if (sex_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, sex_);
+    if (!getLoginNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, loginName_);
     }
     if (userId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, userId_);
-    }
-    if (!getLoginNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, loginName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -248,13 +192,10 @@ private static final long serialVersionUID = 0L;
     }
     ResUserLogin other = (ResUserLogin) obj;
 
-    if (msgId_ != other.msgId_) return false;
-    if (getSex()
-        != other.getSex()) return false;
-    if (getUserId()
-        != other.getUserId()) return false;
     if (!getLoginName()
         .equals(other.getLoginName())) return false;
+    if (getUserId()
+        != other.getUserId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -266,15 +207,11 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MSGID_FIELD_NUMBER;
-    hash = (53 * hash) + msgId_;
-    hash = (37 * hash) + SEX_FIELD_NUMBER;
-    hash = (53 * hash) + getSex();
+    hash = (37 * hash) + LOGINNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getLoginName().hashCode();
     hash = (37 * hash) + USERID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUserId());
-    hash = (37 * hash) + LOGINNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getLoginName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -408,13 +345,9 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
-      msgId_ = 0;
-
-      sex_ = 0;
+      loginName_ = "";
 
       userId_ = 0L;
-
-      loginName_ = "";
 
       return this;
     }
@@ -442,10 +375,8 @@ private static final long serialVersionUID = 0L;
     @Override
     public ResUserLogin buildPartial() {
       ResUserLogin result = new ResUserLogin(this);
-      result.msgId_ = msgId_;
-      result.sex_ = sex_;
-      result.userId_ = userId_;
       result.loginName_ = loginName_;
+      result.userId_ = userId_;
       onBuilt();
       return result;
     }
@@ -494,18 +425,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(ResUserLogin other) {
       if (other == ResUserLogin.getDefaultInstance()) return this;
-      if (other.msgId_ != 0) {
-        setMsgIdValue(other.getMsgIdValue());
-      }
-      if (other.getSex() != 0) {
-        setSex(other.getSex());
-      }
-      if (other.getUserId() != 0L) {
-        setUserId(other.getUserId());
-      }
       if (!other.getLoginName().isEmpty()) {
         loginName_ = other.loginName_;
         onChanged();
+      }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -536,87 +461,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int msgId_ = 0;
+    private Object loginName_ = "";
     /**
-     * <code>.MsgId msgId = 1;</code>
-     * @return The enum numeric value on the wire for msgId.
+     * <code>string loginName = 1;</code>
+     * @return The loginName.
      */
-    @Override public int getMsgIdValue() {
-      return msgId_;
-    }
-    /**
-     * <code>.MsgId msgId = 1;</code>
-     * @param value The enum numeric value on the wire for msgId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMsgIdValue(int value) {
-      
-      msgId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.MsgId msgId = 1;</code>
-     * @return The msgId.
-     */
-    @Override
-    public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
-      @SuppressWarnings("deprecation")
-      info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
-      return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.MsgId msgId = 1;</code>
-     * @param value The msgId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public String getLoginName() {
+      Object ref = loginName_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        loginName_ = s;
+        return s;
+      } else {
+        return (String) ref;
       }
-      
-      msgId_ = value.getNumber();
+    }
+    /**
+     * <code>string loginName = 1;</code>
+     * @return The bytes for loginName.
+     */
+    public com.google.protobuf.ByteString
+        getLoginNameBytes() {
+      Object ref = loginName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        loginName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string loginName = 1;</code>
+     * @param value The loginName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoginName(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      loginName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.MsgId msgId = 1;</code>
+     * <code>string loginName = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMsgId() {
+    public Builder clearLoginName() {
       
-      msgId_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int sex_ ;
-    /**
-     * <code>int32 sex = 2;</code>
-     * @return The sex.
-     */
-    @Override
-    public int getSex() {
-      return sex_;
-    }
-    /**
-     * <code>int32 sex = 2;</code>
-     * @param value The sex to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSex(int value) {
-      
-      sex_ = value;
+      loginName_ = getDefaultInstance().getLoginName();
       onChanged();
       return this;
     }
     /**
-     * <code>int32 sex = 2;</code>
+     * <code>string loginName = 1;</code>
+     * @param value The bytes for loginName to set.
      * @return This builder for chaining.
      */
-    public Builder clearSex() {
+    public Builder setLoginNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       
-      sex_ = 0;
+      loginName_ = value;
       onChanged();
       return this;
     }
@@ -648,82 +564,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearUserId() {
       
       userId_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private Object loginName_ = "";
-    /**
-     * <code>string loginName = 4;</code>
-     * @return The loginName.
-     */
-    public String getLoginName() {
-      Object ref = loginName_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        loginName_ = s;
-        return s;
-      } else {
-        return (String) ref;
-      }
-    }
-    /**
-     * <code>string loginName = 4;</code>
-     * @return The bytes for loginName.
-     */
-    public com.google.protobuf.ByteString
-        getLoginNameBytes() {
-      Object ref = loginName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        loginName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string loginName = 4;</code>
-     * @param value The loginName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLoginName(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      loginName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string loginName = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLoginName() {
-      
-      loginName_ = getDefaultInstance().getLoginName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string loginName = 4;</code>
-     * @param value The bytes for loginName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLoginNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      loginName_ = value;
       onChanged();
       return this;
     }

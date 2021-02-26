@@ -46,10 +46,8 @@ public class UserManager {
 
         ResUserLogin loginResponse =
                 ResUserLogin.newBuilder()
-                        .setMsgId(MsgId.LoginResponse)
                         .setLoginName(user.getLoginName())
                         .setUserId(user.getId())
-                        .setSex(1)
                         .build();
         MessageUtil.sendMsg(loginResponse, user.getId());
 

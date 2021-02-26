@@ -8,35 +8,12 @@ public interface ReqUserLoginOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.MsgId msgId = 1;</code>
-   * @return The enum numeric value on the wire for msgId.
-   */
-  int getMsgIdValue();
-  /**
-   * <code>.MsgId msgId = 1;</code>
-   * @return The msgId.
-   */
-  info.xiaomo.server.shared.protocol.msg.MsgId getMsgId();
-
-  /**
-   * <code>int32 sex = 2;</code>
-   * @return The sex.
-   */
-  int getSex();
-
-  /**
-   * <code>int64 userId = 3;</code>
-   * @return The userId.
-   */
-  long getUserId();
-
-  /**
-   * <code>string loginName = 4;</code>
+   * <code>string loginName = 1;</code>
    * @return The loginName.
    */
   String getLoginName();
   /**
-   * <code>string loginName = 4;</code>
+   * <code>string loginName = 1;</code>
    * @return The bytes for loginName.
    */
   com.google.protobuf.ByteString
