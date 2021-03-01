@@ -9,7 +9,6 @@ import info.xiaomo.server.rpg.constant.GameConst;
 import info.xiaomo.server.rpg.processor.LoginProcessor;
 import info.xiaomo.server.rpg.server.game.NetworkListener;
 import info.xiaomo.server.rpg.server.game.ServerOption;
-import info.xiaomo.server.shared.protocol.msg.MsgId;
 import info.xiaomo.server.shared.protocol.user.ReqUserLogin;
 import lombok.extern.slf4j.Slf4j;
 

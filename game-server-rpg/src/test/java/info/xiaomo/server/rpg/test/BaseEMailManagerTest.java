@@ -1,4 +1,4 @@
-package info.xiaomo.server.rpg;
+package info.xiaomo.server.rpg.test;
 
 import info.xiaomo.gengine.mail.EMailManager;
 import org.junit.Ignore;

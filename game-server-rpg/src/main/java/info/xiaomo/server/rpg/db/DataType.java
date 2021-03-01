@@ -11,4 +11,5 @@ package info.xiaomo.server.rpg.db;
  */
 public interface DataType {
     int USER = 1;
+    int ROLE = 2;
 }

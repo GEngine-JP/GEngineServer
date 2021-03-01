@@ -4,7 +4,6 @@ import info.xiaomo.gengine.network.IService;
 import info.xiaomo.gengine.network.NetworkServiceBuilder;
 import info.xiaomo.gengine.network.pool.MessageRouter;
 import info.xiaomo.server.rpg.constant.GameConst;
-import info.xiaomo.server.rpg.db.DataCenter;
 import info.xiaomo.server.rpg.event.EventRegister;
 import info.xiaomo.server.rpg.processor.LogicProcessor;
 import info.xiaomo.server.rpg.processor.LoginProcessor;
@@ -24,7 +23,7 @@ public class GameServer {
 
     private MessageRouter router;
 
-    public GameServer() throws Exception {
+    public GameServer() {
         int bossLoopGroupCount = 1;
         int workerLoopGroupCount = Math.max(Runtime.getRuntime().availableProcessors(), 4);
 
@@ -48,10 +47,10 @@ public class GameServer {
         networkService = builder.createService();
 
         // 初始化数据库
-        DataCenter.init();
+        //        DataCenter.init();
 
         // 初始化配置文件
-//        ConfigDataManager.getInstance().init();
+        //        ConfigDataManager.getInstance().init();
 
         // 注册事件
         EventRegister.registerPreparedListeners();
