@@ -1,7 +1,7 @@
 package info.xiaomo.server.robot;
 
-import info.xiaomo.gengine.network.handler.DefaultProtobufDecoder;
-import info.xiaomo.gengine.network.handler.DefaultProtobufEncoder;
+import info.xiaomo.gengine.network.handler.MessageDecoder;
+import info.xiaomo.gengine.network.handler.MessageEncoder;
 import info.xiaomo.gengine.network.handler.MessageExecutor;
 import info.xiaomo.gengine.network.pool.MessageRouter;
 import info.xiaomo.server.robot.handle.RobotEventListener;
@@ -25,8 +25,8 @@ public class RobotApplication {
                     protected void initChannel(SocketChannel ch) {
                         ChannelPipeline pip = ch.pipeline();
                         RobotMessagePool pool = new RobotMessagePool();
-                        pip.addLast("NettyMessageDecoder", new DefaultProtobufDecoder(pool));
-                        pip.addLast("NettyMessageEncoder", new DefaultProtobufEncoder(pool));
+                        pip.addLast("NettyMessageDecoder", new MessageDecoder(pool));
+                        pip.addLast("NettyMessageEncoder", new MessageEncoder(pool));
                         pip.addLast(
                                 "NettyMessageExecutor",
                                 new MessageExecutor(
