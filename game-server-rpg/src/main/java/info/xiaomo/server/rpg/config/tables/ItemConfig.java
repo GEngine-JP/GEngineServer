@@ -5,8 +5,8 @@ import info.xiaomo.gengine.config.IConfig;
 import info.xiaomo.gengine.config.annotation.Column;
 import info.xiaomo.gengine.config.annotation.Config;
 import info.xiaomo.gengine.config.annotation.Table;
-import info.xiaomo.gengine.config.converters.IntegerArrayConverter;
 import info.xiaomo.gengine.config.converters.IntegerMapConverter;
+import info.xiaomo.gengine.config.converters.JinHaoIntegerArrayConverter;
 import info.xiaomo.gengine.config.converters.Matrix3IntConverter;
 import lombok.Data;
 import lombok.ToString;
@@ -26,7 +26,7 @@ public class ItemConfig implements IConfig {
     private String secondId;
 
     // 多个转换器共同使用 先转成int数组 然后将int数组转为map
-    @Column({IntegerArrayConverter.class, IntegerMapConverter.class})
+    @Column({JinHaoIntegerArrayConverter.class, IntegerMapConverter.class})
     private Map<Integer, Integer> map;
 
     @Column(name = "ints")

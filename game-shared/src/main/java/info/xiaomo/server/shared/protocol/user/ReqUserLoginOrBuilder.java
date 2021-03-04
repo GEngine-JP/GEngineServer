@@ -9,12 +9,10 @@ public interface ReqUserLoginOrBuilder extends
 
   /**
    * <code>string loginName = 1;</code>
-   * @return The loginName.
    */
   String getLoginName();
   /**
    * <code>string loginName = 1;</code>
-   * @return The bytes for loginName.
    */
   com.google.protobuf.ByteString
       getLoginNameBytes();

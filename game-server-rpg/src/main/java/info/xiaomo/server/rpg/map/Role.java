@@ -1,6 +1,5 @@
 package info.xiaomo.server.rpg.map;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.AttributeType;
 import java.util.HashMap;
 import java.util.Map;
 import info.xiaomo.gengine.persist.mysql.persist.PersistAble;

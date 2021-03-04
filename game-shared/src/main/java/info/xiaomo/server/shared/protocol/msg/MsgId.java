@@ -78,8 +78,6 @@ public enum MsgId
   }
 
   /**
-   * @param value The numeric wire value of the corresponding enum entry.
-   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @Deprecated
@@ -87,10 +85,6 @@ public enum MsgId
     return forNumber(value);
   }
 
-  /**
-   * @param value The numeric wire value of the corresponding enum entry.
-   * @return The enum associated with the given numeric wire value.
-   */
   public static MsgId forNumber(int value) {
     switch (value) {
       case 0: return Unknown;
@@ -116,10 +110,6 @@ public enum MsgId
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
-    if (this == UNRECOGNIZED) {
-      throw new IllegalStateException(
-          "Can't get the descriptor of an unrecognized enum value.");
-    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor

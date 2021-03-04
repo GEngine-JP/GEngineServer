@@ -9,19 +9,16 @@ public interface ResUserLoginOrBuilder extends
 
   /**
    * <code>string loginName = 1;</code>
-   * @return The loginName.
    */
   String getLoginName();
   /**
    * <code>string loginName = 1;</code>
-   * @return The bytes for loginName.
    */
   com.google.protobuf.ByteString
       getLoginNameBytes();
 
   /**
    * <code>int64 userId = 3;</code>
-   * @return The userId.
    */
   long getUserId();
 }

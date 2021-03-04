@@ -40,11 +40,19 @@ public final class GMMessage {
       ".xiaomo.server.shared.protocol.gmP\001b\006pro" +
       "to3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           info.xiaomo.server.shared.protocol.msg.MessageId.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ReqGMCloseServer_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ReqGMCloseServer_fieldAccessorTable = new

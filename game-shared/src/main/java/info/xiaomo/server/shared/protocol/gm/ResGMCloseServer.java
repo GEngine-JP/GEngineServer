@@ -6,7 +6,7 @@ package info.xiaomo.server.shared.protocol.gm;
 /**
  * Protobuf type {@code ResGMCloseServer}
  */
-public final class ResGMCloseServer extends
+public  final class ResGMCloseServer extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:ResGMCloseServer)
     ResGMCloseServerOrBuilder {
@@ -18,13 +18,6 @@ private static final long serialVersionUID = 0L;
   private ResGMCloseServer() {
     msgId_ = 0;
     resMsg_ = "";
-  }
-
-  @Override
-  @SuppressWarnings({"unused"})
-  protected Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new ResGMCloseServer();
   }
 
   @Override
@@ -40,6 +33,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -50,6 +44,13 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
           case 8: {
             int rawValue = input.readEnum();
 
@@ -60,13 +61,6 @@ private static final long serialVersionUID = 0L;
             String s = input.readStringRequireUtf8();
 
             resMsg_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
             break;
           }
         }
@@ -86,7 +80,6 @@ private static final long serialVersionUID = 0L;
     return GMMessage.internal_static_ResGMCloseServer_descriptor;
   }
 
-  @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return GMMessage.internal_static_ResGMCloseServer_fieldAccessorTable
@@ -98,17 +91,14 @@ private static final long serialVersionUID = 0L;
   private int msgId_;
   /**
    * <code>.MsgId msgId = 1;</code>
-   * @return The enum numeric value on the wire for msgId.
    */
-  @Override public int getMsgIdValue() {
+  public int getMsgIdValue() {
     return msgId_;
   }
   /**
    * <code>.MsgId msgId = 1;</code>
-   * @return The msgId.
    */
-  @Override public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
-    @SuppressWarnings("deprecation")
+  public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
     info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
     return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
   }
@@ -117,9 +107,7 @@ private static final long serialVersionUID = 0L;
   private volatile Object resMsg_;
   /**
    * <code>string resMsg = 2;</code>
-   * @return The resMsg.
    */
-  @Override
   public String getResMsg() {
     Object ref = resMsg_;
     if (ref instanceof String) {
@@ -134,9 +122,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string resMsg = 2;</code>
-   * @return The bytes for resMsg.
    */
-  @Override
   public com.google.protobuf.ByteString
       getResMsgBytes() {
     Object ref = resMsg_;
@@ -152,7 +138,6 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -162,7 +147,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (msgId_ != info.xiaomo.server.shared.protocol.msg.MsgId.Unknown.getNumber()) {
@@ -174,7 +158,6 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -202,11 +185,12 @@ private static final long serialVersionUID = 0L;
     }
     ResGMCloseServer other = (ResGMCloseServer) obj;
 
-    if (msgId_ != other.msgId_) return false;
-    if (!getResMsg()
-        .equals(other.getResMsg())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    boolean result = true;
+    result = result && msgId_ == other.msgId_;
+    result = result && getResMsg()
+        .equals(other.getResMsg());
+    result = result && unknownFields.equals(other.unknownFields);
+    return result;
   }
 
   @Override
@@ -295,7 +279,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -303,7 +286,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(ResGMCloseServer prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -327,7 +309,6 @@ private static final long serialVersionUID = 0L;
       return GMMessage.internal_static_ResGMCloseServer_descriptor;
     }
 
-    @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return GMMessage.internal_static_ResGMCloseServer_fieldAccessorTable
@@ -350,7 +331,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
     public Builder clear() {
       super.clear();
       msgId_ = 0;
@@ -360,18 +340,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return GMMessage.internal_static_ResGMCloseServer_descriptor;
     }
 
-    @Override
     public ResGMCloseServer getDefaultInstanceForType() {
       return ResGMCloseServer.getDefaultInstance();
     }
 
-    @Override
     public ResGMCloseServer build() {
       ResGMCloseServer result = buildPartial();
       if (!result.isInitialized()) {
@@ -380,7 +357,6 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
     public ResGMCloseServer buildPartial() {
       ResGMCloseServer result = new ResGMCloseServer(this);
       result.msgId_ = msgId_;
@@ -389,39 +365,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         Object value) {
-      return super.setField(field, value);
+      return (Builder) super.setField(field, value);
     }
-    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, Object value) {
-      return super.setRepeatedField(field, index, value);
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         Object value) {
-      return super.addRepeatedField(field, value);
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof ResGMCloseServer) {
         return mergeFrom((ResGMCloseServer)other);
@@ -445,12 +414,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -472,36 +439,27 @@ private static final long serialVersionUID = 0L;
     private int msgId_ = 0;
     /**
      * <code>.MsgId msgId = 1;</code>
-     * @return The enum numeric value on the wire for msgId.
      */
-    @Override public int getMsgIdValue() {
+    public int getMsgIdValue() {
       return msgId_;
     }
     /**
      * <code>.MsgId msgId = 1;</code>
-     * @param value The enum numeric value on the wire for msgId to set.
-     * @return This builder for chaining.
      */
     public Builder setMsgIdValue(int value) {
-      
       msgId_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>.MsgId msgId = 1;</code>
-     * @return The msgId.
      */
-    @Override
     public info.xiaomo.server.shared.protocol.msg.MsgId getMsgId() {
-      @SuppressWarnings("deprecation")
       info.xiaomo.server.shared.protocol.msg.MsgId result = info.xiaomo.server.shared.protocol.msg.MsgId.valueOf(msgId_);
       return result == null ? info.xiaomo.server.shared.protocol.msg.MsgId.UNRECOGNIZED : result;
     }
     /**
      * <code>.MsgId msgId = 1;</code>
-     * @param value The msgId to set.
-     * @return This builder for chaining.
      */
     public Builder setMsgId(info.xiaomo.server.shared.protocol.msg.MsgId value) {
       if (value == null) {
@@ -514,7 +472,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.MsgId msgId = 1;</code>
-     * @return This builder for chaining.
      */
     public Builder clearMsgId() {
       
@@ -526,7 +483,6 @@ private static final long serialVersionUID = 0L;
     private Object resMsg_ = "";
     /**
      * <code>string resMsg = 2;</code>
-     * @return The resMsg.
      */
     public String getResMsg() {
       Object ref = resMsg_;
@@ -542,7 +498,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string resMsg = 2;</code>
-     * @return The bytes for resMsg.
      */
     public com.google.protobuf.ByteString
         getResMsgBytes() {
@@ -559,8 +514,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string resMsg = 2;</code>
-     * @param value The resMsg to set.
-     * @return This builder for chaining.
      */
     public Builder setResMsg(
         String value) {
@@ -574,7 +527,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string resMsg = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearResMsg() {
       
@@ -584,8 +536,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string resMsg = 2;</code>
-     * @param value The bytes for resMsg to set.
-     * @return This builder for chaining.
      */
     public Builder setResMsgBytes(
         com.google.protobuf.ByteString value) {
@@ -598,13 +548,11 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
-    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -626,7 +574,6 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ResGMCloseServer>
       PARSER = new com.google.protobuf.AbstractParser<ResGMCloseServer>() {
-    @Override
     public ResGMCloseServer parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -644,7 +591,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
   public ResGMCloseServer getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
