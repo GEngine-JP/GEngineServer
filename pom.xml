@@ -37,7 +37,7 @@
         <lombok.version>1.18.16</lombok.version>
         <junit.version>4.13.1</junit.version>
         <beanutils.version>1.9.4</beanutils.version>
-        <mysql.version>8.0.20</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <protostuff.version>1.3.7</protostuff.version>
         <druid.version>1.2.5</druid.version>
         <concurrentlinkedhashmap.version>1.4.2</concurrentlinkedhashmap.version>
